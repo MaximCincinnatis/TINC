@@ -605,6 +605,12 @@ button:disabled {
   
   .chart-container {
     height: 400px;
+    padding: 1rem;
+    padding-top: 2rem;
+  }
+  
+  .chart-section {
+    padding: 1.5rem;
   }
 }
 

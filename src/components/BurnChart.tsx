@@ -158,26 +158,26 @@ const BurnChart: React.FC<Props> = ({ burnData }) => {
             borderDash: [0],
             label: {
               display: true,
-              content: 'DEFLATIONARY THRESHOLD: 86,400 TINC/DAY',
-              position: 'end',
+              content: 'THRESHOLD: 86.4K/DAY',
+              position: 'center',
               backgroundColor: 'rgba(0, 0, 0, 0.95)',
               borderColor: '#22c55e',
               borderWidth: 2,
               color: '#22c55e',
               font: {
-                size: 12,
+                size: 11,
                 weight: 'bold',
                 family: 'Space Grotesk, sans-serif'
               },
               padding: {
-                top: 6,
-                bottom: 6,
-                left: 12,
-                right: 12
+                top: 4,
+                bottom: 4,
+                left: 8,
+                right: 8
               },
               borderRadius: 6,
-              yAdjust: 15,
-              xAdjust: -150
+              yAdjust: -20,
+              xAdjust: 0
             }
           }
         }
