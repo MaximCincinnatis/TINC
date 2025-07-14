@@ -1,0 +1,2068 @@
+
+> tinc-burn-tracker@0.1.0 start
+> react-scripts start
+
+Attempting to bind to HOST environment variable: 0.0.0.0
+If this was unintentional, check that you haven't mistakenly set it in your shell.
+Learn more here: https://cra.link/advanced-config
+
+(node:134996) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:134996) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+Starting the development server...
+
+Compiled successfully!
+
+You can now view tinc-burn-tracker in the browser.
+
+  Local:            http://localhost:3006
+  On Your Network:  http://172.31.125.140:3006
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/services/burnService.ts
+  Line 2:35:  'callRPC' is defined but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/services/burnService.ts
+  Line 2:35:  'callRPC' is defined but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/App.tsx
+  Line 5:8:   'LoadingProgress' is defined but never used      @typescript-eslint/no-unused-vars
+  Line 6:25:  'setProgressCallback' is defined but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/App.tsx
+  Line 5:8:   'LoadingProgress' is defined but never used      @typescript-eslint/no-unused-vars
+  Line 6:25:  'setProgressCallback' is defined but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/App.tsx
+  Line 5:8:    'LoadingProgress' is defined but never used           @typescript-eslint/no-unused-vars
+  Line 13:10:  'loadingMessage' is assigned a value but never used   @typescript-eslint/no-unused-vars
+  Line 14:10:  'loadingProgress' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/App.tsx
+  Line 5:8:    'LoadingProgress' is defined but never used           @typescript-eslint/no-unused-vars
+  Line 13:10:  'loadingMessage' is assigned a value but never used   @typescript-eslint/no-unused-vars
+  Line 14:10:  'loadingProgress' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/BurnChart.tsx:166:24
+TS2322: Type '{ responsive: boolean; maintainAspectRatio: boolean; animation: { duration: number; easing: "easeInOutQuart"; delay: (context: any) => number; }; interaction: { mode: "nearest"; axis: "x"; intersect: boolean; }; plugins: { ...; }; scales: { ...; }; }' is not assignable to type '_DeepPartialObject<CoreChartOptions<"bar"> & ElementChartOptions<"bar"> & PluginChartOptions<"bar"> & DatasetChartOptions<"bar"> & ScaleChartOptions<...> & BarControllerChartOptions>'.
+  The types of 'plugins.title.font' are incompatible between these types.
+    Type '{ size: number; weight: "600"; }' is not assignable to type '((ctx: ScriptableChartContext, options: AnyObject) => Partial<FontSpec> | undefined) | _DeepPartialObject<Partial<FontSpec>> | _DeepPartialObject<...> | undefined'.
+      Type '{ size: number; weight: "600"; }' is not assignable to type '_DeepPartialObject<ScriptableOptions<Partial<FontSpec>, ScriptableChartContext>>'.
+        Types of property 'weight' are incompatible.
+          Type '"600"' is not assignable to type 'number | "bold" | "normal" | "lighter" | "bolder" | ((ctx: ScriptableChartContext, options: AnyObject) => number | "bold" | "normal" | "lighter" | "bolder" | null | undefined) | null | undefined'.
+    164 |   return (
+    165 |     <div className="chart-container">
+  > 166 |       <Bar data={data} options={options} />
+        |                        ^^^^^^^
+    167 |     </div>
+    168 |   );
+    169 | };
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/BurnChart.tsx:166:24
+TS2322: Type '{ responsive: boolean; maintainAspectRatio: boolean; animation: { duration: number; easing: "easeInOutQuart"; delay: (context: any) => number; }; interaction: { mode: "nearest"; axis: "x"; intersect: boolean; }; plugins: { ...; }; scales: { ...; }; }' is not assignable to type '_DeepPartialObject<CoreChartOptions<"bar"> & ElementChartOptions<"bar"> & PluginChartOptions<"bar"> & DatasetChartOptions<"bar"> & ScaleChartOptions<...> & BarControllerChartOptions>'.
+  The types of 'plugins.tooltip.titleFont' are incompatible between these types.
+    Type '{ size: number; weight: "600"; }' is not assignable to type '_DeepPartialObject<Partial<FontSpec>> | ((ctx: ScriptableTooltipContext<"bar">, options: AnyObject) => Partial<...> | undefined) | _DeepPartialObject<...> | undefined'.
+      Type '{ size: number; weight: "600"; }' is not assignable to type '_DeepPartialObject<ScriptableOptions<Partial<FontSpec>, ScriptableTooltipContext<"bar">>>'.
+        Types of property 'weight' are incompatible.
+          Type '"600"' is not assignable to type 'number | "bold" | "normal" | "lighter" | "bolder" | ((ctx: ScriptableTooltipContext<"bar">, options: AnyObject) => number | "bold" | ... 4 more ... | undefined) | null | undefined'.
+    164 |   return (
+    165 |     <div className="chart-container">
+  > 166 |       <Bar data={data} options={options} />
+        |                        ^^^^^^^
+    167 |     </div>
+    168 |   );
+    169 | };
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/BurnChart.tsx:166:24
+TS2322: Type '{ responsive: boolean; maintainAspectRatio: boolean; animation: { duration: number; easing: "easeInOutQuart"; delay: (context: any) => number; }; interaction: { mode: "nearest"; axis: "x"; intersect: boolean; }; plugins: { ...; }; scales: { ...; }; }' is not assignable to type '_DeepPartialObject<CoreChartOptions<"bar"> & ElementChartOptions<"bar"> & PluginChartOptions<"bar"> & DatasetChartOptions<"bar"> & ScaleChartOptions<...> & BarControllerChartOptions>'.
+  Types of property 'scales' are incompatible.
+    Type '{ y: { beginAtZero: boolean; grid: { color: string; lineWidth: number; }; ticks: { color: string; font: { size: number; }; padding: number; callback: (value: any) => string; }; title: { display: boolean; text: string; color: string; font: { ...; }; }; }; x: { ...; }; }' is not assignable to type '_DeepPartialObject<{ [key: string]: ScaleOptionsByType<keyof CartesianScaleTypeRegistry>; }>'.
+      Property 'y' is incompatible with index signature.
+        Type '{ beginAtZero: boolean; grid: { color: string; lineWidth: number; }; ticks: { color: string; font: { size: number; }; padding: number; callback: (value: any) => string; }; title: { display: boolean; text: string; color: string; font: { ...; }; }; }' is not assignable to type '_DeepPartialObject<{ type: "linear"; } & CartesianScaleOptions & { beginAtZero: boolean; suggestedMin?: number | undefined; suggestedMax?: number | undefined; grace?: string | number | undefined; ticks: { ...; }; }> | ... 4 more ... | undefined'.
+          Type '{ beginAtZero: boolean; grid: { color: string; lineWidth: number; }; ticks: { color: string; font: { size: number; }; padding: number; callback: (value: any) => string; }; title: { display: boolean; text: string; color: string; font: { ...; }; }; }' is not assignable to type '_DeepPartialObject<{ type: "linear"; } & CartesianScaleOptions & { beginAtZero: boolean; suggestedMin?: number | undefined; suggestedMax?: number | undefined; grace?: string | number | undefined; ticks: { ...; }; }>'.
+            The types of 'title.font' are incompatible between these types.
+              Type '{ size: number; weight: "500"; }' is not assignable to type '_DeepPartialObject<Partial<FontSpec>> | ((ctx: ScriptableCartesianScaleContext, options: AnyObject) => Partial<...> | undefined) | _DeepPartialObject<...> | undefined'.
+                Type '{ size: number; weight: "500"; }' is not assignable to type '_DeepPartialObject<ScriptableOptions<Partial<FontSpec>, ScriptableCartesianScaleContext>>'.
+                  Types of property 'weight' are incompatible.
+                    Type '"500"' is not assignable to type 'number | "bold" | "normal" | "lighter" | "bolder" | ((ctx: ScriptableCartesianScaleContext, options: AnyObject) => number | "bold" | ... 4 more ... | undefined) | null | undefined'.
+    164 |   return (
+    165 |     <div className="chart-container">
+  > 166 |       <Bar data={data} options={options} />
+        |                        ^^^^^^^
+    167 |     </div>
+    168 |   );
+    169 | };
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/services/burnService.ts
+  Line 2:44:  'getTotalSupply' is defined but never used       @typescript-eslint/no-unused-vars
+  Line 2:60:  'getContractDecimals' is defined but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/services/burnService.ts
+  Line 2:44:  'getTotalSupply' is defined but never used       @typescript-eslint/no-unused-vars
+  Line 2:60:  'getContractDecimals' is defined but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/services/burnService.ts
+  Line 2:44:  'getTotalSupply' is defined but never used       @typescript-eslint/no-unused-vars
+  Line 2:60:  'getContractDecimals' is defined but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/services/burnService.ts
+  Line 2:44:  'getTotalSupply' is defined but never used       @typescript-eslint/no-unused-vars
+  Line 2:60:  'getContractDecimals' is defined but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+Files successfully emitted, waiting for typecheck results...
+Issues checking in progress...
+ERROR in src/services/burnService.ts:159:9
+TS2739: Type '{ startDate: string; endDate: string; totalBurned: number; dailyBurns: DailyBurn[]; fetchedAt: string; }' is missing the following properties from type 'BurnData': totalSupply, burnPercentage
+    157 |   progressCallback?.('Finalizing data...', 95);
+    158 |
+  > 159 |   const burnData: BurnData = {
+        |         ^^^^^^^^
+    160 |     startDate: startTime.toISOString().split('T')[0],
+    161 |     endDate: endTime.toISOString().split('T')[0],
+    162 |     totalBurned,
+
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/services/burnService.ts
+  Line 2:60:  'getContractDecimals' is defined but never used   @typescript-eslint/no-unused-vars
+  Line 58:9:  'totalSupply' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/services/burnService.ts
+  Line 2:60:  'getContractDecimals' is defined but never used   @typescript-eslint/no-unused-vars
+  Line 58:9:  'totalSupply' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+ERROR in src/services/burnService.ts:164:9
+TS2739: Type '{ startDate: string; endDate: string; totalBurned: number; dailyBurns: DailyBurn[]; fetchedAt: string; }' is missing the following properties from type 'BurnData': totalSupply, burnPercentage
+    162 |   progressCallback?.('Finalizing data...', 95);
+    163 |
+  > 164 |   const burnData: BurnData = {
+        |         ^^^^^^^^
+    165 |     startDate: startTime.toISOString().split('T')[0],
+    166 |     endDate: endTime.toISOString().split('T')[0],
+    167 |     totalBurned,
+
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/services/burnService.ts
+  Line 2:60:  'getContractDecimals' is defined but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/services/burnService.ts
+  Line 2:60:  'getContractDecimals' is defined but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/services/burnService.ts
+  Line 2:60:  'getContractDecimals' is defined but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/services/burnService.ts
+  Line 2:60:  'getContractDecimals' is defined but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/services/burnService.ts
+  Line 2:60:  'getContractDecimals' is defined but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/services/burnService.ts
+  Line 2:60:  'getContractDecimals' is defined but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/services/burnService.ts
+  Line 2:60:  'getContractDecimals' is defined but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/services/burnService.ts
+  Line 2:60:  'getContractDecimals' is defined but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/StatsCards.tsx
+  Line 36:9:  'maxDailyBurn' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/services/burnService.ts
+  Line 2:60:  'getContractDecimals' is defined but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/StatsCards.tsx
+  Line 36:9:  'maxDailyBurn' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/services/burnService.ts
+  Line 2:60:  'getContractDecimals' is defined but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/StatsCards.tsx
+  Line 36:9:  'maxDailyBurn' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/services/burnService.ts
+  Line 2:60:  'getContractDecimals' is defined but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/StatsCards.tsx
+  Line 36:9:  'maxDailyBurn' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/services/burnService.ts
+  Line 2:60:  'getContractDecimals' is defined but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+Files successfully emitted, waiting for typecheck results...
+Issues checking in progress...
+No issues found.
+Failed to compile.
+
+Module not found: Error: Can't resolve './BurnChart.css' in '/home/wsl/projects/TINC/src/components'
+WARNING in [eslint] 
+src/components/StatsCards.tsx
+  Line 36:9:  'maxDailyBurn' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/services/burnService.ts
+  Line 2:60:  'getContractDecimals' is defined but never used  @typescript-eslint/no-unused-vars
+
+ERROR in ./src/components/BurnChart.tsx 7:0-25
+Module not found: Error: Can't resolve './BurnChart.css' in '/home/wsl/projects/TINC/src/components'
+
+webpack compiled with 1 error and 1 warning
+No issues found.
+Compiling...
+Failed to compile.
+
+Module not found: Error: Can't resolve './BurnChart.css' in '/home/wsl/projects/TINC/src/components'
+WARNING in [eslint] 
+src/services/burnService.ts
+  Line 2:60:  'getContractDecimals' is defined but never used  @typescript-eslint/no-unused-vars
+
+ERROR in ./src/components/BurnChart.tsx 7:0-25
+Module not found: Error: Can't resolve './BurnChart.css' in '/home/wsl/projects/TINC/src/components'
+
+webpack compiled with 1 error and 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/services/burnService.ts
+  Line 2:60:  'getContractDecimals' is defined but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/services/burnService.ts
+  Line 2:60:  'getContractDecimals' is defined but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+Files successfully emitted, waiting for typecheck results...
+Issues checking in progress...
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/StatsCards.tsx
+  Line 33:7:  'SupplyIcon' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/StatsCards.tsx
+  Line 33:7:  'SupplyIcon' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/StatsCards.tsx
+  Line 21:7:  'TrendIcon' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  Line 41:9:  'avgDailyBurn' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/StatsCards.tsx
+  Line 21:7:  'TrendIcon' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  Line 41:9:  'avgDailyBurn' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/StatsCards.tsx
+  Line 21:7:  'TrendIcon' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  Line 41:9:  'avgDailyBurn' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/StatsCards.tsx
+  Line 21:7:  'TrendIcon' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  Line 41:9:  'avgDailyBurn' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/App.tsx
+  Line 46:9:  'formatSupply' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/components/StatsCards.tsx
+  Line 21:7:  'TrendIcon' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  Line 41:9:  'avgDailyBurn' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/App.tsx
+  Line 46:9:  'formatSupply' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/components/StatsCards.tsx
+  Line 21:7:  'TrendIcon' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  Line 41:9:  'avgDailyBurn' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/App.tsx
+  Line 46:9:  'formatSupply' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/components/StatsCards.tsx
+  Line 21:7:  'TrendIcon' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  Line 41:9:  'avgDailyBurn' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/App.tsx
+  Line 46:9:  'formatSupply' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/components/StatsCards.tsx
+  Line 21:7:  'TrendIcon' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  Line 41:9:  'avgDailyBurn' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/App.tsx
+  Line 46:9:  'formatSupply' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/components/StatsCards.tsx
+  Line 21:7:  'TrendIcon' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  Line 41:9:  'avgDailyBurn' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/App.tsx
+  Line 46:9:  'formatSupply' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/components/StatsCards.tsx
+  Line 21:7:  'TrendIcon' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  Line 41:9:  'avgDailyBurn' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/StatsCards.tsx
+  Line 21:7:  'TrendIcon' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  Line 41:9:  'avgDailyBurn' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/StatsCards.tsx
+  Line 21:7:  'TrendIcon' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  Line 41:9:  'avgDailyBurn' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/StatsCards.tsx
+  Line 21:7:  'TrendIcon' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  Line 41:9:  'avgDailyBurn' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/StatsCards.tsx
+  Line 21:7:  'TrendIcon' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  Line 41:9:  'avgDailyBurn' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+ERROR in src/services/burnService.ts:32:23
+TS2304: Cannot find name 'callRPC'.
+    30 |
+    31 | async function getBlockTimestamp(blockNumber: string | number): Promise<number> {
+  > 32 |   const block = await callRPC('eth_getBlockByNumber', [
+       |                       ^^^^^^^
+    33 |     typeof blockNumber === 'number' ? `0x${blockNumber.toString(16)}` : blockNumber,
+    34 |     false
+    35 |   ]);
+
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/StatsCards.tsx
+  Line 36:9:  'avgDailyBurn' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/StatsCards.tsx
+  Line 36:9:  'avgDailyBurn' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+ERROR in src/services/burnService.ts:32:23
+TS2304: Cannot find name 'callRPC'.
+    30 |
+    31 | async function getBlockTimestamp(blockNumber: string | number): Promise<number> {
+  > 32 |   const block = await callRPC('eth_getBlockByNumber', [
+       |                       ^^^^^^^
+    33 |     typeof blockNumber === 'number' ? `0x${blockNumber.toString(16)}` : blockNumber,
+    34 |     false
+    35 |   ]);
+
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/StatsCards.tsx
+  Line 36:9:  'avgDailyBurn' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/StatsCards.tsx
+  Line 36:9:  'avgDailyBurn' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/BurnChart.tsx:176:24
+TS2322: Type '{ responsive: boolean; maintainAspectRatio: boolean; animation: { duration: number; easing: "easeOutQuart"; delay: (context: any) => number; }; interaction: { mode: "nearest"; axis: "x"; intersect: boolean; }; plugins: { ...; }; scales: { ...; }; }' is not assignable to type '_DeepPartialObject<CoreChartOptions<"bar"> & ElementChartOptions<"bar"> & PluginChartOptions<"bar"> & DatasetChartOptions<"bar"> & ScaleChartOptions<...> & BarControllerChartOptions>'.
+  Types of property 'scales' are incompatible.
+    Type '{ y: { beginAtZero: boolean; border: { display: boolean; }; grid: { color: string; lineWidth: number; }; ticks: { color: string; font: { size: number; family: string; weight: string; }; padding: number; callback: (value: any) => any; }; title: { ...; }; }; x: { ...; }; }' is not assignable to type '_DeepPartialObject<{ [key: string]: ScaleOptionsByType<keyof CartesianScaleTypeRegistry>; }>'.
+      Property 'y' is incompatible with index signature.
+        Type '{ beginAtZero: boolean; border: { display: boolean; }; grid: { color: string; lineWidth: number; }; ticks: { color: string; font: { size: number; family: string; weight: string; }; padding: number; callback: (value: any) => any; }; title: { ...; }; }' is not assignable to type '_DeepPartialObject<{ type: "linear"; } & CartesianScaleOptions & { beginAtZero: boolean; suggestedMin?: number | undefined; suggestedMax?: number | undefined; grace?: string | number | undefined; ticks: { ...; }; }> | ... 4 more ... | undefined'.
+          Type '{ beginAtZero: boolean; border: { display: boolean; }; grid: { color: string; lineWidth: number; }; ticks: { color: string; font: { size: number; family: string; weight: string; }; padding: number; callback: (value: any) => any; }; title: { ...; }; }' is not assignable to type '_DeepPartialObject<{ type: "linear"; } & CartesianScaleOptions & { beginAtZero: boolean; suggestedMin?: number | undefined; suggestedMax?: number | undefined; grace?: string | number | undefined; ticks: { ...; }; }>'.
+            The types of 'ticks.font' are incompatible between these types.
+              Type '{ size: number; family: string; weight: string; }' is not assignable to type '_DeepPartialObject<Partial<FontSpec>> | ((ctx: ScriptableScaleContext, options: AnyObject) => Partial<...> | undefined) | _DeepPartialObject<...> | undefined'.
+                Type '{ size: number; family: string; weight: string; }' is not assignable to type '_DeepPartialObject<ScriptableOptions<Partial<FontSpec>, ScriptableScaleContext>>'.
+                  Types of property 'weight' are incompatible.
+                    Type 'string' is not assignable to type 'number | "bold" | "normal" | "lighter" | "bolder" | ((ctx: ScriptableScaleContext, options: AnyObject) => number | "bold" | "normal" | "lighter" | "bolder" | null | undefined) | null | undefined'.
+    174 |   return (
+    175 |     <div className="chart-container">
+  > 176 |       <Bar data={data} options={options} />
+        |                        ^^^^^^^
+    177 |     </div>
+    178 |   );
+    179 | };
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/BurnChart.tsx:180:24
+TS2322: Type '{ responsive: boolean; maintainAspectRatio: boolean; animation: { duration: number; easing: "easeOutQuart"; delay: (context: any) => number; }; interaction: { mode: "nearest"; axis: "x"; intersect: boolean; }; plugins: { ...; }; scales: { ...; }; }' is not assignable to type '_DeepPartialObject<CoreChartOptions<"bar"> & ElementChartOptions<"bar"> & PluginChartOptions<"bar"> & DatasetChartOptions<"bar"> & ScaleChartOptions<...> & BarControllerChartOptions>'.
+  Types of property 'scales' are incompatible.
+    Type '{ y: { beginAtZero: boolean; border: { display: boolean; }; grid: { color: string; lineWidth: number; }; ticks: { color: string; font: { size: number; family: string; weight: string; }; padding: number; callback: (value: any) => any; }; title: { ...; }; }; x: { ...; }; }' is not assignable to type '_DeepPartialObject<{ [key: string]: ScaleOptionsByType<keyof CartesianScaleTypeRegistry>; }>'.
+      Property 'y' is incompatible with index signature.
+        Type '{ beginAtZero: boolean; border: { display: boolean; }; grid: { color: string; lineWidth: number; }; ticks: { color: string; font: { size: number; family: string; weight: string; }; padding: number; callback: (value: any) => any; }; title: { ...; }; }' is not assignable to type '_DeepPartialObject<{ type: "linear"; } & CartesianScaleOptions & { beginAtZero: boolean; suggestedMin?: number | undefined; suggestedMax?: number | undefined; grace?: string | number | undefined; ticks: { ...; }; }> | ... 4 more ... | undefined'.
+          Type '{ beginAtZero: boolean; border: { display: boolean; }; grid: { color: string; lineWidth: number; }; ticks: { color: string; font: { size: number; family: string; weight: string; }; padding: number; callback: (value: any) => any; }; title: { ...; }; }' is not assignable to type '_DeepPartialObject<{ type: "linear"; } & CartesianScaleOptions & { beginAtZero: boolean; suggestedMin?: number | undefined; suggestedMax?: number | undefined; grace?: string | number | undefined; ticks: { ...; }; }>'.
+            The types of 'ticks.font' are incompatible between these types.
+              Type '{ size: number; family: string; weight: string; }' is not assignable to type '_DeepPartialObject<Partial<FontSpec>> | ((ctx: ScriptableScaleContext, options: AnyObject) => Partial<...> | undefined) | _DeepPartialObject<...> | undefined'.
+                Type '{ size: number; family: string; weight: string; }' is not assignable to type '_DeepPartialObject<ScriptableOptions<Partial<FontSpec>, ScriptableScaleContext>>'.
+                  Types of property 'weight' are incompatible.
+                    Type 'string' is not assignable to type 'number | "bold" | "normal" | "lighter" | "bolder" | ((ctx: ScriptableScaleContext, options: AnyObject) => number | "bold" | "normal" | "lighter" | "bolder" | null | undefined) | null | undefined'.
+    178 |   return (
+    179 |     <div className="chart-container">
+  > 180 |       <Bar data={data} options={options} />
+        |                        ^^^^^^^
+    181 |     </div>
+    182 |   );
+    183 | };
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/BurnChart.tsx:180:24
+TS2322: Type '{ responsive: boolean; maintainAspectRatio: boolean; animation: { duration: number; easing: "easeOutQuart"; delay: (context: any) => number; }; interaction: { mode: "nearest"; axis: "x"; intersect: boolean; }; plugins: { ...; }; scales: { ...; }; }' is not assignable to type '_DeepPartialObject<CoreChartOptions<"bar"> & ElementChartOptions<"bar"> & PluginChartOptions<"bar"> & DatasetChartOptions<"bar"> & ScaleChartOptions<...> & BarControllerChartOptions>'.
+  Types of property 'scales' are incompatible.
+    Type '{ y: { beginAtZero: boolean; border: { display: boolean; }; grid: { color: string; lineWidth: number; }; ticks: { color: string; font: { size: number; family: string; weight: string; }; padding: number; callback: (value: any) => any; }; title: { ...; }; }; x: { ...; }; }' is not assignable to type '_DeepPartialObject<{ [key: string]: ScaleOptionsByType<keyof CartesianScaleTypeRegistry>; }>'.
+      Property 'y' is incompatible with index signature.
+        Type '{ beginAtZero: boolean; border: { display: boolean; }; grid: { color: string; lineWidth: number; }; ticks: { color: string; font: { size: number; family: string; weight: string; }; padding: number; callback: (value: any) => any; }; title: { ...; }; }' is not assignable to type '_DeepPartialObject<{ type: "linear"; } & CartesianScaleOptions & { beginAtZero: boolean; suggestedMin?: number | undefined; suggestedMax?: number | undefined; grace?: string | number | undefined; ticks: { ...; }; }> | ... 4 more ... | undefined'.
+          Type '{ beginAtZero: boolean; border: { display: boolean; }; grid: { color: string; lineWidth: number; }; ticks: { color: string; font: { size: number; family: string; weight: string; }; padding: number; callback: (value: any) => any; }; title: { ...; }; }' is not assignable to type '_DeepPartialObject<{ type: "linear"; } & CartesianScaleOptions & { beginAtZero: boolean; suggestedMin?: number | undefined; suggestedMax?: number | undefined; grace?: string | number | undefined; ticks: { ...; }; }>'.
+            The types of 'ticks.font' are incompatible between these types.
+              Type '{ size: number; family: string; weight: string; }' is not assignable to type '_DeepPartialObject<Partial<FontSpec>> | ((ctx: ScriptableScaleContext, options: AnyObject) => Partial<...> | undefined) | _DeepPartialObject<...> | undefined'.
+                Type '{ size: number; family: string; weight: string; }' is not assignable to type '_DeepPartialObject<ScriptableOptions<Partial<FontSpec>, ScriptableScaleContext>>'.
+                  Types of property 'weight' are incompatible.
+                    Type 'string' is not assignable to type 'number | "bold" | "normal" | "lighter" | "bolder" | ((ctx: ScriptableScaleContext, options: AnyObject) => number | "bold" | "normal" | "lighter" | "bolder" | null | undefined) | null | undefined'.
+    178 |   return (
+    179 |     <div className="chart-container">
+  > 180 |       <Bar data={data} options={options} />
+        |                        ^^^^^^^
+    181 |     </div>
+    182 |   );
+    183 | };
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/BurnChart.tsx:180:24
+TS2322: Type '{ responsive: boolean; maintainAspectRatio: boolean; animation: { duration: number; easing: "easeOutQuart"; delay: (context: any) => number; }; interaction: { mode: "nearest"; axis: "x"; intersect: boolean; }; plugins: { ...; }; scales: { ...; }; }' is not assignable to type '_DeepPartialObject<CoreChartOptions<"bar"> & ElementChartOptions<"bar"> & PluginChartOptions<"bar"> & DatasetChartOptions<"bar"> & ScaleChartOptions<...> & BarControllerChartOptions>'.
+  Types of property 'scales' are incompatible.
+    Type '{ y: { beginAtZero: boolean; border: { display: boolean; }; grid: { color: string; lineWidth: number; }; ticks: { color: string; font: { size: number; family: string; weight: string; }; padding: number; callback: (value: any) => any; }; title: { ...; }; }; x: { ...; }; }' is not assignable to type '_DeepPartialObject<{ [key: string]: ScaleOptionsByType<keyof CartesianScaleTypeRegistry>; }>'.
+      Property 'y' is incompatible with index signature.
+        Type '{ beginAtZero: boolean; border: { display: boolean; }; grid: { color: string; lineWidth: number; }; ticks: { color: string; font: { size: number; family: string; weight: string; }; padding: number; callback: (value: any) => any; }; title: { ...; }; }' is not assignable to type '_DeepPartialObject<{ type: "linear"; } & CartesianScaleOptions & { beginAtZero: boolean; suggestedMin?: number | undefined; suggestedMax?: number | undefined; grace?: string | number | undefined; ticks: { ...; }; }> | ... 4 more ... | undefined'.
+          Type '{ beginAtZero: boolean; border: { display: boolean; }; grid: { color: string; lineWidth: number; }; ticks: { color: string; font: { size: number; family: string; weight: string; }; padding: number; callback: (value: any) => any; }; title: { ...; }; }' is not assignable to type '_DeepPartialObject<{ type: "linear"; } & CartesianScaleOptions & { beginAtZero: boolean; suggestedMin?: number | undefined; suggestedMax?: number | undefined; grace?: string | number | undefined; ticks: { ...; }; }>'.
+            The types of 'ticks.font' are incompatible between these types.
+              Type '{ size: number; family: string; weight: string; }' is not assignable to type '_DeepPartialObject<Partial<FontSpec>> | ((ctx: ScriptableScaleContext, options: AnyObject) => Partial<...> | undefined) | _DeepPartialObject<...> | undefined'.
+                Type '{ size: number; family: string; weight: string; }' is not assignable to type '_DeepPartialObject<ScriptableOptions<Partial<FontSpec>, ScriptableScaleContext>>'.
+                  Types of property 'weight' are incompatible.
+                    Type 'string' is not assignable to type 'number | "bold" | "normal" | "lighter" | "bolder" | ((ctx: ScriptableScaleContext, options: AnyObject) => number | "bold" | "normal" | "lighter" | "bolder" | null | undefined) | null | undefined'.
+    178 |   return (
+    179 |     <div className="chart-container">
+  > 180 |       <Bar data={data} options={options} />
+        |                        ^^^^^^^
+    181 |     </div>
+    182 |   );
+    183 | };
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/BurnChart.tsx:179:24
+TS2322: Type '{ responsive: boolean; maintainAspectRatio: boolean; animation: { duration: number; easing: "easeOutQuart"; delay: (context: any) => number; }; interaction: { mode: "nearest"; axis: "x"; intersect: boolean; }; plugins: { ...; }; scales: { ...; }; }' is not assignable to type '_DeepPartialObject<CoreChartOptions<"bar"> & ElementChartOptions<"bar"> & PluginChartOptions<"bar"> & DatasetChartOptions<"bar"> & ScaleChartOptions<...> & BarControllerChartOptions>'.
+  Types of property 'scales' are incompatible.
+    Type '{ y: { beginAtZero: boolean; border: { display: boolean; }; grid: { color: string; lineWidth: number; }; ticks: { color: string; font: { size: number; family: string; }; padding: number; callback: (value: any) => any; }; title: { ...; }; }; x: { ...; }; }' is not assignable to type '_DeepPartialObject<{ [key: string]: ScaleOptionsByType<keyof CartesianScaleTypeRegistry>; }>'.
+      Property 'x' is incompatible with index signature.
+        Type '{ border: { display: boolean; }; grid: { display: boolean; }; ticks: { color: string; font: { size: number; family: string; weight: string; }; maxRotation: number; padding: number; }; title: { display: boolean; }; }' is not assignable to type '_DeepPartialObject<{ type: "linear"; } & CartesianScaleOptions & { beginAtZero: boolean; suggestedMin?: number | undefined; suggestedMax?: number | undefined; grace?: string | number | undefined; ticks: { ...; }; }> | ... 4 more ... | undefined'.
+          Type '{ border: { display: boolean; }; grid: { display: boolean; }; ticks: { color: string; font: { size: number; family: string; weight: string; }; maxRotation: number; padding: number; }; title: { display: boolean; }; }' is not assignable to type '_DeepPartialObject<{ type: "timeseries"; } & Omit<CartesianScaleOptions, "min" | "max"> & { min: string | number; max: string | number; suggestedMin: string | number; ... 5 more ...; ticks: TimeScaleTickOptions; }>'.
+            The types of 'ticks.font' are incompatible between these types.
+              Type '{ size: number; family: string; weight: string; }' is not assignable to type '_DeepPartialObject<Partial<FontSpec>> | ((ctx: ScriptableScaleContext, options: AnyObject) => Partial<...> | undefined) | _DeepPartialObject<...> | undefined'.
+                Type '{ size: number; family: string; weight: string; }' is not assignable to type '_DeepPartialObject<ScriptableOptions<Partial<FontSpec>, ScriptableScaleContext>>'.
+                  Types of property 'weight' are incompatible.
+                    Type 'string' is not assignable to type 'number | "bold" | "normal" | "lighter" | "bolder" | ((ctx: ScriptableScaleContext, options: AnyObject) => number | "bold" | "normal" | "lighter" | "bolder" | null | undefined) | null | undefined'.
+    177 |   return (
+    178 |     <div className="chart-container">
+  > 179 |       <Bar data={data} options={options} />
+        |                        ^^^^^^^
+    180 |     </div>
+    181 |   );
+    182 | };
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Files successfully emitted, waiting for typecheck results...
+Issues checking in progress...
+ERROR in src/services/burnService.ts:166:9
+TS2739: Type '{ startDate: string; endDate: string; totalBurned: number; totalSupply: number; burnPercentage: number; dailyBurns: DailyBurn[]; fetchedAt: string; }' is missing the following properties from type 'BurnData': emissionPerSecond, emissionSamplePeriod, isDeflationary
+    164 |   const burnPercentage = totalSupply > 0 ? (totalBurned / totalSupply) * 100 : 0;
+    165 |
+  > 166 |   const burnData: BurnData = {
+        |         ^^^^^^^^
+    167 |     startDate: startTime.toISOString().split('T')[0],
+    168 |     endDate: endTime.toISOString().split('T')[0],
+    169 |     totalBurned,
+
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/services/burnService.ts
+  Line 2:60:  'getEmissionRate' is defined but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/services/burnService.ts
+  Line 2:60:  'getEmissionRate' is defined but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+ERROR in src/services/burnService.ts:166:9
+TS2739: Type '{ startDate: string; endDate: string; totalBurned: number; totalSupply: number; burnPercentage: number; dailyBurns: DailyBurn[]; fetchedAt: string; }' is missing the following properties from type 'BurnData': emissionPerSecond, emissionSamplePeriod, isDeflationary
+    164 |   const burnPercentage = totalSupply > 0 ? (totalBurned / totalSupply) * 100 : 0;
+    165 |
+  > 166 |   const burnData: BurnData = {
+        |         ^^^^^^^^
+    167 |     startDate: startTime.toISOString().split('T')[0],
+    168 |     endDate: endTime.toISOString().split('T')[0],
+    169 |     totalBurned,
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/BurnChart.tsx
+  Line 37:9:  'deflationary_threshold' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/BurnChart.tsx
+  Line 37:9:  'deflationary_threshold' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+ERROR in src/components/BurnChart.tsx:210:12
+TS2322: Type '{ labels: string[]; datasets: ({ label: string; data: number[]; backgroundColor: (context: any) => string; borderColor: (context: any) => "rgba(34, 197, 94, 1)" | "rgba(239, 68, 68, 1)"; borderWidth: number; ... 11 more ...; order?: undefined; } | { ...; })[]; }' is not assignable to type 'ChartData<"bar", any[], string>'.
+  Types of property 'datasets' are incompatible.
+    Type '({ label: string; data: number[]; backgroundColor: (context: any) => string; borderColor: (context: any) => "rgba(34, 197, 94, 1)" | "rgba(239, 68, 68, 1)"; borderWidth: number; borderRadius: { ...; }; ... 10 more ...; order?: undefined; } | { ...; })[]' is not assignable to type 'ChartDataset<"bar", any[]>[]'.
+      Type '{ label: string; data: number[]; backgroundColor: (context: any) => string; borderColor: (context: any) => "rgba(34, 197, 94, 1)" | "rgba(239, 68, 68, 1)"; borderWidth: number; borderRadius: { ...; }; ... 10 more ...; order?: undefined; } | { ...; }' is not assignable to type 'ChartDataset<"bar", any[]>'.
+        Type '{ label: string; data: any[]; borderColor: string; backgroundColor: string; borderWidth: number; borderDash: number[]; pointRadius: number; pointHoverRadius: number; type: "line"; tension: number; ... 6 more ...; hoverBorderWidth?: undefined; }' is not assignable to type 'ChartDataset<"bar", any[]>'.
+          Type '{ label: string; data: any[]; borderColor: string; backgroundColor: string; borderWidth: number; borderDash: number[]; pointRadius: number; pointHoverRadius: number; type: "line"; tension: number; ... 6 more ...; hoverBorderWidth?: undefined; }' is not assignable to type '_DeepPartialObject<{ type: "bar"; } & BarControllerDatasetOptions>'.
+            Types of property 'type' are incompatible.
+              Type '"line"' is not assignable to type '"bar"'.
+    208 |   return (
+    209 |     <div className="chart-container">
+  > 210 |       <Bar data={data} options={options} />
+        |            ^^^^
+    211 |     </div>
+    212 |   );
+    213 | };
+
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/BurnChart.tsx
+  Line 37:9:  'deflationary_threshold' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/BurnChart.tsx
+  Line 37:9:  'deflationary_threshold' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+ERROR in src/components/BurnChart.tsx:226:12
+TS2322: Type '{ labels: string[]; datasets: ({ label: string; data: number[]; backgroundColor: (context: any) => string; borderColor: (context: any) => "rgba(34, 197, 94, 1)" | "rgba(239, 68, 68, 1)"; borderWidth: number; ... 11 more ...; order?: undefined; } | { ...; })[]; }' is not assignable to type 'ChartData<"bar", any[], string>'.
+  Types of property 'datasets' are incompatible.
+    Type '({ label: string; data: number[]; backgroundColor: (context: any) => string; borderColor: (context: any) => "rgba(34, 197, 94, 1)" | "rgba(239, 68, 68, 1)"; borderWidth: number; borderRadius: { ...; }; ... 10 more ...; order?: undefined; } | { ...; })[]' is not assignable to type 'ChartDataset<"bar", any[]>[]'.
+      Type '{ label: string; data: number[]; backgroundColor: (context: any) => string; borderColor: (context: any) => "rgba(34, 197, 94, 1)" | "rgba(239, 68, 68, 1)"; borderWidth: number; borderRadius: { ...; }; ... 10 more ...; order?: undefined; } | { ...; }' is not assignable to type 'ChartDataset<"bar", any[]>'.
+        Type '{ label: string; data: any[]; borderColor: string; backgroundColor: string; borderWidth: number; borderDash: number[]; pointRadius: number; pointHoverRadius: number; type: "line"; tension: number; ... 6 more ...; hoverBorderWidth?: undefined; }' is not assignable to type 'ChartDataset<"bar", any[]>'.
+          Type '{ label: string; data: any[]; borderColor: string; backgroundColor: string; borderWidth: number; borderDash: number[]; pointRadius: number; pointHoverRadius: number; type: "line"; tension: number; ... 6 more ...; hoverBorderWidth?: undefined; }' is not assignable to type '_DeepPartialObject<{ type: "bar"; } & BarControllerDatasetOptions>'.
+            Types of property 'type' are incompatible.
+              Type '"line"' is not assignable to type '"bar"'.
+    224 |   return (
+    225 |     <div className="chart-container">
+  > 226 |       <Bar data={data} options={options} />
+        |            ^^^^
+    227 |     </div>
+    228 |   );
+    229 | };
+
+ERROR in src/components/BurnChart.tsx:226:24
+TS2322: Type '{ responsive: boolean; maintainAspectRatio: boolean; animation: { duration: number; easing: "easeOutQuart"; delay: (context: any) => number; }; interaction: { mode: "nearest"; axis: "x"; intersect: boolean; }; plugins: { ...; }; scales: { ...; }; }' is not assignable to type '_DeepPartialObject<CoreChartOptions<"bar"> & ElementChartOptions<"bar"> & PluginChartOptions<"bar"> & DatasetChartOptions<"bar"> & ScaleChartOptions<...> & BarControllerChartOptions>'.
+  The types of 'plugins.legend.labels.font' are incompatible between these types.
+    Type '{ size: number; family: string; weight: string; }' is not assignable to type '((ctx: ScriptableChartContext, options: AnyObject) => Partial<FontSpec> | undefined) | _DeepPartialObject<Partial<FontSpec>> | _DeepPartialObject<...> | undefined'.
+      Type '{ size: number; family: string; weight: string; }' is not assignable to type '_DeepPartialObject<ScriptableOptions<Partial<FontSpec>, ScriptableChartContext>>'.
+        Types of property 'weight' are incompatible.
+          Type 'string' is not assignable to type 'number | "bold" | "normal" | "lighter" | "bolder" | ((ctx: ScriptableChartContext, options: AnyObject) => number | "bold" | "normal" | "lighter" | "bolder" | null | undefined) | null | undefined'.
+    224 |   return (
+    225 |     <div className="chart-container">
+  > 226 |       <Bar data={data} options={options} />
+        |                        ^^^^^^^
+    227 |     </div>
+    228 |   );
+    229 | };
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/BurnChart.tsx:210:24
+TS2322: Type '{ responsive: boolean; maintainAspectRatio: boolean; animation: { duration: number; easing: "easeOutQuart"; delay: (context: any) => number; }; interaction: { mode: "nearest"; axis: "x"; intersect: boolean; }; plugins: { ...; }; scales: { ...; }; }' is not assignable to type '_DeepPartialObject<CoreChartOptions<"bar"> & ElementChartOptions<"bar"> & PluginChartOptions<"bar"> & DatasetChartOptions<"bar"> & ScaleChartOptions<...> & BarControllerChartOptions>'.
+  The types of 'plugins.legend.labels.font' are incompatible between these types.
+    Type '{ size: number; family: string; weight: string; }' is not assignable to type '((ctx: ScriptableChartContext, options: AnyObject) => Partial<FontSpec> | undefined) | _DeepPartialObject<Partial<FontSpec>> | _DeepPartialObject<...> | undefined'.
+      Type '{ size: number; family: string; weight: string; }' is not assignable to type '_DeepPartialObject<ScriptableOptions<Partial<FontSpec>, ScriptableChartContext>>'.
+        Types of property 'weight' are incompatible.
+          Type 'string' is not assignable to type 'number | "bold" | "normal" | "lighter" | "bolder" | ((ctx: ScriptableChartContext, options: AnyObject) => number | "bold" | "normal" | "lighter" | "bolder" | null | undefined) | null | undefined'.
+    208 |   return (
+    209 |     <div className="chart-container">
+  > 210 |       <Bar data={data} options={options} />
+        |                        ^^^^^^^
+    211 |     </div>
+    212 |   );
+    213 | };
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/StatsCards.tsx
+  Line 34:7:  'EmissionIcon' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/StatsCards.tsx
+  Line 34:7:  'EmissionIcon' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Files successfully emitted, waiting for typecheck results...
+Issues checking in progress...
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/App.tsx
+  Line 6:8:  'AdminPanel' is defined but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/App.tsx
+  Line 6:8:  'AdminPanel' is defined but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/BurnChart.tsx:233:24
+TS2322: Type '{ responsive: boolean; maintainAspectRatio: boolean; animation: { duration: number; easing: "easeOutQuart"; delay: (context: any) => number; }; interaction: { mode: "nearest"; axis: "x"; intersect: boolean; }; plugins: { ...; }; scales: { ...; }; }' is not assignable to type '_DeepPartialObject<CoreChartOptions<"bar"> & ElementChartOptions<"bar"> & PluginChartOptions<"bar"> & DatasetChartOptions<"bar"> & ScaleChartOptions<...> & BarControllerChartOptions>'.
+  The types of 'plugins.annotation.annotations' are incompatible between these types.
+    Type '{ deflationaryLine: { type: string; yMin: number; yMax: number; borderColor: string; borderWidth: number; borderDash: number[]; label: { display: boolean; content: string; position: string; backgroundColor: string; color: string; font: { ...; }; padding: number; borderRadius: number; }; }; }' is not assignable to type '_DeepPartialArray<AnnotationOptions<keyof AnnotationTypeRegistry>> | _DeepPartialObject<Record<string, AnnotationOptions<keyof AnnotationTypeRegistry>>> | undefined'.
+      Type '{ deflationaryLine: { type: string; yMin: number; yMax: number; borderColor: string; borderWidth: number; borderDash: number[]; label: { display: boolean; content: string; position: string; backgroundColor: string; color: string; font: { ...; }; padding: number; borderRadius: number; }; }; }' is not assignable to type '_DeepPartialObject<Record<string, AnnotationOptions<keyof AnnotationTypeRegistry>>>'.
+        Property 'deflationaryLine' is incompatible with index signature.
+          Type '{ type: string; yMin: number; yMax: number; borderColor: string; borderWidth: number; borderDash: number[]; label: { display: boolean; content: string; position: string; backgroundColor: string; color: string; font: { ...; }; padding: number; borderRadius: number; }; }' is not assignable to type '_DeepPartialObject<{ type: "line"; } & LineAnnotationOptions> | _DeepPartialObject<{ type: "label"; } & LabelAnnotationOptions> | ... 4 more ... | undefined'.
+            Type '{ type: string; yMin: number; yMax: number; borderColor: string; borderWidth: number; borderDash: number[]; label: { display: boolean; content: string; position: string; backgroundColor: string; color: string; font: { ...; }; padding: number; borderRadius: number; }; }' is not assignable to type '_DeepPartialObject<{ type: "ellipse"; } & EllipseAnnotationOptions>'.
+              Types of property 'type' are incompatible.
+                Type 'string' is not assignable to type '"ellipse"'.
+    231 |   return (
+    232 |     <div className="chart-container">
+  > 233 |       <Bar data={data} options={options} />
+        |                        ^^^^^^^
+    234 |     </div>
+    235 |   );
+    236 | };
+
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/BurnChart.tsx
+  Line 40:9:  'currentEmissionPerDay' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/BurnChart.tsx
+  Line 40:9:  'currentEmissionPerDay' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+ERROR in src/components/BurnChart.tsx:233:24
+TS2322: Type '{ responsive: boolean; maintainAspectRatio: boolean; animation: { duration: number; easing: "easeOutQuart"; delay: (context: any) => number; }; interaction: { mode: "nearest"; axis: "x"; intersect: boolean; }; plugins: { ...; }; scales: { ...; }; }' is not assignable to type '_DeepPartialObject<CoreChartOptions<"bar"> & ElementChartOptions<"bar"> & PluginChartOptions<"bar"> & DatasetChartOptions<"bar"> & ScaleChartOptions<...> & BarControllerChartOptions>'.
+  The types of 'plugins.annotation.annotations' are incompatible between these types.
+    Type '{ deflationaryLine: { type: string; yMin: number; yMax: number; borderColor: string; borderWidth: number; borderDash: number[]; label: { display: boolean; content: string; position: string; backgroundColor: string; color: string; font: { ...; }; padding: number; borderRadius: number; }; }; }' is not assignable to type '_DeepPartialArray<AnnotationOptions<keyof AnnotationTypeRegistry>> | _DeepPartialObject<Record<string, AnnotationOptions<keyof AnnotationTypeRegistry>>> | undefined'.
+      Type '{ deflationaryLine: { type: string; yMin: number; yMax: number; borderColor: string; borderWidth: number; borderDash: number[]; label: { display: boolean; content: string; position: string; backgroundColor: string; color: string; font: { ...; }; padding: number; borderRadius: number; }; }; }' is not assignable to type '_DeepPartialObject<Record<string, AnnotationOptions<keyof AnnotationTypeRegistry>>>'.
+        Property 'deflationaryLine' is incompatible with index signature.
+          Type '{ type: string; yMin: number; yMax: number; borderColor: string; borderWidth: number; borderDash: number[]; label: { display: boolean; content: string; position: string; backgroundColor: string; color: string; font: { ...; }; padding: number; borderRadius: number; }; }' is not assignable to type '_DeepPartialObject<{ type: "line"; } & LineAnnotationOptions> | _DeepPartialObject<{ type: "label"; } & LabelAnnotationOptions> | ... 4 more ... | undefined'.
+            Type '{ type: string; yMin: number; yMax: number; borderColor: string; borderWidth: number; borderDash: number[]; label: { display: boolean; content: string; position: string; backgroundColor: string; color: string; font: { ...; }; padding: number; borderRadius: number; }; }' is not assignable to type '_DeepPartialObject<{ type: "ellipse"; } & EllipseAnnotationOptions>'.
+              Types of property 'type' are incompatible.
+                Type 'string' is not assignable to type '"ellipse"'.
+    231 |   return (
+    232 |     <div className="chart-container">
+  > 233 |       <Bar data={data} options={options} />
+        |                        ^^^^^^^
+    234 |     </div>
+    235 |   );
+    236 | };
+
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/BurnChart.tsx
+  Line 40:9:  'currentEmissionPerDay' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/BurnChart.tsx
+  Line 40:9:  'currentEmissionPerDay' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+ERROR in src/components/BurnChart.tsx:233:24
+TS2322: Type '{ responsive: boolean; maintainAspectRatio: boolean; animation: { duration: number; easing: "easeOutQuart"; delay: (context: any) => number; }; interaction: { mode: "nearest"; axis: "x"; intersect: boolean; }; plugins: { ...; }; scales: { ...; }; }' is not assignable to type '_DeepPartialObject<CoreChartOptions<"bar"> & ElementChartOptions<"bar"> & PluginChartOptions<"bar"> & DatasetChartOptions<"bar"> & ScaleChartOptions<...> & BarControllerChartOptions>'.
+  The types of 'plugins.annotation.annotations' are incompatible between these types.
+    Type '{ deflationaryLine: { type: "line"; yMin: number; yMax: number; borderColor: string; borderWidth: number; borderDash: number[]; label: { display: boolean; content: string; position: "end"; backgroundColor: string; color: string; font: { ...; }; padding: number; borderRadius: number; }; }; }' is not assignable to type '_DeepPartialArray<AnnotationOptions<keyof AnnotationTypeRegistry>> | _DeepPartialObject<Record<string, AnnotationOptions<keyof AnnotationTypeRegistry>>> | undefined'.
+      Type '{ deflationaryLine: { type: "line"; yMin: number; yMax: number; borderColor: string; borderWidth: number; borderDash: number[]; label: { display: boolean; content: string; position: "end"; backgroundColor: string; color: string; font: { ...; }; padding: number; borderRadius: number; }; }; }' is not assignable to type '_DeepPartialObject<Record<string, AnnotationOptions<keyof AnnotationTypeRegistry>>>'.
+        Property 'deflationaryLine' is incompatible with index signature.
+          Type '{ type: "line"; yMin: number; yMax: number; borderColor: string; borderWidth: number; borderDash: number[]; label: { display: boolean; content: string; position: "end"; backgroundColor: string; color: string; font: { ...; }; padding: number; borderRadius: number; }; }' is not assignable to type '_DeepPartialObject<{ type: "line"; } & LineAnnotationOptions> | _DeepPartialObject<{ type: "label"; } & LabelAnnotationOptions> | ... 4 more ... | undefined'.
+            Type '{ type: "line"; yMin: number; yMax: number; borderColor: string; borderWidth: number; borderDash: number[]; label: { display: boolean; content: string; position: "end"; backgroundColor: string; color: string; font: { ...; }; padding: number; borderRadius: number; }; }' is not assignable to type '_DeepPartialObject<{ type: "ellipse"; } & EllipseAnnotationOptions>'.
+              Types of property 'type' are incompatible.
+                Type '"line"' is not assignable to type '"ellipse"'.
+    231 |   return (
+    232 |     <div className="chart-container">
+  > 233 |       <Bar data={data} options={options} />
+        |                        ^^^^^^^
+    234 |     </div>
+    235 |   );
+    236 | };
+
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/BurnChart.tsx
+  Line 40:9:  'currentEmissionPerDay' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/BurnChart.tsx
+  Line 40:9:  'currentEmissionPerDay' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/BurnChart.tsx
+  Line 118:19:  'isDeflationary' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/BurnChart.tsx
+  Line 118:19:  'isDeflationary' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/BurnChart.tsx
+  Line 118:19:  'isDeflationary' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/BurnChart.tsx
+  Line 118:19:  'isDeflationary' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/App.tsx
+  Line 91:17:  The href attribute requires a valid value to be accessible. Provide a valid, navigable address as the href value. If you cannot provide a valid href, but still need the element to resemble a link, use a button and change it with appropriate styles. Learn more: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/HEAD/docs/rules/anchor-is-valid.md  jsx-a11y/anchor-is-valid
+
+src/components/BurnChart.tsx
+  Line 118:19:  'isDeflationary' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/App.tsx
+  Line 91:17:  The href attribute requires a valid value to be accessible. Provide a valid, navigable address as the href value. If you cannot provide a valid href, but still need the element to resemble a link, use a button and change it with appropriate styles. Learn more: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/HEAD/docs/rules/anchor-is-valid.md  jsx-a11y/anchor-is-valid
+
+src/components/BurnChart.tsx
+  Line 118:19:  'isDeflationary' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/App.tsx
+  Line 91:17:  The href attribute requires a valid value to be accessible. Provide a valid, navigable address as the href value. If you cannot provide a valid href, but still need the element to resemble a link, use a button and change it with appropriate styles. Learn more: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/HEAD/docs/rules/anchor-is-valid.md  jsx-a11y/anchor-is-valid
+
+src/components/BurnChart.tsx
+  Line 118:19:  'isDeflationary' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/App.tsx
+  Line 91:17:  The href attribute requires a valid value to be accessible. Provide a valid, navigable address as the href value. If you cannot provide a valid href, but still need the element to resemble a link, use a button and change it with appropriate styles. Learn more: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/HEAD/docs/rules/anchor-is-valid.md  jsx-a11y/anchor-is-valid
+
+src/components/BurnChart.tsx
+  Line 118:19:  'isDeflationary' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/App.tsx
+  Line 91:17:  The href attribute requires a valid value to be accessible. Provide a valid, navigable address as the href value. If you cannot provide a valid href, but still need the element to resemble a link, use a button and change it with appropriate styles. Learn more: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/HEAD/docs/rules/anchor-is-valid.md  jsx-a11y/anchor-is-valid
+
+src/components/BurnChart.tsx
+  Line 118:19:  'isDeflationary' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/components/StatsCards.tsx
+  Line 9:7:   'FireIcon' is assigned a value but never used      @typescript-eslint/no-unused-vars
+  Line 15:7:  'ActivityIcon' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  Line 22:7:  'PercentIcon' is assigned a value but never used   @typescript-eslint/no-unused-vars
+  Line 28:7:  'SupplyIcon' is assigned a value but never used    @typescript-eslint/no-unused-vars
+  Line 34:7:  'EmissionIcon' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/App.tsx
+  Line 91:17:  The href attribute requires a valid value to be accessible. Provide a valid, navigable address as the href value. If you cannot provide a valid href, but still need the element to resemble a link, use a button and change it with appropriate styles. Learn more: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/HEAD/docs/rules/anchor-is-valid.md  jsx-a11y/anchor-is-valid
+
+src/components/BurnChart.tsx
+  Line 118:19:  'isDeflationary' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/components/StatsCards.tsx
+  Line 9:7:   'FireIcon' is assigned a value but never used      @typescript-eslint/no-unused-vars
+  Line 15:7:  'ActivityIcon' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  Line 22:7:  'PercentIcon' is assigned a value but never used   @typescript-eslint/no-unused-vars
+  Line 28:7:  'SupplyIcon' is assigned a value but never used    @typescript-eslint/no-unused-vars
+  Line 34:7:  'EmissionIcon' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/BurnChart.tsx
+  Line 118:19:  'isDeflationary' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/components/StatsCards.tsx
+  Line 9:7:   'FireIcon' is assigned a value but never used      @typescript-eslint/no-unused-vars
+  Line 15:7:  'ActivityIcon' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  Line 22:7:  'PercentIcon' is assigned a value but never used   @typescript-eslint/no-unused-vars
+  Line 28:7:  'SupplyIcon' is assigned a value but never used    @typescript-eslint/no-unused-vars
+  Line 34:7:  'EmissionIcon' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/BurnChart.tsx
+  Line 118:19:  'isDeflationary' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/components/StatsCards.tsx
+  Line 9:7:   'FireIcon' is assigned a value but never used      @typescript-eslint/no-unused-vars
+  Line 15:7:  'ActivityIcon' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  Line 22:7:  'PercentIcon' is assigned a value but never used   @typescript-eslint/no-unused-vars
+  Line 28:7:  'SupplyIcon' is assigned a value but never used    @typescript-eslint/no-unused-vars
+  Line 34:7:  'EmissionIcon' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/BurnChart.tsx
+  Line 118:19:  'isDeflationary' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/components/StatsCards.tsx
+  Line 9:7:   'FireIcon' is assigned a value but never used      @typescript-eslint/no-unused-vars
+  Line 15:7:  'ActivityIcon' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  Line 22:7:  'PercentIcon' is assigned a value but never used   @typescript-eslint/no-unused-vars
+  Line 28:7:  'SupplyIcon' is assigned a value but never used    @typescript-eslint/no-unused-vars
+  Line 34:7:  'EmissionIcon' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/BurnChart.tsx
+  Line 118:19:  'isDeflationary' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/components/StatsCards.tsx
+  Line 9:7:   'FireIcon' is assigned a value but never used      @typescript-eslint/no-unused-vars
+  Line 15:7:  'ActivityIcon' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  Line 22:7:  'PercentIcon' is assigned a value but never used   @typescript-eslint/no-unused-vars
+  Line 28:7:  'SupplyIcon' is assigned a value but never used    @typescript-eslint/no-unused-vars
+  Line 34:7:  'EmissionIcon' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/StatsCards.tsx
+  Line 9:7:   'FireIcon' is assigned a value but never used      @typescript-eslint/no-unused-vars
+  Line 15:7:  'ActivityIcon' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  Line 22:7:  'PercentIcon' is assigned a value but never used   @typescript-eslint/no-unused-vars
+  Line 28:7:  'SupplyIcon' is assigned a value but never used    @typescript-eslint/no-unused-vars
+  Line 34:7:  'EmissionIcon' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/StatsCards.tsx
+  Line 9:7:   'FireIcon' is assigned a value but never used      @typescript-eslint/no-unused-vars
+  Line 15:7:  'ActivityIcon' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  Line 22:7:  'PercentIcon' is assigned a value but never used   @typescript-eslint/no-unused-vars
+  Line 28:7:  'SupplyIcon' is assigned a value but never used    @typescript-eslint/no-unused-vars
+  Line 34:7:  'EmissionIcon' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/App.tsx
+  Line 45:9:  'handleQuickRefresh' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  Line 46:9:  'handleFullRefresh' is assigned a value but never used   @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/App.tsx
+  Line 45:9:  'handleQuickRefresh' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  Line 46:9:  'handleFullRefresh' is assigned a value but never used   @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/App.tsx:71:21
+TS18047: 'e.currentTarget.nextElementSibling' is possibly 'null'.
+    69 |                   onError={(e) => {
+    70 |                     e.currentTarget.style.display = 'none';
+  > 71 |                     e.currentTarget.nextElementSibling.style.display = 'inline';
+       |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    72 |                   }}
+    73 |                 />
+    74 |                 <span style={{ 
+
+ERROR in src/App.tsx:71:56
+TS2339: Property 'style' does not exist on type 'Element'.
+    69 |                   onError={(e) => {
+    70 |                     e.currentTarget.style.display = 'none';
+  > 71 |                     e.currentTarget.nextElementSibling.style.display = 'inline';
+       |                                                        ^^^^^
+    72 |                   }}
+    73 |                 />
+    74 |                 <span style={{ 
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/App.tsx:71:21
+TS18047: 'e.currentTarget.nextElementSibling' is possibly 'null'.
+    69 |                   onError={(e) => {
+    70 |                     e.currentTarget.style.display = 'none';
+  > 71 |                     e.currentTarget.nextElementSibling.style.display = 'inline';
+       |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    72 |                   }}
+    73 |                 />
+    74 |                 <span style={{ 
+
+ERROR in src/App.tsx:71:56
+TS2339: Property 'style' does not exist on type 'Element'.
+    69 |                   onError={(e) => {
+    70 |                     e.currentTarget.style.display = 'none';
+  > 71 |                     e.currentTarget.nextElementSibling.style.display = 'inline';
+       |                                                        ^^^^^
+    72 |                   }}
+    73 |                 />
+    74 |                 <span style={{ 
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/App.tsx:71:21
+TS18047: 'e.currentTarget.nextElementSibling' is possibly 'null'.
+    69 |                   onError={(e) => {
+    70 |                     e.currentTarget.style.display = 'none';
+  > 71 |                     e.currentTarget.nextElementSibling.style.display = 'inline';
+       |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    72 |                   }}
+    73 |                 />
+    74 |                 <span style={{ 
+
+ERROR in src/App.tsx:71:56
+TS2339: Property 'style' does not exist on type 'Element'.
+    69 |                   onError={(e) => {
+    70 |                     e.currentTarget.style.display = 'none';
+  > 71 |                     e.currentTarget.nextElementSibling.style.display = 'inline';
+       |                                                        ^^^^^
+    72 |                   }}
+    73 |                 />
+    74 |                 <span style={{ 
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/App.tsx:71:21
+TS18047: 'e.currentTarget.nextElementSibling' is possibly 'null'.
+    69 |                   onError={(e) => {
+    70 |                     e.currentTarget.style.display = 'none';
+  > 71 |                     e.currentTarget.nextElementSibling.style.display = 'inline';
+       |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    72 |                   }}
+    73 |                 />
+    74 |                 <span style={{ 
+
+ERROR in src/App.tsx:71:56
+TS2339: Property 'style' does not exist on type 'Element'.
+    69 |                   onError={(e) => {
+    70 |                     e.currentTarget.style.display = 'none';
+  > 71 |                     e.currentTarget.nextElementSibling.style.display = 'inline';
+       |                                                        ^^^^^
+    72 |                   }}
+    73 |                 />
+    74 |                 <span style={{ 
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/App.tsx:71:21
+TS18047: 'e.currentTarget.nextElementSibling' is possibly 'null'.
+    69 |                   onError={(e) => {
+    70 |                     e.currentTarget.style.display = 'none';
+  > 71 |                     e.currentTarget.nextElementSibling.style.display = 'inline';
+       |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    72 |                   }}
+    73 |                 />
+    74 |                 <span style={{ 
+
+ERROR in src/App.tsx:71:56
+TS2339: Property 'style' does not exist on type 'Element'.
+    69 |                   onError={(e) => {
+    70 |                     e.currentTarget.style.display = 'none';
+  > 71 |                     e.currentTarget.nextElementSibling.style.display = 'inline';
+       |                                                        ^^^^^
+    72 |                   }}
+    73 |                 />
+    74 |                 <span style={{ 
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/App.tsx:71:21
+TS18047: 'e.currentTarget.nextElementSibling' is possibly 'null'.
+    69 |                   onError={(e) => {
+    70 |                     e.currentTarget.style.display = 'none';
+  > 71 |                     e.currentTarget.nextElementSibling.style.display = 'inline';
+       |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    72 |                   }}
+    73 |                 />
+    74 |                 <span style={{ 
+
+ERROR in src/App.tsx:71:56
+TS2339: Property 'style' does not exist on type 'Element'.
+    69 |                   onError={(e) => {
+    70 |                     e.currentTarget.style.display = 'none';
+  > 71 |                     e.currentTarget.nextElementSibling.style.display = 'inline';
+       |                                                        ^^^^^
+    72 |                   }}
+    73 |                 />
+    74 |                 <span style={{ 
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/BurnChart.tsx:91:29
+TS2304: Cannot find name 'getOrCreateTooltip'.
+    89 |         enabled: false,
+    90 |         external: function(context: any) {
+  > 91 |           const tooltipEl = getOrCreateTooltip(context.chart);
+       |                             ^^^^^^^^^^^^^^^^^^
+    92 |           const tooltipModel = context.tooltip;
+    93 |           
+    94 |           if (tooltipModel.opacity === 0) {
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/BurnChart.tsx
+  Line 33:7:  'getOrCreateTooltip' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/BurnChart.tsx
+  Line 33:7:  'getOrCreateTooltip' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/BurnChart.tsx:92:29
+TS2304: Cannot find name 'getOrCreateTooltip'.
+    90 |         enabled: false,
+    91 |         external: function(context: any) {
+  > 92 |           const tooltipEl = getOrCreateTooltip(context.chart);
+       |                             ^^^^^^^^^^^^^^^^^^
+    93 |           const tooltipModel = context.tooltip;
+    94 |           
+    95 |           if (tooltipModel.opacity === 0) {
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/BurnChart.tsx
+  Line 33:7:  'getOrCreateTooltip' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/BurnChart.tsx
+  Line 33:7:  'getOrCreateTooltip' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.

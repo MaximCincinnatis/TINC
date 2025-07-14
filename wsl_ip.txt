@@ -1,0 +1,15 @@
+WSL IP Address: 172.31.125.140
+Port: 6000
+
+Try accessing from Windows:
+1. http://172.31.125.140:6000
+2. http://localhost:6000
+
+If not working, run this in Windows PowerShell as Administrator:
+netsh interface portproxy add v4tov4 listenport=6000 listenaddress=0.0.0.0 connectport=6000 connectaddress=172.31.125.140
+
+To check existing port forwards:
+netsh interface portproxy show all
+
+To remove if needed:
+netsh interface portproxy delete v4tov4 listenport=6000 listenaddress=0.0.0.0
