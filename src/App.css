@@ -398,7 +398,9 @@ button:disabled {
 
 .stat-suffix {
   font-size: 1.25rem;
-  opacity: 0.8;
+  opacity: 0.9;
+  margin-left: 0.25rem;
+  font-weight: 600;
 }
 
 .stat-description {

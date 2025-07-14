@@ -54,7 +54,9 @@ const StatsCards: React.FC<Props> = ({ burnData }) => {
           <span className="stat-label">Total Transactions</span>
           <div className="stat-icon" />
         </div>
-        <div className="stat-value">{totalTransactions}</div>
+        <div className="stat-value">
+          {formatNumber(totalTransactions)}<span className="stat-suffix">{formatSuffix(totalTransactions)}</span>
+        </div>
         <div className="stat-description">Burn transactions over 30 days</div>
       </div>
       
