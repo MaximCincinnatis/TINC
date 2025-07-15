@@ -1,6 +1,8 @@
 import React from 'react';
 import { BurnData } from '../types/BurnData';
 
+// Realistic silhouette redesign - Updated 2025-07-15
+
 interface Props {
   burnData: BurnData;
 }
