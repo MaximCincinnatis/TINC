@@ -48,8 +48,8 @@ const StatsCards: React.FC<Props> = ({ burnData }) => {
           <span className="stat-label">Total Burned</span>
           <div className="stat-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" opacity="0.3">
-              <path d="M12 2C11.5 2 11 2.19 10.59 2.59L2.59 10.59C1.8 11.37 1.8 12.63 2.59 13.41L10.59 21.41C11.37 22.2 12.63 22.2 13.41 21.41L21.41 13.41C22.2 12.63 22.2 11.37 21.41 10.59L13.41 2.59C13 2.19 12.5 2 12 2ZM12 4L20 12L12 20L4 12L12 4Z" opacity="0.5"/>
-              <path d="M8 12L16 12M12 8L12 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+              <path d="M12 23C16.1 23 19 20.1 19 16C19 14.4 18.5 12.8 17.7 11.5C17.5 11.2 17.3 10.9 17.1 10.7C16.8 10.3 16.5 10 16.2 9.7C15.8 9.3 15.3 9 14.8 8.8C14.7 8.7 14.5 8.6 14.4 8.5C14.2 8.4 14 8.2 13.8 8.1C13.6 7.9 13.3 7.8 13.1 7.6C12.8 7.3 12.6 7 12.4 6.6C12.2 6.2 12 5.7 12 5.2C12 5.2 12 2 12 2C12 2 11.5 4.5 10.5 6.5C9.5 8.5 8 10 7 11.5C6 13 5 14.5 5 16C5 20.1 7.9 23 12 23Z" fill="currentColor"/>
+              <path d="M12 20C13.7 20 15 18.7 15 17C15 16 14.5 15.2 14 14.5C13.5 13.8 13 13 13 12C13 12 12.5 13 12 13.5C11.5 14 11 14.5 11 15.5C11 15.5 10.5 16 10.5 16.5C10.5 17.9 11.1 19 12 20Z" fill="currentColor" opacity="0.7"/>
             </svg>
           </div>
         </div>
@@ -82,8 +82,9 @@ const StatsCards: React.FC<Props> = ({ burnData }) => {
           <span className="stat-label">30-Day Burns</span>
           <div className="stat-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" opacity="0.3">
-              <path d="M7 2V5M17 2V5M3 8H21M5 4H19C20.1 4 21 4.9 21 6V19C21 20.1 20.1 21 19 21H5C3.9 21 3 20.1 3 19V6C3 4.9 3.9 4 5 4Z" stroke="currentColor" strokeWidth="1.5" fill="none" opacity="0.5"/>
-              <circle cx="12" cy="14" r="3" fill="currentColor"/>
+              <path d="M12 21C15.5 21 18 18.5 18 15.5C18 14.5 17.7 13.5 17.2 12.7C17 12.4 16.8 12.1 16.5 11.8C16.1 11.3 15.6 11 15 10.7C14.9 10.6 14.7 10.5 14.6 10.4C14.4 10.2 14.1 10 13.9 9.9C13.6 9.6 13.4 9.3 13.1 9C12.8 8.6 12.5 8.1 12.5 7.5C12.5 7.5 12.5 5 12.5 5C12.5 5 12 7 11.2 8.5C10.4 10 9.2 11.2 8.5 12.5C7.8 13.8 7 15 7 16C7 18.8 9.2 21 12 21Z" fill="currentColor"/>
+              <rect x="4" y="2" width="16" height="3" rx="1" fill="currentColor" opacity="0.4"/>
+              <rect x="6" y="4" width="12" height="1" fill="currentColor" opacity="0.3"/>
             </svg>
           </div>
         </div>
