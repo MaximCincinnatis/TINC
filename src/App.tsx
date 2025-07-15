@@ -75,6 +75,35 @@ function App() {
             </div>
             
             <div className="nav-section">
+              <a 
+                href="https://titanfarms.win/burn" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="nav-link"
+                style={{
+                  color: 'rgba(255, 255, 255, 0.8)',
+                  textDecoration: 'none',
+                  fontSize: '0.875rem',
+                  fontWeight: '500',
+                  marginRight: '1rem',
+                  padding: '0.5rem 0.75rem',
+                  borderRadius: '6px',
+                  transition: 'all 0.2s ease',
+                  border: '1px solid rgba(255, 255, 255, 0.1)'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = '#22c55e';
+                  e.currentTarget.style.borderColor = 'rgba(34, 197, 94, 0.3)';
+                  e.currentTarget.style.backgroundColor = 'rgba(34, 197, 94, 0.05)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = 'rgba(255, 255, 255, 0.8)';
+                  e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+                  e.currentTarget.style.backgroundColor = 'transparent';
+                }}
+              >
+                Titan Farms
+              </a>
               <AdminPanel onDataUpdate={() => loadData(false)} />
             </div>
           </div>
