@@ -15,11 +15,15 @@ const SeaCreatures: React.FC<Props> = ({ burnData }) => {
       amount: totalSupply * 0.1,
       color: '#FFD700',
       icon: (
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2v18M12 2l-1.5 3h3l-1.5-3z"/>
-          <path d="M8 4l2 2M16 4l-2 2"/>
-          <path d="M6 6l2 2M18 6l-2 2"/>
-          <path d="M10 20h4M9 22h6"/>
+        <svg width="40" height="40" viewBox="0 0 100 100" fill="currentColor">
+          <path d="M50 5v90M50 5l-8 15h16l-8-15z"/>
+          <path d="M25 15l8 8M75 15l-8 8"/>
+          <path d="M15 25l8 8M85 25l-8 8"/>
+          <path d="M20 35l8 8M80 35l-8 8"/>
+          <path d="M40 85h20M35 90h30"/>
+          <circle cx="50" cy="30" r="3"/>
+          <path d="M46 45c-8 0-15 3-20 8M54 45c8 0 15 3 20 8"/>
+          <path d="M30 60c5-5 12-8 20-8M70 60c-5-5-12-8-20-8"/>
         </svg>
       ),
       description: 'Ocean Ruler'
