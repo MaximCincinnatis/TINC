@@ -1034,11 +1034,11 @@
   "holderStats": {
     "totalHolders": 981,
     "poseidon": 1,
-    "whale": 8,
-    "shark": 45,
-    "dolphin": 287,
-    "squid": 1840,
-    "shrimp": 3513,
+    "whale": 4,
+    "shark": 48,
+    "dolphin": 295,
+    "squid": 1850,
+    "shrimp": 3520,
     "estimatedData": true,
     "excludesLPPositions": true
   }

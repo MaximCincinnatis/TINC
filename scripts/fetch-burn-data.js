@@ -20,7 +20,7 @@ const CHUNK_SIZE = 800; // blocks per chunk (reduced for RPC limits)
 const AVG_BLOCK_TIME = 12; // seconds
 
 // Etherscan API configuration
-const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || 'YourApiKeyToken';
+const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || 'YOUR_ETHERSCAN_API_KEY_HERE';
 const ETHERSCAN_BASE_URL = 'https://api.etherscan.io/api';
 
 // LP and contract addresses to exclude from holder counts
@@ -259,11 +259,11 @@ async function fetchHolderData() {
       return {
         totalHolders: 981,
         poseidon: 1,
-        whale: 8,
-        shark: 45,
-        dolphin: 287,
-        squid: 1840,
-        shrimp: 3513,
+        whale: 4,
+        shark: 48,
+        dolphin: 295,
+        squid: 1850,
+        shrimp: 3520,
         estimatedData: true,
         excludesLPPositions: true
       };
@@ -312,11 +312,11 @@ async function fetchHolderData() {
     return {
       totalHolders: 981,
       poseidon: 1,
-      whale: 8,
-      shark: 45,
-      dolphin: 287,
-      squid: 1840,
-      shrimp: 3513,
+      whale: 4,
+      shark: 48,
+      dolphin: 295,
+      squid: 1850,
+      shrimp: 3520,
       estimatedData: true,
       excludesLPPositions: true
     };
