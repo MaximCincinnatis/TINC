@@ -30,6 +30,10 @@ const AVG_BLOCK_TIME = 12; // seconds
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || 'YOUR_ETHERSCAN_API_KEY_HERE';
 const ETHERSCAN_BASE_URL = 'https://api.etherscan.io/api';
 
+// Moralis API configuration
+const MORALIS_API_KEY = 'YOUR_MORALIS_API_KEY_HERE';
+const MORALIS_BASE_URL = 'https://deep-index.moralis.io/api/v2.2';
+
 // LP and contract addresses to exclude from holder counts
 const EXCLUDED_ADDRESSES = new Set([
   '0x72e0de1cc2c952326738dac05bacb9e9c25422e3', // TINC/TitanX LP
@@ -259,103 +263,66 @@ async function getTotalSupply() {
   return parseInt(totalSupplyHex, 16) / Math.pow(10, 18);
 }
 
-// Fetch ALL transfer events to calculate real holder balances
+// Fetch ALL holders using Moralis API - much more comprehensive!
 async function fetchRealHolderData() {
   try {
-    console.log('📊 Fetching REAL holder data from transfer events...');
+    console.log('📊 Fetching REAL holder data from Moralis API...');
     
     const totalSupply = await getTotalSupply();
     console.log(`📊 Total Supply: ${totalSupply.toLocaleString()} TINC`);
     
-    // Get more transfer events - fetch multiple pages to get more holders
-    const allAddresses = new Set();
+    // Use Moralis token holders endpoint - gets ALL holders
+    const allHolders = [];
+    let cursor = null;
+    let page = 1;
     
-    // Fetch last 5000 transfer events across multiple pages 
-    for (let page = 1; page <= 5; page++) {
-      const url = `${ETHERSCAN_BASE_URL}?module=logs&action=getLogs&fromBlock=0&toBlock=latest&address=${TINC_ADDRESS}&topic0=0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef&page=${page}&offset=1000&apikey=${ETHERSCAN_API_KEY}`;
+    do {
+      const url = `${MORALIS_BASE_URL}/erc20/${TINC_ADDRESS}/owners?chain=eth&limit=100${cursor ? `&cursor=${cursor}` : ''}`;
       
-      console.log(`📊 Fetching transfer events page ${page}...`);
-      const response = await fetch(url);
+      console.log(`📊 Fetching holders page ${page} from Moralis...`);
+      
+      const response = await fetch(url, {
+        headers: {
+          'X-API-Key': MORALIS_API_KEY,
+          'Content-Type': 'application/json'
+        }
+      });
+      
+      if (!response.ok) {
+        throw new Error(`Moralis API error: ${response.status} ${response.statusText}`);
+      }
+      
       const data = await response.json();
       
-      if (data.status !== '1') {
-        console.warn(`⚠️ Page ${page} error: ${data.message}`);
-        break;
+      if (data.result && data.result.length > 0) {
+        allHolders.push(...data.result);
+        console.log(`📊 Page ${page}: Found ${data.result.length} holders, total: ${allHolders.length}`);
       }
       
-      data.result.forEach(log => {
-        const from = '0x' + log.topics[1].substring(26);
-        const to = '0x' + log.topics[2].substring(26);
-        
-        if (from !== '0x0000000000000000000000000000000000000000') {
-          allAddresses.add(from.toLowerCase());
-        }
-        if (to !== '0x0000000000000000000000000000000000000000') {
-          allAddresses.add(to.toLowerCase());
-        }
-      });
+      cursor = data.cursor;
+      page++;
       
-      console.log(`📊 Page ${page}: Found ${data.result.length} events, total unique addresses: ${allAddresses.size}`);
+      // Rate limiting
+      await new Promise(resolve => setTimeout(resolve, 200));
       
-      // Rate limiting between pages
-      if (page < 5) {
-        await new Promise(resolve => setTimeout(resolve, 1000));
-      }
-    }
+    } while (cursor && page <= 50); // Safety limit of 50 pages (5000 holders max)
     
-    console.log(`📊 Total unique addresses found: ${allAddresses.size}`);
-    
-    // Get current balances for all addresses
-    const holderBalances = [];
-    let processedCount = 0;
-    const batchSize = 50; // Process in batches to avoid rate limits
-    
-    const addressArray = Array.from(allAddresses);
-    for (let i = 0; i < addressArray.length; i += batchSize) {
-      const batch = addressArray.slice(i, i + batchSize);
-      
-      const balancePromises = batch.map(async (address) => {
-        try {
-          const balanceUrl = `${ETHERSCAN_BASE_URL}?module=account&action=tokenbalance&contractaddress=${TINC_ADDRESS}&address=${address}&tag=latest&apikey=${ETHERSCAN_API_KEY}`;
-          const balanceResponse = await fetch(balanceUrl);
-          const balanceData = await balanceResponse.json();
-          
-          if (balanceData.status === '1' && balanceData.result !== '0') {
-            const balance = parseInt(balanceData.result) / Math.pow(10, 18);
-            return { address, balance };
-          }
-          return null;
-        } catch (error) {
-          console.warn(`⚠️ Error fetching balance for ${address}:`, error.message);
-          return null;
-        }
-      });
-      
-      const batchResults = await Promise.all(balancePromises);
-      const validBalances = batchResults.filter(result => result !== null);
-      holderBalances.push(...validBalances);
-      
-      processedCount += batch.length;
-      console.log(`📊 Processed ${processedCount}/${addressArray.length} addresses, found ${holderBalances.length} with balances`);
-      
-      // Rate limiting delay
-      if (i + batchSize < addressArray.length) {
-        await new Promise(resolve => setTimeout(resolve, 1000));
-      }
-    }
+    console.log(`📊 Total holders found: ${allHolders.length}`);
     
     // Filter out LP positions and contract addresses
-    const filteredHolders = holderBalances.filter(holder => 
-      !EXCLUDED_ADDRESSES.has(holder.address.toLowerCase())
+    const filteredHolders = allHolders.filter(holder => 
+      !EXCLUDED_ADDRESSES.has(holder.owner_address.toLowerCase()) && 
+      parseFloat(holder.balance_formatted) > 0
     );
     
-    console.log(`📊 Filtered out ${holderBalances.length - filteredHolders.length} LP/contract addresses`);
+    console.log(`📊 Filtered out ${allHolders.length - filteredHolders.length} LP/contract/zero balance addresses`);
     
     // Categorize holders based on percentage of total supply
     let poseidon = 0, whale = 0, shark = 0, dolphin = 0, squid = 0, shrimp = 0;
     
     filteredHolders.forEach(holder => {
-      const percentage = (holder.balance / totalSupply) * 100;
+      const balance = parseFloat(holder.balance_formatted);
+      const percentage = (balance / totalSupply) * 100;
       
       if (percentage >= 10) poseidon++;
       else if (percentage >= 1) whale++;
@@ -365,7 +332,7 @@ async function fetchRealHolderData() {
       else shrimp++;
     });
     
-    console.log(`📊 REAL HOLDER COUNTS:`);
+    console.log(`📊 REAL HOLDER COUNTS (Moralis API):`);
     console.log(`🔱 Poseidon (10%+): ${poseidon}`);
     console.log(`🐋 Whale (1%+): ${whale}`);
     console.log(`🦈 Shark (0.1%+): ${shark}`);
@@ -383,11 +350,12 @@ async function fetchRealHolderData() {
       shrimp,
       estimatedData: false,
       excludesLPPositions: true,
-      realTimeData: true
+      realTimeData: true,
+      dataSource: 'moralis'
     };
     
   } catch (error) {
-    console.error('❌ Error fetching real holder data:', error.message);
+    console.error('❌ Error fetching real holder data from Moralis:', error.message);
     throw error; // Don't fall back to estimates - user wants ONLY real data
   }
 }
