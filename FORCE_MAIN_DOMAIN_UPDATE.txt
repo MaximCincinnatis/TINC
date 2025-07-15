@@ -1,0 +1,24 @@
+FORCE MAIN DOMAIN UPDATE - FRESH DATA
+=====================================
+
+Timestamp: 2025-07-15T20:40:00Z
+Purpose: Force main Vercel domain to update with fresh blockchain data
+
+LATEST CHANGES THAT SHOULD BE LIVE:
+- Total Supply: 14,199,797.252 TINC (up from 14,164,527)
+- Total Burned: 726,897.258 TINC (up from 723,482)  
+- Total Addresses: 981 (corrected from 982)
+- Poseidon Holders: 1 (corrected from 2)
+- Whale Holders: 8
+- LP positions excluded from counts
+
+CRITICAL UPDATE:
+The main domain https://tinc-burn-tracker.vercel.app/ must show:
+- 1 Poseidon holder (not 2)
+- 981 total addresses (not 982)
+- Fresh burn data through July 15, 2025
+
+If this doesn't update the main domain, there may be a caching issue or the domain needs manual refresh in Vercel dashboard.
+
+Latest Git Commit: 394a270
+Latest Vercel Deployment: Completed successfully
