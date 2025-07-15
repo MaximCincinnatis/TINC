@@ -1,6 +1,13 @@
 const fs = require('fs');
 const path = require('path');
 
+// ⏰ IMPORTANT: This script takes 8-10 minutes to complete
+// It fetches REAL blockchain data (no estimates):
+// - 30 days of burn transactions from 270+ block chunks
+// - Live holder balances from transfer events + balance calls
+// - Please wait the full time for accurate results
+// ⏰
+
 // RPC endpoints with backup options (tested and working)
 const RPC_ENDPOINTS = [
   "https://ethereum.publicnode.com",
@@ -243,46 +250,112 @@ async function fetchBurnData() {
   };
 }
 
-// Fetch holder data from Etherscan
-async function fetchHolderData() {
+// Get total supply for percentage calculations
+async function getTotalSupply() {
+  const totalSupplyHex = await callRPC('eth_call', [
+    { to: TINC_ADDRESS, data: '0x18160ddd' },
+    'latest'
+  ]);
+  return parseInt(totalSupplyHex, 16) / Math.pow(10, 18);
+}
+
+// Fetch ALL transfer events to calculate real holder balances
+async function fetchRealHolderData() {
   try {
-    console.log('📊 Fetching holder data from Etherscan...');
+    console.log('📊 Fetching REAL holder data from transfer events...');
     
-    const url = `${ETHERSCAN_BASE_URL}?module=token&action=tokenholderlist&contractaddress=${TINC_ADDRESS}&page=1&offset=10000&apikey=${ETHERSCAN_API_KEY}`;
+    const totalSupply = await getTotalSupply();
+    console.log(`📊 Total Supply: ${totalSupply.toLocaleString()} TINC`);
     
-    const response = await fetch(url);
-    const data = await response.json();
+    // Get more transfer events - fetch multiple pages to get more holders
+    const allAddresses = new Set();
     
-    if (data.status !== '1') {
-      console.warn('⚠️ Etherscan API error:', data.message);
-      // Return estimated data if API fails (corrected for LP exclusions)
-      return {
-        totalHolders: 981,
-        poseidon: 1,
-        whale: 4,
-        shark: 48,
-        dolphin: 295,
-        squid: 1850,
-        shrimp: 3520,
-        estimatedData: true,
-        excludesLPPositions: true
-      };
+    // Fetch last 5000 transfer events across multiple pages 
+    for (let page = 1; page <= 5; page++) {
+      const url = `${ETHERSCAN_BASE_URL}?module=logs&action=getLogs&fromBlock=0&toBlock=latest&address=${TINC_ADDRESS}&topic0=0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef&page=${page}&offset=1000&apikey=${ETHERSCAN_API_KEY}`;
+      
+      console.log(`📊 Fetching transfer events page ${page}...`);
+      const response = await fetch(url);
+      const data = await response.json();
+      
+      if (data.status !== '1') {
+        console.warn(`⚠️ Page ${page} error: ${data.message}`);
+        break;
+      }
+      
+      data.result.forEach(log => {
+        const from = '0x' + log.topics[1].substring(26);
+        const to = '0x' + log.topics[2].substring(26);
+        
+        if (from !== '0x0000000000000000000000000000000000000000') {
+          allAddresses.add(from.toLowerCase());
+        }
+        if (to !== '0x0000000000000000000000000000000000000000') {
+          allAddresses.add(to.toLowerCase());
+        }
+      });
+      
+      console.log(`📊 Page ${page}: Found ${data.result.length} events, total unique addresses: ${allAddresses.size}`);
+      
+      // Rate limiting between pages
+      if (page < 5) {
+        await new Promise(resolve => setTimeout(resolve, 1000));
+      }
     }
     
-    const holders = data.result;
-    const totalSupply = await getTotalSupply();
+    console.log(`📊 Total unique addresses found: ${allAddresses.size}`);
+    
+    // Get current balances for all addresses
+    const holderBalances = [];
+    let processedCount = 0;
+    const batchSize = 50; // Process in batches to avoid rate limits
+    
+    const addressArray = Array.from(allAddresses);
+    for (let i = 0; i < addressArray.length; i += batchSize) {
+      const batch = addressArray.slice(i, i + batchSize);
+      
+      const balancePromises = batch.map(async (address) => {
+        try {
+          const balanceUrl = `${ETHERSCAN_BASE_URL}?module=account&action=tokenbalance&contractaddress=${TINC_ADDRESS}&address=${address}&tag=latest&apikey=${ETHERSCAN_API_KEY}`;
+          const balanceResponse = await fetch(balanceUrl);
+          const balanceData = await balanceResponse.json();
+          
+          if (balanceData.status === '1' && balanceData.result !== '0') {
+            const balance = parseInt(balanceData.result) / Math.pow(10, 18);
+            return { address, balance };
+          }
+          return null;
+        } catch (error) {
+          console.warn(`⚠️ Error fetching balance for ${address}:`, error.message);
+          return null;
+        }
+      });
+      
+      const batchResults = await Promise.all(balancePromises);
+      const validBalances = batchResults.filter(result => result !== null);
+      holderBalances.push(...validBalances);
+      
+      processedCount += batch.length;
+      console.log(`📊 Processed ${processedCount}/${addressArray.length} addresses, found ${holderBalances.length} with balances`);
+      
+      // Rate limiting delay
+      if (i + batchSize < addressArray.length) {
+        await new Promise(resolve => setTimeout(resolve, 1000));
+      }
+    }
     
     // Filter out LP positions and contract addresses
-    const filteredHolders = holders.filter(holder => 
-      !EXCLUDED_ADDRESSES.has(holder.TokenHolderAddress.toLowerCase())
+    const filteredHolders = holderBalances.filter(holder => 
+      !EXCLUDED_ADDRESSES.has(holder.address.toLowerCase())
     );
+    
+    console.log(`📊 Filtered out ${holderBalances.length - filteredHolders.length} LP/contract addresses`);
     
     // Categorize holders based on percentage of total supply
     let poseidon = 0, whale = 0, shark = 0, dolphin = 0, squid = 0, shrimp = 0;
     
     filteredHolders.forEach(holder => {
-      const balance = parseFloat(holder.TokenHolderQuantity);
-      const percentage = (balance / totalSupply) * 100;
+      const percentage = (holder.balance / totalSupply) * 100;
       
       if (percentage >= 10) poseidon++;
       else if (percentage >= 1) whale++;
@@ -292,7 +365,13 @@ async function fetchHolderData() {
       else shrimp++;
     });
     
-    console.log(`📊 Filtered out ${holders.length - filteredHolders.length} LP/contract addresses`);
+    console.log(`📊 REAL HOLDER COUNTS:`);
+    console.log(`🔱 Poseidon (10%+): ${poseidon}`);
+    console.log(`🐋 Whale (1%+): ${whale}`);
+    console.log(`🦈 Shark (0.1%+): ${shark}`);
+    console.log(`🐬 Dolphin (0.01%+): ${dolphin}`);
+    console.log(`🦑 Squid (0.001%+): ${squid}`);
+    console.log(`🍤 Shrimp (<0.001%): ${shrimp}`);
     
     return {
       totalHolders: filteredHolders.length,
@@ -303,24 +382,19 @@ async function fetchHolderData() {
       squid,
       shrimp,
       estimatedData: false,
-      excludesLPPositions: true
+      excludesLPPositions: true,
+      realTimeData: true
     };
     
   } catch (error) {
-    console.warn('⚠️ Error fetching holder data:', error.message);
-    // Return estimated data if fetch fails (corrected for LP exclusions)
-    return {
-      totalHolders: 981,
-      poseidon: 1,
-      whale: 4,
-      shark: 48,
-      dolphin: 295,
-      squid: 1850,
-      shrimp: 3520,
-      estimatedData: true,
-      excludesLPPositions: true
-    };
+    console.error('❌ Error fetching real holder data:', error.message);
+    throw error; // Don't fall back to estimates - user wants ONLY real data
   }
+}
+
+// Legacy function for compatibility - now calls real data fetcher
+async function fetchHolderData() {
+  return await fetchRealHolderData();
 }
 
 async function main() {

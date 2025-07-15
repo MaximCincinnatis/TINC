@@ -1,9 +1,9 @@
 {
   "startDate": "2025-06-15",
   "endDate": "2025-07-15",
-  "totalBurned": 726897.2577995388,
-  "totalSupply": 14199797.25163107,
-  "burnPercentage": 5.119067863564342,
+  "totalBurned": 703538.3674939527,
+  "totalSupply": 14201050.140477631,
+  "burnPercentage": 4.954129170269166,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
@@ -589,8 +589,8 @@
     },
     {
       "date": "2025-07-03",
-      "amountTinc": 30974.558465779664,
-      "transactionCount": 8,
+      "amountTinc": 6200.455043878608,
+      "transactionCount": 6,
       "transactions": [
         {
           "hash": "0x35b9dd1a99891b6e96a1c0a7dd75910b67fc4e0a09f400386d8363c388ad4072",
@@ -613,16 +613,6 @@
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         },
         {
-          "hash": "0xc3fcedb074277a1e32e462480c05a66f1de2f0f7847abb1f1e2f8d4f5f79b883",
-          "amount": 13628.451845527012,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0xd77db3aa45ab8a90924159ec5f27d42c19b2eccf668e1479edd438a5d2d56a99",
-          "amount": 11145.651576374044,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
           "hash": "0x880cfaedc774177657a3439c8b87bb1caaed58ca2ae51dd42da4f4af13f22cfa",
           "amount": 217.98125419371763,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
@@ -636,12 +626,12 @@
     },
     {
       "date": "2025-07-04",
-      "amountTinc": 3448.119006481948,
+      "amountTinc": 4863.332122796983,
       "transactionCount": 4,
       "transactions": [
         {
-          "hash": "0x2d46fdce2395d2637c437744e3e54836c4353992501e217c7feb98d20c71e8ad",
-          "amount": 1258.9928247284267,
+          "hash": "0xb1df94e1f68b9356bbfb713bf4970694e9a8f2c22f849853632e8ad556722043",
+          "amount": 2674.2059410434613,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         },
         {
@@ -1029,17 +1019,18 @@
       ]
     }
   ],
-  "fetchedAt": "2025-07-15T20:37:24.028Z",
+  "fetchedAt": "2025-07-15T21:31:17.926Z",
   "fromCache": true,
   "holderStats": {
-    "totalHolders": 981,
-    "poseidon": 1,
-    "whale": 4,
-    "shark": 48,
-    "dolphin": 295,
-    "squid": 1850,
-    "shrimp": 3520,
-    "estimatedData": true,
-    "excludesLPPositions": true
+    "totalHolders": 1,
+    "poseidon": 0,
+    "whale": 0,
+    "shark": 0,
+    "dolphin": 0,
+    "squid": 0,
+    "shrimp": 1,
+    "estimatedData": false,
+    "excludesLPPositions": true,
+    "realTimeData": true
   }
 }
