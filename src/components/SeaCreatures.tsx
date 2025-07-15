@@ -44,7 +44,7 @@ const SeaCreatures: React.FC<Props> = ({ burnData }) => {
           dolphin: 287,     // Holders with 0.01-0.1% of supply
           squid: 1842,      // Holders with 0.001-0.01% of supply
           shrimp: 3516,     // Holders with less than 0.001% of supply
-          totalHolders: 5700
+          totalHolders: 984
         });
         setLoading(false);
       } catch (error) {
@@ -233,7 +233,7 @@ const SeaCreatures: React.FC<Props> = ({ burnData }) => {
               color: 'rgba(255, 255, 255, 0.7)',
               marginBottom: '0.25rem'
             }}>
-              Total TINC Holders
+              Total Addresses
             </div>
             <div style={{ 
               fontSize: '1.5rem', 
