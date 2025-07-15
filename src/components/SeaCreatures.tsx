@@ -164,98 +164,118 @@ const SeaCreatures: React.FC<Props> = ({ burnData }) => {
   };
 
   return (
-    <div className="sea-creatures-section">
-      <div className="sea-creatures-header">
-        <h2>TINC Holder Classifications</h2>
-        <p>Based on percentage of circulating supply</p>
+    <div className="holder-distribution-container">
+      {/* Premium Header */}
+      <div className="holder-distribution-header">
+        <div className="header-content">
+          <div className="title-section">
+            <h2 className="main-title">Token Holder Distribution</h2>
+            <p className="subtitle">Whale classification based on circulating supply percentage</p>
+          </div>
+          <div className="header-stats">
+            <div className="stat-item">
+              <span className="stat-label">Total Addresses</span>
+              <span className="stat-value">{holderStats.totalHolders.toLocaleString()}</span>
+            </div>
+            <div className="stat-item">
+              <span className="stat-label">Supply</span>
+              <span className="stat-value">{formatNumber(totalSupply)} TINC</span>
+            </div>
+          </div>
+        </div>
         {!loading && (
           <a 
             href="https://etherscan.io/token/tokenholderchart/0x6532B3F1e4DBff542fbD6befE5Ed7041c10B385a"
             target="_blank"
             rel="noopener noreferrer"
-            style={{
-              color: 'rgba(255, 255, 255, 0.6)',
-              fontSize: '0.875rem',
-              textDecoration: 'none',
-              marginTop: '0.5rem',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.25rem',
-              transition: 'color 0.2s'
-            }}
-            onMouseEnter={(e) => e.currentTarget.style.color = 'rgba(255, 255, 255, 0.9)'}
-            onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(255, 255, 255, 0.6)'}
+            className="etherscan-link"
           >
-            View on Etherscan →
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M7 17L17 7M17 7H7M17 7V17"/>
+            </svg>
+            View on Etherscan
           </a>
         )}
       </div>
       
       {loading ? (
-        <div style={{ 
-          display: 'flex', 
-          justifyContent: 'center', 
-          padding: '3rem',
-          color: 'rgba(255, 255, 255, 0.5)'
-        }}>
-          Loading holder statistics...
+        <div className="loading-container">
+          <div className="loading-spinner"></div>
+          <span>Loading holder distribution...</span>
         </div>
       ) : (
-        <div className="sea-creatures-list">
+        <div className="distribution-grid">
           {classifications.map((creature, index) => (
-            <div key={index} className="creature-row" style={{ borderLeftColor: creature.color }}>
-              <div className="creature-info">
-                <div className="creature-name" style={{ color: creature.color }}>
+            <div key={index} className="holder-tier-card" data-tier={creature.name.toLowerCase()}>
+              <div className="card-header">
+                <div className="tier-badge" style={{ backgroundColor: creature.color + '20', color: creature.color }}>
+                  <div className="tier-indicator" style={{ backgroundColor: creature.color }}></div>
                   {creature.name}
                 </div>
-                <div className="creature-description">
-                  {creature.description}
+                <div className="tier-percentage" style={{ color: creature.color }}>
+                  {creature.percentage}%+
                 </div>
               </div>
               
-              <div className="creature-percentage">
-                {creature.percentage}% of supply
+              <div className="card-content">
+                <div className="tier-description">
+                  {creature.description}
+                </div>
+                
+                <div className="metrics-row">
+                  <div className="metric">
+                    <span className="metric-label">Holders</span>
+                    <span className="metric-value">{creature.holders.toLocaleString()}</span>
+                  </div>
+                  <div className="metric">
+                    <span className="metric-label">Min Balance</span>
+                    <span className="metric-value">{formatNumber(creature.amount)}</span>
+                  </div>
+                </div>
+                
+                <div className="holder-bar">
+                  <div 
+                    className="holder-fill" 
+                    style={{ 
+                      width: `${Math.min((creature.holders / Math.max(...classifications.map(c => c.holders))) * 100, 100)}%`,
+                      backgroundColor: creature.color 
+                    }}
+                  ></div>
+                </div>
               </div>
               
-              <div className="creature-holders" style={{
-                fontSize: '0.875rem',
-                color: 'rgba(255, 255, 255, 0.8)',
-                fontWeight: '500'
-              }}>
-                {creature.holders.toLocaleString()} holder{creature.holders !== 1 ? 's' : ''}
-              </div>
-              
-              <div className="creature-amount">
-                {formatNumber(creature.amount)} TINC
+              <div className="card-footer">
+                <span className="supply-info">
+                  {((creature.holders / holderStats.totalHolders) * 100).toFixed(1)}% of all holders
+                </span>
               </div>
             </div>
           ))}
-          
-          <div style={{
-            marginTop: '1.5rem',
-            padding: '1rem',
-            backgroundColor: 'rgba(255, 255, 255, 0.03)',
-            borderRadius: '8px',
-            border: '1px solid rgba(255, 255, 255, 0.1)',
-            textAlign: 'center'
-          }}>
-            <div style={{ 
-              fontSize: '0.875rem', 
-              color: 'rgba(255, 255, 255, 0.7)',
-              marginBottom: '0.25rem'
-            }}>
-              Total Addresses
-            </div>
-            <div style={{ 
-              fontSize: '1.5rem', 
-              fontWeight: '600',
-              color: '#00D4FF'
-            }}>
-              {holderStats.totalHolders.toLocaleString()}
-            </div>
-          </div>
         </div>
       )}
+      
+      {/* Distribution Summary */}
+      <div className="distribution-summary">
+        <div className="summary-header">
+          <h3>Distribution Overview</h3>
+          <div className="last-updated">
+            Last updated: {new Date().toLocaleDateString()}
+          </div>
+        </div>
+        <div className="concentration-metrics">
+          <div className="concentration-item">
+            <span className="concentration-label">Top 10 Holders</span>
+            <span className="concentration-value">{holderStats.poseidon + holderStats.whale}</span>
+            <span className="concentration-percentage">
+              {(((holderStats.poseidon + holderStats.whale) / holderStats.totalHolders) * 100).toFixed(2)}%
+            </span>
+          </div>
+          <div className="concentration-item">
+            <span className="concentration-label">Concentration Risk</span>
+            <span className="concentration-badge low">Low</span>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
