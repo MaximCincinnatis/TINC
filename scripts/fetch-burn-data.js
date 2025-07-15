@@ -255,16 +255,17 @@ async function fetchHolderData() {
     
     if (data.status !== '1') {
       console.warn('⚠️ Etherscan API error:', data.message);
-      // Return estimated data if API fails
+      // Return estimated data if API fails (corrected for LP exclusions)
       return {
-        totalHolders: 984,
-        poseidon: 2,
+        totalHolders: 981,
+        poseidon: 1,
         whale: 8,
         shark: 45,
         dolphin: 287,
-        squid: 1842,
-        shrimp: 3516,
-        estimatedData: true
+        squid: 1840,
+        shrimp: 3513,
+        estimatedData: true,
+        excludesLPPositions: true
       };
     }
     
@@ -301,21 +302,23 @@ async function fetchHolderData() {
       dolphin,
       squid,
       shrimp,
-      estimatedData: false
+      estimatedData: false,
+      excludesLPPositions: true
     };
     
   } catch (error) {
     console.warn('⚠️ Error fetching holder data:', error.message);
-    // Return estimated data if fetch fails
+    // Return estimated data if fetch fails (corrected for LP exclusions)
     return {
-      totalHolders: 984,
-      poseidon: 2,
+      totalHolders: 981,
+      poseidon: 1,
       whale: 8,
       shark: 45,
       dolphin: 287,
-      squid: 1842,
-      shrimp: 3516,
-      estimatedData: true
+      squid: 1840,
+      shrimp: 3513,
+      estimatedData: true,
+      excludesLPPositions: true
     };
   }
 }
