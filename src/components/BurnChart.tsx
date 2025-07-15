@@ -34,8 +34,10 @@ interface Props {
 
 const BurnChart: React.FC<Props> = ({ burnData }) => {
   const labels = burnData.dailyBurns.map(d => {
-    const date = new Date(d.date);
-    return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    // Parse date as UTC to avoid timezone issues
+    const [year, month, day] = d.date.split('-').map(Number);
+    const date = new Date(Date.UTC(year, month - 1, day));
+    return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
   });
 
   const deflationaryThreshold = 86400; // Fixed 1 TINC/second = 86,400 TINC/day
@@ -115,12 +117,15 @@ const BurnChart: React.FC<Props> = ({ burnData }) => {
         },
         callbacks: {
           title: (context: any) => {
-            const date = new Date(burnData.dailyBurns[context[0].dataIndex].date);
+            const dateStr = burnData.dailyBurns[context[0].dataIndex].date;
+            const [year, month, day] = dateStr.split('-').map(Number);
+            const date = new Date(Date.UTC(year, month - 1, day));
             return date.toLocaleDateString('en-US', { 
               weekday: 'long',
               month: 'long',
               day: 'numeric',
-              year: 'numeric'
+              year: 'numeric',
+              timeZone: 'UTC'
             });
           },
           label: (context: any) => {
