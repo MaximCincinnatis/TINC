@@ -16,11 +16,10 @@ const SeaCreatures: React.FC<Props> = ({ burnData }) => {
       color: '#FFD700',
       icon: (
         <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2v20"/>
-          <path d="M12 2l-3 6h6l-3-6z"/>
-          <path d="M6 6l3 3M18 6l-3 3"/>
-          <path d="M4 8l3 3M20 8l-3 3"/>
-          <circle cx="12" cy="22" r="1"/>
+          <path d="M12 2v18M12 2l-1.5 3h3l-1.5-3z"/>
+          <path d="M8 4l2 2M16 4l-2 2"/>
+          <path d="M6 6l2 2M18 6l-2 2"/>
+          <path d="M10 20h4M9 22h6"/>
         </svg>
       ),
       description: 'Ocean God'
@@ -31,12 +30,12 @@ const SeaCreatures: React.FC<Props> = ({ burnData }) => {
       amount: totalSupply * 0.01,
       color: '#4169E1',
       icon: (
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M2 14c0-4 3-7 7-7s7 3 7 7c0 2-.7 3.8-2 5.2l-2 2.3c-1.5 1.5-3.5 1.5-5 0l-2-2.3c-1.3-1.4-2-3.2-2-5.2z"/>
-          <circle cx="7" cy="12" r="1"/>
-          <path d="M15 16c2 0 4-1 5-3"/>
-          <path d="M16 9c2-1 4 0 5 2"/>
-          <path d="M17 18c1.5 1 3.5 1 5 0"/>
+        <svg width="40" height="40" viewBox="0 0 100 100" fill="currentColor">
+          <path d="M10 50c0-15 8-25 20-28 3-1 6-2 10-2 8 0 15 3 20 8 3 3 5 7 5 12 0 8-3 15-8 20-3 3-7 5-12 5-3 0-6-1-10-2-12-3-25-8-25-25z"/>
+          <circle cx="25" cy="42" r="2"/>
+          <path d="M45 35c8-3 15 0 20 8"/>
+          <path d="M50 65c6 3 12 3 18 0"/>
+          <path d="M65 50c8 0 15-3 20-8l8 3c-2 8-8 15-15 18-5 2-10 2-15 0"/>
         </svg>
       ),
       description: 'Massive Holder'
@@ -47,12 +46,12 @@ const SeaCreatures: React.FC<Props> = ({ burnData }) => {
       amount: totalSupply * 0.001,
       color: '#696969',
       icon: (
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M2 12c0-2 2-4 4-5l6-2c2-1 4-1 6 0l4 2c2 1 2 3 0 4l-4 2c-2 1-4 1-6 0l-6-2c-2-1-4-3-4-5z"/>
-          <circle cx="18" cy="9" r="1"/>
-          <path d="M12 7l-4-3M12 7l4-3"/>
-          <path d="M8 17l-3 3M16 17l3 3"/>
-          <path d="M12 6v2M12 18v2"/>
+        <svg width="40" height="40" viewBox="0 0 100 100" fill="currentColor">
+          <path d="M5 50c0-8 3-12 8-15l15-5c8-3 15-3 23 0l12 5c5 3 8 7 8 15 0 3-2 6-5 8l-8 3c-3 1-6 1-9-1l-8-3c-3-2-6-2-9 1l-8 3c-3 2-6 2-9 1l-8-3c-3-2-5-5-5-8z"/>
+          <circle cx="78" cy="42" r="2"/>
+          <path d="M50 30l-12-8M50 30l12-8"/>
+          <path d="M30 70l-8 12M70 70l8 12"/>
+          <path d="M50 35l0-5M50 75l0 5"/>
         </svg>
       ),
       description: 'Apex Predator'
@@ -63,12 +62,12 @@ const SeaCreatures: React.FC<Props> = ({ burnData }) => {
       amount: totalSupply * 0.0001,
       color: '#00CED1',
       icon: (
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M3 12c0-3 2-5 5-6 1-.3 2-.5 3-.5 2 0 4 1 5 3l2 3c1 1 1 3 0 4l-2 3c-1 2-3 3-5 3-1 0-2-.2-3-.5-3-1-5-3-5-6z"/>
-          <circle cx="9" cy="10" r="1"/>
-          <path d="M15 8c2-1 4 0 5 2"/>
-          <path d="M16 16c2 1 4 0 5-2"/>
-          <path d="M12 6c1-1 2-2 3-2M12 18c1 1 2 2 3 2"/>
+        <svg width="40" height="40" viewBox="0 0 100 100" fill="currentColor">
+          <path d="M15 50c0-12 8-20 20-24 3-1 6-2 10-2 10 0 18 4 24 12l6 10c2 4 2 8 0 12l-6 10c-6 8-14 12-24 12-4 0-7-1-10-2-12-4-20-12-20-24z"/>
+          <circle cx="35" cy="42" r="2"/>
+          <path d="M60 32c8-4 16 0 20 8"/>
+          <path d="M64 64c8 4 16 0 20-8"/>
+          <path d="M48 24c4-4 8-8 12-8M48 76c4 4 8 8 12 8"/>
         </svg>
       ),
       description: 'Smart Swimmer'
@@ -79,11 +78,11 @@ const SeaCreatures: React.FC<Props> = ({ burnData }) => {
       amount: totalSupply * 0.00001,
       color: '#8B4513',
       icon: (
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
-          <ellipse cx="12" cy="8" rx="6" ry="3"/>
-          <circle cx="10" cy="7" r="0.5"/>
-          <circle cx="14" cy="7" r="0.5"/>
-          <path d="M6 10v6l1 4M8 10v7l1 4M10 10v8l1 4M12 10v8l-1 4M14 10v8l-1 4M16 10v7l-1 4M18 10v6l-1 4"/>
+        <svg width="40" height="40" viewBox="0 0 100 100" fill="currentColor">
+          <ellipse cx="50" cy="30" rx="20" ry="12"/>
+          <circle cx="42" cy="26" r="2"/>
+          <circle cx="58" cy="26" r="2"/>
+          <path d="M30 40v28l4 16M36 40v32l4 16M42 40v36l4 16M50 40v36l-4 16M58 40v32l-4 16M64 40v28l-4 16M70 40v24l-4 16"/>
         </svg>
       ),
       description: 'Deep Sea Dweller'
@@ -94,13 +93,13 @@ const SeaCreatures: React.FC<Props> = ({ burnData }) => {
       amount: totalSupply * 0.000001,
       color: '#FF69B4',
       icon: (
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M4 12c0-2 1-4 3-5 2-1 6-2 8-2 1 0 2 1 2 2v10c0 1-1 2-2 2-2 0-6-1-8-2-2-1-3-3-3-5z"/>
-          <circle cx="7" cy="10" r="0.5"/>
-          <circle cx="7" cy="14" r="0.5"/>
-          <path d="M12 8l3-1M12 10l4-1M12 14l4 1M12 16l3 1"/>
-          <path d="M4 9l-2-1M4 11l-2 0M4 13l-2 0M4 15l-2 1"/>
-          <path d="M16 9c1-1 2-1 3 0M16 15c1 1 2 1 3 0"/>
+        <svg width="40" height="40" viewBox="0 0 100 100" fill="currentColor">
+          <path d="M15 50c0-8 4-12 8-16 4-3 12-6 20-7 4-1 8-1 12-1 4 0 8 0 12 1 4 1 8 3 8 7v32c0 4-4 6-8 7-4 1-8 1-12 1-4 0-8 0-12-1-8-1-16-4-20-7-4-4-8-8-8-16z"/>
+          <circle cx="28" cy="40" r="2"/>
+          <circle cx="28" cy="56" r="2"/>
+          <path d="M60 32l8-4M60 40l12-4M60 56l12 4M60 64l8 4"/>
+          <path d="M16 36l-8-4M16 44l-8 0M16 52l-8 0M16 60l-8 4"/>
+          <path d="M68 36c4-4 8-4 12 0M68 60c4 4 8 4 12 0"/>
         </svg>
       ),
       description: 'Small but Mighty'
