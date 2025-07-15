@@ -158,26 +158,26 @@ const BurnChart: React.FC<Props> = ({ burnData }) => {
             borderDash: [0],
             label: {
               display: true,
-              content: 'THRESHOLD: 86.4K/DAY',
-              position: 'center',
+              content: '86.4K/DAY',
+              position: 'start',
               backgroundColor: 'rgba(0, 0, 0, 0.95)',
               borderColor: '#22c55e',
               borderWidth: 2,
               color: '#22c55e',
               font: {
-                size: 11,
+                size: 10,
                 weight: 'bold',
                 family: 'Space Grotesk, sans-serif'
               },
               padding: {
-                top: 4,
-                bottom: 4,
-                left: 8,
-                right: 8
+                top: 3,
+                bottom: 3,
+                left: 6,
+                right: 6
               },
-              borderRadius: 6,
-              yAdjust: -20,
-              xAdjust: 0
+              borderRadius: 4,
+              yAdjust: -10,
+              xAdjust: 40
             }
           }
         }

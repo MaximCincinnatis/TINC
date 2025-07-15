@@ -401,6 +401,10 @@ button:disabled {
   opacity: 0.9;
   margin-left: 0.25rem;
   font-weight: 600;
+  background: inherit;
+  -webkit-background-clip: inherit;
+  -webkit-text-fill-color: inherit;
+  background-clip: inherit;
 }
 
 .stat-description {
