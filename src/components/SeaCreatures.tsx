@@ -183,19 +183,6 @@ const SeaCreatures: React.FC<Props> = ({ burnData }) => {
             </div>
           </div>
         </div>
-        {!loading && (
-          <a 
-            href="https://etherscan.io/token/tokenholderchart/0x6532B3F1e4DBff542fbD6befE5Ed7041c10B385a"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="etherscan-link"
-          >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M7 17L17 7M17 7H7M17 7V17"/>
-            </svg>
-            View on Etherscan
-          </a>
-        )}
       </div>
       
       {loading ? (
