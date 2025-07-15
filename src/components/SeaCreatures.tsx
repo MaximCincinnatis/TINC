@@ -22,7 +22,7 @@ const SeaCreatures: React.FC<Props> = ({ burnData }) => {
           <path d="M10 20h4M9 22h6"/>
         </svg>
       ),
-      description: 'Ocean God'
+      description: 'Ocean Ruler'
     },
     {
       name: 'Whale',
