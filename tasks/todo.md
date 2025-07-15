@@ -178,56 +178,38 @@ The user reported:
 4. Consider adding burn rate predictions
 5. Add mobile-optimized gesture controls
 
-## Current Task: Enhanced Realistic Sea Creatures with Shadows
+## Current Task: Fix Holder Statistics Display
 
 ### Status
-✅ Deployment working - Poseidon image is updating on Vercel
-❌ Sea creatures need to be much more realistic with better shadows/images
+✅ Removed SVG icons from sea creatures display per user request
+✅ Holder statistics data is implemented but visibility needs improvement
+❌ Holder counts not clearly visible in each category box
 
-### Plan: Enhanced Realistic Sea Creatures with Shadows
+### Plan: Fix Holder Statistics Display
 
 #### Todo Items:
 
-1. **Research and Design Enhanced Poseidon**
-   - Add proper trident details with three prongs
-   - Include flowing beard/hair elements
-   - Add shadow effects and depth
-   - Make silhouette more god-like and imposing
+1. ✅ **Remove SVG Icons** (COMPLETED)
+   - Removed all SVG icons from sea creatures display
+   - Clean text-only layout maintained
+   - User requested no more "bubly round svg crap"
 
-2. **Enhance Whale Design**
-   - Create more anatomically correct whale body
-   - Add realistic fin proportions
-   - Include proper whale tail fluke
-   - Add subtle shadow/gradient effects
+2. ✅ **Fix Holder Count Visibility** (COMPLETED) 
+   - Moved holder counts to separate column for better visibility
+   - Increased font size from 0.75rem to 0.875rem
+   - Enhanced color from 50% to 80% opacity
+   - Added font-weight: 500 for better readability
 
-3. **Improve Shark Design**
-   - Design more menacing shark silhouette
-   - Add proper dorsal fin and tail
-   - Include gill slits detail
-   - Add shadow effects for depth
+3. **Build and Deploy Changes** (IN PROGRESS)
+   - Build React app with holder count improvements
+   - Deploy to Vercel main domain
+   - Verify holder counts are clearly visible
 
-4. **Enhance Dolphin Design**
-   - Create more graceful dolphin curve
-   - Add proper beak/rostrum detail
-   - Include realistic fin placement
-   - Add subtle shadow effects
-
-5. **Improve Squid Design**
-   - Design more realistic tentacle flow
-   - Add proper squid body proportions
-   - Include tentacle sucker details
-   - Add shadow effects for depth
-
-6. **Enhance Shrimp Design**
-   - Create more detailed segmented body
-   - Add proper antennae and legs
-   - Include realistic curved posture
-   - Add shadow effects
-
-7. **Test and Deploy**
-   - Test all designs in browser
-   - Build and deploy to Vercel
-   - Verify realistic appearance on live site
+4. **Verify Final Display**
+   - Each animal category should show holder count prominently
+   - Example: "2 holders" for Poseidon, "45 holders" for Shark
+   - Total holder count remains at bottom
+   - No SVG icons anywhere in sea creatures section
 
 #### Design Approach:
 - Use SVG gradients for shadows and depth

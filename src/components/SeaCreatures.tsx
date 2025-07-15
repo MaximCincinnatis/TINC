@@ -200,17 +200,18 @@ const SeaCreatures: React.FC<Props> = ({ burnData }) => {
                 <div className="creature-description">
                   {creature.description}
                 </div>
-                <div style={{
-                  fontSize: '0.75rem',
-                  color: 'rgba(255, 255, 255, 0.5)',
-                  marginTop: '0.25rem'
-                }}>
-                  {creature.holders.toLocaleString()} holder{creature.holders !== 1 ? 's' : ''}
-                </div>
               </div>
               
               <div className="creature-percentage">
                 {creature.percentage}% of supply
+              </div>
+              
+              <div className="creature-holders" style={{
+                fontSize: '0.875rem',
+                color: 'rgba(255, 255, 255, 0.8)',
+                fontWeight: '500'
+              }}>
+                {creature.holders.toLocaleString()} holder{creature.holders !== 1 ? 's' : ''}
               </div>
               
               <div className="creature-amount">
