@@ -23,6 +23,14 @@ const AVG_BLOCK_TIME = 12; // seconds
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || 'YourApiKeyToken';
 const ETHERSCAN_BASE_URL = 'https://api.etherscan.io/api';
 
+// LP and contract addresses to exclude from holder counts
+const EXCLUDED_ADDRESSES = new Set([
+  '0x72e0de1cc2c952326738dac05bacb9e9c25422e3', // TINC/TitanX LP
+  '0x0000000000000000000000000000000000000000', // Burn address
+  '0x000000000000000000000000000000000000dead', // Dead address
+  // Add other known LP and contract addresses here
+].map(addr => addr.toLowerCase()));
+
 async function callRPC(method, params, retryCount = 0) {
   const maxRetries = RPC_ENDPOINTS.length * 2;
   
@@ -263,10 +271,15 @@ async function fetchHolderData() {
     const holders = data.result;
     const totalSupply = await getTotalSupply();
     
+    // Filter out LP positions and contract addresses
+    const filteredHolders = holders.filter(holder => 
+      !EXCLUDED_ADDRESSES.has(holder.TokenHolderAddress.toLowerCase())
+    );
+    
     // Categorize holders based on percentage of total supply
     let poseidon = 0, whale = 0, shark = 0, dolphin = 0, squid = 0, shrimp = 0;
     
-    holders.forEach(holder => {
+    filteredHolders.forEach(holder => {
       const balance = parseFloat(holder.TokenHolderQuantity);
       const percentage = (balance / totalSupply) * 100;
       
@@ -278,8 +291,10 @@ async function fetchHolderData() {
       else shrimp++;
     });
     
+    console.log(`📊 Filtered out ${holders.length - filteredHolders.length} LP/contract addresses`);
+    
     return {
-      totalHolders: holders.length,
+      totalHolders: filteredHolders.length,
       poseidon,
       whale,
       shark,

@@ -1017,13 +1017,14 @@
   "fetchedAt": "2025-07-15T19:46:01.589Z",
   "fromCache": true,
   "holderStats": {
-    "totalHolders": 984,
+    "totalHolders": 982,
     "poseidon": 2,
     "whale": 8,
     "shark": 45,
     "dolphin": 287,
-    "squid": 1842,
-    "shrimp": 3516,
-    "estimatedData": true
+    "squid": 1840,
+    "shrimp": 3514,
+    "estimatedData": true,
+    "excludesLPPositions": true
   }
 }

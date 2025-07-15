@@ -171,15 +171,13 @@ const SeaCreatures: React.FC<Props> = ({ burnData }) => {
           <div className="title-section">
             <h2 className="main-title">Token Holder Distribution</h2>
             <p className="subtitle">Whale classification based on circulating supply percentage</p>
+            <p className="supply-note">*Circulating supply shown above - does not include pending tokens</p>
           </div>
           <div className="header-stats">
             <div className="stat-item">
               <span className="stat-label">Total Addresses</span>
               <span className="stat-value">{holderStats.totalHolders.toLocaleString()}</span>
-            </div>
-            <div className="stat-item">
-              <span className="stat-label">Supply</span>
-              <span className="stat-value">{formatNumber(totalSupply)} TINC</span>
+              <span className="stat-note">Excludes LP positions</span>
             </div>
           </div>
         </div>
