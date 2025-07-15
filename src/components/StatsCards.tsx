@@ -43,22 +43,6 @@ const StatsCards: React.FC<Props> = ({ burnData }) => {
         <div className="stat-description">Current TINC tokens in circulation</div>
       </div>
 
-      <div className="stat-card burned">
-        <div className="stat-header">
-          <span className="stat-label">Total Burned</span>
-          <div className="stat-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" opacity="0.3">
-              <path d="M12 23C16.1 23 19 20.1 19 16C19 14.4 18.5 12.8 17.7 11.5C17.5 11.2 17.3 10.9 17.1 10.7C16.8 10.3 16.5 10 16.2 9.7C15.8 9.3 15.3 9 14.8 8.8C14.7 8.7 14.5 8.6 14.4 8.5C14.2 8.4 14 8.2 13.8 8.1C13.6 7.9 13.3 7.8 13.1 7.6C12.8 7.3 12.6 7 12.4 6.6C12.2 6.2 12 5.7 12 5.2C12 5.2 12 2 12 2C12 2 11.5 4.5 10.5 6.5C9.5 8.5 8 10 7 11.5C6 13 5 14.5 5 16C5 20.1 7.9 23 12 23Z" fill="currentColor"/>
-              <path d="M12 20C13.7 20 15 18.7 15 17C15 16 14.5 15.2 14 14.5C13.5 13.8 13 13 13 12C13 12 12.5 13 12 13.5C11.5 14 11 14.5 11 15.5C11 15.5 10.5 16 10.5 16.5C10.5 17.9 11.1 19 12 20Z" fill="currentColor" opacity="0.7"/>
-            </svg>
-          </div>
-        </div>
-        <div className="stat-value">
-          {formatNumber(burnData.totalBurned)}<span className="stat-suffix">{formatSuffix(burnData.totalBurned)}</span>
-        </div>
-        <div className="stat-description">TINC tokens removed from circulation</div>
-      </div>
-      
       <div className="stat-card transactions">
         <div className="stat-header">
           <span className="stat-label">Total Transactions</span>
