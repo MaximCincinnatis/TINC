@@ -89,7 +89,10 @@ function App() {
                   padding: '0.5rem 0.75rem',
                   borderRadius: '6px',
                   transition: 'all 0.2s ease',
-                  border: '1px solid rgba(255, 255, 255, 0.1)'
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem'
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.color = '#22c55e';
@@ -102,6 +105,18 @@ function App() {
                   e.currentTarget.style.backgroundColor = 'transparent';
                 }}
               >
+                <img 
+                  src="https://titanfarms.win/Logo.png" 
+                  alt="TINC Logo" 
+                  style={{ 
+                    height: '18px', 
+                    width: 'auto',
+                    opacity: '0.9'
+                  }}
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                  }}
+                />
                 Titan Farms
               </a>
               <AdminPanel onDataUpdate={() => loadData(false)} />
