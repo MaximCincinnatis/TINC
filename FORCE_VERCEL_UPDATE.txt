@@ -1,0 +1,21 @@
+FORCE VERCEL UPDATE - REALISTIC SEA CREATURES
+=============================================
+
+Updated: 2025-07-15 18:02:00 UTC
+
+All 6 sea creatures have been redesigned with realistic silhouettes:
+
+🔱 Poseidon - Powerful god figure with trident
+🐋 Whale - Classic whale silhouette  
+🦈 Shark - Streamlined torpedo body
+🐬 Dolphin - Sleek curved body
+🦑 Squid - Torpedo mantle with tentacles
+🦐 Shrimp - Segmented curved body
+
+Check live at: https://tinc-burn-tracker.vercel.app/
+
+If not showing, try:
+1. Clear browser cache
+2. Hard refresh (Ctrl+F5)
+3. Check in incognito mode
+4. Wait a few more minutes for CDN propagation
