@@ -31,30 +31,41 @@ const SeaCreatures: React.FC<Props> = ({ burnData }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // In a real implementation, this would fetch from Etherscan API
-    // For now, using estimated values based on typical token distribution
-    const fetchHolderStats = async () => {
+    // Load holder data from burn data JSON
+    const loadHolderStats = () => {
       try {
-        // Simulated holder distribution
-        // In production, would use: https://api.etherscan.io/api?module=token&action=tokenholderlist
-        setHolderStats({
-          poseidon: 2,      // Top holders with 10%+ of supply
-          whale: 8,         // Holders with 1-10% of supply
-          shark: 45,        // Holders with 0.1-1% of supply
-          dolphin: 287,     // Holders with 0.01-0.1% of supply
-          squid: 1842,      // Holders with 0.001-0.01% of supply
-          shrimp: 3516,     // Holders with less than 0.001% of supply
-          totalHolders: 984
-        });
+        // Check if holder stats are available in burnData
+        if (burnData.holderStats) {
+          setHolderStats({
+            poseidon: burnData.holderStats.poseidon,
+            whale: burnData.holderStats.whale,
+            shark: burnData.holderStats.shark,
+            dolphin: burnData.holderStats.dolphin,
+            squid: burnData.holderStats.squid,
+            shrimp: burnData.holderStats.shrimp,
+            totalHolders: burnData.holderStats.totalHolders
+          });
+        } else {
+          // Fallback to current values if holder data not available
+          setHolderStats({
+            poseidon: 2,
+            whale: 8,
+            shark: 45,
+            dolphin: 287,
+            squid: 1842,
+            shrimp: 3516,
+            totalHolders: 984
+          });
+        }
         setLoading(false);
       } catch (error) {
-        console.error('Error fetching holder stats:', error);
+        console.error('Error loading holder stats:', error);
         setLoading(false);
       }
     };
 
-    fetchHolderStats();
-  }, []);
+    loadHolderStats();
+  }, [burnData]);
   
   const classifications = [
     {

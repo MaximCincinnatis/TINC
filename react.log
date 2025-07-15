@@ -2589,3 +2589,92 @@ Compiling...
 Compiled successfully!
 webpack compiled successfully
 No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/SeaCreatures.tsx:38:22
+TS2339: Property 'holderStats' does not exist on type 'BurnData'.
+    36 |       try {
+    37 |         // Check if holder stats are available in burnData
+  > 38 |         if (burnData.holderStats) {
+       |                      ^^^^^^^^^^^
+    39 |           setHolderStats({
+    40 |             poseidon: burnData.holderStats.poseidon,
+    41 |             whale: burnData.holderStats.whale,
+
+ERROR in src/components/SeaCreatures.tsx:40:32
+TS2339: Property 'holderStats' does not exist on type 'BurnData'.
+    38 |         if (burnData.holderStats) {
+    39 |           setHolderStats({
+  > 40 |             poseidon: burnData.holderStats.poseidon,
+       |                                ^^^^^^^^^^^
+    41 |             whale: burnData.holderStats.whale,
+    42 |             shark: burnData.holderStats.shark,
+    43 |             dolphin: burnData.holderStats.dolphin,
+
+ERROR in src/components/SeaCreatures.tsx:41:29
+TS2339: Property 'holderStats' does not exist on type 'BurnData'.
+    39 |           setHolderStats({
+    40 |             poseidon: burnData.holderStats.poseidon,
+  > 41 |             whale: burnData.holderStats.whale,
+       |                             ^^^^^^^^^^^
+    42 |             shark: burnData.holderStats.shark,
+    43 |             dolphin: burnData.holderStats.dolphin,
+    44 |             squid: burnData.holderStats.squid,
+
+ERROR in src/components/SeaCreatures.tsx:42:29
+TS2339: Property 'holderStats' does not exist on type 'BurnData'.
+    40 |             poseidon: burnData.holderStats.poseidon,
+    41 |             whale: burnData.holderStats.whale,
+  > 42 |             shark: burnData.holderStats.shark,
+       |                             ^^^^^^^^^^^
+    43 |             dolphin: burnData.holderStats.dolphin,
+    44 |             squid: burnData.holderStats.squid,
+    45 |             shrimp: burnData.holderStats.shrimp,
+
+ERROR in src/components/SeaCreatures.tsx:43:31
+TS2339: Property 'holderStats' does not exist on type 'BurnData'.
+    41 |             whale: burnData.holderStats.whale,
+    42 |             shark: burnData.holderStats.shark,
+  > 43 |             dolphin: burnData.holderStats.dolphin,
+       |                               ^^^^^^^^^^^
+    44 |             squid: burnData.holderStats.squid,
+    45 |             shrimp: burnData.holderStats.shrimp,
+    46 |             totalHolders: burnData.holderStats.totalHolders
+
+ERROR in src/components/SeaCreatures.tsx:44:29
+TS2339: Property 'holderStats' does not exist on type 'BurnData'.
+    42 |             shark: burnData.holderStats.shark,
+    43 |             dolphin: burnData.holderStats.dolphin,
+  > 44 |             squid: burnData.holderStats.squid,
+       |                             ^^^^^^^^^^^
+    45 |             shrimp: burnData.holderStats.shrimp,
+    46 |             totalHolders: burnData.holderStats.totalHolders
+    47 |           });
+
+ERROR in src/components/SeaCreatures.tsx:45:30
+TS2339: Property 'holderStats' does not exist on type 'BurnData'.
+    43 |             dolphin: burnData.holderStats.dolphin,
+    44 |             squid: burnData.holderStats.squid,
+  > 45 |             shrimp: burnData.holderStats.shrimp,
+       |                              ^^^^^^^^^^^
+    46 |             totalHolders: burnData.holderStats.totalHolders
+    47 |           });
+    48 |         } else {
+
+ERROR in src/components/SeaCreatures.tsx:46:36
+TS2339: Property 'holderStats' does not exist on type 'BurnData'.
+    44 |             squid: burnData.holderStats.squid,
+    45 |             shrimp: burnData.holderStats.shrimp,
+  > 46 |             totalHolders: burnData.holderStats.totalHolders
+       |                                    ^^^^^^^^^^^
+    47 |           });
+    48 |         } else {
+    49 |           // Fallback to current values if holder data not available
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Files successfully emitted, waiting for typecheck results...
+Issues checking in progress...
+No issues found.

@@ -9,6 +9,17 @@ export interface DailyBurn {
   }[];
 }
 
+export interface HolderStats {
+  totalHolders: number;
+  poseidon: number;
+  whale: number;
+  shark: number;
+  dolphin: number;
+  squid: number;
+  shrimp: number;
+  estimatedData?: boolean;
+}
+
 export interface BurnData {
   startDate: string;
   endDate: string;
@@ -21,4 +32,5 @@ export interface BurnData {
   dailyBurns: DailyBurn[];
   fetchedAt: string;
   fromCache?: boolean;
+  holderStats?: HolderStats;
 }
