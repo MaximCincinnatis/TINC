@@ -249,10 +249,10 @@ const SeaCreatures: React.FC<Props> = ({ burnData }) => {
         </div>
         <div className="concentration-metrics">
           <div className="concentration-item">
-            <span className="concentration-label">Top 10 Holders</span>
+            <span className="concentration-label">Large Holders (1%+)</span>
             <span className="concentration-value">{holderStats.poseidon + holderStats.whale}</span>
             <span className="concentration-percentage">
-              {(((holderStats.poseidon + holderStats.whale) / holderStats.totalHolders) * 100).toFixed(2)}%
+              {(((holderStats.poseidon + holderStats.whale) / holderStats.totalHolders) * 100).toFixed(2)}% of holders
             </span>
           </div>
           <div className="concentration-item">
