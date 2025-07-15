@@ -1,0 +1,18 @@
+AUTO-DEPLOYMENT TRIGGER
+======================
+
+This file should trigger Vercel's auto-deployment system.
+
+Status: Main domain not updating automatically
+Solution: Force new deployment to update main domain
+Time: 2025-07-15T17:35:00Z
+
+Expected result: tinc-burn-tracker.vercel.app should show realistic sea creatures
+- Poseidon with detailed trident
+- Whale with realistic body and fins
+- Shark with streamlined design
+- Dolphin with curved body and beak
+- Squid with flowing tentacles
+- Shrimp with segmented body
+
+If this doesn't work, use Vercel CLI: vercel --prod
