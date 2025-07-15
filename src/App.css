@@ -507,14 +507,6 @@ button:disabled {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
-.creature-rank {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.6);
-  min-width: 40px;
-  text-align: center;
-}
-
 .creature-icon {
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
   flex-shrink: 0;
@@ -536,18 +528,13 @@ button:disabled {
   color: rgba(255, 255, 255, 0.6);
 }
 
-.creature-stats {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.25rem;
-  flex-shrink: 0;
-}
-
 .creature-percentage {
   font-size: 0.875rem;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  min-width: 100px;
+  flex-shrink: 0;
 }
 
 .creature-amount {
@@ -558,6 +545,9 @@ button:disabled {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  text-align: right;
+  min-width: 120px;
+  flex-shrink: 0;
 }
 
 @media (max-width: 768px) {
@@ -567,12 +557,9 @@ button:disabled {
     text-align: center;
   }
   
-  .creature-stats {
-    align-items: center;
-  }
-  
-  .creature-rank {
-    order: -1;
+  .creature-percentage,
+  .creature-amount {
+    text-align: center;
   }
 }
 

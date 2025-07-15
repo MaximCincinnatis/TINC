@@ -2338,3 +2338,24 @@ Compiling...
 Compiled successfully!
 webpack compiled successfully
 No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/SeaCreatures.tsx:129:55
+TS2339: Property 'rank' does not exist on type '{ name: string; percentage: number; amount: number; color: string; icon: Element; description: string; }'.
+    127 |         {classifications.map((creature, index) => (
+    128 |           <div key={index} className="creature-row" style={{ borderLeftColor: creature.color }}>
+  > 129 |             <div className="creature-rank">#{creature.rank}</div>
+        |                                                       ^^^^
+    130 |             
+    131 |             <div className="creature-icon" style={{ color: creature.color }}>
+    132 |               {creature.icon}
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
