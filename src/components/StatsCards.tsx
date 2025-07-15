@@ -25,27 +25,8 @@ const StatsCards: React.FC<Props> = ({ burnData }) => {
     return '';
   };
 
-  // Calculate market cap (placeholder - would need real price data)
-  const estimatedPrice = 0.001; // Placeholder - would fetch from API
-  const marketCap = burnData.totalSupply * estimatedPrice;
-
   return (
     <div className="stats-grid">
-      <div className="stat-card marketcap">
-        <div className="stat-header">
-          <span className="stat-label">Market Cap</span>
-          <div className="stat-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" opacity="0.3">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-            </svg>
-          </div>
-        </div>
-        <div className="stat-value">
-          ${formatNumber(marketCap)}<span className="stat-suffix">{formatSuffix(marketCap)}</span>
-        </div>
-        <div className="stat-description">Estimated market valuation</div>
-      </div>
-
       <div className="stat-card supply">
         <div className="stat-header">
           <span className="stat-label">Circulating Supply</span>
