@@ -1,44 +1,67 @@
 const fs = require('fs');
 const path = require('path');
 
-// RPC endpoints
+// RPC endpoints with backup options (tested and working)
 const RPC_ENDPOINTS = [
-  "https://cloudflare-eth.com",
-  "https://ethereum.publicnode.com", 
+  "https://ethereum.publicnode.com",
   "https://eth.llamarpc.com",
-  "https://1rpc.io/eth"
+  "https://1rpc.io/eth",
+  "https://eth-mainnet.public.blastapi.io",
+  "https://eth.drpc.org"
 ];
+
+let currentRPCIndex = 0;
 
 const TINC_ADDRESS = '0x6532B3F1e4DBff542fbD6befE5Ed7041c10B385a';
 const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000';
 const TRANSFER_TOPIC = '0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef';
 const ZERO_ADDRESS_TOPIC = '0x0000000000000000000000000000000000000000000000000000000000000000';
-const CHUNK_SIZE = 2000; // blocks per chunk
+const CHUNK_SIZE = 800; // blocks per chunk (reduced for RPC limits)
 const AVG_BLOCK_TIME = 12; // seconds
 
-async function callRPC(method, params) {
-  for (const endpoint of RPC_ENDPOINTS) {
-    try {
-      const response = await fetch(endpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          jsonrpc: '2.0',
-          id: Date.now(),
-          method,
-          params,
-        }),
-      });
-
-      const data = await response.json();
-      if (data.error) throw new Error(data.error.message);
-      return data.result;
-    } catch (error) {
-      console.warn(`RPC error with ${endpoint}:`, error.message);
-      continue;
-    }
+async function callRPC(method, params, retryCount = 0) {
+  const maxRetries = RPC_ENDPOINTS.length * 2;
+  
+  if (retryCount >= maxRetries) {
+    throw new Error('All RPC endpoints exhausted after retries');
   }
-  throw new Error('All RPC endpoints failed');
+
+  const endpoint = RPC_ENDPOINTS[currentRPCIndex];
+  
+  try {
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        jsonrpc: '2.0',
+        id: Date.now(),
+        method,
+        params,
+      }),
+      timeout: 30000 // 30 second timeout
+    });
+
+    const data = await response.json();
+    if (data.error) {
+      throw new Error(data.error.message);
+    }
+    
+    // Success - this endpoint is working
+    return data.result;
+  } catch (error) {
+    console.warn(`RPC error with ${endpoint}:`, error.message);
+    
+    // Move to next endpoint
+    currentRPCIndex = (currentRPCIndex + 1) % RPC_ENDPOINTS.length;
+    
+    // If error contains rate limit message, wait a bit
+    if (error.message.includes('rate') || error.message.includes('limit')) {
+      await new Promise(resolve => setTimeout(resolve, 1000));
+    }
+    
+    // Retry with next endpoint
+    return callRPC(method, params, retryCount + 1);
+  }
 }
 
 async function getBlockNumber() {
