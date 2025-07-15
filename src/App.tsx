@@ -4,6 +4,7 @@ import BurnChart from './components/BurnChart';
 import StatsCards from './components/StatsCards';
 import LoadingProgress from './components/LoadingProgress';
 import AdminPanel from './components/AdminPanel';
+import SeaCreatures from './components/SeaCreatures';
 import { fetchBurnData, setProgressCallback } from './services/fileCachedBurnService';
 import { BurnData } from './types/BurnData';
 
@@ -174,6 +175,8 @@ function App() {
               </div>
               <BurnChart burnData={burnData} />
             </div>
+            
+            <SeaCreatures burnData={burnData} />
           </>
         )}
       </main>
@@ -184,6 +187,125 @@ function App() {
         fontSize: '0.875rem', 
         color: 'rgba(255,255,255,0.5)'
       }}>
+        <div style={{ 
+          display: 'flex', 
+          justifyContent: 'center', 
+          gap: '1rem', 
+          marginBottom: '1.5rem',
+          flexWrap: 'wrap'
+        }}>
+          <a 
+            href="https://titanfarms.win/burn" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            style={{
+              color: 'rgba(255, 255, 255, 0.8)',
+              textDecoration: 'none',
+              fontSize: '0.875rem',
+              fontWeight: '500',
+              padding: '0.5rem 1rem',
+              borderRadius: '8px',
+              transition: 'all 0.2s ease',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              backgroundColor: 'rgba(255, 255, 255, 0.02)'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.color = '#22c55e';
+              e.currentTarget.style.borderColor = 'rgba(34, 197, 94, 0.3)';
+              e.currentTarget.style.backgroundColor = 'rgba(34, 197, 94, 0.05)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.color = 'rgba(255, 255, 255, 0.8)';
+              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+              e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.02)';
+            }}
+          >
+            <img 
+              src="https://titanfarms.win/Logo.png" 
+              alt="TINC Logo" 
+              style={{ 
+                height: '16px', 
+                width: 'auto',
+                opacity: '0.9'
+              }}
+            />
+            Titan Farms
+          </a>
+          
+          <a 
+            href="https://etherscan.io/token/tokenholderchart/0x6532B3F1e4DBff542fbD6befE5Ed7041c10B385a" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            style={{
+              color: 'rgba(255, 255, 255, 0.8)',
+              textDecoration: 'none',
+              fontSize: '0.875rem',
+              fontWeight: '500',
+              padding: '0.5rem 1rem',
+              borderRadius: '8px',
+              transition: 'all 0.2s ease',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              backgroundColor: 'rgba(255, 255, 255, 0.02)'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.color = '#22c55e';
+              e.currentTarget.style.borderColor = 'rgba(34, 197, 94, 0.3)';
+              e.currentTarget.style.backgroundColor = 'rgba(34, 197, 94, 0.05)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.color = 'rgba(255, 255, 255, 0.8)';
+              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+              e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.02)';
+            }}
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" opacity="0.7">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+            TINC Holders
+          </a>
+          
+          <a 
+            href="https://dexscreener.com/ethereum/0x72e0de1cc2c952326738dac05bacb9e9c25422e3" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            style={{
+              color: 'rgba(255, 255, 255, 0.8)',
+              textDecoration: 'none',
+              fontSize: '0.875rem',
+              fontWeight: '500',
+              padding: '0.5rem 1rem',
+              borderRadius: '8px',
+              transition: 'all 0.2s ease',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              backgroundColor: 'rgba(255, 255, 255, 0.02)'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.color = '#22c55e';
+              e.currentTarget.style.borderColor = 'rgba(34, 197, 94, 0.3)';
+              e.currentTarget.style.backgroundColor = 'rgba(34, 197, 94, 0.05)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.color = 'rgba(255, 255, 255, 0.8)';
+              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+              e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.02)';
+            }}
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" opacity="0.7">
+              <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/>
+            </svg>
+            TINC/TitanX
+          </a>
+        </div>
+        
         <p style={{ marginBottom: '0.5rem' }}>
           Contract: <a 
             href="https://etherscan.io/address/0x6532B3F1e4DBff542fbD6befE5Ed7041c10B385a" 

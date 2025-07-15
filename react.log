@@ -2186,3 +2186,143 @@ Compiling...
 Compiled successfully!
 webpack compiled successfully
 No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/StatsCards.tsx
+  Line 30:9:  'marketCap' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/StatsCards.tsx
+  Line 30:9:  'marketCap' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/StatsCards.tsx
+  Line 30:9:  'marketCap' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/StatsCards.tsx
+  Line 30:9:  'marketCap' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+Files successfully emitted, waiting for typecheck results...
+Issues checking in progress...
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/StatsCards.tsx
+  Line 30:9:  'marketCap' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/StatsCards.tsx
+  Line 30:9:  'marketCap' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Failed to compile.
+
+Syntax error: /home/wsl/projects/TINC/src/App.css Unexpected } (555:1)
+  553 |   border-radius: 50%;
+  554 |   animation: blink 2s ease-in-out infinite;
+> 555 | }
+      | ^
+  556 | 
+  557 | @keyframes blink {
+WARNING in [eslint] 
+src/components/StatsCards.tsx
+  Line 30:9:  'marketCap' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+ERROR in ./src/App.css (./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[2]!./node_modules/source-map-loader/dist/cjs.js!./src/App.css)
+Module build failed (from ./node_modules/postcss-loader/dist/cjs.js):
+SyntaxError
+
+(555:1) /home/wsl/projects/TINC/src/App.css Unexpected }
+
+  553 |   border-radius: 50%;
+  554 |   animation: blink 2s ease-in-out infinite;
+> 555 | }
+      | ^
+  556 | 
+  557 | @keyframes blink {
+
+webpack compiled with 1 error and 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/StatsCards.tsx
+  Line 30:9:  'marketCap' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/StatsCards.tsx
+  Line 30:9:  'marketCap' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/App.tsx
+  Line 7:8:  'SeaCreatures' is defined but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/App.tsx
+  Line 7:8:  'SeaCreatures' is defined but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/SeaCreatures.tsx:120:27
+TS2339: Property 'image' does not exist on type '{ name: string; percentage: number; amount: number; color: string; icon: Element; description: string; }'.
+    118 |             <div className="creature-header">
+    119 |               <div className="creature-icon" style={{ fontSize: '2rem' }}>
+  > 120 |                 {creature.image}
+        |                           ^^^^^
+    121 |               </div>
+    122 |               <div className="creature-info">
+    123 |                 <div className="creature-name" style={{ color: creature.color }}>
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
