@@ -374,14 +374,29 @@ button:disabled {
 }
 
 .stat-icon {
-  width: 32px;
-  height: 32px;
-  background: currentColor;
-  opacity: 0.2;
-  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-icon::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: currentColor;
+  opacity: 0.05;
+}
+
+.stat-icon svg {
+  position: relative;
+  z-index: 1;
 }
 
 .stat-value {
