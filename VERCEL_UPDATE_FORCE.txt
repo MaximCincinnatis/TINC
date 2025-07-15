@@ -1,0 +1,17 @@
+FORCE VERCEL UPDATE - ICONS REMOVED
+=====================================
+
+Updated: 2025-07-15 19:01:00 UTC
+Commit: 4d9ac2c - Remove icon images from sea creatures display
+
+Changes made:
+- Removed all SVG icons from sea creature classifications
+- Text-only display with holder statistics
+- Cleaner, professional appearance
+
+Expected result: No icons next to Poseidon, Whale, Shark, Dolphin, Squid, Shrimp
+
+Check live at: https://tinc-burn-tracker.vercel.app/
+
+Git status: Up to date with origin/master
+Last commit: 4d9ac2cbd0c6a219dcfe948a295cdd38f9f04b5f
