@@ -15,12 +15,15 @@ const SeaCreatures: React.FC<Props> = ({ burnData }) => {
       amount: totalSupply * 0.1,
       color: '#FFD700',
       icon: (
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2l2 4h4l-2 2 2 4-4-2-2 4-2-4-4 2 2-4-2-2h4l2-4z"/>
-          <path d="M12 16v6M8 18h8M10 20h4"/>
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2v20M12 2l-2 4h4l-2-4z"/>
+          <path d="M7 6l2 2M17 6l-2 2"/>
+          <path d="M5 8l2 2M19 8l-2 2"/>
+          <path d="M10 18h4M9 20h6"/>
         </svg>
       ),
-      description: 'Ocean God'
+      description: 'Ocean God',
+      rank: 1
     },
     {
       name: 'Whale',
@@ -28,12 +31,15 @@ const SeaCreatures: React.FC<Props> = ({ burnData }) => {
       amount: totalSupply * 0.01,
       color: '#4169E1',
       icon: (
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M4 14c0-4.42 3.58-8 8-8s8 3.58 8 8c0 1.5-.4 2.9-1.1 4.1L20 19l-1.5-1.5c-.8.6-1.8 1-2.9 1.3L16 20l-4-1-4 1 .4-1.2c-1.1-.3-2.1-.7-2.9-1.3L4 19l1.1-.9C4.4 16.9 4 15.5 4 14z"/>
-          <circle cx="9" cy="12" r="1"/>
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M2 12c0-3 2-5.5 5-6.5 1-.3 2-.5 3-.5s2 .2 3 .5c3 1 5 3.5 5 6.5 0 1.5-.5 3-1.5 4.2l-1.5 1.8c-1 1-2.5 1-3.5 1s-2.5 0-3.5-1l-1.5-1.8C2.5 15 2 13.5 2 12z"/>
+          <circle cx="8" cy="10" r="1"/>
+          <path d="M16 14c1 0 2-1 2-2s-1-2-2-2"/>
+          <path d="M20 10c1 0 2 1 2 2s-1 2-2 2"/>
         </svg>
       ),
-      description: 'Massive Holder'
+      description: 'Massive Holder',
+      rank: 2
     },
     {
       name: 'Shark',
@@ -41,13 +47,15 @@ const SeaCreatures: React.FC<Props> = ({ burnData }) => {
       amount: totalSupply * 0.001,
       color: '#696969',
       icon: (
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2c-2 0-4 1-5.5 2.5L2 9l4.5-2.5C8 8 10 9 12 9s4-1 5.5-2.5L22 9l-4.5-4.5C16 3 14 2 12 2z"/>
-          <path d="M12 9c-1.5 0-3 .5-4.5 1.5L4 14l3.5-2.5c1 .5 2 1 3.5 1s2.5-.5 3.5-1L18 14l-3.5-3.5C13 9.5 12.5 9 12 9z"/>
-          <circle cx="15" cy="7" r="1"/>
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M2 12c0-2 1-4 3-5l5-2c2-1 4-1 6 0l5 2c2 1 3 3 3 5 0 1-1 2-2 2.5l-3 1.5c-1 .5-2.5 .5-3.5 0L12 15l-3.5 1c-1 .5-2.5 .5-3.5 0L2 14.5C1 14 0 13 0 12"/>
+          <circle cx="18" cy="9" r="1"/>
+          <path d="M12 8l-6-4M12 8l6-4"/>
+          <path d="M8 16l-4 4M16 16l4 4"/>
         </svg>
       ),
-      description: 'Apex Predator'
+      description: 'Apex Predator',
+      rank: 3
     },
     {
       name: 'Dolphin',
@@ -55,14 +63,16 @@ const SeaCreatures: React.FC<Props> = ({ burnData }) => {
       amount: totalSupply * 0.0001,
       color: '#00CED1',
       icon: (
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 4c-3 0-6 2-7 5 0 2 1 4 3 5l2-1c1 1 2 1 3 1s2 0 3-1l2 1c2-1 3-3 3-5-1-3-4-5-7-5z"/>
-          <path d="M8 8l2 2M14 8l2 2"/>
-          <circle cx="10" cy="9" r="1"/>
-          <circle cx="14" cy="9" r="1"/>
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M3 12c0-3 2-5 5-6 1-.3 2-.5 3-.5 2 0 4 1 5 3l2 3c1 1 1 3 0 4l-2 3c-1 2-3 3-5 3-1 0-2-.2-3-.5-3-1-5-3-5-6z"/>
+          <circle cx="9" cy="10" r="1"/>
+          <path d="M15 8c2-1 4 0 5 2"/>
+          <path d="M16 16c2 1 4 0 5-2"/>
+          <path d="M12 6l2-2M12 18l2 2"/>
         </svg>
       ),
-      description: 'Smart Swimmer'
+      description: 'Smart Swimmer',
+      rank: 4
     },
     {
       name: 'Squid',
@@ -70,14 +80,15 @@ const SeaCreatures: React.FC<Props> = ({ burnData }) => {
       amount: totalSupply * 0.00001,
       color: '#8B4513',
       icon: (
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-          <ellipse cx="12" cy="10" rx="6" ry="4"/>
-          <path d="M6 12v4l1 2M8 12v5l1 2M10 12v6l1 2M12 12v6l1 2M14 12v6l-1 2M16 12v5l-1 2M18 12v4l-1 2"/>
-          <circle cx="10" cy="8" r="1"/>
-          <circle cx="14" cy="8" r="1"/>
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+          <ellipse cx="12" cy="8" rx="6" ry="3"/>
+          <circle cx="10" cy="7" r="0.5"/>
+          <circle cx="14" cy="7" r="0.5"/>
+          <path d="M6 10v6l1 3M8 10v7l1 3M10 10v8l1 3M12 10v8l-1 3M14 10v8l-1 3M16 10v7l-1 3M18 10v6l-1 3"/>
         </svg>
       ),
-      description: 'Deep Sea Dweller'
+      description: 'Deep Sea Dweller',
+      rank: 5
     },
     {
       name: 'Shrimp',
@@ -85,14 +96,16 @@ const SeaCreatures: React.FC<Props> = ({ burnData }) => {
       amount: totalSupply * 0.000001,
       color: '#FF69B4',
       icon: (
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M16 12c0-2.2-1.8-4-4-4s-4 1.8-4 4c0 1.1.4 2.1 1.1 2.8L8 16l1.5-1.5c.8.3 1.6.5 2.5.5s1.7-.2 2.5-.5L16 16l-1.1-1.2c.7-.7 1.1-1.7 1.1-2.8z"/>
-          <path d="M12 8v2M12 14v2"/>
-          <circle cx="11" cy="11" r="0.5"/>
-          <circle cx="13" cy="11" r="0.5"/>
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M4 12c0-2 1-4 3-5l8-2c1 0 2 1 2 2v10c0 1-1 2-2 2l-8-2c-2-1-3-3-3-5z"/>
+          <circle cx="7" cy="10" r="0.5"/>
+          <circle cx="7" cy="14" r="0.5"/>
+          <path d="M12 8l2-1M12 10l3-1M12 14l3 1M12 16l2 1"/>
+          <path d="M4 9l-2-1M4 11l-2 0M4 13l-2 0M4 15l-2 1"/>
         </svg>
       ),
-      description: 'Small but Mighty'
+      description: 'Small but Mighty',
+      rank: 6
     }
   ];
 
@@ -112,20 +125,21 @@ const SeaCreatures: React.FC<Props> = ({ burnData }) => {
         <p>Based on percentage of circulating supply</p>
       </div>
       
-      <div className="sea-creatures-grid">
+      <div className="sea-creatures-list">
         {classifications.map((creature, index) => (
-          <div key={index} className="creature-card" style={{ borderColor: creature.color }}>
-            <div className="creature-header">
-              <div className="creature-icon" style={{ color: creature.color }}>
-                {creature.icon}
+          <div key={index} className="creature-row" style={{ borderLeftColor: creature.color }}>
+            <div className="creature-rank">#{creature.rank}</div>
+            
+            <div className="creature-icon" style={{ color: creature.color }}>
+              {creature.icon}
+            </div>
+            
+            <div className="creature-info">
+              <div className="creature-name" style={{ color: creature.color }}>
+                {creature.name}
               </div>
-              <div className="creature-info">
-                <div className="creature-name" style={{ color: creature.color }}>
-                  {creature.name}
-                </div>
-                <div className="creature-description">
-                  {creature.description}
-                </div>
+              <div className="creature-description">
+                {creature.description}
               </div>
             </div>
             
