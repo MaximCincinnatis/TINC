@@ -157,27 +157,7 @@ const BurnChart: React.FC<Props> = ({ burnData }) => {
             borderWidth: 3,
             borderDash: [0],
             label: {
-              display: true,
-              content: '86.4K/DAY',
-              position: 'start',
-              backgroundColor: 'rgba(0, 0, 0, 0.95)',
-              borderColor: '#22c55e',
-              borderWidth: 2,
-              color: '#22c55e',
-              font: {
-                size: 10,
-                weight: 'bold',
-                family: 'Space Grotesk, sans-serif'
-              },
-              padding: {
-                top: 3,
-                bottom: 3,
-                left: 6,
-                right: 6
-              },
-              borderRadius: 4,
-              yAdjust: -10,
-              xAdjust: 40
+              display: false
             }
           }
         }
@@ -227,8 +207,16 @@ const BurnChart: React.FC<Props> = ({ burnData }) => {
   };
 
   return (
-    <div className="chart-container">
-      <Bar data={data} options={options} />
+    <div className="chart-wrapper">
+      <div className="chart-container">
+        <Bar data={data} options={options} />
+      </div>
+      <div className="chart-legend">
+        <div className="legend-item">
+          <div className="legend-line deflationary"></div>
+          <span>Deflationary Threshold: 86,400 TINC/Day</span>
+        </div>
+      </div>
     </div>
   );
 };
