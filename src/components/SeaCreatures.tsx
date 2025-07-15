@@ -65,8 +65,8 @@ const SeaCreatures: React.FC<Props> = ({ burnData }) => {
       color: '#FFD700',
       icon: (
         <svg width="40" height="40" viewBox="0 0 100 100" fill="currentColor">
-          {/* Trident from noun project style */}
-          <path d="M50 15 L50 85 M40 15 L40 25 L35 20 L35 15 L40 10 L40 15 M60 15 L60 25 L65 20 L65 15 L60 10 L60 15 M50 15 L50 10 L45 5 L40 10 L45 15 L50 10 L55 15 L60 10 L55 5 L50 10" fill="currentColor"/>
+          {/* Realistic Trident */}
+          <path d="M50 90 L50 25 M50 25 L50 10 L48 10 L48 8 L46 8 L46 5 L44 5 L44 8 L42 8 L42 10 L40 10 L40 25 M50 10 L52 10 L52 8 L54 8 L54 5 L56 5 L56 8 L58 8 L58 10 L60 10 L60 25 M40 25 L38 25 L38 23 L36 23 L36 20 L34 20 L34 15 L36 15 L36 12 L38 12 L38 10 L40 10 M60 25 L62 25 L62 23 L64 23 L64 20 L66 20 L66 15 L64 15 L64 12 L62 12 L62 10 L60 10 M48 90 L48 88 L46 88 L46 85 L44 85 L44 80 L46 80 L46 78 L48 78 L48 25 M52 90 L52 88 L54 88 L54 85 L56 85 L56 80 L54 80 L54 78 L52 78 L52 25" stroke="none"/>
         </svg>
       ),
       description: 'Ocean Ruler'
@@ -193,10 +193,6 @@ const SeaCreatures: React.FC<Props> = ({ burnData }) => {
         <div className="sea-creatures-list">
           {classifications.map((creature, index) => (
             <div key={index} className="creature-row" style={{ borderLeftColor: creature.color }}>
-              <div className="creature-icon" style={{ color: creature.color }}>
-                {creature.icon}
-              </div>
-              
               <div className="creature-info">
                 <div className="creature-name" style={{ color: creature.color }}>
                   {creature.name}
