@@ -147,11 +147,20 @@ const BurnChart: React.FC<Props> = ({ burnData }) => {
               return num.toLocaleString();
             };
             
-            return [
+            const difference = amount - deflationaryThreshold;
+            const lines = [
               `TINC Burned: ${formatAmount(amount)}`,
               `Transactions: ${transactions}`,
               `Daily Threshold: ${formatAmount(deflationaryThreshold)}`
             ];
+            
+            if (difference > 0) {
+              lines.push(`Net Deflation: ${formatAmount(difference)}`);
+            } else {
+              lines.push(`Shortfall: ${formatAmount(Math.abs(difference))}`);
+            }
+            
+            return lines;
           },
           footer: (context: any) => {
             const amount = context[0].parsed.y;
