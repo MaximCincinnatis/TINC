@@ -31,7 +31,7 @@ const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || 'YOUR_ETHERSCAN_API_K
 const ETHERSCAN_BASE_URL = 'https://api.etherscan.io/api';
 
 // Moralis API configuration
-const MORALIS_API_KEY = 'YOUR_MORALIS_API_KEY_HERE';
+const MORALIS_API_KEY = process.env.MORALIS_API_KEY || 'YOUR_MORALIS_API_KEY_HERE';
 const MORALIS_BASE_URL = 'https://deep-index.moralis.io/api/v2.2';
 
 // LP and contract addresses to exclude from holder counts
@@ -317,6 +317,20 @@ async function fetchRealHolderData() {
     
     console.log(`📊 Filtered out ${allHolders.length - filteredHolders.length} LP/contract/zero balance addresses`);
     
+    // Sort holders by balance to find top 10
+    const sortedHolders = [...filteredHolders].sort((a, b) => 
+      parseFloat(b.balance_formatted) - parseFloat(a.balance_formatted)
+    );
+    
+    // Calculate top 10 holders' combined percentage
+    const top10Holders = sortedHolders.slice(0, 10);
+    const top10Balance = top10Holders.reduce((sum, holder) => 
+      sum + parseFloat(holder.balance_formatted), 0
+    );
+    const top10Percentage = (top10Balance / totalSupply) * 100;
+    
+    console.log(`📊 Top 10 holders own: ${top10Percentage.toFixed(2)}% of total supply`);
+    
     // Categorize holders based on percentage of total supply
     let poseidon = 0, whale = 0, shark = 0, dolphin = 0, squid = 0, shrimp = 0;
     
@@ -348,6 +362,7 @@ async function fetchRealHolderData() {
       dolphin,
       squid,
       shrimp,
+      top10Percentage,
       estimatedData: false,
       excludesLPPositions: true,
       realTimeData: true,
