@@ -17,6 +17,7 @@ export interface HolderStats {
   dolphin: number;
   squid: number;
   shrimp: number;
+  top10Percentage?: number;
   estimatedData?: boolean;
 }
 
