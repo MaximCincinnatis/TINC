@@ -244,7 +244,7 @@ const SeaCreatures: React.FC<Props> = ({ burnData }) => {
         <div className="summary-header">
           <h3>Distribution Overview</h3>
           <div className="last-updated">
-            Last updated: {new Date().toLocaleDateString()}
+            Last updated: {burnData.fetchedAt ? new Date(burnData.fetchedAt).toLocaleString() : new Date().toLocaleDateString()}
           </div>
         </div>
         <div className="concentration-metrics">
