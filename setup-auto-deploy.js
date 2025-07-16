@@ -2,7 +2,7 @@
 
 const https = require('https');
 
-const VERCEL_TOKEN = process.env.VERCEL_TOKEN || 'YOUR_VERCEL_TOKEN_HERE';
+const VERCEL_TOKEN = 'YOUR_VERCEL_TOKEN_HERE';
 const GITHUB_REPO = 'MaximCincinnatis/TINC';
 const PROJECT_NAME = 'tinc-burn-tracker';
 

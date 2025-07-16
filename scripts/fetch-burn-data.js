@@ -31,7 +31,7 @@ const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || 'YOUR_ETHERSCAN_API_K
 const ETHERSCAN_BASE_URL = 'https://api.etherscan.io/api';
 
 // Moralis API configuration
-const MORALIS_API_KEY = process.env.MORALIS_API_KEY || 'YOUR_MORALIS_API_KEY_HERE';
+const MORALIS_API_KEY = 'YOUR_MORALIS_API_KEY_HERE';
 const MORALIS_BASE_URL = 'https://deep-index.moralis.io/api/v2.2';
 
 // LP and contract addresses to exclude from holder counts
