@@ -264,10 +264,6 @@ const SeaCreatures: React.FC<Props> = ({ burnData }) => {
               <span className="concentration-percentage">of total supply</span>
             </div>
           )}
-          <div className="concentration-item">
-            <span className="concentration-label">Concentration Risk</span>
-            <span className="concentration-badge low">Low</span>
-          </div>
         </div>
       </div>
     </div>
