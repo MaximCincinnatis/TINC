@@ -15,6 +15,7 @@ interface HolderStats {
   squid: number;
   shrimp: number;
   totalHolders: number;
+  top10Percentage?: number;
 }
 
 const SeaCreatures: React.FC<Props> = ({ burnData }) => {
@@ -43,7 +44,8 @@ const SeaCreatures: React.FC<Props> = ({ burnData }) => {
             dolphin: burnData.holderStats.dolphin,
             squid: burnData.holderStats.squid,
             shrimp: burnData.holderStats.shrimp,
-            totalHolders: burnData.holderStats.totalHolders
+            totalHolders: burnData.holderStats.totalHolders,
+            top10Percentage: burnData.holderStats.top10Percentage
           });
         } else {
           // Fallback to current values if holder data not available
@@ -255,6 +257,13 @@ const SeaCreatures: React.FC<Props> = ({ burnData }) => {
               {(((holderStats.poseidon + holderStats.whale) / holderStats.totalHolders) * 100).toFixed(2)}% of holders
             </span>
           </div>
+          {holderStats.top10Percentage !== undefined && (
+            <div className="concentration-item">
+              <span className="concentration-label">Top 10 Holders</span>
+              <span className="concentration-value">{holderStats.top10Percentage.toFixed(2)}%</span>
+              <span className="concentration-percentage">of total supply</span>
+            </div>
+          )}
           <div className="concentration-item">
             <span className="concentration-label">Concentration Risk</span>
             <span className="concentration-badge low">Low</span>
