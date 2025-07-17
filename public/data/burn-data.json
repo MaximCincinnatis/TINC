@@ -1,9 +1,9 @@
 {
   "startDate": "2025-06-17",
   "endDate": "2025-07-17",
-  "totalBurned": 797583.0763001621,
-  "totalSupply": 14221897.607583512,
-  "burnPercentage": 5.6081340079039,
+  "totalBurned": 822282.8622647274,
+  "totalSupply": 14194523.6156779,
+  "burnPercentage": 5.792958499547763,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
@@ -552,14 +552,9 @@
     },
     {
       "date": "2025-07-04",
-      "amountTinc": 6122.32494752541,
-      "transactionCount": 5,
+      "amountTinc": 3448.119006481948,
+      "transactionCount": 4,
       "transactions": [
-        {
-          "hash": "0xb1df94e1f68b9356bbfb713bf4970694e9a8f2c22f849853632e8ad556722043",
-          "amount": 2674.2059410434613,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
         {
           "hash": "0x2d46fdce2395d2637c437744e3e54836c4353992501e217c7feb98d20c71e8ad",
           "amount": 1258.9928247284267,
@@ -1018,12 +1013,23 @@
     },
     {
       "date": "2025-07-17",
-      "amountTinc": 0,
-      "transactionCount": 0,
-      "transactions": []
+      "amountTinc": 27373.991905608687,
+      "transactionCount": 2,
+      "transactions": [
+        {
+          "hash": "0x5c35a8caa40d3130d3af06439b858ac6dbfadf9e6e00f6cb6241f0f8c2a98ec5",
+          "amount": 8539.22471829931,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x0aa85c594def2c6c01253cba52f3a3f91c90ec6aa35e0df343b9effa7bcf478c",
+          "amount": 18834.76718730938,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
     }
   ],
-  "fetchedAt": "2025-07-17T00:11:56.090Z",
+  "fetchedAt": "2025-07-17T00:44:09.008Z",
   "fromCache": true,
   "holderStats": {
     "totalHolders": 983,
@@ -1033,7 +1039,7 @@
     "dolphin": 99,
     "squid": 201,
     "shrimp": 640,
-    "top10Percentage": 38.42652989221544,
+    "top10Percentage": 38.500635057468635,
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
