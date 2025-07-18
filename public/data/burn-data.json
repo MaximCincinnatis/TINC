@@ -1,9 +1,9 @@
 {
   "startDate": "2025-06-18",
   "endDate": "2025-07-18",
-  "totalBurned": 838245.5117748801,
-  "totalSupply": 14263880.92617484,
-  "burnPercentage": 5.876700149933692,
+  "totalBurned": 823353.4362898249,
+  "totalSupply": 14257858.547803406,
+  "burnPercentage": 5.774734217830154,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
@@ -478,8 +478,8 @@
     },
     {
       "date": "2025-07-03",
-      "amountTinc": 30974.558465779664,
-      "transactionCount": 8,
+      "amountTinc": 6200.455043878608,
+      "transactionCount": 6,
       "transactions": [
         {
           "hash": "0x35b9dd1a99891b6e96a1c0a7dd75910b67fc4e0a09f400386d8363c388ad4072",
@@ -499,16 +499,6 @@
         {
           "hash": "0x1451b01d3852a9cd8c9d986e47aeedc0705571d446668b20407b26716df8334d",
           "amount": 551.8905087383595,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0xc3fcedb074277a1e32e462480c05a66f1de2f0f7847abb1f1e2f8d4f5f79b883",
-          "amount": 13628.451845527012,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0xd77db3aa45ab8a90924159ec5f27d42c19b2eccf668e1479edd438a5d2d56a99",
-          "amount": 11145.651576374044,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         },
         {
@@ -1028,12 +1018,18 @@
     },
     {
       "date": "2025-07-18",
-      "amountTinc": 0,
-      "transactionCount": 0,
-      "transactions": []
+      "amountTinc": 9882.027936845629,
+      "transactionCount": 1,
+      "transactions": [
+        {
+          "hash": "0x437ed6df668e2ba1685e0dd2b684033caadf587a3a8668e0731562c31eb23a73",
+          "amount": 9882.027936845629,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
     }
   ],
-  "fetchedAt": "2025-07-18T07:39:00.604Z",
+  "fetchedAt": "2025-07-18T08:09:02.304Z",
   "fromCache": true,
   "holderStats": {
     "totalHolders": 982,
@@ -1043,7 +1039,7 @@
     "dolphin": 101,
     "squid": 200,
     "shrimp": 637,
-    "top10Percentage": 38.36923853056155,
+    "top10Percentage": 38.42454769683296,
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
