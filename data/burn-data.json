@@ -1,9 +1,9 @@
 {
   "startDate": "2025-06-18",
   "endDate": "2025-07-18",
-  "totalBurned": 866651.4447214999,
+  "totalBurned": 843136.3341243274,
   "totalSupply": 14252562.723005254,
-  "burnPercentage": 6.080670975210838,
+  "burnPercentage": 5.915682326824001,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
@@ -478,8 +478,8 @@
     },
     {
       "date": "2025-07-03",
-      "amountTinc": 28818.30129089758,
-      "transactionCount": 6,
+      "amountTinc": 4044.1978689965226,
+      "transactionCount": 4,
       "transactions": [
         {
           "hash": "0x35b9dd1a99891b6e96a1c0a7dd75910b67fc4e0a09f400386d8363c388ad4072",
@@ -500,24 +500,19 @@
           "hash": "0x1451b01d3852a9cd8c9d986e47aeedc0705571d446668b20407b26716df8334d",
           "amount": 551.8905087383595,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0xc3fcedb074277a1e32e462480c05a66f1de2f0f7847abb1f1e2f8d4f5f79b883",
-          "amount": 13628.451845527012,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0xd77db3aa45ab8a90924159ec5f27d42c19b2eccf668e1479edd438a5d2d56a99",
-          "amount": 11145.651576374044,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
     },
     {
       "date": "2025-07-04",
-      "amountTinc": 2189.1261817535215,
-      "transactionCount": 3,
+      "amountTinc": 3448.119006481948,
+      "transactionCount": 4,
       "transactions": [
+        {
+          "hash": "0x2d46fdce2395d2637c437744e3e54836c4353992501e217c7feb98d20c71e8ad",
+          "amount": 1258.9928247284267,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
         {
           "hash": "0x17589fcb9681e0568474d7605f303f78ea30387e77e9f60deee50dcf97b10c8d",
           "amount": 888.2493565720627,
@@ -1034,7 +1029,7 @@
       ]
     }
   ],
-  "fetchedAt": "2025-07-18T14:38:55.217Z",
+  "fetchedAt": "2025-07-18T15:08:58.108Z",
   "fromCache": true,
   "holderStats": {
     "totalHolders": 981,
