@@ -2,8 +2,8 @@
   "startDate": "2025-06-18",
   "endDate": "2025-07-18",
   "totalBurned": 872740.9006621538,
-  "totalSupply": 14251355.13718763,
-  "burnPercentage": 6.123915180422491,
+  "totalSupply": 14252562.723005254,
+  "burnPercentage": 6.123396315621547,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
@@ -1054,7 +1054,7 @@
       ]
     }
   ],
-  "fetchedAt": "2025-07-18T12:09:11.385Z",
+  "fetchedAt": "2025-07-18T12:38:58.845Z",
   "fromCache": true,
   "holderStats": {
     "totalHolders": 981,
@@ -1064,7 +1064,7 @@
     "dolphin": 100,
     "squid": 200,
     "shrimp": 637,
-    "top10Percentage": 38.402961989194594,
+    "top10Percentage": 38.399708197357,
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
