@@ -30,7 +30,16 @@ if [ $? -eq 0 ]; then
     
     git push origin master
     
-    echo "✅ Auto-update complete: $(date)"
+    # Trigger Vercel deployment
+    echo "🚀 Triggering Vercel deployment..."
+    node scripts/trigger-vercel-deploy.js
+    
+    if [ $? -eq 0 ]; then
+        echo "✅ Auto-update and deployment complete: $(date)"
+    else
+        echo "⚠️  Git push succeeded but Vercel deployment trigger failed"
+        echo "✅ Auto-update complete: $(date)"
+    fi
 else
     echo "❌ Data fetch failed: $(date)"
     exit 1
