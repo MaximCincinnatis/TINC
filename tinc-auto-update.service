@@ -1,0 +1,16 @@
+[Unit]
+Description=TINC Auto-Update Service
+After=network.target
+
+[Service]
+Type=simple
+User=wsl
+WorkingDirectory=/home/wsl/projects/TINC
+ExecStart=/usr/bin/node /home/wsl/projects/TINC/scripts/run-auto-updates.js
+Restart=always
+RestartSec=60
+StandardOutput=append:/home/wsl/projects/TINC/logs/auto-update.log
+StandardError=append:/home/wsl/projects/TINC/logs/auto-update.log
+
+[Install]
+WantedBy=multi-user.target
