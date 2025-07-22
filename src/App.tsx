@@ -7,6 +7,7 @@ import AdminPanel from './components/AdminPanel';
 import SeaCreatures from './components/SeaCreatures';
 import { fetchBurnData, setProgressCallback } from './services/fileCachedBurnService';
 import { BurnData } from './types/BurnData';
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   const [burnData, setBurnData] = useState<BurnData | null>(null);
@@ -326,6 +327,7 @@ function App() {
           Built for the TINC Community
         </p>
       </footer>
+      <Analytics />
     </div>
   );
 }
