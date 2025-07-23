@@ -71,8 +71,39 @@ function App() {
                 }}>T</span>
               </div>
               <div className="brand-info">
-                <h1>TINC Analytics</h1>
-                <p>30 Day Burn Tracker</p>
+                <h1 style={{
+                  fontSize: '1.875rem',
+                  fontWeight: '800',
+                  letterSpacing: '-0.025em',
+                  margin: 0,
+                  background: 'linear-gradient(135deg, #ffffff 0%, #22c55e 50%, #16a34a 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                  position: 'relative',
+                  display: 'inline-block'
+                }}>
+                  TINC<span style={{
+                    fontSize: '1.75rem',
+                    fontWeight: '700',
+                    background: 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text'
+                  }}>Burn</span><span style={{
+                    fontSize: '1.5rem',
+                    fontWeight: '300',
+                    color: 'rgba(255, 255, 255, 0.9)',
+                    WebkitTextFillColor: 'rgba(255, 255, 255, 0.9)'
+                  }}>.fyi</span>
+                </h1>
+                <p style={{
+                  fontSize: '0.875rem',
+                  color: 'rgba(255, 255, 255, 0.7)',
+                  marginTop: '0.25rem',
+                  letterSpacing: '0.025em',
+                  fontWeight: '400'
+                }}>Real-time TINC burn analytics & insights</p>
               </div>
             </div>
             
