@@ -72,43 +72,51 @@ function App() {
               </div>
               <div className="brand-info">
                 <h1 style={{
-                  fontSize: '1.5rem',
-                  fontWeight: '600',
-                  letterSpacing: '-0.02em',
+                  fontSize: '2.25rem',
+                  fontWeight: '700',
+                  letterSpacing: '-0.04em',
                   margin: 0,
                   color: '#ffffff',
                   position: 'relative',
                   display: 'flex',
                   alignItems: 'baseline',
-                  gap: '0.125rem',
-                  fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif'
+                  gap: '0.2rem',
+                  fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif',
+                  textShadow: '0 0 40px rgba(34, 197, 94, 0.3)'
                 }}>
                   <span style={{
-                    fontWeight: '700',
-                    letterSpacing: '-0.03em'
+                    fontWeight: '900',
+                    letterSpacing: '-0.05em',
+                    background: 'linear-gradient(180deg, #ffffff 0%, rgba(255,255,255,0.9) 100%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text'
                   }}>TINC</span>
                   <span style={{
-                    fontWeight: '400',
-                    color: '#22c55e',
-                    letterSpacing: '-0.02em'
+                    fontWeight: '600',
+                    background: 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                    letterSpacing: '-0.03em'
                   }}>Burn</span>
                   <span style={{
-                    fontSize: '1.25rem',
+                    fontSize: '1.875rem',
                     fontWeight: '300',
-                    color: 'rgba(255, 255, 255, 0.6)',
-                    letterSpacing: 'normal',
+                    color: 'rgba(255, 255, 255, 0.7)',
+                    letterSpacing: '-0.02em',
                     marginLeft: '0.125rem'
                   }}>.fyi</span>
                 </h1>
                 <p style={{
-                  fontSize: '0.8125rem',
-                  color: 'rgba(255, 255, 255, 0.5)',
-                  marginTop: '0.375rem',
-                  letterSpacing: '0.01em',
-                  fontWeight: '400',
+                  fontSize: '0.9375rem',
+                  color: 'rgba(255, 255, 255, 0.6)',
+                  marginTop: '0.5rem',
+                  letterSpacing: '0.05em',
+                  fontWeight: '500',
                   textTransform: 'uppercase',
-                  fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif'
-                }}>Ethereum Burn Analytics Platform</p>
+                  fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif'
+                }}>Real-Time Burn Analytics Platform</p>
               </div>
             </div>
             
