@@ -72,7 +72,7 @@ function App() {
               </div>
               <div className="brand-info">
                 <h1 style={{
-                  fontSize: '2.25rem',
+                  fontSize: '3rem',
                   fontWeight: '700',
                   letterSpacing: '-0.04em',
                   margin: 0,
@@ -80,30 +80,29 @@ function App() {
                   position: 'relative',
                   display: 'flex',
                   alignItems: 'baseline',
-                  gap: '0.2rem',
+                  gap: '0.25rem',
                   fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif',
                   textShadow: '0 0 40px rgba(34, 197, 94, 0.3)'
                 }}>
                   <span style={{
-                    fontWeight: '900',
-                    letterSpacing: '-0.05em',
-                    background: 'linear-gradient(180deg, #ffffff 0%, rgba(255,255,255,0.9) 100%)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text'
-                  }}>TINC</span>
-                  <span style={{
-                    fontWeight: '600',
+                    fontFamily: 'Space Grotesk, Inter, -apple-system, BlinkMacSystemFont, sans-serif',
+                    fontWeight: '700',
+                    letterSpacing: '-0.06em',
                     background: 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
                     backgroundClip: 'text',
+                    textTransform: 'uppercase'
+                  }}>TINC</span>
+                  <span style={{
+                    fontWeight: '600',
+                    color: '#ffffff',
                     letterSpacing: '-0.03em'
                   }}>Burn</span>
                   <span style={{
-                    fontSize: '1.875rem',
+                    fontSize: '2.5rem',
                     fontWeight: '300',
-                    color: 'rgba(255, 255, 255, 0.7)',
+                    color: '#ffffff',
                     letterSpacing: '-0.02em',
                     marginLeft: '0.125rem'
                   }}>.fyi</span>
