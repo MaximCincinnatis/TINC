@@ -1,9 +1,9 @@
 {
   "startDate": "2025-06-23",
   "endDate": "2025-07-23",
-  "totalBurned": 864570.3398430859,
-  "totalSupply": 14588188.535139553,
-  "burnPercentage": 5.92650922875405,
+  "totalBurned": 867215.9156421353,
+  "totalSupply": 14585542.959340502,
+  "burnPercentage": 5.945722542243619,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
@@ -1058,8 +1058,8 @@
     },
     {
       "date": "2025-07-23",
-      "amountTinc": 49927.66981015782,
-      "transactionCount": 5,
+      "amountTinc": 52573.24560920732,
+      "transactionCount": 6,
       "transactions": [
         {
           "hash": "0x4157c0593bc0bf434e287f9cc2f84a83cffbbae74df49094c98f5d4c0216e3a2",
@@ -1085,11 +1085,16 @@
           "hash": "0xaacbe2a588cab2b74f13c07716a3b56843d9e7ec5476ed9d102cc8f1d0787e9d",
           "amount": 27611.794174572366,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0xfd0de6b610082e34d0612640e2d908f378bd94ef6988b8bc4326872a45540d5b",
+          "amount": 2645.5757990494963,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
     }
   ],
-  "fetchedAt": "2025-07-23T18:09:59.938Z",
+  "fetchedAt": "2025-07-23T20:10:05.706Z",
   "fromCache": true,
   "holderStats": {
     "totalHolders": 981,
@@ -1099,7 +1104,7 @@
     "dolphin": 96,
     "squid": 195,
     "shrimp": 643,
-    "top10Percentage": 40.92562470329699,
+    "top10Percentage": 40.93304793344878,
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
