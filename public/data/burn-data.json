@@ -1,35 +1,13 @@
 {
-  "startDate": "2025-06-23",
-  "endDate": "2025-07-23",
-  "totalBurned": 841930.6492230796,
-  "totalSupply": 14585179.618923007,
-  "burnPercentage": 5.772507923939089,
+  "startDate": "2025-06-24",
+  "endDate": "2025-07-24",
+  "totalBurned": 796443.119801815,
+  "totalSupply": 14588236.664841022,
+  "burnPercentage": 5.459488614695396,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
   "dailyBurns": [
-    {
-      "date": "2025-06-24",
-      "amountTinc": 45487.529421264444,
-      "transactionCount": 3,
-      "transactions": [
-        {
-          "hash": "0x95302a115ca9f4c22a246d2d463028023356eb48d9c71c2e04d4b8181d89f7e7",
-          "amount": 2484.828033678774,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0xd33432e3161accee6086c564e98443c409b84fe39d35ce99337eb6a6879eeda6",
-          "amount": 21021.12355216185,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x8a4910ffc4da17801a9aaa5d0ad3f83183a614e30497bc709b51bd2f9abbbe36",
-          "amount": 21981.57783542382,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        }
-      ]
-    },
     {
       "date": "2025-06-25",
       "amountTinc": 35390.94233825648,
@@ -1077,19 +1055,25 @@
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
+    },
+    {
+      "date": "2025-07-24",
+      "amountTinc": 0,
+      "transactionCount": 0,
+      "transactions": []
     }
   ],
-  "fetchedAt": "2025-07-23T23:52:08.630Z",
+  "fetchedAt": "2025-07-24T01:52:02.988Z",
   "fromCache": true,
   "holderStats": {
-    "totalHolders": 982,
+    "totalHolders": 983,
     "poseidon": 1,
     "whale": 7,
     "shark": 39,
-    "dolphin": 96,
-    "squid": 196,
-    "shrimp": 643,
-    "top10Percentage": 40.93406764188667,
+    "dolphin": 97,
+    "squid": 195,
+    "shrimp": 644,
+    "top10Percentage": 40.92548968093996,
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
