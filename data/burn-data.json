@@ -1,9 +1,9 @@
 {
   "startDate": "2025-06-24",
   "endDate": "2025-07-24",
-  "totalBurned": 828259.8043448015,
-  "totalSupply": 14625818.798704647,
-  "burnPercentage": 5.662997851567512,
+  "totalBurned": 827820.524938944,
+  "totalSupply": 14652311.178952584,
+  "burnPercentage": 5.649760743056513,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
@@ -313,14 +313,9 @@
     },
     {
       "date": "2025-07-04",
-      "amountTinc": 6122.32494752541,
-      "transactionCount": 5,
+      "amountTinc": 3448.119006481948,
+      "transactionCount": 4,
       "transactions": [
-        {
-          "hash": "0xb1df94e1f68b9356bbfb713bf4970694e9a8f2c22f849853632e8ad556722043",
-          "amount": 2674.2059410434613,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
         {
           "hash": "0x2d46fdce2395d2637c437744e3e54836c4353992501e217c7feb98d20c71e8ad",
           "amount": 1258.9928247284267,
@@ -1078,8 +1073,8 @@
     },
     {
       "date": "2025-07-24",
-      "amountTinc": 4886.32394620347,
-      "transactionCount": 3,
+      "amountTinc": 7121.25048138934,
+      "transactionCount": 4,
       "transactions": [
         {
           "hash": "0xda6b9937633732e5083f976c13f47a0c9e96a9ad0554a6d1fab527e7187aa26e",
@@ -1095,21 +1090,26 @@
           "hash": "0xe1554ae8b3c4102b552f78a77e45f220d35fc53f1b150e556109d6f55430d5ae",
           "amount": 1159.641982867812,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x8c0372cfef7f66cc6e197add5b4fa4fa5377596a42d251f53bb2a6751054f268",
+          "amount": 2234.9265351858703,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
     }
   ],
-  "fetchedAt": "2025-07-24T20:00:27.054Z",
+  "fetchedAt": "2025-07-24T21:52:12.160Z",
   "fromCache": true,
   "holderStats": {
     "totalHolders": 984,
     "poseidon": 1,
     "whale": 7,
     "shark": 39,
-    "dolphin": 97,
-    "squid": 195,
+    "dolphin": 98,
+    "squid": 194,
     "shrimp": 645,
-    "top10Percentage": 40.82032857831781,
+    "top10Percentage": 40.746522633758296,
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
