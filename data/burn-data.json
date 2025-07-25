@@ -1,9 +1,9 @@
 {
   "startDate": "2025-06-25",
   "endDate": "2025-07-25",
-  "totalBurned": 793888.407380586,
-  "totalSupply": 14691031.952336561,
-  "burnPercentage": 5.403898173772066,
+  "totalBurned": 797870.9319558484,
+  "totalSupply": 14689723.633702343,
+  "burnPercentage": 5.431490420454941,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
@@ -281,9 +281,14 @@
     },
     {
       "date": "2025-07-04",
-      "amountTinc": 3448.119006481948,
-      "transactionCount": 4,
+      "amountTinc": 6122.32494752541,
+      "transactionCount": 5,
       "transactions": [
+        {
+          "hash": "0xb1df94e1f68b9356bbfb713bf4970694e9a8f2c22f849853632e8ad556722043",
+          "amount": 2674.2059410434613,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
         {
           "hash": "0x2d46fdce2395d2637c437744e3e54836c4353992501e217c7feb98d20c71e8ad",
           "amount": 1258.9928247284267,
@@ -1068,8 +1073,8 @@
     },
     {
       "date": "2025-07-25",
-      "amountTinc": 1458.824779898396,
-      "transactionCount": 3,
+      "amountTinc": 2767.143414117214,
+      "transactionCount": 4,
       "transactions": [
         {
           "hash": "0xd31b070cfd8b8b6a8dd44862e3131ac5273310a52fd73d97cb4bf5d068bab192",
@@ -1085,11 +1090,16 @@
           "hash": "0x0f15f3562a149a399eefdad7c53b7236a0a3beb5508b8d3b9b00bdc6dbc0b80d",
           "amount": 497.2851339074421,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x762b372fadb55a0a774f69eae3e6b8cec9e7f0ed6a322a3a6c978acd348a12f7",
+          "amount": 1308.3186342188183,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
     }
   ],
-  "fetchedAt": "2025-07-25T16:47:50.980Z",
+  "fetchedAt": "2025-07-25T18:47:49.975Z",
   "fromCache": true,
   "holderStats": {
     "totalHolders": 983,
@@ -1099,7 +1109,7 @@
     "dolphin": 97,
     "squid": 194,
     "shrimp": 645,
-    "top10Percentage": 40.63912807671114,
+    "top10Percentage": 40.64274754089352,
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
