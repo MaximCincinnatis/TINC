@@ -1,45 +1,13 @@
 {
-  "startDate": "2025-06-25",
-  "endDate": "2025-07-25",
-  "totalBurned": 797589.7199713127,
-  "totalSupply": 14691900.054283474,
-  "burnPercentage": 5.428771751947583,
+  "startDate": "2025-06-26",
+  "endDate": "2025-07-26",
+  "totalBurned": 784949.2405659633,
+  "totalSupply": 14691655.811100576,
+  "burnPercentage": 5.342823509198188,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
   "dailyBurns": [
-    {
-      "date": "2025-06-26",
-      "amountTinc": 15624.080428551955,
-      "transactionCount": 5,
-      "transactions": [
-        {
-          "hash": "0x5460c498d3247199732d08f319efd10d33d2411f879f07bddfbdd709ae44fccc",
-          "amount": 5336.141146546651,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x0383590d6409bf869a5c582ede20564b1c3713a954eebcb474c6c173f6e30536",
-          "amount": 3208.496815870736,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0xa089371819b4b444298fc4714c2f650ab831d373220b85fbeb6777c5ac1e1b15",
-          "amount": 581.6979193211856,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x6e4d28a9d9d4a4fd7b97d04e6ce29942f96786af59af7a6d0edfcc28824e9c91",
-          "amount": 3895.561507439447,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x7a636e0ba70b736d3d211f8cc60f78caf8046287213619c5862631ea9c70070d",
-          "amount": 2602.1830393739365,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        }
-      ]
-    },
     {
       "date": "2025-06-27",
       "amountTinc": 18512.010252285094,
@@ -234,8 +202,8 @@
     },
     {
       "date": "2025-07-03",
-      "amountTinc": 28818.30129089758,
-      "transactionCount": 6,
+      "amountTinc": 30974.558465779664,
+      "transactionCount": 8,
       "transactions": [
         {
           "hash": "0x35b9dd1a99891b6e96a1c0a7dd75910b67fc4e0a09f400386d8363c388ad4072",
@@ -265,6 +233,16 @@
         {
           "hash": "0xd77db3aa45ab8a90924159ec5f27d42c19b2eccf668e1479edd438a5d2d56a99",
           "amount": 11145.651576374044,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x880cfaedc774177657a3439c8b87bb1caaed58ca2ae51dd42da4f4af13f22cfa",
+          "amount": 217.98125419371763,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x4e8f81299314738ffd963d88856553e87460c69d8b2c63db2a47f351f1f6546f",
+          "amount": 1938.2759206883673,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
@@ -1063,8 +1041,8 @@
     },
     {
       "date": "2025-07-25",
-      "amountTinc": 4642.188604463581,
-      "transactionCount": 5,
+      "amountTinc": 5469.532452784188,
+      "transactionCount": 6,
       "transactions": [
         {
           "hash": "0xd31b070cfd8b8b6a8dd44862e3131ac5273310a52fd73d97cb4bf5d068bab192",
@@ -1090,21 +1068,32 @@
           "hash": "0x8d04428569d7b9354fc83581ec90079059dff55caabdc2e8bdf62d49e0e8acbc",
           "amount": 1875.045190346367,
           "from": "0x9fabf48ebe587ee4f8b3172012c3060cc40fea6c"
+        },
+        {
+          "hash": "0x3fd319a557570fc7cdf905f1fdcd9bfe2db2291db9fd786ed340ee8bf91e804f",
+          "amount": 827.3438483206064,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
+    },
+    {
+      "date": "2025-07-26",
+      "amountTinc": 0,
+      "transactionCount": 0,
+      "transactions": []
     }
   ],
-  "fetchedAt": "2025-07-25T22:47:49.460Z",
+  "fetchedAt": "2025-07-26T00:47:41.503Z",
   "fromCache": true,
   "holderStats": {
-    "totalHolders": 983,
+    "totalHolders": 984,
     "poseidon": 1,
     "whale": 7,
     "shark": 39,
-    "dolphin": 97,
+    "dolphin": 98,
     "squid": 194,
     "shrimp": 645,
-    "top10Percentage": 40.636726827990834,
+    "top10Percentage": 40.61537384639048,
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
