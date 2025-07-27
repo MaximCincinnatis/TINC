@@ -1,9 +1,9 @@
 {
   "startDate": "2025-06-27",
   "endDate": "2025-07-27",
-  "totalBurned": 807913.4581868261,
-  "totalSupply": 14992427.307154998,
-  "burnPercentage": 5.388810241562798,
+  "totalBurned": 805919.4490429834,
+  "totalSupply": 14994882.915873395,
+  "burnPercentage": 5.374629822483289,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
@@ -185,8 +185,8 @@
     },
     {
       "date": "2025-07-03",
-      "amountTinc": 6200.455043878608,
-      "transactionCount": 6,
+      "amountTinc": 4044.1978689965226,
+      "transactionCount": 4,
       "transactions": [
         {
           "hash": "0x35b9dd1a99891b6e96a1c0a7dd75910b67fc4e0a09f400386d8363c388ad4072",
@@ -206,16 +206,6 @@
         {
           "hash": "0x1451b01d3852a9cd8c9d986e47aeedc0705571d446668b20407b26716df8334d",
           "amount": 551.8905087383595,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x880cfaedc774177657a3439c8b87bb1caaed58ca2ae51dd42da4f4af13f22cfa",
-          "amount": 217.98125419371763,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x4e8f81299314738ffd963d88856553e87460c69d8b2c63db2a47f351f1f6546f",
-          "amount": 1938.2759206883673,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
@@ -1108,12 +1098,18 @@
     },
     {
       "date": "2025-07-27",
-      "amountTinc": 0,
-      "transactionCount": 0,
-      "transactions": []
+      "amountTinc": 162.24803103932763,
+      "transactionCount": 1,
+      "transactions": [
+        {
+          "hash": "0xc59758108cc9c10b5b8a3f800e020a02645167bc06ab106bfdc5b8fc36e19524",
+          "amount": 162.24803103932763,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
     }
   ],
-  "fetchedAt": "2025-07-27T02:47:54.995Z",
+  "fetchedAt": "2025-07-27T04:47:54.931Z",
   "fromCache": true,
   "holderStats": {
     "totalHolders": 914,
