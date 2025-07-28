@@ -1,9 +1,9 @@
 {
   "startDate": "2025-06-28",
   "endDate": "2025-07-28",
-  "totalBurned": 843924.5527791638,
-  "totalSupply": 15009852.752838233,
-  "burnPercentage": 5.62247056434038,
+  "totalBurned": 871249.2762840084,
+  "totalSupply": 14986461.228099162,
+  "burnPercentage": 5.813575753630499,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
@@ -185,9 +185,19 @@
     },
     {
       "date": "2025-07-04",
-      "amountTinc": 2189.1261817535215,
-      "transactionCount": 3,
+      "amountTinc": 6122.32494752541,
+      "transactionCount": 5,
       "transactions": [
+        {
+          "hash": "0xb1df94e1f68b9356bbfb713bf4970694e9a8f2c22f849853632e8ad556722043",
+          "amount": 2674.2059410434613,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x2d46fdce2395d2637c437744e3e54836c4353992501e217c7feb98d20c71e8ad",
+          "amount": 1258.9928247284267,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
         {
           "hash": "0x17589fcb9681e0568474d7605f303f78ea30387e77e9f60deee50dcf97b10c8d",
           "amount": 888.2493565720627,
@@ -1108,12 +1118,23 @@
     },
     {
       "date": "2025-07-28",
-      "amountTinc": 0,
-      "transactionCount": 0,
-      "transactions": []
+      "amountTinc": 23391.524739072684,
+      "transactionCount": 2,
+      "transactions": [
+        {
+          "hash": "0x0e8f0470396b871cc8d0705b54535826390a2aa02e39f30639492b788fd9ff66",
+          "amount": 1629.1971998962133,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0xde86281a70d9dbb3285acb945c573e714e54b464a14b40b4640ab2514380d02c",
+          "amount": 21762.32753917647,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
     }
   ],
-  "fetchedAt": "2025-07-28T00:27:33.994Z",
+  "fetchedAt": "2025-07-28T02:25:50.844Z",
   "fromCache": true,
   "holderStats": {
     "totalHolders": 16,
