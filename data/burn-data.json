@@ -1,9 +1,9 @@
 {
   "startDate": "2025-06-28",
   "endDate": "2025-07-28",
-  "totalBurned": 848922.7999551254,
-  "totalSupply": 15000000,
-  "burnPercentage": 5.62498903359858,
+  "totalBurned": 847507.5868388102,
+  "totalSupply": 15091990.311170936,
+  "burnPercentage": 5.615611787210689,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
@@ -165,12 +165,12 @@
     },
     {
       "date": "2025-07-04",
-      "amountTinc": 4863.332122796983,
+      "amountTinc": 3448.119006481948,
       "transactionCount": 4,
       "transactions": [
         {
-          "hash": "0xb1df94e1f68b9356bbfb713bf4970694e9a8f2c22f849853632e8ad556722043",
-          "amount": 2674.2059410434613,
+          "hash": "0x2d46fdce2395d2637c437744e3e54836c4353992501e217c7feb98d20c71e8ad",
+          "amount": 1258.9928247284267,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         },
         {
@@ -1134,7 +1134,7 @@
       ]
     }
   ],
-  "fetchedAt": "2025-07-28T20:08:58.244Z",
+  "fetchedAt": "2025-07-28T22:06:57.999Z",
   "fromCache": true,
   "holderStats": {
     "totalHolders": 986,
@@ -1145,10 +1145,7 @@
     "squid": 198,
     "shrimp": 644,
     "top10Percentage": 39.98628973234601,
-    "dataSource": "moralis",
-    "lastUpdate": "2025-07-28T20:51:55.415Z",
-    "estimatedData": false,
-    "excludesLPPositions": true,
-    "realTimeData": true
+    "dataSource": "blockchain-incremental",
+    "lastUpdate": "2025-07-28T20:53:01.760Z"
   }
 }
