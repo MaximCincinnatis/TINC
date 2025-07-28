@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+require('dotenv').config();
 
 // ⏰ IMPORTANT: This script takes 8-10 minutes to complete
 // It fetches REAL blockchain data (no estimates):
@@ -31,7 +32,7 @@ const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || 'YOUR_ETHERSCAN_API_K
 const ETHERSCAN_BASE_URL = 'https://api.etherscan.io/api';
 
 // Moralis API configuration
-const MORALIS_API_KEY = 'YOUR_MORALIS_API_KEY_HERE';
+const MORALIS_API_KEY = process.env.MORALIS_API_KEY;
 const MORALIS_BASE_URL = 'https://deep-index.moralis.io/api/v2.2';
 
 // LP and contract addresses to exclude from holder counts
@@ -375,9 +376,81 @@ async function fetchRealHolderData() {
   }
 }
 
-// Legacy function for compatibility - now calls real data fetcher
+// New caching-based holder data fetcher
+const HolderCacheManager = require('./holder-cache-manager');
+const TransferEventMonitor = require('./transfer-event-monitor');
+const InitialHolderSnapshot = require('./initial-holder-snapshot');
+
+async function fetchHolderDataWithCache() {
+  const cacheManager = new HolderCacheManager();
+  const transferMonitor = new TransferEventMonitor(callRPC);
+  const snapshotCreator = new InitialHolderSnapshot(callRPC);
+  
+  try {
+    // Check if we have a valid cache
+    const cache = cacheManager.loadCache();
+    const cacheAge = cacheManager.getCacheAge();
+    
+    if (cache && cacheAge !== null) {
+      console.log(`📊 Found holder cache (${cacheAge} hours old)`);
+      
+      // If cache is less than 0.5 hours old, use it directly
+      if (cacheAge < 0.5) {
+        console.log('✅ Using cached holder data');
+        return cache.holderStats;
+      }
+      
+      // Otherwise, do incremental update
+      console.log('🔄 Performing incremental holder update...');
+      const currentBlock = await getBlockNumber();
+      const updatedStats = await transferMonitor.getIncrementalHolderUpdate(
+        cache.lastBlock,
+        currentBlock,
+        callRPC
+      );
+      
+      if (updatedStats) {
+        return updatedStats;
+      }
+    }
+    
+    // No cache or update failed - create initial snapshot
+    console.log('🚀 Creating initial holder snapshot from blockchain...');
+    console.log('⏰ This will take 5-10 minutes for the initial scan...');
+    return await snapshotCreator.createInitialSnapshot();
+    
+  } catch (error) {
+    console.error('❌ Error in cached holder data fetch:', error.message);
+    
+    // Last resort - try Moralis if available
+    if (MORALIS_API_KEY) {
+      console.log('🔄 Attempting Moralis API fallback...');
+      try {
+        return await fetchRealHolderData();
+      } catch (moralisError) {
+        console.error('❌ Moralis fallback failed:', moralisError.message);
+      }
+    }
+    
+    // Return basic data if everything fails
+    return {
+      totalHolders: 0,
+      poseidon: 0,
+      whale: 0,
+      shark: 0,
+      dolphin: 0,
+      squid: 0,
+      shrimp: 0,
+      top10Percentage: 0,
+      dataSource: 'error',
+      error: error.message
+    };
+  }
+}
+
+// Legacy function for compatibility - now uses caching system
 async function fetchHolderData() {
-  return await fetchRealHolderData();
+  return await fetchHolderDataWithCache();
 }
 
 async function main() {
@@ -416,4 +489,4 @@ if (require.main === module) {
   main();
 }
 
-module.exports = { fetchBurnData };
+module.exports = { fetchBurnData, callRPC };
