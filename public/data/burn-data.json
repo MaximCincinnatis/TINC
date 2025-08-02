@@ -1,23 +1,18 @@
 {
   "startDate": "2025-07-03",
   "endDate": "2025-08-02",
-  "totalBurned": 985837.258379141,
-  "totalSupply": 15294043.726300772,
-  "burnPercentage": 6.445890151888491,
+  "totalBurned": 983407.1423448601,
+  "totalSupply": 15295591.669533795,
+  "burnPercentage": 6.429350126439627,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
   "dailyBurns": [
     {
       "date": "2025-07-04",
-      "amountTinc": 6122.32494752541,
-      "transactionCount": 5,
+      "amountTinc": 3448.119006481948,
+      "transactionCount": 4,
       "transactions": [
-        {
-          "hash": "0xb1df94e1f68b9356bbfb713bf4970694e9a8f2c22f849853632e8ad556722043",
-          "amount": 2674.2059410434613,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
         {
           "hash": "0x2d46fdce2395d2637c437744e3e54836c4353992501e217c7feb98d20c71e8ad",
           "amount": 1258.9928247284267,
@@ -1128,8 +1123,8 @@
     },
     {
       "date": "2025-08-02",
-      "amountTinc": 5509.459752201898,
-      "transactionCount": 2,
+      "amountTinc": 5753.5496589646555,
+      "transactionCount": 3,
       "transactions": [
         {
           "hash": "0x838a5d594e9cd8c28de205541ca3de2ad608f34fa72c3d111c573e536543b367",
@@ -1140,11 +1135,16 @@
           "hash": "0xbdba98e9825e7c0a48e50b184d805dfd13aea86efaa2ddd5ea4a101bbf2b16c4",
           "amount": 3164.78889538487,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x46784ee57d094c2ca730a01761799bc1888635c7736793e521238bdbd6b22436",
+          "amount": 244.08990676275783,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
     }
   ],
-  "fetchedAt": "2025-08-02T10:24:50.693Z",
+  "fetchedAt": "2025-08-02T12:22:19.279Z",
   "fromCache": true,
   "holderStats": {
     "totalHolders": 985,
@@ -1154,8 +1154,8 @@
     "dolphin": 106,
     "squid": 197,
     "shrimp": 637,
-    "top10Percentage": 87.48042549994729,
+    "top10Percentage": 87.49074512150078,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2025-08-02T10:24:51.819Z"
+    "lastUpdate": "2025-08-02T12:22:20.553Z"
   }
 }
