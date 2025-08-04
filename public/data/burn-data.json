@@ -1,9 +1,9 @@
 {
   "startDate": "2025-07-05",
   "endDate": "2025-08-04",
-  "totalBurned": 1045642.2607830486,
-  "totalSupply": 15311965.079508489,
-  "burnPercentage": 6.828922710791693,
+  "totalBurned": 1051109.2418345327,
+  "totalSupply": 15322063.101126978,
+  "burnPercentage": 6.8601025520983585,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
@@ -1158,8 +1158,8 @@
     },
     {
       "date": "2025-08-04",
-      "amountTinc": 10200.439833733311,
-      "transactionCount": 6,
+      "amountTinc": 15667.420885217505,
+      "transactionCount": 9,
       "transactions": [
         {
           "hash": "0x389f7343d6f4c127492610732bc0ffa12e669387e5192e5de26f017ee5d39410",
@@ -1190,11 +1190,26 @@
           "hash": "0xe3226769db76b84fcf95969deea26f57bdd2cdce806e05faacfbcdd6a8a17434",
           "amount": 2949.802507571575,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0xdc1cfbd31835d7a75ef44b708276317dae48bf453ec17e560dc1f6128b878084",
+          "amount": 452.14497661237397,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x1c4706eebec85280b6388af3b8297ab8ca01a3d2177b439ed754a375060cea16",
+          "amount": 3333.0474329876915,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0xfa3228c00f8888baa174260b5f0fae46559f01522291376bbdda522be4469ddf",
+          "amount": 1681.7886418841279,
+          "from": "0x9fabf48ebe587ee4f8b3172012c3060cc40fea6c"
         }
       ]
     }
   ],
-  "fetchedAt": "2025-08-04T21:39:15.043Z",
+  "fetchedAt": "2025-08-04T23:39:08.836Z",
   "fromCache": true,
   "holderStats": {
     "totalHolders": 986,
@@ -1204,8 +1219,8 @@
     "dolphin": 108,
     "squid": 198,
     "shrimp": 635,
-    "top10Percentage": 87.82935353061306,
+    "top10Percentage": 87.81144310810315,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2025-08-04T21:39:16.703Z"
+    "lastUpdate": "2025-08-04T23:39:11.934Z"
   }
 }
