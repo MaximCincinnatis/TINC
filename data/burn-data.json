@@ -1184,7 +1184,7 @@
       ]
     }
   ],
-  "fetchedAt": "2025-08-06T17:39:06.232Z",
+  "fetchedAt": "2025-08-06T19:38:58.198Z",
   "fromCache": true,
   "holderStats": {
     "totalHolders": 988,
@@ -1194,8 +1194,8 @@
     "dolphin": 110,
     "squid": 199,
     "shrimp": 634,
-    "top10Percentage": 88.12198818954155,
+    "top10Percentage": 88.12198818954158,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2025-08-06T13:39:31.313Z"
+    "lastUpdate": "2025-08-06T19:38:59.499Z"
   }
 }
