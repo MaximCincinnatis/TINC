@@ -1,9 +1,9 @@
 {
   "startDate": "2025-07-08",
   "endDate": "2025-08-07",
-  "totalBurned": 1075931.2738072018,
-  "totalSupply": 15372125.047271084,
-  "burnPercentage": 6.99923576277572,
+  "totalBurned": 1095511.3064608187,
+  "totalSupply": 15390006.322089624,
+  "burnPercentage": 7.11832915161579,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
@@ -1163,8 +1163,8 @@
     },
     {
       "date": "2025-08-07",
-      "amountTinc": 753.4177325946482,
-      "transactionCount": 2,
+      "amountTinc": 20333.4503862114,
+      "transactionCount": 5,
       "transactions": [
         {
           "hash": "0xdec2ae475c33798e5406b5d32363fbe76dd31a3b80cff4e63ebfbd58dad103b9",
@@ -1175,22 +1175,37 @@
           "hash": "0x88ce16f228dd49dcccfe3f36a0c0c744f1ea9d3b30503579433d1319d45e1a9d",
           "amount": 618.5381207419124,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x6aeca6e90f2dd3cd834a021d49e5d4638b71b6985bd65e45d8b4e1b06543bf59",
+          "amount": 8092.440891590176,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x757760ea2b04148153a3dcf599465f60879d87c89166f93991056c9a60844528",
+          "amount": 1055.0077584715602,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0xc4b106ecba876e1bbf058a2fd73944875d50f35b257f78ca2903718e9b8e181b",
+          "amount": 10432.584003555015,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
     }
   ],
-  "fetchedAt": "2025-08-07T05:39:20.278Z",
+  "fetchedAt": "2025-08-07T07:39:16.205Z",
   "fromCache": true,
   "holderStats": {
     "totalHolders": 988,
     "poseidon": 2,
     "whale": 7,
     "shark": 36,
-    "dolphin": 110,
-    "squid": 198,
+    "dolphin": 111,
+    "squid": 197,
     "shrimp": 635,
-    "top10Percentage": 88.11709734721292,
+    "top10Percentage": 88.11124336197415,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2025-08-07T05:39:21.953Z"
+    "lastUpdate": "2025-08-07T07:39:19.008Z"
   }
 }
