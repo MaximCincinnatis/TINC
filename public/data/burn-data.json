@@ -1264,7 +1264,7 @@
       ]
     }
   ],
-  "fetchedAt": "2025-08-08T14:48:42.627Z",
+  "fetchedAt": "2025-08-08T16:46:47.058Z",
   "fromCache": true,
   "holderStats": {
     "totalHolders": 987,
@@ -1276,6 +1276,6 @@
     "shrimp": 633,
     "top10Percentage": 88.0962962208367,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2025-08-08T14:48:45.282Z"
+    "lastUpdate": "2025-08-08T16:46:48.457Z"
   }
 }
