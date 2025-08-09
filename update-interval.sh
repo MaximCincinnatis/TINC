@@ -1,0 +1,17 @@
+#!/bin/bash
+
+echo "🔄 Updating TINC auto-update interval to 30 minutes..."
+echo ""
+echo "The interval has been changed in the script."
+echo "To apply the change, you need to restart the service:"
+echo ""
+echo "  sudo systemctl restart tinc-auto-update.service"
+echo ""
+echo "After restarting, the service will:"
+echo "  ✅ Run burn data updates every 30 minutes"
+echo "  ✅ Continue automatic Git commits and pushes"
+echo "  ✅ Keep the dashboard data fresh"
+echo ""
+echo "To verify the service is running with new interval:"
+echo "  sudo systemctl status tinc-auto-update.service"
+echo "  tail -f /home/wsl/projects/TINC/logs/auto-update.log"
