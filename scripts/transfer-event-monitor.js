@@ -1,4 +1,5 @@
 const HolderCacheManager = require('./holder-cache-manager');
+const { EXCLUDED_ADDRESSES } = require('./excluded-addresses');
 
 const TINC_ADDRESS = '0x6532B3F1e4DBff542fbD6befE5Ed7041c10B385a';
 const TRANSFER_TOPIC = '0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef';
@@ -168,13 +169,19 @@ class TransferEventMonitor {
 
     console.log(`📊 Updated ${updatedCount} holder balances`);
 
-    // Convert back to array and calculate categories
-    const updatedHolders = Array.from(currentHolders.values());
+    // Convert back to array and filter out excluded addresses
+    const allHolders = Array.from(currentHolders.values());
+    const updatedHolders = allHolders.filter(holder => 
+      !EXCLUDED_ADDRESSES.has(holder.address.toLowerCase())
+    );
+    
+    console.log(`📊 Filtered out ${allHolders.length - updatedHolders.length} excluded addresses (LP/contracts)`);
+    
     const totalSupply = cache.totalSupply; // Keep existing total supply
     
     const categories = this.cacheManager.updateHolderCategories(updatedHolders, totalSupply);
 
-    // Calculate top 10 percentage
+    // Calculate top 10 percentage (excluding LP addresses)
     const sortedHolders = [...updatedHolders].sort((a, b) => b.balance - a.balance);
     const top10Balance = sortedHolders.slice(0, 10).reduce((sum, h) => sum + h.balance, 0);
     const top10Percentage = (top10Balance / totalSupply) * 100;

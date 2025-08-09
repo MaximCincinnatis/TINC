@@ -10,7 +10,8 @@ This project involves creating a web dashboard to track TINC (Titan Farms Incent
 - UniversalBuyAndBurn: [0x060E990A7E760f211447E76a53fF6E1Be2f3Bdd3](https://etherscan.io/address/0x060E990A7E760f211447E76a53fF6E1Be2f3Bdd3#code)
 
 ### Important Configuration
-- **Localhost Port**: Always use port 6000 for this project
+- **Localhost Port**: Always use port 3047, 3048
+ for this project
 - **Do NOT use ports**: 3000, 4000, 5000 (reserved for other projects)
 
 ## Development Workflow Rules

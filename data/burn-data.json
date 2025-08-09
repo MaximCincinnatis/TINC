@@ -1287,15 +1287,15 @@
   "fetchedAt": "2025-08-09T20:13:23.830Z",
   "fromCache": true,
   "holderStats": {
-    "totalHolders": 989,
-    "poseidon": 2,
-    "whale": 8,
+    "totalHolders": 987,
+    "poseidon": 1,
+    "whale": 7,
     "shark": 36,
     "dolphin": 113,
     "squid": 197,
     "shrimp": 633,
-    "top10Percentage": 87.21431846489335,
-    "dataSource": "blockchain-incremental",
-    "lastUpdate": "2025-08-09T20:13:25.601Z"
+    "top10Percentage": 37.663037051793346,
+    "dataSource": "blockchain-cleaned",
+    "lastUpdate": "2025-08-09T20:23:23.679Z"
   }
 }
