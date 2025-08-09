@@ -107,13 +107,16 @@
     <div id="root"></div>
     
     <script>
-      // Only show maintenance overlay on production (Vercel)
+      // Maintenance overlay disabled - site is live
+      // To re-enable maintenance mode, uncomment the code below
+      /*
       (function() {
         const isLocalhost = window.location.hostname === 'localhost' || 
                           window.location.hostname === '127.0.0.1' ||
                           window.location.hostname.startsWith('192.168.') ||
                           window.location.hostname.startsWith('10.') ||
-                          window.location.port === '6000';
+                          window.location.port === '3047' ||
+                          window.location.port === '3048';
         
         if (!isLocalhost) {
           const overlay = document.getElementById('maintenance-overlay');
@@ -124,6 +127,7 @@
           }
         }
       })();
+      */
     </script>
   </body>
 </html>
