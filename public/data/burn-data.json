@@ -2,8 +2,8 @@
   "startDate": "2025-07-10",
   "endDate": "2025-08-09",
   "totalBurned": 1238468.1679173848,
-  "totalSupply": 15314306.976334741,
-  "burnPercentage": 8.087001062674233,
+  "totalSupply": 15314693.270852044,
+  "burnPercentage": 8.086797077905052,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
@@ -1269,18 +1269,18 @@
       ]
     }
   ],
-  "fetchedAt": "2025-08-09T08:27:29.479Z",
+  "fetchedAt": "2025-08-09T10:25:05.090Z",
   "fromCache": true,
   "holderStats": {
     "totalHolders": 989,
     "poseidon": 2,
     "whale": 7,
     "shark": 36,
-    "dolphin": 112,
+    "dolphin": 113,
     "squid": 198,
-    "shrimp": 634,
-    "top10Percentage": 87.57188431218759,
+    "shrimp": 633,
+    "top10Percentage": 87.48026147992674,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2025-08-09T08:27:31.429Z"
+    "lastUpdate": "2025-08-09T10:25:06.745Z"
   }
 }
