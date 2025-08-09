@@ -2,7 +2,7 @@ const { spawn } = require('child_process');
 const path = require('path');
 
 // Configuration
-const UPDATE_INTERVAL_MINUTES = 120; // Update every 2 hours
+const UPDATE_INTERVAL_MINUTES = 30; // Update every 30 minutes
 const UPDATE_INTERVAL_MS = UPDATE_INTERVAL_MINUTES * 60 * 1000;
 
 console.log(`
