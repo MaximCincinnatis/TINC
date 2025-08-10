@@ -1,9 +1,9 @@
 {
   "startDate": "2025-07-11",
   "endDate": "2025-08-10",
-  "totalBurned": 1164809.7898387655,
-  "totalSupply": 15438020.88009882,
-  "burnPercentage": 7.545071993912924,
+  "totalBurned": 1191343.385509786,
+  "totalSupply": 15453442.038385957,
+  "burnPercentage": 7.709242915271039,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
@@ -1159,8 +1159,8 @@
     },
     {
       "date": "2025-08-08",
-      "amountTinc": 18671.71251635766,
-      "transactionCount": 8,
+      "amountTinc": 18142.71703416851,
+      "transactionCount": 7,
       "transactions": [
         {
           "hash": "0xcb11b3c0c178c3aa4037fad25030a954102a5d1367c644497a73d623552295bb",
@@ -1193,13 +1193,8 @@
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         },
         {
-          "hash": "0x0696cda43f3b326905030aeb23ee5f8da6734f5220f26c4b5c66687ada64cf57",
-          "amount": 2779.574675935733,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x4c194f4b35118363839cd1ef5597abb60ad889fa2d1da5b7a2552a010e81705f",
-          "amount": 4463.169396864902,
+          "hash": "0x595e671822facbcc5932c85d8cb143dd4697836f8c8834e5233f0852fdae4e5c",
+          "amount": 6713.748590611485,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
@@ -1263,8 +1258,8 @@
     },
     {
       "date": "2025-08-10",
-      "amountTinc": 4119.145619649623,
-      "transactionCount": 2,
+      "amountTinc": 31181.736772859287,
+      "transactionCount": 3,
       "transactions": [
         {
           "hash": "0xd558bc76b20d7d047b28a1d430903734599a8c5991b4bd09eb99670fa76865a2",
@@ -1275,11 +1270,16 @@
           "hash": "0x6bb0bd0dad99e4f2197c8a3b3a2a7e4c6035c6d7c96724b614875c3c9b1e1ea8",
           "amount": 2139.1213204516,
           "from": "0x9fabf48ebe587ee4f8b3172012c3060cc40fea6c"
+        },
+        {
+          "hash": "0xb0ed10a95003703752d13583e89f6ff1257de7758abfb6492637ecc9203eb3b5",
+          "amount": 27062.591153209665,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
     }
   ],
-  "fetchedAt": "2025-08-10T06:01:07.601Z",
+  "fetchedAt": "2025-08-10T07:58:29.741Z",
   "fromCache": true,
   "holderStats": {
     "totalHolders": 987,
@@ -1291,6 +1291,6 @@
     "shrimp": 635,
     "top10Percentage": 37.663037051793346,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2025-08-10T06:01:10.837Z"
+    "lastUpdate": "2025-08-10T07:58:31.669Z"
   }
 }
