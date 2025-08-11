@@ -1,9 +1,9 @@
 {
   "startDate": "2025-07-12",
   "endDate": "2025-08-11",
-  "totalBurned": 1138865.6637014577,
-  "totalSupply": 15498953.68903169,
-  "burnPercentage": 7.348016430989215,
+  "totalBurned": 1145800.2599776,
+  "totalSupply": 15507026.069986718,
+  "burnPercentage": 7.38891038685525,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
@@ -1092,8 +1092,8 @@
     },
     {
       "date": "2025-08-08",
-      "amountTinc": 11428.968443557023,
-      "transactionCount": 6,
+      "amountTinc": 18142.71703416851,
+      "transactionCount": 7,
       "transactions": [
         {
           "hash": "0xcb11b3c0c178c3aa4037fad25030a954102a5d1367c644497a73d623552295bb",
@@ -1124,14 +1124,24 @@
           "hash": "0x9a3c51f285ba417fc7f303edbae6b31f9dd34a737ed3885a1af08b1829176ad4",
           "amount": 546.5119260647729,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x595e671822facbcc5932c85d8cb143dd4697836f8c8834e5233f0852fdae4e5c",
+          "amount": 6713.748590611485,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
     },
     {
       "date": "2025-08-09",
-      "amountTinc": 27706.777788146825,
-      "transactionCount": 7,
+      "amountTinc": 27927.62547367768,
+      "transactionCount": 8,
       "transactions": [
+        {
+          "hash": "0x140127d1853faee80d927b5b7492fc4f45d22e5cc1c801d9dd1a3790c22f9220",
+          "amount": 220.8476855308538,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
         {
           "hash": "0xe0af9eb149f7b4a1e993665b9ee8e393851c30c79881908d7ce7a5b2bb0948d3",
           "amount": 3989.2090970941135,
@@ -1254,7 +1264,7 @@
       ]
     }
   ],
-  "fetchedAt": "2025-08-11T07:31:59.689Z",
+  "fetchedAt": "2025-08-11T09:29:55.851Z",
   "fromCache": true,
   "holderStats": {
     "totalHolders": 987,
@@ -1266,6 +1276,6 @@
     "shrimp": 637,
     "top10Percentage": 16.876779895090515,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2025-08-11T07:32:01.501Z"
+    "lastUpdate": "2025-08-11T09:29:59.182Z"
   }
 }
