@@ -2,8 +2,8 @@
   "startDate": "2025-07-12",
   "endDate": "2025-08-11",
   "totalBurned": 1161889.3619438463,
-  "totalSupply": 15504878.755357873,
-  "burnPercentage": 7.493701694006109,
+  "totalSupply": 15506059.24622884,
+  "burnPercentage": 7.493131191449718,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
@@ -1284,7 +1284,7 @@
       ]
     }
   ],
-  "fetchedAt": "2025-08-11T23:19:43.422Z",
+  "fetchedAt": "2025-08-11T23:38:57.421Z",
   "fromCache": true,
   "holderStats": {
     "totalHolders": 987,
