@@ -1,9 +1,9 @@
 {
   "startDate": "2025-07-12",
   "endDate": "2025-08-11",
-  "totalBurned": 1221545.053707602,
-  "totalSupply": 15502578.61450807,
-  "burnPercentage": 7.879624958420921,
+  "totalBurned": 1138865.6637014577,
+  "totalSupply": 15498953.68903169,
+  "burnPercentage": 7.348016430989215,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
@@ -1092,8 +1092,8 @@
     },
     {
       "date": "2025-08-08",
-      "amountTinc": 91673.76974664452,
-      "transactionCount": 9,
+      "amountTinc": 11428.968443557023,
+      "transactionCount": 6,
       "transactions": [
         {
           "hash": "0xcb11b3c0c178c3aa4037fad25030a954102a5d1367c644497a73d623552295bb",
@@ -1124,44 +1124,14 @@
           "hash": "0x9a3c51f285ba417fc7f303edbae6b31f9dd34a737ed3885a1af08b1829176ad4",
           "amount": 546.5119260647729,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x595e671822facbcc5932c85d8cb143dd4697836f8c8834e5233f0852fdae4e5c",
-          "amount": 6713.748590611485,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x365708501ac2d3e5f0f10db2a5ac5fd75c9cbc31caa78f17e0bca89a8693f01f",
-          "amount": 36886.735519403745,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x98ed1f528f2a7a6e5aa93940307db7cfc8b82dd791d3d2ce30c501c34fbaff20",
-          "amount": 36644.317193072275,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
     },
     {
       "date": "2025-08-09",
-      "amountTinc": 37629.5118862714,
-      "transactionCount": 10,
+      "amountTinc": 27706.777788146825,
+      "transactionCount": 7,
       "transactions": [
-        {
-          "hash": "0x4d6e3723b4c0cc12d123bc193439fcf2151efeb98ae338bf141542a81afc2117",
-          "amount": 3003.306677473611,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x140127d1853faee80d927b5b7492fc4f45d22e5cc1c801d9dd1a3790c22f9220",
-          "amount": 220.8476855308538,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0xd37090e6d993f5dd4ba03e7022164ddbe67a884582c42f3fb76f81550a41636d",
-          "amount": 6698.579735120105,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
         {
           "hash": "0xe0af9eb149f7b4a1e993665b9ee8e393851c30c79881908d7ce7a5b2bb0948d3",
           "amount": 3989.2090970941135,
@@ -1253,8 +1223,8 @@
     },
     {
       "date": "2025-08-11",
-      "amountTinc": 7371.7835879659015,
-      "transactionCount": 3,
+      "amountTinc": 14859.928983033551,
+      "transactionCount": 5,
       "transactions": [
         {
           "hash": "0x84342310a08e26f32c447ffe16d4b288c620a6d0f0fce37b2368449aa525dcc1",
@@ -1270,22 +1240,32 @@
           "hash": "0x212a4eee441c186f9379c68aed2af7b7d31791a2c3cb464db3dfd3d341c6f063",
           "amount": 4947.16568746563,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x01dacd21fffa000a7fc90ebe92313651aeaee241b02c93f0fd5c20d1792f914d",
+          "amount": 7061.399497707972,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0xfd45c53fc0e8dc01a6e0ad82cca375349b08e6ffe8466074989475370c0215d5",
+          "amount": 426.74589735967606,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
     }
   ],
-  "fetchedAt": "2025-08-11T05:33:55.460Z",
+  "fetchedAt": "2025-08-11T07:31:59.689Z",
   "fromCache": true,
   "holderStats": {
-    "totalHolders": 986,
+    "totalHolders": 987,
     "poseidon": 0,
     "whale": 7,
     "shark": 36,
     "dolphin": 113,
     "squid": 194,
-    "shrimp": 636,
+    "shrimp": 637,
     "top10Percentage": 16.876779895090515,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2025-08-11T05:34:00.268Z"
+    "lastUpdate": "2025-08-11T07:32:01.501Z"
   }
 }
