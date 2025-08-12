@@ -1,30 +1,13 @@
 {
-  "startDate": "2025-07-12",
-  "endDate": "2025-08-11",
-  "totalBurned": 1161889.3619438463,
+  "startDate": "2025-07-13",
+  "endDate": "2025-08-12",
+  "totalBurned": 1163687.9671507974,
   "totalSupply": 15506059.24622884,
-  "burnPercentage": 7.493131191449718,
+  "burnPercentage": 7.504730561595221,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
   "dailyBurns": [
-    {
-      "date": "2025-07-13",
-      "amountTinc": 1204.7014705228366,
-      "transactionCount": 2,
-      "transactions": [
-        {
-          "hash": "0xdf37af9d0eaee33807d34ac351bb938ece6b44b108c168c53a1f5c042dc85f2e",
-          "amount": 946.7876065095073,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x69d127a228c61de1b0d9012287c8d7678a4d81ca650ce73a2bbb63c26f74cefb",
-          "amount": 257.91386401332926,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        }
-      ]
-    },
     {
       "date": "2025-07-14",
       "amountTinc": 52359.17977292695,
@@ -1144,9 +1127,14 @@
     },
     {
       "date": "2025-08-09",
-      "amountTinc": 34626.20520879778,
-      "transactionCount": 9,
+      "amountTinc": 37629.5118862714,
+      "transactionCount": 10,
       "transactions": [
+        {
+          "hash": "0x4d6e3723b4c0cc12d123bc193439fcf2151efeb98ae338bf141542a81afc2117",
+          "amount": 3003.306677473611,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
         {
           "hash": "0x140127d1853faee80d927b5b7492fc4f45d22e5cc1c801d9dd1a3790c22f9220",
           "amount": 220.8476855308538,
@@ -1282,9 +1270,15 @@
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
+    },
+    {
+      "date": "2025-08-12",
+      "amountTinc": 0,
+      "transactionCount": 0,
+      "transactions": []
     }
   ],
-  "fetchedAt": "2025-08-11T23:38:57.421Z",
+  "fetchedAt": "2025-08-12T00:09:03.664Z",
   "fromCache": true,
   "holderStats": {
     "totalHolders": 987,
