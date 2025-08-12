@@ -2,8 +2,8 @@
   "startDate": "2025-07-13",
   "endDate": "2025-08-12",
   "totalBurned": 1241522.5631763088,
-  "totalSupply": 15509990.572960358,
-  "burnPercentage": 8.004663557570055,
+  "totalSupply": 15528677.001836948,
+  "burnPercentage": 7.995031148045929,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
@@ -1304,7 +1304,7 @@
       ]
     }
   ],
-  "fetchedAt": "2025-08-12T06:57:29.228Z",
+  "fetchedAt": "2025-08-12T07:27:57.337Z",
   "fromCache": true,
   "holderStats": {
     "totalHolders": 986,
@@ -1316,6 +1316,6 @@
     "shrimp": 637,
     "top10Percentage": 16.276252564641407,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2025-08-12T05:56:13.682Z"
+    "lastUpdate": "2025-08-12T07:27:59.722Z"
   }
 }
