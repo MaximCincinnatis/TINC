@@ -1,9 +1,9 @@
 {
   "startDate": "2025-07-14",
   "endDate": "2025-08-13",
-  "totalBurned": 1223531.4706188412,
-  "totalSupply": 15562674.070699446,
-  "burnPercentage": 7.861961672270961,
+  "totalBurned": 1223737.149448881,
+  "totalSupply": 15568082.115763668,
+  "burnPercentage": 7.860551738802621,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
@@ -1023,8 +1023,8 @@
     },
     {
       "date": "2025-08-08",
-      "amountTinc": 98916.51381944516,
-      "transactionCount": 11,
+      "amountTinc": 92202.76522883368,
+      "transactionCount": 10,
       "transactions": [
         {
           "hash": "0xcb11b3c0c178c3aa4037fad25030a954102a5d1367c644497a73d623552295bb",
@@ -1057,11 +1057,6 @@
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         },
         {
-          "hash": "0x595e671822facbcc5932c85d8cb143dd4697836f8c8834e5233f0852fdae4e5c",
-          "amount": 6713.748590611485,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
           "hash": "0x0696cda43f3b326905030aeb23ee5f8da6734f5220f26c4b5c66687ada64cf57",
           "amount": 2779.574675935733,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
@@ -1085,12 +1080,22 @@
     },
     {
       "date": "2025-08-09",
-      "amountTinc": 30710.08446562044,
-      "transactionCount": 8,
+      "amountTinc": 37629.5118862714,
+      "transactionCount": 10,
       "transactions": [
         {
           "hash": "0x4d6e3723b4c0cc12d123bc193439fcf2151efeb98ae338bf141542a81afc2117",
           "amount": 3003.306677473611,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x140127d1853faee80d927b5b7492fc4f45d22e5cc1c801d9dd1a3790c22f9220",
+          "amount": 220.8476855308538,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0xd37090e6d993f5dd4ba03e7022164ddbe67a884582c42f3fb76f81550a41636d",
+          "amount": 6698.579735120105,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         },
         {
@@ -1284,7 +1289,7 @@
       ]
     }
   ],
-  "fetchedAt": "2025-08-13T08:23:46.154Z",
+  "fetchedAt": "2025-08-13T08:54:49.472Z",
   "fromCache": true,
   "holderStats": {
     "totalHolders": 986,
