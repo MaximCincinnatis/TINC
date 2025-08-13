@@ -218,9 +218,12 @@ async function fetchBurnData() {
 
   // Fill in missing days with zero burns
   const allDays = [];
+  // Use endDate as reference point to ensure consistency
+  const endDateObj = new Date(endDate.toISOString().split('T')[0] + 'T00:00:00Z');
+  
   for (let i = 0; i < 30; i++) {
-    const date = new Date();
-    date.setDate(date.getDate() - (29 - i));
+    const date = new Date(endDateObj);
+    date.setUTCDate(date.getUTCDate() - (29 - i));
     const dateStr = date.toISOString().split('T')[0];
     
     const existingData = dailyBurns.find(d => d.date === dateStr);

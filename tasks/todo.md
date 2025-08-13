@@ -415,3 +415,40 @@ The system is production-ready and will significantly reduce API usage while mai
 **RECOMMENDATION: APPROVED FOR PRODUCTION USE**
 
 The system is ready for production deployment and will significantly improve dashboard performance while maintaining data accuracy and reliability.
+
+## Critical Issue: Historical Data Overwriting - August 13, 2025
+
+### Problem Identified
+The `fetch-burn-data.js` script completely overwrites the entire JSON file every 30 minutes, re-fetching ALL 30 days of data from the blockchain. This causes:
+- Historical data to potentially change if blockchain reorganizations occur
+- Past burn data to differ between updates due to RPC issues or timing
+- No preservation of previously recorded historical data
+- Unnecessary re-fetching of immutable past data
+
+### Current Behavior (PROBLEMATIC)
+1. Script fetches last 30 days from blockchain every time (line 163-166)
+2. Re-fetches ALL burn transactions for entire period (line 173-213)  
+3. Completely replaces file with `fs.writeFileSync()` (line 473)
+
+### Required Fix: Incremental Update System
+Historical burn data (past days) should be **immutable** once recorded. Only today's data should update.
+
+#### Proposed Solution:
+1. Load existing historical data from JSON
+2. Only fetch recent burns (today + yesterday for safety)
+3. Merge new data while preserving historical records
+4. Keep past days' burn data unchanged
+
+#### Implementation Plan:
+- [ ] Create backup of existing data before updates
+- [ ] Implement data merging logic to preserve history
+- [ ] Only fetch last 2 days of burns (not 30)
+- [ ] Compare and merge with existing data
+- [ ] Add data integrity checks
+- [ ] Test incremental updates thoroughly
+
+### Immediate Action Required
+Before implementing incremental updates, we need to:
+1. Audit the current script for any unintended changes
+2. Fix the timezone issue we already identified (COMPLETED)
+3. Then implement the incremental update system
