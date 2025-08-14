@@ -23,4 +23,4 @@ python app.py
 - Caches data to minimize RPC calls
 
 ## Port Configuration
-This project runs exclusively on port 6000. Do not change the port as other ports (3000, 4000, 5000) are reserved for other projects.
+This project runs exclusively on port 6000. Do not change the port as other ports (3000, 4000, 5000) are reserved for other projects.Thu Aug 14 16:27:43 PDT 2025: Force deployment trigger
