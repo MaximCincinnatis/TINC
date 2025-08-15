@@ -17,6 +17,15 @@
   ],
   "headers": [
     {
+      "source": "/data/burn-data.json",
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "public, max-age=300, s-maxage=60, stale-while-revalidate=30"
+        }
+      ]
+    },
+    {
       "source": "/static/(.*)",
       "headers": [
         {
@@ -43,10 +52,5 @@
       ]
     }
   ],
-  "crons": [
-    {
-      "path": "/api/update-data",
-      "schedule": "0 12 * * *"
-    }
-  ]
+  "crons": []
 }
