@@ -107,7 +107,9 @@
     <div id="root"></div>
     
     <script>
-      // Maintenance mode enabled
+      // Maintenance mode disabled - site is live
+      // To enable maintenance mode in the future, uncomment the code below
+      /*
       (function() {
         const isLocalhost = window.location.hostname === 'localhost' || 
                           window.location.hostname === '127.0.0.1' ||
@@ -120,11 +122,11 @@
           const overlay = document.getElementById('maintenance-overlay');
           if (overlay) {
             overlay.style.display = 'flex';
-            // Hide the root element to prevent React app from loading
             document.getElementById('root').style.display = 'none';
           }
         }
       })();
+      */
     </script>
   </body>
 </html>
