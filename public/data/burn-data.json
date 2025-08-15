@@ -1,9 +1,9 @@
 {
   "startDate": "2025-07-16",
   "endDate": "2025-08-15",
-  "totalBurned": 1186247.9718283555,
-  "totalSupply": 15621334.11561504,
-  "burnPercentage": 7.5937686438867305,
+  "totalBurned": 1198510.2112612478,
+  "totalSupply": 15625255.461798815,
+  "burnPercentage": 7.670339945426227,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
@@ -914,8 +914,8 @@
     },
     {
       "date": "2025-08-08",
-      "amountTinc": 92202.76522883368,
-      "transactionCount": 10,
+      "amountTinc": 98916.51381944516,
+      "transactionCount": 11,
       "transactions": [
         {
           "hash": "0xcb11b3c0c178c3aa4037fad25030a954102a5d1367c644497a73d623552295bb",
@@ -945,6 +945,11 @@
         {
           "hash": "0x9a3c51f285ba417fc7f303edbae6b31f9dd34a737ed3885a1af08b1829176ad4",
           "amount": 546.5119260647729,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x595e671822facbcc5932c85d8cb143dd4697836f8c8834e5233f0852fdae4e5c",
+          "amount": 6713.748590611485,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         },
         {
@@ -1263,23 +1268,29 @@
     },
     {
       "date": "2025-08-15",
-      "amountTinc": 0,
-      "transactionCount": 0,
-      "transactions": []
+      "amountTinc": 5548.490842280978,
+      "transactionCount": 1,
+      "transactions": [
+        {
+          "hash": "0x20795ce48d30a733f8fc06b99fe2dba6c9db717d5442e28da795561c78e857fa",
+          "amount": 5548.490842280978,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
     }
   ],
-  "fetchedAt": "2025-08-15T01:03:18.218Z",
+  "fetchedAt": "2025-08-15T01:34:07.079Z",
   "fromCache": true,
   "holderStats": {
-    "totalHolders": 982,
+    "totalHolders": 983,
     "poseidon": 0,
     "whale": 9,
-    "shark": 37,
+    "shark": 38,
     "dolphin": 113,
     "squid": 188,
     "shrimp": 635,
-    "top10Percentage": 16.835155493451833,
+    "top10Percentage": 16.8619429881389,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2025-08-15T00:20:40.321Z"
+    "lastUpdate": "2025-08-15T01:34:08.941Z"
   }
 }
