@@ -11,8 +11,26 @@ export async function fetchBurnData(forceRefresh = false): Promise<BurnData> {
   try {
     progressCallback?.('Loading cached data...', 20);
     
-    // Fetch from the static JSON file
-    const response = await fetch('/data/burn-data.json', {
+    // Try to get versioned data first
+    let dataUrl = '/data/burn-data.json'; // fallback
+    
+    try {
+      // Check for data manifest to get latest version
+      const manifestResponse = await fetch('/data/data-manifest.json', {
+        cache: forceRefresh ? 'no-cache' : 'default',
+      });
+      
+      if (manifestResponse.ok) {
+        const manifest = await manifestResponse.json();
+        dataUrl = `/data/${manifest.latest}`;
+        progressCallback?.('Using versioned data...', 30);
+      }
+    } catch (manifestError) {
+      console.log('No manifest found, using legacy file');
+    }
+    
+    // Fetch from the determined URL
+    const response = await fetch(dataUrl, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -62,6 +80,17 @@ export async function fetchBurnData(forceRefresh = false): Promise<BurnData> {
 // Function to get the last update time from cached data
 export async function getLastUpdateTime(): Promise<Date | null> {
   try {
+    // Try manifest first for more accurate timestamp
+    try {
+      const manifestResponse = await fetch('/data/data-manifest.json');
+      if (manifestResponse.ok) {
+        const manifest = await manifestResponse.json();
+        return new Date(manifest.timestamp);
+      }
+    } catch {
+      // Fall back to data file
+    }
+    
     const response = await fetch('/data/burn-data.json');
     if (!response.ok) return null;
     

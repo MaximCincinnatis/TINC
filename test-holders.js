@@ -1,7 +1,8 @@
+require('dotenv').config();
 const fs = require('fs');
 
 const TINC_ADDRESS = '0x6532B3F1e4DBff542fbD6befE5Ed7041c10B385a';
-const ETHERSCAN_API_KEY = 'Z1M3GU25SBHSCM7C2FC19FBXII1SNZVAHB';
+const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY;
 const ETHERSCAN_BASE_URL = 'https://api.etherscan.io/api';
 
 // LP and contract addresses to exclude from holder counts

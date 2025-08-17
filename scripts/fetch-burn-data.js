@@ -28,7 +28,7 @@ const CHUNK_SIZE = 800; // blocks per chunk (reduced for RPC limits)
 const AVG_BLOCK_TIME = 12; // seconds
 
 // Etherscan API configuration
-const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || 'YOUR_ETHERSCAN_API_KEY_HERE';
+const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || process.env.ETHERSCAN_API_KEY;
 const ETHERSCAN_BASE_URL = 'https://api.etherscan.io/api';
 
 // Moralis API configuration
@@ -37,10 +37,10 @@ const MORALIS_BASE_URL = 'https://deep-index.moralis.io/api/v2.2';
 
 // LP and contract addresses to exclude from holder counts
 const EXCLUDED_ADDRESSES = new Set([
-  '0x72e0de1cc2c952326738dac05bacb9e9c25422e3', // TINC/TitanX LP
+  '0x72e0de1cc2c952326738dac05bacb9e9c25422e3', // TINC/TitanX LP Pool
+  '0xf89980f60e55633d05e72881ceb866dbb7f50580', // TINC LP Pool (Second LP)
   '0x0000000000000000000000000000000000000000', // Burn address
   '0x000000000000000000000000000000000000dead', // Dead address
-  // Add other known LP and contract addresses here
 ].map(addr => addr.toLowerCase()));
 
 async function callRPC(method, params, retryCount = 0) {
@@ -146,6 +146,32 @@ async function fetchBurns(fromBlock, toBlock) {
   return burns;
 }
 
+async function fetchBurnsWithRetry(fromBlock, toBlock, maxRetries = 3) {
+  for (let attempt = 1; attempt <= maxRetries; attempt++) {
+    try {
+      console.log(`Fetching blocks ${fromBlock} to ${toBlock} (attempt ${attempt}/${maxRetries})...`);
+      const burns = await fetchBurns(fromBlock, toBlock);
+      if (attempt > 1) {
+        console.log(`✅ Success on attempt ${attempt} for blocks ${fromBlock}-${toBlock}`);
+      }
+      return burns;
+    } catch (error) {
+      const isLastAttempt = attempt === maxRetries;
+      console.warn(`❌ Attempt ${attempt}/${maxRetries} failed for blocks ${fromBlock}-${toBlock}: ${error.message}`);
+      
+      if (isLastAttempt) {
+        console.error(`🚨 CRITICAL: Failed to fetch blocks ${fromBlock}-${toBlock} after ${maxRetries} attempts!`);
+        throw new Error(`Failed to fetch blocks ${fromBlock}-${toBlock} after ${maxRetries} attempts: ${error.message}`);
+      }
+      
+      // Exponential backoff: 2s, 4s, 8s
+      const backoffMs = 2000 * Math.pow(2, attempt - 1);
+      console.log(`⏳ Waiting ${backoffMs/1000}s before retry...`);
+      await new Promise(resolve => setTimeout(resolve, backoffMs));
+    }
+  }
+}
+
 async function fetchBurnData() {
   console.log('Fetching TINC burn data...');
   
@@ -174,19 +200,23 @@ async function fetchBurnData() {
   const totalChunks = Math.ceil((currentBlock - startBlock) / CHUNK_SIZE);
   let chunksProcessed = 0;
 
-  // Fetch in chunks
+  // Fetch in chunks with robust retry logic
+  console.log(`🔄 Processing ${totalChunks} chunks with retry logic...`);
+  
   for (let fromBlock = startBlock; fromBlock <= currentBlock; fromBlock += CHUNK_SIZE) {
     const toBlock = Math.min(fromBlock + CHUNK_SIZE - 1, currentBlock);
     
-    try {
-      console.log(`Fetching blocks ${fromBlock} to ${toBlock} (${chunksProcessed + 1}/${totalChunks})...`);
-      const burns = await fetchBurns(fromBlock, toBlock);
-      allBurns.push(...burns);
-      chunksProcessed++;
-    } catch (error) {
-      console.warn(`Error fetching chunk ${fromBlock}-${toBlock}:`, error.message);
-    }
+    // Use retry mechanism - will throw error if all retries fail
+    const burns = await fetchBurnsWithRetry(fromBlock, toBlock);
+    allBurns.push(...burns);
+    chunksProcessed++;
+    
+    // Progress indicator
+    const progress = ((chunksProcessed / totalChunks) * 100).toFixed(1);
+    console.log(`📊 Progress: ${chunksProcessed}/${totalChunks} chunks (${progress}%) - Found ${burns.length} burns in this chunk`);
   }
+  
+  console.log(`✅ Successfully processed all ${totalChunks} chunks - Total burns found: ${allBurns.length}`);
 
   // Group burns by day
   const burnsByDay = {};
@@ -240,8 +270,23 @@ async function fetchBurnData() {
   }
 
   const totalBurned = allDays.reduce((sum, day) => sum + day.amountTinc, 0);
+  const totalTransactions = allDays.reduce((sum, day) => sum + day.transactionCount, 0);
   const burnPercentage = totalSupply > 0 ? (totalBurned / totalSupply) * 100 : 0;
   const isDeflationary = totalBurned > dailyEmission;
+
+  // Data integrity validation
+  console.log(`🔍 Data validation:`);
+  console.log(`   Total burn transactions: ${totalTransactions}`);
+  console.log(`   Total TINC burned: ${totalBurned.toLocaleString()}`);
+  console.log(`   Daily entries: ${allDays.length} (expected: 30)`);
+  
+  if (allDays.length !== 30) {
+    throw new Error(`Data validation failed: Expected 30 daily entries, got ${allDays.length}`);
+  }
+  
+  if (totalTransactions === 0) {
+    console.warn('⚠️  Warning: No burn transactions found in data');
+  }
 
   return {
     startDate: startDate.toISOString().split('T')[0],
@@ -456,31 +501,176 @@ async function fetchHolderData() {
   return await fetchHolderDataWithCache();
 }
 
-async function main() {
+async function runIncrementalUpdate() {
+  const IncrementalBurnManager = require('./incremental-burn-manager');
+  const manager = new IncrementalBurnManager();
+  
   try {
-    console.log('🚀 Starting data fetch...');
-    const burnData = await fetchBurnData();
-    const holderData = await fetchHolderData();
+    // Load existing data
+    const existingData = manager.loadExistingData();
     
-    // Combine burn data with holder data
-    const combinedData = {
-      ...burnData,
-      holderStats: holderData
+    // Get date range for recent data
+    const { startDate, endDate } = manager.getRecentDateRange();
+    console.log(`📅 Fetching recent data from ${startDate} to ${endDate}...`);
+    
+    // Fetch recent burn data (modify date range)
+    const originalStartDate = new Date();
+    originalStartDate.setDate(originalStartDate.getDate() - 30);
+    
+    // Override the date range for recent data only
+    const recentStartDate = new Date(startDate + 'T00:00:00Z');
+    const currentBlock = await getBlockNumber();
+    const startBlock = await estimateBlockByTimestamp(Math.floor(recentStartDate.getTime() / 1000));
+    
+    console.log(`🔄 Fetching recent burns from block ${startBlock} to ${currentBlock}...`);
+    
+    // Fetch recent burns
+    const allBurns = [];
+    const totalChunks = Math.ceil((currentBlock - startBlock) / CHUNK_SIZE);
+    let chunksProcessed = 0;
+    
+    console.log(`🔄 Processing ${totalChunks} chunks for recent data...`);
+    
+    for (let fromBlock = startBlock; fromBlock <= currentBlock; fromBlock += CHUNK_SIZE) {
+      const toBlock = Math.min(fromBlock + CHUNK_SIZE - 1, currentBlock);
+      const burns = await fetchBurnsWithRetry(fromBlock, toBlock);
+      allBurns.push(...burns);
+      chunksProcessed++;
+      
+      const progress = ((chunksProcessed / totalChunks) * 100).toFixed(1);
+      console.log(`📊 Progress: ${chunksProcessed}/${totalChunks} chunks (${progress}%) - Found ${burns.length} burns`);
+    }
+    
+    console.log(`✅ Found ${allBurns.length} recent burn transactions`);
+    
+    // Process recent burns into daily format (reuse existing logic)
+    const burnsByDay = {};
+    allBurns.forEach(burn => {
+      const date = new Date(burn.timestamp * 1000);
+      const dateStr = date.toISOString().split('T')[0];
+      
+      if (!burnsByDay[dateStr]) {
+        burnsByDay[dateStr] = {
+          date: dateStr,
+          amountTinc: 0,
+          transactionCount: 0,
+          transactions: []
+        };
+      }
+      
+      burnsByDay[dateStr].amountTinc += burn.amount;
+      burnsByDay[dateStr].transactionCount++;
+      burnsByDay[dateStr].transactions.push({
+        hash: burn.hash,
+        amount: burn.amount,
+        from: burn.from
+      });
+    });
+    
+    const recentDailyBurns = Object.values(burnsByDay).sort((a, b) => a.date.localeCompare(b.date));
+    
+    // Create recent burn data structure
+    const recentBurnData = {
+      ...existingData,
+      dailyBurns: recentDailyBurns,
+      holderStats: await fetchHolderData() // Update holder data
     };
     
-    // Write to data file
-    const dataPath = path.join(__dirname, '../data/burn-data.json');
-    fs.writeFileSync(dataPath, JSON.stringify(combinedData, null, 2));
+    // Merge with historical data
+    const mergedData = manager.mergeData(existingData, recentBurnData);
     
-    console.log('✅ Successfully updated burn data!');
-    console.log(`📊 Total Supply: ${burnData.totalSupply.toLocaleString()} TINC`);
-    console.log(`🔥 Total Burned: ${burnData.totalBurned.toLocaleString()} TINC`);
-    console.log(`⚡ Emission Rate: ${burnData.emissionPerSecond.toFixed(4)} TINC/sec`);
-    console.log(`📈 Deflationary: ${burnData.isDeflationary ? 'Yes' : 'No'}`);
-    console.log(`👥 Total Holders: ${holderData.totalHolders.toLocaleString()}`);
-    console.log(`🔱 Poseidon (10%+): ${holderData.poseidon}`);
-    console.log(`🐋 Whale (1%+): ${holderData.whale}`);
-    console.log(`📅 Data saved to: ${dataPath}`);
+    // Validate integrity
+    manager.validateMergedData(existingData, mergedData);
+    
+    // Save merged data
+    await saveIncrementalData(mergedData);
+    
+    console.log('✅ Incremental update completed successfully!');
+    console.log(`📊 Total TINC burned: ${mergedData.totalBurned.toLocaleString()}`);
+    console.log(`👥 Total holders: ${mergedData.holderStats.totalHolders.toLocaleString()}`);
+    
+  } catch (error) {
+    console.error('❌ Incremental update failed:', error);
+    throw error;
+  }
+}
+
+async function saveIncrementalData(data) {
+  const timestamp = Date.now();
+  const versionedFileName = `burn-data-v${timestamp}.json`;
+  const dataPath = path.join(__dirname, '../data', versionedFileName);
+  const legacyPath = path.join(__dirname, '../data/burn-data.json');
+  
+  // Write versioned file
+  fs.writeFileSync(dataPath, JSON.stringify(data, null, 2));
+  
+  // Also write legacy file for backward compatibility
+  fs.writeFileSync(legacyPath, JSON.stringify(data, null, 2));
+  
+  // Update version manifest
+  const manifestPath = path.join(__dirname, '../data/data-manifest.json');
+  const manifest = {
+    latest: versionedFileName,
+    timestamp: new Date().toISOString(),
+    version: timestamp,
+    updateType: 'incremental'
+  };
+  fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2));
+  
+  console.log(`💾 Incremental data saved to: ${dataPath}`);
+}
+
+async function main() {
+  try {
+    // Check for incremental mode flag
+    const isIncremental = process.argv.includes('--incremental');
+    
+    if (isIncremental) {
+      console.log('🔄 Starting INCREMENTAL data update...');
+      return await runIncrementalUpdate();
+    } else {
+      console.log('🚀 Starting FULL data refresh...');
+      const burnData = await fetchBurnData();
+      const holderData = await fetchHolderData();
+      
+      // Combine burn data with holder data
+      const combinedData = {
+        ...burnData,
+        holderStats: holderData
+      };
+      
+      // Write to versioned data file with timestamp
+      const timestamp = Date.now();
+      const versionedFileName = `burn-data-v${timestamp}.json`;
+      const dataPath = path.join(__dirname, '../data', versionedFileName);
+      const legacyPath = path.join(__dirname, '../data/burn-data.json');
+      
+      // Write versioned file
+      fs.writeFileSync(dataPath, JSON.stringify(combinedData, null, 2));
+      
+      // Also write legacy file for backward compatibility
+      fs.writeFileSync(legacyPath, JSON.stringify(combinedData, null, 2));
+      
+      // Update version manifest
+      const manifestPath = path.join(__dirname, '../data/data-manifest.json');
+      const manifest = {
+        latest: versionedFileName,
+        timestamp: new Date().toISOString(),
+        version: timestamp,
+        updateType: 'full'
+      };
+      fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2));
+      
+      console.log('✅ Successfully updated burn data!');
+      console.log(`📊 Total Supply: ${burnData.totalSupply.toLocaleString()} TINC`);
+      console.log(`🔥 Total Burned: ${burnData.totalBurned.toLocaleString()} TINC`);
+      console.log(`⚡ Emission Rate: ${burnData.emissionPerSecond.toFixed(4)} TINC/sec`);
+      console.log(`📈 Deflationary: ${burnData.isDeflationary ? 'Yes' : 'No'}`);
+      console.log(`👥 Total Holders: ${holderData.totalHolders.toLocaleString()}`);
+      console.log(`🔱 Poseidon (10%+): ${holderData.poseidon}`);
+      console.log(`🐋 Whale (1%+): ${holderData.whale}`);
+      console.log(`📅 Data saved to: ${dataPath}`);
+    }
     
   } catch (error) {
     console.error('❌ Error fetching burn data:', error);

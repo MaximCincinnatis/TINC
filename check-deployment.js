@@ -2,7 +2,7 @@
 
 const https = require('https');
 
-const VERCEL_TOKEN = 'LtOG0Iq5saMLlDJQWhrw1eHH';
+const VERCEL_TOKEN = process.env.VERCEL_TOKEN || require('dotenv').config().parsed?.VERCEL_TOKEN;
 const DEPLOYMENT_ID = 'dpl_Dk3Ejc8k7ww1hSKrmMnoowF2DTnr';
 
 function makeRequest(options, data = null) {

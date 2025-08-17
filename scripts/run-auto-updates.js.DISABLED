@@ -1,0 +1,113 @@
+const { spawn } = require('child_process');
+const path = require('path');
+
+// Configuration
+const UPDATE_INTERVAL_MINUTES = 30; // Update every 30 minutes
+const UPDATE_INTERVAL_MS = UPDATE_INTERVAL_MINUTES * 60 * 1000;
+
+console.log(`
+🚀 TINC Auto-Update Service Started
+==================================
+Update Frequency: Every ${UPDATE_INTERVAL_MINUTES} minutes
+Next Update: ${new Date(Date.now() + UPDATE_INTERVAL_MS).toLocaleString()}
+
+Press Ctrl+C to stop
+`);
+
+function runUpdate() {
+  console.log('\n🚨 AUTO-UPDATE PERMANENTLY DISABLED - DATA LOSS PREVENTION');
+  console.log('CRITICAL: Full refresh caused 87K TINC data loss on August 8th');
+  console.log('Manual intervention required - contact developer before re-enabling');
+  console.log('Only incremental updates are safe for production use\n');
+  
+  // PERMANENTLY DISABLED - DO NOT UNCOMMENT UNTIL INCREMENTAL SYSTEM TESTED
+  return; // Exit immediately
+  /*
+  const updateProcess = spawn('node', ['scripts/fetch-burn-data.js'], {
+    cwd: path.join(__dirname, '..'),
+    stdio: 'inherit'
+  });
+
+  updateProcess.on('close', (code) => {
+    if (code === 0) {
+      console.log('✅ Data fetch successful, copying to public folder...');
+      
+      // Copy versioned and legacy files to public folder
+      const fs = require('fs');
+      
+      try {
+        // Copy manifest first
+        const manifestSource = path.join(__dirname, '../data/data-manifest.json');
+        const manifestDest = path.join(__dirname, '../public/data/data-manifest.json');
+        
+        if (fs.existsSync(manifestSource)) {
+          fs.copyFileSync(manifestSource, manifestDest);
+          
+          // Read manifest to get latest versioned file
+          const manifest = JSON.parse(fs.readFileSync(manifestSource, 'utf8'));
+          const versionedSource = path.join(__dirname, '../data', manifest.latest);
+          const versionedDest = path.join(__dirname, '../public/data', manifest.latest);
+          
+          if (fs.existsSync(versionedSource)) {
+            fs.copyFileSync(versionedSource, versionedDest);
+            console.log(`✅ Versioned data copied: ${manifest.latest}`);
+          }
+        }
+        
+        // Also copy legacy file for backward compatibility
+        const legacySource = path.join(__dirname, '../data/burn-data.json');
+        const legacyDest = path.join(__dirname, '../public/data/burn-data.json');
+        
+        if (fs.existsSync(legacySource)) {
+          fs.copyFileSync(legacySource, legacyDest);
+          console.log('✅ Legacy data copied to public folder');
+        }
+        
+        // Git operations
+        console.log('📤 Committing and pushing...');
+        const gitAdd = spawn('git', ['add', 'data/', 'public/data/'], {
+          cwd: path.join(__dirname, '..'),
+          stdio: 'inherit'
+        });
+        
+        gitAdd.on('close', () => {
+          const gitCommit = spawn('git', ['commit', '-m', `Auto-update: ${new Date().toLocaleString()}`], {
+            cwd: path.join(__dirname, '..'),
+            stdio: 'inherit'
+          });
+          
+          gitCommit.on('close', () => {
+            const gitPush = spawn('git', ['push', 'origin', 'master'], {
+              cwd: path.join(__dirname, '..'),
+              stdio: 'inherit'
+            });
+            
+            gitPush.on('close', () => {
+              console.log('✅ Update complete!');
+              console.log(`⏰ Next update scheduled for: ${new Date(Date.now() + UPDATE_INTERVAL_MS).toLocaleString()}\n`);
+            });
+          });
+        });
+        
+      } catch (error) {
+        console.error('❌ Error copying file:', error.message);
+      }
+    } else {
+      console.error('❌ Data fetch failed with code:', code);
+      console.log(`⏰ Will retry at: ${new Date(Date.now() + UPDATE_INTERVAL_MS).toLocaleString()}\n`);
+    }
+  });
+  */
+}
+
+// Run immediately on start
+runUpdate();
+
+// Schedule periodic updates
+setInterval(runUpdate, UPDATE_INTERVAL_MS);
+
+// Handle graceful shutdown
+process.on('SIGINT', () => {
+  console.log('\n👋 Auto-update service stopped');
+  process.exit(0);
+});

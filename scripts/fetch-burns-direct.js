@@ -1,3 +1,4 @@
+require('dotenv').config();
 #!/usr/bin/env node
 
 const { execSync } = require('child_process');
@@ -6,7 +7,7 @@ const path = require('path');
 
 const TINC_ADDRESS = '0x6532B3F1e4DBff542fbD6befE5Ed7041c10B385a';
 const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000';
-const API_KEY = 'Z1M3GU25SBHSCM7C2FC19FBXII1SNZVAHB';
+const API_KEY = process.env.ETHERSCAN_API_KEY;
 
 console.log('🚀 Fetching ACCURATE burn data using direct API call...\n');
 

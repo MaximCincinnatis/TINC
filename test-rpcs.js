@@ -1,3 +1,4 @@
+require('dotenv').config();
 const RPC_ENDPOINTS = [
   "https://ethereum.publicnode.com",
   "https://eth.llamarpc.com",

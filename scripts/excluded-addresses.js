@@ -1,3 +1,4 @@
+require('dotenv').config();
 // Centralized configuration for addresses to exclude from holder statistics
 // This ensures consistency across all scripts
 

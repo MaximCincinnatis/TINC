@@ -1,3 +1,4 @@
+require('dotenv').config();
 // Quick verification that we're not missing burns
 
 const fs = require('fs');

@@ -4,7 +4,7 @@ const path = require('path');
 const crypto = require('crypto');
 require('dotenv').config({ path: '.env.local' });
 
-const VERCEL_TOKEN = process.env.VERCEL_TOKEN || 'LtOG0Iq5saMLlDJQWhrw1eHH';
+const VERCEL_TOKEN = process.env.VERCEL_TOKEN || process.env.VERCEL_TOKEN;
 const PROJECT_ID = 'prj_qajgf3itc7GoISB5YFHlkYbsxziN';
 const TEAM_ID = 'team_8s5uh0XU1acFCMqmtUsJipe3';
 

@@ -1,3 +1,4 @@
+require('dotenv').config();
 const HolderCacheManager = require('./holder-cache-manager');
 const { EXCLUDED_ADDRESSES } = require('./excluded-addresses');
 

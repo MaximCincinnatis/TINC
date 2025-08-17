@@ -1,3 +1,4 @@
+require('dotenv').config();
 const { callRPC } = require('./scripts/fetch-burn-data.js');
 
 const TINC_ADDRESS = '0x6532B3F1e4DBff542fbD6befE5Ed7041c10B385a';

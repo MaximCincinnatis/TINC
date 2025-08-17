@@ -1,3 +1,4 @@
+require('dotenv').config();
 const HolderCacheManager = require('./holder-cache-manager');
 
 const TINC_ADDRESS = '0x6532B3F1e4DBff542fbD6befE5Ed7041c10B385a';
@@ -7,7 +8,8 @@ const DEPLOYMENT_BLOCK = 19000000; // Approximate TINC deployment block
 
 // LP and contract addresses to exclude
 const EXCLUDED_ADDRESSES = new Set([
-  '0x72e0de1cc2c952326738dac05bacb9e9c25422e3', // TINC/TitanX LP
+  '0x72e0de1cc2c952326738dac05bacb9e9c25422e3', // TINC/TitanX LP Pool
+  '0xf89980f60e55633d05e72881ceb866dbb7f50580', // TINC LP Pool (Second LP)
   '0x0000000000000000000000000000000000000000', // Burn address
   '0x000000000000000000000000000000000000dead', // Dead address
 ].map(addr => addr.toLowerCase()));

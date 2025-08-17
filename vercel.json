@@ -26,6 +26,24 @@
       ]
     },
     {
+      "source": "/data/data-manifest.json",
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "public, max-age=30, s-maxage=30, stale-while-revalidate=15"
+        }
+      ]
+    },
+    {
+      "source": "/data/burn-data-v*.json",
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "public, max-age=86400, immutable"
+        }
+      ]
+    },
+    {
       "source": "/static/(.*)",
       "headers": [
         {

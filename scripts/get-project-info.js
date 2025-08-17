@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 
 const https = require('https');
+require('dotenv').config();
 
-const VERCEL_TOKEN = 'LtOG0Iq5saMLlDJQWhrw1eHH';
+const VERCEL_TOKEN = process.env.VERCEL_TOKEN;
 
 function getProjectInfo() {
     return new Promise((resolve, reject) => {

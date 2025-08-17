@@ -2,8 +2,9 @@
 
 const https = require('https');
 const fs = require('fs');
+require('dotenv').config();
 
-const VERCEL_TOKEN = 'LtOG0Iq5saMLlDJQWhrw1eHH';
+const VERCEL_TOKEN = process.env.VERCEL_TOKEN;
 const PROJECT_NAME = 'tinc-burn-tracker';
 
 function makeRequest(options, data = null) {

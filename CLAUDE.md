@@ -22,7 +22,7 @@ Before starting any implementation, thoroughly analyze the requirements and exis
 ### 2. The plan should have a list of todo items that you can check off as you complete them
 Use a structured todo list format with clear, actionable items. Each item should be specific and measurable.
 
-### 3. Before you begin working, check in with me and I will verify the plan.
+### 3. Before you begin working, check in with me!  I HAVE TO VERIFY THE PLAN FIRST!!!!!! 
 Always present the plan for approval before making any code changes. This ensures alignment with project goals and expectations.
 
 ### 4. Then, begin working on the todo items, marking them as complete as you go.
