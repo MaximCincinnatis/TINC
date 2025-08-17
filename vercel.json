@@ -35,7 +35,7 @@
       ]
     },
     {
-      "source": "/data/burn-data-v*.json",
+      "source": "/data/burn-data-v(.*).json",
       "headers": [
         {
           "key": "cache-control",
