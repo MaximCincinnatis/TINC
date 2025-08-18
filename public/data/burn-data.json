@@ -9,6 +9,18 @@
   "isDeflationary": true,
   "dailyBurns": [
     {
+      "date": "2025-07-20",
+      "amountTinc": 0,
+      "transactionCount": 0,
+      "transactions": []
+    },
+    {
+      "date": "2025-07-21",
+      "amountTinc": 0,
+      "transactionCount": 0,
+      "transactions": []
+    },
+    {
       "date": "2025-07-22",
       "amountTinc": 40237.72138977266,
       "transactionCount": 8,
@@ -1227,21 +1239,9 @@
       "amountTinc": 0,
       "transactionCount": 0,
       "transactions": []
-    },
-    {
-      "date": "2025-08-19",
-      "amountTinc": 0,
-      "transactionCount": 0,
-      "transactions": []
-    },
-    {
-      "date": "2025-08-20",
-      "amountTinc": 0,
-      "transactionCount": 0,
-      "transactions": []
     }
   ],
-  "fetchedAt": "2025-08-18T04:51:22.960Z",
+  "fetchedAt": "2025-08-18T05:21:29.378Z",
   "fromCache": true,
   "holderStats": {
     "totalHolders": 107,
@@ -1253,7 +1253,7 @@
     "shrimp": 3,
     "top10Percentage": 16.138729402271178,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2025-08-18T01:21:25.830Z"
+    "lastUpdate": "2025-08-18T05:21:29.367Z"
   },
-  "lastIncrementalUpdate": "2025-08-18T04:51:22.960Z"
+  "lastIncrementalUpdate": "2025-08-18T05:21:29.378Z"
 }
