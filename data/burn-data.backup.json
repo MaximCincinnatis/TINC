@@ -1,45 +1,13 @@
 {
   "startDate": "2025-07-16",
   "endDate": "2025-08-15",
-  "totalBurned": 1143423.428986546,
+  "totalBurned": 1087317.383622095,
   "totalSupply": 15615067.70017789,
-  "burnPercentage": 7.322564659604517,
+  "burnPercentage": 6.9632575695442425,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
   "dailyBurns": [
-    {
-      "date": "2025-07-21",
-      "amountTinc": 44877.17399673815,
-      "transactionCount": 5,
-      "transactions": [
-        {
-          "hash": "0x6de39a3a0d1ede108ec9c1801cf31c8748c7aca6ce1cfb5dd3c7408057e036eb",
-          "amount": 6387.0540419677845,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x70e6c14bc382f8abd5f1d05f9f8c2ecd57da9b41aa2b927c42f8f53a1f1ee983",
-          "amount": 4271.778443353144,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0xaa5d5ccb463c17355317064a27bb9a81e2331875ee6f25949830a81e6e2e763e",
-          "amount": 10762.56276116419,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x9459fd7207629e52d1b7b7c7f6d31946930d2a2230d2eb1377774fb61d781dec",
-          "amount": 23051.720757335388,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0xd6decf998c70b65fd947d45c949a9ae99ce55b4771a6a3ed68be3bdf14a9fac1",
-          "amount": 404.05799291764447,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        }
-      ]
-    },
     {
       "date": "2025-07-22",
       "amountTinc": 40237.72138977266,
@@ -1089,120 +1057,6 @@
       ]
     },
     {
-      "date": "2025-08-14",
-      "amountTinc": 33044.183237273915,
-      "transactionCount": 10,
-      "transactions": [
-        {
-          "hash": "0x950a63a80b7f51cb084dd11c690142baf97a3f95e02cafba885f28d28f60b6da",
-          "amount": 3230.9885241162415,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x0ca1f1e4f69c7058ed99cadde0c20e1dbcc38042cd83b302cd36e4af95be64fb",
-          "amount": 2583.348819832612,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x8e35e46a052d8f6a21bd977c70c17935f1449b7498759a2cfce7123715b38207",
-          "amount": 5960.870218787645,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0xe1a473bbe67c465b73571af5c7cfae7038272641e73fcf88218bb40cebbda562",
-          "amount": 1203.0127791357677,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x401453e9204378a8f3e1ff4442098018e8caf2f21df13034237e438a5708fca4",
-          "amount": 7.826182904627271,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x42a9a89099ea4821025d0f859b0cb81dbf1150870623af09665281c7c68b3720",
-          "amount": 6467.283355811428,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x973c1950dc186f50c6cad8208b448ae941c66bec19ee1f2314d660be8b5283e9",
-          "amount": 5512.206502205371,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x1bcea838736986033fae38b499443b1ca0861bd38fb6d60ea8413640aad26544",
-          "amount": 3099.043353769326,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0xe2fc559ed24b69134d3447a136a4851daaae215a811a13ab732cce6356a2248e",
-          "amount": 4114.506795670974,
-          "from": "0x9fabf48ebe587ee4f8b3172012c3060cc40fea6c"
-        },
-        {
-          "hash": "0xc628392901475ce8fccb44c492125a241535e0c81a75378652699f5a42fc110b",
-          "amount": 865.0967050399175,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        }
-      ]
-    },
-    {
-      "date": "2025-08-15",
-      "amountTinc": 29327.09858219061,
-      "transactionCount": 10,
-      "transactions": [
-        {
-          "hash": "0x20795ce48d30a733f8fc06b99fe2dba6c9db717d5442e28da795561c78e857fa",
-          "amount": 5548.490842280978,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0xe146bc0a321d6f35fe7c26ee906c51149048c2d519405e87a6eb29a3ac97e8d6",
-          "amount": 4290.384041210389,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0xdfe8cd80355543325827839190b0191badedb58ac37793fc21284c4d3cea3533",
-          "amount": 1466.9098220089436,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x9e4c834caafe9cf9c2d11758be410759ba572a854cba1dd19da7b57847639311",
-          "amount": 3601.3528997338794,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0xe6dccf3704be7eedfdb97d2ab14322122d866910b6a5cd075d3847096a44aa7c",
-          "amount": 1364.6749877886423,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x506329ed8553153c65f11f4b9509fec3fb3c46001a1f44e760dc90359b5bf6bc",
-          "amount": 7399.241042701139,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0xae8517c06277243b5f69f0183510cbe87daf60db9ca2aaa984bd3039ee19389d",
-          "amount": 3273.736335091656,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x8429852402e8b64bb778125d63155b7d1d4b036efb6269eec40be6306466fd4a",
-          "amount": 1206.7930807803978,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x0319c815f5c6a084920bffe69cdec87c8e1097ca9c57e4884a887817f3d6df0b",
-          "amount": 244.67378666304853,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x46633e5c3cefc90354fc4d9321a2a187c100172b2507cf451b029f8b0fda8d27",
-          "amount": 930.8417439315353,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        }
-      ]
-    },
-    {
       "date": "2025-08-15",
       "amountTinc": 29327.09858219061,
       "transactionCount": 10,
@@ -1313,30 +1167,93 @@
     },
     {
       "date": "2025-08-17",
-      "amountTinc": 269.8187000531728,
-      "transactionCount": 1,
+      "amountTinc": 51412.22915180521,
+      "transactionCount": 10,
       "transactions": [
         {
           "hash": "0x594983dc20fe4c7c0f50220f4754d9ed15dd496389c2497be522520f56b99ff3",
           "amount": 269.8187000531728,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x4e67d976f27a85a449535e70b1e03f9d43eb9f4bf6f84c8b44fb435ddd5f4377",
+          "amount": 1131.987258493334,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x53aa9e7aa209747334d772ac1d92d6888d0ea23eb736b683cfe4738f92595560",
+          "amount": 1284.4712136215348,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0xc466520bd43ba75dad369cae97b671b62b899c5e82cfb433002d17b611163c3c",
+          "amount": 21038.787863501082,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0xb28590c56effc0bea1d85f83573805b4978a6c475200bb4d351b6cfff1b7a3e0",
+          "amount": 20120.36780704091,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0xd7d2164aee0fc9f1b8cf416adc78b99f238872b640b8fee00fb2b22358041398",
+          "amount": 234.5865797244049,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x9b21326b183067d5e74621eead167833da91662d40526f91fa07be36d0441419",
+          "amount": 1082.2090874696694,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0xe3c5b79189d9884f17242f725eb357924f34f99a6b12f1ded8a8a2fb8277deae",
+          "amount": 2031.4145198353738,
+          "from": "0x9fabf48ebe587ee4f8b3172012c3060cc40fea6c"
+        },
+        {
+          "hash": "0x7699e69ef3841a3d613ec41add518f3ee40724392d6f409ceed210e7604d2669",
+          "amount": 3511.042224356654,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x205429286b9f7715d4faae664f9f7ab992dfdd3c9da6f18de505bc04c5ddd601",
+          "amount": 707.5438977090756,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
+    },
+    {
+      "date": "2025-08-18",
+      "amountTinc": 0,
+      "transactionCount": 0,
+      "transactions": []
+    },
+    {
+      "date": "2025-08-19",
+      "amountTinc": 0,
+      "transactionCount": 0,
+      "transactions": []
+    },
+    {
+      "date": "2025-08-20",
+      "amountTinc": 0,
+      "transactionCount": 0,
+      "transactions": []
     }
   ],
-  "fetchedAt": "2025-08-17T01:51:20.275Z",
+  "fetchedAt": "2025-08-18T00:21:23.589Z",
   "fromCache": true,
   "holderStats": {
-    "totalHolders": 105,
+    "totalHolders": 107,
     "poseidon": 0,
     "whale": 8,
     "shark": 37,
-    "dolphin": 57,
-    "squid": 2,
-    "shrimp": 1,
-    "top10Percentage": 16.11396749480121,
+    "dolphin": 55,
+    "squid": 4,
+    "shrimp": 3,
+    "top10Percentage": 16.138729402271178,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2025-08-17T01:51:20.265Z"
+    "lastUpdate": "2025-08-17T23:51:31.414Z"
   },
-  "lastIncrementalUpdate": "2025-08-17T01:51:20.275Z"
+  "lastIncrementalUpdate": "2025-08-18T00:21:23.589Z"
 }
