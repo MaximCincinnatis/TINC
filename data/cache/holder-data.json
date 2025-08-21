@@ -1,7 +1,7 @@
 {
-  "lastBlock": 23180463,
+  "lastBlock": 23185693,
   "totalSupply": 15696267.53334864,
-  "totalHolders": 110,
+  "totalHolders": 112,
   "holders": [
     {
       "address": "0xf9c99e2557ddd6971563ff317cbb39319a2ef8f5",
@@ -40,10 +40,6 @@
       "balance": 153902.7638804658
     },
     {
-      "address": "0x619095a53ed0d1058db530ccc04ab5a1c2ef0cd5",
-      "balance": 144487.04328396916
-    },
-    {
       "address": "0x1279acc327ed3faf54e7d781714a6a8817561ca8",
       "balance": 113042.96584622365
     },
@@ -54,6 +50,10 @@
     {
       "address": "0xddccecf04224ad128edea53af42f480c6db7ac00",
       "balance": 92272.82111910442
+    },
+    {
+      "address": "0x619095a53ed0d1058db530ccc04ab5a1c2ef0cd5",
+      "balance": 87970.8212515009
     },
     {
       "address": "0xed4daaf5e86f6eddbd358266369a804563f434e1",
@@ -157,7 +157,7 @@
     },
     {
       "address": "0x9008d19f58aabd9ed0d60971565aa8510560ab41",
-      "balance": 21233.46129885377
+      "balance": 21345.73538549894
     },
     {
       "address": "0xaf62117ff418ed14698e8ef80c5cc9954a9da2e1",
@@ -320,6 +320,10 @@
       "balance": 5648.886066329759
     },
     {
+      "address": "0x402e0350a301b0a30aac606899a55249938ed105",
+      "balance": 5551.019706300315
+    },
+    {
       "address": "0x98e919c2a94fb2f57b29aea712c8c5520b0d20ec",
       "balance": 5527.7348848775255
     },
@@ -428,6 +432,10 @@
       "balance": 282.56418298484056
     },
     {
+      "address": "0x8ffe316615409a73f5bf7a09a0f2896eda489450",
+      "balance": 149.78205393162986
+    },
+    {
       "address": "0x2dd7e37d7d726b20ab323185cf38c5aa64b7fbe0",
       "balance": 74.22736236532522
     },
@@ -445,16 +453,16 @@
     }
   ],
   "holderStats": {
-    "totalHolders": 110,
+    "totalHolders": 112,
     "poseidon": 0,
     "whale": 8,
     "shark": 37,
-    "dolphin": 55,
+    "dolphin": 56,
     "squid": 6,
-    "shrimp": 4,
-    "top10Percentage": 16.15776252333823,
+    "shrimp": 5,
+    "top10Percentage": 15.957434149914812,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2025-08-20T06:21:39.587Z"
+    "lastUpdate": "2025-08-20T23:51:38.160Z"
   },
-  "cachedAt": "2025-08-20T06:21:39.587Z"
+  "cachedAt": "2025-08-20T23:51:38.160Z"
 }
