@@ -1062,7 +1062,7 @@
       "transactions": []
     }
   ],
-  "fetchedAt": "2025-08-25T15:04:43.481Z",
+  "fetchedAt": "2025-08-25T15:35:46.329Z",
   "fromCache": true,
   "holderStats": {
     "totalHolders": 125,
@@ -1076,6 +1076,6 @@
     "dataSource": "blockchain-incremental",
     "lastUpdate": "2025-08-25T15:04:43.465Z"
   },
-  "lastIncrementalUpdate": "2025-08-25T15:04:43.481Z",
-  "lastProcessedBlock": 23218900
+  "lastIncrementalUpdate": "2025-08-25T15:35:46.329Z",
+  "lastProcessedBlock": 23219055
 }
