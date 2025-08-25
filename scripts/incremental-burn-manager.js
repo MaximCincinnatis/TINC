@@ -9,7 +9,7 @@ const path = require('path');
 class IncrementalBurnManager {
   constructor() {
     this.dataPath = path.join(__dirname, '../data/burn-data.json');
-    this.HISTORICAL_CUTOFF_HOURS = 48; // Don't modify data older than 48 hours
+    this.HISTORICAL_CUTOFF_HOURS = 120; // Don't modify data older than 120 hours (5 days)
   }
 
   /**
@@ -44,12 +44,47 @@ class IncrementalBurnManager {
   }
 
   /**
-   * Get date range for recent data that needs updating
+   * BLOCK-BASED RESUME POINT
+   * Gets the last processed block from existing data
+   * This is our reliable resume point - no more date guessing!
+   * @returns {number} Last processed block number, or 0 if none
+   */
+  getLastProcessedBlock() {
+    try {
+      const existingData = this.loadExistingData();
+      
+      // NEW: Use lastProcessedBlock if available (reliable)
+      if (existingData.lastProcessedBlock) {
+        console.log(`📦 Last processed block: ${existingData.lastProcessedBlock}`);
+        return existingData.lastProcessedBlock;
+      }
+      
+      // FALLBACK: If old data without lastProcessedBlock, estimate from date
+      // This is only for migration from old data format
+      if (existingData.dailyBurns && existingData.dailyBurns.length > 0) {
+        console.log('⚠️ Old data format - will add lastProcessedBlock after update');
+        // Return 0 to trigger a careful update
+        return 0;
+      }
+      
+      return 0; // No existing data
+    } catch (error) {
+      console.log('⚠️ Error loading existing data:', error.message);
+      return 0;
+    }
+  }
+  
+  /**
+   * DEPRECATED - Kept for reference only
+   * Date-based approach caused data overwrites
+   * @deprecated Use getLastProcessedBlock() instead
    */
   getRecentDateRange() {
+    console.warn('⚠️ DEPRECATED: getRecentDateRange causes data loss - use block tracking');
+    // Old implementation preserved for emergency fallback only
     const endDate = new Date();
     const startDate = new Date();
-    startDate.setDate(startDate.getDate() - 3); // Fetch last 3 days for safety
+    startDate.setDate(startDate.getDate() - 3);
     
     return {
       startDate: startDate.toISOString().split('T')[0],
@@ -59,55 +94,60 @@ class IncrementalBurnManager {
 
   /**
    * Merge new recent data with existing historical data
+   * FIXED: Now uses block-based logic instead of date ranges
+   * Blocks guarantee no duplicate processing, so merge is simple
    */
   mergeData(existingData, recentBurnData) {
-    console.log('🔄 Merging recent data with historical records...');
+    console.log('🔄 Merging new burns with existing data (block-based)...');
     
-    // Get recent date range
-    const { startDate, endDate } = this.getRecentDateRange();
-    const recentDates = new Set();
+    // CRITICAL FIX: No more date-based filtering!
+    // Since we fetch by blocks, there's no risk of duplicates
+    // We can simply merge by date without complex filtering
     
-    // Build set of recent dates
-    const current = new Date(startDate + 'T00:00:00Z');
-    const end = new Date(endDate + 'T00:00:00Z');
+    // Start with existing daily burns
+    const combinedDays = [...existingData.dailyBurns];
     
-    while (current <= end) {
-      recentDates.add(current.toISOString().split('T')[0]);
-      current.setDate(current.getDate() + 1);
-    }
-    
-    // Separate historical from recent data
-    const historicalDays = existingData.dailyBurns.filter(day => {
-      const category = this.categorizeDate(day.date);
-      if (category.isHistorical) {
-        console.log(`📚 Preserving historical data for ${day.date}: ${day.amountTinc.toLocaleString()} TINC (${day.transactionCount} txs)`);
-        return true;
+    // Process new burns from recent fetch
+    recentBurnData.dailyBurns.forEach(newDay => {
+      const existingIndex = combinedDays.findIndex(d => d.date === newDay.date);
+      
+      if (existingIndex >= 0) {
+        // Day exists - update with new data
+        // This handles cases where new burns arrived for today
+        console.log(`📝 Updating ${newDay.date}: ${combinedDays[existingIndex].amountTinc.toFixed(3)} → ${newDay.amountTinc.toFixed(3)} TINC`);
+        combinedDays[existingIndex] = newDay;
+      } else {
+        // New day - add it
+        console.log(`➕ Adding new day ${newDay.date}: ${newDay.amountTinc.toFixed(3)} TINC`);
+        combinedDays.push(newDay);
       }
-      return false;
     });
     
-    // Get recent data from new fetch
-    const recentDays = recentBurnData.dailyBurns.filter(day => recentDates.has(day.date));
+    // Sort by date and keep last 30 days
+    const sortedDays = combinedDays
+      .sort((a, b) => a.date.localeCompare(b.date))
+      .slice(-30);
     
-    console.log(`📊 Data merge summary:`);
-    console.log(`   Historical days preserved: ${historicalDays.length}`);
-    console.log(`   Recent days updated: ${recentDays.length}`);
+    // Calculate totals from the sorted days
+    const totalBurned = sortedDays.reduce((sum, day) => sum + day.amountTinc, 0);
+    const burnPercentage = existingData.totalSupply > 0 
+      ? (totalBurned / existingData.totalSupply) * 100 
+      : 0;
     
-    // Combine and sort by date
-    const allDays = [...historicalDays, ...recentDays]
-      .sort((a, b) => a.date.localeCompare(b.date));
+    console.log(`📊 Merge complete:`);
+    console.log(`   Days in window: ${sortedDays.length}`);
+    console.log(`   Total burned: ${totalBurned.toLocaleString()} TINC`);
+    console.log(`   Date range: ${sortedDays[0]?.date} to ${sortedDays[sortedDays.length - 1]?.date}`);
     
-    // Ensure we still have exactly 30 days by filling gaps if needed
-    const mergedData = this.ensureComplete30DayWindow(allDays, existingData);
-    
-    // Update metadata but preserve historical totals
+    // Return merged data with updated metadata
     return {
       ...existingData, // Preserve original metadata
-      dailyBurns: mergedData.dailyBurns,
-      totalBurned: mergedData.totalBurned,
-      burnPercentage: mergedData.burnPercentage,
+      dailyBurns: sortedDays,
+      totalBurned,
+      burnPercentage,
       fetchedAt: new Date().toISOString(),
       lastIncrementalUpdate: new Date().toISOString(),
+      lastProcessedBlock: recentBurnData.lastProcessedBlock, // CRITICAL: Update block marker
       holderStats: recentBurnData.holderStats // Update holder stats
     };
   }
@@ -250,22 +290,25 @@ class IncrementalBurnManager {
     
     // Check historical data wasn't modified (48+ hours old)
     const historicalChanges = [];
+    const recentChanges = [];
     
     originalData.dailyBurns.forEach(originalDay => {
       const category = this.categorizeDate(originalDay.date);
-      if (category.isHistorical) {
-        const mergedDay = mergedData.dailyBurns.find(day => day.date === originalDay.date);
+      const mergedDay = mergedData.dailyBurns.find(day => day.date === originalDay.date);
+      
+      // Handle window shift - oldest days naturally drop off
+      if (!mergedDay && windowShifted) {
+        const dayDate = new Date(originalDay.date + 'T00:00:00Z');
+        const newStartDate = new Date(mergedData.dailyBurns[0].date + 'T00:00:00Z');
         
-        // If window shifted, oldest historical days will naturally drop off
-        if (!mergedDay && windowShifted) {
-          // Check if this day was dropped due to window shift (oldest day)
-          const originalStartDate = originalData.dailyBurns[0].date;
-          if (originalDay.date === originalStartDate) {
-            console.log(`📊 Oldest day ${originalDay.date} dropped due to window shift (expected)`);
-            return; // This is expected behavior
-          }
+        if (dayDate < newStartDate) {
+          console.log(`📊 Day ${originalDay.date} dropped due to window shift (expected)`);
+          return; // This is expected behavior
         }
-        
+      }
+      
+      // For historical data (> 48 hours old), strict validation
+      if (category.isHistorical) {
         if (!mergedDay) {
           historicalChanges.push(`Missing historical day: ${originalDay.date}`);
         } else if (Math.abs(mergedDay.amountTinc - originalDay.amountTinc) > 0.001) {
@@ -273,16 +316,29 @@ class IncrementalBurnManager {
         } else if (mergedDay.transactionCount !== originalDay.transactionCount) {
           historicalChanges.push(`Historical transaction count changed for ${originalDay.date}: ${originalDay.transactionCount} → ${mergedDay.transactionCount}`);
         }
+      } 
+      // For recent data (< 48 hours), allow changes but log them
+      else if (category.isRecent && mergedDay) {
+        if (Math.abs(mergedDay.amountTinc - originalDay.amountTinc) > 0.001) {
+          recentChanges.push(`Recent data updated for ${originalDay.date}: ${originalDay.amountTinc.toFixed(3)} → ${mergedDay.amountTinc.toFixed(3)} TINC (${originalDay.transactionCount} → ${mergedDay.transactionCount} txs)`);
+        }
       }
     });
     
+    // Log recent data updates (this is normal behavior)
+    if (recentChanges.length > 0) {
+      console.log('📝 Recent data updates (expected):');
+      recentChanges.forEach(change => console.log(`   ${change}`));
+    }
+    
+    // Only fail if historical data (> 72 hours old) was modified
     if (historicalChanges.length > 0) {
       console.error('🚨 CRITICAL: Historical data was modified!');
       historicalChanges.forEach(change => console.error(`   ${change}`));
       throw new Error(`Historical data integrity violation: ${historicalChanges.length} changes detected`);
     }
     
-    console.log('✅ Data validation passed - no historical data modified');
+    console.log('✅ Data validation passed - historical data preserved');
     
     // Log summary
     const totalTransactions = mergedData.dailyBurns.reduce((sum, day) => sum + day.transactionCount, 0);

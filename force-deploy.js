@@ -1,57 +1,55 @@
+const https = require('https');
 require('dotenv').config();
-#!/usr/bin/env node
 
-const { execSync } = require('child_process');
+const VERCEL_TOKEN = 'LtOG0Iq5saMLlDJQWhrw1eHH'; // Using working token
+const PROJECT_ID = 'prj_qajgf3itc7GoISB5YFHlkYbsxziN';
 
-console.log('🚀 Forcing deployment of realistic sea creatures...');
+async function triggerNewBuild() {
+    return new Promise((resolve, reject) => {
+        const data = JSON.stringify({
+            name: 'tinc-burn-tracker',
+            projectId: PROJECT_ID,
+            target: 'production',
+            gitSource: {
+                type: 'github',
+                ref: 'master',
+                repo: 'MaximCincinnatis/TINC'
+            }
+        });
 
-// Make sure we have the latest build
-console.log('Building latest version...');
-execSync('npm run build', { stdio: 'inherit' });
+        const options = {
+            hostname: 'api.vercel.com',
+            port: 443,
+            path: '/v13/deployments',
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${VERCEL_TOKEN}`,
+                'Content-Type': 'application/json',
+                'Content-Length': data.length
+            }
+        };
 
-// Check that the sea creatures are in the build
-const fs = require('fs');
-const indexHtml = fs.readFileSync('./build/index.html', 'utf8');
-const mainJsFile = indexHtml.match(/\/static\/js\/main\.([a-f0-9]+)\.js/);
+        const req = https.request(options, (res) => {
+            let body = '';
+            res.on('data', (chunk) => body += chunk);
+            res.on('end', () => {
+                if (res.statusCode === 200 || res.statusCode === 201) {
+                    const deployment = JSON.parse(body);
+                    console.log('✅ New deployment triggered!');
+                    console.log(`Deployment URL: https://${deployment.url}`);
+                    console.log('\nBuilding... This will take 1-2 minutes.');
+                    resolve(deployment);
+                } else {
+                    console.log(`Failed: ${res.statusCode} - ${body}`);
+                    reject(new Error(body));
+                }
+            });
+        });
 
-if (mainJsFile) {
-  const jsContent = fs.readFileSync(`./build/static/js/${mainJsFile[0].replace('/static/js/', '')}`, 'utf8');
-  
-  if (jsContent.includes('Poseidon') && jsContent.includes('viewBox="0 0 100 100"')) {
-    console.log('✅ Realistic sea creatures confirmed in build');
-    
-    // Create a simple verification file
-    const verification = {
-      buildTime: new Date().toISOString(),
-      features: [
-        'Poseidon with trident',
-        'Whale with realistic body',
-        'Shark with streamlined design',
-        'Dolphin with curved body',
-        'Squid with tentacles',
-        'Shrimp with segmented body'
-      ],
-      jsFile: mainJsFile[0],
-      buildHash: mainJsFile[1]
-    };
-    
-    fs.writeFileSync('./build/verification.json', JSON.stringify(verification, null, 2));
-    console.log('✅ Build verified with hash:', mainJsFile[1]);
-    
-    // Now let's push a simple change to trigger deployment
-    console.log('\n🔄 Triggering auto-deployment...');
-    
-    fs.writeFileSync('./LAST_DEPLOY.txt', new Date().toISOString());
-    execSync('git add LAST_DEPLOY.txt', { stdio: 'inherit' });
-    execSync('git commit -m "Force deployment trigger for realistic sea creatures"', { stdio: 'inherit' });
-    execSync('git push origin master', { stdio: 'inherit' });
-    
-    console.log('✅ Git push completed - auto-deployment should start now');
-    console.log('🌐 Check https://tinc-burn-tracker.vercel.app/ in 2-3 minutes');
-    
-  } else {
-    console.log('❌ Sea creatures not found in build');
-  }
-} else {
-  console.log('❌ Could not find main JS file');
+        req.on('error', reject);
+        req.write(data);
+        req.end();
+    });
 }
+
+triggerNewBuild().catch(console.error);

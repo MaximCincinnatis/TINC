@@ -13,9 +13,15 @@ require('dotenv').config();
 const RPC_ENDPOINTS = [
   "https://ethereum.publicnode.com",
   "https://eth.llamarpc.com",
-  "https://1rpc.io/eth",
   "https://eth-mainnet.public.blastapi.io",
-  "https://eth.drpc.org"
+  "https://eth.drpc.org",
+  "https://rpc.payy.moe",
+  "https://eth.merkle.io",
+  "https://ethereum-rpc.publicnode.com"
+  // Removed non-working endpoints:
+  // "https://1rpc.io/eth" - quota exceeded
+  // "https://rpc.ankr.com/eth" - requires API key
+  // "https://eth-rpc.gateway.pokt.network" - connection failed
 ];
 
 let currentRPCIndex = 0;
@@ -47,40 +53,76 @@ async function callRPC(method, params, retryCount = 0) {
   const maxRetries = RPC_ENDPOINTS.length * 2;
   
   if (retryCount >= maxRetries) {
+    console.error(`[ERROR] All RPC endpoints exhausted after ${maxRetries} retries`);
     throw new Error('All RPC endpoints exhausted after retries');
   }
 
   const endpoint = RPC_ENDPOINTS[currentRPCIndex];
   
+  // Create AbortController for proper timeout
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 second timeout
+  
   try {
+    const startTime = Date.now();
     const response = await fetch(endpoint, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 
+        'Content-Type': 'application/json',
+        'User-Agent': 'TINC-Burn-Tracker/1.0'
+      },
       body: JSON.stringify({
         jsonrpc: '2.0',
         id: Date.now(),
         method,
         params,
       }),
-      timeout: 30000 // 30 second timeout
+      signal: controller.signal
     });
+
+    clearTimeout(timeoutId);
+    const responseTime = Date.now() - startTime;
+
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+    }
 
     const data = await response.json();
     if (data.error) {
-      throw new Error(data.error.message);
+      // Check for specific error codes
+      if (data.error.code === -32005 || data.error.code === -32001) {
+        throw new Error(`Rate limited: ${data.error.message}`);
+      }
+      throw new Error(data.error.message || 'Unknown RPC error');
     }
     
     // Success - this endpoint is working
+    if (retryCount > 0) {
+      console.log(`✓ RPC call succeeded with ${endpoint} after ${retryCount} retries (${responseTime}ms)`);
+    }
     return data.result;
   } catch (error) {
-    console.warn(`RPC error with ${endpoint}:`, error.message);
+    clearTimeout(timeoutId);
+    
+    // More detailed error logging
+    if (error.name === 'AbortError') {
+      console.warn(`[TIMEOUT] RPC timeout with ${endpoint} after 30s`);
+    } else if (error.message.includes('Rate limited')) {
+      console.warn(`[RATE_LIMIT] ${endpoint}: ${error.message}`);
+    } else {
+      console.warn(`[ERROR] RPC error with ${endpoint}: ${error.message}`);
+    }
     
     // Move to next endpoint
     currentRPCIndex = (currentRPCIndex + 1) % RPC_ENDPOINTS.length;
     
-    // If error contains rate limit message, wait a bit
-    if (error.message.includes('rate') || error.message.includes('limit')) {
-      await new Promise(resolve => setTimeout(resolve, 1000));
+    // If error contains rate limit message, wait longer
+    if (error.message.includes('rate') || error.message.includes('limit') || error.message.includes('quota')) {
+      console.log(`⏳ Waiting 2s before retry due to rate limiting...`);
+      await new Promise(resolve => setTimeout(resolve, 2000));
+    } else {
+      // Small delay between retries
+      await new Promise(resolve => setTimeout(resolve, 500));
     }
     
     // Retry with next endpoint
@@ -93,7 +135,15 @@ async function getBlockNumber() {
   return parseInt(result, 16);
 }
 
+/**
+ * DEPRECATED - DO NOT USE
+ * This function caused data loss (Aug 8, Aug 23-25 incidents)
+ * Block time estimation is unreliable (varies 12-14 seconds)
+ * Use lastProcessedBlock tracking instead
+ * @deprecated Since Aug 2025 - causes data overwrites
+ */
 async function estimateBlockByTimestamp(timestamp) {
+  console.warn('⚠️ DEPRECATED: estimateBlockByTimestamp causes data loss - use block tracking');
   const currentBlock = await getBlockNumber();
   const currentTime = Math.floor(Date.now() / 1000);
   const timeDiff = currentTime - timestamp;
@@ -172,8 +222,14 @@ async function fetchBurnsWithRetry(fromBlock, toBlock, maxRetries = 3) {
   }
 }
 
+/**
+ * BLOCK-BASED BURN DATA FETCHING
+ * Core principle: Blocks are truth, dates are display
+ * We track lastProcessedBlock to know exact resume point
+ * RPC timestamps used for calendar grouping only
+ */
 async function fetchBurnData() {
-  console.log('Fetching TINC burn data...');
+  console.log('Fetching TINC burn data (full refresh)...');
   
   // Get total supply
   const totalSupplyHex = await callRPC('eth_call', [
@@ -192,6 +248,9 @@ async function fetchBurnData() {
   startDate.setDate(startDate.getDate() - 30);
 
   const currentBlock = await getBlockNumber();
+  
+  // DEPRECATED: Date-based block estimation causes data loss
+  // For full refresh, we still need a start point, but we'll track the end block
   const startBlock = await estimateBlockByTimestamp(Math.floor(startDate.getTime() / 1000));
 
   console.log(`Fetching burns from block ${startBlock} to ${currentBlock}`);
@@ -238,7 +297,10 @@ async function fetchBurnData() {
     burnsByDay[dateStr].transactions.push({
       hash: burn.hash,
       amount: burn.amount,
-      from: burn.from
+      from: burn.from,
+      // NEW: Track block number for each transaction
+      blockNumber: burn.blockNumber,
+      timestamp: burn.timestamp
     });
   });
 
@@ -299,7 +361,9 @@ async function fetchBurnData() {
     isDeflationary,
     dailyBurns: allDays,
     fetchedAt: new Date().toISOString(),
-    fromCache: true
+    fromCache: true,
+    // NEW: Track last processed block for reliable resume
+    lastProcessedBlock: currentBlock
   };
 }
 
@@ -501,6 +565,11 @@ async function fetchHolderData() {
   return await fetchHolderDataWithCache();
 }
 
+/**
+ * BLOCK-BASED INCREMENTAL UPDATE
+ * Uses lastProcessedBlock to know exact resume point
+ * Never re-processes blocks = no data overwrites
+ */
 async function runIncrementalUpdate() {
   const IncrementalBurnManager = require('./incremental-burn-manager');
   const manager = new IncrementalBurnManager();
@@ -509,18 +578,23 @@ async function runIncrementalUpdate() {
     // Load existing data
     const existingData = manager.loadExistingData();
     
-    // Get date range for recent data
-    const { startDate, endDate } = manager.getRecentDateRange();
-    console.log(`📅 Fetching recent data from ${startDate} to ${endDate}...`);
-    
-    // Fetch recent burn data (modify date range)
-    const originalStartDate = new Date();
-    originalStartDate.setDate(originalStartDate.getDate() - 30);
-    
-    // Override the date range for recent data only
-    const recentStartDate = new Date(startDate + 'T00:00:00Z');
+    // NEW: Get last processed block (reliable resume point)
+    const lastProcessedBlock = manager.getLastProcessedBlock();
     const currentBlock = await getBlockNumber();
-    const startBlock = await estimateBlockByTimestamp(Math.floor(recentStartDate.getTime() / 1000));
+    
+    // Safety check: don't process if no new blocks
+    if (lastProcessedBlock >= currentBlock) {
+      console.log('✅ Data is already up to date');
+      return existingData;
+    }
+    
+    // Calculate block range to fetch (never re-process old blocks!)
+    const startBlock = lastProcessedBlock > 0 ? lastProcessedBlock + 1 : currentBlock - 7200 * 30; // 30 days if no last block
+    
+    console.log(`📦 Block-based incremental update:`);
+    console.log(`   Last processed: ${lastProcessedBlock}`);
+    console.log(`   Current block: ${currentBlock}`);
+    console.log(`   Fetching: ${startBlock} to ${currentBlock}`);
     
     console.log(`🔄 Fetching recent burns from block ${startBlock} to ${currentBlock}...`);
     
@@ -573,11 +647,16 @@ async function runIncrementalUpdate() {
     const recentBurnData = {
       ...existingData,
       dailyBurns: recentDailyBurns,
-      holderStats: await fetchHolderData() // Update holder data
+      holderStats: await fetchHolderData(), // Update holder data
+      // CRITICAL: Update last processed block for next resume
+      lastProcessedBlock: currentBlock
     };
     
     // Merge with historical data
     const mergedData = manager.mergeData(existingData, recentBurnData);
+    
+    // Ensure lastProcessedBlock is preserved in merged data
+    mergedData.lastProcessedBlock = currentBlock;
     
     // Validate integrity
     manager.validateMergedData(existingData, mergedData);
