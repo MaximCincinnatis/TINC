@@ -1251,5 +1251,6 @@
     "dataSource": "blockchain-incremental",
     "lastUpdate": "2025-08-25T13:24:07.140Z"
   },
-  "lastIncrementalUpdate": "2025-08-25T13:28:19.557Z"
+  "lastIncrementalUpdate": "2025-08-25T13:28:19.557Z",
+  "lastProcessedBlock": 23208110
 }
