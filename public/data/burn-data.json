@@ -1650,9 +1650,9 @@
       ]
     }
   ],
-  "fetchedAt": "2025-08-27T22:47:13.929Z",
+  "fetchedAt": "2025-08-27T23:18:22.876Z",
   "fromCache": true,
-  "lastProcessedBlock": 23235532,
+  "lastProcessedBlock": 23235687,
   "holderStats": {
     "totalHolders": 129,
     "poseidon": 0,
@@ -1663,7 +1663,7 @@
     "shrimp": 15,
     "top10Percentage": 17.9395963781465,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2025-08-27T13:59:23.577Z"
+    "lastUpdate": "2025-08-27T23:18:22.854Z"
   },
-  "lastIncrementalUpdate": "2025-08-27T22:47:13.929Z"
+  "lastIncrementalUpdate": "2025-08-27T23:18:22.876Z"
 }
