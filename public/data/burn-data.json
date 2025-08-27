@@ -1650,20 +1650,20 @@
       ]
     }
   ],
-  "fetchedAt": "2025-08-27T13:28:25.167Z",
+  "fetchedAt": "2025-08-27T13:59:23.594Z",
   "fromCache": true,
-  "lastProcessedBlock": 23232753,
+  "lastProcessedBlock": 23232906,
   "holderStats": {
-    "totalHolders": 128,
+    "totalHolders": 129,
     "poseidon": 0,
     "whale": 10,
     "shark": 36,
     "dolphin": 59,
-    "squid": 8,
+    "squid": 9,
     "shrimp": 15,
     "top10Percentage": 17.9395963781465,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2025-08-27T12:26:07.294Z"
+    "lastUpdate": "2025-08-27T13:59:23.577Z"
   },
-  "lastIncrementalUpdate": "2025-08-27T13:28:25.167Z"
+  "lastIncrementalUpdate": "2025-08-27T13:59:23.594Z"
 }
