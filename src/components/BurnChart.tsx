@@ -33,14 +33,6 @@ interface Props {
 
 
 const BurnChart: React.FC<Props> = ({ burnData }) => {
-  // Debug: Check data
-  console.log('BurnChart received data:', {
-    totalDays: burnData.dailyBurns.length,
-    firstDate: burnData.dailyBurns[0]?.date,
-    lastDate: burnData.dailyBurns[burnData.dailyBurns.length - 1]?.date,
-    lastValue: burnData.dailyBurns[burnData.dailyBurns.length - 1]?.amountTinc
-  });
-  
   const labels = burnData.dailyBurns.map(d => {
     // Parse date as UTC to avoid timezone issues
     const [year, month, day] = d.date.split('-').map(Number);

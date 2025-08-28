@@ -26,7 +26,7 @@ export async function fetchBurnData(forceRefresh = false): Promise<BurnData> {
         progressCallback?.('Using versioned data...', 30);
       }
     } catch (manifestError) {
-      console.log('No manifest found, using legacy file');
+      // No manifest found, using legacy file
     }
     
     // Fetch from the determined URL

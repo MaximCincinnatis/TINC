@@ -10,8 +10,6 @@ const AVG_BLOCK_TIME = 12; // seconds
 const CHUNK_SIZE = 500; // Reduced chunk size for better RPC compatibility
 
 // Verify the zero address topic calculation
-console.log('Zero address topic:', ZERO_ADDRESS_TOPIC);
-console.log('Transfer topic:', TRANSFER_TOPIC);
 
 interface CachedData {
   data: BurnData;
@@ -64,7 +62,6 @@ export async function fetchBurnData(forceRefresh = false): Promise<BurnData> {
   const currentBlock = await getBlockNumber();
   const startBlock = await estimateBlockByTimestamp(Math.floor(startTime.getTime() / 1000));
 
-  console.log(`Fetching burns from block ${startBlock} to ${currentBlock}`);
   progressCallback?.(`Scanning ${currentBlock - startBlock} blocks for TINC burns...`, 5);
 
   const allBurns: any[] = [];
@@ -113,7 +110,6 @@ export async function fetchBurnData(forceRefresh = false): Promise<BurnData> {
       }
 
       chunksProcessed++;
-      console.log(`Found ${logs.length} burns in blocks ${fromBlock}-${toBlock}`);
     } catch (error) {
       console.error(`Error fetching chunk ${fromBlock}-${toBlock}:`, error);
       // Continue with next chunk

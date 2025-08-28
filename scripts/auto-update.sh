@@ -8,9 +8,9 @@ echo "🚀 Starting TINC auto-update: $(date)"
 # Navigate to project directory
 cd /home/wsl/projects/TINC
 
-# Run the fetch script (this takes 8-10 minutes)
-echo "📊 Fetching fresh blockchain data..."
-node scripts/fetch-burn-data.js
+# Run the gap-resistant integrated update
+echo "📊 Running gap-resistant update with backfill..."
+node scripts/integrated-gap-resistant-update.js
 
 # Check if fetch was successful
 if [ $? -eq 0 ]; then

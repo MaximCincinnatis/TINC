@@ -261,21 +261,33 @@ async function fetchBurnData() {
 
   // Fetch in chunks with robust retry logic
   console.log(`🔄 Processing ${totalChunks} chunks with retry logic...`);
+  const failedChunks = [];
   
   for (let fromBlock = startBlock; fromBlock <= currentBlock; fromBlock += CHUNK_SIZE) {
     const toBlock = Math.min(fromBlock + CHUNK_SIZE - 1, currentBlock);
     
-    // Use retry mechanism - will throw error if all retries fail
-    const burns = await fetchBurnsWithRetry(fromBlock, toBlock);
-    allBurns.push(...burns);
-    chunksProcessed++;
-    
-    // Progress indicator
-    const progress = ((chunksProcessed / totalChunks) * 100).toFixed(1);
-    console.log(`📊 Progress: ${chunksProcessed}/${totalChunks} chunks (${progress}%) - Found ${burns.length} burns in this chunk`);
+    try {
+      // Use retry mechanism - continue even if chunk fails
+      const burns = await fetchBurnsWithRetry(fromBlock, toBlock);
+      allBurns.push(...burns);
+      chunksProcessed++;
+      
+      // Progress indicator
+      const progress = ((chunksProcessed / totalChunks) * 100).toFixed(1);
+      console.log(`📊 Progress: ${chunksProcessed}/${totalChunks} chunks (${progress}%) - Found ${burns.length} burns in this chunk`);
+    } catch (error) {
+      console.warn(`⚠️  Chunk ${fromBlock}-${toBlock} failed after retries, continuing...`);
+      failedChunks.push({ fromBlock, toBlock, error: error.message });
+      chunksProcessed++; // Count as processed even if failed
+    }
   }
   
-  console.log(`✅ Successfully processed all ${totalChunks} chunks - Total burns found: ${allBurns.length}`);
+  if (failedChunks.length > 0) {
+    console.warn(`⚠️  WARNING: ${failedChunks.length} chunks failed - data may be incomplete`);
+    console.warn(`   Failed blocks:`, failedChunks.map(c => `${c.fromBlock}-${c.toBlock}`).join(', '));
+  }
+  
+  console.log(`✅ Processed ${totalChunks} chunks - Total burns found: ${allBurns.length}`);
 
   // Group burns by day
   const burnsByDay = {};
@@ -605,14 +617,26 @@ async function runIncrementalUpdate() {
     
     console.log(`🔄 Processing ${totalChunks} chunks for recent data...`);
     
+    const failedChunks = [];
     for (let fromBlock = startBlock; fromBlock <= currentBlock; fromBlock += CHUNK_SIZE) {
       const toBlock = Math.min(fromBlock + CHUNK_SIZE - 1, currentBlock);
-      const burns = await fetchBurnsWithRetry(fromBlock, toBlock);
-      allBurns.push(...burns);
-      chunksProcessed++;
       
-      const progress = ((chunksProcessed / totalChunks) * 100).toFixed(1);
-      console.log(`📊 Progress: ${chunksProcessed}/${totalChunks} chunks (${progress}%) - Found ${burns.length} burns`);
+      try {
+        const burns = await fetchBurnsWithRetry(fromBlock, toBlock);
+        allBurns.push(...burns);
+        chunksProcessed++;
+        
+        const progress = ((chunksProcessed / totalChunks) * 100).toFixed(1);
+        console.log(`📊 Progress: ${chunksProcessed}/${totalChunks} chunks (${progress}%) - Found ${burns.length} burns`);
+      } catch (error) {
+        console.warn(`⚠️  Chunk ${fromBlock}-${toBlock} failed, continuing...`);
+        failedChunks.push({ fromBlock, toBlock });
+        chunksProcessed++;
+      }
+    }
+    
+    if (failedChunks.length > 0) {
+      console.warn(`⚠️  ${failedChunks.length} chunks failed during incremental update`);
     }
     
     console.log(`✅ Found ${allBurns.length} recent burn transactions`);
