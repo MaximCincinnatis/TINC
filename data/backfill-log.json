@@ -1,0 +1,40 @@
+{
+  "timestamp": "2025-08-28T23:23:57.801Z",
+  "gapsProcessed": [
+    {
+      "gap": {
+        "start": 23079776,
+        "end": 23085707,
+        "size": 5932,
+        "hours": "19.8"
+      },
+      "burnsFound": 0,
+      "tincRecovered": 0,
+      "failedChunks": []
+    },
+    {
+      "gap": {
+        "start": 23175049,
+        "end": 23180400,
+        "size": 5352,
+        "hours": "17.8"
+      },
+      "burnsFound": 0,
+      "tincRecovered": 0,
+      "failedChunks": []
+    },
+    {
+      "gap": {
+        "start": 23030317,
+        "end": 23035247,
+        "size": 4931,
+        "hours": "16.4"
+      },
+      "burnsFound": 0,
+      "tincRecovered": 0,
+      "failedChunks": []
+    }
+  ],
+  "totalBurnsFound": 0,
+  "totalTincRecovered": 0
+}
