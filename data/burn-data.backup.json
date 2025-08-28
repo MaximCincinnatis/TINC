@@ -1,27 +1,13 @@
 {
   "startDate": "2025-07-26",
   "endDate": "2025-08-25",
-  "totalBurned": 1087358.5028313773,
+  "totalBurned": 1088189.7380959734,
   "totalSupply": 15969783.670697048,
-  "burnPercentage": 6.808849294725082,
+  "burnPercentage": 6.814054344973329,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
   "dailyBurns": [
-    {
-      "date": "2025-07-29",
-      "amountTinc": 1332.7697497233962,
-      "transactionCount": 1,
-      "transactions": [
-        {
-          "hash": "0x079dcb2b975b8b18d13b8a0307dac9024af70a458c5dc8cb888201c6487ff33c",
-          "amount": 1332.7697497233962,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
-          "blockNumber": 23022368,
-          "timestamp": 1753762835
-        }
-      ]
-    },
     {
       "date": "2025-07-30",
       "amountTinc": 77934.16908978432,
@@ -1648,22 +1634,34 @@
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
+    },
+    {
+      "date": "2025-08-28",
+      "amountTinc": 2164.005014319372,
+      "transactionCount": 1,
+      "transactions": [
+        {
+          "hash": "0xc5abc824056a98dc37a5b865262d6ecf455f0fced6c6be8ef03d05ea3f82b34a",
+          "amount": 2164.005014319372,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
     }
   ],
-  "fetchedAt": "2025-08-28T02:25:01.396Z",
+  "fetchedAt": "2025-08-28T02:56:08.844Z",
   "fromCache": true,
-  "lastProcessedBlock": 23236615,
+  "lastProcessedBlock": 23236771,
   "holderStats": {
     "totalHolders": 129,
     "poseidon": 0,
     "whale": 10,
     "shark": 36,
     "dolphin": 59,
-    "squid": 9,
-    "shrimp": 15,
+    "squid": 10,
+    "shrimp": 14,
     "top10Percentage": 17.9395963781465,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2025-08-28T01:53:55.299Z"
+    "lastUpdate": "2025-08-28T02:56:08.831Z"
   },
-  "lastIncrementalUpdate": "2025-08-28T02:25:01.396Z"
+  "lastIncrementalUpdate": "2025-08-28T02:56:08.844Z"
 }
