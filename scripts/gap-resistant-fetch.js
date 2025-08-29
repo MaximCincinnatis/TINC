@@ -117,6 +117,59 @@ class GapResistantFetch {
     return burns;
   }
 
+  mergeBurnsIntoData(existingData, newBurns) {
+    // Group new burns by date
+    const burnsByDate = {};
+    newBurns.forEach(burn => {
+      const date = new Date(burn.timestamp * 1000).toISOString().split('T')[0];
+      if (!burnsByDate[date]) {
+        burnsByDate[date] = [];
+      }
+      burnsByDate[date].push(burn);
+    });
+    
+    // Merge with existing daily burns
+    const dailyBurnsMap = new Map();
+    existingData.dailyBurns.forEach(day => {
+      dailyBurnsMap.set(day.date, day);
+    });
+    
+    // Add new burns
+    Object.entries(burnsByDate).forEach(([date, burns]) => {
+      if (dailyBurnsMap.has(date)) {
+        // Merge with existing day
+        const existingDay = dailyBurnsMap.get(date);
+        const existingHashes = new Set(existingDay.transactions.map(t => t.hash));
+        
+        // Add only new burns (no duplicates)
+        burns.forEach(burn => {
+          if (!existingHashes.has(burn.hash)) {
+            existingDay.transactions.push(burn);
+            existingDay.amountTinc += burn.amount;
+            existingDay.transactionCount++;
+          }
+        });
+      } else {
+        // Create new day
+        dailyBurnsMap.set(date, {
+          date,
+          amountTinc: burns.reduce((sum, b) => sum + b.amount, 0),
+          transactionCount: burns.length,
+          transactions: burns
+        });
+      }
+    });
+    
+    // Convert back to array and sort
+    existingData.dailyBurns = Array.from(dailyBurnsMap.values())
+      .sort((a, b) => a.date.localeCompare(b.date));
+    
+    // Update totals
+    existingData.totalBurned = existingData.dailyBurns.reduce((sum, day) => sum + day.amountTinc, 0);
+    
+    return existingData;
+  }
+
   async fetchWithGapProtection(startBlock, endBlock) {
     console.log(`\n🛡️  Gap-Protected Fetch: ${startBlock} to ${endBlock}`);
     
@@ -163,6 +216,12 @@ class GapResistantFetch {
     
     // 1. Load current state
     const rangeData = this.manager.loadProcessedRanges();
+    
+    // Load existing burn data
+    let burnData = { dailyBurns: [], totalBurned: 0 };
+    if (fs.existsSync(this.dataPath)) {
+      burnData = JSON.parse(fs.readFileSync(this.dataPath, 'utf8'));
+    }
     
     // 2. Detect gaps
     const gaps = this.manager.detectGaps(rangeData.ranges);
@@ -215,6 +274,15 @@ class GapResistantFetch {
       }
       
       console.log(`\n✅ Found ${result.burns.length} new burns`);
+      
+      // Merge new burns into burn data
+      if (result.burns.length > 0) {
+        this.mergeBurnsIntoData(burnData, result.burns);
+        
+        // Save updated burn data
+        fs.writeFileSync(this.dataPath, JSON.stringify(burnData, null, 2));
+        console.log(`💾 Saved ${result.burns.length} burns to burn-data.json`);
+      }
     } else {
       console.log('\n✅ Already up to date');
     }

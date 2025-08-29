@@ -1,11 +1,11 @@
 {
   "ranges": [
     {
-      "start": 23030315,
-      "end": 23243967
+      "start": 23214800,
+      "end": 23244399
     }
   ],
-  "lastContinuousBlock": 23030316,
-  "totalGaps": 157,
-  "lastUpdated": "2025-08-29T03:03:00.410Z"
+  "lastContinuousBlock": 23244399,
+  "totalGaps": 0,
+  "lastUpdated": "2025-08-29T03:26:00.659Z"
 }

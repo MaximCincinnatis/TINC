@@ -244,20 +244,19 @@ class GapBackfillService {
     for (const gap of gapsToProcess) {
       const result = await this.backfillGap(gap);
       
+      // Always update ranges to mark gap as processed
+      rangeData.ranges = this.manager.addProcessedRange(
+        rangeData.ranges,
+        gap.start,
+        gap.end
+      );
+      
       if (result.burns.length > 0) {
         // Merge burns into data
         this.mergeBurnsIntoData(burnData, result.burns);
-        
-        // Update ranges
-        rangeData.ranges = this.manager.addProcessedRange(
-          rangeData.ranges,
-          gap.start,
-          gap.end
-        );
-        
         console.log(`  💰 Recovered ${result.totalBurned.toFixed(2)} TINC from ${result.burns.length} burns`);
       } else {
-        console.log(`  ℹ️  No burns found in this gap`);
+        console.log(`  ℹ️  No burns found in this gap (blocks processed successfully)`);
       }
       
       backfillLog.gapsProcessed.push({
