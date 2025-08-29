@@ -1,12 +1,12 @@
 {
-  "timestamp": "2025-08-28T23:23:57.801Z",
+  "timestamp": "2025-08-29T00:07:38.830Z",
   "gapsProcessed": [
     {
       "gap": {
-        "start": 23079776,
-        "end": 23085707,
-        "size": 5932,
-        "hours": "19.8"
+        "start": 23124750,
+        "end": 23127972,
+        "size": 3223,
+        "hours": "10.7"
       },
       "burnsFound": 0,
       "tincRecovered": 0,
@@ -14,10 +14,10 @@
     },
     {
       "gap": {
-        "start": 23175049,
-        "end": 23180400,
-        "size": 5352,
-        "hours": "17.8"
+        "start": 23076720,
+        "end": 23079774,
+        "size": 3055,
+        "hours": "10.2"
       },
       "burnsFound": 0,
       "tincRecovered": 0,
@@ -25,10 +25,87 @@
     },
     {
       "gap": {
-        "start": 23030317,
-        "end": 23035247,
-        "size": 4931,
-        "hours": "16.4"
+        "start": 23096551,
+        "end": 23099461,
+        "size": 2911,
+        "hours": "9.7"
+      },
+      "burnsFound": 0,
+      "tincRecovered": 0,
+      "failedChunks": []
+    },
+    {
+      "gap": {
+        "start": 23172205,
+        "end": 23175046,
+        "size": 2842,
+        "hours": "9.5"
+      },
+      "burnsFound": 0,
+      "tincRecovered": 0,
+      "failedChunks": []
+    },
+    {
+      "gap": {
+        "start": 23211059,
+        "end": 23213682,
+        "size": 2624,
+        "hours": "8.7"
+      },
+      "burnsFound": 0,
+      "tincRecovered": 0,
+      "failedChunks": []
+    },
+    {
+      "gap": {
+        "start": 23130025,
+        "end": 23132609,
+        "size": 2585,
+        "hours": "8.6"
+      },
+      "burnsFound": 0,
+      "tincRecovered": 0,
+      "failedChunks": []
+    },
+    {
+      "gap": {
+        "start": 23055062,
+        "end": 23057542,
+        "size": 2481,
+        "hours": "8.3"
+      },
+      "burnsFound": 0,
+      "tincRecovered": 0,
+      "failedChunks": []
+    },
+    {
+      "gap": {
+        "start": 23060357,
+        "end": 23062753,
+        "size": 2397,
+        "hours": "8.0"
+      },
+      "burnsFound": 0,
+      "tincRecovered": 0,
+      "failedChunks": []
+    },
+    {
+      "gap": {
+        "start": 23038505,
+        "end": 23040888,
+        "size": 2384,
+        "hours": "7.9"
+      },
+      "burnsFound": 0,
+      "tincRecovered": 0,
+      "failedChunks": []
+    },
+    {
+      "gap": {
+        "start": 23138499,
+        "end": 23140798,
+        "size": 2300,
+        "hours": "7.7"
       },
       "burnsFound": 0,
       "tincRecovered": 0,
