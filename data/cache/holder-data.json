@@ -1,5 +1,5 @@
 {
-  "lastBlock": 23249432,
+  "lastBlock": 23249742,
   "totalSupply": 15696267.53334864,
   "totalHolders": 130,
   "holders": [
@@ -245,7 +245,7 @@
     },
     {
       "address": "0x52c1cc79fbbef91d3952ae75b1961d08f0172223",
-      "balance": 10157.415540522084
+      "balance": 10166.503396983418
     },
     {
       "address": "0xf5a038778b3d788ea10fa0710d1f5ea21bcd2499",
@@ -298,10 +298,6 @@
     {
       "address": "0x60d21227369e0d254299ac9fb2b308941c4c02f5",
       "balance": 7333.462029003197
-    },
-    {
-      "address": "0xa7e19a8bcf6798099f73c31ecc5e131c5b97038b",
-      "balance": 7235.14258453301
     },
     {
       "address": "0xd3103f397686a4b7a679b848da3ca68040ef1e06",
@@ -452,16 +448,16 @@
       "balance": 474.44754225778627
     },
     {
+      "address": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+      "balance": 308.05080850474206
+    },
+    {
       "address": "0x806b3d39b4042d5343b67fc6e9332d1f0012105c",
       "balance": 302.3972282764972
     },
     {
       "address": "0xc7c17323d5306a1709637ed419b2cb5543e52aac",
       "balance": 282.56418298484056
-    },
-    {
-      "address": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
-      "balance": 280.78723912074446
     },
     {
       "address": "0xc4dfecde6ed68ae798331b09f077a4c5b8d8265b",
@@ -486,6 +482,10 @@
     {
       "address": "0x2dd7e37d7d726b20ab323185cf38c5aa64b7fbe0",
       "balance": 74.22736236532522
+    },
+    {
+      "address": "0xa7e19a8bcf6798099f73c31ecc5e131c5b97038b",
+      "balance": 44.76116986298501
     },
     {
       "address": "0x830424fc4be2e1264dda3f58a0d51a6cff65187d",
@@ -529,12 +529,12 @@
     "poseidon": 0,
     "whale": 10,
     "shark": 35,
-    "dolphin": 61,
+    "dolphin": 60,
     "squid": 10,
-    "shrimp": 14,
+    "shrimp": 15,
     "top10Percentage": 19.416737090111642,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2025-08-29T21:20:51.677Z"
+    "lastUpdate": "2025-08-29T22:23:04.777Z"
   },
-  "cachedAt": "2025-08-29T21:20:51.677Z"
+  "cachedAt": "2025-08-29T22:23:04.777Z"
 }
