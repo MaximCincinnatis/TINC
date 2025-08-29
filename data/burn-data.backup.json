@@ -1764,9 +1764,9 @@
       ]
     }
   ],
-  "fetchedAt": "2025-08-29T03:45:14.902Z",
+  "fetchedAt": "2025-08-29T04:16:21.269Z",
   "fromCache": true,
-  "lastProcessedBlock": 23244178,
+  "lastProcessedBlock": 23244333,
   "holderStats": {
     "totalHolders": 129,
     "poseidon": 0,
@@ -1779,6 +1779,6 @@
     "dataSource": "blockchain-incremental",
     "lastUpdate": "2025-08-29T03:45:14.887Z"
   },
-  "lastIncrementalUpdate": "2025-08-29T03:45:14.902Z",
+  "lastIncrementalUpdate": "2025-08-29T04:16:21.269Z",
   "lastUpdated": "2025-08-29T03:41:20.853Z"
 }
