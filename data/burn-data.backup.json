@@ -1759,21 +1759,21 @@
       ]
     }
   ],
-  "fetchedAt": "2025-08-29T20:49:44.168Z",
+  "fetchedAt": "2025-08-29T21:20:51.690Z",
   "fromCache": true,
-  "lastProcessedBlock": 23249277,
+  "lastProcessedBlock": 23249431,
   "holderStats": {
-    "totalHolders": 128,
+    "totalHolders": 130,
     "poseidon": 0,
     "whale": 10,
     "shark": 35,
-    "dolphin": 60,
-    "squid": 9,
+    "dolphin": 61,
+    "squid": 10,
     "shrimp": 14,
     "top10Percentage": 19.416737090111642,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2025-08-29T20:18:39.113Z"
+    "lastUpdate": "2025-08-29T21:20:51.677Z"
   },
-  "lastIncrementalUpdate": "2025-08-29T20:49:44.168Z",
+  "lastIncrementalUpdate": "2025-08-29T21:20:51.690Z",
   "lastUpdated": "2025-08-29T03:41:20.853Z"
 }
