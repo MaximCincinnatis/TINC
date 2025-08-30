@@ -1,69 +1,13 @@
 {
   "startDate": "2025-07-26",
   "endDate": "2025-08-29",
-  "totalBurned": 1124319.8099512819,
+  "totalBurned": 1070554.3121131805,
   "totalSupply": 15969783.670697048,
-  "burnPercentage": 7.0402945533588905,
+  "burnPercentage": 6.7036243833254945,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
   "dailyBurns": [
-    {
-      "date": "2025-07-31",
-      "amountTinc": 55717.39254137511,
-      "transactionCount": 7,
-      "transactions": [
-        {
-          "hash": "0xa8db5abb04e4682305f8cf43a4cb33a0d602afca3b27595cfd46db54c493a1ec",
-          "amount": 7040.69435012124,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
-          "blockNumber": 23036614,
-          "timestamp": 1753934975
-        },
-        {
-          "hash": "0x372340a12e7b07111f4cc1fa54256e32dba063c52fe4604ca4f22ba99a2c84e5",
-          "amount": 19682.52349674644,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
-          "blockNumber": 23038504,
-          "timestamp": 1753957847
-        },
-        {
-          "hash": "0x8f9fbf0bfe569c4e911954996f2578d98f8b184bdecc7269aff3792016d0c44a",
-          "amount": 17280.04323733466,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
-          "blockNumber": 23038504,
-          "timestamp": 1753957847
-        },
-        {
-          "hash": "0x3e4e9daa328ea11b9c397e277c922d49c58aeef8241620b7dd1538c1de2528cd",
-          "amount": 904.2863760470653,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
-          "blockNumber": 23040889,
-          "timestamp": 1753986755
-        },
-        {
-          "hash": "0xce157e4062db150a74df53e21b3edcc54fe78ea0a933efe8a3cf39bb19036ffa",
-          "amount": 2912.1284758746524,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
-          "blockNumber": 23041496,
-          "timestamp": 1753994087
-        },
-        {
-          "hash": "0xbae167d38dde640af707eb1154efaa5ce05808c10d71cd3269a3024dabe0816f",
-          "amount": 3587.906583946117,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
-          "blockNumber": 23041966,
-          "timestamp": 1753999799
-        },
-        {
-          "hash": "0x9780832dbe7301e3004597ee37326ef0544992b2da3ee5ed36f917650aef81fb",
-          "amount": 4309.810021304929,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
-          "blockNumber": 23042389,
-          "timestamp": 1754004911
-        }
-      ]
-    },
     {
       "date": "2025-08-01",
       "amountTinc": 45078.92159276353,
@@ -1757,11 +1701,23 @@
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
+    },
+    {
+      "date": "2025-08-30",
+      "amountTinc": 1951.8947032735655,
+      "transactionCount": 1,
+      "transactions": [
+        {
+          "hash": "0x2b6842137d91b779bfcbed328ef9a345543f2dfdff8f821868c7acdb91957a9f",
+          "amount": 1951.8947032735655,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
     }
   ],
-  "fetchedAt": "2025-08-29T23:56:12.927Z",
+  "fetchedAt": "2025-08-30T00:27:17.127Z",
   "fromCache": true,
-  "lastProcessedBlock": 23250205,
+  "lastProcessedBlock": 23250361,
   "holderStats": {
     "totalHolders": 130,
     "poseidon": 0,
@@ -1772,8 +1728,8 @@
     "shrimp": 15,
     "top10Percentage": 19.416737090111642,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2025-08-29T22:23:04.777Z"
+    "lastUpdate": "2025-08-30T00:27:17.116Z"
   },
-  "lastIncrementalUpdate": "2025-08-29T23:56:12.927Z",
+  "lastIncrementalUpdate": "2025-08-30T00:27:17.127Z",
   "lastUpdated": "2025-08-29T03:41:20.853Z"
 }
