@@ -1,83 +1,13 @@
 {
   "startDate": "2025-07-26",
   "endDate": "2025-08-29",
-  "totalBurned": 1073706.3957596435,
+  "totalBurned": 1030847.6103806891,
   "totalSupply": 15969783.670697048,
-  "burnPercentage": 6.723362181353696,
+  "burnPercentage": 6.454987942461557,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
   "dailyBurns": [
-    {
-      "date": "2025-08-01",
-      "amountTinc": 45078.92159276353,
-      "transactionCount": 9,
-      "transactions": [
-        {
-          "hash": "0x525402c514e6caf4759287fc6ac5f1f0bd3a4e85f887e67b477fe3e54e35f8c2",
-          "amount": 2600.3361471234048,
-          "from": "0x9fabf48ebe587ee4f8b3172012c3060cc40fea6c",
-          "blockNumber": 23043479,
-          "timestamp": 1754018087
-        },
-        {
-          "hash": "0x19e8a535f04e7689da9983160efde0ae215c1beaf6be7f0f8af88b7f3a0f91dd",
-          "amount": 2594.2536510555046,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
-          "blockNumber": 23044310,
-          "timestamp": 1754028119
-        },
-        {
-          "hash": "0x55bdcc5c27bf200979362cd46fd040932411d54ca2377ffbbbfbaed8e59bc24d",
-          "amount": 15264.242272815894,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
-          "blockNumber": 23044617,
-          "timestamp": 1754031815
-        },
-        {
-          "hash": "0xc63e2b20d1fb8691c408c6450af3fefa58bf14a64306e645942568bf084c96ae",
-          "amount": 2457.7859354268535,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
-          "blockNumber": 23045672,
-          "timestamp": 1754044547
-        },
-        {
-          "hash": "0xce303f4473ef5fa3e163fa6342fd5052f6da747bbe9be7348c99d53df1f86983",
-          "amount": 17095.639104467948,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
-          "blockNumber": 23046101,
-          "timestamp": 1754049731
-        },
-        {
-          "hash": "0xdffd8ad5acd5320a1ef325febd43f91fd2116d69a12f66bc21216c720a226dab",
-          "amount": 1354.6737261867918,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
-          "blockNumber": 23048249,
-          "timestamp": 1754075627
-        },
-        {
-          "hash": "0x1adf37c95b99045b0a5b12d9217b93a443f68b827e2f53c5b4e58779c01bdeb6",
-          "amount": 463.0557718186806,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
-          "blockNumber": 23048730,
-          "timestamp": 1754081423
-        },
-        {
-          "hash": "0xcdd8822ef8a94bc3767981c5b3c17b5422973dbaf81569d03b5e822b13b7ea6f",
-          "amount": 2079.2748785384956,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
-          "blockNumber": 23049145,
-          "timestamp": 1754086463
-        },
-        {
-          "hash": "0xdf1d43790536bdddae22241017847a83a91587d6cfd8e05cae5035ce5adce681",
-          "amount": 1169.6601053299562,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
-          "blockNumber": 23049652,
-          "timestamp": 1754092691
-        }
-      ]
-    },
     {
       "date": "2025-08-02",
       "amountTinc": 13615.004244105729,
@@ -1723,11 +1653,23 @@
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
+    },
+    {
+      "date": "2025-08-31",
+      "amountTinc": 2220.136213809372,
+      "transactionCount": 1,
+      "transactions": [
+        {
+          "hash": "0x2640ae929566eccd336027b6d1bde8a172e43bfae9b4696f15f57ef88093c479",
+          "amount": 2220.136213809372,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
     }
   ],
-  "fetchedAt": "2025-08-30T23:40:57.987Z",
+  "fetchedAt": "2025-08-31T00:11:49.320Z",
   "fromCache": true,
-  "lastProcessedBlock": 23257305,
+  "lastProcessedBlock": 23257459,
   "holderStats": {
     "totalHolders": 131,
     "poseidon": 0,
@@ -1740,6 +1682,6 @@
     "dataSource": "blockchain-incremental",
     "lastUpdate": "2025-08-30T23:40:57.975Z"
   },
-  "lastIncrementalUpdate": "2025-08-30T23:40:57.987Z",
+  "lastIncrementalUpdate": "2025-08-31T00:11:49.320Z",
   "lastUpdated": "2025-08-29T03:41:20.853Z"
 }
