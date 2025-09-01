@@ -1,13 +1,19 @@
 {
-  "timestamp": "2025-08-29T03:23:29.354Z",
+  "timestamp": "2025-09-01T22:45:00.064Z",
   "ranges": [
     {
-      "start": 23030315,
-      "end": 23244069
+      "start": 23214800,
+      "end": 23244399
     }
   ],
   "gaps": [],
-  "issues": [],
+  "issues": [
+    {
+      "type": "mismatch",
+      "severity": "error",
+      "message": "lastProcessedBlock (23271281) doesn't match ranges end (23244399)"
+    }
+  ],
   "stats": {
     "totalRanges": 1,
     "totalGaps": 0,
