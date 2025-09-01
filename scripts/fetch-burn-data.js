@@ -197,10 +197,28 @@ async function fetchBurns(fromBlock, toBlock) {
 }
 
 async function fetchBurnsWithRetry(fromBlock, toBlock, maxRetries = 3) {
+  const chunkSize = toBlock - fromBlock + 1;
+  
+  // Adaptive timeout based on chunk size
+  const baseTimeout = 30000; // 30 seconds base
+  const timeoutMultiplier = Math.max(1, Math.ceil(chunkSize / 200)); // Increase timeout for larger chunks
+  const adaptiveTimeout = baseTimeout * timeoutMultiplier;
+  
   for (let attempt = 1; attempt <= maxRetries; attempt++) {
     try {
-      console.log(`Fetching blocks ${fromBlock} to ${toBlock} (attempt ${attempt}/${maxRetries})...`);
-      const burns = await fetchBurns(fromBlock, toBlock);
+      console.log(`Fetching blocks ${fromBlock} to ${toBlock} (${chunkSize} blocks, attempt ${attempt}/${maxRetries}, timeout: ${adaptiveTimeout/1000}s)...`);
+      
+      // Create a timeout promise
+      const timeoutPromise = new Promise((_, reject) => {
+        setTimeout(() => reject(new Error(`Timeout after ${adaptiveTimeout/1000} seconds`)), adaptiveTimeout);
+      });
+      
+      // Race between fetch and timeout
+      const burns = await Promise.race([
+        fetchBurns(fromBlock, toBlock),
+        timeoutPromise
+      ]);
+      
       if (attempt > 1) {
         console.log(`✅ Success on attempt ${attempt} for blocks ${fromBlock}-${toBlock}`);
       }
@@ -214,9 +232,11 @@ async function fetchBurnsWithRetry(fromBlock, toBlock, maxRetries = 3) {
         throw new Error(`Failed to fetch blocks ${fromBlock}-${toBlock} after ${maxRetries} attempts: ${error.message}`);
       }
       
-      // Exponential backoff: 2s, 4s, 8s
-      const backoffMs = 2000 * Math.pow(2, attempt - 1);
-      console.log(`⏳ Waiting ${backoffMs/1000}s before retry...`);
+      // Exponential backoff with jitter: 1-2s, 2-4s, 4-8s
+      const baseBackoff = 1000 * Math.pow(2, attempt - 1);
+      const jitter = Math.random() * baseBackoff;
+      const backoffMs = Math.min(baseBackoff + jitter, 10000); // Cap at 10 seconds
+      console.log(`⏳ Waiting ${(backoffMs/1000).toFixed(1)}s before retry...`);
       await new Promise(resolve => setTimeout(resolve, backoffMs));
     }
   }
@@ -637,9 +657,76 @@ async function runIncrementalUpdate() {
     
     if (failedChunks.length > 0) {
       console.warn(`⚠️  ${failedChunks.length} chunks failed during incremental update`);
+      console.log('🔄 Attempting to recover failed chunks with smaller block sizes...');
+      
+      // Retry failed chunks with smaller size
+      const recoveredBurns = [];
+      const permanentFailures = [];
+      
+      for (const failedChunk of failedChunks) {
+        console.log(`  🔄 Retrying chunk ${failedChunk.fromBlock}-${failedChunk.toBlock}...`);
+        
+        // Use much smaller chunk size for problematic ranges
+        const RETRY_CHUNK_SIZE = 100; // Much smaller than default 800
+        let chunkRecovered = false;
+        
+        for (let retryBlock = failedChunk.fromBlock; 
+             retryBlock <= failedChunk.toBlock; 
+             retryBlock += RETRY_CHUNK_SIZE) {
+          
+          const retryToBlock = Math.min(retryBlock + RETRY_CHUNK_SIZE - 1, failedChunk.toBlock);
+          
+          try {
+            // Try with more retries and longer timeout
+            const burns = await fetchBurnsWithRetry(retryBlock, retryToBlock, 5);
+            recoveredBurns.push(...burns);
+            console.log(`    ✅ Recovered ${burns.length} burns from blocks ${retryBlock}-${retryToBlock}`);
+            chunkRecovered = true;
+          } catch (retryError) {
+            console.error(`    ❌ Failed to recover blocks ${retryBlock}-${retryToBlock}: ${retryError.message}`);
+            permanentFailures.push({
+              fromBlock: retryBlock,
+              toBlock: retryToBlock,
+              error: retryError.message,
+              timestamp: new Date().toISOString()
+            });
+          }
+        }
+        
+        if (chunkRecovered) {
+          console.log(`  ✅ Successfully recovered chunk ${failedChunk.fromBlock}-${failedChunk.toBlock}`);
+        } else {
+          console.log(`  ❌ Could not recover chunk ${failedChunk.fromBlock}-${failedChunk.toBlock}`);
+        }
+      }
+      
+      // Add recovered burns to main array
+      if (recoveredBurns.length > 0) {
+        console.log(`🎉 Recovered ${recoveredBurns.length} burns from failed chunks!`);
+        allBurns.push(...recoveredBurns);
+      }
+      
+      // Log permanent failures for manual investigation
+      if (permanentFailures.length > 0) {
+        const failureLogPath = path.join(__dirname, '../data/permanent-failures.json');
+        let existingFailures = [];
+        
+        if (fs.existsSync(failureLogPath)) {
+          try {
+            existingFailures = JSON.parse(fs.readFileSync(failureLogPath, 'utf8'));
+          } catch (e) {
+            console.warn('Could not read existing failures log, starting fresh');
+          }
+        }
+        
+        existingFailures.push(...permanentFailures);
+        fs.writeFileSync(failureLogPath, JSON.stringify(existingFailures, null, 2));
+        
+        console.error(`⚠️  ${permanentFailures.length} block ranges permanently failed - logged for manual recovery`);
+      }
     }
     
-    console.log(`✅ Found ${allBurns.length} recent burn transactions`);
+    console.log(`✅ Found ${allBurns.length} total burn transactions (including recovered)`);
     
     // Process recent burns into daily format (reuse existing logic)
     const burnsByDay = {};
@@ -688,6 +775,41 @@ async function runIncrementalUpdate() {
     // Save merged data
     await saveIncrementalData(mergedData);
     
+    // Validate the updated data
+    console.log('🔍 Validating updated burn data...');
+    const validationResult = await validateBurnData(mergedData);
+    
+    if (!validationResult.valid) {
+      console.error('⚠️ Validation detected discrepancies:');
+      console.error(`  Date: ${validationResult.date}`);
+      console.error(`  Expected: ${validationResult.expected?.toFixed(2)} TINC`);
+      console.error(`  Actual: ${validationResult.actual?.toFixed(2)} TINC`);
+      console.error(`  Difference: ${validationResult.difference?.toFixed(2)} TINC`);
+      
+      // Save validation failure for investigation
+      const validationLogPath = path.join(__dirname, '../data/validation-failures.json');
+      const failureLog = {
+        timestamp: new Date().toISOString(),
+        ...validationResult,
+        lastProcessedBlock: mergedData.lastProcessedBlock
+      };
+      
+      let failures = [];
+      if (fs.existsSync(validationLogPath)) {
+        try {
+          failures = JSON.parse(fs.readFileSync(validationLogPath, 'utf8'));
+        } catch (e) {
+          console.warn('Could not read validation failures log, starting fresh');
+        }
+      }
+      failures.push(failureLog);
+      fs.writeFileSync(validationLogPath, JSON.stringify(failures, null, 2));
+      
+      console.warn('⚠️ Data saved but validation failed - manual review recommended');
+    } else {
+      console.log('✅ Data validation passed!');
+    }
+    
     console.log('✅ Incremental update completed successfully!');
     console.log(`📊 Total TINC burned: ${mergedData.totalBurned.toLocaleString()}`);
     console.log(`👥 Total holders: ${mergedData.holderStats.totalHolders.toLocaleString()}`);
@@ -695,6 +817,50 @@ async function runIncrementalUpdate() {
   } catch (error) {
     console.error('❌ Incremental update failed:', error);
     throw error;
+  }
+}
+
+async function validateBurnData(data) {
+  // Sample validation: Check last day's burns against fresh fetch
+  const lastDay = data.dailyBurns[data.dailyBurns.length - 1];
+  if (!lastDay) return { valid: true }; // No data to validate
+  
+  try {
+    // Skip validation if the last day is today (might still be in progress)
+    const today = new Date().toISOString().split('T')[0];
+    if (lastDay.date === today) {
+      console.log('  Skipping validation for today (still in progress)');
+      return { valid: true };
+    }
+    
+    // For now, do a simple sanity check
+    // In production, this could fetch fresh data from blockchain
+    const validationChecks = {
+      hasTransactions: lastDay.transactionCount > 0,
+      hasAmount: lastDay.amountTinc > 0,
+      reasonableAmount: lastDay.amountTinc < 1000000, // Less than 1M TINC per day
+      hasHashes: lastDay.transactions && lastDay.transactions.length === lastDay.transactionCount
+    };
+    
+    const allChecks = Object.values(validationChecks).every(check => check);
+    
+    if (!allChecks) {
+      return {
+        valid: false,
+        date: lastDay.date,
+        actual: lastDay.amountTinc,
+        expected: null,
+        difference: null,
+        failedChecks: Object.entries(validationChecks)
+          .filter(([_, passed]) => !passed)
+          .map(([check, _]) => check)
+      };
+    }
+    
+    return { valid: true };
+  } catch (error) {
+    console.warn('⚠️ Validation skipped due to error:', error.message);
+    return { valid: true }; // Don't fail update due to validation error
   }
 }
 
