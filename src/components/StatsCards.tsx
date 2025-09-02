@@ -9,6 +9,7 @@ interface Props {
 
 const StatsCards: React.FC<Props> = ({ burnData }) => {
   const totalTransactions = burnData.dailyBurns.reduce((sum, day) => sum + day.transactionCount, 0);
+  const thirtyDayBurns = burnData.dailyBurns.reduce((sum, day) => sum + day.amountTinc, 0);
 
   const formatNumber = (num: number) => {
     if (num >= 1000000) {
@@ -73,7 +74,7 @@ const StatsCards: React.FC<Props> = ({ burnData }) => {
           </div>
         </div>
         <div className="stat-value">
-          {formatNumber(burnData.totalBurned)}<span className="stat-suffix">{formatSuffix(burnData.totalBurned)}</span>
+          {formatNumber(thirtyDayBurns)}<span className="stat-suffix">{formatSuffix(thirtyDayBurns)}</span>
         </div>
         <div className="stat-description">TINC burned in last 30 days</div>
       </div>
