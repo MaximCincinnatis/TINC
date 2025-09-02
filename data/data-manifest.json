@@ -1,8 +1,6 @@
 {
-  "latest": "burn-data.json",
-  "timestamp": "2025-09-02T16:14:00.000Z",
-  "version": 1756829640000,
-  "updateType": "recovery",
-  "totalBurned": 1296151.12,
-  "recoveredAmount": 265599.575
+  "latest": "burn-data-v1756830424781.json",
+  "timestamp": "2025-09-02T16:27:04.782Z",
+  "version": 1756830424781,
+  "updateType": "incremental"
 }
