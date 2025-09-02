@@ -1,0 +1,3576 @@
+[dotenv@17.2.1] injecting env (4) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+[dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 version env with Radar: https://dotenvx.com/radar
+[dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 observe env with Radar: https://dotenvx.com/radar
+Starting complete catchup process...
+This will run until ALL gaps are filled.
+Estimated time: 60-90 minutes for 153 gaps
+
+🚀 COMPLETE CATCHUP MODE - Running until all gaps are filled!
+
+
+📦 Iteration 1
+==================================================
+🔍 Starting Gap-Resistant Analysis...
+
+📋 Loaded 152 processed ranges
+
+════════════════════════════════════════════
+         GAP ANALYSIS REPORT                
+════════════════════════════════════════════
+
+📊 Coverage Statistics:
+  • Processed ranges: 152
+  • Block range: 23030315 to 23243017
+  • Blocks covered: 58,175
+  • Coverage: 27.35%
+
+⚠️  Gaps Detected: 151
+  Top 5 largest gaps:
+  • Blocks 23124750-23127972: 3223 blocks (~10.7 hours)
+  • Blocks 23076720-23079774: 3055 blocks (~10.2 hours)
+  • Blocks 23096551-23099461: 2911 blocks (~9.7 hours)
+  • Blocks 23172205-23175046: 2842 blocks (~9.5 hours)
+  • Blocks 23211059-23213682: 2624 blocks (~8.7 hours)
+
+🔍 Integrity Issues:
+  ⚠️ Found 151 gaps totaling 154528 blocks
+
+💡 Recommendations:
+  • Run backfill for 151 gaps
+  • Estimated backfill time: 309 seconds
+💾 Saved 152 processed ranges
+
+📄 Full report saved to: gap-analysis-report.json
+
+📊 Gaps remaining: 151
+📊 Blocks to fill: 154,528
+
+🔧 Processing next 10 gaps...
+🚀 Starting Gap Backfill Service
+
+📋 Loaded 152 processed ranges
+📊 Found 151 gaps to backfill
+🎯 Processing top 10 gaps
+
+
+🔧 Backfilling gap: 23124750 to 23127972 (3223 blocks)
+  📦 Chunk 23124750-23125149 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23125150-23125549 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23125550-23125949 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23125950-23126349 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23126350-23126749 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23126750-23127149 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23127150-23127549 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23127550-23127949 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23127950-23127972 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23076720 to 23079774 (3055 blocks)
+  📦 Chunk 23076720-23077119 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23077120-23077519 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23077520-23077919 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23077920-23078319 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23078320-23078719 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23078720-23079119 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23079120-23079519 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23079520-23079774 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23096551 to 23099461 (2911 blocks)
+  📦 Chunk 23096551-23096950 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23096951-23097350 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23097351-23097750 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23097751-23098150 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23098151-23098550 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23098551-23098950 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23098951-23099350 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23099351-23099461 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23172205 to 23175046 (2842 blocks)
+  📦 Chunk 23172205-23172604 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23172605-23173004 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23173005-23173404 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23173405-23173804 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23173805-23174204 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23174205-23174604 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23174605-23175004 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23175005-23175046 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23211059 to 23213682 (2624 blocks)
+  📦 Chunk 23211059-23211458 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23211459-23211858 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23211859-23212258 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23212259-23212658 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23212659-23213058 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23213059-23213458 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23213459-23213682 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23130025 to 23132609 (2585 blocks)
+  📦 Chunk 23130025-23130424 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23130425-23130824 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23130825-23131224 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23131225-23131624 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23131625-23132024 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23132025-23132424 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23132425-23132609 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23055062 to 23057542 (2481 blocks)
+  📦 Chunk 23055062-23055461 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23055462-23055861 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23055862-23056261 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23056262-23056661 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23056662-23057061 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23057062-23057461 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23057462-23057542 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23060357 to 23062753 (2397 blocks)
+  📦 Chunk 23060357-23060756 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23060757-23061156 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23061157-23061556 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23061557-23061956 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23061957-23062356 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23062357-23062753 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23038505 to 23040888 (2384 blocks)
+  📦 Chunk 23038505-23038904 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23038905-23039304 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23039305-23039704 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23039705-23040104 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23040105-23040504 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23040505-23040888 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23138499 to 23140798 (2300 blocks)
+  📦 Chunk 23138499-23138898 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23138899-23139298 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23139299-23139698 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23139699-23140098 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23140099-23140498 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23140499-23140798 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+💾 Saving updated data...
+💾 Saved 142 processed ranges
+
+════════════════════════════════════════════
+         BACKFILL COMPLETE                  
+════════════════════════════════════════════
+
+✅ Processed 10 gaps
+🔥 Recovered 0 burns
+💰 Total TINC recovered: 0.00
+
+📊 Remaining gaps: 141
+   Run again to process more gaps
+
+⏱️  Time elapsed: 0.2 minutes
+📈 Total gaps processed: 10
+🔥 Total burns recovered: 0
+⏳ Estimated time remaining: 3.4 minutes
+
+💤 Pausing 2 seconds before next batch...
+
+📦 Iteration 2
+==================================================
+🔍 Starting Gap-Resistant Analysis...
+
+📋 Loaded 142 processed ranges
+
+════════════════════════════════════════════
+         GAP ANALYSIS REPORT                
+════════════════════════════════════════════
+
+📊 Coverage Statistics:
+  • Processed ranges: 142
+  • Block range: 23030315 to 23243017
+  • Blocks covered: 84,977
+  • Coverage: 39.95%
+
+⚠️  Gaps Detected: 141
+  Top 5 largest gaps:
+  • Blocks 23110208-23112376: 2169 blocks (~7.2 hours)
+  • Blocks 23189530-23191696: 2167 blocks (~7.2 hours)
+  • Blocks 23046102-23048248: 2147 blocks (~7.2 hours)
+  • Blocks 23164077-23166217: 2141 blocks (~7.1 hours)
+  • Blocks 23067211-23069166: 1956 blocks (~6.5 hours)
+
+🔍 Integrity Issues:
+  ⚠️ Found 141 gaps totaling 127726 blocks
+
+💡 Recommendations:
+  • Run backfill for 141 gaps
+  • Estimated backfill time: 255 seconds
+💾 Saved 142 processed ranges
+
+📄 Full report saved to: gap-analysis-report.json
+
+📊 Gaps remaining: 141
+📊 Blocks to fill: 127,726
+
+🔧 Processing next 10 gaps...
+🚀 Starting Gap Backfill Service
+
+📋 Loaded 142 processed ranges
+📊 Found 141 gaps to backfill
+🎯 Processing top 10 gaps
+
+
+🔧 Backfilling gap: 23110208 to 23112376 (2169 blocks)
+  📦 Chunk 23110208-23110607 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23110608-23111007 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23111008-23111407 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23111408-23111807 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23111808-23112207 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23112208-23112376 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23189530 to 23191696 (2167 blocks)
+  📦 Chunk 23189530-23189929 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23189930-23190329 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23190330-23190729 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23190730-23191129 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23191130-23191529 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23191530-23191696 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23046102 to 23048248 (2147 blocks)
+  📦 Chunk 23046102-23046501 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23046502-23046901 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23046902-23047301 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23047302-23047701 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23047702-23048101 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23048102-23048248 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23164077 to 23166217 (2141 blocks)
+  📦 Chunk 23164077-23164476 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23164477-23164876 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23164877-23165276 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23165277-23165676 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23165677-23166076 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23166077-23166217 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23067211 to 23069166 (1956 blocks)
+  📦 Chunk 23067211-23067610 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23067611-23068010 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23068011-23068410 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23068411-23068810 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23068811-23069166 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23180402 to 23182354 (1953 blocks)
+  📦 Chunk 23180402-23180801 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23180802-23181201 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23181202-23181601 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23181602-23182001 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23182002-23182354 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23072867 to 23074810 (1944 blocks)
+  📦 Chunk 23072867-23073266 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23073267-23073666 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23073667-23074066 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23074067-23074466 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23074467-23074810 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23074812 to 23076717 (1906 blocks)
+  📦 Chunk 23074812-23075211 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23075212-23075611 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23075612-23076011 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23076012-23076411 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23076412-23076717 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23036615 to 23038503 (1889 blocks)
+  📦 Chunk 23036615-23037014 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23037015-23037414 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23037415-23037814 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23037815-23038214 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23038215-23038503 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23053178 to 23054992 (1815 blocks)
+  📦 Chunk 23053178-23053577 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23053578-23053977 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23053978-23054377 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23054378-23054777 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23054778-23054992 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+💾 Saving updated data...
+💾 Saved 132 processed ranges
+
+════════════════════════════════════════════
+         BACKFILL COMPLETE                  
+════════════════════════════════════════════
+
+✅ Processed 10 gaps
+🔥 Recovered 0 burns
+💰 Total TINC recovered: 0.00
+
+📊 Remaining gaps: 131
+   Run again to process more gaps
+
+⏱️  Time elapsed: 0.5 minutes
+📈 Total gaps processed: 20
+🔥 Total burns recovered: 0
+⏳ Estimated time remaining: 3.0 minutes
+
+💤 Pausing 2 seconds before next batch...
+
+📦 Iteration 3
+==================================================
+🔍 Starting Gap-Resistant Analysis...
+
+📋 Loaded 132 processed ranges
+
+════════════════════════════════════════════
+         GAP ANALYSIS REPORT                
+════════════════════════════════════════════
+
+📊 Coverage Statistics:
+  • Processed ranges: 132
+  • Block range: 23030315 to 23243017
+  • Blocks covered: 105,064
+  • Coverage: 49.39%
+
+⚠️  Gaps Detected: 131
+  Top 5 largest gaps:
+  • Blocks 23157975-23159769: 1795 blocks (~6.0 hours)
+  • Blocks 23193490-23195284: 1795 blocks (~6.0 hours)
+  • Blocks 23207468-23209261: 1794 blocks (~6.0 hours)
+  • Blocks 23063665-23065437: 1773 blocks (~5.9 hours)
+  • Blocks 23065452-23067209: 1758 blocks (~5.9 hours)
+
+🔍 Integrity Issues:
+  ⚠️ Found 131 gaps totaling 107639 blocks
+
+💡 Recommendations:
+  • Run backfill for 131 gaps
+  • Estimated backfill time: 215 seconds
+💾 Saved 132 processed ranges
+
+📄 Full report saved to: gap-analysis-report.json
+
+📊 Gaps remaining: 131
+📊 Blocks to fill: 107,639
+
+🔧 Processing next 10 gaps...
+🚀 Starting Gap Backfill Service
+
+📋 Loaded 132 processed ranges
+📊 Found 131 gaps to backfill
+🎯 Processing top 10 gaps
+
+
+🔧 Backfilling gap: 23157975 to 23159769 (1795 blocks)
+  📦 Chunk 23157975-23158374 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23158375-23158774 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23158775-23159174 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23159175-23159574 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23159575-23159769 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23193490 to 23195284 (1795 blocks)
+  📦 Chunk 23193490-23193889 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23193890-23194289 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23194290-23194689 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23194690-23195089 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23195090-23195284 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23207468 to 23209261 (1794 blocks)
+  📦 Chunk 23207468-23207867 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23207868-23208267 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23208268-23208667 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23208668-23209067 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23209068-23209261 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23063665 to 23065437 (1773 blocks)
+  📦 Chunk 23063665-23064064 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23064065-23064464 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23064465-23064864 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23064865-23065264 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23065265-23065437 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23065452 to 23067209 (1758 blocks)
+  📦 Chunk 23065452-23065851 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23065852-23066251 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23066252-23066651 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23066652-23067051 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23067052-23067209 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23167359 to 23169100 (1742 blocks)
+  📦 Chunk 23167359-23167758 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23167759-23168158 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23168159-23168558 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23168559-23168958 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23168959-23169100 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23051437 to 23053176 (1740 blocks)
+  📦 Chunk 23051437-23051836 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23051837-23052236 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23052237-23052636 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23052637-23053036 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23053037-23053176 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23071081 to 23072799 (1719 blocks)
+  📦 Chunk 23071081-23071480 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23071481-23071880 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23071881-23072280 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23072281-23072680 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23072681-23072799 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23120859 to 23122571 (1713 blocks)
+  📦 Chunk 23120859-23121258 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23121259-23121658 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23121659-23122058 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23122059-23122458 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23122459-23122571 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23106708 to 23108418 (1711 blocks)
+  📦 Chunk 23106708-23107107 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23107108-23107507 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23107508-23107907 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23107908-23108307 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23108308-23108418 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+💾 Saving updated data...
+💾 Saved 122 processed ranges
+
+════════════════════════════════════════════
+         BACKFILL COMPLETE                  
+════════════════════════════════════════════
+
+✅ Processed 10 gaps
+🔥 Recovered 0 burns
+💰 Total TINC recovered: 0.00
+
+📊 Remaining gaps: 121
+   Run again to process more gaps
+
+⏱️  Time elapsed: 0.7 minutes
+📈 Total gaps processed: 30
+🔥 Total burns recovered: 0
+⏳ Estimated time remaining: 2.8 minutes
+
+💤 Pausing 2 seconds before next batch...
+
+📦 Iteration 4
+==================================================
+🔍 Starting Gap-Resistant Analysis...
+
+📋 Loaded 122 processed ranges
+
+════════════════════════════════════════════
+         GAP ANALYSIS REPORT                
+════════════════════════════════════════════
+
+📊 Coverage Statistics:
+  • Processed ranges: 122
+  • Block range: 23030315 to 23243017
+  • Blocks covered: 122,604
+  • Coverage: 57.64%
+
+⚠️  Gaps Detected: 121
+  Top 5 largest gaps:
+  • Blocks 23094903-23096548: 1646 blocks (~5.5 hours)
+  • Blocks 23152777-23154381: 1605 blocks (~5.3 hours)
+  • Blocks 23104841-23106369: 1529 blocks (~5.1 hours)
+  • Blocks 23182357-23183864: 1508 blocks (~5.0 hours)
+  • Blocks 23103335-23104839: 1505 blocks (~5.0 hours)
+
+🔍 Integrity Issues:
+  ⚠️ Found 121 gaps totaling 90099 blocks
+
+💡 Recommendations:
+  • Run backfill for 121 gaps
+  • Estimated backfill time: 180 seconds
+💾 Saved 122 processed ranges
+
+📄 Full report saved to: gap-analysis-report.json
+
+📊 Gaps remaining: 121
+📊 Blocks to fill: 90,099
+
+🔧 Processing next 10 gaps...
+🚀 Starting Gap Backfill Service
+
+📋 Loaded 122 processed ranges
+📊 Found 121 gaps to backfill
+🎯 Processing top 10 gaps
+
+
+🔧 Backfilling gap: 23094903 to 23096548 (1646 blocks)
+  📦 Chunk 23094903-23095302 (attempt 1)... ✅ Found 1 burns
+  📦 Chunk 23095303-23095702 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23095703-23096102 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23096103-23096502 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23096503-23096548 (attempt 1)... ✅ Found 0 burns
+  💰 Recovered 6713.75 TINC from 1 burns
+
+🔧 Backfilling gap: 23152777 to 23154381 (1605 blocks)
+  📦 Chunk 23152777-23153176 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23153177-23153576 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23153577-23153976 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23153977-23154376 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23154377-23154381 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23104841 to 23106369 (1529 blocks)
+  📦 Chunk 23104841-23105240 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23105241-23105640 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23105641-23106040 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23106041-23106369 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23182357 to 23183864 (1508 blocks)
+  📦 Chunk 23182357-23182756 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23182757-23183156 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23183157-23183556 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23183557-23183864 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23103335 to 23104839 (1505 blocks)
+  📦 Chunk 23103335-23103734 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23103735-23104134 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23104135-23104534 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23104535-23104839 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23089381 to 23090867 (1487 blocks)
+  📦 Chunk 23089381-23089780 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23089781-23090180 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23090181-23090580 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23090581-23090867 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23169793 to 23171226 (1434 blocks)
+  📦 Chunk 23169793-23170192 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23170193-23170592 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23170593-23170992 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23170993-23171226 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23050032 to 23051435 (1404 blocks)
+  📦 Chunk 23050032-23050431 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23050432-23050831 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23050832-23051231 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23051232-23051435 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23159771 to 23161170 (1400 blocks)
+  📦 Chunk 23159771-23160170 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23160171-23160570 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23160571-23160970 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23160971-23161170 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23085801 to 23087171 (1371 blocks)
+  📦 Chunk 23085801-23086200 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23086201-23086600 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23086601-23087000 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23087001-23087171 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+💾 Saving updated data...
+💾 Saved 112 processed ranges
+
+════════════════════════════════════════════
+         BACKFILL COMPLETE                  
+════════════════════════════════════════════
+
+✅ Processed 10 gaps
+🔥 Recovered 1 burns
+💰 Total TINC recovered: 6713.75
+
+📊 Remaining gaps: 111
+   Run again to process more gaps
+
+⏱️  Time elapsed: 0.9 minutes
+📈 Total gaps processed: 40
+🔥 Total burns recovered: 1
+⏳ Estimated time remaining: 2.5 minutes
+
+💤 Pausing 2 seconds before next batch...
+
+📦 Iteration 5
+==================================================
+🔍 Starting Gap-Resistant Analysis...
+
+📋 Loaded 112 processed ranges
+
+════════════════════════════════════════════
+         GAP ANALYSIS REPORT                
+════════════════════════════════════════════
+
+📊 Coverage Statistics:
+  • Processed ranges: 112
+  • Block range: 23030315 to 23243017
+  • Blocks covered: 137,493
+  • Coverage: 64.64%
+
+⚠️  Gaps Detected: 111
+  Top 5 largest gaps:
+  • Blocks 23035249-23036613: 1365 blocks (~4.5 hours)
+  • Blocks 23154383-23155725: 1343 blocks (~4.5 hours)
+  • Blocks 23091766-23093097: 1332 blocks (~4.4 hours)
+  • Blocks 23069284-23070594: 1311 blocks (~4.4 hours)
+  • Blocks 23206177-23207466: 1290 blocks (~4.3 hours)
+
+🔍 Integrity Issues:
+  ⚠️ Found 111 gaps totaling 75210 blocks
+
+💡 Recommendations:
+  • Run backfill for 111 gaps
+  • Estimated backfill time: 150 seconds
+💾 Saved 112 processed ranges
+
+📄 Full report saved to: gap-analysis-report.json
+
+📊 Gaps remaining: 111
+📊 Blocks to fill: 75,210
+
+🔧 Processing next 10 gaps...
+🚀 Starting Gap Backfill Service
+
+📋 Loaded 112 processed ranges
+📊 Found 111 gaps to backfill
+🎯 Processing top 10 gaps
+
+
+🔧 Backfilling gap: 23035249 to 23036613 (1365 blocks)
+  📦 Chunk 23035249-23035648 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23035649-23036048 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23036049-23036448 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23036449-23036613 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23154383 to 23155725 (1343 blocks)
+  📦 Chunk 23154383-23154782 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23154783-23155182 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23155183-23155582 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23155583-23155725 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23091766 to 23093097 (1332 blocks)
+  📦 Chunk 23091766-23092165 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23092166-23092565 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23092566-23092965 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23092966-23093097 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23069284 to 23070594 (1311 blocks)
+  📦 Chunk 23069284-23069683 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23069684-23070083 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23070084-23070483 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23070484-23070594 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23206177 to 23207466 (1290 blocks)
+  📦 Chunk 23206177-23206576 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23206577-23206976 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23206977-23207376 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23207377-23207466 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23151277 to 23152560 (1284 blocks)
+  📦 Chunk 23151277-23151676 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23151677-23152076 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23152077-23152476 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23152477-23152560 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23101762 to 23103044 (1283 blocks)
+  📦 Chunk 23101762-23102161 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23102162-23102561 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23102562-23102961 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23102962-23103044 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23149500 to 23150773 (1274 blocks)
+  📦 Chunk 23149500-23149899 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23149900-23150299 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23150300-23150699 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23150700-23150773 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23187739 to 23188979 (1241 blocks)
+  📦 Chunk 23187739-23188138 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23188139-23188538 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23188539-23188938 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23188939-23188979 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23133124 to 23134352 (1229 blocks)
+  📦 Chunk 23133124-23133523 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23133524-23133923 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23133924-23134323 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23134324-23134352 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+💾 Saving updated data...
+💾 Saved 102 processed ranges
+
+════════════════════════════════════════════
+         BACKFILL COMPLETE                  
+════════════════════════════════════════════
+
+✅ Processed 10 gaps
+🔥 Recovered 0 burns
+💰 Total TINC recovered: 0.00
+
+📊 Remaining gaps: 101
+   Run again to process more gaps
+
+⏱️  Time elapsed: 1.1 minutes
+📈 Total gaps processed: 50
+🔥 Total burns recovered: 1
+⏳ Estimated time remaining: 2.1 minutes
+
+💤 Pausing 2 seconds before next batch...
+
+📦 Iteration 6
+==================================================
+🔍 Starting Gap-Resistant Analysis...
+
+📋 Loaded 102 processed ranges
+
+════════════════════════════════════════════
+         GAP ANALYSIS REPORT                
+════════════════════════════════════════════
+
+📊 Coverage Statistics:
+  • Processed ranges: 102
+  • Block range: 23030315 to 23243017
+  • Blocks covered: 150,445
+  • Coverage: 70.73%
+
+⚠️  Gaps Detected: 101
+  Top 5 largest gaps:
+  • Blocks 23058562-23059786: 1225 blocks (~4.1 hours)
+  • Blocks 23137195-23138413: 1219 blocks (~4.1 hours)
+  • Blocks 23209263-23210470: 1208 blocks (~4.0 hours)
+  • Blocks 23145511-23146702: 1192 blocks (~4.0 hours)
+  • Blocks 23147815-23148982: 1168 blocks (~3.9 hours)
+
+🔍 Integrity Issues:
+  ⚠️ Found 101 gaps totaling 62258 blocks
+
+💡 Recommendations:
+  • Run backfill for 101 gaps
+  • Estimated backfill time: 125 seconds
+💾 Saved 102 processed ranges
+
+📄 Full report saved to: gap-analysis-report.json
+
+📊 Gaps remaining: 101
+📊 Blocks to fill: 62,258
+
+🔧 Processing next 10 gaps...
+🚀 Starting Gap Backfill Service
+
+📋 Loaded 102 processed ranges
+📊 Found 101 gaps to backfill
+🎯 Processing top 10 gaps
+
+
+🔧 Backfilling gap: 23058562 to 23059786 (1225 blocks)
+  📦 Chunk 23058562-23058961 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23058962-23059361 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23059362-23059761 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23059762-23059786 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23137195 to 23138413 (1219 blocks)
+  📦 Chunk 23137195-23137594 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23137595-23137994 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23137995-23138394 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23138395-23138413 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23209263 to 23210470 (1208 blocks)
+  📦 Chunk 23209263-23209662 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23209663-23210062 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23210063-23210462 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23210463-23210470 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23145511 to 23146702 (1192 blocks)
+  📦 Chunk 23145511-23145910 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23145911-23146310 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23146311-23146702 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23147815 to 23148982 (1168 blocks)
+  📦 Chunk 23147815-23148214 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23148215-23148614 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23148615-23148982 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23141197 to 23142350 (1154 blocks)
+  📦 Chunk 23141197-23141596 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23141597-23141996 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23141997-23142350 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23146704 to 23147813 (1110 blocks)
+  📦 Chunk 23146704-23147103 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23147104-23147503 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23147504-23147813 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23166219 to 23167312 (1094 blocks)
+  📦 Chunk 23166219-23166618 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23166619-23167018 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23167019-23167312 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23042390 to 23043478 (1089 blocks)
+  📦 Chunk 23042390-23042789 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23042790-23043189 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23043190-23043478 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23200433 to 23201512 (1080 blocks)
+  📦 Chunk 23200433-23200832 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23200833-23201232 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23201233-23201512 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+💾 Saving updated data...
+💾 Saved 92 processed ranges
+
+════════════════════════════════════════════
+         BACKFILL COMPLETE                  
+════════════════════════════════════════════
+
+✅ Processed 10 gaps
+🔥 Recovered 0 burns
+💰 Total TINC recovered: 0.00
+
+📊 Remaining gaps: 91
+   Run again to process more gaps
+
+⏱️  Time elapsed: 1.2 minutes
+📈 Total gaps processed: 60
+🔥 Total burns recovered: 1
+⏳ Estimated time remaining: 1.8 minutes
+
+💤 Pausing 2 seconds before next batch...
+
+📦 Iteration 7
+==================================================
+🔍 Starting Gap-Resistant Analysis...
+
+📋 Loaded 92 processed ranges
+
+════════════════════════════════════════════
+         GAP ANALYSIS REPORT                
+════════════════════════════════════════════
+
+📊 Coverage Statistics:
+  • Processed ranges: 92
+  • Block range: 23030315 to 23243017
+  • Blocks covered: 161,984
+  • Coverage: 76.16%
+
+⚠️  Gaps Detected: 91
+  Top 5 largest gaps:
+  • Blocks 23128959-23130023: 1065 blocks (~3.5 hours)
+  • Blocks 23088321-23089379: 1059 blocks (~3.5 hours)
+  • Blocks 23044618-23045671: 1054 blocks (~3.5 hours)
+  • Blocks 23162268-23163318: 1051 blocks (~3.5 hours)
+  • Blocks 23112414-23113446: 1033 blocks (~3.4 hours)
+
+🔍 Integrity Issues:
+  ⚠️ Found 91 gaps totaling 50719 blocks
+
+💡 Recommendations:
+  • Run backfill for 91 gaps
+  • Estimated backfill time: 101 seconds
+💾 Saved 92 processed ranges
+
+📄 Full report saved to: gap-analysis-report.json
+
+📊 Gaps remaining: 91
+📊 Blocks to fill: 50,719
+
+🔧 Processing next 10 gaps...
+🚀 Starting Gap Backfill Service
+
+📋 Loaded 92 processed ranges
+📊 Found 91 gaps to backfill
+🎯 Processing top 10 gaps
+
+
+🔧 Backfilling gap: 23128959 to 23130023 (1065 blocks)
+  📦 Chunk 23128959-23129358 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23129359-23129758 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23129759-23130023 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23088321 to 23089379 (1059 blocks)
+  📦 Chunk 23088321-23088720 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23088721-23089120 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23089121-23089379 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23044618 to 23045671 (1054 blocks)
+  📦 Chunk 23044618-23045017 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23045018-23045417 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23045418-23045671 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23162268 to 23163318 (1051 blocks)
+  📦 Chunk 23162268-23162667 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23162668-23163067 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23163068-23163318 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23112414 to 23113446 (1033 blocks)
+  📦 Chunk 23112414-23112813 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23112814-23113213 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23113214-23113446 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23123472 to 23124491 (1020 blocks)
+  📦 Chunk 23123472-23123871 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23123872-23124271 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23124272-23124491 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23143281 to 23144258 (978 blocks)
+  📦 Chunk 23143281-23143680 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23143681-23144080 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23144081-23144258 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23171228 to 23172197 (970 blocks)
+  📦 Chunk 23171228-23171627 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23171628-23172027 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23172028-23172197 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23093174 to 23094109 (936 blocks)
+  📦 Chunk 23093174-23093573 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23093574-23093973 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23093974-23094109 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23191724 to 23192653 (930 blocks)
+  📦 Chunk 23191724-23192123 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23192124-23192523 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23192524-23192653 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+💾 Saving updated data...
+💾 Saved 82 processed ranges
+
+════════════════════════════════════════════
+         BACKFILL COMPLETE                  
+════════════════════════════════════════════
+
+✅ Processed 10 gaps
+🔥 Recovered 0 burns
+💰 Total TINC recovered: 0.00
+
+📊 Remaining gaps: 81
+   Run again to process more gaps
+
+⏱️  Time elapsed: 1.3 minutes
+📈 Total gaps processed: 70
+🔥 Total burns recovered: 1
+⏳ Estimated time remaining: 1.5 minutes
+
+💤 Pausing 2 seconds before next batch...
+
+📦 Iteration 8
+==================================================
+🔍 Starting Gap-Resistant Analysis...
+
+📋 Loaded 82 processed ranges
+
+════════════════════════════════════════════
+         GAP ANALYSIS REPORT                
+════════════════════════════════════════════
+
+📊 Coverage Statistics:
+  • Processed ranges: 82
+  • Block range: 23030315 to 23243017
+  • Blocks covered: 172,080
+  • Coverage: 80.90%
+
+⚠️  Gaps Detected: 81
+  Top 5 largest gaps:
+  • Blocks 23113448-23114370: 923 blocks (~3.1 hours)
+  • Blocks 23128039-23128957: 919 blocks (~3.1 hours)
+  • Blocks 23057544-23058460: 917 blocks (~3.1 hours)
+  • Blocks 23062755-23063663: 909 blocks (~3.0 hours)
+  • Blocks 23090869-23091741: 873 blocks (~2.9 hours)
+
+🔍 Integrity Issues:
+  ⚠️ Found 81 gaps totaling 40623 blocks
+
+💡 Recommendations:
+  • Run backfill for 81 gaps
+  • Estimated backfill time: 81 seconds
+💾 Saved 82 processed ranges
+
+📄 Full report saved to: gap-analysis-report.json
+
+📊 Gaps remaining: 81
+📊 Blocks to fill: 40,623
+
+🔧 Processing next 10 gaps...
+🚀 Starting Gap Backfill Service
+
+📋 Loaded 82 processed ranges
+📊 Found 81 gaps to backfill
+🎯 Processing top 10 gaps
+
+
+🔧 Backfilling gap: 23113448 to 23114370 (923 blocks)
+  📦 Chunk 23113448-23113847 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23113848-23114247 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23114248-23114370 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23128039 to 23128957 (919 blocks)
+  📦 Chunk 23128039-23128438 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23128439-23128838 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23128839-23128957 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23057544 to 23058460 (917 blocks)
+  📦 Chunk 23057544-23057943 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23057944-23058343 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23058344-23058460 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23062755 to 23063663 (909 blocks)
+  📦 Chunk 23062755-23063154 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23063155-23063554 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23063555-23063663 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23090869 to 23091741 (873 blocks)
+  📦 Chunk 23090869-23091268 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23091269-23091668 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23091669-23091741 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23114372 to 23115239 (868 blocks)
+  📦 Chunk 23114372-23114771 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23114772-23115171 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23115172-23115239 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23043480 to 23044309 (830 blocks)
+  📦 Chunk 23043480-23043879 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23043880-23044279 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23044280-23044309 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23135399 to 23136193 (795 blocks)
+  📦 Chunk 23135399-23135798 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23135799-23136193 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23192714 to 23193488 (775 blocks)
+  📦 Chunk 23192714-23193113 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23193114-23193488 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23184152 to 23184924 (773 blocks)
+  📦 Chunk 23184152-23184551 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23184552-23184924 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+💾 Saving updated data...
+💾 Saved 72 processed ranges
+
+════════════════════════════════════════════
+         BACKFILL COMPLETE                  
+════════════════════════════════════════════
+
+✅ Processed 10 gaps
+🔥 Recovered 0 burns
+💰 Total TINC recovered: 0.00
+
+📊 Remaining gaps: 71
+   Run again to process more gaps
+
+⏱️  Time elapsed: 1.5 minutes
+📈 Total gaps processed: 80
+🔥 Total burns recovered: 1
+⏳ Estimated time remaining: 1.3 minutes
+
+💤 Pausing 2 seconds before next batch...
+
+📦 Iteration 9
+==================================================
+🔍 Starting Gap-Resistant Analysis...
+
+📋 Loaded 72 processed ranges
+
+════════════════════════════════════════════
+         GAP ANALYSIS REPORT                
+════════════════════════════════════════════
+
+📊 Coverage Statistics:
+  • Processed ranges: 72
+  • Block range: 23030315 to 23243017
+  • Blocks covered: 180,662
+  • Coverage: 84.94%
+
+⚠️  Gaps Detected: 71
+  Top 5 largest gaps:
+  • Blocks 23185948-23186676: 729 blocks (~2.4 hours)
+  • Blocks 23163356-23164075: 720 blocks (~2.4 hours)
+  • Blocks 23156803-23157521: 719 blocks (~2.4 hours)
+  • Blocks 23115439-23116154: 716 blocks (~2.4 hours)
+  • Blocks 23108455-23109167: 713 blocks (~2.4 hours)
+
+🔍 Integrity Issues:
+  ⚠️ Found 71 gaps totaling 32041 blocks
+
+💡 Recommendations:
+  • Run backfill for 71 gaps
+  • Estimated backfill time: 64 seconds
+💾 Saved 72 processed ranges
+
+📄 Full report saved to: gap-analysis-report.json
+
+📊 Gaps remaining: 71
+📊 Blocks to fill: 32,041
+
+🔧 Processing next 10 gaps...
+🚀 Starting Gap Backfill Service
+
+📋 Loaded 72 processed ranges
+📊 Found 71 gaps to backfill
+🎯 Processing top 10 gaps
+
+
+🔧 Backfilling gap: 23185948 to 23186676 (729 blocks)
+  📦 Chunk 23185948-23186347 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23186348-23186676 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23163356 to 23164075 (720 blocks)
+  📦 Chunk 23163356-23163755 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23163756-23164075 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23156803 to 23157521 (719 blocks)
+  📦 Chunk 23156803-23157202 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23157203-23157521 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23115439 to 23116154 (716 blocks)
+  📦 Chunk 23115439-23115838 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23115839-23116154 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23108455 to 23109167 (713 blocks)
+  📦 Chunk 23108455-23108854 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23108855-23109167 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23109169 to 23109879 (711 blocks)
+  📦 Chunk 23109169-23109568 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23109569-23109879 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23099935 to 23100644 (710 blocks)
+  📦 Chunk 23099935-23100334 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23100335-23100644 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23161563 to 23162262 (700 blocks)
+  📦 Chunk 23161563-23161962 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23161963-23162262 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23201527 to 23202225 (699 blocks)
+  📦 Chunk 23201527-23201926 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23201927-23202225 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23169102 to 23169791 (690 blocks)
+  📦 Chunk 23169102-23169501 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23169502-23169791 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+💾 Saving updated data...
+💾 Saved 62 processed ranges
+
+════════════════════════════════════════════
+         BACKFILL COMPLETE                  
+════════════════════════════════════════════
+
+✅ Processed 10 gaps
+🔥 Recovered 0 burns
+💰 Total TINC recovered: 0.00
+
+📊 Remaining gaps: 61
+   Run again to process more gaps
+
+⏱️  Time elapsed: 1.6 minutes
+📈 Total gaps processed: 90
+🔥 Total burns recovered: 1
+⏳ Estimated time remaining: 1.1 minutes
+
+💤 Pausing 2 seconds before next batch...
+
+📦 Iteration 10
+==================================================
+🔍 Starting Gap-Resistant Analysis...
+
+📋 Loaded 152 processed ranges
+
+════════════════════════════════════════════
+         GAP ANALYSIS REPORT                
+════════════════════════════════════════════
+
+📊 Coverage Statistics:
+  • Processed ranges: 152
+  • Block range: 23030315 to 23243017
+  • Blocks covered: 58,175
+  • Coverage: 27.35%
+
+⚠️  Gaps Detected: 151
+  Top 5 largest gaps:
+  • Blocks 23124750-23127972: 3223 blocks (~10.7 hours)
+  • Blocks 23076720-23079774: 3055 blocks (~10.2 hours)
+  • Blocks 23096551-23099461: 2911 blocks (~9.7 hours)
+  • Blocks 23172205-23175046: 2842 blocks (~9.5 hours)
+  • Blocks 23211059-23213682: 2624 blocks (~8.7 hours)
+
+🔍 Integrity Issues:
+  ⚠️ Found 151 gaps totaling 154528 blocks
+
+💡 Recommendations:
+  • Run backfill for 151 gaps
+  • Estimated backfill time: 309 seconds
+💾 Saved 152 processed ranges
+
+📄 Full report saved to: gap-analysis-report.json
+
+📊 Gaps remaining: 151
+📊 Blocks to fill: 154,528
+
+🔧 Processing next 10 gaps...
+🚀 Starting Gap Backfill Service
+
+📋 Loaded 152 processed ranges
+📊 Found 151 gaps to backfill
+🎯 Processing top 10 gaps
+
+
+🔧 Backfilling gap: 23124750 to 23127972 (3223 blocks)
+  📦 Chunk 23124750-23125149 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23125150-23125549 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23125550-23125949 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23125950-23126349 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23126350-23126749 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23126750-23127149 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23127150-23127549 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23127550-23127949 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23127950-23127972 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23076720 to 23079774 (3055 blocks)
+  📦 Chunk 23076720-23077119 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23077120-23077519 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23077520-23077919 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23077920-23078319 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23078320-23078719 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23078720-23079119 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23079120-23079519 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23079520-23079774 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23096551 to 23099461 (2911 blocks)
+  📦 Chunk 23096551-23096950 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23096951-23097350 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23097351-23097750 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23097751-23098150 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23098151-23098550 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23098551-23098950 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23098951-23099350 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23099351-23099461 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23172205 to 23175046 (2842 blocks)
+  📦 Chunk 23172205-23172604 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23172605-23173004 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23173005-23173404 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23173405-23173804 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23173805-23174204 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23174205-23174604 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23174605-23175004 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23175005-23175046 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23211059 to 23213682 (2624 blocks)
+  📦 Chunk 23211059-23211458 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23211459-23211858 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23211859-23212258 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23212259-23212658 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23212659-23213058 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23213059-23213458 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23213459-23213682 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23130025 to 23132609 (2585 blocks)
+  📦 Chunk 23130025-23130424 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23130425-23130824 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23130825-23131224 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23131225-23131624 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23131625-23132024 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23132025-23132424 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23132425-23132609 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23055062 to 23057542 (2481 blocks)
+  📦 Chunk 23055062-23055461 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23055462-23055861 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23055862-23056261 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23056262-23056661 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23056662-23057061 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23057062-23057461 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23057462-23057542 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23060357 to 23062753 (2397 blocks)
+  📦 Chunk 23060357-23060756 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23060757-23061156 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23061157-23061556 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23061557-23061956 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23061957-23062356 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23062357-23062753 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23038505 to 23040888 (2384 blocks)
+  📦 Chunk 23038505-23038904 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23038905-23039304 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23039305-23039704 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23039705-23040104 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23040105-23040504 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23040505-23040888 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23138499 to 23140798 (2300 blocks)
+  📦 Chunk 23138499-23138898 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23138899-23139298 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23139299-23139698 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23139699-23140098 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23140099-23140498 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23140499-23140798 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+💾 Saving updated data...
+💾 Saved 142 processed ranges
+
+════════════════════════════════════════════
+         BACKFILL COMPLETE                  
+════════════════════════════════════════════
+
+✅ Processed 10 gaps
+🔥 Recovered 0 burns
+💰 Total TINC recovered: 0.00
+
+📊 Remaining gaps: 141
+   Run again to process more gaps
+
+⏱️  Time elapsed: 1.8 minutes
+📈 Total gaps processed: 100
+🔥 Total burns recovered: 1
+⏳ Estimated time remaining: 2.6 minutes
+
+💤 Pausing 2 seconds before next batch...
+
+📦 Iteration 11
+==================================================
+🔍 Starting Gap-Resistant Analysis...
+
+📋 Loaded 142 processed ranges
+
+════════════════════════════════════════════
+         GAP ANALYSIS REPORT                
+════════════════════════════════════════════
+
+📊 Coverage Statistics:
+  • Processed ranges: 142
+  • Block range: 23030315 to 23243017
+  • Blocks covered: 84,977
+  • Coverage: 39.95%
+
+⚠️  Gaps Detected: 141
+  Top 5 largest gaps:
+  • Blocks 23110208-23112376: 2169 blocks (~7.2 hours)
+  • Blocks 23189530-23191696: 2167 blocks (~7.2 hours)
+  • Blocks 23046102-23048248: 2147 blocks (~7.2 hours)
+  • Blocks 23164077-23166217: 2141 blocks (~7.1 hours)
+  • Blocks 23067211-23069166: 1956 blocks (~6.5 hours)
+
+🔍 Integrity Issues:
+  ⚠️ Found 141 gaps totaling 127726 blocks
+
+💡 Recommendations:
+  • Run backfill for 141 gaps
+  • Estimated backfill time: 255 seconds
+💾 Saved 142 processed ranges
+
+📄 Full report saved to: gap-analysis-report.json
+
+📊 Gaps remaining: 141
+📊 Blocks to fill: 127,726
+
+🔧 Processing next 10 gaps...
+🚀 Starting Gap Backfill Service
+
+📋 Loaded 142 processed ranges
+📊 Found 141 gaps to backfill
+🎯 Processing top 10 gaps
+
+
+🔧 Backfilling gap: 23110208 to 23112376 (2169 blocks)
+  📦 Chunk 23110208-23110607 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23110608-23111007 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23111008-23111407 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23111408-23111807 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23111808-23112207 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23112208-23112376 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23189530 to 23191696 (2167 blocks)
+  📦 Chunk 23189530-23189929 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23189930-23190329 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23190330-23190729 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23190730-23191129 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23191130-23191529 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23191530-23191696 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23046102 to 23048248 (2147 blocks)
+  📦 Chunk 23046102-23046501 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23046502-23046901 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23046902-23047301 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23047302-23047701 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23047702-23048101 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23048102-23048248 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23164077 to 23166217 (2141 blocks)
+  📦 Chunk 23164077-23164476 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23164477-23164876 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23164877-23165276 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23165277-23165676 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23165677-23166076 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23166077-23166217 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23067211 to 23069166 (1956 blocks)
+  📦 Chunk 23067211-23067610 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23067611-23068010 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23068011-23068410 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23068411-23068810 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23068811-23069166 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23180402 to 23182354 (1953 blocks)
+  📦 Chunk 23180402-23180801 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23180802-23181201 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23181202-23181601 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23181602-23182001 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23182002-23182354 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23072867 to 23074810 (1944 blocks)
+  📦 Chunk 23072867-23073266 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23073267-23073666 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23073667-23074066 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23074067-23074466 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23074467-23074810 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23074812 to 23076717 (1906 blocks)
+  📦 Chunk 23074812-23075211 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23075212-23075611 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23075612-23076011 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23076012-23076411 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23076412-23076717 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23036615 to 23038503 (1889 blocks)
+  📦 Chunk 23036615-23037014 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23037015-23037414 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23037415-23037814 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23037815-23038214 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23038215-23038503 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23053178 to 23054992 (1815 blocks)
+  📦 Chunk 23053178-23053577 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23053578-23053977 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23053978-23054377 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23054378-23054777 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23054778-23054992 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+💾 Saving updated data...
+💾 Saved 132 processed ranges
+
+════════════════════════════════════════════
+         BACKFILL COMPLETE                  
+════════════════════════════════════════════
+
+✅ Processed 10 gaps
+🔥 Recovered 0 burns
+💰 Total TINC recovered: 0.00
+
+📊 Remaining gaps: 131
+   Run again to process more gaps
+
+⏱️  Time elapsed: 2.0 minutes
+📈 Total gaps processed: 110
+🔥 Total burns recovered: 1
+⏳ Estimated time remaining: 2.4 minutes
+
+💤 Pausing 2 seconds before next batch...
+
+📦 Iteration 12
+==================================================
+🔍 Starting Gap-Resistant Analysis...
+
+📋 Loaded 132 processed ranges
+
+════════════════════════════════════════════
+         GAP ANALYSIS REPORT                
+════════════════════════════════════════════
+
+📊 Coverage Statistics:
+  • Processed ranges: 132
+  • Block range: 23030315 to 23243017
+  • Blocks covered: 105,064
+  • Coverage: 49.39%
+
+⚠️  Gaps Detected: 131
+  Top 5 largest gaps:
+  • Blocks 23157975-23159769: 1795 blocks (~6.0 hours)
+  • Blocks 23193490-23195284: 1795 blocks (~6.0 hours)
+  • Blocks 23207468-23209261: 1794 blocks (~6.0 hours)
+  • Blocks 23063665-23065437: 1773 blocks (~5.9 hours)
+  • Blocks 23065452-23067209: 1758 blocks (~5.9 hours)
+
+🔍 Integrity Issues:
+  ⚠️ Found 131 gaps totaling 107639 blocks
+
+💡 Recommendations:
+  • Run backfill for 131 gaps
+  • Estimated backfill time: 215 seconds
+💾 Saved 132 processed ranges
+
+📄 Full report saved to: gap-analysis-report.json
+
+📊 Gaps remaining: 131
+📊 Blocks to fill: 107,639
+
+🔧 Processing next 10 gaps...
+🚀 Starting Gap Backfill Service
+
+📋 Loaded 132 processed ranges
+📊 Found 131 gaps to backfill
+🎯 Processing top 10 gaps
+
+
+🔧 Backfilling gap: 23157975 to 23159769 (1795 blocks)
+  📦 Chunk 23157975-23158374 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23158375-23158774 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23158775-23159174 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23159175-23159574 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23159575-23159769 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23193490 to 23195284 (1795 blocks)
+  📦 Chunk 23193490-23193889 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23193890-23194289 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23194290-23194689 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23194690-23195089 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23195090-23195284 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23207468 to 23209261 (1794 blocks)
+  📦 Chunk 23207468-23207867 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23207868-23208267 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23208268-23208667 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23208668-23209067 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23209068-23209261 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23063665 to 23065437 (1773 blocks)
+  📦 Chunk 23063665-23064064 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23064065-23064464 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23064465-23064864 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23064865-23065264 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23065265-23065437 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23065452 to 23067209 (1758 blocks)
+  📦 Chunk 23065452-23065851 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23065852-23066251 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23066252-23066651 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23066652-23067051 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23067052-23067209 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23167359 to 23169100 (1742 blocks)
+  📦 Chunk 23167359-23167758 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23167759-23168158 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23168159-23168558 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23168559-23168958 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23168959-23169100 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23051437 to 23053176 (1740 blocks)
+  📦 Chunk 23051437-23051836 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23051837-23052236 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23052237-23052636 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23052637-23053036 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23053037-23053176 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23071081 to 23072799 (1719 blocks)
+  📦 Chunk 23071081-23071480 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23071481-23071880 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23071881-23072280 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23072281-23072680 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23072681-23072799 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23120859 to 23122571 (1713 blocks)
+  📦 Chunk 23120859-23121258 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23121259-23121658 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23121659-23122058 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23122059-23122458 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23122459-23122571 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23106708 to 23108418 (1711 blocks)
+  📦 Chunk 23106708-23107107 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23107108-23107507 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23107508-23107907 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23107908-23108307 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23108308-23108418 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+💾 Saving updated data...
+💾 Saved 122 processed ranges
+
+════════════════════════════════════════════
+         BACKFILL COMPLETE                  
+════════════════════════════════════════════
+
+✅ Processed 10 gaps
+🔥 Recovered 0 burns
+💰 Total TINC recovered: 0.00
+
+📊 Remaining gaps: 121
+   Run again to process more gaps
+
+⏱️  Time elapsed: 2.4 minutes
+📈 Total gaps processed: 120
+🔥 Total burns recovered: 1
+⏳ Estimated time remaining: 2.4 minutes
+
+💤 Pausing 2 seconds before next batch...
+
+📦 Iteration 13
+==================================================
+🔍 Starting Gap-Resistant Analysis...
+
+📋 Loaded 122 processed ranges
+
+════════════════════════════════════════════
+         GAP ANALYSIS REPORT                
+════════════════════════════════════════════
+
+📊 Coverage Statistics:
+  • Processed ranges: 122
+  • Block range: 23030315 to 23243017
+  • Blocks covered: 122,604
+  • Coverage: 57.64%
+
+⚠️  Gaps Detected: 121
+  Top 5 largest gaps:
+  • Blocks 23094903-23096548: 1646 blocks (~5.5 hours)
+  • Blocks 23152777-23154381: 1605 blocks (~5.3 hours)
+  • Blocks 23104841-23106369: 1529 blocks (~5.1 hours)
+  • Blocks 23182357-23183864: 1508 blocks (~5.0 hours)
+  • Blocks 23103335-23104839: 1505 blocks (~5.0 hours)
+
+🔍 Integrity Issues:
+  ⚠️ Found 121 gaps totaling 90099 blocks
+
+💡 Recommendations:
+  • Run backfill for 121 gaps
+  • Estimated backfill time: 180 seconds
+💾 Saved 122 processed ranges
+
+📄 Full report saved to: gap-analysis-report.json
+
+📊 Gaps remaining: 121
+📊 Blocks to fill: 90,099
+
+🔧 Processing next 10 gaps...
+🚀 Starting Gap Backfill Service
+
+📋 Loaded 122 processed ranges
+📊 Found 121 gaps to backfill
+🎯 Processing top 10 gaps
+
+
+🔧 Backfilling gap: 23094903 to 23096548 (1646 blocks)
+  📦 Chunk 23094903-23095302 (attempt 1)... ✅ Found 1 burns
+  📦 Chunk 23095303-23095702 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23095703-23096102 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23096103-23096502 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23096503-23096548 (attempt 1)... ✅ Found 0 burns
+  💰 Recovered 6713.75 TINC from 1 burns
+
+🔧 Backfilling gap: 23152777 to 23154381 (1605 blocks)
+  📦 Chunk 23152777-23153176 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23153177-23153576 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23153577-23153976 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23153977-23154376 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23154377-23154381 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23104841 to 23106369 (1529 blocks)
+  📦 Chunk 23104841-23105240 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23105241-23105640 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23105641-23106040 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23106041-23106369 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23182357 to 23183864 (1508 blocks)
+  📦 Chunk 23182357-23182756 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23182757-23183156 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23183157-23183556 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23183557-23183864 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23103335 to 23104839 (1505 blocks)
+  📦 Chunk 23103335-23103734 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23103735-23104134 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23104135-23104534 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23104535-23104839 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23089381 to 23090867 (1487 blocks)
+  📦 Chunk 23089381-23089780 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23089781-23090180 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23090181-23090580 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23090581-23090867 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23169793 to 23171226 (1434 blocks)
+  📦 Chunk 23169793-23170192 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23170193-23170592 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23170593-23170992 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23170993-23171226 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23050032 to 23051435 (1404 blocks)
+  📦 Chunk 23050032-23050431 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23050432-23050831 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23050832-23051231 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23051232-23051435 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23159771 to 23161170 (1400 blocks)
+  📦 Chunk 23159771-23160170 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23160171-23160570 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23160571-23160970 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23160971-23161170 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23085801 to 23087171 (1371 blocks)
+  📦 Chunk 23085801-23086200 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23086201-23086600 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23086601-23087000 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23087001-23087171 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+💾 Saving updated data...
+💾 Saved 112 processed ranges
+
+════════════════════════════════════════════
+         BACKFILL COMPLETE                  
+════════════════════════════════════════════
+
+✅ Processed 10 gaps
+🔥 Recovered 1 burns
+💰 Total TINC recovered: 6713.75
+
+📊 Remaining gaps: 111
+   Run again to process more gaps
+
+⏱️  Time elapsed: 2.6 minutes
+📈 Total gaps processed: 130
+🔥 Total burns recovered: 2
+⏳ Estimated time remaining: 2.2 minutes
+
+💤 Pausing 2 seconds before next batch...
+
+📦 Iteration 14
+==================================================
+🔍 Starting Gap-Resistant Analysis...
+
+📋 Loaded 112 processed ranges
+
+════════════════════════════════════════════
+         GAP ANALYSIS REPORT                
+════════════════════════════════════════════
+
+📊 Coverage Statistics:
+  • Processed ranges: 112
+  • Block range: 23030315 to 23243017
+  • Blocks covered: 137,493
+  • Coverage: 64.64%
+
+⚠️  Gaps Detected: 111
+  Top 5 largest gaps:
+  • Blocks 23035249-23036613: 1365 blocks (~4.5 hours)
+  • Blocks 23154383-23155725: 1343 blocks (~4.5 hours)
+  • Blocks 23091766-23093097: 1332 blocks (~4.4 hours)
+  • Blocks 23069284-23070594: 1311 blocks (~4.4 hours)
+  • Blocks 23206177-23207466: 1290 blocks (~4.3 hours)
+
+🔍 Integrity Issues:
+  ⚠️ Found 111 gaps totaling 75210 blocks
+
+💡 Recommendations:
+  • Run backfill for 111 gaps
+  • Estimated backfill time: 150 seconds
+💾 Saved 112 processed ranges
+
+📄 Full report saved to: gap-analysis-report.json
+
+📊 Gaps remaining: 111
+📊 Blocks to fill: 75,210
+
+🔧 Processing next 10 gaps...
+🚀 Starting Gap Backfill Service
+
+📋 Loaded 112 processed ranges
+📊 Found 111 gaps to backfill
+🎯 Processing top 10 gaps
+
+
+🔧 Backfilling gap: 23035249 to 23036613 (1365 blocks)
+  📦 Chunk 23035249-23035648 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23035649-23036048 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23036049-23036448 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23036449-23036613 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23154383 to 23155725 (1343 blocks)
+  📦 Chunk 23154383-23154782 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23154783-23155182 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23155183-23155582 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23155583-23155725 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23091766 to 23093097 (1332 blocks)
+  📦 Chunk 23091766-23092165 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23092166-23092565 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23092566-23092965 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23092966-23093097 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23069284 to 23070594 (1311 blocks)
+  📦 Chunk 23069284-23069683 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23069684-23070083 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23070084-23070483 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23070484-23070594 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23206177 to 23207466 (1290 blocks)
+  📦 Chunk 23206177-23206576 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23206577-23206976 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23206977-23207376 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23207377-23207466 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23151277 to 23152560 (1284 blocks)
+  📦 Chunk 23151277-23151676 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23151677-23152076 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23152077-23152476 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23152477-23152560 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23101762 to 23103044 (1283 blocks)
+  📦 Chunk 23101762-23102161 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23102162-23102561 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23102562-23102961 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23102962-23103044 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23149500 to 23150773 (1274 blocks)
+  📦 Chunk 23149500-23149899 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23149900-23150299 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23150300-23150699 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23150700-23150773 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23187739 to 23188979 (1241 blocks)
+  📦 Chunk 23187739-23188138 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23188139-23188538 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23188539-23188938 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23188939-23188979 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23133124 to 23134352 (1229 blocks)
+  📦 Chunk 23133124-23133523 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23133524-23133923 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23133924-23134323 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23134324-23134352 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+💾 Saving updated data...
+💾 Saved 102 processed ranges
+
+════════════════════════════════════════════
+         BACKFILL COMPLETE                  
+════════════════════════════════════════════
+
+✅ Processed 10 gaps
+🔥 Recovered 0 burns
+💰 Total TINC recovered: 0.00
+
+📊 Remaining gaps: 101
+   Run again to process more gaps
+
+⏱️  Time elapsed: 2.8 minutes
+📈 Total gaps processed: 140
+🔥 Total burns recovered: 2
+⏳ Estimated time remaining: 2.0 minutes
+
+💤 Pausing 2 seconds before next batch...
+
+📦 Iteration 15
+==================================================
+🔍 Starting Gap-Resistant Analysis...
+
+📋 Loaded 102 processed ranges
+
+════════════════════════════════════════════
+         GAP ANALYSIS REPORT                
+════════════════════════════════════════════
+
+📊 Coverage Statistics:
+  • Processed ranges: 102
+  • Block range: 23030315 to 23243017
+  • Blocks covered: 150,445
+  • Coverage: 70.73%
+
+⚠️  Gaps Detected: 101
+  Top 5 largest gaps:
+  • Blocks 23058562-23059786: 1225 blocks (~4.1 hours)
+  • Blocks 23137195-23138413: 1219 blocks (~4.1 hours)
+  • Blocks 23209263-23210470: 1208 blocks (~4.0 hours)
+  • Blocks 23145511-23146702: 1192 blocks (~4.0 hours)
+  • Blocks 23147815-23148982: 1168 blocks (~3.9 hours)
+
+🔍 Integrity Issues:
+  ⚠️ Found 101 gaps totaling 62258 blocks
+
+💡 Recommendations:
+  • Run backfill for 101 gaps
+  • Estimated backfill time: 125 seconds
+💾 Saved 102 processed ranges
+
+📄 Full report saved to: gap-analysis-report.json
+
+📊 Gaps remaining: 101
+📊 Blocks to fill: 62,258
+
+🔧 Processing next 10 gaps...
+🚀 Starting Gap Backfill Service
+
+📋 Loaded 102 processed ranges
+📊 Found 101 gaps to backfill
+🎯 Processing top 10 gaps
+
+
+🔧 Backfilling gap: 23058562 to 23059786 (1225 blocks)
+  📦 Chunk 23058562-23058961 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23058962-23059361 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23059362-23059761 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23059762-23059786 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23137195 to 23138413 (1219 blocks)
+  📦 Chunk 23137195-23137594 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23137595-23137994 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23137995-23138394 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23138395-23138413 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23209263 to 23210470 (1208 blocks)
+  📦 Chunk 23209263-23209662 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23209663-23210062 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23210063-23210462 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23210463-23210470 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23145511 to 23146702 (1192 blocks)
+  📦 Chunk 23145511-23145910 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23145911-23146310 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23146311-23146702 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23147815 to 23148982 (1168 blocks)
+  📦 Chunk 23147815-23148214 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23148215-23148614 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23148615-23148982 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23141197 to 23142350 (1154 blocks)
+  📦 Chunk 23141197-23141596 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23141597-23141996 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23141997-23142350 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23146704 to 23147813 (1110 blocks)
+  📦 Chunk 23146704-23147103 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23147104-23147503 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23147504-23147813 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23166219 to 23167312 (1094 blocks)
+  📦 Chunk 23166219-23166618 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23166619-23167018 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23167019-23167312 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23042390 to 23043478 (1089 blocks)
+  📦 Chunk 23042390-23042789 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23042790-23043189 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23043190-23043478 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23200433 to 23201512 (1080 blocks)
+  📦 Chunk 23200433-23200832 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23200833-23201232 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23201233-23201512 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+💾 Saving updated data...
+💾 Saved 92 processed ranges
+
+════════════════════════════════════════════
+         BACKFILL COMPLETE                  
+════════════════════════════════════════════
+
+✅ Processed 10 gaps
+🔥 Recovered 0 burns
+💰 Total TINC recovered: 0.00
+
+📊 Remaining gaps: 91
+   Run again to process more gaps
+
+⏱️  Time elapsed: 3.0 minutes
+📈 Total gaps processed: 150
+🔥 Total burns recovered: 2
+⏳ Estimated time remaining: 1.8 minutes
+
+💤 Pausing 2 seconds before next batch...
+
+📦 Iteration 16
+==================================================
+🔍 Starting Gap-Resistant Analysis...
+
+📋 Loaded 92 processed ranges
+
+════════════════════════════════════════════
+         GAP ANALYSIS REPORT                
+════════════════════════════════════════════
+
+📊 Coverage Statistics:
+  • Processed ranges: 92
+  • Block range: 23030315 to 23243017
+  • Blocks covered: 161,984
+  • Coverage: 76.16%
+
+⚠️  Gaps Detected: 91
+  Top 5 largest gaps:
+  • Blocks 23128959-23130023: 1065 blocks (~3.5 hours)
+  • Blocks 23088321-23089379: 1059 blocks (~3.5 hours)
+  • Blocks 23044618-23045671: 1054 blocks (~3.5 hours)
+  • Blocks 23162268-23163318: 1051 blocks (~3.5 hours)
+  • Blocks 23112414-23113446: 1033 blocks (~3.4 hours)
+
+🔍 Integrity Issues:
+  ⚠️ Found 91 gaps totaling 50719 blocks
+
+💡 Recommendations:
+  • Run backfill for 91 gaps
+  • Estimated backfill time: 101 seconds
+💾 Saved 92 processed ranges
+
+📄 Full report saved to: gap-analysis-report.json
+
+📊 Gaps remaining: 91
+📊 Blocks to fill: 50,719
+
+🔧 Processing next 10 gaps...
+🚀 Starting Gap Backfill Service
+
+📋 Loaded 92 processed ranges
+📊 Found 91 gaps to backfill
+🎯 Processing top 10 gaps
+
+
+🔧 Backfilling gap: 23128959 to 23130023 (1065 blocks)
+  📦 Chunk 23128959-23129358 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23129359-23129758 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23129759-23130023 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23088321 to 23089379 (1059 blocks)
+  📦 Chunk 23088321-23088720 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23088721-23089120 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23089121-23089379 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23044618 to 23045671 (1054 blocks)
+  📦 Chunk 23044618-23045017 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23045018-23045417 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23045418-23045671 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23162268 to 23163318 (1051 blocks)
+  📦 Chunk 23162268-23162667 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23162668-23163067 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23163068-23163318 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23112414 to 23113446 (1033 blocks)
+  📦 Chunk 23112414-23112813 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23112814-23113213 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23113214-23113446 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23123472 to 23124491 (1020 blocks)
+  📦 Chunk 23123472-23123871 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23123872-23124271 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23124272-23124491 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23143281 to 23144258 (978 blocks)
+  📦 Chunk 23143281-23143680 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23143681-23144080 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23144081-23144258 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23171228 to 23172197 (970 blocks)
+  📦 Chunk 23171228-23171627 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23171628-23172027 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23172028-23172197 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23093174 to 23094109 (936 blocks)
+  📦 Chunk 23093174-23093573 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23093574-23093973 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23093974-23094109 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23191724 to 23192653 (930 blocks)
+  📦 Chunk 23191724-23192123 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23192124-23192523 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23192524-23192653 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+💾 Saving updated data...
+💾 Saved 82 processed ranges
+
+════════════════════════════════════════════
+         BACKFILL COMPLETE                  
+════════════════════════════════════════════
+
+✅ Processed 10 gaps
+🔥 Recovered 0 burns
+💰 Total TINC recovered: 0.00
+
+📊 Remaining gaps: 81
+   Run again to process more gaps
+
+⏱️  Time elapsed: 3.1 minutes
+📈 Total gaps processed: 160
+🔥 Total burns recovered: 2
+⏳ Estimated time remaining: 1.6 minutes
+
+💤 Pausing 2 seconds before next batch...
+
+📦 Iteration 17
+==================================================
+🔍 Starting Gap-Resistant Analysis...
+
+📋 Loaded 82 processed ranges
+
+════════════════════════════════════════════
+         GAP ANALYSIS REPORT                
+════════════════════════════════════════════
+
+📊 Coverage Statistics:
+  • Processed ranges: 82
+  • Block range: 23030315 to 23243017
+  • Blocks covered: 172,080
+  • Coverage: 80.90%
+
+⚠️  Gaps Detected: 81
+  Top 5 largest gaps:
+  • Blocks 23113448-23114370: 923 blocks (~3.1 hours)
+  • Blocks 23128039-23128957: 919 blocks (~3.1 hours)
+  • Blocks 23057544-23058460: 917 blocks (~3.1 hours)
+  • Blocks 23062755-23063663: 909 blocks (~3.0 hours)
+  • Blocks 23090869-23091741: 873 blocks (~2.9 hours)
+
+🔍 Integrity Issues:
+  ⚠️ Found 81 gaps totaling 40623 blocks
+
+💡 Recommendations:
+  • Run backfill for 81 gaps
+  • Estimated backfill time: 81 seconds
+💾 Saved 82 processed ranges
+
+📄 Full report saved to: gap-analysis-report.json
+
+📊 Gaps remaining: 81
+📊 Blocks to fill: 40,623
+
+🔧 Processing next 10 gaps...
+🚀 Starting Gap Backfill Service
+
+📋 Loaded 82 processed ranges
+📊 Found 81 gaps to backfill
+🎯 Processing top 10 gaps
+
+
+🔧 Backfilling gap: 23113448 to 23114370 (923 blocks)
+  📦 Chunk 23113448-23113847 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23113848-23114247 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23114248-23114370 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23128039 to 23128957 (919 blocks)
+  📦 Chunk 23128039-23128438 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23128439-23128838 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23128839-23128957 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23057544 to 23058460 (917 blocks)
+  📦 Chunk 23057544-23057943 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23057944-23058343 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23058344-23058460 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23062755 to 23063663 (909 blocks)
+  📦 Chunk 23062755-23063154 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23063155-23063554 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23063555-23063663 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23090869 to 23091741 (873 blocks)
+  📦 Chunk 23090869-23091268 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23091269-23091668 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23091669-23091741 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23114372 to 23115239 (868 blocks)
+  📦 Chunk 23114372-23114771 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23114772-23115171 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23115172-23115239 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23043480 to 23044309 (830 blocks)
+  📦 Chunk 23043480-23043879 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23043880-23044279 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23044280-23044309 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23135399 to 23136193 (795 blocks)
+  📦 Chunk 23135399-23135798 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23135799-23136193 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23192714 to 23193488 (775 blocks)
+  📦 Chunk 23192714-23193113 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23193114-23193488 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23184152 to 23184924 (773 blocks)
+  📦 Chunk 23184152-23184551 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23184552-23184924 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+💾 Saving updated data...
+💾 Saved 72 processed ranges
+
+════════════════════════════════════════════
+         BACKFILL COMPLETE                  
+════════════════════════════════════════════
+
+✅ Processed 10 gaps
+🔥 Recovered 0 burns
+💰 Total TINC recovered: 0.00
+
+📊 Remaining gaps: 71
+   Run again to process more gaps
+
+⏱️  Time elapsed: 3.2 minutes
+📈 Total gaps processed: 170
+🔥 Total burns recovered: 2
+⏳ Estimated time remaining: 1.3 minutes
+
+💤 Pausing 2 seconds before next batch...
+
+📦 Iteration 18
+==================================================
+🔍 Starting Gap-Resistant Analysis...
+
+📋 Loaded 72 processed ranges
+
+════════════════════════════════════════════
+         GAP ANALYSIS REPORT                
+════════════════════════════════════════════
+
+📊 Coverage Statistics:
+  • Processed ranges: 72
+  • Block range: 23030315 to 23243017
+  • Blocks covered: 180,662
+  • Coverage: 84.94%
+
+⚠️  Gaps Detected: 71
+  Top 5 largest gaps:
+  • Blocks 23185948-23186676: 729 blocks (~2.4 hours)
+  • Blocks 23163356-23164075: 720 blocks (~2.4 hours)
+  • Blocks 23156803-23157521: 719 blocks (~2.4 hours)
+  • Blocks 23115439-23116154: 716 blocks (~2.4 hours)
+  • Blocks 23108455-23109167: 713 blocks (~2.4 hours)
+
+🔍 Integrity Issues:
+  ⚠️ Found 71 gaps totaling 32041 blocks
+
+💡 Recommendations:
+  • Run backfill for 71 gaps
+  • Estimated backfill time: 64 seconds
+💾 Saved 72 processed ranges
+
+📄 Full report saved to: gap-analysis-report.json
+
+📊 Gaps remaining: 71
+📊 Blocks to fill: 32,041
+
+🔧 Processing next 10 gaps...
+🚀 Starting Gap Backfill Service
+
+📋 Loaded 72 processed ranges
+📊 Found 71 gaps to backfill
+🎯 Processing top 10 gaps
+
+
+🔧 Backfilling gap: 23185948 to 23186676 (729 blocks)
+  📦 Chunk 23185948-23186347 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23186348-23186676 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23163356 to 23164075 (720 blocks)
+  📦 Chunk 23163356-23163755 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23163756-23164075 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23156803 to 23157521 (719 blocks)
+  📦 Chunk 23156803-23157202 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23157203-23157521 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23115439 to 23116154 (716 blocks)
+  📦 Chunk 23115439-23115838 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23115839-23116154 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23108455 to 23109167 (713 blocks)
+  📦 Chunk 23108455-23108854 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23108855-23109167 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23109169 to 23109879 (711 blocks)
+  📦 Chunk 23109169-23109568 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23109569-23109879 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23099935 to 23100644 (710 blocks)
+  📦 Chunk 23099935-23100334 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23100335-23100644 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23161563 to 23162262 (700 blocks)
+  📦 Chunk 23161563-23161962 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23161963-23162262 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23201527 to 23202225 (699 blocks)
+  📦 Chunk 23201527-23201926 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23201927-23202225 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23169102 to 23169791 (690 blocks)
+  📦 Chunk 23169102-23169501 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23169502-23169791 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+💾 Saving updated data...
+💾 Saved 62 processed ranges
+
+════════════════════════════════════════════
+         BACKFILL COMPLETE                  
+════════════════════════════════════════════
+
+✅ Processed 10 gaps
+🔥 Recovered 0 burns
+💰 Total TINC recovered: 0.00
+
+📊 Remaining gaps: 61
+   Run again to process more gaps
+
+⏱️  Time elapsed: 3.3 minutes
+📈 Total gaps processed: 180
+🔥 Total burns recovered: 2
+⏳ Estimated time remaining: 1.1 minutes
+
+💤 Pausing 2 seconds before next batch...
+
+📦 Iteration 19
+==================================================
+🔍 Starting Gap-Resistant Analysis...
+
+📋 Loaded 62 processed ranges
+
+════════════════════════════════════════════
+         GAP ANALYSIS REPORT                
+════════════════════════════════════════════
+
+📊 Coverage Statistics:
+  • Processed ranges: 62
+  • Block range: 23030315 to 23243017
+  • Blocks covered: 187,769
+  • Coverage: 88.28%
+
+⚠️  Gaps Detected: 61
+  Top 5 largest gaps:
+  • Blocks 23144260-23144909: 650 blocks (~2.2 hours)
+  • Blocks 23214833-23215472: 640 blocks (~2.1 hours)
+  • Blocks 23156179-23156801: 623 blocks (~2.1 hours)
+  • Blocks 23185325-23185942: 618 blocks (~2.1 hours)
+  • Blocks 23100646-23101255: 610 blocks (~2.0 hours)
+
+🔍 Integrity Issues:
+  ⚠️ Found 61 gaps totaling 24934 blocks
+
+💡 Recommendations:
+  • Run backfill for 61 gaps
+  • Estimated backfill time: 50 seconds
+💾 Saved 62 processed ranges
+
+📄 Full report saved to: gap-analysis-report.json
+
+📊 Gaps remaining: 61
+📊 Blocks to fill: 24,934
+
+🔧 Processing next 10 gaps...
+🚀 Starting Gap Backfill Service
+
+📋 Loaded 62 processed ranges
+📊 Found 61 gaps to backfill
+🎯 Processing top 10 gaps
+
+
+🔧 Backfilling gap: 23144260 to 23144909 (650 blocks)
+  📦 Chunk 23144260-23144659 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23144660-23144909 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23214833 to 23215472 (640 blocks)
+  📦 Chunk 23214833-23215232 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23215233-23215472 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23156179 to 23156801 (623 blocks)
+  📦 Chunk 23156179-23156578 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23156579-23156801 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23185325 to 23185942 (618 blocks)
+  📦 Chunk 23185325-23185724 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23185725-23185942 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23100646 to 23101255 (610 blocks)
+  📦 Chunk 23100646-23101045 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23101046-23101255 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23040890 to 23041495 (606 blocks)
+  📦 Chunk 23040890-23041289 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23041290-23041495 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23144911 to 23145509 (599 blocks)
+  📦 Chunk 23144911-23145310 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23145311-23145509 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23213735 to 23214318 (584 blocks)
+  📦 Chunk 23213735-23214134 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23214135-23214318 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23187161 to 23187737 (577 blocks)
+  📦 Chunk 23187161-23187560 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23187561-23187737 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23134354 to 23134912 (559 blocks)
+  📦 Chunk 23134354-23134753 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23134754-23134912 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+💾 Saving updated data...
+💾 Saved 52 processed ranges
+
+════════════════════════════════════════════
+         BACKFILL COMPLETE                  
+════════════════════════════════════════════
+
+✅ Processed 10 gaps
+🔥 Recovered 0 burns
+💰 Total TINC recovered: 0.00
+
+📊 Remaining gaps: 51
+   Run again to process more gaps
+
+⏱️  Time elapsed: 3.4 minutes
+📈 Total gaps processed: 190
+🔥 Total burns recovered: 2
+⏳ Estimated time remaining: 0.9 minutes
+
+💤 Pausing 2 seconds before next batch...
+
+📦 Iteration 20
+==================================================
+🔍 Starting Gap-Resistant Analysis...
+
+📋 Loaded 52 processed ranges
+
+════════════════════════════════════════════
+         GAP ANALYSIS REPORT                
+════════════════════════════════════════════
+
+📊 Coverage Statistics:
+  • Processed ranges: 52
+  • Block range: 23030315 to 23243017
+  • Blocks covered: 193,835
+  • Coverage: 91.13%
+
+⚠️  Gaps Detected: 51
+  Top 5 largest gaps:
+  • Blocks 23188981-23189528: 548 blocks (~1.8 hours)
+  • Blocks 23136195-23136711: 517 blocks (~1.7 hours)
+  • Blocks 23132611-23133122: 512 blocks (~1.7 hours)
+  • Blocks 23214320-23214831: 512 blocks (~1.7 hours)
+  • Blocks 23122960-23123470: 511 blocks (~1.7 hours)
+
+🔍 Integrity Issues:
+  ⚠️ Found 51 gaps totaling 18868 blocks
+
+💡 Recommendations:
+  • Run backfill for 51 gaps
+  • Estimated backfill time: 38 seconds
+💾 Saved 52 processed ranges
+
+📄 Full report saved to: gap-analysis-report.json
+
+📊 Gaps remaining: 51
+📊 Blocks to fill: 18,868
+
+🔧 Processing next 10 gaps...
+🚀 Starting Gap Backfill Service
+
+📋 Loaded 52 processed ranges
+📊 Found 51 gaps to backfill
+🎯 Processing top 10 gaps
+
+
+🔧 Backfilling gap: 23188981 to 23189528 (548 blocks)
+  📦 Chunk 23188981-23189380 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23189381-23189528 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23136195 to 23136711 (517 blocks)
+  📦 Chunk 23136195-23136594 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23136595-23136711 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23132611 to 23133122 (512 blocks)
+  📦 Chunk 23132611-23133010 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23133011-23133122 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23214320 to 23214831 (512 blocks)
+  📦 Chunk 23214320-23214719 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23214720-23214831 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23122960 to 23123470 (511 blocks)
+  📦 Chunk 23122960-23123359 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23123360-23123470 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23049146 to 23049651 (506 blocks)
+  📦 Chunk 23049146-23049545 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23049546-23049651 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23101257 to 23101760 (504 blocks)
+  📦 Chunk 23101257-23101656 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23101657-23101760 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23150775 to 23151275 (501 blocks)
+  📦 Chunk 23150775-23151174 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23151175-23151275 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23134914 to 23135397 (484 blocks)
+  📦 Chunk 23134914-23135313 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23135314-23135397 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23087590 to 23088071 (482 blocks)
+  📦 Chunk 23087590-23087989 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23087990-23088071 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+💾 Saving updated data...
+💾 Saved 42 processed ranges
+
+════════════════════════════════════════════
+         BACKFILL COMPLETE                  
+════════════════════════════════════════════
+
+✅ Processed 10 gaps
+🔥 Recovered 0 burns
+💰 Total TINC recovered: 0.00
+
+📊 Remaining gaps: 41
+   Run again to process more gaps
+
+⏱️  Time elapsed: 3.5 minutes
+📈 Total gaps processed: 200
+🔥 Total burns recovered: 2
+⏳ Estimated time remaining: 0.7 minutes
+
+💤 Pausing 2 seconds before next batch...
+
+📦 Iteration 21
+==================================================
+🔍 Starting Gap-Resistant Analysis...
+
+📋 Loaded 52 processed ranges
+
+════════════════════════════════════════════
+         GAP ANALYSIS REPORT                
+════════════════════════════════════════════
+
+📊 Coverage Statistics:
+  • Processed ranges: 52
+  • Block range: 23030315 to 23243017
+  • Blocks covered: 193,835
+  • Coverage: 91.13%
+
+⚠️  Gaps Detected: 51
+  Top 5 largest gaps:
+  • Blocks 23188981-23189528: 548 blocks (~1.8 hours)
+  • Blocks 23136195-23136711: 517 blocks (~1.7 hours)
+  • Blocks 23132611-23133122: 512 blocks (~1.7 hours)
+  • Blocks 23214320-23214831: 512 blocks (~1.7 hours)
+  • Blocks 23122960-23123470: 511 blocks (~1.7 hours)
+
+🔍 Integrity Issues:
+  ⚠️ Found 51 gaps totaling 18868 blocks
+
+💡 Recommendations:
+  • Run backfill for 51 gaps
+  • Estimated backfill time: 38 seconds
+💾 Saved 52 processed ranges
+
+📄 Full report saved to: gap-analysis-report.json
+
+📊 Gaps remaining: 51
+📊 Blocks to fill: 18,868
+
+🔧 Processing next 10 gaps...
+🚀 Starting Gap Backfill Service
+
+📋 Loaded 52 processed ranges
+📊 Found 51 gaps to backfill
+🎯 Processing top 10 gaps
+
+
+🔧 Backfilling gap: 23188981 to 23189528 (548 blocks)
+  📦 Chunk 23188981-23189380 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23189381-23189528 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23136195 to 23136711 (517 blocks)
+  📦 Chunk 23136195-23136594 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23136595-23136711 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23132611 to 23133122 (512 blocks)
+  📦 Chunk 23132611-23133010 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23133011-23133122 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23214320 to 23214831 (512 blocks)
+  📦 Chunk 23214320-23214719 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23214720-23214831 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23122960 to 23123470 (511 blocks)
+  📦 Chunk 23122960-23123359 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23123360-23123470 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23049146 to 23049651 (506 blocks)
+  📦 Chunk 23049146-23049545 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23049546-23049651 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23101257 to 23101760 (504 blocks)
+  📦 Chunk 23101257-23101656 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23101657-23101760 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23150775 to 23151275 (501 blocks)
+  📦 Chunk 23150775-23151174 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23151175-23151275 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23134914 to 23135397 (484 blocks)
+  📦 Chunk 23134914-23135313 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23135314-23135397 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23087590 to 23088071 (482 blocks)
+  📦 Chunk 23087590-23087989 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23087990-23088071 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+💾 Saving updated data...
+💾 Saved 42 processed ranges
+
+════════════════════════════════════════════
+         BACKFILL COMPLETE                  
+════════════════════════════════════════════
+
+✅ Processed 10 gaps
+🔥 Recovered 0 burns
+💰 Total TINC recovered: 0.00
+
+📊 Remaining gaps: 41
+   Run again to process more gaps
+
+⏱️  Time elapsed: 3.6 minutes
+📈 Total gaps processed: 210
+🔥 Total burns recovered: 2
+⏳ Estimated time remaining: 0.7 minutes
+
+💤 Pausing 2 seconds before next batch...
+
+📦 Iteration 22
+==================================================
+🔍 Starting Gap-Resistant Analysis...
+
+📋 Loaded 42 processed ranges
+
+════════════════════════════════════════════
+         GAP ANALYSIS REPORT                
+════════════════════════════════════════════
+
+📊 Coverage Statistics:
+  • Processed ranges: 42
+  • Block range: 23030315 to 23243017
+  • Blocks covered: 198,912
+  • Coverage: 93.52%
+
+⚠️  Gaps Detected: 41
+  Top 5 largest gaps:
+  • Blocks 23186678-23187159: 482 blocks (~1.6 hours)
+  • Blocks 23048250-23048729: 480 blocks (~1.6 hours)
+  • Blocks 23205696-23206175: 480 blocks (~1.6 hours)
+  • Blocks 23099463-23099933: 471 blocks (~1.6 hours)
+  • Blocks 23041497-23041965: 469 blocks (~1.6 hours)
+
+🔍 Integrity Issues:
+  ⚠️ Found 41 gaps totaling 13791 blocks
+
+💡 Recommendations:
+  • Run backfill for 41 gaps
+  • Estimated backfill time: 28 seconds
+💾 Saved 42 processed ranges
+
+📄 Full report saved to: gap-analysis-report.json
+
+📊 Gaps remaining: 41
+📊 Blocks to fill: 13,791
+
+🔧 Processing next 10 gaps...
+🚀 Starting Gap Backfill Service
+
+📋 Loaded 42 processed ranges
+📊 Found 41 gaps to backfill
+🎯 Processing top 10 gaps
+
+
+🔧 Backfilling gap: 23186678 to 23187159 (482 blocks)
+  📦 Chunk 23186678-23187077 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23187078-23187159 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23048250 to 23048729 (480 blocks)
+  📦 Chunk 23048250-23048649 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23048650-23048729 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23205696 to 23206175 (480 blocks)
+  📦 Chunk 23205696-23206095 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23206096-23206175 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23099463 to 23099933 (471 blocks)
+  📦 Chunk 23099463-23099862 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23099863-23099933 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23041497 to 23041965 (469 blocks)
+  📦 Chunk 23041497-23041896 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23041897-23041965 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23094446 to 23094901 (456 blocks)
+  📦 Chunk 23094446-23094845 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23094846-23094901 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23157523 to 23157973 (451 blocks)
+  📦 Chunk 23157523-23157922 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23157923-23157973 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23136713 to 23137156 (444 blocks)
+  📦 Chunk 23136713-23137112 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23137113-23137156 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23142685 to 23143121 (437 blocks)
+  📦 Chunk 23142685-23143084 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23143085-23143121 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23149064 to 23149498 (435 blocks)
+  📦 Chunk 23149064-23149463 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23149464-23149498 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+💾 Saving updated data...
+💾 Saved 32 processed ranges
+
+════════════════════════════════════════════
+         BACKFILL COMPLETE                  
+════════════════════════════════════════════
+
+✅ Processed 10 gaps
+🔥 Recovered 0 burns
+💰 Total TINC recovered: 0.00
+
+📊 Remaining gaps: 31
+   Run again to process more gaps
+
+⏱️  Time elapsed: 3.7 minutes
+📈 Total gaps processed: 220
+🔥 Total burns recovered: 2
+⏳ Estimated time remaining: 0.5 minutes
+
+💤 Pausing 2 seconds before next batch...
+
+📦 Iteration 23
+==================================================
+🔍 Starting Gap-Resistant Analysis...
+
+📋 Loaded 32 processed ranges
+
+════════════════════════════════════════════
+         GAP ANALYSIS REPORT                
+════════════════════════════════════════════
+
+📊 Coverage Statistics:
+  • Processed ranges: 32
+  • Block range: 23030315 to 23243017
+  • Blocks covered: 203,517
+  • Coverage: 95.68%
+
+⚠️  Gaps Detected: 31
+  Top 5 largest gaps:
+  • Blocks 23045673-23046100: 428 blocks (~1.4 hours)
+  • Blocks 23041967-23042388: 422 blocks (~1.4 hours)
+  • Blocks 23059940-23060355: 416 blocks (~1.4 hours)
+  • Blocks 23048731-23049144: 414 blocks (~1.4 hours)
+  • Blocks 23184926-23185323: 398 blocks (~1.3 hours)
+
+🔍 Integrity Issues:
+  ⚠️ Found 31 gaps totaling 9186 blocks
+
+💡 Recommendations:
+  • Run backfill for 31 gaps
+  • Estimated backfill time: 18 seconds
+💾 Saved 32 processed ranges
+
+📄 Full report saved to: gap-analysis-report.json
+
+📊 Gaps remaining: 31
+📊 Blocks to fill: 9,186
+
+🔧 Processing next 10 gaps...
+🚀 Starting Gap Backfill Service
+
+📋 Loaded 32 processed ranges
+📊 Found 31 gaps to backfill
+🎯 Processing top 10 gaps
+
+
+🔧 Backfilling gap: 23045673 to 23046100 (428 blocks)
+  📦 Chunk 23045673-23046072 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23046073-23046100 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23041967 to 23042388 (422 blocks)
+  📦 Chunk 23041967-23042366 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23042367-23042388 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23059940 to 23060355 (416 blocks)
+  📦 Chunk 23059940-23060339 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23060340-23060355 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23048731 to 23049144 (414 blocks)
+  📦 Chunk 23048731-23049130 (attempt 1)... ✅ Found 0 burns
+  📦 Chunk 23049131-23049144 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23184926 to 23185323 (398 blocks)
+  📦 Chunk 23184926-23185323 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23140800 to 23141195 (396 blocks)
+  📦 Chunk 23140800-23141195 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23161172 to 23161561 (390 blocks)
+  📦 Chunk 23161172-23161561 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23122573 to 23122957 (385 blocks)
+  📦 Chunk 23122573-23122957 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23049653 to 23050030 (378 blocks)
+  📦 Chunk 23049653-23050030 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23210472 to 23210808 (337 blocks)
+  📦 Chunk 23210472-23210808 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+💾 Saving updated data...
+💾 Saved 22 processed ranges
+
+════════════════════════════════════════════
+         BACKFILL COMPLETE                  
+════════════════════════════════════════════
+
+✅ Processed 10 gaps
+🔥 Recovered 0 burns
+💰 Total TINC recovered: 0.00
+
+📊 Remaining gaps: 21
+   Run again to process more gaps
+
+⏱️  Time elapsed: 3.8 minutes
+📈 Total gaps processed: 230
+🔥 Total burns recovered: 2
+⏳ Estimated time remaining: 0.3 minutes
+
+💤 Pausing 2 seconds before next batch...
+
+📦 Iteration 24
+==================================================
+🔍 Starting Gap-Resistant Analysis...
+
+📋 Loaded 22 processed ranges
+
+════════════════════════════════════════════
+         GAP ANALYSIS REPORT                
+════════════════════════════════════════════
+
+📊 Coverage Statistics:
+  • Processed ranges: 22
+  • Block range: 23030315 to 23243017
+  • Blocks covered: 207,481
+  • Coverage: 97.54%
+
+⚠️  Gaps Detected: 21
+  Top 5 largest gaps:
+  • Blocks 23094111-23094444: 334 blocks (~1.1 hours)
+  • Blocks 23195287-23195619: 333 blocks (~1.1 hours)
+  • Blocks 23142352-23142683: 332 blocks (~1.1 hours)
+  • Blocks 23070754-23071079: 326 blocks (~1.1 hours)
+  • Blocks 23087173-23087494: 322 blocks (~1.1 hours)
+
+🔍 Integrity Issues:
+  ⚠️ Found 21 gaps totaling 5222 blocks
+
+💡 Recommendations:
+  • Run backfill for 21 gaps
+  • Estimated backfill time: 10 seconds
+💾 Saved 22 processed ranges
+
+📄 Full report saved to: gap-analysis-report.json
+
+📊 Gaps remaining: 21
+📊 Blocks to fill: 5,222
+
+🔧 Processing next 10 gaps...
+🚀 Starting Gap Backfill Service
+
+📋 Loaded 22 processed ranges
+📊 Found 21 gaps to backfill
+🎯 Processing top 10 gaps
+
+
+🔧 Backfilling gap: 23094111 to 23094444 (334 blocks)
+  📦 Chunk 23094111-23094444 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23195287 to 23195619 (333 blocks)
+  📦 Chunk 23195287-23195619 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23142352 to 23142683 (332 blocks)
+  📦 Chunk 23142352-23142683 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23070754 to 23071079 (326 blocks)
+  📦 Chunk 23070754-23071079 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23087173 to 23087494 (322 blocks)
+  📦 Chunk 23087173-23087494 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23044311 to 23044616 (306 blocks)
+  📦 Chunk 23044311-23044616 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23103046 to 23103333 (288 blocks)
+  📦 Chunk 23103046-23103333 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23183866 to 23184150 (285 blocks)
+  📦 Chunk 23183866-23184150 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23155902 to 23156177 (276 blocks)
+  📦 Chunk 23155902-23156177 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23106371 to 23106628 (258 blocks)
+  📦 Chunk 23106371-23106628 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+💾 Saving updated data...
+💾 Saved 12 processed ranges
+
+════════════════════════════════════════════
+         BACKFILL COMPLETE                  
+════════════════════════════════════════════
+
+✅ Processed 10 gaps
+🔥 Recovered 0 burns
+💰 Total TINC recovered: 0.00
+
+📊 Remaining gaps: 11
+   Run again to process more gaps
+
+⏱️  Time elapsed: 3.9 minutes
+📈 Total gaps processed: 240
+🔥 Total burns recovered: 2
+⏳ Estimated time remaining: 0.2 minutes
+
+💤 Pausing 2 seconds before next batch...
+
+📦 Iteration 25
+==================================================
+🔍 Starting Gap-Resistant Analysis...
+
+📋 Loaded 22 processed ranges
+
+════════════════════════════════════════════
+         GAP ANALYSIS REPORT                
+════════════════════════════════════════════
+
+📊 Coverage Statistics:
+  • Processed ranges: 22
+  • Block range: 23030315 to 23243017
+  • Blocks covered: 207,481
+  • Coverage: 97.54%
+
+⚠️  Gaps Detected: 21
+  Top 5 largest gaps:
+  • Blocks 23094111-23094444: 334 blocks (~1.1 hours)
+  • Blocks 23195287-23195619: 333 blocks (~1.1 hours)
+  • Blocks 23142352-23142683: 332 blocks (~1.1 hours)
+  • Blocks 23070754-23071079: 326 blocks (~1.1 hours)
+  • Blocks 23087173-23087494: 322 blocks (~1.1 hours)
+
+🔍 Integrity Issues:
+  ⚠️ Found 21 gaps totaling 5222 blocks
+
+💡 Recommendations:
+  • Run backfill for 21 gaps
+  • Estimated backfill time: 10 seconds
+💾 Saved 22 processed ranges
+
+📄 Full report saved to: gap-analysis-report.json
+
+📊 Gaps remaining: 21
+📊 Blocks to fill: 5,222
+
+🔧 Processing next 10 gaps...
+🚀 Starting Gap Backfill Service
+
+📋 Loaded 22 processed ranges
+📊 Found 21 gaps to backfill
+🎯 Processing top 10 gaps
+
+
+🔧 Backfilling gap: 23094111 to 23094444 (334 blocks)
+  📦 Chunk 23094111-23094444 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23195287 to 23195619 (333 blocks)
+  📦 Chunk 23195287-23195619 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23142352 to 23142683 (332 blocks)
+  📦 Chunk 23142352-23142683 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23070754 to 23071079 (326 blocks)
+  📦 Chunk 23070754-23071079 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23087173 to 23087494 (322 blocks)
+  📦 Chunk 23087173-23087494 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23044311 to 23044616 (306 blocks)
+  📦 Chunk 23044311-23044616 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23103046 to 23103333 (288 blocks)
+  📦 Chunk 23103046-23103333 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23183866 to 23184150 (285 blocks)
+  📦 Chunk 23183866-23184150 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23155902 to 23156177 (276 blocks)
+  📦 Chunk 23155902-23156177 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23106371 to 23106628 (258 blocks)
+  📦 Chunk 23106371-23106628 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+💾 Saving updated data...
+💾 Saved 12 processed ranges
+
+════════════════════════════════════════════
+         BACKFILL COMPLETE                  
+════════════════════════════════════════════
+
+✅ Processed 10 gaps
+🔥 Recovered 0 burns
+💰 Total TINC recovered: 0.00
+
+📊 Remaining gaps: 11
+   Run again to process more gaps
+
+⏱️  Time elapsed: 4.0 minutes
+📈 Total gaps processed: 250
+🔥 Total burns recovered: 2
+⏳ Estimated time remaining: 0.2 minutes
+
+💤 Pausing 2 seconds before next batch...
+
+📦 Iteration 26
+==================================================
+🔍 Starting Gap-Resistant Analysis...
+
+📋 Loaded 22 processed ranges
+
+════════════════════════════════════════════
+         GAP ANALYSIS REPORT                
+════════════════════════════════════════════
+
+📊 Coverage Statistics:
+  • Processed ranges: 22
+  • Block range: 23030315 to 23243017
+  • Blocks covered: 207,481
+  • Coverage: 97.54%
+
+⚠️  Gaps Detected: 21
+  Top 5 largest gaps:
+  • Blocks 23094111-23094444: 334 blocks (~1.1 hours)
+  • Blocks 23195287-23195619: 333 blocks (~1.1 hours)
+  • Blocks 23142352-23142683: 332 blocks (~1.1 hours)
+  • Blocks 23070754-23071079: 326 blocks (~1.1 hours)
+  • Blocks 23087173-23087494: 322 blocks (~1.1 hours)
+
+🔍 Integrity Issues:
+  ⚠️ Found 21 gaps totaling 5222 blocks
+
+💡 Recommendations:
+  • Run backfill for 21 gaps
+  • Estimated backfill time: 10 seconds
+💾 Saved 22 processed ranges
+
+📄 Full report saved to: gap-analysis-report.json
+
+📊 Gaps remaining: 21
+📊 Blocks to fill: 5,222
+
+🔧 Processing next 10 gaps...
+🚀 Starting Gap Backfill Service
+
+📋 Loaded 22 processed ranges
+📊 Found 21 gaps to backfill
+🎯 Processing top 10 gaps
+
+
+🔧 Backfilling gap: 23094111 to 23094444 (334 blocks)
+  📦 Chunk 23094111-23094444 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23195287 to 23195619 (333 blocks)
+  📦 Chunk 23195287-23195619 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23142352 to 23142683 (332 blocks)
+  📦 Chunk 23142352-23142683 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23070754 to 23071079 (326 blocks)
+  📦 Chunk 23070754-23071079 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23087173 to 23087494 (322 blocks)
+  📦 Chunk 23087173-23087494 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23044311 to 23044616 (306 blocks)
+  📦 Chunk 23044311-23044616 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23103046 to 23103333 (288 blocks)
+  📦 Chunk 23103046-23103333 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23183866 to 23184150 (285 blocks)
+  📦 Chunk 23183866-23184150 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23155902 to 23156177 (276 blocks)
+  📦 Chunk 23155902-23156177 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23106371 to 23106628 (258 blocks)
+  📦 Chunk 23106371-23106628 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+💾 Saving updated data...
+💾 Saved 12 processed ranges
+
+════════════════════════════════════════════
+         BACKFILL COMPLETE                  
+════════════════════════════════════════════
+
+✅ Processed 10 gaps
+🔥 Recovered 0 burns
+💰 Total TINC recovered: 0.00
+
+📊 Remaining gaps: 11
+   Run again to process more gaps
+
+⏱️  Time elapsed: 4.0 minutes
+📈 Total gaps processed: 260
+🔥 Total burns recovered: 2
+⏳ Estimated time remaining: 0.2 minutes
+
+💤 Pausing 2 seconds before next batch...
+
+📦 Iteration 27
+==================================================
+🔍 Starting Gap-Resistant Analysis...
+
+📋 Loaded 12 processed ranges
+
+════════════════════════════════════════════
+         GAP ANALYSIS REPORT                
+════════════════════════════════════════════
+
+📊 Coverage Statistics:
+  • Processed ranges: 12
+  • Block range: 23030315 to 23243017
+  • Blocks covered: 210,541
+  • Coverage: 98.98%
+
+⚠️  Gaps Detected: 11
+  Top 5 largest gaps:
+  • Blocks 23124493-23124748: 256 blocks (~0.9 hours)
+  • Blocks 23210810-23211057: 248 blocks (~0.8 hours)
+  • Blocks 23088073-23088319: 247 blocks (~0.8 hours)
+  • Blocks 23109960-23110206: 247 blocks (~0.8 hours)
+  • Blocks 23152562-23152775: 214 blocks (~0.7 hours)
+
+🔍 Integrity Issues:
+  ⚠️ Found 11 gaps totaling 2162 blocks
+
+💡 Recommendations:
+  • Run backfill for 11 gaps
+  • Estimated backfill time: 4 seconds
+💾 Saved 12 processed ranges
+
+📄 Full report saved to: gap-analysis-report.json
+
+📊 Gaps remaining: 11
+📊 Blocks to fill: 2,162
+
+🔧 Processing next 10 gaps...
+🚀 Starting Gap Backfill Service
+
+📋 Loaded 12 processed ranges
+📊 Found 11 gaps to backfill
+🎯 Processing top 10 gaps
+
+
+🔧 Backfilling gap: 23124493 to 23124748 (256 blocks)
+  📦 Chunk 23124493-23124748 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23210810 to 23211057 (248 blocks)
+  📦 Chunk 23210810-23211057 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23088073 to 23088319 (247 blocks)
+  📦 Chunk 23088073-23088319 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23109960 to 23110206 (247 blocks)
+  📦 Chunk 23109960-23110206 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23152562 to 23152775 (214 blocks)
+  📦 Chunk 23152562-23152775 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23115241 to 23115437 (197 blocks)
+  📦 Chunk 23115241-23115437 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23155727 to 23155900 (174 blocks)
+  📦 Chunk 23155727-23155900 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23143123 to 23143279 (157 blocks)
+  📦 Chunk 23143123-23143279 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23070597 to 23070752 (156 blocks)
+  📦 Chunk 23070597-23070752 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+🔧 Backfilling gap: 23059788 to 23059938 (151 blocks)
+  📦 Chunk 23059788-23059938 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+💾 Saving updated data...
+💾 Saved 2 processed ranges
+
+════════════════════════════════════════════
+         BACKFILL COMPLETE                  
+════════════════════════════════════════════
+
+✅ Processed 10 gaps
+🔥 Recovered 0 burns
+💰 Total TINC recovered: 0.00
+
+📊 Remaining gaps: 1
+   Run again to process more gaps
+
+⏱️  Time elapsed: 4.1 minutes
+📈 Total gaps processed: 270
+🔥 Total burns recovered: 2
+⏳ Estimated time remaining: 0.0 minutes
+
+💤 Pausing 2 seconds before next batch...
+
+📦 Iteration 28
+==================================================
+🔍 Starting Gap-Resistant Analysis...
+
+📋 Loaded 2 processed ranges
+
+════════════════════════════════════════════
+         GAP ANALYSIS REPORT                
+════════════════════════════════════════════
+
+📊 Coverage Statistics:
+  • Processed ranges: 2
+  • Block range: 23030315 to 23243017
+  • Blocks covered: 212,588
+  • Coverage: 99.95%
+
+⚠️  Gaps Detected: 1
+  Top 5 largest gaps:
+  • Blocks 23069168-23069282: 115 blocks (~0.4 hours)
+
+🔍 Integrity Issues:
+  ⚠️ Found 1 gaps totaling 115 blocks
+
+💡 Recommendations:
+  • Run backfill for 1 gaps
+  • Estimated backfill time: 0 seconds
+💾 Saved 2 processed ranges
+
+📄 Full report saved to: gap-analysis-report.json
+
+📊 Gaps remaining: 1
+📊 Blocks to fill: 115
+
+🔧 Processing next 1 gaps...
+🚀 Starting Gap Backfill Service
+
+📋 Loaded 2 processed ranges
+📊 Found 1 gaps to backfill
+🎯 Processing top 1 gaps
+
+
+🔧 Backfilling gap: 23069168 to 23069282 (115 blocks)
+  📦 Chunk 23069168-23069282 (attempt 1)... ✅ Found 0 burns
+  ℹ️  No burns found in this gap (blocks processed successfully)
+
+💾 Saving updated data...
+💾 Saved 1 processed ranges
+
+════════════════════════════════════════════
+         BACKFILL COMPLETE                  
+════════════════════════════════════════════
+
+✅ Processed 1 gaps
+🔥 Recovered 0 burns
+💰 Total TINC recovered: 0.00
+
+📊 Remaining gaps: 0
+
+⏱️  Time elapsed: 4.1 minutes
+📈 Total gaps processed: 271
+🔥 Total burns recovered: 2
+⏳ Estimated time remaining: 0.0 minutes
+
+💤 Pausing 2 seconds before next batch...
+
+📦 Iteration 29
+==================================================
+🔍 Starting Gap-Resistant Analysis...
+
+📋 Loaded 1 processed ranges
+
+════════════════════════════════════════════
+         GAP ANALYSIS REPORT                
+════════════════════════════════════════════
+
+📊 Coverage Statistics:
+  • Processed ranges: 1
+  • Block range: 23030315 to 23243017
+  • Blocks covered: 212,703
+  • Coverage: 100.00%
+
+✅ No gaps detected - continuous coverage!
+
+💡 Recommendations:
+💾 Saved 1 processed ranges
+
+📄 Full report saved to: gap-analysis-report.json
+
+✅ SUCCESS! All gaps have been filled!
+
+==================================================
+         COMPLETE CATCHUP FINISHED!
+==================================================
+
+✅ Total gaps filled: 271
+🔥 Total burns recovered: 2
+⏱️  Total time: 4.2 minutes
+📊 Average speed: 65.1 gaps/minute
+
+📤 Data copied to public folder
+
+🎉 System is now fully caught up with 100% block coverage!
+
+✅ Complete catchup successful!

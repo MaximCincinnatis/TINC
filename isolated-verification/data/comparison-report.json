@@ -1,0 +1,334 @@
+{
+  "verificationDate": "2025-09-01T21:13:30.689Z",
+  "period": {
+    "start": "2025-08-27",
+    "end": "2025-09-01"
+  },
+  "summary": {
+    "production": {
+      "totalBurns": 21,
+      "totalAmount": 79920.05797904648
+    },
+    "blockchain": {
+      "totalBurns": 42,
+      "totalAmount": 132181.50737365126
+    },
+    "match": false,
+    "accuracy": "16.67%"
+  },
+  "dailyComparison": [
+    {
+      "date": "2025-08-27",
+      "production": {
+        "amount": 12093.03,
+        "txCount": 6
+      },
+      "blockchain": {
+        "amount": 9605.275777009652,
+        "txCount": 4
+      },
+      "match": false,
+      "diff": {
+        "amount": -2487.7542229903484,
+        "txCount": -2
+      }
+    },
+    {
+      "date": "2025-08-28",
+      "production": {
+        "amount": 42286.719999999994,
+        "txCount": 8
+      },
+      "blockchain": {
+        "amount": 31864.378903204226,
+        "txCount": 8
+      },
+      "match": false,
+      "diff": {
+        "amount": -10422.341096795768,
+        "txCount": 0
+      }
+    },
+    {
+      "date": "2025-08-29",
+      "production": {
+        "amount": 1652.139760761496,
+        "txCount": 1
+      },
+      "blockchain": {
+        "amount": 23353.704421791397,
+        "txCount": 8
+      },
+      "match": false,
+      "diff": {
+        "amount": 21701.5646610299,
+        "txCount": 7
+      }
+    },
+    {
+      "date": "2025-08-30",
+      "production": {
+        "amount": 5103.978349736587,
+        "txCount": 3
+      },
+      "blockchain": {
+        "amount": 29247.153640244174,
+        "txCount": 8
+      },
+      "match": false,
+      "diff": {
+        "amount": 24143.17529050759,
+        "txCount": 5
+      }
+    },
+    {
+      "date": "2025-08-31",
+      "production": {
+        "amount": 1914.6141193589028,
+        "txCount": 1
+      },
+      "blockchain": {
+        "amount": 12121.089336260848,
+        "txCount": 8
+      },
+      "match": false,
+      "diff": {
+        "amount": 10206.475216901945,
+        "txCount": 7
+      }
+    },
+    {
+      "date": "2025-09-01",
+      "production": {
+        "amount": 16869.5757491895,
+        "txCount": 2
+      },
+      "blockchain": {
+        "amount": 16869.5757491895,
+        "txCount": 2
+      },
+      "match": true,
+      "diff": {
+        "amount": 0,
+        "txCount": 0
+      }
+    }
+  ],
+  "discrepancies": [
+    {
+      "type": "AMOUNT_MISMATCH",
+      "date": "2025-08-27",
+      "production": 12093.03,
+      "blockchain": 9605.275777009652,
+      "difference": -2487.7542229903484,
+      "txDiff": -2
+    },
+    {
+      "type": "AMOUNT_MISMATCH",
+      "date": "2025-08-28",
+      "production": 42286.719999999994,
+      "blockchain": 31864.378903204226,
+      "difference": -10422.341096795768,
+      "txDiff": 0
+    },
+    {
+      "type": "AMOUNT_MISMATCH",
+      "date": "2025-08-29",
+      "production": 1652.139760761496,
+      "blockchain": 23353.704421791397,
+      "difference": 21701.5646610299,
+      "txDiff": 7
+    },
+    {
+      "type": "AMOUNT_MISMATCH",
+      "date": "2025-08-30",
+      "production": 5103.978349736587,
+      "blockchain": 29247.153640244174,
+      "difference": 24143.17529050759,
+      "txDiff": 5
+    },
+    {
+      "type": "AMOUNT_MISMATCH",
+      "date": "2025-08-31",
+      "production": 1914.6141193589028,
+      "blockchain": 12121.089336260848,
+      "difference": 10206.475216901945,
+      "txDiff": 7
+    }
+  ],
+  "missingTransactions": [
+    {
+      "date": "2025-08-28",
+      "hash": "0xc5abc824056a98dc37a5b865262d6ecf455f0fced6c6be8ef03d05ea3f82b34a",
+      "amount": 2164.005014319372,
+      "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+      "blockNumber": 23236679
+    },
+    {
+      "date": "2025-08-28",
+      "hash": "0x6cf6f45ce70e46ff682b4848318d11b55c1e2dd23002c05a5cae8f8229c0b096",
+      "amount": 323.7381944978109,
+      "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+      "blockNumber": 23236972
+    },
+    {
+      "date": "2025-08-29",
+      "hash": "0xcf02bcf824244ae096fec88722d7e95992b5e19e6299d48c913ee1a977da386b",
+      "amount": 12670.652675368277,
+      "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+      "blockNumber": 23243198
+    },
+    {
+      "date": "2025-08-29",
+      "hash": "0x005902cdabe7d236d76470b1c518d6e5aedbcbeb4945612d6f73e9e3cbd1bb16",
+      "amount": 239.44700463782866,
+      "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+      "blockNumber": 23243421
+    },
+    {
+      "date": "2025-08-29",
+      "hash": "0xb787e6513b88ef79833d1c46bd5a21372b0ded5c2f6625fe821e0c0b356e87f9",
+      "amount": 2377.8745090779857,
+      "from": "0x9fabf48ebe587ee4f8b3172012c3060cc40fea6c",
+      "blockNumber": 23244944
+    },
+    {
+      "date": "2025-08-29",
+      "hash": "0x098630534cfbec8ed15963b744926ffcee5eeaabe90b1227581513237648321e",
+      "amount": 1706.5686780280635,
+      "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+      "blockNumber": 23244962
+    },
+    {
+      "date": "2025-08-29",
+      "hash": "0xb5f9f34708ba3abc03e07d85a7a3c7d61c36a63afc8464e1d6b300c35fad3a63",
+      "amount": 2474.936971789959,
+      "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+      "blockNumber": 23244993
+    },
+    {
+      "date": "2025-08-29",
+      "hash": "0xf9c98f3b8ef89804d07f28da121c64707cafcb23ad3015d251add64a41223717",
+      "amount": 389.2456873108306,
+      "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+      "blockNumber": 23245351
+    },
+    {
+      "date": "2025-08-29",
+      "hash": "0x5f6b66d7b7015c16eb6296e4b25b8d9aaa7e5a275b745ef894bdf7cd1c4e0189",
+      "amount": 1842.839134816952,
+      "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+      "blockNumber": 23248509
+    },
+    {
+      "date": "2025-08-30",
+      "hash": "0x2b6842137d91b779bfcbed328ef9a345543f2dfdff8f821868c7acdb91957a9f",
+      "amount": 1951.8947032735655,
+      "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+      "blockNumber": 23250301
+    },
+    {
+      "date": "2025-08-30",
+      "hash": "0xb0227378b0dbc28686095f6dff797a65f326c6cf67d2e3b6beafd9f07b2ee769",
+      "amount": 294.3703894605075,
+      "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+      "blockNumber": 23252120
+    },
+    {
+      "date": "2025-08-30",
+      "hash": "0x6fdbd1530a506dea5fcc3de82d36214d58e2dc5513a5bd68ed6216de25f49e6b",
+      "amount": 827.5916800397306,
+      "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+      "blockNumber": 23252535
+    },
+    {
+      "date": "2025-08-30",
+      "hash": "0x9f3e8bbb9d76768f8bfbdf37f4be8989fc878b0e99303e9789fe06b8266c85c2",
+      "amount": 6705.89654857102,
+      "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+      "blockNumber": 23252959
+    },
+    {
+      "date": "2025-08-30",
+      "hash": "0x6460e9fba76d3c3e896791f47ba3293696435c864cabcae1e0e5bf47e197fa04",
+      "amount": 14363.421969162762,
+      "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+      "blockNumber": 23254329
+    },
+    {
+      "date": "2025-08-31",
+      "hash": "0x2640ae929566eccd336027b6d1bde8a172e43bfae9b4696f15f57ef88093c479",
+      "amount": 2220.136213809372,
+      "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+      "blockNumber": 23257413
+    },
+    {
+      "date": "2025-08-31",
+      "hash": "0x859ffec803472131ae77194b4fb808cce3e06216599239d2b2e6b8fce3eb8760",
+      "amount": 3146.9571888674977,
+      "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+      "blockNumber": 23258205
+    },
+    {
+      "date": "2025-08-31",
+      "hash": "0x66dd3bbb18d7f8dfba45601aa7aca9f215ea1fc6a959bebe5b39f3faae67ed35",
+      "amount": 552.5905427316403,
+      "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+      "blockNumber": 23259283
+    },
+    {
+      "date": "2025-08-31",
+      "hash": "0x30e19388791e921239144d68dfb82ec72f032f4e407cbb560fe1745f8bcf30ea",
+      "amount": 1371.7933408710578,
+      "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+      "blockNumber": 23260824
+    },
+    {
+      "date": "2025-08-31",
+      "hash": "0xea25d49025c817a57a1caa536ebba627d38515dcc5f04f40f6dcebd35f64ec4e",
+      "amount": 656.2988146406753,
+      "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+      "blockNumber": 23260858
+    },
+    {
+      "date": "2025-08-31",
+      "hash": "0x3c4fa50ca9a11dfb1f61c328c0b1a567c0eff9796aa91db8df4376d7e26b2249",
+      "amount": 847.7950144647436,
+      "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+      "blockNumber": 23261985
+    },
+    {
+      "date": "2025-08-31",
+      "hash": "0x1a490f0fca147c48a6e120f17590483fe4aa778dd6144b7d452bcfe4b3037e4c",
+      "amount": 1410.9041015169582,
+      "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+      "blockNumber": 23263015
+    }
+  ],
+  "extraTransactions": [
+    {
+      "date": "2025-08-27",
+      "hash": "0xc5abc824056a98dc37a5b865262d6ecf455f0fced6c6be8ef03d05ea3f82b34a",
+      "amount": 2164.01,
+      "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+    },
+    {
+      "date": "2025-08-27",
+      "hash": "0x6cf6f45ce70e46ff682b4848318d11b55c1e2dd23002c05a5cae8f8229c0b096",
+      "amount": 323.74,
+      "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+    },
+    {
+      "date": "2025-08-28",
+      "hash": "0xcf02bcf824244ae096fec88722d7e95992b5e19e6299d48c913ee1a977da386b",
+      "amount": 12670.65,
+      "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+    },
+    {
+      "date": "2025-08-28",
+      "hash": "0x005902cdabe7d236d76470b1c518d6e5aedbcbeb4945612d6f73e9e3cbd1bb16",
+      "amount": 239.45,
+      "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+    }
+  ]
+}

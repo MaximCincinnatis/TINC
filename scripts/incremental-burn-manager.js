@@ -8,7 +8,14 @@ const path = require('path');
  */
 class IncrementalBurnManager {
   constructor() {
-    this.dataPath = path.join(__dirname, '../data/burn-data.json');
+    // Use manifest to get latest data file
+    const manifestPath = path.join(__dirname, '../data/data-manifest.json');
+    if (fs.existsSync(manifestPath)) {
+      const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+      this.dataPath = path.join(__dirname, '../data', manifest.latest || 'burn-data.json');
+    } else {
+      this.dataPath = path.join(__dirname, '../data/burn-data.json');
+    }
     this.HISTORICAL_CUTOFF_HOURS = 120; // Don't modify data older than 120 hours (5 days)
   }
 
@@ -16,6 +23,13 @@ class IncrementalBurnManager {
    * Load existing burn data from file
    */
   loadExistingData() {
+    // Re-check manifest in case it changed
+    const manifestPath = path.join(__dirname, '../data/data-manifest.json');
+    if (fs.existsSync(manifestPath)) {
+      const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+      this.dataPath = path.join(__dirname, '../data', manifest.latest || 'burn-data.json');
+    }
+    
     if (!fs.existsSync(this.dataPath)) {
       throw new Error('No existing burn data found. Run full refresh first.');
     }
@@ -200,7 +214,9 @@ class IncrementalBurnManager {
           }
         }
         
-        const totalBurned = result.reduce((sum, day) => sum + day.amountTinc, 0);
+        // CRITICAL FIX: Preserve historical total, never let it decrease
+        const windowTotal = result.reduce((sum, day) => sum + day.amountTinc, 0);
+        const totalBurned = Math.max(existingData.totalBurned || 0, windowTotal);
         const burnPercentage = existingData.totalSupply > 0 ? (totalBurned / existingData.totalSupply) * 100 : 0;
         
         return {
@@ -269,10 +285,33 @@ class IncrementalBurnManager {
   }
 
   /**
-   * Validate merged data integrity
+   * Validate merged data integrity - CRITICAL FIX FOR DATA REGRESSION
    */
   validateMergedData(originalData, mergedData) {
     console.log('🔍 Validating merged data integrity...');
+    
+    // CRITICAL FIX #1: NEVER allow total to decrease
+    if (mergedData.totalBurned < originalData.totalBurned) {
+      console.error('❌ DATA REGRESSION DETECTED!');
+      console.error(`  Original: ${originalData.totalBurned} TINC`);
+      console.error(`  Merged (rejected): ${mergedData.totalBurned} TINC`);
+      console.error(`  Would lose: ${(originalData.totalBurned - mergedData.totalBurned).toFixed(3)} TINC`);
+      
+      // Force preservation of historical maximum
+      mergedData.totalBurned = Math.max(originalData.totalBurned, mergedData.totalBurned);
+      mergedData.regressionPrevented = true;
+      
+      // Log incident for monitoring
+      const incidentPath = path.join(__dirname, '../data/regression-incidents.log');
+      const incident = {
+        timestamp: new Date().toISOString(),
+        originalTotal: originalData.totalBurned,
+        attemptedTotal: mergedData.totalBurned,
+        difference: originalData.totalBurned - mergedData.totalBurned,
+        action: 'PREVENTED'
+      };
+      fs.appendFileSync(incidentPath, JSON.stringify(incident) + '\n');
+    }
     
     // Check structure
     if (!mergedData.dailyBurns || mergedData.dailyBurns.length !== 30) {

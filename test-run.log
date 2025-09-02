@@ -1,0 +1,43 @@
+[dotenv@17.2.1] injecting env (4) from .env -- tip: 📡 version env with Radar: https://dotenvx.com/radar
+[dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+[dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 version env with Radar: https://dotenvx.com/radar
+[dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+[dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+🔄 Starting INCREMENTAL data update...
+[dotenv@17.2.1] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+📁 Loaded existing data: 30 days, last updated: 2025-09-01T23:03:53.245Z
+📁 Loaded existing data: 30 days, last updated: 2025-09-01T23:03:53.245Z
+📦 Last processed block: 23271450
+📦 Block-based incremental update:
+   Last processed: 23271450
+   Current block: 23271471
+   Fetching: 23271451 to 23271471
+🔄 Fetching recent burns from block 23271451 to 23271471...
+🔄 Processing 1 chunks for recent data...
+Fetching blocks 23271451 to 23271471 (21 blocks, attempt 1/3, timeout: 30s)...
+📊 Progress: 1/1 chunks (100.0%) - Found 0 burns
+✅ Found 0 total burn transactions (including recovered)
+📊 Found holder cache (1 hours old)
+🔄 Performing incremental holder update...
+📊 Fetching Transfer events from block 23270974 to 23271471...
+  ✅ Found 0 transfers in blocks 23270974-23271471
+📊 Found 0 transfer events since last update
+✅ No changes - returning cached data
+🔄 Merging new burns with existing data (block-based)...
+📊 Merge complete:
+   Days in window: 30
+   Total burned: 1,076,937.775 TINC
+   Date range: 2025-08-03 to 2025-09-01
+🔍 Validating merged data integrity...
+✅ Data validation passed - historical data preserved
+📊 Merged data summary:
+   Total TINC burned: 1,076,937.775
+   Total transactions: 225
+   Burn percentage: 6.7436%
+💾 Incremental data saved to: /home/wsl/projects/TINC/data/burn-data-v1756768084366.json
+🔍 Validating updated burn data...
+  Skipping validation for today (still in progress)
+✅ Data validation passed!
+✅ Incremental update completed successfully!
+📊 Total TINC burned: 1,076,937.775
+👥 Total holders: 134

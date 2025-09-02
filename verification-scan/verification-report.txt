@@ -1,0 +1,36 @@
+
+======================================================================
+TINC BURN VERIFICATION REPORT
+Generated: 2025-09-02T15:35:36.117Z
+Period: Last 30 days
+======================================================================
+
+📊 SUMMARY
+  Production Total:    1030551.5450526023 TINC (218 txs)
+  Blockchain Total:    1057759.000 TINC (226 txs)
+  Difference:          -27207.455 TINC
+  Accuracy:            97.43%
+
+❌ MISSING TRANSACTIONS (on blockchain but not in production)
+  Count: 10
+  Total: 44940.000 TINC
+
+  First 5 missing:
+    0x8da3d496... | 20428 TINC | Block 23060356
+    0x52c99ffb... | 256 TINC | Block 23062754
+    0x9c5ce9ee... | 1280 TINC | Block 23063664
+    0x97f0973c... | 867 TINC | Block 23221721
+    0x4ecc267f... | 6756 TINC | Block 23221725
+
+⚠️  EXTRA TRANSACTIONS (in production but not on blockchain)
+  Count: 2
+  Total: 0.000 TINC
+
+  First 5 extra:
+    0xa382c10c... | undefined TINC
+    0x8dc67f2b... | undefined TINC
+
+======================================================================
+❌ VERIFICATION FAILED: Missing burns detected
+   Action Required: Run recovery script to add missing burns
+======================================================================

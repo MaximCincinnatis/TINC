@@ -1,0 +1,816 @@
+{
+  "scanDate": "2025-08-29T03:08:17.679Z",
+  "method": "Direct Transfer event scan to 0x0",
+  "dailyResults": [
+    {
+      "date": "2025-08-25",
+      "burns": [],
+      "totalBurned": 0,
+      "failedChunks": [
+        {
+          "start": 23214800,
+          "end": 23215199,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23215200,
+          "end": 23215599,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23215600,
+          "end": 23215999,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23216000,
+          "end": 23216399,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23216400,
+          "end": 23216799,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23216800,
+          "end": 23217199,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23217200,
+          "end": 23217599,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23217600,
+          "end": 23217999,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23218000,
+          "end": 23218399,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23218400,
+          "end": 23218799,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23218800,
+          "end": 23219199,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23219200,
+          "end": 23219599,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23219600,
+          "end": 23219999,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23220000,
+          "end": 23220399,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23220400,
+          "end": 23220799,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23220800,
+          "end": 23221199,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23221200,
+          "end": 23221599,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23221600,
+          "end": 23221999,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23222000,
+          "end": 23222199,
+          "error": "Web3 is not a constructor"
+        }
+      ],
+      "blockRange": {
+        "start": 23214800,
+        "end": 23222199
+      }
+    },
+    {
+      "date": "2025-08-26",
+      "burns": [],
+      "totalBurned": 0,
+      "failedChunks": [
+        {
+          "start": 23222200,
+          "end": 23222599,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23222600,
+          "end": 23222999,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23223000,
+          "end": 23223399,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23223400,
+          "end": 23223799,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23223800,
+          "end": 23224199,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23224200,
+          "end": 23224599,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23224600,
+          "end": 23224999,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23225000,
+          "end": 23225399,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23225400,
+          "end": 23225799,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23225800,
+          "end": 23226199,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23226200,
+          "end": 23226599,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23226600,
+          "end": 23226999,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23227000,
+          "end": 23227399,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23227400,
+          "end": 23227799,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23227800,
+          "end": 23228199,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23228200,
+          "end": 23228599,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23228600,
+          "end": 23228999,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23229000,
+          "end": 23229399,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23229400,
+          "end": 23229599,
+          "error": "Web3 is not a constructor"
+        }
+      ],
+      "blockRange": {
+        "start": 23222200,
+        "end": 23229599
+      }
+    },
+    {
+      "date": "2025-08-27",
+      "burns": [],
+      "totalBurned": 0,
+      "failedChunks": [
+        {
+          "start": 23229600,
+          "end": 23229999,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23230000,
+          "end": 23230399,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23230400,
+          "end": 23230799,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23230800,
+          "end": 23231199,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23231200,
+          "end": 23231599,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23231600,
+          "end": 23231999,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23232000,
+          "end": 23232399,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23232400,
+          "end": 23232799,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23232800,
+          "end": 23233199,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23233200,
+          "end": 23233599,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23233600,
+          "end": 23233999,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23234000,
+          "end": 23234399,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23234400,
+          "end": 23234799,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23234800,
+          "end": 23235199,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23235200,
+          "end": 23235599,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23235600,
+          "end": 23235999,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23236000,
+          "end": 23236399,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23236400,
+          "end": 23236799,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23236800,
+          "end": 23236999,
+          "error": "Web3 is not a constructor"
+        }
+      ],
+      "blockRange": {
+        "start": 23229600,
+        "end": 23236999
+      }
+    },
+    {
+      "date": "2025-08-28",
+      "burns": [],
+      "totalBurned": 0,
+      "failedChunks": [
+        {
+          "start": 23237000,
+          "end": 23237399,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23237400,
+          "end": 23237799,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23237800,
+          "end": 23238199,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23238200,
+          "end": 23238599,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23238600,
+          "end": 23238999,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23239000,
+          "end": 23239399,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23239400,
+          "end": 23239799,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23239800,
+          "end": 23240199,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23240200,
+          "end": 23240599,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23240600,
+          "end": 23240999,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23241000,
+          "end": 23241399,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23241400,
+          "end": 23241799,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23241800,
+          "end": 23242199,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23242200,
+          "end": 23242599,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23242600,
+          "end": 23242999,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23243000,
+          "end": 23243399,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23243400,
+          "end": 23243799,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23243800,
+          "end": 23244199,
+          "error": "Web3 is not a constructor"
+        },
+        {
+          "start": 23244200,
+          "end": 23244399,
+          "error": "Web3 is not a constructor"
+        }
+      ],
+      "blockRange": {
+        "start": 23237000,
+        "end": 23244399
+      }
+    }
+  ],
+  "summary": {
+    "totalBurns": 0,
+    "totalTinc": 0,
+    "failedChunks": [
+      {
+        "start": 23214800,
+        "end": 23215199,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23215200,
+        "end": 23215599,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23215600,
+        "end": 23215999,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23216000,
+        "end": 23216399,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23216400,
+        "end": 23216799,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23216800,
+        "end": 23217199,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23217200,
+        "end": 23217599,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23217600,
+        "end": 23217999,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23218000,
+        "end": 23218399,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23218400,
+        "end": 23218799,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23218800,
+        "end": 23219199,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23219200,
+        "end": 23219599,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23219600,
+        "end": 23219999,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23220000,
+        "end": 23220399,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23220400,
+        "end": 23220799,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23220800,
+        "end": 23221199,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23221200,
+        "end": 23221599,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23221600,
+        "end": 23221999,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23222000,
+        "end": 23222199,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23222200,
+        "end": 23222599,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23222600,
+        "end": 23222999,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23223000,
+        "end": 23223399,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23223400,
+        "end": 23223799,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23223800,
+        "end": 23224199,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23224200,
+        "end": 23224599,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23224600,
+        "end": 23224999,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23225000,
+        "end": 23225399,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23225400,
+        "end": 23225799,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23225800,
+        "end": 23226199,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23226200,
+        "end": 23226599,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23226600,
+        "end": 23226999,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23227000,
+        "end": 23227399,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23227400,
+        "end": 23227799,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23227800,
+        "end": 23228199,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23228200,
+        "end": 23228599,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23228600,
+        "end": 23228999,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23229000,
+        "end": 23229399,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23229400,
+        "end": 23229599,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23229600,
+        "end": 23229999,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23230000,
+        "end": 23230399,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23230400,
+        "end": 23230799,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23230800,
+        "end": 23231199,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23231200,
+        "end": 23231599,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23231600,
+        "end": 23231999,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23232000,
+        "end": 23232399,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23232400,
+        "end": 23232799,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23232800,
+        "end": 23233199,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23233200,
+        "end": 23233599,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23233600,
+        "end": 23233999,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23234000,
+        "end": 23234399,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23234400,
+        "end": 23234799,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23234800,
+        "end": 23235199,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23235200,
+        "end": 23235599,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23235600,
+        "end": 23235999,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23236000,
+        "end": 23236399,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23236400,
+        "end": 23236799,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23236800,
+        "end": 23236999,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23237000,
+        "end": 23237399,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23237400,
+        "end": 23237799,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23237800,
+        "end": 23238199,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23238200,
+        "end": 23238599,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23238600,
+        "end": 23238999,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23239000,
+        "end": 23239399,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23239400,
+        "end": 23239799,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23239800,
+        "end": 23240199,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23240200,
+        "end": 23240599,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23240600,
+        "end": 23240999,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23241000,
+        "end": 23241399,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23241400,
+        "end": 23241799,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23241800,
+        "end": 23242199,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23242200,
+        "end": 23242599,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23242600,
+        "end": 23242999,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23243000,
+        "end": 23243399,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23243400,
+        "end": 23243799,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23243800,
+        "end": 23244199,
+        "error": "Web3 is not a constructor"
+      },
+      {
+        "start": 23244200,
+        "end": 23244399,
+        "error": "Web3 is not a constructor"
+      }
+    ]
+  }
+}

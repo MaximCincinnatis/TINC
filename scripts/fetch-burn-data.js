@@ -603,7 +603,7 @@ async function fetchHolderData() {
  * Never re-processes blocks = no data overwrites
  */
 async function runIncrementalUpdate() {
-  const IncrementalBurnManager = require('./incremental-burn-manager');
+  const IncrementalBurnManager = require('./incremental-burn-manager-fixed');
   const manager = new IncrementalBurnManager();
   
   try {
