@@ -7,9 +7,13 @@
     {
       "start": 23244400,
       "end": 23292445
+    },
+    {
+      "start": 23292446,
+      "end": 23292618
     }
   ],
-  "lastContinuousBlock": 23292445,
-  "totalGaps": 1,
-  "lastUpdated": "2025-09-04T21:54:19.830Z"
+  "lastContinuousBlock": 23292618,
+  "totalGaps": 2,
+  "lastUpdated": "2025-09-04T22:10:23.894Z"
 }
