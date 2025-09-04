@@ -15,15 +15,58 @@ class GapResistantBurnManager {
 
   /**
    * Load processed ranges from file or initialize
+   * AUTO-SYNC FIX: Now syncs with lastProcessedBlock from main system
    */
   loadProcessedRanges() {
+    let data = null;
+    
+    // Step 1: Load existing ranges if available
     if (fs.existsSync(this.rangesPath)) {
       try {
-        const data = JSON.parse(fs.readFileSync(this.rangesPath, 'utf8'));
+        data = JSON.parse(fs.readFileSync(this.rangesPath, 'utf8'));
         console.log(`📋 Loaded ${data.ranges.length} processed ranges`);
-        return data;
       } catch (error) {
         console.warn('⚠️  Could not load ranges, starting fresh');
+      }
+    }
+    
+    // Step 2: AUTO-SYNC with lastProcessedBlock from main tracking system
+    // This ensures gap manager always agrees with the main system
+    if (fs.existsSync(this.dataPath)) {
+      try {
+        const burnData = JSON.parse(fs.readFileSync(this.dataPath, 'utf8'));
+        
+        // If we have both ranges and lastProcessedBlock, sync them
+        if (data && data.ranges.length > 0 && burnData.lastProcessedBlock) {
+          const maxRangeEnd = Math.max(...data.ranges.map(r => r.end));
+          
+          // If main system is ahead, extend our ranges to match
+          if (burnData.lastProcessedBlock > maxRangeEnd) {
+            console.log(`🔄 Auto-sync: Extending ranges from ${maxRangeEnd} to ${burnData.lastProcessedBlock}`);
+            
+            // Add new range for the untracked blocks
+            data.ranges.push({
+              start: maxRangeEnd + 1,
+              end: burnData.lastProcessedBlock
+            });
+            
+            // Update metadata
+            data.lastContinuousBlock = burnData.lastProcessedBlock;
+            data.totalGaps = data.ranges.length - 1;
+            data.lastUpdated = new Date().toISOString();
+            
+            console.log(`✅ Synced with main system - now tracking up to block ${burnData.lastProcessedBlock}`);
+          }
+        }
+        
+        // If we still don't have data, return it now
+        if (data) {
+          return data;
+        }
+      } catch (error) {
+        console.warn('⚠️  Error during auto-sync:', error.message);
+        // Continue with existing data if sync fails
+        if (data) return data;
       }
     }
     

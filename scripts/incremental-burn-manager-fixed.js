@@ -276,27 +276,19 @@ class IncrementalBurnManager {
   validateMergedData(originalData, mergedData) {
     console.log('🔍 Validating merged data integrity...');
     
-    // CRITICAL FIX #1: NEVER allow total to decrease
-    if (mergedData.totalBurned < originalData.totalBurned) {
-      console.error('❌ DATA REGRESSION DETECTED!');
-      console.error(`  Original: ${originalData.totalBurned} TINC`);
-      console.error(`  Merged (rejected): ${mergedData.totalBurned} TINC`);
-      console.error(`  Would lose: ${(originalData.totalBurned - mergedData.totalBurned).toFixed(3)} TINC`);
+    // FIX: totalBurned should equal the 30-day sum (not cumulative all-time)
+    // Dashboard only displays 30-day totals, so validate that
+    const calculated30DayTotal = mergedData.dailyBurns.reduce((sum, d) => sum + d.amountTinc, 0);
+    
+    if (Math.abs(mergedData.totalBurned - calculated30DayTotal) > 1) {
+      console.warn(`⚠️ Total mismatch with 30-day sum:`);
+      console.warn(`  Stored total: ${mergedData.totalBurned.toFixed(2)} TINC`);
+      console.warn(`  30-day sum: ${calculated30DayTotal.toFixed(2)} TINC`);
+      console.warn(`  Difference: ${Math.abs(mergedData.totalBurned - calculated30DayTotal).toFixed(2)} TINC`);
       
-      // Force preservation of historical maximum
-      mergedData.totalBurned = Math.max(originalData.totalBurned, mergedData.totalBurned);
-      mergedData.regressionPrevented = true;
-      
-      // Log incident for monitoring
-      const incidentPath = path.join(__dirname, '../data/regression-incidents.log');
-      const incident = {
-        timestamp: new Date().toISOString(),
-        originalTotal: originalData.totalBurned,
-        attemptedTotal: mergedData.totalBurned,
-        difference: originalData.totalBurned - mergedData.totalBurned,
-        action: 'PREVENTED'
-      };
-      fs.appendFileSync(incidentPath, JSON.stringify(incident) + '\n');
+      // Auto-correct to match 30-day window
+      mergedData.totalBurned = calculated30DayTotal;
+      console.log(`  ✅ Corrected totalBurned to match 30-day sum`);
     }
     
     // Check structure
