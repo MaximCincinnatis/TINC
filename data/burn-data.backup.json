@@ -1,9 +1,9 @@
 {
   "startDate": "2025-08-03",
   "endDate": "2025-09-01",
-  "totalBurned": 870339.5978827457,
+  "totalBurned": 869478.2442530845,
   "totalSupply": 15969783.670697048,
-  "burnPercentage": 5.449914762964082,
+  "burnPercentage": 5.444521116766847,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
@@ -1504,33 +1504,33 @@
     },
     {
       "date": "2025-09-06",
-      "amountTinc": 2185.7483072048303,
+      "amountTinc": 1324.3946775436923,
       "transactionCount": 1,
       "transactions": [
         {
-          "hash": "0x323610c4c7b1a27939c8714b0ba315b4e3d02e65e3b6edaaf7dc83b99d3aad6f",
-          "amount": 2185.7483072048303,
-          "from": "0x9fabf48ebe587ee4f8b3172012c3060cc40fea6c"
+          "hash": "0x9a5aa71cf0d504cece35f015d59271087badb8b8e7e668aa8e481cfdb5828f86",
+          "amount": 1324.3946775436923,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
     }
   ],
-  "fetchedAt": "2025-09-06T05:41:13.107Z",
+  "fetchedAt": "2025-09-06T06:11:47.131Z",
   "fromCache": true,
-  "lastProcessedBlock": 23302038,
+  "lastProcessedBlock": 23302191,
   "holderStats": {
-    "totalHolders": 143,
+    "totalHolders": 142,
     "poseidon": 0,
     "whale": 10,
-    "shark": 38,
+    "shark": 37,
     "dolphin": 63,
     "squid": 12,
     "shrimp": 20,
     "top10Percentage": 19.416737090111642,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2025-09-06T05:10:44.985Z"
+    "lastUpdate": "2025-09-06T06:11:47.119Z"
   },
-  "lastIncrementalUpdate": "2025-09-06T05:41:13.107Z",
+  "lastIncrementalUpdate": "2025-09-06T06:11:47.131Z",
   "lastUpdated": "2025-08-29T03:41:20.853Z",
   "recoveryApplied": true,
   "recoveryTimestamp": "2025-09-02T16:06:22.696Z",
