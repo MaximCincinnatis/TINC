@@ -1,5 +1,5 @@
 {
-  "lastBlock": 23300221,
+  "lastBlock": 23300524,
   "totalSupply": 15696267.53334864,
   "totalHolders": 143,
   "holders": [
@@ -237,7 +237,7 @@
     },
     {
       "address": "0x52c1cc79fbbef91d3952ae75b1961d08f0172223",
-      "balance": 12090.734365057784
+      "balance": 12322.03564808613
     },
     {
       "address": "0x6a37493fc1b63ee084878b2297ccb744d9337053",
@@ -440,16 +440,16 @@
       "balance": 3287.1887116687985
     },
     {
-      "address": "0x0b73c8ed83f333963e5c6604226fd38ee97a90da",
-      "balance": 3060.1836816971345
-    },
-    {
       "address": "0xc54e9078b40ce075ca9da0752f9d9a664a3347d1",
       "balance": 2854.0745945233252
     },
     {
       "address": "0x9bbb45e12c4a75f7406cb38e858fa6c68a88f30d",
       "balance": 1332.5242479688989
+    },
+    {
+      "address": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+      "balance": 1160.7248152000677
     },
     {
       "address": "0xf9b40a9eeb8ad3e2cfa049c16af6a25401a12553",
@@ -478,10 +478,6 @@
     {
       "address": "0x853ed418904321f57faf4e246c8b4487076f0a68",
       "balance": 482.1040453047516
-    },
-    {
-      "address": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
-      "balance": 466.8209661150327
     },
     {
       "address": "0x39041f1b366fe33f9a5a79de5120f2aee2577ebc",
@@ -536,6 +532,10 @@
       "balance": 44.76116986298501
     },
     {
+      "address": "0x0e149c7fe7369e61babdec5664a3f6955e586a20",
+      "balance": 26.44344979202972
+    },
+    {
       "address": "0x4d7c8f733cde83ae7ac2511cb940933599370f62",
       "balance": 25.865887528467784
     },
@@ -581,12 +581,12 @@
     "poseidon": 0,
     "whale": 10,
     "shark": 37,
-    "dolphin": 64,
+    "dolphin": 63,
     "squid": 13,
-    "shrimp": 19,
+    "shrimp": 20,
     "top10Percentage": 19.416737090111642,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2025-09-05T23:34:58.457Z"
+    "lastUpdate": "2025-09-06T00:36:03.490Z"
   },
-  "cachedAt": "2025-09-05T23:34:58.457Z"
+  "cachedAt": "2025-09-06T00:36:03.490Z"
 }
