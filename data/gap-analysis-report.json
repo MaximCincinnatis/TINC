@@ -1,23 +1,15 @@
 {
-  "timestamp": "2025-09-04T22:10:23.895Z",
+  "timestamp": "2025-09-11T23:00:14.252Z",
   "ranges": [
     {
       "start": 23214800,
-      "end": 23244399
-    },
-    {
-      "start": 23244400,
-      "end": 23292445
-    },
-    {
-      "start": 23292446,
-      "end": 23292618
+      "end": 23342959
     }
   ],
   "gaps": [],
   "issues": [],
   "stats": {
-    "totalRanges": 3,
+    "totalRanges": 1,
     "totalGaps": 0,
     "gapBlocks": 0
   }
