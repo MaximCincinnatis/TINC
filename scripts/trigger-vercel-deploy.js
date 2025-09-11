@@ -1,5 +1,5 @@
-require('dotenv').config();
 #!/usr/bin/env node
+require('dotenv').config();
 
 const https = require('https');
 
