@@ -1,9 +1,9 @@
 {
   "startDate": "2025-08-13",
   "endDate": "2025-09-11",
-  "totalBurned": 801622.5009655829,
+  "totalBurned": 776748.722189306,
   "totalSupply": 15969783.670697048,
-  "burnPercentage": 5.019620287258367,
+  "burnPercentage": 4.863865022884199,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
@@ -1327,8 +1327,8 @@
     },
     {
       "date": "2025-09-12",
-      "amountTinc": 50347.89182734494,
-      "transactionCount": 7,
+      "amountTinc": 25474.113051068027,
+      "transactionCount": 5,
       "transactions": [
         {
           "hash": "0xbf2f50505d30fe3a13a2ec6b4cdc597275cf59f47b58060b1c644a5cb5c2bb0f",
@@ -1354,23 +1354,13 @@
           "hash": "0x36d92d2342a7bc1e3cab0ea50ebc800b23c42b939b2df95cd8242b7641146471",
           "amount": 1070.2322151591543,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x68b384f400010ff7dedb0152f6c29c9bb0ec4de83322232366961ad5eaff5a4a",
-          "amount": 8957.22562536727,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x6ede3abde84a7ac11ede2e70b54f217c42a0aa348d326daef89247c8fdcc9823",
-          "amount": 15916.553150909644,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
     }
   ],
-  "fetchedAt": "2025-09-12T21:04:25.850Z",
+  "fetchedAt": "2025-09-12T20:05:46.633Z",
   "fromCache": true,
-  "lastProcessedBlock": 23349551,
+  "lastProcessedBlock": 23349259,
   "holderStats": {
     "totalHolders": 151,
     "poseidon": 0,
@@ -1381,9 +1371,9 @@
     "shrimp": 25,
     "top10Percentage": 19.117325735358254,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2025-09-12T20:34:08.765Z"
+    "lastUpdate": "2025-09-12T16:31:38.526Z"
   },
-  "lastIncrementalUpdate": "2025-09-12T21:04:25.850Z",
+  "lastIncrementalUpdate": "2025-09-12T20:05:46.633Z",
   "lastUpdated": "2025-08-29T03:41:20.853Z",
   "recoveryApplied": true,
   "recoveryTimestamp": "2025-09-02T16:06:22.696Z",
