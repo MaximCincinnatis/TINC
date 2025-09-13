@@ -1,11 +1,11 @@
 {
-  "lastBlock": 23354384,
+  "lastBlock": 23355279,
   "totalSupply": 15696267.53334864,
   "totalHolders": 153,
   "holders": [
     {
       "address": "0x2ab0307d359dccecf30dac5fa02e9562fb09838f",
-      "balance": 625904.9642647516
+      "balance": 753405.9740798773
     },
     {
       "address": "0xf9c99e2557ddd6971563ff317cbb39319a2ef8f5",
@@ -165,7 +165,7 @@
     },
     {
       "address": "0x9008d19f58aabd9ed0d60971565aa8510560ab41",
-      "balance": 23405.259249467847
+      "balance": 23498.559728065284
     },
     {
       "address": "0xf81a328d5c71f04b4751d9fc0ab55ccf25e48599",
@@ -624,9 +624,9 @@
     "dolphin": 65,
     "squid": 14,
     "shrimp": 25,
-    "top10Percentage": 19.117325735358254,
+    "top10Percentage": 19.929627192021336,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2025-09-13T13:15:41.381Z"
+    "lastUpdate": "2025-09-13T16:15:41.878Z"
   },
-  "cachedAt": "2025-09-13T13:15:41.381Z"
+  "cachedAt": "2025-09-13T16:15:41.878Z"
 }
