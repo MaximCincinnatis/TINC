@@ -1,7 +1,7 @@
 {
-  "lastBlock": 23379153,
+  "lastBlock": 23379601,
   "totalSupply": 15696267.53334864,
-  "totalHolders": 154,
+  "totalHolders": 155,
   "holders": [
     {
       "address": "0x2ab0307d359dccecf30dac5fa02e9562fb09838f",
@@ -432,12 +432,12 @@
       "balance": 3498.0539028550043
     },
     {
-      "address": "0xad8739ebefbfc7ba72429ffc80b10ce420475770",
-      "balance": 3287.1887116687985
+      "address": "0x52c1cc79fbbef91d3952ae75b1961d08f0172223",
+      "balance": 3358.6699142216003
     },
     {
-      "address": "0x52c1cc79fbbef91d3952ae75b1961d08f0172223",
-      "balance": 3172.64997033932
+      "address": "0xad8739ebefbfc7ba72429ffc80b10ce420475770",
+      "balance": 3287.1887116687985
     },
     {
       "address": "0xd01e51417d1b8f46123f0f72caeff583fc5de94d",
@@ -492,6 +492,10 @@
       "balance": 586.7362130956529
     },
     {
+      "address": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+      "balance": 558.059831646841
+    },
+    {
       "address": "0x1e4b1b7b0c9cec26618f221fc5025a6cb2c1943c",
       "balance": 553.1703932613593
     },
@@ -512,6 +516,10 @@
       "balance": 302.3972282764972
     },
     {
+      "address": "0xce645ea0d31f5d1acd0bfbb24d3847040d793e3d",
+      "balance": 220.9006609924777
+    },
+    {
       "address": "0xc4dfecde6ed68ae798331b09f077a4c5b8d8265b",
       "balance": 185.61756898979408
     },
@@ -526,10 +534,6 @@
     {
       "address": "0x307195afc9e37594848e47e0369c65c989f6cebe",
       "balance": 143.00850319279422
-    },
-    {
-      "address": "0xce645ea0d31f5d1acd0bfbb24d3847040d793e3d",
-      "balance": 113.34536027184964
     },
     {
       "address": "0x006004d6c39590d39310a0d34181e15d9ade3902",
@@ -621,16 +625,16 @@
     }
   ],
   "holderStats": {
-    "totalHolders": 154,
+    "totalHolders": 155,
     "poseidon": 0,
     "whale": 9,
     "shark": 40,
     "dolphin": 65,
-    "squid": 14,
-    "shrimp": 26,
+    "squid": 16,
+    "shrimp": 25,
     "top10Percentage": 19.929627192021336,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2025-09-17T00:15:54.155Z"
+    "lastUpdate": "2025-09-17T01:45:55.925Z"
   },
-  "cachedAt": "2025-09-17T00:15:54.155Z"
+  "cachedAt": "2025-09-17T01:45:55.925Z"
 }
