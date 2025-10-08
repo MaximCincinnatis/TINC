@@ -1,5 +1,5 @@
 {
-  "lastBlock": 23535490,
+  "lastBlock": 23535798,
   "totalSupply": 15696267.53334864,
   "totalHolders": 171,
   "holders": [
@@ -698,7 +698,7 @@
     "shrimp": 39,
     "top10Percentage": 21.526099293943176,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2025-10-08T20:44:28.315Z"
+    "lastUpdate": "2025-10-08T21:46:58.410Z"
   },
-  "cachedAt": "2025-10-08T20:44:28.316Z"
+  "cachedAt": "2025-10-08T21:46:58.410Z"
 }
