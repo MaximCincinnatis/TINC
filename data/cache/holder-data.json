@@ -1,7 +1,7 @@
 {
-  "lastBlock": 23532865,
+  "lastBlock": 23533946,
   "totalSupply": 15696267.53334864,
-  "totalHolders": 170,
+  "totalHolders": 171,
   "holders": [
     {
       "address": "0x2ab0307d359dccecf30dac5fa02e9562fb09838f",
@@ -312,6 +312,10 @@
       "balance": 7205.30271151635
     },
     {
+      "address": "0xe8405da66009ff790ae68ae8db7f6b35bbc576e1",
+      "balance": 6978.524489275106
+    },
+    {
       "address": "0x220638bbaf6fffbb7feb4e591fd4cb80c2af4eca",
       "balance": 6844.120067879051
     },
@@ -396,12 +400,12 @@
       "balance": 4286.029380386422
     },
     {
-      "address": "0x0c66966e06164adaaf04b552ba732482ce02f4a6",
-      "balance": 4179.192826301901
+      "address": "0x52c1cc79fbbef91d3952ae75b1961d08f0172223",
+      "balance": 4190.635536630384
     },
     {
-      "address": "0x52c1cc79fbbef91d3952ae75b1961d08f0172223",
-      "balance": 4061.1333921181126
+      "address": "0x0c66966e06164adaaf04b552ba732482ce02f4a6",
+      "balance": 4179.192826301901
     },
     {
       "address": "0x964a8731799dfb97a0df6f2725114b120ce78c4d",
@@ -508,6 +512,10 @@
       "balance": 483.00789853115225
     },
     {
+      "address": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+      "balance": 449.34008348878467
+    },
+    {
       "address": "0x39041f1b366fe33f9a5a79de5120f2aee2577ebc",
       "balance": 435.5150306368143
     },
@@ -578,10 +586,6 @@
     {
       "address": "0xd05d5cfa1c0343374063da83a979ac8a31afe731",
       "balance": 69.430246989888
-    },
-    {
-      "address": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
-      "balance": 60.83364995197042
     },
     {
       "address": "0xb33fe855628271c9190d8cde8beae76583224932",
@@ -685,16 +689,16 @@
     }
   ],
   "holderStats": {
-    "totalHolders": 170,
+    "totalHolders": 171,
     "poseidon": 0,
     "whale": 9,
     "shark": 39,
-    "dolphin": 68,
-    "squid": 15,
-    "shrimp": 39,
+    "dolphin": 69,
+    "squid": 16,
+    "shrimp": 38,
     "top10Percentage": 21.39792956434911,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2025-10-08T11:55:11.128Z"
+    "lastUpdate": "2025-10-08T15:33:12.217Z"
   },
-  "cachedAt": "2025-10-08T11:55:11.129Z"
+  "cachedAt": "2025-10-08T15:33:12.217Z"
 }
