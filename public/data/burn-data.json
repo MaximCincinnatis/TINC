@@ -1,30 +1,13 @@
 {
   "startDate": "2025-08-13",
   "endDate": "2025-09-11",
-  "totalBurned": 226285.10888995786,
+  "totalBurned": 223885.56977847454,
   "totalSupply": 15969783.670697048,
-  "burnPercentage": 1.4169578846905004,
+  "burnPercentage": 1.4019323892864128,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
   "dailyBurns": [
-    {
-      "date": "2025-09-18",
-      "amountTinc": 8231.378134312206,
-      "transactionCount": 2,
-      "transactions": [
-        {
-          "hash": "0x07a365990937af5192a4f574eb335979ffab5120db32d152e2450adb3b3df34e",
-          "amount": 3771.655816769805,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x7b84edc40fd729e111c3557d6d2fa5e9b98a2b8c35c9306ffb76c8ba6a3baf9e",
-          "amount": 4459.722317542401,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        }
-      ]
-    },
     {
       "date": "2025-09-19",
       "amountTinc": 27443.45865578101,
@@ -532,11 +515,23 @@
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
+    },
+    {
+      "date": "2025-10-18",
+      "amountTinc": 5831.839022828896,
+      "transactionCount": 1,
+      "transactions": [
+        {
+          "hash": "0x7455e39ae4eb856d9ba14ff6bf82716371fc5b9250d489028aad9f6d728f47e7",
+          "amount": 5831.839022828896,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
     }
   ],
-  "fetchedAt": "2025-10-18T02:05:18.855Z",
+  "fetchedAt": "2025-10-18T02:33:47.771Z",
   "fromCache": true,
-  "lastProcessedBlock": 23601435,
+  "lastProcessedBlock": 23601577,
   "holderStats": {
     "totalHolders": 178,
     "poseidon": 0,
@@ -547,9 +542,9 @@
     "shrimp": 40,
     "top10Percentage": 23.41265468985576,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2025-10-17T22:46:15.673Z"
+    "lastUpdate": "2025-10-18T02:33:47.746Z"
   },
-  "lastIncrementalUpdate": "2025-10-18T02:05:18.855Z",
+  "lastIncrementalUpdate": "2025-10-18T02:33:47.771Z",
   "lastUpdated": "2025-08-29T03:41:20.853Z",
   "recoveryApplied": true,
   "recoveryTimestamp": "2025-09-02T16:06:22.696Z",
