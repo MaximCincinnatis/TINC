@@ -1,5 +1,5 @@
 {
-  "lastBlock": 23631878,
+  "lastBlock": 23632291,
   "totalSupply": 15696267.53334864,
   "totalHolders": 180,
   "holders": [
@@ -388,6 +388,10 @@
       "balance": 4365.7566443150745
     },
     {
+      "address": "0x52c1cc79fbbef91d3952ae75b1961d08f0172223",
+      "balance": 4356.019210635932
+    },
+    {
       "address": "0x000000fee13a103a10d593b9ae06b3e05f2e7e1c",
       "balance": 4354.385656169293
     },
@@ -398,10 +402,6 @@
     {
       "address": "0x763d69fbc6bc3ef9d9d6de302278bad27e3fb81e",
       "balance": 4286.029380386422
-    },
-    {
-      "address": "0x52c1cc79fbbef91d3952ae75b1961d08f0172223",
-      "balance": 4284.628468793048
     },
     {
       "address": "0x59699cd0f635ec164bd9b6b9d77b63ce6b46daf7",
@@ -544,6 +544,10 @@
       "balance": 386.93765046127913
     },
     {
+      "address": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+      "balance": 355.4619016469314
+    },
+    {
       "address": "0x806b3d39b4042d5343b67fc6e9332d1f0012105c",
       "balance": 302.3972282764972
     },
@@ -586,10 +590,6 @@
     {
       "address": "0x307195afc9e37594848e47e0369c65c989f6cebe",
       "balance": 143.00850319279422
-    },
-    {
-      "address": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
-      "balance": 141.2896761182812
     },
     {
       "address": "0xcd6b980029e6e6e0733ac8ec3e02be9410d09799",
@@ -653,7 +653,7 @@
     },
     {
       "address": "0x78bec0dd50b951b126c064e6c37d701cf28b1d3e",
-      "balance": 11.501776433873113
+      "balance": 13.089765342237412
     },
     {
       "address": "0x645f981cf31ccc02b7e2ef8f312bc8ad164e5051",
@@ -730,11 +730,11 @@
     "whale": 11,
     "shark": 38,
     "dolphin": 71,
-    "squid": 20,
-    "shrimp": 40,
+    "squid": 21,
+    "shrimp": 39,
     "top10Percentage": 24.655184231930548,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2025-10-22T08:28:15.691Z"
+    "lastUpdate": "2025-10-22T09:51:36.339Z"
   },
-  "cachedAt": "2025-10-22T08:28:15.691Z"
+  "cachedAt": "2025-10-22T09:51:36.339Z"
 }
