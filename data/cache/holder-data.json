@@ -1,5 +1,5 @@
 {
-  "lastBlock": 23628870,
+  "lastBlock": 23629829,
   "totalSupply": 15696267.53334864,
   "totalHolders": 179,
   "holders": [
@@ -68,6 +68,10 @@
       "balance": 100000.23198725862
     },
     {
+      "address": "0x619095a53ed0d1058db530ccc04ab5a1c2ef0cd5",
+      "balance": 95235.27794664398
+    },
+    {
       "address": "0xe3e63bd9da8c0ee8399ec7f44e191e9f54b56777",
       "balance": 95002.28563291606
     },
@@ -78,10 +82,6 @@
     {
       "address": "0xddccecf04224ad128edea53af42f480c6db7ac00",
       "balance": 92272.82111910442
-    },
-    {
-      "address": "0x619095a53ed0d1058db530ccc04ab5a1c2ef0cd5",
-      "balance": 92077.93981633296
     },
     {
       "address": "0xed4daaf5e86f6eddbd358266369a804563f434e1",
@@ -165,7 +165,7 @@
     },
     {
       "address": "0x9008d19f58aabd9ed0d60971565aa8510560ab41",
-      "balance": 25382.34940775007
+      "balance": 25466.38465904696
     },
     {
       "address": "0x543f7ad54aa7dba631db65156fd7b1dfaa759d73",
@@ -730,7 +730,7 @@
     "shrimp": 39,
     "top10Percentage": 24.655184231930548,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2025-10-21T22:21:49.413Z"
+    "lastUpdate": "2025-10-22T01:34:36.804Z"
   },
-  "cachedAt": "2025-10-21T22:21:49.413Z"
+  "cachedAt": "2025-10-22T01:34:36.804Z"
 }
