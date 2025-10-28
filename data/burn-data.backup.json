@@ -1,30 +1,13 @@
 {
   "startDate": "2025-08-13",
   "endDate": "2025-09-11",
-  "totalBurned": 159273.52206687393,
+  "totalBurned": 158850.59861406957,
   "totalSupply": 15969783.670697048,
-  "burnPercentage": 0.9973430157299179,
+  "burnPercentage": 0.9946947428320178,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
   "dailyBurns": [
-    {
-      "date": "2025-09-28",
-      "amountTinc": 3200.3060202420074,
-      "transactionCount": 2,
-      "transactions": [
-        {
-          "hash": "0x98977591851cc5ffdc39bfb5e9db73c020ab625c89d9c9722781aecbf1a710fe",
-          "amount": 2047.8390565050606,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x9bd0607b19c8932ee67c144b914a522668e12b86c63e3721dc8b532de02aff73",
-          "amount": 1152.466963736947,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        }
-      ]
-    },
     {
       "date": "2025-09-29",
       "amountTinc": 859.3412797340552,
@@ -417,11 +400,23 @@
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
+    },
+    {
+      "date": "2025-10-28",
+      "amountTinc": 2777.3825674376617,
+      "transactionCount": 1,
+      "transactions": [
+        {
+          "hash": "0xac5bc64db1f1956b6e3d606f9dc31ba95ad7e22ce30326b85e2d943dbca75b2d",
+          "amount": 2777.3825674376617,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
     }
   ],
-  "fetchedAt": "2025-10-27T23:52:30.664Z",
+  "fetchedAt": "2025-10-28T00:22:29.664Z",
   "fromCache": true,
-  "lastProcessedBlock": 23672173,
+  "lastProcessedBlock": 23672322,
   "holderStats": {
     "totalHolders": 177,
     "poseidon": 0,
@@ -434,7 +429,7 @@
     "dataSource": "blockchain-incremental",
     "lastUpdate": "2025-10-27T23:52:30.651Z"
   },
-  "lastIncrementalUpdate": "2025-10-27T23:52:30.664Z",
+  "lastIncrementalUpdate": "2025-10-28T00:22:29.664Z",
   "lastUpdated": "2025-08-29T03:41:20.853Z",
   "recoveryApplied": true,
   "recoveryTimestamp": "2025-09-02T16:06:22.696Z",
