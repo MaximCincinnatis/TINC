@@ -1,9 +1,9 @@
 {
   "startDate": "2025-08-13",
   "endDate": "2025-09-11",
-  "totalBurned": 161769.66536999962,
+  "totalBurned": 156604.45028721818,
   "totalSupply": 15969783.670697048,
-  "burnPercentage": 1.0129734297329946,
+  "burnPercentage": 0.9806297537678712,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
@@ -403,38 +403,38 @@
     },
     {
       "date": "2025-10-30",
-      "amountTinc": 7267.286363940193,
+      "amountTinc": 2102.071281158742,
       "transactionCount": 2,
       "transactions": [
         {
-          "hash": "0x2a048add51c57922a86854af6b8c9ed7f820ed44953bb3e9ac620d343cf2a8fd",
-          "amount": 4237.639636874648,
+          "hash": "0xe0e635935478af5d3930bf0e3767e6ad62481d524faf7ae1ae8447eea3cc8e73",
+          "amount": 292.98582023360063,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         },
         {
-          "hash": "0x604597833e1a99e42c74cb6fb4ba1d66af0da23af6b874a27b234e4ee17c6d7b",
-          "amount": 3029.646727065545,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+          "hash": "0xbc4b1af50447c49078c92e46c9b16e194c20fbf91c05c3e768009f18d1e5f13f",
+          "amount": 1809.0854609251414,
+          "from": "0x9fabf48ebe587ee4f8b3172012c3060cc40fea6c"
         }
       ]
     }
   ],
-  "fetchedAt": "2025-10-30T22:00:03.705Z",
+  "fetchedAt": "2025-10-30T22:28:55.221Z",
   "fromCache": true,
-  "lastProcessedBlock": 23693033,
+  "lastProcessedBlock": 23693176,
   "holderStats": {
     "totalHolders": 180,
     "poseidon": 0,
     "whale": 12,
     "shark": 40,
     "dolphin": 69,
-    "squid": 24,
-    "shrimp": 35,
+    "squid": 23,
+    "shrimp": 36,
     "top10Percentage": 24.93032749643045,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2025-10-30T21:02:26.655Z"
+    "lastUpdate": "2025-10-30T22:28:55.200Z"
   },
-  "lastIncrementalUpdate": "2025-10-30T22:00:03.705Z",
+  "lastIncrementalUpdate": "2025-10-30T22:28:55.221Z",
   "lastUpdated": "2025-08-29T03:41:20.853Z",
   "recoveryApplied": true,
   "recoveryTimestamp": "2025-09-02T16:06:22.696Z",
