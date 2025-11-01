@@ -1,9 +1,9 @@
 {
   "startDate": "2025-08-13",
   "endDate": "2025-09-11",
-  "totalBurned": 169313.1864891738,
+  "totalBurned": 155142.84486864664,
   "totalSupply": 15969783.670697048,
-  "burnPercentage": 1.0602096432893233,
+  "burnPercentage": 0.9714774355604966,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
@@ -408,43 +408,43 @@
     },
     {
       "date": "2025-11-01",
-      "amountTinc": 15372.89847876379,
+      "amountTinc": 1202.5568582366386,
       "transactionCount": 3,
       "transactions": [
         {
-          "hash": "0xcc0ba417c96ca74238a96e306026d618a2ffb19fa595babc6c85149b6be4d7b4",
-          "amount": 1358.100068311015,
-          "from": "0x9fabf48ebe587ee4f8b3172012c3060cc40fea6c"
-        },
-        {
-          "hash": "0x760121da3d6ed580b1e5bc5f8b84e7110b1ea09fbfce640e5fd2ceb2ef0cbf8a",
-          "amount": 5983.966422923834,
+          "hash": "0xa7466a6cd605bb473170ca9c509122172a461fda6b5ec736861f73f064265aab",
+          "amount": 44.849583023198555,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         },
         {
-          "hash": "0x7d9eb01fcdc8cd281c9e4a0ca1d5f24f6b50aaf6877e11b6a957e14b748ee94e",
-          "amount": 8030.831987528941,
+          "hash": "0x937584c4aab0f280e8cf366f10b4c7381184fe15c547ebfb039cd519e2a98c8d",
+          "amount": 255.8175637114298,
+          "from": "0x9fabf48ebe587ee4f8b3172012c3060cc40fea6c"
+        },
+        {
+          "hash": "0x3d75241860641554a8abd75ce09626f5f4822d0f7891c4eed28d28e8028179e5",
+          "amount": 901.8897115020103,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
     }
   ],
-  "fetchedAt": "2025-11-01T17:40:39.178Z",
+  "fetchedAt": "2025-11-01T18:10:41.048Z",
   "fromCache": true,
-  "lastProcessedBlock": 23706041,
+  "lastProcessedBlock": 23706188,
   "holderStats": {
-    "totalHolders": 184,
+    "totalHolders": 183,
     "poseidon": 0,
     "whale": 12,
     "shark": 40,
     "dolphin": 70,
-    "squid": 25,
+    "squid": 24,
     "shrimp": 37,
     "top10Percentage": 24.93032749643045,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2025-11-01T16:10:40.137Z"
+    "lastUpdate": "2025-11-01T18:10:41.034Z"
   },
-  "lastIncrementalUpdate": "2025-11-01T17:40:39.178Z",
+  "lastIncrementalUpdate": "2025-11-01T18:10:41.048Z",
   "lastUpdated": "2025-08-29T03:41:20.853Z",
   "recoveryApplied": true,
   "recoveryTimestamp": "2025-09-02T16:06:22.696Z",
