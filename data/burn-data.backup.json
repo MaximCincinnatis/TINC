@@ -424,9 +424,9 @@
       ]
     }
   ],
-  "fetchedAt": "2025-11-02T15:51:05.229Z",
+  "fetchedAt": "2025-11-02T16:21:05.492Z",
   "fromCache": true,
-  "lastProcessedBlock": 23712648,
+  "lastProcessedBlock": 23712796,
   "holderStats": {
     "totalHolders": 183,
     "poseidon": 0,
@@ -439,7 +439,7 @@
     "dataSource": "blockchain-incremental",
     "lastUpdate": "2025-11-02T12:21:05.940Z"
   },
-  "lastIncrementalUpdate": "2025-11-02T15:51:05.229Z",
+  "lastIncrementalUpdate": "2025-11-02T16:21:05.492Z",
   "lastUpdated": "2025-08-29T03:41:20.853Z",
   "recoveryApplied": true,
   "recoveryTimestamp": "2025-09-02T16:06:22.696Z",
