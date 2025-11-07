@@ -1,25 +1,13 @@
 {
   "startDate": "2025-08-13",
   "endDate": "2025-09-11",
-  "totalBurned": 185350.68051297788,
+  "totalBurned": 204336.1386489085,
   "totalSupply": 15969783.670697048,
-  "burnPercentage": 1.1606336337108798,
+  "burnPercentage": 1.2795172612378265,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
   "dailyBurns": [
-    {
-      "date": "2025-10-08",
-      "amountTinc": 6766.856007995725,
-      "transactionCount": 1,
-      "transactions": [
-        {
-          "hash": "0xa8a03d7a65beb1fb4fe5c06ca12dc5189308c47630db62d1ac00ff215cfc9766",
-          "amount": 6766.856007995725,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        }
-      ]
-    },
     {
       "date": "2025-10-09",
       "amountTinc": 1756.7865569106773,
@@ -417,24 +405,36 @@
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
+    },
+    {
+      "date": "2025-11-07",
+      "amountTinc": 25752.314143926353,
+      "transactionCount": 1,
+      "transactions": [
+        {
+          "hash": "0x292f459babd44f7ce1c2ba44985d8d42804e7c91f64907ca1846ff9ac78764ec",
+          "amount": 25752.314143926353,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
     }
   ],
-  "fetchedAt": "2025-11-07T16:42:25.368Z",
+  "fetchedAt": "2025-11-07T17:12:26.685Z",
   "fromCache": true,
-  "lastProcessedBlock": 23748653,
+  "lastProcessedBlock": 23748799,
   "holderStats": {
-    "totalHolders": 182,
+    "totalHolders": 183,
     "poseidon": 0,
     "whale": 12,
     "shark": 38,
     "dolphin": 72,
     "squid": 23,
-    "shrimp": 37,
+    "shrimp": 38,
     "top10Percentage": 25.777119363975725,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2025-11-07T11:12:25.848Z"
+    "lastUpdate": "2025-11-07T17:12:26.668Z"
   },
-  "lastIncrementalUpdate": "2025-11-07T16:42:25.368Z",
+  "lastIncrementalUpdate": "2025-11-07T17:12:26.685Z",
   "lastUpdated": "2025-08-29T03:41:20.853Z",
   "recoveryApplied": true,
   "recoveryTimestamp": "2025-09-02T16:06:22.696Z",
