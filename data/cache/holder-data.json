@@ -1,7 +1,7 @@
 {
-  "lastBlock": 23764292,
+  "lastBlock": 23764741,
   "totalSupply": 15696267.53334864,
-  "totalHolders": 184,
+  "totalHolders": 183,
   "holders": [
     {
       "address": "0x2ab0307d359dccecf30dac5fa02e9562fb09838f",
@@ -464,12 +464,12 @@
       "balance": 2957.5736474108044
     },
     {
-      "address": "0xc54e9078b40ce075ca9da0752f9d9a664a3347d1",
-      "balance": 2854.0745945233252
+      "address": "0x52c1cc79fbbef91d3952ae75b1961d08f0172223",
+      "balance": 2891.5327078292535
     },
     {
-      "address": "0x52c1cc79fbbef91d3952ae75b1961d08f0172223",
-      "balance": 2756.806817904722
+      "address": "0xc54e9078b40ce075ca9da0752f9d9a664a3347d1",
+      "balance": 2854.0745945233252
     },
     {
       "address": "0xe1cd99b066c3417ee279d90325db84d3921d3a7e",
@@ -504,10 +504,6 @@
       "balance": 1332.5242479688989
     },
     {
-      "address": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
-      "balance": 1244.051863638969
-    },
-    {
       "address": "0x9252c1a75e3cae382ac6c8fffa4e21c87ad95fab",
       "balance": 996.1503480168855
     },
@@ -536,8 +532,12 @@
       "balance": 791.1277526783315
     },
     {
+      "address": "0x6d4e6724d55d6e76fd18537b2ace7f14659f906a",
+      "balance": 742.6635547635175
+    },
+    {
       "address": "0x1e4b1b7b0c9cec26618f221fc5025a6cb2c1943c",
-      "balance": 672.9857964622521
+      "balance": 678.4249539225136
     },
     {
       "address": "0x806b3d39b4042d5343b67fc6e9332d1f0012105c",
@@ -684,10 +684,6 @@
       "balance": 6.836741227350943
     },
     {
-      "address": "0x6d4e6724d55d6e76fd18537b2ace7f14659f906a",
-      "balance": 6.414743248411877
-    },
-    {
       "address": "0x735ab0ba5ed6888396382f3ad93d0a6b694b3dc8",
       "balance": 6.22746063192052
     },
@@ -741,16 +737,16 @@
     }
   ],
   "holderStats": {
-    "totalHolders": 184,
+    "totalHolders": 183,
     "poseidon": 0,
     "whale": 12,
     "shark": 38,
     "dolphin": 73,
     "squid": 22,
-    "shrimp": 39,
+    "shrimp": 38,
     "top10Percentage": 25.777119363975725,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2025-11-09T21:09:34.514Z"
+    "lastUpdate": "2025-11-09T22:39:35.470Z"
   },
-  "cachedAt": "2025-11-09T21:09:34.514Z"
+  "cachedAt": "2025-11-09T22:39:35.470Z"
 }
