@@ -1,7 +1,7 @@
 {
-  "lastBlock": 23771301,
+  "lastBlock": 23771745,
   "totalSupply": 15696267.53334864,
-  "totalHolders": 184,
+  "totalHolders": 183,
   "holders": [
     {
       "address": "0x2ab0307d359dccecf30dac5fa02e9562fb09838f",
@@ -161,7 +161,7 @@
     },
     {
       "address": "0x9008d19f58aabd9ed0d60971565aa8510560ab41",
-      "balance": 27335.07552126503
+      "balance": 27349.496533706384
     },
     {
       "address": "0xf81a328d5c71f04b4751d9fc0ab55ccf25e48599",
@@ -205,7 +205,7 @@
     },
     {
       "address": "0xca769eefa37905a279b0932bed8657861cebdb26",
-      "balance": 15354.442206265716
+      "balance": 15994.116535376053
     },
     {
       "address": "0xe7d2d05566ebfdb1317635cb18c4ff39dfffe9b9",
@@ -456,16 +456,16 @@
       "balance": 3394.601927354986
     },
     {
+      "address": "0x52c1cc79fbbef91d3952ae75b1961d08f0172223",
+      "balance": 3391.7654296728806
+    },
+    {
       "address": "0xad8739ebefbfc7ba72429ffc80b10ce420475770",
       "balance": 3287.1887116687985
     },
     {
       "address": "0xc9a51e92cba52ed25dad8494fe26439eb001b87c",
       "balance": 3239.2934589120864
-    },
-    {
-      "address": "0x52c1cc79fbbef91d3952ae75b1961d08f0172223",
-      "balance": 3048.795374807566
     },
     {
       "address": "0xd01e51417d1b8f46123f0f72caeff583fc5de94d",
@@ -536,12 +536,8 @@
       "balance": 791.1277526783315
     },
     {
-      "address": "0x6d4e6724d55d6e76fd18537b2ace7f14659f906a",
-      "balance": 742.6635547635175
-    },
-    {
       "address": "0x1e4b1b7b0c9cec26618f221fc5025a6cb2c1943c",
-      "balance": 678.4249539225136
+      "balance": 683.3772578687656
     },
     {
       "address": "0x806b3d39b4042d5343b67fc6e9332d1f0012105c",
@@ -550,10 +546,6 @@
     {
       "address": "0x90c7cc3554711c5631596c0455a1c18d096b94cf",
       "balance": 483.00789853115225
-    },
-    {
-      "address": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
-      "balance": 471.78800093493703
     },
     {
       "address": "0xb33fe855628271c9190d8cde8beae76583224932",
@@ -638,6 +630,10 @@
     {
       "address": "0x80329307f4ffb3dbeaa9fc2ee5fd557361cae3ff",
       "balance": 46.74304519269971
+    },
+    {
+      "address": "0x6d4e6724d55d6e76fd18537b2ace7f14659f906a",
+      "balance": 45.15703529471964
     },
     {
       "address": "0xa7e19a8bcf6798099f73c31ecc5e131c5b97038b",
@@ -741,16 +737,16 @@
     }
   ],
   "holderStats": {
-    "totalHolders": 184,
+    "totalHolders": 183,
     "poseidon": 0,
     "whale": 12,
-    "shark": 38,
-    "dolphin": 74,
-    "squid": 23,
-    "shrimp": 37,
+    "shark": 39,
+    "dolphin": 73,
+    "squid": 21,
+    "shrimp": 38,
     "top10Percentage": 25.777119363975725,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2025-11-10T20:40:34.800Z"
+    "lastUpdate": "2025-11-10T22:10:36.400Z"
   },
-  "cachedAt": "2025-11-10T20:40:34.800Z"
+  "cachedAt": "2025-11-10T22:10:36.400Z"
 }
