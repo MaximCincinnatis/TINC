@@ -1,7 +1,7 @@
 {
-  "lastBlock": 23790941,
+  "lastBlock": 23791387,
   "totalSupply": 15696267.53334864,
-  "totalHolders": 190,
+  "totalHolders": 191,
   "holders": [
     {
       "address": "0xe2fbb1fa5380f14aeaa4f248b05964d0742d122a",
@@ -356,6 +356,10 @@
       "balance": 5648.886066329759
     },
     {
+      "address": "0x4cf6468958b88ce3bd2ddf5151e05cf62411503f",
+      "balance": 5590.607013788593
+    },
+    {
       "address": "0x402e0350a301b0a30aac606899a55249938ed105",
       "balance": 5551.019706300315
     },
@@ -520,6 +524,10 @@
       "balance": 1185.8697398002148
     },
     {
+      "address": "0x52c1cc79fbbef91d3952ae75b1961d08f0172223",
+      "balance": 1009.6003224688186
+    },
+    {
       "address": "0x9252c1a75e3cae382ac6c8fffa4e21c87ad95fab",
       "balance": 996.1503480168855
     },
@@ -534,10 +542,6 @@
     {
       "address": "0x0b73c8ed83f333963e5c6604226fd38ee97a90da",
       "balance": 907.2323579357197
-    },
-    {
-      "address": "0x52c1cc79fbbef91d3952ae75b1961d08f0172223",
-      "balance": 901.021252643511
     },
     {
       "address": "0xafa49f7924081c1c77934aecdf100e822a31c397",
@@ -558,6 +562,10 @@
     {
       "address": "0x806b3d39b4042d5343b67fc6e9332d1f0012105c",
       "balance": 586.4733661872282
+    },
+    {
+      "address": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+      "balance": 574.8016226978543
     },
     {
       "address": "0x90c7cc3554711c5631596c0455a1c18d096b94cf",
@@ -582,10 +590,6 @@
     {
       "address": "0x602891f78d87a870b303a4d54027c31c4b02f26e",
       "balance": 328.5715968772894
-    },
-    {
-      "address": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
-      "balance": 249.06441322193157
     },
     {
       "address": "0xcd6b980029e6e6e0733ac8ec3e02be9410d09799",
@@ -765,16 +769,16 @@
     }
   ],
   "holderStats": {
-    "totalHolders": 190,
+    "totalHolders": 191,
     "poseidon": 1,
     "whale": 11,
     "shark": 43,
-    "dolphin": 71,
+    "dolphin": 72,
     "squid": 25,
     "shrimp": 39,
     "top10Percentage": 45.360536952985385,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2025-11-13T14:40:39.064Z"
+    "lastUpdate": "2025-11-13T16:10:39.686Z"
   },
-  "cachedAt": "2025-11-13T14:40:39.064Z"
+  "cachedAt": "2025-11-13T16:10:39.686Z"
 }
