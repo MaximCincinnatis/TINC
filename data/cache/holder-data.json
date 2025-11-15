@@ -1,7 +1,7 @@
 {
-  "lastBlock": 23805545,
+  "lastBlock": 23805993,
   "totalSupply": 15696267.53334864,
-  "totalHolders": 193,
+  "totalHolders": 194,
   "holders": [
     {
       "address": "0xe2fbb1fa5380f14aeaa4f248b05964d0742d122a",
@@ -392,6 +392,10 @@
       "balance": 4956.832870925263
     },
     {
+      "address": "0x47994919627d40463dc9957a520bbda73044a618",
+      "balance": 4947.143001473242
+    },
+    {
       "address": "0x05cc3acadb3eff856d9ba883362634fbdce492f7",
       "balance": 4879.364391821411
     },
@@ -604,6 +608,10 @@
       "balance": 328.5715968772894
     },
     {
+      "address": "0x6d4e6724d55d6e76fd18537b2ace7f14659f906a",
+      "balance": 310.21448787270447
+    },
+    {
       "address": "0xcd6b980029e6e6e0733ac8ec3e02be9410d09799",
       "balance": 216.6135847652453
     },
@@ -676,10 +684,6 @@
       "balance": 46.74304519269971
     },
     {
-      "address": "0x6d4e6724d55d6e76fd18537b2ace7f14659f906a",
-      "balance": 45.15703529471964
-    },
-    {
       "address": "0xa7e19a8bcf6798099f73c31ecc5e131c5b97038b",
       "balance": 44.76116986298501
     },
@@ -693,7 +697,7 @@
     },
     {
       "address": "0x7b4e9914c7f8189ce89f1e24a7f5729e936b01cb",
-      "balance": 32.27971335042299
+      "balance": 32.59361073585389
     },
     {
       "address": "0xec82b50505953558e06229811f9b97f85b1a659a",
@@ -769,7 +773,7 @@
     },
     {
       "address": "0xacc19711f194ff0ea1b33aad9384e8c0dd4562e2",
-      "balance": 0.000010772841412435
+      "balance": 0.000955298574902683
     },
     {
       "address": "0x3957886b61cb56af523626f7d827722d54534d12",
@@ -777,16 +781,16 @@
     }
   ],
   "holderStats": {
-    "totalHolders": 193,
+    "totalHolders": 194,
     "poseidon": 1,
     "whale": 12,
     "shark": 45,
-    "dolphin": 72,
-    "squid": 25,
-    "shrimp": 38,
+    "dolphin": 73,
+    "squid": 26,
+    "shrimp": 37,
     "top10Percentage": 45.360536952985385,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2025-11-15T15:40:50.484Z"
+    "lastUpdate": "2025-11-15T17:10:49.175Z"
   },
-  "cachedAt": "2025-11-15T15:40:50.484Z"
+  "cachedAt": "2025-11-15T17:10:49.175Z"
 }
