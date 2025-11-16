@@ -1,7 +1,7 @@
 {
-  "lastBlock": 23811211,
+  "lastBlock": 23811660,
   "totalSupply": 15696267.53334864,
-  "totalHolders": 193,
+  "totalHolders": 192,
   "holders": [
     {
       "address": "0xe2fbb1fa5380f14aeaa4f248b05964d0742d122a",
@@ -528,16 +528,16 @@
       "balance": 1487.7378836784505
     },
     {
+      "address": "0x52c1cc79fbbef91d3952ae75b1961d08f0172223",
+      "balance": 1417.3190948844149
+    },
+    {
       "address": "0x9bbb45e12c4a75f7406cb38e858fa6c68a88f30d",
       "balance": 1332.5242479688989
     },
     {
       "address": "0x18c55d07eccfef90feb3a370135ca3499c2b3407",
       "balance": 1185.8697398002148
-    },
-    {
-      "address": "0x52c1cc79fbbef91d3952ae75b1961d08f0172223",
-      "balance": 1101.8888457414723
     },
     {
       "address": "0x9252c1a75e3cae382ac6c8fffa4e21c87ad95fab",
@@ -564,16 +564,12 @@
       "balance": 895.5868811126719
     },
     {
-      "address": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
-      "balance": 851.6671925158153
-    },
-    {
       "address": "0xac3f9b59754443b32ed4ee1137898f6da3b18a4a",
       "balance": 791.1277526783315
     },
     {
       "address": "0x1e4b1b7b0c9cec26618f221fc5025a6cb2c1943c",
-      "balance": 692.372752913196
+      "balance": 698.3060141150133
     },
     {
       "address": "0x806b3d39b4042d5343b67fc6e9332d1f0012105c",
@@ -701,7 +697,7 @@
     },
     {
       "address": "0x64cbecbe87b47183e4dba6069f0e0aa4b723f255",
-      "balance": 19.231779253276077
+      "balance": 18.357407340454174
     },
     {
       "address": "0x862412dd2d38f649041828e19aa2546f3e4d5ddf",
@@ -777,16 +773,16 @@
     }
   ],
   "holderStats": {
-    "totalHolders": 193,
+    "totalHolders": 192,
     "poseidon": 1,
     "whale": 12,
     "shark": 44,
     "dolphin": 73,
-    "squid": 26,
+    "squid": 25,
     "shrimp": 37,
     "top10Percentage": 45.360536952985385,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2025-11-16T10:40:55.838Z"
+    "lastUpdate": "2025-11-16T12:10:53.140Z"
   },
-  "cachedAt": "2025-11-16T10:40:55.838Z"
+  "cachedAt": "2025-11-16T12:10:53.140Z"
 }
