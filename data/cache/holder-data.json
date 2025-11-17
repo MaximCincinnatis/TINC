@@ -1,5 +1,5 @@
 {
-  "lastBlock": 23817764,
+  "lastBlock": 23820284,
   "totalSupply": 15696267.53334864,
   "totalHolders": 190,
   "holders": [
@@ -57,7 +57,7 @@
     },
     {
       "address": "0x619095a53ed0d1058db530ccc04ab5a1c2ef0cd5",
-      "balance": 118991.20934360845
+      "balance": 123157.31768838428
     },
     {
       "address": "0x50dac583795f7358be734411702e583bca309f8d",
@@ -380,6 +380,10 @@
       "balance": 5134.009900267146
     },
     {
+      "address": "0x6fb819aaf0bcfdc537b3ba801c8067e417cec266",
+      "balance": 5096.2483884056555
+    },
+    {
       "address": "0xd4e25e79af3450b189dff820510d56f09c1045a2",
       "balance": 4956.832870925263
     },
@@ -472,10 +476,6 @@
       "balance": 3498.0539028550043
     },
     {
-      "address": "0x6fb819aaf0bcfdc537b3ba801c8067e417cec266",
-      "balance": 3416.323065899066
-    },
-    {
       "address": "0xe659fb8d3bf16b7813b68052fc7026601faec6f1",
       "balance": 3394.601927354986
     },
@@ -521,7 +521,7 @@
     },
     {
       "address": "0x52c1cc79fbbef91d3952ae75b1961d08f0172223",
-      "balance": 1508.180795316329
+      "balance": 1619.9593887667654
     },
     {
       "address": "0x1de5546abef2c1defa935e2805abbdde28e0284d",
@@ -568,6 +568,10 @@
       "balance": 698.3060141150133
     },
     {
+      "address": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+      "balance": 607.9208816470517
+    },
+    {
       "address": "0x806b3d39b4042d5343b67fc6e9332d1f0012105c",
       "balance": 586.4733661872282
     },
@@ -598,10 +602,6 @@
     {
       "address": "0x6d4e6724d55d6e76fd18537b2ace7f14659f906a",
       "balance": 310.21448787270447
-    },
-    {
-      "address": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
-      "balance": 272.58510129574273
     },
     {
       "address": "0xcd6b980029e6e6e0733ac8ec3e02be9410d09799",
@@ -769,12 +769,12 @@
     "poseidon": 1,
     "whale": 12,
     "shark": 44,
-    "dolphin": 72,
-    "squid": 26,
+    "dolphin": 73,
+    "squid": 25,
     "shrimp": 35,
     "top10Percentage": 45.360536952985385,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2025-11-17T08:40:54.892Z"
+    "lastUpdate": "2025-11-17T17:10:54.327Z"
   },
-  "cachedAt": "2025-11-17T08:40:54.893Z"
+  "cachedAt": "2025-11-17T17:10:54.327Z"
 }
