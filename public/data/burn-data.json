@@ -1,25 +1,13 @@
 {
   "startDate": "2025-08-13",
   "endDate": "2025-09-11",
-  "totalBurned": 154667.0290882322,
+  "totalBurned": 159568.10389701795,
   "totalSupply": 15969783.670697048,
-  "burnPercentage": 0.9684979601322382,
+  "burnPercentage": 0.9991876357712309,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
   "dailyBurns": [
-    {
-      "date": "2025-10-20",
-      "amountTinc": 814.0099219322375,
-      "transactionCount": 1,
-      "transactions": [
-        {
-          "hash": "0xd0ff40389831c71f35363b68c619b75ba005926a5ca905c62a93e298b5557250",
-          "amount": 814.0099219322375,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        }
-      ]
-    },
     {
       "date": "2025-10-21",
       "amountTinc": 1862.1222424492423,
@@ -412,24 +400,36 @@
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
+    },
+    {
+      "date": "2025-11-19",
+      "amountTinc": 5715.084730717971,
+      "transactionCount": 1,
+      "transactions": [
+        {
+          "hash": "0x0f026b5dde3c3154abff21fee97a15a40a79ef83c56ea63a97b1f634ec68137c",
+          "amount": 5715.084730717971,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
     }
   ],
-  "fetchedAt": "2025-11-19T08:30:41.745Z",
+  "fetchedAt": "2025-11-19T09:00:43.879Z",
   "fromCache": true,
-  "lastProcessedBlock": 23831949,
+  "lastProcessedBlock": 23832099,
   "holderStats": {
     "totalHolders": 189,
     "poseidon": 1,
     "whale": 12,
     "shark": 43,
-    "dolphin": 74,
-    "squid": 25,
+    "dolphin": 75,
+    "squid": 24,
     "shrimp": 34,
     "top10Percentage": 45.360536952985385,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2025-11-19T05:30:43.015Z"
+    "lastUpdate": "2025-11-19T09:00:43.866Z"
   },
-  "lastIncrementalUpdate": "2025-11-19T08:30:41.745Z",
+  "lastIncrementalUpdate": "2025-11-19T09:00:43.879Z",
   "lastUpdated": "2025-08-29T03:41:20.853Z",
   "recoveryApplied": true,
   "recoveryTimestamp": "2025-09-02T16:06:22.696Z",
