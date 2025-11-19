@@ -1,0 +1,1373 @@
+{
+  "startDate": "2025-10-19",
+  "endDate": "2025-11-19",
+  "totalBurned": 1198715.8461018838,
+  "totalSupply": 19307012.854193237,
+  "burnPercentage": 6.208706935425995,
+  "emissionPerSecond": 1,
+  "emissionSamplePeriod": 86400,
+  "isDeflationary": true,
+  "dailyBurns": [
+    {
+      "date": "2025-10-20",
+      "amountTinc": 0,
+      "transactionCount": 0,
+      "transactions": []
+    },
+    {
+      "date": "2025-10-21",
+      "amountTinc": 0,
+      "transactionCount": 0,
+      "transactions": []
+    },
+    {
+      "date": "2025-10-22",
+      "amountTinc": 0,
+      "transactionCount": 0,
+      "transactions": []
+    },
+    {
+      "date": "2025-10-23",
+      "amountTinc": 11520.091429758842,
+      "transactionCount": 4,
+      "transactions": [
+        {
+          "hash": "0xd6b6b3d38cf6f0d0f6f938ad6fc21481f4582803683593b524d5e44a590e0bbf",
+          "amount": 6789.4413617120235,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23640978,
+          "timestamp": 1761231863
+        },
+        {
+          "hash": "0xd9622c5bd7488bed079c35bfc6722a97a4f03a2a8c40898e6438d535b6a972b0",
+          "amount": 3808.603861395046,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23640980,
+          "timestamp": 1761231887
+        },
+        {
+          "hash": "0xd1916ea5299dd076eb0d3f5ed8c57101d63f3c25ebfc2d01e945bafb5a9a25b4",
+          "amount": 174.82423220665046,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23642401,
+          "timestamp": 1761249155
+        },
+        {
+          "hash": "0x36c7c419bc262439fa4983b4705168b49629ded2ec3039c3931c4e7da27093dd",
+          "amount": 747.2219744451218,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23642905,
+          "timestamp": 1761255335
+        }
+      ]
+    },
+    {
+      "date": "2025-10-24",
+      "amountTinc": 44768.102499749424,
+      "transactionCount": 5,
+      "transactions": [
+        {
+          "hash": "0x552aa09672cd1b81446de9000b993d8fad4aa3c6545516c5565c73e5ccf24ced",
+          "amount": 21480.368656884206,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23647012,
+          "timestamp": 1761305123
+        },
+        {
+          "hash": "0xe781acd2806cfc7163388117495f25bf2c092c36aee60086c47233b453cceed5",
+          "amount": 17924.693925372485,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23647013,
+          "timestamp": 1761305135
+        },
+        {
+          "hash": "0xa6163a167111831737672264dac2fb7f6d5e6d8e72f19bb93d416ede97bcef2f",
+          "amount": 3018.8500646808698,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23649081,
+          "timestamp": 1761330143
+        },
+        {
+          "hash": "0x0dd25028e410358c1fa3c433470fc591338389bdec810cadae7016e7b29001a8",
+          "amount": 507.42538941073883,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23649082,
+          "timestamp": 1761330155
+        },
+        {
+          "hash": "0x82bb9b3bba257241fbb27c6f40fa5ff2329ce5741077164724057995ff04048d",
+          "amount": 1836.7644634011235,
+          "from": "0x9fabf48ebe587ee4f8b3172012c3060cc40fea6c",
+          "blockNumber": 23649095,
+          "timestamp": 1761330311
+        }
+      ]
+    },
+    {
+      "date": "2025-10-25",
+      "amountTinc": 15455.40596414369,
+      "transactionCount": 4,
+      "transactions": [
+        {
+          "hash": "0xe0704e5c5484f1929f90478a38ea976a1643ce0fbbbba552e18bef1670bae902",
+          "amount": 1183.7763167784237,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23650869,
+          "timestamp": 1761351755
+        },
+        {
+          "hash": "0xbe3415436bd1eac12341f481fcd9786811cdfeadac3ceb1958ea85587a9fbd49",
+          "amount": 475.06327293959777,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23650870,
+          "timestamp": 1761351767
+        },
+        {
+          "hash": "0xd1da7472b8bfe7b9a0a766e596eca6ec84a05a9ba2eb3876f31438b56eb61ef9",
+          "amount": 5906.658191319523,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23653899,
+          "timestamp": 1761388391
+        },
+        {
+          "hash": "0x83275fe957cf05803d1d2759b77819805c02aaff00b1d846edca8a8917eb8a4b",
+          "amount": 7889.908183106145,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23653900,
+          "timestamp": 1761388403
+        }
+      ]
+    },
+    {
+      "date": "2025-10-26",
+      "amountTinc": 5881.687854933984,
+      "transactionCount": 4,
+      "transactions": [
+        {
+          "hash": "0x74c77c5c2fc9fdc9056eaecaf51371af00effc8b0e3ea36a3458c72552eed50d",
+          "amount": 2372.8817284356196,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23660803,
+          "timestamp": 1761471671
+        },
+        {
+          "hash": "0xa5e10ed1e9281209ad08ecbe9cfd2ecf6f70f7b71dc0e2713ff668e40a95bedb",
+          "amount": 1682.850759025312,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23660803,
+          "timestamp": 1761471671
+        },
+        {
+          "hash": "0x3dcbf8d75f2c2052c82c5b30551defb17e8531bfae3c6486703f82fa22b21aa4",
+          "amount": 672.6386524881453,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23663745,
+          "timestamp": 1761507191
+        },
+        {
+          "hash": "0x8464b0bcd0a1bbd7b8703b3120a8a70f2caf1f46761f2488e7c09fbe5da563b2",
+          "amount": 1153.3167149849078,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23663746,
+          "timestamp": 1761507203
+        }
+      ]
+    },
+    {
+      "date": "2025-10-27",
+      "amountTinc": 34340.78209581251,
+      "transactionCount": 7,
+      "transactions": [
+        {
+          "hash": "0xa51fb2e1e2baac6eca1fcd77c21676adb0641ba49180b9e54d36bfdafe0c45bb",
+          "amount": 2249.9650249168176,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23665454,
+          "timestamp": 1761527831
+        },
+        {
+          "hash": "0xd955a406ce4ce95a89616a49006c2598234aa5938988d9391d7e1c358f8439f0",
+          "amount": 702.7293532780028,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23665728,
+          "timestamp": 1761531143
+        },
+        {
+          "hash": "0x599cfe8d2851595c2616965c169e473870733f439701a158319060e39eb3d48e",
+          "amount": 12057.91679861079,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23665914,
+          "timestamp": 1761533399
+        },
+        {
+          "hash": "0x31410fdf2756bf08b7bce435f4291c479e4c45a83fe87580ef89bf41fafbc723",
+          "amount": 117.6720637243244,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23667140,
+          "timestamp": 1761548243
+        },
+        {
+          "hash": "0x5268711a8fd521262ebc69e83baa3c1203ac5497483009e4bb2a83bbff47f9c6",
+          "amount": 10749.17480482203,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23667514,
+          "timestamp": 1761552755
+        },
+        {
+          "hash": "0xd32631ffa1ffe3a517e94d043aa34f53f579ff465033446f45610f0d60702a3d",
+          "amount": 990.95697208074,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23671670,
+          "timestamp": 1761603083
+        },
+        {
+          "hash": "0xff23b18f68925eb6df6674c07cce0872d789f1b53888db48b566cf8994ca721f",
+          "amount": 7472.367078379798,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23672110,
+          "timestamp": 1761608387
+        }
+      ]
+    },
+    {
+      "date": "2025-10-28",
+      "amountTinc": 32829.79254990119,
+      "transactionCount": 12,
+      "transactions": [
+        {
+          "hash": "0xac5bc64db1f1956b6e3d606f9dc31ba95ad7e22ce30326b85e2d943dbca75b2d",
+          "amount": 2777.3825674376617,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23672287,
+          "timestamp": 1761610523
+        },
+        {
+          "hash": "0x97836fb7293c034a1cd1359b7ba89a297b76cd8709659553710e2f27c02916bd",
+          "amount": 6112.34798515616,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23673459,
+          "timestamp": 1761624695
+        },
+        {
+          "hash": "0x4d589fa43197d1e2aa064a8ecd5412d6ce03f30ab2be4e5ee88ebb34c242692d",
+          "amount": 1254.1877508697398,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23674994,
+          "timestamp": 1761643259
+        },
+        {
+          "hash": "0x81853746a530895b2720d2d62c2dbc942170825204121c416ca1fb0259d76f69",
+          "amount": 9728.165203554654,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23675245,
+          "timestamp": 1761646307
+        },
+        {
+          "hash": "0x8d9028322a0ca7f40e797ca133dae4a31cdc07cb7bd1e97c399cd8e1344b443a",
+          "amount": 1911.9423937516237,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23675886,
+          "timestamp": 1761654059
+        },
+        {
+          "hash": "0xe171b94620dc86238252f6c1f1e26b185c81b5fdf954464782373d2cc556baec",
+          "amount": 4287.337086882239,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23675944,
+          "timestamp": 1761654779
+        },
+        {
+          "hash": "0x2055b6fbecddef386e66e6cf188b295ab227f5bf0ab77885bc0c60db9de596f2",
+          "amount": 1417.7432222543991,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23677315,
+          "timestamp": 1761671435
+        },
+        {
+          "hash": "0x9e28a5e9b93177f4889bfee4c8446802fa69093a934b43b603ba8c7e56d1f119",
+          "amount": 825.0645516789598,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23677805,
+          "timestamp": 1761677375
+        },
+        {
+          "hash": "0x4d21303ea533aa512aae473020d4db8fb7ff86631c55e574a426a8bc16739d7e",
+          "amount": 754.6447543279661,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23678726,
+          "timestamp": 1761688571
+        },
+        {
+          "hash": "0xe6e351e4f68530da4079d5323111d1a7cefc242b0fa9efd3a687d110987a92cb",
+          "amount": 140.93714083436177,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23678971,
+          "timestamp": 1761691535
+        },
+        {
+          "hash": "0x1f8c121cb86a2d3e48badad01d6142cd6aee43545802d23622fa31594d92f47f",
+          "amount": 1336.9719844906342,
+          "from": "0x9fabf48ebe587ee4f8b3172012c3060cc40fea6c",
+          "blockNumber": 23679053,
+          "timestamp": 1761692543
+        },
+        {
+          "hash": "0x6e0b594c4f64c7bb2a005a3d7054d5466300cf7eaaaa6add850392b78e22a1ee",
+          "amount": 2283.067908662799,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23679096,
+          "timestamp": 1761693059
+        }
+      ]
+    },
+    {
+      "date": "2025-10-29",
+      "amountTinc": 2530.8078157256127,
+      "transactionCount": 2,
+      "transactions": [
+        {
+          "hash": "0x6fa48202c3b37ed90bde4d28343274323e0f50279ecca565d322ae67d8b961f1",
+          "amount": 2334.166979779151,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23680113,
+          "timestamp": 1761705347
+        },
+        {
+          "hash": "0x2023f7a6e5fd3b9e8b7adc12a07e0433d3c4b9259af0fbd4c53bb267b11b5e74",
+          "amount": 196.64083594646192,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23681812,
+          "timestamp": 1761725891
+        }
+      ]
+    },
+    {
+      "date": "2025-10-30",
+      "amountTinc": 18136.535193551703,
+      "transactionCount": 7,
+      "transactions": [
+        {
+          "hash": "0x0682af2defe8ae2d2da936f71544cc438912a31b6b1f6463ab9ea8d60b9625ed",
+          "amount": 789.0491876133954,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23687331,
+          "timestamp": 1761792599
+        },
+        {
+          "hash": "0x326d940dbabd14021644e1b68ae1cdd384b6bb2ee141283f3091d25b18a1d0f1",
+          "amount": 3797.4773328360548,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23688972,
+          "timestamp": 1761812483
+        },
+        {
+          "hash": "0x4f0a5a3247aa93fb5fc504103e89f48e30412602efc212c979926e91ff01066f",
+          "amount": 4180.651028003318,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23689115,
+          "timestamp": 1761814211
+        },
+        {
+          "hash": "0x2a048add51c57922a86854af6b8c9ed7f820ed44953bb3e9ac620d343cf2a8fd",
+          "amount": 4237.639636874648,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23692637,
+          "timestamp": 1761856775
+        },
+        {
+          "hash": "0x604597833e1a99e42c74cb6fb4ba1d66af0da23af6b874a27b234e4ee17c6d7b",
+          "amount": 3029.646727065545,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23692723,
+          "timestamp": 1761857831
+        },
+        {
+          "hash": "0xe0e635935478af5d3930bf0e3767e6ad62481d524faf7ae1ae8447eea3cc8e73",
+          "amount": 292.98582023360063,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23693086,
+          "timestamp": 1761862235
+        },
+        {
+          "hash": "0xbc4b1af50447c49078c92e46c9b16e194c20fbf91c05c3e768009f18d1e5f13f",
+          "amount": 1809.0854609251414,
+          "from": "0x9fabf48ebe587ee4f8b3172012c3060cc40fea6c",
+          "blockNumber": 23693141,
+          "timestamp": 1761862907
+        }
+      ]
+    },
+    {
+      "date": "2025-10-31",
+      "amountTinc": 83495.0661838526,
+      "transactionCount": 5,
+      "transactions": [
+        {
+          "hash": "0x72cf9506b283bf827b211a5adb004fcf8603c8b5b4cb0ce9261dd7e62c9df2d5",
+          "amount": 646.6660880392548,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23695055,
+          "timestamp": 1761886067
+        },
+        {
+          "hash": "0x5a816be2db5901229c12fc7e6e8bd166f32834150445ea0d73b003e3306b6875",
+          "amount": 37907.713256094954,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23697246,
+          "timestamp": 1761912623
+        },
+        {
+          "hash": "0x769e1092376fbff5e8ac10fdfc6bb2c1bcb3189c469830f5c2137e6a1a959824",
+          "amount": 40244.80496612879,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23697247,
+          "timestamp": 1761912635
+        },
+        {
+          "hash": "0x92ddeb93de105b2a2611200a48fca243ccd9f74e8be4ae8ea818eca9036867be",
+          "amount": 3344.4305107296395,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23699453,
+          "timestamp": 1761939287
+        },
+        {
+          "hash": "0x388550c32c1dd2509b538ac9ed540280193625defdf4e7f169dbaba774eae05e",
+          "amount": 1351.451362859966,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23699568,
+          "timestamp": 1761940691
+        }
+      ]
+    },
+    {
+      "date": "2025-11-01",
+      "amountTinc": 23212.931540045796,
+      "transactionCount": 8,
+      "transactions": [
+        {
+          "hash": "0xdc750c56f20f98c2fc134b8c4bd8550c63c4ec91bdbb23d588664c1115eece02",
+          "amount": 103.7285214497054,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23701632,
+          "timestamp": 1761965627
+        },
+        {
+          "hash": "0xcc0ba417c96ca74238a96e306026d618a2ffb19fa595babc6c85149b6be4d7b4",
+          "amount": 1358.100068311015,
+          "from": "0x9fabf48ebe587ee4f8b3172012c3060cc40fea6c",
+          "blockNumber": 23704593,
+          "timestamp": 1762001351
+        },
+        {
+          "hash": "0x760121da3d6ed580b1e5bc5f8b84e7110b1ea09fbfce640e5fd2ceb2ef0cbf8a",
+          "amount": 5983.966422923834,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23704594,
+          "timestamp": 1762001363
+        },
+        {
+          "hash": "0x7d9eb01fcdc8cd281c9e4a0ca1d5f24f6b50aaf6877e11b6a957e14b748ee94e",
+          "amount": 8030.831987528941,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23704597,
+          "timestamp": 1762001399
+        },
+        {
+          "hash": "0xa7466a6cd605bb473170ca9c509122172a461fda6b5ec736861f73f064265aab",
+          "amount": 44.849583023198555,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23706093,
+          "timestamp": 1762019459
+        },
+        {
+          "hash": "0x937584c4aab0f280e8cf366f10b4c7381184fe15c547ebfb039cd519e2a98c8d",
+          "amount": 255.8175637114298,
+          "from": "0x9fabf48ebe587ee4f8b3172012c3060cc40fea6c",
+          "blockNumber": 23706094,
+          "timestamp": 1762019471
+        },
+        {
+          "hash": "0x3d75241860641554a8abd75ce09626f5f4822d0f7891c4eed28d28e8028179e5",
+          "amount": 901.8897115020103,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23706096,
+          "timestamp": 1762019495
+        },
+        {
+          "hash": "0x704e1a717c211830162ffe8eab5ee39057643813356b1ded737e302b636660ab",
+          "amount": 6533.747681595662,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23706454,
+          "timestamp": 1762023911
+        }
+      ]
+    },
+    {
+      "date": "2025-11-02",
+      "amountTinc": 8022.572367984606,
+      "transactionCount": 4,
+      "transactions": [
+        {
+          "hash": "0xdb391788228ab34149ea332ed8140cf99ce616b52df3e6228ad94b1c1877c097",
+          "amount": 243.70397700198347,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23708069,
+          "timestamp": 1762043411
+        },
+        {
+          "hash": "0x3fdf1533126a7e9dea88ff354a5b099960f8714b0582277c4c809dcf8421ed08",
+          "amount": 6554.317675914239,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23708161,
+          "timestamp": 1762044515
+        },
+        {
+          "hash": "0xf4ec773f36f9750643ec3c5909b6e2cbc18cece16422e74172aa4c3b205df709",
+          "amount": 701.825422620687,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23713636,
+          "timestamp": 1762110599
+        },
+        {
+          "hash": "0x611224188082b60ac19074d5ef9fe09216b8670893b5f032e794a6cf03d8d214",
+          "amount": 522.725292447696,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23714033,
+          "timestamp": 1762115375
+        }
+      ]
+    },
+    {
+      "date": "2025-11-03",
+      "amountTinc": 36313.40447028252,
+      "transactionCount": 6,
+      "transactions": [
+        {
+          "hash": "0x13143a48c99be60244f22b58b3537d47cc3e3793c4b4631caf57575ab79c712a",
+          "amount": 2273.149442643684,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23715430,
+          "timestamp": 1762132235
+        },
+        {
+          "hash": "0x0271907042fbae23f52f2b9cd40dc528565243de3f40a7504b131950e0f5d092",
+          "amount": 1812.0618997337212,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23717217,
+          "timestamp": 1762153847
+        },
+        {
+          "hash": "0x3f1bcae3e34e428e65beaf982bc2e67a3b0ca2fe8e1272136de42c18a45a6358",
+          "amount": 881.4777941205916,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23717264,
+          "timestamp": 1762154411
+        },
+        {
+          "hash": "0xcd72fa81ac5c9a15bf8a3d9bd28ba29aebeb146590fb3b96cb9e3865dcfbaf67",
+          "amount": 2263.9846987651867,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23717269,
+          "timestamp": 1762154471
+        },
+        {
+          "hash": "0xa46bc06a96e0e46ee29478ee744504a538dbd9d4c2f55f0bd1607d48bf02cbd2",
+          "amount": 13194.592628775355,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23718683,
+          "timestamp": 1762171475
+        },
+        {
+          "hash": "0x12b2c363d6e54d4cfe315becab0eb9a99e5a8d3203c0ad63b805af192ebf4a28",
+          "amount": 15888.138006243978,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23719012,
+          "timestamp": 1762175459
+        }
+      ]
+    },
+    {
+      "date": "2025-11-04",
+      "amountTinc": 1733.0819106443366,
+      "transactionCount": 2,
+      "transactions": [
+        {
+          "hash": "0x951521de781308e0c11ca0696f9bc3fcc53ed362c29ab43dd0c7bedcc248e45f",
+          "amount": 302.41211766947816,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23722265,
+          "timestamp": 1762214759
+        },
+        {
+          "hash": "0x68b8370d37ae41cb0ed9302170d46d0b0384c0697c9a979b99fff5b0fbb77899",
+          "amount": 1430.6697929748584,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23729277,
+          "timestamp": 1762299479
+        }
+      ]
+    },
+    {
+      "date": "2025-11-05",
+      "amountTinc": 32859.8881195684,
+      "transactionCount": 5,
+      "transactions": [
+        {
+          "hash": "0xea23c61c8909c0347f69df8ff9e39b03bbcadec10e1408efb51c0f16eb66b5de",
+          "amount": 1433.577201038175,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23731064,
+          "timestamp": 1762321091
+        },
+        {
+          "hash": "0x1499fee9c5c2d71221682594c9cf796d480f9e5915680ad78c73a02c39abb89f",
+          "amount": 20569.31426023869,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23731506,
+          "timestamp": 1762326467
+        },
+        {
+          "hash": "0x03794d18db9ae4351f524bb3becfc1a673fca5784f251458f9aeab1c095b3f9f",
+          "amount": 9039.423307542229,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23732311,
+          "timestamp": 1762336151
+        },
+        {
+          "hash": "0x205c2511bebc32608618f40264fd5214a832072f1a48bef828160e017a2eb395",
+          "amount": 1437.4288122754006,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23732853,
+          "timestamp": 1762342703
+        },
+        {
+          "hash": "0x7789e9aa63b36090c9157894e4f49bbccd02596869dc99ddc0cfe5b322d85ffa",
+          "amount": 380.1445384739024,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23736202,
+          "timestamp": 1762383263
+        }
+      ]
+    },
+    {
+      "date": "2025-11-06",
+      "amountTinc": 112018.83657624005,
+      "transactionCount": 5,
+      "transactions": [
+        {
+          "hash": "0xf9d40023aecadffa4b8b6591d430b5d51b0ef968b86d0e8f372594c62e055ab0",
+          "amount": 43560.5064503643,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23741861,
+          "timestamp": 1762451687
+        },
+        {
+          "hash": "0x287b577bcc34eda9c544f9c2360815b0135f9e7f25e6dfe633ea56d94fb87473",
+          "amount": 46058.0753527847,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23741862,
+          "timestamp": 1762451699
+        },
+        {
+          "hash": "0xf88800ea659c4b5c451ac62873aa85a1825ba34720dde853c1a2f38bd59c2efd",
+          "amount": 1106.9799584373911,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23742540,
+          "timestamp": 1762459859
+        },
+        {
+          "hash": "0xd414109133983b14fc300d82220c799f0d7ab5d411560bf9d3d899a9852fda01",
+          "amount": 6085.152476199736,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23742936,
+          "timestamp": 1762464659
+        },
+        {
+          "hash": "0x3453f6048f70d74fef6e4e650d3567ff491ce237698d1037e976b71ccec7cefd",
+          "amount": 15208.122338453913,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23743654,
+          "timestamp": 1762473311
+        }
+      ]
+    },
+    {
+      "date": "2025-11-07",
+      "amountTinc": 102710.59078519221,
+      "transactionCount": 6,
+      "transactions": [
+        {
+          "hash": "0x292f459babd44f7ce1c2ba44985d8d42804e7c91f64907ca1846ff9ac78764ec",
+          "amount": 25752.314143926353,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23748798,
+          "timestamp": 1762535519
+        },
+        {
+          "hash": "0x0903c450c145d37bd4bb894c7000d2f1085f6a3e816b8de6cd940449fe42b8e8",
+          "amount": 26302.07882201516,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23749258,
+          "timestamp": 1762541099
+        },
+        {
+          "hash": "0xa2bd53486815904faea78208ec3b122f22f1e7f31a2d13dbd8fb29beef63c816",
+          "amount": 920.178919822745,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23750029,
+          "timestamp": 1762550375
+        },
+        {
+          "hash": "0xeb6ccc0eaa51a8910d32dcdbb68060ca31a1b7d24d97c016b0ec14cbbb8f5d81",
+          "amount": 8733.303466713098,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23750408,
+          "timestamp": 1762554935
+        },
+        {
+          "hash": "0xfb48939280a62ef791285ebe08c491f26f0c17340106f5d6eff778175273a414",
+          "amount": 37618.67196292313,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23750591,
+          "timestamp": 1762557131
+        },
+        {
+          "hash": "0x80c60b17ee86c2f284891a8124749ecfda45c3e5ff42fecd7b9620089d3cc274",
+          "amount": 3384.0434697917253,
+          "from": "0x9fabf48ebe587ee4f8b3172012c3060cc40fea6c",
+          "blockNumber": 23750810,
+          "timestamp": 1762559783
+        }
+      ]
+    },
+    {
+      "date": "2025-11-08",
+      "amountTinc": 30788.56672820175,
+      "transactionCount": 10,
+      "transactions": [
+        {
+          "hash": "0x52ef5b433841255557e5917e16091d854c1cdd377dabd620ed66a77559fae22a",
+          "amount": 730.3784361470416,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23751312,
+          "timestamp": 1762565891
+        },
+        {
+          "hash": "0xe92651238c742b8e66362d1f879562361f337e7d48e889c882ed3860b360f253",
+          "amount": 8538.215289771933,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23751516,
+          "timestamp": 1762568363
+        },
+        {
+          "hash": "0x9554e2aaf4f9940cf998293692124039a8563800165e223dd8db7e3481eeff3a",
+          "amount": 832.3866000623486,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23752759,
+          "timestamp": 1762583363
+        },
+        {
+          "hash": "0x553c7006b892fc9deb0f5508e0bfbb9c9fe122cddd8334f739e802a59a7e4823",
+          "amount": 984.5346817897873,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23752824,
+          "timestamp": 1762584155
+        },
+        {
+          "hash": "0x7877cf60df6a048d241563283d5c2d47ebb6677d315b104115c2d46d45316c13",
+          "amount": 8715.52146965101,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23752949,
+          "timestamp": 1762585667
+        },
+        {
+          "hash": "0xe37978b333674bac0c80c3deed122145fa61ebb2f78f1e3c9765f2cc8aee8064",
+          "amount": 5936.5990988834355,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23754171,
+          "timestamp": 1762600427
+        },
+        {
+          "hash": "0xc837cc70a9e1b17421abb1a52168367fa0b848b77d7c6e454cd5a274f8e046f3",
+          "amount": 624.4313465456621,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23754546,
+          "timestamp": 1762604975
+        },
+        {
+          "hash": "0xcfc1e77aa1f73fad61e29f54ea66d9e26f817cb33667e0d7794c889dcb75f648",
+          "amount": 3530.0728050107855,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23754612,
+          "timestamp": 1762605767
+        },
+        {
+          "hash": "0xeee86d02e1f98d7f80789a6760edd65bff1329e8bfed8b6efea55c9303bb0d1e",
+          "amount": 622.337044524297,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23756539,
+          "timestamp": 1762628987
+        },
+        {
+          "hash": "0x2d6f792d5bfb8b5b489f756e2bdea9109a7d5dbdefb2aae85e9be8969648bc01",
+          "amount": 274.0899558154442,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23756633,
+          "timestamp": 1762630127
+        }
+      ]
+    },
+    {
+      "date": "2025-11-09",
+      "amountTinc": 29800.434284363084,
+      "transactionCount": 7,
+      "transactions": [
+        {
+          "hash": "0xfb348e6d086c85683549ab8b6f0d84ea77a8afb1eeea9601aeadb95bc7d00b02",
+          "amount": 1980.3268571912124,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23760176,
+          "timestamp": 1762672859
+        },
+        {
+          "hash": "0x24c4ece2801e4711bf04c5ae8e789386864fd2adf580f74b4a5868e483d09cf8",
+          "amount": 741.1125037448468,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23762946,
+          "timestamp": 1762706327
+        },
+        {
+          "hash": "0x18bb3cdba019307d8b33853eafe2964ff3ed915ca4fd32b308b89a922d259586",
+          "amount": 5580.750169854097,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23763538,
+          "timestamp": 1762713455
+        },
+        {
+          "hash": "0x5b83b8749e37eb5eb1e2f51d58470a7e1f7259de478e68fd79d3520d2536e4a6",
+          "amount": 1642.7903759523042,
+          "from": "0x9fabf48ebe587ee4f8b3172012c3060cc40fea6c",
+          "blockNumber": 23764294,
+          "timestamp": 1762722587
+        },
+        {
+          "hash": "0xd415ac48d0aa699f1e39e6c29c8317673fb58367da90e328fc392f7c3faebf36",
+          "amount": 3313.9459442841144,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23764348,
+          "timestamp": 1762723235
+        },
+        {
+          "hash": "0xba3f8a5c438e781c7190bcda09bef9eaeac6bdf7caf634ec5347fcb8b6fe3c0e",
+          "amount": 121.13495391463496,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23764397,
+          "timestamp": 1762723823
+        },
+        {
+          "hash": "0xa297d0fce0a99ba919745566e8a45c0a1f55f603237b2b2aea19cccccdac2fb6",
+          "amount": 16420.373479421873,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23764739,
+          "timestamp": 1762727939
+        }
+      ]
+    },
+    {
+      "date": "2025-11-10",
+      "amountTinc": 8242.44062060659,
+      "transactionCount": 3,
+      "transactions": [
+        {
+          "hash": "0xc15b1f00826ade415ac89b43a31fab2685477e782950748b4ce60d3d5302934c",
+          "amount": 929.8990297039006,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23770993,
+          "timestamp": 1762803479
+        },
+        {
+          "hash": "0xcb447a0bbe4f9c3fc57f122009182b59f55492cc6f1284bd909c23d5cd01a6f7",
+          "amount": 5816.795729318061,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23771453,
+          "timestamp": 1762809071
+        },
+        {
+          "hash": "0x6d7475c3f09c672a3216c61a9280488ac4f724c4d2a21f9609e3bab5a423ad76",
+          "amount": 1495.7458615846283,
+          "from": "0x9fabf48ebe587ee4f8b3172012c3060cc40fea6c",
+          "blockNumber": 23771533,
+          "timestamp": 1762810067
+        }
+      ]
+    },
+    {
+      "date": "2025-11-11",
+      "amountTinc": 228794.9261628577,
+      "transactionCount": 14,
+      "transactions": [
+        {
+          "hash": "0x4efb15eca450d12caead12b494e1bed52e0e95fedb7807bb825972df44a98d30",
+          "amount": 115.36044883303065,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23772639,
+          "timestamp": 1762823471
+        },
+        {
+          "hash": "0xbf36e026aa08889f756f168f2ec247036948a42d9c1be93d1ef54c08430b979e",
+          "amount": 2474.896916431302,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23772771,
+          "timestamp": 1762825091
+        },
+        {
+          "hash": "0x4a4926b60dd24ae6645e64d6fe3232f20feea216e6f7be153def5f2b3c852374",
+          "amount": 2691.9019826749545,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23773933,
+          "timestamp": 1762839167
+        },
+        {
+          "hash": "0x3e68247d68178f3ddbc4815e9e8828662d4e8c2ca9f75c0ec5031f44b8fe7a5b",
+          "amount": 69927.43158164939,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23775040,
+          "timestamp": 1762852559
+        },
+        {
+          "hash": "0xfb906f1c9e45f5e9468ba6b3214a23cc7a68327e253b25503828795afde612cf",
+          "amount": 46544.259295356955,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23775040,
+          "timestamp": 1762852559
+        },
+        {
+          "hash": "0xf4394661eb3b8b61291bd079423a3af62b932389a46d2f8efa1462a638ba0b23",
+          "amount": 922.4508287878252,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23775041,
+          "timestamp": 1762852571
+        },
+        {
+          "hash": "0x36687aeee7f4083bde89de683b4f5b7e11793c7d587c988ef17d37d229b501f6",
+          "amount": 9545.62012493178,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23775054,
+          "timestamp": 1762852751
+        },
+        {
+          "hash": "0x60eb3a8f56beac17f4326b5f9dc6e0e6968d02dbb8cdad5e4498d1be1300f0db",
+          "amount": 731.129447866059,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23775844,
+          "timestamp": 1762862315
+        },
+        {
+          "hash": "0xa1f6a0e0fd872450868d0969692c207c9808727585c8157349f387066fcccb62",
+          "amount": 9839.64350500416,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23776630,
+          "timestamp": 1762871819
+        },
+        {
+          "hash": "0x3673218c414170a82039c71e75d63406bd64feb361fda192347e50c2f3309441",
+          "amount": 46950.782295996716,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23776824,
+          "timestamp": 1762874171
+        },
+        {
+          "hash": "0xd689a3ff2969516e14dee00d37004349aeaf3c01136355cc06c52ca02b6e756c",
+          "amount": 9377.62426236353,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23777562,
+          "timestamp": 1762883099
+        },
+        {
+          "hash": "0x5109e4206f05dd80a36380647a462da42d817ab5297931471cbb08af2edc1b85",
+          "amount": 6090.184598999734,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23778490,
+          "timestamp": 1762894307
+        },
+        {
+          "hash": "0x418843ead84d654ca8d1221558939c826c1d0d6b9fef30b6a26c38f25ce17514",
+          "amount": 23401.8809060931,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23778612,
+          "timestamp": 1762895783
+        },
+        {
+          "hash": "0xb9be5ce39c94e2263cc2a1bebe22bb53834d1a476e008330191509f8a356c8e5",
+          "amount": 181.75996786916787,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23779152,
+          "timestamp": 1762902299
+        }
+      ]
+    },
+    {
+      "date": "2025-11-12",
+      "amountTinc": 51226.72664417224,
+      "transactionCount": 10,
+      "transactions": [
+        {
+          "hash": "0x523abc779074c6cf6d941a501063bf7d2753a486b6a8a8b28a442c34f226691a",
+          "amount": 1078.142387102365,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23779657,
+          "timestamp": 1762908395
+        },
+        {
+          "hash": "0x5fa08cd9e11571227e27940f5a55ce940d4b8d3426e132f026acb8aadbf7f345",
+          "amount": 1262.5551790541342,
+          "from": "0x9fabf48ebe587ee4f8b3172012c3060cc40fea6c",
+          "blockNumber": 23779696,
+          "timestamp": 1762908863
+        },
+        {
+          "hash": "0xfba8d3b250849660e847610c50ed5b3b85e4d81fda9217d831b810c06e6799bd",
+          "amount": 1688.0312433780036,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23780404,
+          "timestamp": 1762917395
+        },
+        {
+          "hash": "0xc8b851b57b0faeebe8b72670ff62d6aab474149f3a79b0c729c425d5473b496d",
+          "amount": 2736.323623116369,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23781112,
+          "timestamp": 1762925927
+        },
+        {
+          "hash": "0x2fa0b01bde339a377615a7d46484dcbdcbb1b065d64cb7ffcf450e102011fd5a",
+          "amount": 16069.2510255775,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23781410,
+          "timestamp": 1762929527
+        },
+        {
+          "hash": "0x0a380b146bbdaf25fe1b830b9579feb6c8778105631b1479cc57671b498e03bc",
+          "amount": 23427.120247104565,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23782194,
+          "timestamp": 1762939007
+        },
+        {
+          "hash": "0xfa40fd325f96e30ff0e7ed5e3a4b85e0dd43acf5e4d7763e596a1a9c6bdd1192",
+          "amount": 1663.3499188564094,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23785390,
+          "timestamp": 1762977623
+        },
+        {
+          "hash": "0x1a994b49c870cb5923ebee9acfe997e33211c2ca950524eace812c26685b2a81",
+          "amount": 1454.356915122803,
+          "from": "0x9fabf48ebe587ee4f8b3172012c3060cc40fea6c",
+          "blockNumber": 23785868,
+          "timestamp": 1762983419
+        },
+        {
+          "hash": "0x267da7c9e135f0a67d4ff8d5d560bb7ff1d48a290eb030ab8c70cff7e06882a6",
+          "amount": 432.32266029988654,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23786333,
+          "timestamp": 1762989047
+        },
+        {
+          "hash": "0x89c3be53aaeb62778f23943356fe8781530d2c078e80ba44c449d0e36c6a7650",
+          "amount": 1415.2734445602018,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23786333,
+          "timestamp": 1762989047
+        }
+      ]
+    },
+    {
+      "date": "2025-11-13",
+      "amountTinc": 25583.70179682177,
+      "transactionCount": 4,
+      "transactions": [
+        {
+          "hash": "0x554c29853dd64c29f34a05f627c4e0259c4169c38fb625044021b5ca92a7ef4f",
+          "amount": 2913.0910089543036,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23787172,
+          "timestamp": 1762999235
+        },
+        {
+          "hash": "0x963120cfb70c68210d17a88dfdd49def31ea13f04624a75daffb0cb3ff9db066",
+          "amount": 9520.95319556025,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23787839,
+          "timestamp": 1763007323
+        },
+        {
+          "hash": "0x257efa044fd68b7f343824d438109b924cb8d477287e38d4125c762d8f3c790d",
+          "amount": 9857.803593329796,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23788956,
+          "timestamp": 1763020847
+        },
+        {
+          "hash": "0x3a9fa5871eda74eff1a56973abdb985f7aaa68bc8859189ddc05b8f0464f83ff",
+          "amount": 3291.8539989774235,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23793061,
+          "timestamp": 1763070503
+        }
+      ]
+    },
+    {
+      "date": "2025-11-14",
+      "amountTinc": 24918.229079838075,
+      "transactionCount": 4,
+      "transactions": [
+        {
+          "hash": "0x77d61472f1fa86ebb9ef1eb455d975abb4e007efe78611e94f594536520f2349",
+          "amount": 2620.314709414621,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23794314,
+          "timestamp": 1763085695
+        },
+        {
+          "hash": "0x3d8162aca57a688617b5235f8f32acc74d897a27c3bac4b4396c82bda4a106a8",
+          "amount": 15183.688132285864,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23795200,
+          "timestamp": 1763096399
+        },
+        {
+          "hash": "0xcd609a43d029717fe0b13a5a9173ad5a5f29e043835c9b9264a76864bf0af2b4",
+          "amount": 6241.308863200188,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23795948,
+          "timestamp": 1763105435
+        },
+        {
+          "hash": "0x5d1946cff091a481473602d08cc337409cfb027273cc615639518c5a33ad0bb8",
+          "amount": 872.9173749373974,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23800463,
+          "timestamp": 1763159903
+        }
+      ]
+    },
+    {
+      "date": "2025-11-15",
+      "amountTinc": 13648.696962014317,
+      "transactionCount": 4,
+      "transactions": [
+        {
+          "hash": "0x7a39cec7f30ec081929f49c27cb8a698ebf4aa4da0886aa2f59935379eda9716",
+          "amount": 502.9449230087714,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23802269,
+          "timestamp": 1763181719
+        },
+        {
+          "hash": "0xc3a247fa9055fea4c3d2a397902b62908f384b2352a677ac5b50728f2fdd19bb",
+          "amount": 495.5398608425286,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23805498,
+          "timestamp": 1763220671
+        },
+        {
+          "hash": "0x47d5e6dc9b81e744cbb7ddfaa97118483f406942be5f20e8e2bb9cbe3b78834b",
+          "amount": 1844.2943391547517,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23807287,
+          "timestamp": 1763242283
+        },
+        {
+          "hash": "0x2c2f308916e6cd829645d1ae1b41ffe6ddbed29a3b278fbad55b5f8deadfd80c",
+          "amount": 10805.917839008265,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23807605,
+          "timestamp": 1763246171
+        }
+      ]
+    },
+    {
+      "date": "2025-11-16",
+      "amountTinc": 163503.4763840358,
+      "transactionCount": 10,
+      "transactions": [
+        {
+          "hash": "0x6835f756ca596794b6e7ae7d6a52f3c12389288c2a4160335652049a7a40c3da",
+          "amount": 13992.41699233558,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23809077,
+          "timestamp": 1763263907
+        },
+        {
+          "hash": "0x95ed96c58c6ed2a5ff13af68a588bb851d5bc6bce3a04d88eac15f45815dafab",
+          "amount": 64918.00669763311,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23811078,
+          "timestamp": 1763288051
+        },
+        {
+          "hash": "0xd15f77292e2d804505b6fa210771278aca2abd86a9638c087f44c41efb44974d",
+          "amount": 48182.44430977399,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23811079,
+          "timestamp": 1763288063
+        },
+        {
+          "hash": "0xf014d00f2d9305ef8315bca0003696db226278dd71d206d22be70693ea2a5c91",
+          "amount": 3377.057260581755,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23811231,
+          "timestamp": 1763289887
+        },
+        {
+          "hash": "0x9d6d6b84f866de86fc0ab80ec6ba549fe0ecc572584d8bc5369efdd482571fc1",
+          "amount": 1792.0246787428257,
+          "from": "0x9fabf48ebe587ee4f8b3172012c3060cc40fea6c",
+          "blockNumber": 23811231,
+          "timestamp": 1763289887
+        },
+        {
+          "hash": "0xa135202aa5e0b15e159b2b7b29821dab2c6267db1f3e1067511aa48f792e6347",
+          "amount": 16944.544621602618,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23812872,
+          "timestamp": 1763309675
+        },
+        {
+          "hash": "0xabe6999f34b60d0652a5dacacbb379a36158257746896def002e40966b493af7",
+          "amount": 5145.59269998026,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23813371,
+          "timestamp": 1763315723
+        },
+        {
+          "hash": "0x49d6fde462087952982e1a2178fc4bab29d0db8accd26e1b08dbbddfdd925f22",
+          "amount": 5960.27193778281,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23814659,
+          "timestamp": 1763331311
+        },
+        {
+          "hash": "0x38f6f03cfda2ee1ad2347210a46b4895726854dbb3ca3a3d8308f568edae1c99",
+          "amount": 783.2355713470313,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23814816,
+          "timestamp": 1763333207
+        },
+        {
+          "hash": "0x6d5a1daf35ae483c7e31ca61c43823132dfde65a2795ec3ea84fa3d43e555be3",
+          "amount": 2407.881614255846,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23814817,
+          "timestamp": 1763333219
+        }
+      ]
+    },
+    {
+      "date": "2025-11-17",
+      "amountTinc": 32489.51106378789,
+      "transactionCount": 4,
+      "transactions": [
+        {
+          "hash": "0xa6043b807013f38efff9dec0f09b33e860a2b0776364a1b17c64a6708da0197c",
+          "amount": 5082.663375070564,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23815819,
+          "timestamp": 1763345327
+        },
+        {
+          "hash": "0x3b59ae8d40efa8ff8571e99478508f6605b4ca3f85251a9981f46a795f537c1d",
+          "amount": 1936.3401434543346,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23816447,
+          "timestamp": 1763352923
+        },
+        {
+          "hash": "0xcbfea29411fadc6947411bf1cfb14a8683e7d36e79b33557cc829a59fd20ae3e",
+          "amount": 12511.698213143225,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23820282,
+          "timestamp": 1763399423
+        },
+        {
+          "hash": "0xcb0c60bcfb882a9f10370134549f7184639e951ce4ee5ae08b18a22e6ad73295",
+          "amount": 12958.809332119765,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23820283,
+          "timestamp": 1763399435
+        }
+      ]
+    },
+    {
+      "date": "2025-11-18",
+      "amountTinc": 10947.057882378398,
+      "transactionCount": 4,
+      "transactions": [
+        {
+          "hash": "0x922f264ac3dba2938fc1c6fe1cadd5e8b69d0f39aed34b36df3a0bec069244d2",
+          "amount": 3856.923046727551,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23822479,
+          "timestamp": 1763426159
+        },
+        {
+          "hash": "0x76643b7063c5550a451155a3ae84e95b24ca4f0b0782854fd451f53da0e2d6b3",
+          "amount": 2522.0049642743043,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23822485,
+          "timestamp": 1763426231
+        },
+        {
+          "hash": "0xdc12902390ec35d5476b71a4857723fae2415f7f91b173dc50d9072a302ad2f5",
+          "amount": 2552.2224902587645,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23824261,
+          "timestamp": 1763447771
+        },
+        {
+          "hash": "0x4ad8550f215af8e3575dcebee60429f178ef20b00a4693bffc24e8960d791979",
+          "amount": 2015.9073811177789,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23829039,
+          "timestamp": 1763505719
+        }
+      ]
+    },
+    {
+      "date": "2025-11-19",
+      "amountTinc": 12942.501135418792,
+      "transactionCount": 3,
+      "transactions": [
+        {
+          "hash": "0x0f026b5dde3c3154abff21fee97a15a40a79ef83c56ea63a97b1f634ec68137c",
+          "amount": 5715.084730717971,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23832024,
+          "timestamp": 1763541935
+        },
+        {
+          "hash": "0xf22ed5e66a4b9f7cac13ebe99602fba0c66ea7ede94c933b818d07702f8f34ab",
+          "amount": 6290.165768630727,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23832112,
+          "timestamp": 1763542991
+        },
+        {
+          "hash": "0x2fdeb954d34bca0b8a82650619b320be3474a382596cb3760b6ee282372274ff",
+          "amount": 937.2506360700927,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+          "blockNumber": 23833068,
+          "timestamp": 1763554595
+        }
+      ]
+    }
+  ],
+  "fetchedAt": "2025-11-19T21:58:21.677Z",
+  "fromCache": true,
+  "lastProcessedBlock": 23835920,
+  "holderStats": {
+    "note": "Skipped for verification - focusing on burn data only"
+  }
+}
