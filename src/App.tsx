@@ -116,6 +116,22 @@ function App() {
                   textTransform: 'uppercase',
                   fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif'
                 }}>Real-Time Burn Analytics Platform</p>
+
+                <p style={{
+                  fontSize: '0.8125rem',
+                  color: 'rgba(255, 193, 7, 0.9)',
+                  marginTop: '0.75rem',
+                  letterSpacing: '0.02em',
+                  fontWeight: '500',
+                  fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif',
+                  padding: '0.5rem 1rem',
+                  backgroundColor: 'rgba(255, 193, 7, 0.05)',
+                  border: '1px solid rgba(255, 193, 7, 0.2)',
+                  borderRadius: '6px',
+                  maxWidth: '600px'
+                }}>
+                  ⚠️ Beta: Site not actively managed, data must be verified manually.
+                </p>
               </div>
             </div>
             
