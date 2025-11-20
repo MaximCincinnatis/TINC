@@ -165,48 +165,80 @@ async function fetchBurns(fromBlock, toBlock) {
   return burns;
 }
 
-async function fetchBurnsWithRetry(fromBlock, toBlock, maxRetries = 3) {
+// Helper: Split chunk recursively until success
+async function fetchBurnsWithChunkSplitting(fromBlock, toBlock) {
   const chunkSize = toBlock - fromBlock + 1;
-  
+
+  // If chunk is 1 block, can't split further - infinite retry on single block
+  if (chunkSize === 1) {
+    return await fetchBurnsWithRetry(fromBlock, toBlock);
+  }
+
+  // Split chunk in half and process each half
+  const midBlock = Math.floor((fromBlock + toBlock) / 2);
+
+  console.log(`📦 Splitting chunk ${fromBlock}-${toBlock} (${chunkSize} blocks) into smaller chunks`);
+  console.log(`   First half:  ${fromBlock}-${midBlock} (${midBlock - fromBlock + 1} blocks)`);
+  console.log(`   Second half: ${midBlock + 1}-${toBlock} (${toBlock - midBlock} blocks)`);
+
+  const firstHalf = await fetchBurnsWithRetry(fromBlock, midBlock);
+  const secondHalf = await fetchBurnsWithRetry(midBlock + 1, toBlock);
+
+  return [...firstHalf, ...secondHalf];
+}
+
+async function fetchBurnsWithRetry(fromBlock, toBlock) {
+  const chunkSize = toBlock - fromBlock + 1;
+  const maxBackoff = 600000; // 10 minutes max backoff
+  let attempt = 1;
+
   // Adaptive timeout based on chunk size
   const baseTimeout = 30000; // 30 seconds base
-  const timeoutMultiplier = Math.max(1, Math.ceil(chunkSize / 200)); // Increase timeout for larger chunks
+  const timeoutMultiplier = Math.max(1, Math.ceil(chunkSize / 200));
   const adaptiveTimeout = baseTimeout * timeoutMultiplier;
-  
-  for (let attempt = 1; attempt <= maxRetries; attempt++) {
+
+  while (true) { // INFINITE RETRY - never give up
     try {
-      console.log(`Fetching blocks ${fromBlock} to ${toBlock} (${chunkSize} blocks, attempt ${attempt}/${maxRetries}, timeout: ${adaptiveTimeout/1000}s)...`);
-      
+      console.log(`Fetching blocks ${fromBlock} to ${toBlock} (${chunkSize} blocks, attempt ${attempt})...`);
+
       // Create a timeout promise
       const timeoutPromise = new Promise((_, reject) => {
-        setTimeout(() => reject(new Error(`Timeout after ${adaptiveTimeout/1000} seconds`)), adaptiveTimeout);
+        setTimeout(() => reject(new Error(`Timeout after ${adaptiveTimeout/1000}s`)), adaptiveTimeout);
       });
-      
+
       // Race between fetch and timeout
       const burns = await Promise.race([
         fetchBurns(fromBlock, toBlock),
         timeoutPromise
       ]);
-      
+
       if (attempt > 1) {
         console.log(`✅ Success on attempt ${attempt} for blocks ${fromBlock}-${toBlock}`);
       }
-      return burns;
+      return burns; // Only exit on success
+
     } catch (error) {
-      const isLastAttempt = attempt === maxRetries;
-      console.warn(`❌ Attempt ${attempt}/${maxRetries} failed for blocks ${fromBlock}-${toBlock}: ${error.message}`);
-      
-      if (isLastAttempt) {
-        console.error(`🚨 CRITICAL: Failed to fetch blocks ${fromBlock}-${toBlock} after ${maxRetries} attempts!`);
-        throw new Error(`Failed to fetch blocks ${fromBlock}-${toBlock} after ${maxRetries} attempts: ${error.message}`);
+      console.warn(`❌ Attempt ${attempt} failed for blocks ${fromBlock}-${toBlock}: ${error.message}`);
+
+      // If chunk is larger than 1 block and failing, split it
+      if (chunkSize > 1) {
+        console.log(`🔄 Chunk too large or problematic, splitting into smaller chunks...`);
+        return await fetchBurnsWithChunkSplitting(fromBlock, toBlock);
       }
-      
-      // Exponential backoff with jitter: 1-2s, 2-4s, 4-8s
-      const baseBackoff = 1000 * Math.pow(2, attempt - 1);
-      const jitter = Math.random() * baseBackoff;
-      const backoffMs = Math.min(baseBackoff + jitter, 10000); // Cap at 10 seconds
-      console.log(`⏳ Waiting ${(backoffMs/1000).toFixed(1)}s before retry...`);
+
+      // For single block: exponential backoff up to 10 minutes, then retry every 10 minutes
+      const exponentialBackoff = 1000 * Math.pow(2, attempt - 1);
+      const backoffMs = Math.min(exponentialBackoff, maxBackoff);
+
+      if (backoffMs >= maxBackoff) {
+        console.log(`⏳ Retrying single block ${fromBlock} in ${maxBackoff/60000} minutes (max backoff reached, will retry every 10 min until success)...`);
+      } else {
+        console.log(`⏳ Waiting ${(backoffMs/1000).toFixed(1)}s before retry (attempt ${attempt + 1})...`);
+      }
+
       await new Promise(resolve => setTimeout(resolve, backoffMs));
+      attempt++;
+      // Loop continues forever - NEVER GIVES UP
     }
   }
 }
@@ -248,34 +280,22 @@ async function fetchBurnData() {
   const totalChunks = Math.ceil((currentBlock - startBlock) / CHUNK_SIZE);
   let chunksProcessed = 0;
 
-  // Fetch in chunks with robust retry logic
-  console.log(`🔄 Processing ${totalChunks} chunks with retry logic...`);
-  const failedChunks = [];
-  
+  // Fetch in chunks with infinite retry logic - NEVER skips blocks
+  console.log(`🔄 Processing ${totalChunks} chunks with infinite retry (will retry forever until 100% complete)...`);
+
   for (let fromBlock = startBlock; fromBlock <= currentBlock; fromBlock += CHUNK_SIZE) {
     const toBlock = Math.min(fromBlock + CHUNK_SIZE - 1, currentBlock);
-    
-    try {
-      // Use retry mechanism - continue even if chunk fails
-      const burns = await fetchBurnsWithRetry(fromBlock, toBlock);
-      allBurns.push(...burns);
-      chunksProcessed++;
-      
-      // Progress indicator
-      const progress = ((chunksProcessed / totalChunks) * 100).toFixed(1);
-      console.log(`📊 Progress: ${chunksProcessed}/${totalChunks} chunks (${progress}%) - Found ${burns.length} burns in this chunk`);
-    } catch (error) {
-      console.warn(`⚠️  Chunk ${fromBlock}-${toBlock} failed after retries, continuing...`);
-      failedChunks.push({ fromBlock, toBlock, error: error.message });
-      chunksProcessed++; // Count as processed even if failed
-    }
+
+    // NO TRY/CATCH - fetchBurnsWithRetry will retry forever until success
+    const burns = await fetchBurnsWithRetry(fromBlock, toBlock);
+    allBurns.push(...burns);
+    chunksProcessed++;
+
+    // Progress indicator
+    const progress = ((chunksProcessed / totalChunks) * 100).toFixed(1);
+    console.log(`📊 Progress: ${chunksProcessed}/${totalChunks} chunks (${progress}%) - Found ${burns.length} burns in this chunk`);
   }
-  
-  if (failedChunks.length > 0) {
-    console.warn(`⚠️  WARNING: ${failedChunks.length} chunks failed - data may be incomplete`);
-    console.warn(`   Failed blocks:`, failedChunks.map(c => `${c.fromBlock}-${c.toBlock}`).join(', '));
-  }
-  
+
   console.log(`✅ Processed ${totalChunks} chunks - Total burns found: ${allBurns.length}`);
 
   // Group burns by day
@@ -604,98 +624,21 @@ async function runIncrementalUpdate() {
     const totalChunks = Math.ceil((currentBlock - startBlock) / CHUNK_SIZE);
     let chunksProcessed = 0;
     
-    console.log(`🔄 Processing ${totalChunks} chunks for recent data...`);
-    
-    const failedChunks = [];
+    console.log(`🔄 Processing ${totalChunks} chunks for recent data (infinite retry - will never skip blocks)...`);
+
     for (let fromBlock = startBlock; fromBlock <= currentBlock; fromBlock += CHUNK_SIZE) {
       const toBlock = Math.min(fromBlock + CHUNK_SIZE - 1, currentBlock);
-      
-      try {
-        const burns = await fetchBurnsWithRetry(fromBlock, toBlock);
-        allBurns.push(...burns);
-        chunksProcessed++;
-        
-        const progress = ((chunksProcessed / totalChunks) * 100).toFixed(1);
-        console.log(`📊 Progress: ${chunksProcessed}/${totalChunks} chunks (${progress}%) - Found ${burns.length} burns`);
-      } catch (error) {
-        console.warn(`⚠️  Chunk ${fromBlock}-${toBlock} failed, continuing...`);
-        failedChunks.push({ fromBlock, toBlock });
-        chunksProcessed++;
-      }
+
+      // NO TRY/CATCH - fetchBurnsWithRetry will retry forever until success
+      const burns = await fetchBurnsWithRetry(fromBlock, toBlock);
+      allBurns.push(...burns);
+      chunksProcessed++;
+
+      const progress = ((chunksProcessed / totalChunks) * 100).toFixed(1);
+      console.log(`📊 Progress: ${chunksProcessed}/${totalChunks} chunks (${progress}%) - Found ${burns.length} burns`);
     }
-    
-    if (failedChunks.length > 0) {
-      console.warn(`⚠️  ${failedChunks.length} chunks failed during incremental update`);
-      console.log('🔄 Attempting to recover failed chunks with smaller block sizes...');
-      
-      // Retry failed chunks with smaller size
-      const recoveredBurns = [];
-      const permanentFailures = [];
-      
-      for (const failedChunk of failedChunks) {
-        console.log(`  🔄 Retrying chunk ${failedChunk.fromBlock}-${failedChunk.toBlock}...`);
-        
-        // Use much smaller chunk size for problematic ranges
-        const RETRY_CHUNK_SIZE = 100; // Much smaller than default 800
-        let chunkRecovered = false;
-        
-        for (let retryBlock = failedChunk.fromBlock; 
-             retryBlock <= failedChunk.toBlock; 
-             retryBlock += RETRY_CHUNK_SIZE) {
-          
-          const retryToBlock = Math.min(retryBlock + RETRY_CHUNK_SIZE - 1, failedChunk.toBlock);
-          
-          try {
-            // Try with more retries and longer timeout
-            const burns = await fetchBurnsWithRetry(retryBlock, retryToBlock, 5);
-            recoveredBurns.push(...burns);
-            console.log(`    ✅ Recovered ${burns.length} burns from blocks ${retryBlock}-${retryToBlock}`);
-            chunkRecovered = true;
-          } catch (retryError) {
-            console.error(`    ❌ Failed to recover blocks ${retryBlock}-${retryToBlock}: ${retryError.message}`);
-            permanentFailures.push({
-              fromBlock: retryBlock,
-              toBlock: retryToBlock,
-              error: retryError.message,
-              timestamp: new Date().toISOString()
-            });
-          }
-        }
-        
-        if (chunkRecovered) {
-          console.log(`  ✅ Successfully recovered chunk ${failedChunk.fromBlock}-${failedChunk.toBlock}`);
-        } else {
-          console.log(`  ❌ Could not recover chunk ${failedChunk.fromBlock}-${failedChunk.toBlock}`);
-        }
-      }
-      
-      // Add recovered burns to main array
-      if (recoveredBurns.length > 0) {
-        console.log(`🎉 Recovered ${recoveredBurns.length} burns from failed chunks!`);
-        allBurns.push(...recoveredBurns);
-      }
-      
-      // Log permanent failures for manual investigation
-      if (permanentFailures.length > 0) {
-        const failureLogPath = path.join(__dirname, '../data/permanent-failures.json');
-        let existingFailures = [];
-        
-        if (fs.existsSync(failureLogPath)) {
-          try {
-            existingFailures = JSON.parse(fs.readFileSync(failureLogPath, 'utf8'));
-          } catch (e) {
-            console.warn('Could not read existing failures log, starting fresh');
-          }
-        }
-        
-        existingFailures.push(...permanentFailures);
-        fs.writeFileSync(failureLogPath, JSON.stringify(existingFailures, null, 2));
-        
-        console.error(`⚠️  ${permanentFailures.length} block ranges permanently failed - logged for manual recovery`);
-      }
-    }
-    
-    console.log(`✅ Found ${allBurns.length} total burn transactions (including recovered)`);
+
+    console.log(`✅ Found ${allBurns.length} total burn transactions`);
     
     // Process recent burns into daily format (reuse existing logic)
     const burnsByDay = {};
