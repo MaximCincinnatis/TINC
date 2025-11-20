@@ -1,0 +1,439 @@
+{
+  "startDate": "2025-08-13",
+  "endDate": "2025-09-11",
+  "totalBurned": 156345.09244296435,
+  "totalSupply": 15969783.670697048,
+  "burnPercentage": 0.9790057001826638,
+  "emissionPerSecond": 1,
+  "emissionSamplePeriod": 86400,
+  "isDeflationary": true,
+  "dailyBurns": [
+    {
+      "date": "2025-10-21",
+      "amountTinc": 1862.1222424492423,
+      "transactionCount": 1,
+      "transactions": [
+        {
+          "hash": "0x5e11ca71b45931b547151f90e7caffae51ccdc7b163b6edb344aa4310554158e",
+          "amount": 1862.1222424492423,
+          "from": "0x9fabf48ebe587ee4f8b3172012c3060cc40fea6c"
+        }
+      ]
+    },
+    {
+      "date": "2025-10-22",
+      "amountTinc": 1820.3412792486397,
+      "transactionCount": 1,
+      "transactions": [
+        {
+          "hash": "0xb8f6e9545363911606eecd9a22f0c32c2d9c651d17ceb577afa3cd3562458300",
+          "amount": 1820.3412792486397,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
+    },
+    {
+      "date": "2025-10-23",
+      "amountTinc": 747.2219744451218,
+      "transactionCount": 1,
+      "transactions": [
+        {
+          "hash": "0x36c7c419bc262439fa4983b4705168b49629ded2ec3039c3931c4e7da27093dd",
+          "amount": 747.2219744451218,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
+    },
+    {
+      "date": "2025-10-24",
+      "amountTinc": 5363.039917492732,
+      "transactionCount": 3,
+      "transactions": [
+        {
+          "hash": "0xa6163a167111831737672264dac2fb7f6d5e6d8e72f19bb93d416ede97bcef2f",
+          "amount": 3018.8500646808698,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x0dd25028e410358c1fa3c433470fc591338389bdec810cadae7016e7b29001a8",
+          "amount": 507.42538941073883,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x82bb9b3bba257241fbb27c6f40fa5ff2329ce5741077164724057995ff04048d",
+          "amount": 1836.7644634011235,
+          "from": "0x9fabf48ebe587ee4f8b3172012c3060cc40fea6c"
+        }
+      ]
+    },
+    {
+      "date": "2025-10-25",
+      "amountTinc": 13796.566374425667,
+      "transactionCount": 2,
+      "transactions": [
+        {
+          "hash": "0xd1da7472b8bfe7b9a0a766e596eca6ec84a05a9ba2eb3876f31438b56eb61ef9",
+          "amount": 5906.658191319523,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x83275fe957cf05803d1d2759b77819805c02aaff00b1d846edca8a8917eb8a4b",
+          "amount": 7889.908183106145,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
+    },
+    {
+      "date": "2025-10-26",
+      "amountTinc": 1825.9553674730532,
+      "transactionCount": 2,
+      "transactions": [
+        {
+          "hash": "0x3dcbf8d75f2c2052c82c5b30551defb17e8531bfae3c6486703f82fa22b21aa4",
+          "amount": 672.6386524881453,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x8464b0bcd0a1bbd7b8703b3120a8a70f2caf1f46761f2488e7c09fbe5da563b2",
+          "amount": 1153.3167149849078,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
+    },
+    {
+      "date": "2025-10-27",
+      "amountTinc": 7472.367078379798,
+      "transactionCount": 1,
+      "transactions": [
+        {
+          "hash": "0xff23b18f68925eb6df6674c07cce0872d789f1b53888db48b566cf8994ca721f",
+          "amount": 7472.367078379798,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
+    },
+    {
+      "date": "2025-10-28",
+      "amountTinc": 2283.067908662799,
+      "transactionCount": 1,
+      "transactions": [
+        {
+          "hash": "0x6e0b594c4f64c7bb2a005a3d7054d5466300cf7eaaaa6add850392b78e22a1ee",
+          "amount": 2283.067908662799,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
+    },
+    {
+      "date": "2025-10-29",
+      "amountTinc": 196.64083594646192,
+      "transactionCount": 1,
+      "transactions": [
+        {
+          "hash": "0x2023f7a6e5fd3b9e8b7adc12a07e0433d3c4b9259af0fbd4c53bb267b11b5e74",
+          "amount": 196.64083594646192,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
+    },
+    {
+      "date": "2025-10-30",
+      "amountTinc": 2102.071281158742,
+      "transactionCount": 2,
+      "transactions": [
+        {
+          "hash": "0xe0e635935478af5d3930bf0e3767e6ad62481d524faf7ae1ae8447eea3cc8e73",
+          "amount": 292.98582023360063,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0xbc4b1af50447c49078c92e46c9b16e194c20fbf91c05c3e768009f18d1e5f13f",
+          "amount": 1809.0854609251414,
+          "from": "0x9fabf48ebe587ee4f8b3172012c3060cc40fea6c"
+        }
+      ]
+    },
+    {
+      "date": "2025-10-31",
+      "amountTinc": 1351.451362859966,
+      "transactionCount": 1,
+      "transactions": [
+        {
+          "hash": "0x388550c32c1dd2509b538ac9ed540280193625defdf4e7f169dbaba774eae05e",
+          "amount": 1351.451362859966,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
+    },
+    {
+      "date": "2025-11-01",
+      "amountTinc": 6533.747681595662,
+      "transactionCount": 1,
+      "transactions": [
+        {
+          "hash": "0x704e1a717c211830162ffe8eab5ee39057643813356b1ded737e302b636660ab",
+          "amount": 6533.747681595662,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
+    },
+    {
+      "date": "2025-11-02",
+      "amountTinc": 522.725292447696,
+      "transactionCount": 1,
+      "transactions": [
+        {
+          "hash": "0x611224188082b60ac19074d5ef9fe09216b8670893b5f032e794a6cf03d8d214",
+          "amount": 522.725292447696,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
+    },
+    {
+      "date": "2025-11-03",
+      "amountTinc": 15888.138006243978,
+      "transactionCount": 1,
+      "transactions": [
+        {
+          "hash": "0x12b2c363d6e54d4cfe315becab0eb9a99e5a8d3203c0ad63b805af192ebf4a28",
+          "amount": 15888.138006243978,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
+    },
+    {
+      "date": "2025-11-04",
+      "amountTinc": 1430.6697929748584,
+      "transactionCount": 1,
+      "transactions": [
+        {
+          "hash": "0x68b8370d37ae41cb0ed9302170d46d0b0384c0697c9a979b99fff5b0fbb77899",
+          "amount": 1430.6697929748584,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
+    },
+    {
+      "date": "2025-11-05",
+      "amountTinc": 380.1445384739024,
+      "transactionCount": 1,
+      "transactions": [
+        {
+          "hash": "0x7789e9aa63b36090c9157894e4f49bbccd02596869dc99ddc0cfe5b322d85ffa",
+          "amount": 380.1445384739024,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
+    },
+    {
+      "date": "2025-11-06",
+      "amountTinc": 15208.122338453913,
+      "transactionCount": 1,
+      "transactions": [
+        {
+          "hash": "0x3453f6048f70d74fef6e4e650d3567ff491ce237698d1037e976b71ccec7cefd",
+          "amount": 15208.122338453913,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
+    },
+    {
+      "date": "2025-11-07",
+      "amountTinc": 3384.0434697917253,
+      "transactionCount": 1,
+      "transactions": [
+        {
+          "hash": "0x80c60b17ee86c2f284891a8124749ecfda45c3e5ff42fecd7b9620089d3cc274",
+          "amount": 3384.0434697917253,
+          "from": "0x9fabf48ebe587ee4f8b3172012c3060cc40fea6c"
+        }
+      ]
+    },
+    {
+      "date": "2025-11-08",
+      "amountTinc": 274.0899558154442,
+      "transactionCount": 1,
+      "transactions": [
+        {
+          "hash": "0x2d6f792d5bfb8b5b489f756e2bdea9109a7d5dbdefb2aae85e9be8969648bc01",
+          "amount": 274.0899558154442,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
+    },
+    {
+      "date": "2025-11-09",
+      "amountTinc": 16420.373479421873,
+      "transactionCount": 1,
+      "transactions": [
+        {
+          "hash": "0xa297d0fce0a99ba919745566e8a45c0a1f55f603237b2b2aea19cccccdac2fb6",
+          "amount": 16420.373479421873,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
+    },
+    {
+      "date": "2025-11-10",
+      "amountTinc": 7312.541590902689,
+      "transactionCount": 2,
+      "transactions": [
+        {
+          "hash": "0xcb447a0bbe4f9c3fc57f122009182b59f55492cc6f1284bd909c23d5cd01a6f7",
+          "amount": 5816.795729318061,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x6d7475c3f09c672a3216c61a9280488ac4f724c4d2a21f9609e3bab5a423ad76",
+          "amount": 1495.7458615846283,
+          "from": "0x9fabf48ebe587ee4f8b3172012c3060cc40fea6c"
+        }
+      ]
+    },
+    {
+      "date": "2025-11-11",
+      "amountTinc": 181.75996786916787,
+      "transactionCount": 1,
+      "transactions": [
+        {
+          "hash": "0xb9be5ce39c94e2263cc2a1bebe22bb53834d1a476e008330191509f8a356c8e5",
+          "amount": 181.75996786916787,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
+    },
+    {
+      "date": "2025-11-12",
+      "amountTinc": 1847.5961048600884,
+      "transactionCount": 2,
+      "transactions": [
+        {
+          "hash": "0x267da7c9e135f0a67d4ff8d5d560bb7ff1d48a290eb030ab8c70cff7e06882a6",
+          "amount": 432.32266029988654,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x89c3be53aaeb62778f23943356fe8781530d2c078e80ba44c449d0e36c6a7650",
+          "amount": 1415.2734445602018,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
+    },
+    {
+      "date": "2025-11-13",
+      "amountTinc": 3291.8539989774235,
+      "transactionCount": 1,
+      "transactions": [
+        {
+          "hash": "0x3a9fa5871eda74eff1a56973abdb985f7aaa68bc8859189ddc05b8f0464f83ff",
+          "amount": 3291.8539989774235,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
+    },
+    {
+      "date": "2025-11-14",
+      "amountTinc": 872.9173749373974,
+      "transactionCount": 1,
+      "transactions": [
+        {
+          "hash": "0x5d1946cff091a481473602d08cc337409cfb027273cc615639518c5a33ad0bb8",
+          "amount": 872.9173749373974,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
+    },
+    {
+      "date": "2025-11-15",
+      "amountTinc": 10805.917839008265,
+      "transactionCount": 1,
+      "transactions": [
+        {
+          "hash": "0x2c2f308916e6cd829645d1ae1b41ffe6ddbed29a3b278fbad55b5f8deadfd80c",
+          "amount": 10805.917839008265,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
+    },
+    {
+      "date": "2025-11-16",
+      "amountTinc": 3191.1171856028777,
+      "transactionCount": 2,
+      "transactions": [
+        {
+          "hash": "0x38f6f03cfda2ee1ad2347210a46b4895726854dbb3ca3a3d8308f568edae1c99",
+          "amount": 783.2355713470313,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x6d5a1daf35ae483c7e31ca61c43823132dfde65a2795ec3ea84fa3d43e555be3",
+          "amount": 2407.881614255846,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
+    },
+    {
+      "date": "2025-11-17",
+      "amountTinc": 25470.50754526299,
+      "transactionCount": 2,
+      "transactions": [
+        {
+          "hash": "0xcbfea29411fadc6947411bf1cfb14a8683e7d36e79b33557cc829a59fd20ae3e",
+          "amount": 12511.698213143225,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0xcb0c60bcfb882a9f10370134549f7184639e951ce4ee5ae08b18a22e6ad73295",
+          "amount": 12958.809332119765,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
+    },
+    {
+      "date": "2025-11-18",
+      "amountTinc": 2015.9073811177789,
+      "transactionCount": 1,
+      "transactions": [
+        {
+          "hash": "0x4ad8550f215af8e3575dcebee60429f178ef20b00a4693bffc24e8960d791979",
+          "amount": 2015.9073811177789,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
+    },
+    {
+      "date": "2025-11-19",
+      "amountTinc": 2492.073276664364,
+      "transactionCount": 1,
+      "transactions": [
+        {
+          "hash": "0x1782a56f28514475c1b6719d6b8f03e9c7b80090bb2eb5af47d9d905510ac126",
+          "amount": 2492.073276664364,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
+    }
+  ],
+  "fetchedAt": "2025-11-19T22:30:43.082Z",
+  "fromCache": true,
+  "lastProcessedBlock": 23836104,
+  "holderStats": {
+    "totalHolders": 191,
+    "poseidon": 1,
+    "whale": 12,
+    "shark": 43,
+    "dolphin": 75,
+    "squid": 26,
+    "shrimp": 34,
+    "top10Percentage": 45.360536952985385,
+    "dataSource": "blockchain-incremental",
+    "lastUpdate": "2025-11-19T22:00:43.281Z"
+  },
+  "lastIncrementalUpdate": "2025-11-19T22:30:43.082Z",
+  "lastUpdated": "2025-08-29T03:41:20.853Z",
+  "recoveryApplied": true,
+  "recoveryTimestamp": "2025-09-02T16:06:22.696Z",
+  "recoveredAmount": 265599.575,
+  "oldTotal": 1030551.5450526023,
+  "regressionPrevented": true
+}
