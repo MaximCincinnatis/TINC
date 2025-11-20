@@ -397,48 +397,91 @@ async function getTotalSupply() {
   return parseInt(totalSupplyHex, 16) / Math.pow(10, 18);
 }
 
-// Fetch ALL holders using Moralis API - much more comprehensive!
-async function fetchRealHolderData() {
-  try {
-    console.log('📊 Fetching REAL holder data from Moralis API...');
-    
-    const totalSupply = await getTotalSupply();
-    console.log(`📊 Total Supply: ${totalSupply.toLocaleString()} TINC`);
-    
-    // Use Moralis token holders endpoint - gets ALL holders
-    const allHolders = [];
-    let cursor = null;
-    let page = 1;
-    
-    do {
-      const url = `${MORALIS_BASE_URL}/erc20/${TINC_ADDRESS}/owners?chain=eth&limit=100${cursor ? `&cursor=${cursor}` : ''}`;
-      
-      console.log(`📊 Fetching holders page ${page} from Moralis...`);
-      
-      const response = await fetch(url, {
+// Fetch a single Moralis API page with infinite retry (mirrors fetchBurnsWithRetry pattern)
+async function fetchMoralisPageWithRetry(url, page) {
+  const maxBackoff = 600000; // 10 minutes max backoff
+  let attempt = 1;
+  const requestTimeout = 30000; // 30 seconds timeout per request
+
+  while (true) { // INFINITE RETRY - never give up
+    try {
+      console.log(`📊 Fetching holders page ${page} from Moralis (attempt ${attempt})...`);
+
+      // Create timeout promise
+      const timeoutPromise = new Promise((_, reject) => {
+        setTimeout(() => reject(new Error(`Timeout after ${requestTimeout/1000}s`)), requestTimeout);
+      });
+
+      // Race between fetch and timeout
+      const fetchPromise = fetch(url, {
         headers: {
           'X-API-Key': MORALIS_API_KEY,
           'Content-Type': 'application/json'
         }
+      }).then(async (response) => {
+        if (!response.ok) {
+          throw new Error(`Moralis API error: ${response.status} ${response.statusText}`);
+        }
+        return await response.json();
       });
-      
-      if (!response.ok) {
-        throw new Error(`Moralis API error: ${response.status} ${response.statusText}`);
+
+      const data = await Promise.race([fetchPromise, timeoutPromise]);
+
+      if (attempt > 1) {
+        console.log(`✅ Moralis page ${page} succeeded on attempt ${attempt}`);
       }
-      
-      const data = await response.json();
-      
+      return data; // Only exit on success
+
+    } catch (error) {
+      console.warn(`❌ Moralis page ${page} attempt ${attempt} failed: ${error.message}`);
+
+      // Exponential backoff up to 10 minutes, then retry every 10 minutes
+      const exponentialBackoff = 1000 * Math.pow(2, attempt - 1);
+      const backoffMs = Math.min(exponentialBackoff, maxBackoff);
+
+      if (backoffMs >= maxBackoff) {
+        console.log(`⏳ Retrying Moralis page ${page} in ${maxBackoff/60000} minutes (max backoff reached, will retry every 10 min until success)...`);
+      } else {
+        console.log(`⏳ Waiting ${(backoffMs/1000).toFixed(1)}s before retry (attempt ${attempt + 1})...`);
+      }
+
+      await new Promise(resolve => setTimeout(resolve, backoffMs));
+      attempt++;
+      // Loop continues forever - NEVER GIVES UP
+    }
+  }
+}
+
+// Fetch ALL holders using Moralis API - much more comprehensive!
+async function fetchRealHolderData() {
+  try {
+    console.log('📊 Fetching REAL holder data from Moralis API...');
+
+    const totalSupply = await getTotalSupply();
+    console.log(`📊 Total Supply: ${totalSupply.toLocaleString()} TINC`);
+
+    // Use Moralis token holders endpoint - gets ALL holders
+    const allHolders = [];
+    let cursor = null;
+    let page = 1;
+
+    do {
+      const url = `${MORALIS_BASE_URL}/erc20/${TINC_ADDRESS}/owners?chain=eth&limit=100${cursor ? `&cursor=${cursor}` : ''}`;
+
+      // Use retry logic for each page - will retry forever until success
+      const data = await fetchMoralisPageWithRetry(url, page);
+
       if (data.result && data.result.length > 0) {
         allHolders.push(...data.result);
         console.log(`📊 Page ${page}: Found ${data.result.length} holders, total: ${allHolders.length}`);
       }
-      
+
       cursor = data.cursor;
       page++;
-      
-      // Rate limiting
+
+      // Rate limiting between successful pages
       await new Promise(resolve => setTimeout(resolve, 200));
-      
+
     } while (cursor && page <= 50); // Safety limit of 50 pages (5000 holders max)
     
     console.log(`📊 Total holders found: ${allHolders.length}`);
