@@ -9,22 +9,8 @@ require('dotenv').config();
 // - Please wait the full time for accurate results
 // ⏰
 
-// RPC endpoints with backup options (tested and working)
-const RPC_ENDPOINTS = [
-  "https://ethereum.publicnode.com",
-  "https://eth.llamarpc.com",
-  "https://eth-mainnet.public.blastapi.io",
-  "https://eth.drpc.org",
-  "https://rpc.payy.moe",
-  "https://eth.merkle.io",
-  "https://ethereum-rpc.publicnode.com"
-  // Removed non-working endpoints:
-  // "https://1rpc.io/eth" - quota exceeded
-  // "https://rpc.ankr.com/eth" - requires API key
-  // "https://eth-rpc.gateway.pokt.network" - connection failed
-];
-
-let currentRPCIndex = 0;
+// Local Ethereum node - no rate limits, full access
+const RPC_ENDPOINT = "http://192.168.0.73:18545";
 
 const TINC_ADDRESS = '0x6532B3F1e4DBff542fbD6befE5Ed7041c10B385a';
 const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000';
@@ -50,24 +36,21 @@ const EXCLUDED_ADDRESSES = new Set([
 ].map(addr => addr.toLowerCase()));
 
 async function callRPC(method, params, retryCount = 0) {
-  const maxRetries = RPC_ENDPOINTS.length * 2;
-  
+  const maxRetries = 3;
+
   if (retryCount >= maxRetries) {
-    console.error(`[ERROR] All RPC endpoints exhausted after ${maxRetries} retries`);
-    throw new Error('All RPC endpoints exhausted after retries');
+    console.error(`[ERROR] RPC call failed after ${maxRetries} retries`);
+    throw new Error(`RPC call failed after ${maxRetries} retries`);
   }
 
-  const endpoint = RPC_ENDPOINTS[currentRPCIndex];
-  
-  // Create AbortController for proper timeout
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 second timeout
-  
+
   try {
     const startTime = Date.now();
-    const response = await fetch(endpoint, {
+    const response = await fetch(RPC_ENDPOINT, {
       method: 'POST',
-      headers: { 
+      headers: {
         'Content-Type': 'application/json',
         'User-Agent': 'TINC-Burn-Tracker/1.0'
       },
@@ -89,44 +72,30 @@ async function callRPC(method, params, retryCount = 0) {
 
     const data = await response.json();
     if (data.error) {
-      // Check for specific error codes
-      if (data.error.code === -32005 || data.error.code === -32001) {
-        throw new Error(`Rate limited: ${data.error.message}`);
-      }
       throw new Error(data.error.message || 'Unknown RPC error');
     }
-    
-    // Success - this endpoint is working
+
     if (retryCount > 0) {
-      console.log(`✓ RPC call succeeded with ${endpoint} after ${retryCount} retries (${responseTime}ms)`);
+      console.log(`✓ RPC call succeeded after ${retryCount} retries (${responseTime}ms)`);
     }
     return data.result;
   } catch (error) {
     clearTimeout(timeoutId);
-    
-    // More detailed error logging
+
     if (error.name === 'AbortError') {
-      console.warn(`[TIMEOUT] RPC timeout with ${endpoint} after 30s`);
-    } else if (error.message.includes('Rate limited')) {
-      console.warn(`[RATE_LIMIT] ${endpoint}: ${error.message}`);
+      console.warn(`[TIMEOUT] RPC timeout after 30s`);
     } else {
-      console.warn(`[ERROR] RPC error with ${endpoint}: ${error.message}`);
+      console.warn(`[ERROR] RPC error: ${error.message}`);
     }
-    
-    // Move to next endpoint
-    currentRPCIndex = (currentRPCIndex + 1) % RPC_ENDPOINTS.length;
-    
-    // If error contains rate limit message, wait longer
-    if (error.message.includes('rate') || error.message.includes('limit') || error.message.includes('quota')) {
-      console.log(`⏳ Waiting 2s before retry due to rate limiting...`);
-      await new Promise(resolve => setTimeout(resolve, 2000));
-    } else {
-      // Small delay between retries
-      await new Promise(resolve => setTimeout(resolve, 500));
+
+    if (retryCount < maxRetries - 1) {
+      const backoffMs = 500 * (retryCount + 1);
+      console.log(`⏳ Waiting ${backoffMs}ms before retry...`);
+      await new Promise(resolve => setTimeout(resolve, backoffMs));
+      return callRPC(method, params, retryCount + 1);
     }
-    
-    // Retry with next endpoint
-    return callRPC(method, params, retryCount + 1);
+
+    throw error;
   }
 }
 
@@ -592,9 +561,9 @@ async function fetchHolderDataWithCache() {
   }
 }
 
-// Legacy function for compatibility - now uses caching system
+// Fetch holder data directly from Moralis API - simple and accurate
 async function fetchHolderData() {
-  return await fetchHolderDataWithCache();
+  return await fetchRealHolderData();
 }
 
 /**
