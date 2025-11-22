@@ -1,25 +1,13 @@
 {
   "startDate": "2025-10-21",
   "endDate": "2025-11-19",
-  "totalBurned": 1162813.7144762878,
+  "totalBurned": 1165139.3235277967,
   "totalSupply": 19307012.854193237,
-  "burnPercentage": 6.022753096286149,
+  "burnPercentage": 6.034798507293392,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
   "dailyBurns": [
-    {
-      "date": "2025-10-22",
-      "amountTinc": 1820.3412792486397,
-      "transactionCount": 1,
-      "transactions": [
-        {
-          "hash": "0xb8f6e9545363911606eecd9a22f0c32c2d9c651d17ceb577afa3cd3562458300",
-          "amount": 1820.3412792486397,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        }
-      ]
-    },
     {
       "date": "2025-10-23",
       "amountTinc": 747.2219744451218,
@@ -1322,18 +1310,35 @@
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
+    },
+    {
+      "date": "2025-11-22",
+      "amountTinc": 4145.9503307571995,
+      "transactionCount": 2,
+      "transactions": [
+        {
+          "hash": "0x7e9d921126d6576e26adb3268df45a09a5098740c48f032afe906eb082c5fb8a",
+          "amount": 1496.7932463167144,
+          "from": "0x9fabf48ebe587ee4f8b3172012c3060cc40fea6c"
+        },
+        {
+          "hash": "0x2d28a5e973e70ccd972d4070a915063c35eec39efe906fb25f194930a019c094",
+          "amount": 2649.1570844404855,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
     }
   ],
-  "fetchedAt": "2025-11-22T05:56:02.517Z",
+  "fetchedAt": "2025-11-22T06:26:02.551Z",
   "fromCache": true,
-  "lastProcessedBlock": 23852545,
+  "lastProcessedBlock": 23852695,
   "holderStats": {
     "totalHolders": 981,
     "poseidon": 1,
     "whale": 12,
     "shark": 37,
-    "dolphin": 100,
-    "squid": 187,
+    "dolphin": 101,
+    "squid": 186,
     "shrimp": 644,
     "top10Percentage": 36.59354073110025,
     "estimatedData": false,
@@ -1342,5 +1347,5 @@
     "dataSource": "moralis"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2025-11-22T05:56:02.517Z"
+  "lastIncrementalUpdate": "2025-11-22T06:26:02.551Z"
 }
