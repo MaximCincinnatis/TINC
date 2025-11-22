@@ -9,8 +9,9 @@ require('dotenv').config();
 // - Please wait the full time for accurate results
 // ⏰
 
-// Local Ethereum node - no rate limits, full access
-const RPC_ENDPOINT = "http://192.168.0.73:18545";
+// FAILFAST RPC FETCHER - Infinite retry, all or nothing
+const FailfastRPCFetcher = require('./failfast-rpc-fetcher');
+const rpcFetcher = new FailfastRPCFetcher("http://192.168.0.73:18545");
 
 const TINC_ADDRESS = '0x6532B3F1e4DBff542fbD6befE5Ed7041c10B385a';
 const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000';
@@ -35,73 +36,13 @@ const EXCLUDED_ADDRESSES = new Set([
   '0x000000000000000000000000000000000000dead', // Dead address
 ].map(addr => addr.toLowerCase()));
 
-async function callRPC(method, params, retryCount = 0) {
-  const maxRetries = 3;
-
-  if (retryCount >= maxRetries) {
-    console.error(`[ERROR] RPC call failed after ${maxRetries} retries`);
-    throw new Error(`RPC call failed after ${maxRetries} retries`);
-  }
-
-  const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 second timeout
-
-  try {
-    const startTime = Date.now();
-    const response = await fetch(RPC_ENDPOINT, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'User-Agent': 'TINC-Burn-Tracker/1.0'
-      },
-      body: JSON.stringify({
-        jsonrpc: '2.0',
-        id: Date.now(),
-        method,
-        params,
-      }),
-      signal: controller.signal
-    });
-
-    clearTimeout(timeoutId);
-    const responseTime = Date.now() - startTime;
-
-    if (!response.ok) {
-      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-    }
-
-    const data = await response.json();
-    if (data.error) {
-      throw new Error(data.error.message || 'Unknown RPC error');
-    }
-
-    if (retryCount > 0) {
-      console.log(`✓ RPC call succeeded after ${retryCount} retries (${responseTime}ms)`);
-    }
-    return data.result;
-  } catch (error) {
-    clearTimeout(timeoutId);
-
-    if (error.name === 'AbortError') {
-      console.warn(`[TIMEOUT] RPC timeout after 30s`);
-    } else {
-      console.warn(`[ERROR] RPC error: ${error.message}`);
-    }
-
-    if (retryCount < maxRetries - 1) {
-      const backoffMs = 500 * (retryCount + 1);
-      console.log(`⏳ Waiting ${backoffMs}ms before retry...`);
-      await new Promise(resolve => setTimeout(resolve, backoffMs));
-      return callRPC(method, params, retryCount + 1);
-    }
-
-    throw error;
-  }
+// Use failfast fetcher for all RPC calls - infinite retry
+async function callRPC(method, params) {
+  return rpcFetcher.callRPC(method, params);
 }
 
 async function getBlockNumber() {
-  const result = await callRPC('eth_blockNumber', []);
-  return parseInt(result, 16);
+  return rpcFetcher.getBlockNumber();
 }
 
 /**
@@ -121,11 +62,7 @@ async function estimateBlockByTimestamp(timestamp) {
 }
 
 async function getBlockTimestamp(blockNumber) {
-  const block = await callRPC('eth_getBlockByNumber', [
-    typeof blockNumber === 'number' ? `0x${blockNumber.toString(16)}` : blockNumber,
-    false
-  ]);
-  return parseInt(block.timestamp, 16);
+  return rpcFetcher.getBlockTimestamp(blockNumber);
 }
 
 async function getEmissionRate(contractAddress) {
@@ -165,82 +102,19 @@ async function fetchBurns(fromBlock, toBlock) {
   return burns;
 }
 
-// Helper: Split chunk recursively until success
-async function fetchBurnsWithChunkSplitting(fromBlock, toBlock) {
-  const chunkSize = toBlock - fromBlock + 1;
-
-  // If chunk is 1 block, can't split further - infinite retry on single block
-  if (chunkSize === 1) {
-    return await fetchBurnsWithRetry(fromBlock, toBlock);
-  }
-
-  // Split chunk in half and process each half
-  const midBlock = Math.floor((fromBlock + toBlock) / 2);
-
-  console.log(`📦 Splitting chunk ${fromBlock}-${toBlock} (${chunkSize} blocks) into smaller chunks`);
-  console.log(`   First half:  ${fromBlock}-${midBlock} (${midBlock - fromBlock + 1} blocks)`);
-  console.log(`   Second half: ${midBlock + 1}-${toBlock} (${toBlock - midBlock} blocks)`);
-
-  const firstHalf = await fetchBurnsWithRetry(fromBlock, midBlock);
-  const secondHalf = await fetchBurnsWithRetry(midBlock + 1, toBlock);
-
-  return [...firstHalf, ...secondHalf];
-}
-
-async function fetchBurnsWithRetry(fromBlock, toBlock) {
-  const chunkSize = toBlock - fromBlock + 1;
-  const maxBackoff = 600000; // 10 minutes max backoff
-  let attempt = 1;
-
-  // Adaptive timeout based on chunk size
-  const baseTimeout = 30000; // 30 seconds base
-  const timeoutMultiplier = Math.max(1, Math.ceil(chunkSize / 200));
-  const adaptiveTimeout = baseTimeout * timeoutMultiplier;
-
-  while (true) { // INFINITE RETRY - never give up
-    try {
-      console.log(`Fetching blocks ${fromBlock} to ${toBlock} (${chunkSize} blocks, attempt ${attempt})...`);
-
-      // Create a timeout promise
-      const timeoutPromise = new Promise((_, reject) => {
-        setTimeout(() => reject(new Error(`Timeout after ${adaptiveTimeout/1000}s`)), adaptiveTimeout);
-      });
-
-      // Race between fetch and timeout
-      const burns = await Promise.race([
-        fetchBurns(fromBlock, toBlock),
-        timeoutPromise
-      ]);
-
-      if (attempt > 1) {
-        console.log(`✅ Success on attempt ${attempt} for blocks ${fromBlock}-${toBlock}`);
-      }
-      return burns; // Only exit on success
-
-    } catch (error) {
-      console.warn(`❌ Attempt ${attempt} failed for blocks ${fromBlock}-${toBlock}: ${error.message}`);
-
-      // If chunk is larger than 1 block and failing, split it
-      if (chunkSize > 1) {
-        console.log(`🔄 Chunk too large or problematic, splitting into smaller chunks...`);
-        return await fetchBurnsWithChunkSplitting(fromBlock, toBlock);
-      }
-
-      // For single block: exponential backoff up to 10 minutes, then retry every 10 minutes
-      const exponentialBackoff = 1000 * Math.pow(2, attempt - 1);
-      const backoffMs = Math.min(exponentialBackoff, maxBackoff);
-
-      if (backoffMs >= maxBackoff) {
-        console.log(`⏳ Retrying single block ${fromBlock} in ${maxBackoff/60000} minutes (max backoff reached, will retry every 10 min until success)...`);
-      } else {
-        console.log(`⏳ Waiting ${(backoffMs/1000).toFixed(1)}s before retry (attempt ${attempt + 1})...`);
-      }
-
-      await new Promise(resolve => setTimeout(resolve, backoffMs));
-      attempt++;
-      // Loop continues forever - NEVER GIVES UP
-    }
-  }
+/**
+ * Fetch burns in a block range with failfast infinite retry
+ * Uses the FailfastRPCFetcher which handles all retry logic
+ */
+async function fetchBurnsInRange(fromBlock, toBlock) {
+  return rpcFetcher.fetchWithInfiniteRetry(
+    async () => {
+      const chunkSize = toBlock - fromBlock + 1;
+      console.log(`Fetching blocks ${fromBlock} to ${toBlock} (${chunkSize} blocks)...`);
+      return await fetchBurns(fromBlock, toBlock);
+    },
+    `Blocks ${fromBlock}-${toBlock}`
+  );
 }
 
 /**
@@ -280,14 +154,14 @@ async function fetchBurnData() {
   const totalChunks = Math.ceil((currentBlock - startBlock) / CHUNK_SIZE);
   let chunksProcessed = 0;
 
-  // Fetch in chunks with infinite retry logic - NEVER skips blocks
-  console.log(`🔄 Processing ${totalChunks} chunks with infinite retry (will retry forever until 100% complete)...`);
+  // Fetch in chunks with failfast infinite retry - NEVER skips blocks
+  console.log(`🔄 Processing ${totalChunks} chunks with failfast infinite retry (will retry forever until 100% complete)...`);
 
   for (let fromBlock = startBlock; fromBlock <= currentBlock; fromBlock += CHUNK_SIZE) {
     const toBlock = Math.min(fromBlock + CHUNK_SIZE - 1, currentBlock);
 
-    // NO TRY/CATCH - fetchBurnsWithRetry will retry forever until success
-    const burns = await fetchBurnsWithRetry(fromBlock, toBlock);
+    // FAILFAST: fetchBurnsInRange will retry forever until success
+    const burns = await fetchBurnsInRange(fromBlock, toBlock);
     allBurns.push(...burns);
     chunksProcessed++;
 
@@ -652,13 +526,13 @@ async function runIncrementalUpdate() {
       return existingData;
     }
     
-    // Calculate block range to fetch (never re-process old blocks!)
-    const startBlock = lastProcessedBlock > 0 ? lastProcessedBlock + 1 : currentBlock - 7200 * 30; // 30 days if no last block
-    
-    console.log(`📦 Block-based incremental update:`);
+    // CRITICAL: Re-scan last processed block to catch late transactions/reorgs
+    const startBlock = lastProcessedBlock > 0 ? lastProcessedBlock : currentBlock - 7200 * 30; // 30 days if no last block
+
+    console.log(`📦 Block-based incremental update (RE-SCAN LAST BLOCK):`);
     console.log(`   Last processed: ${lastProcessedBlock}`);
     console.log(`   Current block: ${currentBlock}`);
-    console.log(`   Fetching: ${startBlock} to ${currentBlock}`);
+    console.log(`   Fetching: ${startBlock} to ${currentBlock} (re-scanning ${startBlock} for late txs)`);
     
     console.log(`🔄 Fetching recent burns from block ${startBlock} to ${currentBlock}...`);
     
@@ -667,13 +541,13 @@ async function runIncrementalUpdate() {
     const totalChunks = Math.ceil((currentBlock - startBlock) / CHUNK_SIZE);
     let chunksProcessed = 0;
     
-    console.log(`🔄 Processing ${totalChunks} chunks for recent data (infinite retry - will never skip blocks)...`);
+    console.log(`🔄 Processing ${totalChunks} chunks for recent data (failfast infinite retry - will never skip blocks)...`);
 
     for (let fromBlock = startBlock; fromBlock <= currentBlock; fromBlock += CHUNK_SIZE) {
       const toBlock = Math.min(fromBlock + CHUNK_SIZE - 1, currentBlock);
 
-      // NO TRY/CATCH - fetchBurnsWithRetry will retry forever until success
-      const burns = await fetchBurnsWithRetry(fromBlock, toBlock);
+      // FAILFAST: fetchBurnsInRange will retry forever until success
+      const burns = await fetchBurnsInRange(fromBlock, toBlock);
       allBurns.push(...burns);
       chunksProcessed++;
 

@@ -107,15 +107,35 @@ class IncrementalBurnManager {
     // Start with existing daily burns
     const combinedDays = [...existingData.dailyBurns];
     
-    // Process new burns from recent fetch
+    // Process new burns from recent fetch with transaction-level deduplication
+    // CRITICAL: When re-scanning last block, we need to merge by transaction hash
     recentBurnData.dailyBurns.forEach(newDay => {
       const existingIndex = combinedDays.findIndex(d => d.date === newDay.date);
-      
+
       if (existingIndex >= 0) {
-        // Day exists - update with new data
-        // This handles cases where new burns arrived for today
-        console.log(`📝 Updating ${newDay.date}: ${combinedDays[existingIndex].amountTinc.toFixed(3)} → ${newDay.amountTinc.toFixed(3)} TINC`);
-        combinedDays[existingIndex] = newDay;
+        // Day exists - MERGE transactions (don't replace entire day)
+        const existingDay = combinedDays[existingIndex];
+        const existingHashes = new Set(existingDay.transactions.map(t => t.hash));
+
+        let addedCount = 0;
+        let addedAmount = 0;
+
+        // Add only NEW transactions (skip duplicates from re-scan)
+        newDay.transactions.forEach(tx => {
+          if (!existingHashes.has(tx.hash)) {
+            existingDay.transactions.push(tx);
+            existingDay.amountTinc += tx.amount;
+            existingDay.transactionCount++;
+            addedCount++;
+            addedAmount += tx.amount;
+          }
+        });
+
+        if (addedCount > 0) {
+          console.log(`📝 Merged ${newDay.date}: Added ${addedCount} new txs (+${addedAmount.toFixed(3)} TINC)`);
+        } else {
+          console.log(`✅ ${newDay.date}: No new transactions (re-scan found same data)`);
+        }
       } else {
         // New day - add it
         console.log(`➕ Adding new day ${newDay.date}: ${newDay.amountTinc.toFixed(3)} TINC`);
@@ -291,9 +311,10 @@ class IncrementalBurnManager {
       console.log(`  ✅ Corrected totalBurned to match 30-day sum`);
     }
     
-    // Check structure
-    if (!mergedData.dailyBurns || mergedData.dailyBurns.length !== 30) {
-      throw new Error(`Data validation failed: Expected 30 days, got ${mergedData.dailyBurns?.length || 0}`);
+    // Check structure - accept 29-31 days (rolling window edge cases)
+    const dayCount = mergedData.dailyBurns?.length || 0;
+    if (!mergedData.dailyBurns || dayCount < 29 || dayCount > 31) {
+      throw new Error(`Data validation failed: Expected 29-31 days, got ${dayCount}`);
     }
     
     // Check if we have a new day that would cause window shift
