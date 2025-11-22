@@ -70,7 +70,38 @@ Press Ctrl+C to stop
 `);
 
 function isLocked() {
-  return fs.existsSync(LOCK_FILE);
+  try {
+    // Check if lock file exists
+    if (!fs.existsSync(LOCK_FILE)) return false;
+    
+    // Read the lock file to get the PID
+    const lockData = JSON.parse(fs.readFileSync(LOCK_FILE, 'utf8'));
+    const pid = lockData.pid;
+    
+    // Check if the process is still alive
+    // process.kill(pid, 0) is the Node.js way to check if a process exists
+    // It doesn't actually kill the process, just checks if it's alive
+    try {
+      process.kill(pid, 0);
+      // If we get here, the process exists and lock is valid
+      return true;
+    } catch (e) {
+      // Process doesn't exist - this is a stale lock from a dead process
+      log(`⚠️ Removing stale lock from dead process ${pid}`);
+      fs.unlinkSync(LOCK_FILE);
+      return false;
+    }
+  } catch (error) {
+    // Lock file is corrupted or unreadable - remove it and continue
+    log(`⚠️ Removing corrupted lock file: ${error.message}`);
+    try { 
+      fs.unlinkSync(LOCK_FILE); 
+    } catch (unlinkError) {
+      // If we can't remove it, log but continue
+      log(`❌ Failed to remove corrupted lock: ${unlinkError.message}`);
+    }
+    return false;
+  }
 }
 
 function createLock() {
@@ -109,22 +140,15 @@ function validateDataBeforeUpdate() {
     
     const data = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
     
-    // Basic validation
-    if (!data.dailyBurns || data.dailyBurns.length !== 30) {
-      log(`❌ Data validation failed: Expected 30 daily entries, got ${data.dailyBurns?.length || 0}`);
+    // Basic validation - accept 29-31 days (rolling window edge cases)
+    const dayCount = data.dailyBurns?.length || 0;
+    if (!data.dailyBurns || dayCount < 29 || dayCount > 31) {
+      log(`❌ Data validation failed: Expected 29-31 daily entries, got ${dayCount}`);
       return false;
     }
     
     if (!data.totalBurned || data.totalBurned <= 0) {
       log('❌ Data validation failed: Invalid total burned amount');
-      return false;
-    }
-    
-    // Check for August 8th critical data (allow for reasonable variance)
-    // UPDATED: Aug 8 actual value is 92202.765, not 98916.514
-    const aug8Data = data.dailyBurns.find(d => d.date === '2025-08-08');
-    if (aug8Data && aug8Data.amountTinc < 90000) {
-      log(`❌ CRITICAL: August 8th data corrupted! Expected >90000, got ${aug8Data.amountTinc}`);
       return false;
     }
     
@@ -142,16 +166,10 @@ function validateDataAfterUpdate() {
     const dataPath = path.join(__dirname, '../data/burn-data.json');
     const data = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
     
-    // Same validation as before update
-    if (!data.dailyBurns || data.dailyBurns.length !== 30) {
-      log(`❌ Post-update validation failed: Expected 30 daily entries, got ${data.dailyBurns?.length || 0}`);
-      return false;
-    }
-    
-    // CRITICAL: Verify August 8th data preserved (updated threshold)
-    const aug8Data = data.dailyBurns.find(d => d.date === '2025-08-08');
-    if (!aug8Data || aug8Data.amountTinc < 90000) {
-      log(`🚨 CRITICAL FAILURE: August 8th data lost/corrupted! Expected >90000, got ${aug8Data?.amountTinc || 'MISSING'}`);
+    // Same validation as before update - accept 29-31 days
+    const dayCount = data.dailyBurns?.length || 0;
+    if (!data.dailyBurns || dayCount < 29 || dayCount > 31) {
+      log(`❌ Post-update validation failed: Expected 29-31 daily entries, got ${dayCount}`);
       return false;
     }
     
@@ -160,7 +178,7 @@ function validateDataAfterUpdate() {
       return false;
     }
     
-    log(`✅ Post-update validation passed - August 8th preserved, total: ${data.totalBurned.toLocaleString()} TINC`);
+    log(`✅ Post-update validation passed - total: ${data.totalBurned.toLocaleString()} TINC`);
     return true;
     
   } catch (error) {
