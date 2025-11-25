@@ -1381,17 +1381,17 @@
       ]
     }
   ],
-  "fetchedAt": "2025-11-24T23:05:54.876Z",
+  "fetchedAt": "2025-11-24T23:35:54.817Z",
   "fromCache": true,
-  "lastProcessedBlock": 23871853,
+  "lastProcessedBlock": 23872002,
   "holderStats": {
-    "totalHolders": 987,
+    "totalHolders": 988,
     "poseidon": 0,
     "whale": 11,
     "shark": 38,
     "dolphin": 100,
     "squid": 191,
-    "shrimp": 647,
+    "shrimp": 648,
     "top10Percentage": 23.075514974479926,
     "estimatedData": false,
     "excludesLPPositions": true,
@@ -1399,5 +1399,5 @@
     "dataSource": "moralis"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2025-11-24T23:05:54.876Z"
+  "lastIncrementalUpdate": "2025-11-24T23:35:54.817Z"
 }
