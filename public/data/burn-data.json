@@ -1,9 +1,9 @@
 {
   "startDate": "2025-10-21",
   "endDate": "2025-11-19",
-  "totalBurned": 1372667.7086144465,
+  "totalBurned": 1421315.3015572242,
   "totalSupply": 19307012.854193237,
-  "burnPercentage": 7.109684543025104,
+  "burnPercentage": 7.361653054726862,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
@@ -1236,8 +1236,8 @@
     },
     {
       "date": "2025-11-29",
-      "amountTinc": 9944.054474971294,
-      "transactionCount": 3,
+      "amountTinc": 58591.64741774907,
+      "transactionCount": 5,
       "transactions": [
         {
           "hash": "0xa48857a9e1918cd9b9d4ae7c4ef83a6680284455a212727002d210add1a1482d",
@@ -1253,20 +1253,30 @@
           "hash": "0x60f47829c332c2a445a59b5f87bd48f0fdffda6c38220bb5b2a4ada8b7367254",
           "amount": 5145.479697790352,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x27be2fd2aae864a6e812ff7bdd243e6f6acef583578042a893c8b7f1b7d914b3",
+          "amount": 1038.89876238709,
+          "from": "0x9fabf48ebe587ee4f8b3172012c3060cc40fea6c"
+        },
+        {
+          "hash": "0xf20a2045ac3e59e561cfc0b9ec9f3bd45664d94c5316a3045465c594d8b5728b",
+          "amount": 47608.69418039068,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
     }
   ],
-  "fetchedAt": "2025-11-29T09:36:10.506Z",
+  "fetchedAt": "2025-11-29T10:06:11.309Z",
   "fromCache": true,
-  "lastProcessedBlock": 23903462,
+  "lastProcessedBlock": 23903612,
   "holderStats": {
-    "totalHolders": 986,
+    "totalHolders": 984,
     "poseidon": 0,
     "whale": 11,
     "shark": 35,
     "dolphin": 102,
-    "squid": 188,
+    "squid": 186,
     "shrimp": 650,
     "top10Percentage": 23.075514974479926,
     "estimatedData": false,
@@ -1275,5 +1285,5 @@
     "dataSource": "moralis"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2025-11-29T09:36:10.506Z"
+  "lastIncrementalUpdate": "2025-11-29T10:06:11.309Z"
 }
