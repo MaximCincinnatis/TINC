@@ -1,9 +1,9 @@
 {
   "startDate": "2025-10-21",
   "endDate": "2025-11-19",
-  "totalBurned": 1409781.410702025,
+  "totalBurned": 1411550.998224679,
   "totalSupply": 19307012.854193237,
-  "burnPercentage": 7.301913669135194,
+  "burnPercentage": 7.311079186017675,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
@@ -1215,20 +1215,25 @@
     },
     {
       "date": "2025-12-01",
-      "amountTinc": 2306.747398162513,
-      "transactionCount": 1,
+      "amountTinc": 4076.334920816392,
+      "transactionCount": 2,
       "transactions": [
         {
           "hash": "0xff2461c13b8e4e2c77502ea4898ec6a9c277070d2be3760804fa60187f3fc7c9",
           "amount": 2306.747398162513,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0xeb6499fbce1d8f1dd2aad4dfb12813d29fe5210cae932fed3d57a7b723954c1e",
+          "amount": 1769.587522653879,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
     }
   ],
-  "fetchedAt": "2025-12-01T11:36:16.654Z",
+  "fetchedAt": "2025-12-01T12:06:16.861Z",
   "fromCache": true,
-  "lastProcessedBlock": 23918369,
+  "lastProcessedBlock": 23918518,
   "holderStats": {
     "totalHolders": 985,
     "poseidon": 0,
@@ -1244,5 +1249,5 @@
     "dataSource": "moralis"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2025-12-01T11:36:16.654Z"
+  "lastIncrementalUpdate": "2025-12-01T12:06:16.861Z"
 }
