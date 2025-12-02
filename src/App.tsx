@@ -65,29 +65,29 @@ function App() {
                   <span>Burn</span>
                   <span>.fyi</span>
                 </h1>
-                <p>Dragon Flame Burn Analytics</p>
-                <p className="beta-warning">
-                  <span style={{ marginRight: '0.5rem' }}>試</span> Beta: Results must be personally verified
-                </p>
+                <p>龍炎 Dragon Flame Analytics</p>
               </div>
             </div>
-            
+
             <div className="nav-section">
-              <a
-                href="https://titanfarms.win/burn"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="nav-link"
-              >
-                <img
-                  src="/Logo.png"
-                  alt="TINC"
-                  onError={(e) => {
-                    e.currentTarget.style.display = 'none';
-                  }}
-                />
-                Titan Farms
-              </a>
+              <div className="nav-column">
+                <a
+                  href="https://titanfarms.win/burn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="nav-link"
+                >
+                  <img
+                    src="/Logo.png"
+                    alt="TINC"
+                    onError={(e) => {
+                      e.currentTarget.style.display = 'none';
+                    }}
+                  />
+                  Titan Farms
+                </a>
+                <p className="beta-warning">試 Beta: Verify results</p>
+              </div>
               <AdminPanel onDataUpdate={() => loadData(false)} />
             </div>
           </div>

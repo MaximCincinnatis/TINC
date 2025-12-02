@@ -36,3 +36,4 @@ server.log
 .vscode/
 .idea/
 .vercel
+.env*.local
