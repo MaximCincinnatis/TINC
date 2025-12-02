@@ -1,17 +1,94 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+/* 龍炎 RYŪ-EN - The Dragon's Flame Design System
+   TINC Burn Tracker - Where Fire Meets Fortune
+   ============================================= */
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Typography: Distinctive Japanese-Western fusion */
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Zen+Maru+Gothic:wght@400;500;700;900&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  /* 龍 Dragon Jade Spectrum */
+  --dragon-jade: #00D4AA;
+  --dragon-jade-bright: #00FFCC;
+  --dragon-jade-deep: #008B6B;
+  --dragon-jade-glow: rgba(0, 212, 170, 0.4);
+
+  /* 炎 Ember & Flame */
+  --ember-gold: #F5A623;
+  --ember-orange: #FF6D3A;
+  --ember-crimson: #E53935;
+
+  /* 墨 Ink & Void */
+  --void-black: #0f0f18;
+  --ink-deep: rgba(13, 13, 18, 0.85);
+  --ink-medium: rgba(22, 22, 29, 0.8);
+  --ink-light: rgba(30, 30, 40, 0.75);
+
+  /* 和紙 Washi (Japanese Paper) */
+  --washi-cream: #FAF8F0;
+  --washi-warm: #F0EDE4;
+  --washi-mist: rgba(250, 248, 240, 0.08);
+
+  /* Utility */
+  --border-subtle: rgba(0, 212, 170, 0.12);
+  --border-glow: rgba(0, 212, 170, 0.3);
+
+  /* Typography */
+  --font-display: 'Dela Gothic One', sans-serif;
+  --font-body: 'Zen Maru Gothic', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
 }
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--void-black);
+  color: var(--washi-cream);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Scrollbar: Bamboo-inspired */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--void-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    var(--dragon-jade-deep) 0%,
+    var(--dragon-jade) 50%,
+    var(--dragon-jade-deep) 100%
+  );
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--dragon-jade-bright);
+  box-shadow: 0 0 8px var(--dragon-jade-glow);
+}
+
+/* Text selection: Ember glow */
+::selection {
+  background: rgba(245, 166, 35, 0.35);
+  color: var(--washi-cream);
+}
+
+code, .mono {
+  font-family: var(--font-mono);
 }
