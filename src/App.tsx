@@ -67,7 +67,7 @@ function App() {
                 </h1>
                 <p>Dragon Flame Burn Analytics</p>
                 <p className="beta-warning">
-                  ⚠️ Beta: Data verification in progress
+                  <span style={{ marginRight: '0.5rem' }}>試</span> Beta: Results must be personally verified
                 </p>
               </div>
             </div>

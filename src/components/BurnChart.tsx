@@ -52,20 +52,23 @@ const BurnChart: React.FC<Props> = ({ burnData }) => {
           const value = context.parsed?.y || 0;
           const isDeflationary = value >= deflationaryThreshold;
           if (isDeflationary) {
-            return 'rgba(34, 197, 94, 0.8)';
+            // Dragon jade for deflationary
+            return 'rgba(0, 212, 170, 0.85)';
           }
+          // Ember orange gradient for below threshold
           const maxValue = Math.max(...burnData.dailyBurns.map(d => d.amountTinc));
           const intensity = value / maxValue;
-          return `rgba(239, 68, 68, ${0.4 + intensity * 0.4})`;
+          return `rgba(245, 166, 35, ${0.4 + intensity * 0.45})`;
         },
         borderColor: 'transparent',
         borderWidth: 0,
-        borderRadius: 8,
+        borderRadius: 6,
         borderSkipped: false,
         hoverBackgroundColor: (context: any) => {
           const value = context.parsed?.y || 0;
           const isDeflationary = value >= deflationaryThreshold;
-          return isDeflationary ? 'rgba(34, 197, 94, 1)' : 'rgba(239, 68, 68, 0.9)';
+          // Brighter on hover
+          return isDeflationary ? 'rgba(0, 255, 204, 0.95)' : 'rgba(255, 109, 58, 0.9)';
         },
         type: 'bar' as const,
       },
@@ -90,30 +93,30 @@ const BurnChart: React.FC<Props> = ({ burnData }) => {
         display: false,
       },
       tooltip: {
-        backgroundColor: 'rgba(0, 0, 0, 0.4)',
-        titleColor: '#ffffff',
-        bodyColor: '#ffffff',
-        borderColor: 'rgba(255, 255, 255, 0.1)',
+        backgroundColor: 'rgba(13, 13, 18, 0.97)',
+        titleColor: '#FAF8F0',
+        bodyColor: '#FAF8F0',
+        borderColor: 'rgba(0, 212, 170, 0.2)',
         borderWidth: 1,
         padding: 16,
-        cornerRadius: 20,
+        cornerRadius: 12,
         displayColors: false,
         titleAlign: 'center',
         bodyAlign: 'left',
         titleFont: {
           size: 14,
           weight: 'bold',
-          family: 'Inter, sans-serif'
+          family: 'Dela Gothic One, sans-serif'
         },
         bodyFont: {
           size: 13,
-          weight: '600',
-          family: 'Inter, sans-serif'
+          weight: '500',
+          family: 'Zen Maru Gothic, sans-serif'
         },
         footerFont: {
           size: 12,
           weight: 'bold',
-          family: 'SF Mono, Monaco, monospace'
+          family: 'IBM Plex Mono, monospace'
         },
         callbacks: {
           title: (context: any) => {
@@ -156,7 +159,7 @@ const BurnChart: React.FC<Props> = ({ burnData }) => {
           footer: (context: any) => {
             const amount = context[0].parsed.y;
             const isDeflationary = amount >= deflationaryThreshold;
-            return isDeflationary ? 'DEFLATIONARY DAY' : 'BELOW THRESHOLD';
+            return isDeflationary ? '🐉 DEFLATIONARY DAY' : '⚡ BELOW THRESHOLD';
           }
         }
       },
@@ -166,8 +169,8 @@ const BurnChart: React.FC<Props> = ({ burnData }) => {
             type: 'line',
             yMin: deflationaryThreshold,
             yMax: deflationaryThreshold,
-            borderColor: '#22c55e',
-            borderWidth: 3,
+            borderColor: '#00D4AA',
+            borderWidth: 2,
             borderDash: [0],
             label: {
               display: false
@@ -182,11 +185,11 @@ const BurnChart: React.FC<Props> = ({ burnData }) => {
           display: false,
         },
         ticks: {
-          color: 'rgba(255, 255, 255, 0.7)',
+          color: 'rgba(250, 248, 240, 0.6)',
           font: {
             size: 11,
             weight: 500,
-            family: 'Inter, sans-serif'
+            family: 'Zen Maru Gothic, sans-serif'
           },
           maxRotation: 0,
           autoSkip: true,
@@ -198,15 +201,15 @@ const BurnChart: React.FC<Props> = ({ burnData }) => {
       y: {
         beginAtZero: true,
         grid: {
-          color: 'rgba(255, 255, 255, 0.05)',
+          color: 'rgba(250, 248, 240, 0.04)',
           drawBorder: false
         },
         ticks: {
-          color: 'rgba(255, 255, 255, 0.7)',
+          color: 'rgba(250, 248, 240, 0.6)',
           font: {
             size: 11,
             weight: 500,
-            family: 'Space Grotesk, sans-serif'
+            family: 'IBM Plex Mono, sans-serif'
           },
           callback: function(value: any) {
             if (value >= 1000000) {
