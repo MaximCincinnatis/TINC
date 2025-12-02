@@ -9,22 +9,9 @@ require('dotenv').config();
 // - Please wait the full time for accurate results
 // ⏰
 
-// RPC endpoints with backup options (tested and working)
-const RPC_ENDPOINTS = [
-  "https://ethereum.publicnode.com",
-  "https://eth.llamarpc.com",
-  "https://eth-mainnet.public.blastapi.io",
-  "https://eth.drpc.org",
-  "https://rpc.payy.moe",
-  "https://eth.merkle.io",
-  "https://ethereum-rpc.publicnode.com"
-  // Removed non-working endpoints:
-  // "https://1rpc.io/eth" - quota exceeded
-  // "https://rpc.ankr.com/eth" - requires API key
-  // "https://eth-rpc.gateway.pokt.network" - connection failed
-];
+// RPC endpoint from environment variable or default
+const RPC_ENDPOINT = process.env.ETH_RPC_ENDPOINT || "http://192.168.0.73:18546";
 
-let currentRPCIndex = 0;
 
 const TINC_ADDRESS = '0x6532B3F1e4DBff542fbD6befE5Ed7041c10B385a';
 const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000';
@@ -55,14 +42,14 @@ async function callRPC(method, params, retryCount = 0) {
       console.log('  🧪 SIMULATED FAILURE for testing retry logic');
       throw new Error('Simulated RPC failure for testing');
     }
-  const maxRetries = RPC_ENDPOINTS.length * 2;
+  const maxRetries = 3;
   
   if (retryCount >= maxRetries) {
     console.error(`[ERROR] All RPC endpoints exhausted after ${maxRetries} retries`);
     throw new Error('All RPC endpoints exhausted after retries');
   }
 
-  const endpoint = RPC_ENDPOINTS[currentRPCIndex];
+  const endpoint = RPC_ENDPOINT;
   
   // Create AbortController for proper timeout
   const controller = new AbortController();
@@ -119,7 +106,7 @@ async function callRPC(method, params, retryCount = 0) {
     }
     
     // Move to next endpoint
-    currentRPCIndex = (currentRPCIndex + 1) % RPC_ENDPOINTS.length;
+    
     
     // If error contains rate limit message, wait longer
     if (error.message.includes('rate') || error.message.includes('limit') || error.message.includes('quota')) {

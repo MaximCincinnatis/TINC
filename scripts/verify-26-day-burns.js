@@ -2,16 +2,15 @@ const fs = require('fs');
 const path = require('path');
 require('dotenv').config();
 
-// ⏰ IMPORTANT: This script takes 8-10 minutes to complete
-// It fetches REAL blockchain data (no estimates):
-// - 30 days of burn transactions from 270+ block chunks
-// - Live holder balances from transfer events + balance calls
-// - Please wait the full time for accurate results
+// ⏰ 26-DAY BURN VERIFICATION SCRIPT
+// This script fetches REAL blockchain data for comparison:
+// - 26 days of burn transactions (local node retention limit)
+// - Saves to burn-data-26day-verification.json for comparison
+// - Uses local RPC node (fast: ~1-2 minutes)
 // ⏰
 
 // RPC endpoint from environment variable or default
 const RPC_ENDPOINT = process.env.ETH_RPC_ENDPOINT || "http://192.168.0.73:18546";
-
 
 const TINC_ADDRESS = '0x6532B3F1e4DBff542fbD6befE5Ed7041c10B385a';
 const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000';
@@ -38,23 +37,20 @@ const EXCLUDED_ADDRESSES = new Set([
 
 async function callRPC(method, params, retryCount = 0) {
   const maxRetries = 3;
-  
+
   if (retryCount >= maxRetries) {
-    console.error(`[ERROR] All RPC endpoints exhausted after ${maxRetries} retries`);
-    throw new Error('All RPC endpoints exhausted after retries');
+    console.error(`[ERROR] RPC call failed after ${maxRetries} retries`);
+    throw new Error(`RPC call failed after ${maxRetries} retries`);
   }
 
-  const endpoint = RPC_ENDPOINT;
-  
-  // Create AbortController for proper timeout
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 second timeout
-  
+
   try {
     const startTime = Date.now();
-    const response = await fetch(endpoint, {
+    const response = await fetch(RPC_ENDPOINT, {
       method: 'POST',
-      headers: { 
+      headers: {
         'Content-Type': 'application/json',
         'User-Agent': 'TINC-Burn-Tracker/1.0'
       },
@@ -76,44 +72,30 @@ async function callRPC(method, params, retryCount = 0) {
 
     const data = await response.json();
     if (data.error) {
-      // Check for specific error codes
-      if (data.error.code === -32005 || data.error.code === -32001) {
-        throw new Error(`Rate limited: ${data.error.message}`);
-      }
       throw new Error(data.error.message || 'Unknown RPC error');
     }
-    
-    // Success - this endpoint is working
+
     if (retryCount > 0) {
-      console.log(`✓ RPC call succeeded with ${endpoint} after ${retryCount} retries (${responseTime}ms)`);
+      console.log(`✓ RPC call succeeded after ${retryCount} retries (${responseTime}ms)`);
     }
     return data.result;
   } catch (error) {
     clearTimeout(timeoutId);
-    
-    // More detailed error logging
+
     if (error.name === 'AbortError') {
-      console.warn(`[TIMEOUT] RPC timeout with ${endpoint} after 30s`);
-    } else if (error.message.includes('Rate limited')) {
-      console.warn(`[RATE_LIMIT] ${endpoint}: ${error.message}`);
+      console.warn(`[TIMEOUT] RPC timeout after 30s`);
     } else {
-      console.warn(`[ERROR] RPC error with ${endpoint}: ${error.message}`);
+      console.warn(`[ERROR] RPC error: ${error.message}`);
     }
-    
-    // Move to next endpoint
-    
-    
-    // If error contains rate limit message, wait longer
-    if (error.message.includes('rate') || error.message.includes('limit') || error.message.includes('quota')) {
-      console.log(`⏳ Waiting 2s before retry due to rate limiting...`);
-      await new Promise(resolve => setTimeout(resolve, 2000));
-    } else {
-      // Small delay between retries
-      await new Promise(resolve => setTimeout(resolve, 500));
+
+    if (retryCount < maxRetries - 1) {
+      const backoffMs = 500 * (retryCount + 1);
+      console.log(`⏳ Waiting ${backoffMs}ms before retry...`);
+      await new Promise(resolve => setTimeout(resolve, backoffMs));
+      return callRPC(method, params, retryCount + 1);
     }
-    
-    // Retry with next endpoint
-    return callRPC(method, params, retryCount + 1);
+
+    throw error;
   }
 }
 
@@ -252,7 +234,7 @@ async function fetchBurnData() {
   // Fetch actual burn transactions
   const endDate = new Date();
   const startDate = new Date();
-  startDate.setDate(startDate.getDate() - 30);
+  startDate.setDate(startDate.getDate() - 26);
 
   const currentBlock = await getBlockNumber();
   
@@ -331,10 +313,10 @@ async function fetchBurnData() {
   const allDays = [];
   // Use endDate as reference point to ensure consistency
   const endDateObj = new Date(endDate.toISOString().split('T')[0] + 'T00:00:00Z');
-  
-  for (let i = 0; i < 30; i++) {
+
+  for (let i = 0; i < 26; i++) {
     const date = new Date(endDateObj);
-    date.setUTCDate(date.getUTCDate() - (29 - i));
+    date.setUTCDate(date.getUTCDate() - (25 - i));
     const dateStr = date.toISOString().split('T')[0];
     
     const existingData = dailyBurns.find(d => d.date === dateStr);
@@ -359,10 +341,10 @@ async function fetchBurnData() {
   console.log(`🔍 Data validation:`);
   console.log(`   Total burn transactions: ${totalTransactions}`);
   console.log(`   Total TINC burned: ${totalBurned.toLocaleString()}`);
-  console.log(`   Daily entries: ${allDays.length} (expected: 30)`);
-  
-  if (allDays.length !== 30) {
-    throw new Error(`Data validation failed: Expected 30 daily entries, got ${allDays.length}`);
+  console.log(`   Daily entries: ${allDays.length} (expected: 26)`);
+
+  if (allDays.length !== 26) {
+    throw new Error(`Data validation failed: Expected 26 daily entries, got ${allDays.length}`);
   }
   
   if (totalTransactions === 0) {
@@ -882,50 +864,40 @@ async function main() {
     const isIncremental = process.argv.includes('--incremental');
     
     if (isIncremental) {
-      console.log('🔄 Starting INCREMENTAL data update...');
-      return await runIncrementalUpdate();
+      console.log('❌ Incremental mode not supported for verification script');
+      process.exit(1);
     } else {
-      console.log('🚀 Starting FULL data refresh...');
+      console.log('🚀 Starting 26-DAY VERIFICATION...');
       const burnData = await fetchBurnData();
-      const holderData = await fetchHolderData();
-      
-      // Combine burn data with holder data
+
+      // Skip holder data for faster verification
       const combinedData = {
         ...burnData,
-        holderStats: holderData
+        holderStats: { note: 'Skipped for verification - focusing on burn data only' }
       };
-      
-      // Write to versioned data file with timestamp
+
+      // Write to verification file
       const timestamp = Date.now();
-      const versionedFileName = `burn-data-v${timestamp}.json`;
+      const versionedFileName = `burn-data-26day-v${timestamp}.json`;
       const dataPath = path.join(__dirname, '../data', versionedFileName);
-      const legacyPath = path.join(__dirname, '../data/burn-data.json');
+      const legacyPath = path.join(__dirname, '../data/burn-data-26day-verification.json');
       
       // Write versioned file
       fs.writeFileSync(dataPath, JSON.stringify(combinedData, null, 2));
       
-      // Also write legacy file for backward compatibility
+      // Also write verification file
       fs.writeFileSync(legacyPath, JSON.stringify(combinedData, null, 2));
-      
-      // Update version manifest
-      const manifestPath = path.join(__dirname, '../data/data-manifest.json');
-      const manifest = {
-        latest: versionedFileName,
-        timestamp: new Date().toISOString(),
-        version: timestamp,
-        updateType: 'full'
-      };
-      fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2));
-      
-      console.log('✅ Successfully updated burn data!');
+
+      console.log('✅ 26-Day Verification Complete!');
       console.log(`📊 Total Supply: ${burnData.totalSupply.toLocaleString()} TINC`);
-      console.log(`🔥 Total Burned: ${burnData.totalBurned.toLocaleString()} TINC`);
+      console.log(`🔥 Total Burned (26 days): ${burnData.totalBurned.toLocaleString()} TINC`);
+      console.log(`📅 Date Range: ${burnData.startDate} to ${burnData.endDate}`);
+      console.log(`🔢 Total Transactions: ${burnData.dailyBurns.reduce((sum, d) => sum + d.transactionCount, 0)}`);
       console.log(`⚡ Emission Rate: ${burnData.emissionPerSecond.toFixed(4)} TINC/sec`);
       console.log(`📈 Deflationary: ${burnData.isDeflationary ? 'Yes' : 'No'}`);
-      console.log(`👥 Total Holders: ${holderData.totalHolders.toLocaleString()}`);
-      console.log(`🔱 Poseidon (10%+): ${holderData.poseidon}`);
-      console.log(`🐋 Whale (1%+): ${holderData.whale}`);
-      console.log(`📅 Data saved to: ${dataPath}`);
+      console.log();
+      console.log(`📁 Verification data saved to:`);
+      console.log(`   ${legacyPath}`);
     }
     
   } catch (error) {

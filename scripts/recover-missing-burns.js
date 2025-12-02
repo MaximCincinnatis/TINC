@@ -14,13 +14,8 @@ const path = require('path');
 const { Web3 } = require('web3');
 require('dotenv').config();
 
-// Configuration
-const RPC_ENDPOINTS = [
-  'https://ethereum-rpc.publicnode.com',
-  'https://eth.llamarpc.com',
-  'https://rpc.ankr.com/eth',
-  'https://eth-mainnet.public.blastapi.io'
-];
+// Configuration - RPC endpoint from environment variable or default
+const RPC_ENDPOINT = process.env.ETH_RPC_ENDPOINT || "http://192.168.0.73:18546";
 
 const TINC_ADDRESS = '0x6532B3F1e4DBff542fbD6befE5Ed7041c10B385a';
 const BURN_ADDRESS = '0x0000000000000000000000000000000000000000';

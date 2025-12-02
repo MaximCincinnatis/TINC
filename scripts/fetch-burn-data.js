@@ -11,7 +11,7 @@ require('dotenv').config();
 
 // FAILFAST RPC FETCHER - Infinite retry, all or nothing
 const FailfastRPCFetcher = require('./failfast-rpc-fetcher');
-const rpcFetcher = new FailfastRPCFetcher("http://192.168.0.73:18545");
+const rpcFetcher = new FailfastRPCFetcher(process.env.ETH_RPC_ENDPOINT || "http://192.168.0.73:18546");
 
 const TINC_ADDRESS = '0x6532B3F1e4DBff542fbD6befE5Ed7041c10B385a';
 const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000';

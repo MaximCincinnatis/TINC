@@ -7,27 +7,20 @@ const TINC_ADDRESS = '0x6532B3F1e4DBff542fbD6befE5Ed7041c10B385a';
 const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000';
 const API_KEY = process.env.ETHERSCAN_API_KEY || process.env.ETHERSCAN_API_KEY;
 
-// RPC endpoints for total supply
-const RPC_ENDPOINTS = [
-  "https://ethereum.publicnode.com",
-  "https://eth.llamarpc.com",
-  "https://1rpc.io/eth",
-  "https://eth-mainnet.public.blastapi.io",
-  "https://eth.drpc.org"
-];
+// RPC endpoint from environment variable or default
+const RPC_ENDPOINT = process.env.ETH_RPC_ENDPOINT || "http://192.168.0.73:18546";
 
 async function callRPC(method, params) {
-  for (const endpoint of RPC_ENDPOINTS) {
-    try {
-      const response = await fetch(endpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          jsonrpc: '2.0',
-          id: Date.now(),
-          method,
-          params,
-        })
+  try {
+    const response = await fetch(RPC_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        jsonrpc: '2.0',
+        id: Date.now(),
+        method,
+        params,
+      })
       });
 
       const data = await response.json();

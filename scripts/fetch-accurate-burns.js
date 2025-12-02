@@ -8,25 +8,18 @@ const TINC_ADDRESS = '0x6532B3F1e4DBff542fbD6befE5Ed7041c10B385a';
 const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000';
 const API_KEY = process.env.ETHERSCAN_API_KEY || process.env.ETHERSCAN_API_KEY;
 
-// RPC endpoints for direct blockchain queries
-const RPC_ENDPOINTS = [
-  "https://ethereum.publicnode.com",
-  "https://eth.llamarpc.com",
-  "https://1rpc.io/eth",
-  "https://eth-mainnet.public.blastapi.io",
-  "https://eth.drpc.org"
-];
+// RPC endpoint from environment variable or default
+const RPC_ENDPOINT = process.env.ETH_RPC_ENDPOINT || "http://192.168.0.73:18546";
 
-let currentRPCIndex = 0;
 
 async function callRPC(method, params, retryCount = 0) {
-  const maxRetries = RPC_ENDPOINTS.length * 2;
+  const maxRetries = 3;
   
   if (retryCount >= maxRetries) {
     throw new Error('All RPC endpoints exhausted after retries');
   }
 
-  const endpoint = RPC_ENDPOINTS[currentRPCIndex];
+  const endpoint = RPC_ENDPOINT;
   
   try {
     const response = await fetch(endpoint, {
@@ -49,7 +42,7 @@ async function callRPC(method, params, retryCount = 0) {
     return data.result;
   } catch (error) {
     console.warn(`RPC error with ${endpoint}:`, error.message);
-    currentRPCIndex = (currentRPCIndex + 1) % RPC_ENDPOINTS.length;
+    
     
     if (error.message.includes('rate') || error.message.includes('limit')) {
       await new Promise(resolve => setTimeout(resolve, 1000));
