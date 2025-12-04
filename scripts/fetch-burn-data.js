@@ -586,6 +586,7 @@ async function runIncrementalUpdate() {
     // Create recent burn data structure
     const recentBurnData = {
       ...existingData,
+      totalSupply: await getTotalSupply(), // Refresh circulating supply
       dailyBurns: recentDailyBurns,
       holderStats: await fetchHolderData(), // Update holder data
       // CRITICAL: Update last processed block for next resume

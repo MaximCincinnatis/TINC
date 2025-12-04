@@ -207,7 +207,7 @@
 }
 
 .logo img {
-  height: 32px;
+  height: 44px;
   width: auto;
   filter: drop-shadow(0 0 8px var(--dragon-jade));
 }
@@ -543,6 +543,15 @@
   padding: 2rem;
   overflow: hidden;
   animation: card-rise 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.5s both;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chart-section:hover {
+  transform: translateY(-4px);
+  border-color: var(--dragon-jade);
+  box-shadow:
+    0 20px 40px -15px rgba(0, 0, 0, 0.5),
+    0 0 30px -10px var(--dragon-jade);
 }
 
 /* Torii gate gradient top border - like dragon ranks container */
