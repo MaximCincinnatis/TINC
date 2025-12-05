@@ -1,55 +1,13 @@
 {
-  "startDate": "2025-11-05",
-  "endDate": "2025-12-04",
-  "totalBurned": 1505606.9986473261,
+  "startDate": "2025-11-06",
+  "endDate": "2025-12-05",
+  "totalBurned": 1473339.671420459,
   "totalSupply": 19414578.411346834,
-  "burnPercentage": 7.755033185615688,
+  "burnPercentage": 7.588831651164606,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
   "dailyBurns": [
-    {
-      "date": "2025-11-05",
-      "amountTinc": 32859.8881195684,
-      "transactionCount": 5,
-      "transactions": [
-        {
-          "hash": "0xea23c61c8909c0347f69df8ff9e39b03bbcadec10e1408efb51c0f16eb66b5de",
-          "amount": 1433.577201038175,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
-          "blockNumber": 23731064,
-          "timestamp": 1762321091
-        },
-        {
-          "hash": "0x1499fee9c5c2d71221682594c9cf796d480f9e5915680ad78c73a02c39abb89f",
-          "amount": 20569.31426023869,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
-          "blockNumber": 23731506,
-          "timestamp": 1762326467
-        },
-        {
-          "hash": "0x03794d18db9ae4351f524bb3becfc1a673fca5784f251458f9aeab1c095b3f9f",
-          "amount": 9039.423307542229,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
-          "blockNumber": 23732311,
-          "timestamp": 1762336151
-        },
-        {
-          "hash": "0x205c2511bebc32608618f40264fd5214a832072f1a48bef828160e017a2eb395",
-          "amount": 1437.4288122754006,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
-          "blockNumber": 23732853,
-          "timestamp": 1762342703
-        },
-        {
-          "hash": "0x7789e9aa63b36090c9157894e4f49bbccd02596869dc99ddc0cfe5b322d85ffa",
-          "amount": 380.1445384739024,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
-          "blockNumber": 23736202,
-          "timestamp": 1762383263
-        }
-      ]
-    },
     {
       "date": "2025-11-06",
       "amountTinc": 112018.83657624005,
@@ -1245,11 +1203,23 @@
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
+    },
+    {
+      "date": "2025-12-05",
+      "amountTinc": 592.560892701218,
+      "transactionCount": 1,
+      "transactions": [
+        {
+          "hash": "0x9f63059144ed83c1faf2c170f012a10262e5f42befa4caeb03091633edf74b15",
+          "amount": 592.560892701218,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
     }
   ],
-  "fetchedAt": "2025-12-05T17:36:30.105Z",
+  "fetchedAt": "2025-12-05T18:06:31.220Z",
   "fromCache": true,
-  "lastProcessedBlock": 23948265,
+  "lastProcessedBlock": 23948410,
   "holderStats": {
     "totalHolders": 984,
     "poseidon": 0,
@@ -1265,5 +1235,5 @@
     "dataSource": "moralis"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2025-12-05T17:36:30.105Z"
+  "lastIncrementalUpdate": "2025-12-05T18:06:31.220Z"
 }
