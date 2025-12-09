@@ -1,90 +1,13 @@
 {
-  "startDate": "2025-11-08",
+  "startDate": "2025-11-09",
   "endDate": "2025-12-08",
-  "totalBurned": 1320866.0686531148,
+  "totalBurned": 1290077.5019249131,
   "totalSupply": 19414578.411346834,
-  "burnPercentage": 6.803475412482486,
+  "burnPercentage": 6.644890631109086,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
   "dailyBurns": [
-    {
-      "date": "2025-11-08",
-      "amountTinc": 30788.56672820175,
-      "transactionCount": 10,
-      "transactions": [
-        {
-          "hash": "0x52ef5b433841255557e5917e16091d854c1cdd377dabd620ed66a77559fae22a",
-          "amount": 730.3784361470416,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
-          "blockNumber": 23751312,
-          "timestamp": 1762565891
-        },
-        {
-          "hash": "0xe92651238c742b8e66362d1f879562361f337e7d48e889c882ed3860b360f253",
-          "amount": 8538.215289771933,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
-          "blockNumber": 23751516,
-          "timestamp": 1762568363
-        },
-        {
-          "hash": "0x9554e2aaf4f9940cf998293692124039a8563800165e223dd8db7e3481eeff3a",
-          "amount": 832.3866000623486,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
-          "blockNumber": 23752759,
-          "timestamp": 1762583363
-        },
-        {
-          "hash": "0x553c7006b892fc9deb0f5508e0bfbb9c9fe122cddd8334f739e802a59a7e4823",
-          "amount": 984.5346817897873,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
-          "blockNumber": 23752824,
-          "timestamp": 1762584155
-        },
-        {
-          "hash": "0x7877cf60df6a048d241563283d5c2d47ebb6677d315b104115c2d46d45316c13",
-          "amount": 8715.52146965101,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
-          "blockNumber": 23752949,
-          "timestamp": 1762585667
-        },
-        {
-          "hash": "0xe37978b333674bac0c80c3deed122145fa61ebb2f78f1e3c9765f2cc8aee8064",
-          "amount": 5936.5990988834355,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
-          "blockNumber": 23754171,
-          "timestamp": 1762600427
-        },
-        {
-          "hash": "0xc837cc70a9e1b17421abb1a52168367fa0b848b77d7c6e454cd5a274f8e046f3",
-          "amount": 624.4313465456621,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
-          "blockNumber": 23754546,
-          "timestamp": 1762604975
-        },
-        {
-          "hash": "0xcfc1e77aa1f73fad61e29f54ea66d9e26f817cb33667e0d7794c889dcb75f648",
-          "amount": 3530.0728050107855,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
-          "blockNumber": 23754612,
-          "timestamp": 1762605767
-        },
-        {
-          "hash": "0xeee86d02e1f98d7f80789a6760edd65bff1329e8bfed8b6efea55c9303bb0d1e",
-          "amount": 622.337044524297,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
-          "blockNumber": 23756539,
-          "timestamp": 1762628987
-        },
-        {
-          "hash": "0x2d6f792d5bfb8b5b489f756e2bdea9109a7d5dbdefb2aae85e9be8969648bc01",
-          "amount": 274.0899558154442,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
-          "blockNumber": 23756633,
-          "timestamp": 1762630127
-        }
-      ]
-    },
     {
       "date": "2025-11-09",
       "amountTinc": 29800.434284363084,
@@ -1186,17 +1109,17 @@
       ]
     }
   ],
-  "fetchedAt": "2025-12-08T23:49:31.097Z",
+  "fetchedAt": "2025-12-09T00:59:55.855Z",
   "fromCache": true,
-  "lastProcessedBlock": 23971458,
+  "lastProcessedBlock": 23971806,
   "holderStats": {
-    "totalHolders": 982,
+    "totalHolders": 979,
     "poseidon": 0,
     "whale": 11,
     "shark": 35,
-    "dolphin": 100,
+    "dolphin": 98,
     "squid": 188,
-    "shrimp": 648,
+    "shrimp": 647,
     "top10Percentage": 23.785261049828474,
     "estimatedData": false,
     "excludesLPPositions": true,
@@ -1204,5 +1127,5 @@
     "dataSource": "moralis"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2025-12-08T23:49:31.097Z"
+  "lastIncrementalUpdate": "2025-12-09T00:59:55.855Z"
 }
