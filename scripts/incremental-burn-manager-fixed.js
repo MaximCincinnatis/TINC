@@ -165,6 +165,9 @@ class IncrementalBurnManager {
       dailyBurns: sortedDays,
       totalBurned,
       burnPercentage,
+      totalSupply: recentBurnData.totalSupply, // FIX: Update totalSupply from fresh RPC call
+      startDate: sortedDays[0]?.date || existingData.startDate, // FIX: Update to match window
+      endDate: sortedDays[sortedDays.length - 1]?.date || existingData.endDate, // FIX: Update to match window
       fetchedAt: new Date().toISOString(),
       lastIncrementalUpdate: new Date().toISOString(),
       lastProcessedBlock: recentBurnData.lastProcessedBlock, // CRITICAL: Update block marker
