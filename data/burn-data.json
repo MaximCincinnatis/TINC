@@ -1153,6 +1153,12 @@
       ]
     },
     {
+      "date": "2025-12-07",
+      "amountTinc": 0,
+      "transactionCount": 0,
+      "transactions": []
+    },
+    {
       "date": "2025-12-08",
       "amountTinc": 54456.11864133542,
       "transactionCount": 4,
