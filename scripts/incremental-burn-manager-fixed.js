@@ -320,13 +320,16 @@ class IncrementalBurnManager {
       throw new Error(`Data validation failed: Expected 29-31 days, got ${dayCount}`);
     }
     
-    // Check if we have a new day that would cause window shift
+    // Check if we have a window shift (start OR end date changed)
+    // FIX: Also check start date - slice(-30) can drop oldest days without changing end date
+    const originalStartDate = originalData.dailyBurns[0]?.date;
+    const mergedStartDate = mergedData.dailyBurns[0]?.date;
     const originalEndDate = originalData.dailyBurns[originalData.dailyBurns.length - 1].date;
     const mergedEndDate = mergedData.dailyBurns[mergedData.dailyBurns.length - 1].date;
-    const windowShifted = originalEndDate !== mergedEndDate;
-    
+    const windowShifted = originalStartDate !== mergedStartDate || originalEndDate !== mergedEndDate;
+
     if (windowShifted) {
-      console.log(`📅 Window shifted: ${originalEndDate} → ${mergedEndDate}`);
+      console.log(`📅 Window shifted: ${originalStartDate}-${originalEndDate} → ${mergedStartDate}-${mergedEndDate}`);
     }
     
     // Check historical data wasn't modified (48+ hours old)
