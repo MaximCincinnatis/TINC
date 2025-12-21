@@ -1,25 +1,13 @@
 {
-  "startDate": "2025-11-20",
-  "endDate": "2025-12-20",
-  "totalBurned": 806229.6031221321,
+  "startDate": "2025-11-21",
+  "endDate": "2025-12-21",
+  "totalBurned": 791811.2325721896,
   "totalSupply": 20028113.597795278,
-  "burnPercentage": 4.025489466021817,
+  "burnPercentage": 3.953498809090804,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
   "dailyBurns": [
-    {
-      "date": "2025-11-20",
-      "amountTinc": 14752.055032621714,
-      "transactionCount": 1,
-      "transactions": [
-        {
-          "hash": "0x7fdc221267bf6068d4097fa8deb41721a8b380af301301f35c13b195894b282d",
-          "amount": 14752.055032621714,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        }
-      ]
-    },
     {
       "date": "2025-11-21",
       "amountTinc": 574.3707409326647,
@@ -801,19 +789,31 @@
           "from": "0x9fabf48ebe587ee4f8b3172012c3060cc40fea6c"
         }
       ]
+    },
+    {
+      "date": "2025-12-21",
+      "amountTinc": 333.6844826793851,
+      "transactionCount": 1,
+      "transactions": [
+        {
+          "hash": "0x3e68247251b7c2045e6856b89255bd741c93862eefd7d87254a05f0a8e49b8d8",
+          "amount": 333.6844826793851,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
     }
   ],
-  "fetchedAt": "2025-12-21T07:54:07.540Z",
+  "fetchedAt": "2025-12-21T08:26:42.524Z",
   "fromCache": true,
-  "lastProcessedBlock": 24059614,
+  "lastProcessedBlock": 24059774,
   "holderStats": {
-    "totalHolders": 986,
+    "totalHolders": 987,
     "poseidon": 1,
     "whale": 10,
     "shark": 37,
     "dolphin": 96,
     "squid": 186,
-    "shrimp": 656,
+    "shrimp": 657,
     "top10Percentage": 37.38334905983538,
     "estimatedData": false,
     "excludesLPPositions": true,
@@ -821,5 +821,5 @@
     "dataSource": "moralis"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2025-12-21T07:54:07.540Z"
+  "lastIncrementalUpdate": "2025-12-21T08:26:42.524Z"
 }
