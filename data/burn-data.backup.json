@@ -1,9 +1,9 @@
 {
   "startDate": "2025-11-21",
   "endDate": "2025-12-21",
-  "totalBurned": 791811.2325721896,
+  "totalBurned": 842727.5816032483,
   "totalSupply": 20146248.131917547,
-  "burnPercentage": 3.9303160935347017,
+  "burnPercentage": 4.18304974745209,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
@@ -792,26 +792,46 @@
     },
     {
       "date": "2025-12-21",
-      "amountTinc": 333.6844826793851,
-      "transactionCount": 1,
+      "amountTinc": 51250.03351373797,
+      "transactionCount": 5,
       "transactions": [
         {
           "hash": "0x3e68247251b7c2045e6856b89255bd741c93862eefd7d87254a05f0a8e49b8d8",
           "amount": 333.6844826793851,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x3b66da401683e57951a4e0e0f46ce677ab21d06252b80e807657e69e1e0e4024",
+          "amount": 33226.66759018924,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x3b66da401683e57951a4e0e0f46ce677ab21d06252b80e807657e69e1e0e4024",
+          "amount": 15304.366758764896,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x3b66da401683e57951a4e0e0f46ce677ab21d06252b80e807657e69e1e0e4024",
+          "amount": 951.3814521393958,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0xa0e48511bb374e1ded2061af61f1a6ed3cc75949eda99df0d4577bd065752ca4",
+          "amount": 1433.9332299650632,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
     }
   ],
-  "fetchedAt": "2025-12-21T13:21:12.554Z",
+  "fetchedAt": "2025-12-21T13:53:55.502Z",
   "fromCache": true,
-  "lastProcessedBlock": 24061243,
+  "lastProcessedBlock": 24061406,
   "holderStats": {
-    "totalHolders": 987,
+    "totalHolders": 986,
     "poseidon": 1,
     "whale": 10,
     "shark": 37,
-    "dolphin": 96,
+    "dolphin": 95,
     "squid": 186,
     "shrimp": 657,
     "top10Percentage": 37.16413878821576,
@@ -821,5 +841,5 @@
     "dataSource": "moralis"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2025-12-21T13:21:12.554Z"
+  "lastIncrementalUpdate": "2025-12-21T13:53:55.502Z"
 }
