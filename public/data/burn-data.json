@@ -2,7 +2,7 @@
   "startDate": "2025-12-04",
   "endDate": "2026-01-05",
   "totalBurned": 450470.98377703957,
-  "totalSupply": 20676872.90851317,
+  "totalSupply": 20677238.397736322,
   "burnPercentage": 2.1786223950313577,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
@@ -728,9 +728,9 @@
       ]
     }
   ],
-  "fetchedAt": "2026-01-05T23:47:50.767Z",
+  "fetchedAt": "2026-01-06T00:15:09.332Z",
   "fromCache": true,
-  "lastProcessedBlock": 24171839,
+  "lastProcessedBlock": 24171976,
   "holderStats": {
     "totalHolders": 988,
     "poseidon": 1,
@@ -739,12 +739,12 @@
     "dolphin": 95,
     "squid": 188,
     "shrimp": 659,
-    "top10Percentage": 36.21040594238749,
+    "top10Percentage": 36.20976589012891,
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
     "dataSource": "moralis"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2026-01-05T23:47:50.767Z"
+  "lastIncrementalUpdate": "2026-01-06T00:15:09.332Z"
 }
