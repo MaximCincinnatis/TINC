@@ -1,9 +1,9 @@
 {
   "startDate": "2025-12-06",
   "endDate": "2026-01-07",
-  "totalBurned": 477772.2435013401,
-  "totalSupply": 21811923.291453816,
-  "burnPercentage": 2.190417768838098,
+  "totalBurned": 480629.75966181984,
+  "totalSupply": 21841428.437266696,
+  "burnPercentage": 2.2035184758335205,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
@@ -702,34 +702,44 @@
     },
     {
       "date": "2026-01-07",
-      "amountTinc": 3750.3167441775477,
-      "transactionCount": 1,
+      "amountTinc": 6607.832904657302,
+      "transactionCount": 3,
       "transactions": [
         {
           "hash": "0x02f5995c34da184a18d4ea3cdcb84e47f9265a5640c7a4a217e0e9821f755617",
           "amount": 3750.3167441775477,
           "from": "0x9fabf48ebe587ee4f8b3172012c3060cc40fea6c"
+        },
+        {
+          "hash": "0xb93c368cefda4888430d101c67de940dca595c3fedc06c2790bcec6c25b62b43",
+          "amount": 1275.689504027293,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0xcd66846237258802316a8f3cabfe8d5ae77eed68d461bdfda2ada962f215d608",
+          "amount": 1581.8266564524613,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
     }
   ],
-  "fetchedAt": "2026-01-07T03:21:51.794Z",
+  "fetchedAt": "2026-01-07T03:49:36.312Z",
   "fromCache": true,
-  "lastProcessedBlock": 24180083,
+  "lastProcessedBlock": 24180222,
   "holderStats": {
-    "totalHolders": 989,
+    "totalHolders": 990,
     "poseidon": 1,
     "whale": 11,
-    "shark": 34,
+    "shark": 35,
     "dolphin": 94,
     "squid": 188,
     "shrimp": 661,
-    "top10Percentage": 35.67087899504598,
+    "top10Percentage": 35.622691922984956,
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
     "dataSource": "moralis"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2026-01-07T03:21:51.794Z"
+  "lastIncrementalUpdate": "2026-01-07T03:49:36.312Z"
 }
