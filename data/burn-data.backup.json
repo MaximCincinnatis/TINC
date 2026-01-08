@@ -1,9 +1,9 @@
 {
   "startDate": "2025-12-07",
   "endDate": "2026-01-08",
-  "totalBurned": 507758.164817247,
-  "totalSupply": 21872830.05764977,
-  "burnPercentage": 2.321410459821428,
+  "totalBurned": 523018.4338191167,
+  "totalSupply": 21857569.7886479,
+  "burnPercentage": 2.3911786103609263,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
@@ -722,8 +722,8 @@
     },
     {
       "date": "2026-01-08",
-      "amountTinc": 5088.626143360452,
-      "transactionCount": 2,
+      "amountTinc": 20348.89514523009,
+      "transactionCount": 4,
       "transactions": [
         {
           "hash": "0xeab3416a9b5ee54004e4cd9a0614c74c74332eb3a0b3b98c38f214dbe7cd1b00",
@@ -734,27 +734,37 @@
           "hash": "0x73f8cea3ec3c949a46d9b768e0872380903420ab0a89204f5dd24b8c36a00b31",
           "amount": 2809.1733737648683,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x925f96531f095312bca6cff18fe2a55bdc365c2d095deab2a7fb89051525b817",
+          "amount": 6368.64271396996,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x155f9719d6ad87676c20088ea43e57171bf1b1951e34db669aacbb8489436f47",
+          "amount": 8891.626287899679,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
     }
   ],
-  "fetchedAt": "2026-01-08T15:44:46.379Z",
+  "fetchedAt": "2026-01-08T16:12:27.617Z",
   "fromCache": true,
-  "lastProcessedBlock": 24190929,
+  "lastProcessedBlock": 24191067,
   "holderStats": {
-    "totalHolders": 989,
+    "totalHolders": 988,
     "poseidon": 1,
     "whale": 11,
     "shark": 34,
     "dolphin": 95,
-    "squid": 188,
+    "squid": 187,
     "shrimp": 660,
-    "top10Percentage": 35.57155038136275,
+    "top10Percentage": 35.59638532106016,
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
     "dataSource": "moralis"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2026-01-08T15:44:46.379Z"
+  "lastIncrementalUpdate": "2026-01-08T16:12:27.617Z"
 }
