@@ -1,9 +1,9 @@
 {
   "startDate": "2025-12-17",
   "endDate": "2026-01-18",
-  "totalBurned": 538606.2431303444,
-  "totalSupply": 22386044.1240395,
-  "burnPercentage": 2.405991161930911,
+  "totalBurned": 546030.9048957122,
+  "totalSupply": 22378625.784352552,
+  "burnPercentage": 2.4391576370983334,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
@@ -748,34 +748,44 @@
     },
     {
       "date": "2026-01-18",
-      "amountTinc": 8858.6696,
-      "transactionCount": 1,
+      "amountTinc": 16283.3313653677,
+      "transactionCount": 3,
       "transactions": [
         {
           "hash": "0xd0ec6fb299c879a0b0b760275477a07225efb81b2b5503bdcc75985710db4d20",
           "amount": 8858.6696,
           "from": "0x9fabf48ebe587ee4f8b3172012c3060cc40fea6c"
+        },
+        {
+          "hash": "0x53fd43b440c57c6337d96fd9f1e5552ebacb5233baa9f61a2ed92509246496ec",
+          "amount": 7226.011644204811,
+          "from": "0x9fabf48ebe587ee4f8b3172012c3060cc40fea6c"
+        },
+        {
+          "hash": "0x086757b82d087a844c9103495332b5919f4854cacc0c11f91451e61f50d32868",
+          "amount": 198.65012116288835,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
     }
   ],
-  "fetchedAt": "2026-01-18T09:33:27.250Z",
+  "fetchedAt": "2026-01-18T10:02:07.218Z",
   "fromCache": true,
-  "lastProcessedBlock": 24260768,
+  "lastProcessedBlock": 24260911,
   "holderStats": {
-    "totalHolders": 993,
+    "totalHolders": 992,
     "poseidon": 1,
     "whale": 10,
     "shark": 35,
-    "dolphin": 96,
+    "dolphin": 95,
     "squid": 186,
     "shrimp": 665,
-    "top10Percentage": 34.62322357885689,
+    "top10Percentage": 34.634700907091435,
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
     "dataSource": "moralis"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2026-01-18T09:33:27.250Z"
+  "lastIncrementalUpdate": "2026-01-18T10:02:07.218Z"
 }
