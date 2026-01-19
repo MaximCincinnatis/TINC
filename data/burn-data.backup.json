@@ -1,9 +1,9 @@
 {
   "startDate": "2025-12-18",
   "endDate": "2026-01-19",
-  "totalBurned": 568717.2203003606,
-  "totalSupply": 22330180.59349546,
-  "burnPercentage": 2.5468545492463317,
+  "totalBurned": 573991.716153342,
+  "totalSupply": 22354872.362994235,
+  "burnPercentage": 2.5704750292997613,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
@@ -743,8 +743,8 @@
     },
     {
       "date": "2026-01-19",
-      "amountTinc": 58267.01963717165,
-      "transactionCount": 6,
+      "amountTinc": 63541.51549015305,
+      "transactionCount": 8,
       "transactions": [
         {
           "hash": "0xc76b37c0a02d5a7aa7f4e44ba79eb380cd917ee2e4b12ce3832f34c9027c1e55",
@@ -775,27 +775,37 @@
           "hash": "0x01b825fc8aaa7a5c0594a3379cdbb859e1ab03ff5d5c47a7250da0467a493671",
           "amount": 5909.835870523326,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0xfc7b1dbcff4fa9f5094293b332530b9a05d87a569ca3fd865108cdbbb675b76b",
+          "amount": 4073.737667706844,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0xb1d10fbdb84997a4394f47968408a0d752b1255d0c4eb5dafaf5e56ba6253302",
+          "amount": 1200.75818527455,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
     }
   ],
-  "fetchedAt": "2026-01-19T21:13:53.768Z",
+  "fetchedAt": "2026-01-19T21:42:20.242Z",
   "fromCache": true,
-  "lastProcessedBlock": 24271434,
+  "lastProcessedBlock": 24271577,
   "holderStats": {
-    "totalHolders": 990,
+    "totalHolders": 993,
     "poseidon": 1,
     "whale": 10,
     "shark": 35,
     "dolphin": 95,
-    "squid": 187,
-    "shrimp": 662,
-    "top10Percentage": 34.70984067986207,
+    "squid": 188,
+    "shrimp": 664,
+    "top10Percentage": 34.671502398547375,
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
     "dataSource": "moralis"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2026-01-19T21:13:53.768Z"
+  "lastIncrementalUpdate": "2026-01-19T21:42:20.242Z"
 }
