@@ -1,9 +1,9 @@
 {
   "startDate": "2025-12-24",
   "endDate": "2026-01-26",
-  "totalBurned": 1059474.9857609398,
-  "totalSupply": 22237605.987608805,
-  "burnPercentage": 4.764339229462462,
+  "totalBurned": 1073785.2746040174,
+  "totalSupply": 22223295.69876573,
+  "burnPercentage": 4.8286909805055,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
@@ -828,8 +828,8 @@
     },
     {
       "date": "2026-01-26",
-      "amountTinc": 110284.55833452972,
-      "transactionCount": 2,
+      "amountTinc": 124594.84717760723,
+      "transactionCount": 3,
       "transactions": [
         {
           "hash": "0x67de5588ce6a2111ff1e4c7551afc7b2a0733ad8b06ce03934967210a9a37d4e",
@@ -840,13 +840,18 @@
           "hash": "0x07c76eb265880415b19b8c5ad719395d87c56900cf176c2f5aac047d47651d9f",
           "amount": 14503.899038837075,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x1e27ef8b53287b06a9562c52e108010929aca765c20b8243a2cdfce4ea5b434a",
+          "amount": 14310.288843077511,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
     }
   ],
-  "fetchedAt": "2026-01-26T08:42:07.475Z",
+  "fetchedAt": "2026-01-26T09:10:34.659Z",
   "fromCache": true,
-  "lastProcessedBlock": 24317878,
+  "lastProcessedBlock": 24318020,
   "holderStats": {
     "totalHolders": 997,
     "poseidon": 1,
@@ -855,12 +860,12 @@
     "dolphin": 99,
     "squid": 187,
     "shrimp": 663,
-    "top10Percentage": 35.01354414990775,
+    "top10Percentage": 35.036090487633565,
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
     "dataSource": "moralis"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2026-01-26T08:42:07.475Z"
+  "lastIncrementalUpdate": "2026-01-26T09:10:34.659Z"
 }
