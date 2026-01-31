@@ -238,25 +238,8 @@ class IncrementalBurnManager {
     
     // Create map for quick lookup
     dailyBurns.forEach(day => existingDayMap.set(day.date, day));
-    
-    // Use the merged data as-is if no shift needed
-    const sortedBurns = dailyBurns.sort((a, b) => a.date.localeCompare(b.date));
-    
-    // Take the last 30 days
-    const last30Days = sortedBurns.slice(-30);
-    
-    if (last30Days.length === 30) {
-      const totalBurned = last30Days.reduce((sum, day) => sum + day.amountTinc, 0);
-      const burnPercentage = existingData.totalSupply > 0 ? (totalBurned / existingData.totalSupply) * 100 : 0;
-      
-      return {
-        dailyBurns: last30Days,
-        totalBurned,
-        burnPercentage
-      };
-    }
-    
-    // Fill any gaps
+
+    // Always fill gaps - iterate 30 consecutive calendar days ending today
     const endDate = new Date();
     const startDate = new Date();
     startDate.setDate(startDate.getDate() - 29); // 30 days total
