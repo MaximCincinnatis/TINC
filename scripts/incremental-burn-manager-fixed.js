@@ -143,31 +143,27 @@ class IncrementalBurnManager {
       }
     });
     
-    // Sort by date and keep last 30 days
-    const sortedDays = combinedDays
-      .sort((a, b) => a.date.localeCompare(b.date))
-      .slice(-30);
-    
-    // Calculate totals from the sorted days
-    const totalBurned = sortedDays.reduce((sum, day) => sum + day.amountTinc, 0);
-    const burnPercentage = existingData.totalSupply > 0 
-      ? (totalBurned / existingData.totalSupply) * 100 
-      : 0;
-    
+    // Sort by date
+    const sortedDays = combinedDays.sort((a, b) => a.date.localeCompare(b.date));
+
+    // Ensure all 30 days exist (fills zeros for missing dates like Jan 30)
+    const { dailyBurns: completeDays, totalBurned, burnPercentage } =
+      this.ensureComplete30DayWindow(sortedDays, existingData);
+
     console.log(`📊 Merge complete:`);
-    console.log(`   Days in window: ${sortedDays.length}`);
+    console.log(`   Days in window: ${completeDays.length}`);
     console.log(`   Total burned: ${totalBurned.toLocaleString()} TINC`);
-    console.log(`   Date range: ${sortedDays[0]?.date} to ${sortedDays[sortedDays.length - 1]?.date}`);
-    
+    console.log(`   Date range: ${completeDays[0]?.date} to ${completeDays[completeDays.length - 1]?.date}`);
+
     // Return merged data with updated metadata
     return {
       ...existingData, // Preserve original metadata
-      dailyBurns: sortedDays,
+      dailyBurns: completeDays,
       totalBurned,
       burnPercentage,
       totalSupply: recentBurnData.totalSupply, // FIX: Update totalSupply from fresh RPC call
-      startDate: sortedDays[0]?.date || existingData.startDate, // FIX: Update to match window
-      endDate: sortedDays[sortedDays.length - 1]?.date || existingData.endDate, // FIX: Update to match window
+      startDate: completeDays[0]?.date || existingData.startDate, // FIX: Update to match window
+      endDate: completeDays[completeDays.length - 1]?.date || existingData.endDate, // FIX: Update to match window
       fetchedAt: new Date().toISOString(),
       lastIncrementalUpdate: new Date().toISOString(),
       lastProcessedBlock: recentBurnData.lastProcessedBlock, // CRITICAL: Update block marker
