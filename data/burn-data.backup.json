@@ -1,9 +1,9 @@
 {
   "startDate": "2026-01-11",
   "endDate": "2026-02-09",
-  "totalBurned": 2087424.3947921346,
-  "totalSupply": 21483451.005246863,
-  "burnPercentage": 9.716429610318784,
+  "totalBurned": 2100173.322044167,
+  "totalSupply": 21470702.07799483,
+  "burnPercentage": 9.7757726239199,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
@@ -766,8 +766,8 @@
     },
     {
       "date": "2026-02-09",
-      "amountTinc": 111873.29732551362,
-      "transactionCount": 3,
+      "amountTinc": 124622.22457754618,
+      "transactionCount": 5,
       "transactions": [
         {
           "hash": "0x41e1ff3d624765c193420889cb441f44a0a19b353839d49fcdd99a0ecf8c901a",
@@ -783,13 +783,23 @@
           "hash": "0x26d1414702e5c93b3c92c4d8873cd593e16fa976ecfa9f46e92e2e345d65e511",
           "amount": 12070.13583912437,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0xe069264b2f61980982e42f4e3b7dbaa28f3b4d39e663d34fd8aebbd60e6adf55",
+          "amount": 12006.46946655691,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x4dbc46f4f8df60a0c5889aabab7f9c357737935019c1ce30abf4f6072af5f3e6",
+          "amount": 742.4577854756475,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
     }
   ],
-  "fetchedAt": "2026-02-09T07:00:38.983Z",
+  "fetchedAt": "2026-02-09T07:33:59.801Z",
   "fromCache": true,
-  "lastProcessedBlock": 24417579,
+  "lastProcessedBlock": 24417744,
   "holderStats": {
     "totalHolders": 997,
     "poseidon": 0,
@@ -798,12 +808,12 @@
     "dolphin": 101,
     "squid": 186,
     "shrimp": 659,
-    "top10Percentage": 22.49319034155137,
+    "top10Percentage": 22.506546404445302,
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
     "dataSource": "moralis"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2026-02-09T07:00:38.983Z"
+  "lastIncrementalUpdate": "2026-02-09T07:33:59.801Z"
 }
