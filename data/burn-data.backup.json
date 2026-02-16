@@ -810,9 +810,9 @@
       "transactions": []
     }
   ],
-  "fetchedAt": "2026-02-16T12:46:25.683Z",
+  "fetchedAt": "2026-02-16T13:19:46.847Z",
   "fromCache": true,
-  "lastProcessedBlock": 24469470,
+  "lastProcessedBlock": 24469636,
   "holderStats": {
     "totalHolders": 997,
     "poseidon": 0,
@@ -828,5 +828,5 @@
     "dataSource": "moralis"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2026-02-16T12:46:25.683Z"
+  "lastIncrementalUpdate": "2026-02-16T13:19:46.847Z"
 }
