@@ -309,8 +309,31 @@ class IncrementalBurnManager {
 
     if (windowShifted) {
       console.log(`📅 Window shifted: ${originalStartDate}-${originalEndDate} → ${mergedStartDate}-${mergedEndDate}`);
+
+      // FAILFAST: Verify blocks scanned covers the window shift
+      // Prevents silent data loss if lastProcessedBlock is corrupted
+      if (mergedData.lastProcessedBlock && originalData.lastProcessedBlock) {
+        const origEnd = new Date(originalEndDate + 'T00:00:00Z');
+        const newEnd = new Date(mergedEndDate + 'T00:00:00Z');
+        const daysDiff = Math.round((newEnd - origEnd) / (1000 * 60 * 60 * 24));
+
+        if (daysDiff > 0) {
+          const blocksCovered = mergedData.lastProcessedBlock - originalData.lastProcessedBlock;
+          const expectedBlocks = daysDiff * 7200; // ~7200 blocks/day at 12s avg
+          const minRequired = expectedBlocks * 0.7; // 30% tolerance for block time variance
+
+          if (blocksCovered < minRequired) {
+            throw new Error(
+              `FAILFAST: Window shifted ${daysDiff} days but only ${blocksCovered} blocks scanned ` +
+              `(expected ~${expectedBlocks}, minimum ${Math.round(minRequired)}). ` +
+              `Possible lastProcessedBlock corruption - run full refresh.`
+            );
+          }
+          console.log(`✅ Block coverage verified: ${blocksCovered} blocks for ${daysDiff} day shift (need ≥${Math.round(minRequired)})`);
+        }
+      }
     }
-    
+
     // Check historical data wasn't modified (48+ hours old)
     const historicalChanges = [];
     const recentChanges = [];
