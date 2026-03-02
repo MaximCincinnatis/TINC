@@ -1,9 +1,9 @@
 {
   "startDate": "2026-02-01",
   "endDate": "2026-03-02",
-  "totalBurned": 1428685.2415447268,
-  "totalSupply": 21789645.827018294,
-  "burnPercentage": 6.636443949611488,
+  "totalBurned": 1448937.411581692,
+  "totalSupply": 21769393.65698133,
+  "burnPercentage": 6.6496602243303435,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
@@ -633,8 +633,8 @@
     },
     {
       "date": "2026-03-02",
-      "amountTinc": 207808.94088824658,
-      "transactionCount": 9,
+      "amountTinc": 228061.11092521183,
+      "transactionCount": 11,
       "transactions": [
         {
           "hash": "0x6aba2367a77eb8ebf605a1ff6857fb218ebf5f4c3df4b8a00ac4a91c0beaecde",
@@ -680,13 +680,23 @@
           "hash": "0x22ba1bd6ce0de93caac42cadae522eb4eb50c74369920a6b991897d60037eb9b",
           "amount": 12125.811744438666,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0xc5ed8a04d78018572c192d310b99207c645fc8ab0a1ac7458a8e017ec5a26aec",
+          "amount": 7472.109580218084,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0xc7ae160e852e854098f6038c4054b5543de8968cd8063e2ea33b5b913fcaf31c",
+          "amount": 12780.060456747162,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
     }
   ],
-  "fetchedAt": "2026-03-02T19:14:33.135Z",
+  "fetchedAt": "2026-03-02T21:25:12.616Z",
   "fromCache": true,
-  "lastProcessedBlock": 24571780,
+  "lastProcessedBlock": 24572431,
   "holderStats": {
     "totalHolders": 991,
     "poseidon": 0,
@@ -695,12 +705,12 @@
     "dolphin": 99,
     "squid": 185,
     "shrimp": 658,
-    "top10Percentage": 23.179996995674102,
+    "top10Percentage": 23.20156145667884,
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
     "dataSource": "moralis"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2026-03-02T19:14:33.135Z"
+  "lastIncrementalUpdate": "2026-03-02T21:25:12.616Z"
 }
