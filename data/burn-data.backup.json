@@ -3,7 +3,7 @@
   "endDate": "2026-03-03",
   "totalBurned": 1275869.270742883,
   "totalSupply": 21758676.34779571,
-  "burnPercentage": 6.6552656362349945,
+  "burnPercentage": 5.863726498565876,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
@@ -653,9 +653,9 @@
       "transactions": []
     }
   ],
-  "fetchedAt": "2026-03-03T00:08:47.256Z",
+  "fetchedAt": "2026-03-03T00:41:30.085Z",
   "fromCache": true,
-  "lastProcessedBlock": 24573246,
+  "lastProcessedBlock": 24573410,
   "holderStats": {
     "totalHolders": 991,
     "poseidon": 0,
@@ -671,5 +671,5 @@
     "dataSource": "moralis"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2026-03-03T00:08:47.256Z"
+  "lastIncrementalUpdate": "2026-03-03T00:41:30.085Z"
 }
