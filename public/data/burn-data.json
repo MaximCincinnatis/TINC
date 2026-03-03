@@ -1,65 +1,13 @@
 {
-  "startDate": "2026-02-01",
-  "endDate": "2026-03-02",
-  "totalBurned": 1448937.411581692,
-  "totalSupply": 21771293.450600456,
-  "burnPercentage": 6.655846434735335,
+  "startDate": "2026-02-02",
+  "endDate": "2026-03-03",
+  "totalBurned": 1275869.270742883,
+  "totalSupply": 21758676.34779571,
+  "burnPercentage": 6.6552656362349945,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
   "dailyBurns": [
-    {
-      "date": "2026-02-01",
-      "amountTinc": 185685.24364356184,
-      "transactionCount": 9,
-      "transactions": [
-        {
-          "hash": "0x035b8a0c42da5e5acfb87a08d13811e6be5965ba576187a9dc210b7e6d166021",
-          "amount": 7196.4049789737655,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x787b79c5e71f0cd7920ee12b4bb9488e9cfa4a0c806d24059be26063232bbbd9",
-          "amount": 20097.20196910126,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x74aa3705343c12b590900be5c733b6bfdef2c475e7d468aae745e177b8cf6b1d",
-          "amount": 22616.827216965128,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x6532697d13130bab1ca7b322a4dd4e17a551037b644fe151e6e740fd2047d862",
-          "amount": 6784.177854726711,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x823212551373058fc4dc13f898aa9df6cf4e9a9b42165ef25bc61734503d86eb",
-          "amount": 8795.155567301974,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0xe928470568f9f4cd6e16073eb4252473f53eae6ec0352d6933aee929c1ce3674",
-          "amount": 12701.647494466844,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x8b3035411c69b736d3539bda10539c0f6c0cc1f7e2aabd9da747b6771b5f9406",
-          "amount": 83138.12489243668,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x4880bca701b35e3ca8377ffc1dd5d930572d74b3860182ae2632b4d07ed071b3",
-          "amount": 12447.189443227373,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x0a8420dbde92c3b07666142d6c5e200a0bea2861ff8970d2f7f77ae740cd4a6c",
-          "amount": 11908.514226362102,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        }
-      ]
-    },
     {
       "date": "2026-02-02",
       "amountTinc": 23199.619402194177,
@@ -633,8 +581,8 @@
     },
     {
       "date": "2026-03-02",
-      "amountTinc": 228061.11092521183,
-      "transactionCount": 11,
+      "amountTinc": 240678.21372996434,
+      "transactionCount": 12,
       "transactions": [
         {
           "hash": "0x6aba2367a77eb8ebf605a1ff6857fb218ebf5f4c3df4b8a00ac4a91c0beaecde",
@@ -690,13 +638,24 @@
           "hash": "0xc7ae160e852e854098f6038c4054b5543de8968cd8063e2ea33b5b913fcaf31c",
           "amount": 12780.060456747162,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x1ad2fec154eb5fabd54007ff57d81c11c8e961342e776df88eece8d2359bfedf",
+          "amount": 12617.1028047525,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
+    },
+    {
+      "date": "2026-03-03",
+      "amountTinc": 0,
+      "transactionCount": 0,
+      "transactions": []
     }
   ],
-  "fetchedAt": "2026-03-02T23:36:04.404Z",
+  "fetchedAt": "2026-03-03T00:08:47.256Z",
   "fromCache": true,
-  "lastProcessedBlock": 24573083,
+  "lastProcessedBlock": 24573246,
   "holderStats": {
     "totalHolders": 991,
     "poseidon": 0,
@@ -705,12 +664,12 @@
     "dolphin": 99,
     "squid": 185,
     "shrimp": 658,
-    "top10Percentage": 23.19953685586634,
+    "top10Percentage": 23.212989463775674,
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
     "dataSource": "moralis"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2026-03-02T23:36:04.404Z"
+  "lastIncrementalUpdate": "2026-03-03T00:08:47.256Z"
 }
