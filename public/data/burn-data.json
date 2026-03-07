@@ -663,15 +663,15 @@
       "transactions": []
     }
   ],
-  "fetchedAt": "2026-03-07T14:52:15.368Z",
+  "fetchedAt": "2026-03-07T15:24:58.109Z",
   "fromCache": true,
-  "lastProcessedBlock": 24606286,
+  "lastProcessedBlock": 24606450,
   "holderStats": {
     "totalHolders": 994,
     "poseidon": 0,
     "whale": 12,
-    "shark": 38,
-    "dolphin": 103,
+    "shark": 39,
+    "dolphin": 102,
     "squid": 183,
     "shrimp": 658,
     "top10Percentage": 31.67832650074423,
@@ -681,5 +681,5 @@
     "dataSource": "moralis"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2026-03-07T14:52:15.368Z"
+  "lastIncrementalUpdate": "2026-03-07T15:24:58.109Z"
 }
