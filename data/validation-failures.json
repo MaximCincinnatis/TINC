@@ -1,0 +1,15 @@
+[
+  {
+    "timestamp": "2026-03-16T23:14:32.812Z",
+    "valid": false,
+    "date": "2026-03-17",
+    "actual": 0,
+    "expected": null,
+    "difference": null,
+    "failedChecks": [
+      "hasTransactions",
+      "hasAmount"
+    ],
+    "lastProcessedBlock": 24673271
+  }
+]
