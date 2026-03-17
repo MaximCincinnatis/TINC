@@ -37,5 +37,18 @@
       "hasAmount"
     ],
     "lastProcessedBlock": 24680441
+  },
+  {
+    "timestamp": "2026-03-17T23:51:36.588Z",
+    "valid": false,
+    "date": "2026-03-18",
+    "actual": 0,
+    "expected": null,
+    "difference": null,
+    "failedChecks": [
+      "hasTransactions",
+      "hasAmount"
+    ],
+    "lastProcessedBlock": 24680603
   }
 ]
