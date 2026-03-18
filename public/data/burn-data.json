@@ -1,9 +1,9 @@
 {
   "startDate": "2026-02-17",
   "endDate": "2026-03-18",
-  "totalBurned": 831405.8193994586,
-  "totalSupply": 22287878.69055342,
-  "burnPercentage": 3.7303048484010497,
+  "totalBurned": 853503.2898211896,
+  "totalSupply": 22265781.22013169,
+  "burnPercentage": 3.829450535294513,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
@@ -538,34 +538,44 @@
     },
     {
       "date": "2026-03-18",
-      "amountTinc": 3804.4914345904585,
-      "transactionCount": 1,
+      "amountTinc": 25901.96185632141,
+      "transactionCount": 3,
       "transactions": [
         {
           "hash": "0xbe95e5dc26b055b49aa938d1281b8d572b039e64133747ecaeecb0062a95616b",
           "amount": 3804.4914345904585,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x92150ebd0e5e3f16500ff12fbde25d013fda3ea3b968b4638aba089b458dc964",
+          "amount": 15651.831354678467,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0xa1273563149d703fa4516b2ba0afbbb07a07ada73743e39f77e6eaf0ec5471ac",
+          "amount": 6445.639067052484,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
     }
   ],
-  "fetchedAt": "2026-03-18T17:59:07.929Z",
+  "fetchedAt": "2026-03-18T18:32:27.601Z",
   "fromCache": true,
-  "lastProcessedBlock": 24686016,
+  "lastProcessedBlock": 24686181,
   "holderStats": {
-    "totalHolders": 989,
+    "totalHolders": 988,
     "poseidon": 0,
     "whale": 12,
     "shark": 39,
-    "dolphin": 101,
+    "dolphin": 100,
     "squid": 183,
     "shrimp": 654,
-    "top10Percentage": 31.109406396761514,
+    "top10Percentage": 31.14028064190448,
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
     "dataSource": "moralis"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2026-03-18T17:59:07.929Z"
+  "lastIncrementalUpdate": "2026-03-18T18:32:27.601Z"
 }
