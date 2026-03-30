@@ -1,35 +1,13 @@
 {
-  "startDate": "2026-03-01",
-  "endDate": "2026-03-30",
-  "totalBurned": 825589.9700209688,
+  "startDate": "2026-03-02",
+  "endDate": "2026-03-31",
+  "totalBurned": 817605.5902727934,
   "totalSupply": 23553394.713374626,
-  "burnPercentage": 3.5051846244149405,
+  "burnPercentage": 3.4712855629618518,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
   "dailyBurns": [
-    {
-      "date": "2026-03-01",
-      "amountTinc": 7984.379748175566,
-      "transactionCount": 3,
-      "transactions": [
-        {
-          "hash": "0x77d7acf372e015d52f87b59a21017f660030233dada1469aaae6d6a4c0fff663",
-          "amount": 1930.6648747702031,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0xcc83ba924d545f8d7c65e447cec25b2b6f0d3b1c4061cfd329e33684bfbbb339",
-          "amount": 1688.7546213360897,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0xb7138704430f532cff1246b0278f66c14bb819bfbc3331064c47f4e0353974a8",
-          "amount": 4364.960252069273,
-          "from": "0x9fabf48ebe587ee4f8b3172012c3060cc40fea6c"
-        }
-      ]
-    },
     {
       "date": "2026-03-02",
       "amountTinc": 240678.21372996434,
@@ -567,11 +545,17 @@
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
+    },
+    {
+      "date": "2026-03-31",
+      "amountTinc": 0,
+      "transactionCount": 0,
+      "transactions": []
     }
   ],
-  "fetchedAt": "2026-03-30T21:26:04.799Z",
+  "fetchedAt": "2026-03-30T23:37:00.347Z",
   "fromCache": true,
-  "lastProcessedBlock": 24773090,
+  "lastProcessedBlock": 24773744,
   "holderStats": {
     "totalHolders": 986,
     "poseidon": 0,
@@ -587,5 +571,5 @@
     "dataSource": "moralis"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2026-03-30T21:26:04.799Z"
+  "lastIncrementalUpdate": "2026-03-30T23:37:00.347Z"
 }
