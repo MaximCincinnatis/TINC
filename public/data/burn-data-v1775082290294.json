@@ -1,13 +1,35 @@
 {
-  "startDate": "2026-03-04",
-  "endDate": "2026-04-02",
-  "totalBurned": 566590.3632083721,
+  "startDate": "2026-03-03",
+  "endDate": "2026-04-01",
+  "totalBurned": 584720.6998812141,
   "totalSupply": 23560267.38118962,
-  "burnPercentage": 2.4048554035542677,
+  "burnPercentage": 2.481808421020093,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
   "dailyBurns": [
+    {
+      "date": "2026-03-03",
+      "amountTinc": 18130.336672841913,
+      "transactionCount": 3,
+      "transactions": [
+        {
+          "hash": "0xafdbd6d6ad88db226109a3dae66dd296c960cb94b2567993a2c48b9e21307c3d",
+          "amount": 9962.264478346555,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x4cc7119b64870372dd21c523b64782fe7e49126b45a17b11d61dcfe1cffd87e1",
+          "amount": 4167.205301091832,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x1b87422ec7104e0040ad8c1ef8ca63cb3637bef6cbe605b1d92b478d7e16e299",
+          "amount": 4000.8668934035263,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
+    },
     {
       "date": "2026-03-04",
       "amountTinc": 1084.3381467354923,
@@ -474,17 +496,11 @@
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
-    },
-    {
-      "date": "2026-04-02",
-      "amountTinc": 0,
-      "transactionCount": 0,
-      "transactions": []
     }
   ],
-  "fetchedAt": "2026-04-01T23:31:33.614Z",
+  "fetchedAt": "2026-04-01T22:24:50.293Z",
   "fromCache": true,
-  "lastProcessedBlock": 24788050,
+  "lastProcessedBlock": 24787719,
   "holderStats": {
     "totalHolders": 985,
     "poseidon": 0,
@@ -500,5 +516,5 @@
     "dataSource": "moralis"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2026-04-01T23:31:33.614Z"
+  "lastIncrementalUpdate": "2026-04-01T22:24:50.293Z"
 }
