@@ -1,9 +1,9 @@
 {
   "startDate": "2026-03-07",
   "endDate": "2026-04-05",
-  "totalBurned": 850742.5825975401,
-  "totalSupply": 23362449.80839077,
-  "burnPercentage": 3.6400842985621096,
+  "totalBurned": 841684.6780049383,
+  "totalSupply": 23371507.712983374,
+  "burnPercentage": 3.6013281143063116,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
@@ -537,44 +537,34 @@
     },
     {
       "date": "2026-04-05",
-      "amountTinc": 13110.990362406581,
-      "transactionCount": 3,
+      "amountTinc": 4053.0857698047826,
+      "transactionCount": 1,
       "transactions": [
         {
           "hash": "0xe448c021604702bdebb03370cf22058bc6147ac06da625c548a29d3e91de4692",
           "amount": 4053.0857698047826,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x4899410d5a83db7adef061c42f590009b65fd868037d5bd1866b1089066a1bc5",
-          "amount": 199.2349926018004,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x7ebc234ff3523e9bbc242856d26941e76370d5786b5bbde73924aa6e5758860a",
-          "amount": 8858.6696,
-          "from": "0x9fabf48ebe587ee4f8b3172012c3060cc40fea6c"
         }
       ]
     }
   ],
-  "fetchedAt": "2026-04-05T08:54:18.682Z",
+  "fetchedAt": "2026-04-05T08:20:57.934Z",
   "fromCache": true,
-  "lastProcessedBlock": 24812392,
+  "lastProcessedBlock": 24812226,
   "holderStats": {
-    "totalHolders": 985,
+    "totalHolders": 984,
     "poseidon": 0,
     "whale": 11,
     "shark": 35,
     "dolphin": 98,
     "squid": 180,
-    "shrimp": 661,
-    "top10Percentage": 20.89728809807215,
+    "shrimp": 660,
+    "top10Percentage": 20.889189106592397,
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
     "dataSource": "moralis"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2026-04-05T08:54:18.682Z"
+  "lastIncrementalUpdate": "2026-04-05T08:20:57.934Z"
 }
