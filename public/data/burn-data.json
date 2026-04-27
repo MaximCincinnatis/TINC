@@ -1,19 +1,13 @@
 {
-  "startDate": "2026-03-28",
-  "endDate": "2026-04-26",
-  "totalBurned": 930398.0272194317,
-  "totalSupply": 24817846.35781579,
-  "burnPercentage": 3.748907192853279,
+  "startDate": "2026-03-29",
+  "endDate": "2026-04-27",
+  "totalBurned": 936583.8448033724,
+  "totalSupply": 24811660.54023185,
+  "burnPercentage": 3.774772926965978,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
   "dailyBurns": [
-    {
-      "date": "2026-03-28",
-      "amountTinc": 0,
-      "transactionCount": 0,
-      "transactions": []
-    },
     {
       "date": "2026-03-29",
       "amountTinc": 0,
@@ -523,8 +517,8 @@
     },
     {
       "date": "2026-04-26",
-      "amountTinc": 6862.3492741162845,
-      "transactionCount": 4,
+      "amountTinc": 13048.166858057048,
+      "transactionCount": 5,
       "transactions": [
         {
           "hash": "0x58d6d83c104fe7d85ac1b4195c9e9c4f6d29fac7e6366a353c6f9ad4a1f6a054",
@@ -545,13 +539,24 @@
           "hash": "0x08e7aa56875631d1c1f963f4681def0dd543e91f3c131b03f0cb718851e4dc35",
           "amount": 530.3865238073929,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x75243606d4f878e84fde96439dfeea1f3d4f073b34a43f425855ea426e851167",
+          "amount": 6185.817583940764,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
+    },
+    {
+      "date": "2026-04-27",
+      "amountTinc": 0,
+      "transactionCount": 0,
+      "transactions": []
     }
   ],
-  "fetchedAt": "2026-04-26T21:47:42.997Z",
+  "fetchedAt": "2026-04-27T00:00:24.032Z",
   "fromCache": true,
-  "lastProcessedBlock": 24966985,
+  "lastProcessedBlock": 24967646,
   "holderStats": {
     "totalHolders": 992,
     "poseidon": 0,
@@ -560,12 +565,12 @@
     "dolphin": 99,
     "squid": 176,
     "shrimp": 673,
-    "top10Percentage": 23.923108248096835,
+    "top10Percentage": 23.929072539903245,
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
     "dataSource": "moralis"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2026-04-26T21:47:42.997Z"
+  "lastIncrementalUpdate": "2026-04-27T00:00:24.032Z"
 }
