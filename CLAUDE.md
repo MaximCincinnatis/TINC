@@ -64,3 +64,8 @@ Document the completed work with:
 - Never use ports 3000, 4000, 5000 (reserved for other projects)
 - Always follow "\\wsl$\Ubuntu\home\wsl\projects\TINC\CLAUDE.md"
 - Always use port 6000 for localhost for this project. Other projects use other localhost ports. Don't mess with port 3000, 4000, 5000 those localhost are for other projects
+
+## Git Commits
+
+**NEVER** add `Co-Authored-By` lines to commit messages. All commits are authored by the repository owner only. Do NOT attribute commits to Claude or any AI assistant.
+

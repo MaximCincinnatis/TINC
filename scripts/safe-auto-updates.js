@@ -32,6 +32,10 @@ const UPDATE_INTERVAL_MS = UPDATE_INTERVAL_MINUTES * 60 * 1000;
 const LOCK_FILE = path.join(__dirname, '../data/.update-lock');
 const LOG_FILE = path.join(__dirname, '../logs/safe-auto-update.log');
 
+// Git push frequency (reduce commits while keeping data fresh)
+const GIT_PUSH_EVERY_N_UPDATES = 4; // Push every 4 updates (2 hours at 30 min intervals)
+let gitPushCounter = 0;
+
 // Ensure log directory exists
 const logDir = path.dirname(LOG_FILE);
 if (!fs.existsSync(logDir)) {
@@ -287,10 +291,16 @@ function runSafeIncrementalUpdate() {
         
         // Copy to public folder for chart display
         copyToPublicFolder();
-        
-        // Git and Vercel auto-deployment
-        performGitAndVercelUpdate();
-        
+
+        // Git and Vercel auto-deployment (every N updates to reduce commit frequency)
+        gitPushCounter++;
+        if (gitPushCounter >= GIT_PUSH_EVERY_N_UPDATES) {
+          performGitAndVercelUpdate();
+          gitPushCounter = 0;
+        } else {
+          log(`📊 Data updated locally (git push in ${GIT_PUSH_EVERY_N_UPDATES - gitPushCounter} updates)`);
+        }
+
         log('✅ Safe incremental update completed successfully!');
         log(`⏰ Next update scheduled for: ${new Date(Date.now() + UPDATE_INTERVAL_MS).toLocaleString()}`);
         
@@ -374,16 +384,7 @@ function performGitAndVercelUpdate() {
     });
     
     // Create commit with timestamp
-    const commitMessage = `Auto-update: ${new Date().toLocaleString()}
-
-🔄 Incremental burn data update
-✅ Historical data preserved (>48 hours)
-📊 Recent data updated with latest burns
-👥 Holder data refreshed
-
-🤖 Generated with [Claude Code](https://claude.ai/code)
-
-Co-Authored-By: Claude <noreply@anthropic.com>`;
+    const commitMessage = `Auto-update: ${new Date().toLocaleString()}`;
     
     execSync(`git commit -m "${commitMessage}"`, {
       cwd: path.join(__dirname, '..'),

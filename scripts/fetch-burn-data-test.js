@@ -10,7 +10,7 @@ require('dotenv').config();
 // ⏰
 
 // RPC endpoint from environment variable or default
-const RPC_ENDPOINT = process.env.ETH_RPC_ENDPOINT || "http://192.168.0.73:18546";
+const RPC_ENDPOINT = process.env.ETH_RPC_ENDPOINT || "http://192.168.0.73:18547";
 
 
 const TINC_ADDRESS = '0x6532B3F1e4DBff542fbD6befE5Ed7041c10B385a';

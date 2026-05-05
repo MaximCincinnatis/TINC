@@ -1,5 +1,5 @@
 // Ethereum RPC endpoint from environment variable or default to local node
-const RPC_ENDPOINT = process.env.REACT_APP_ETH_RPC_ENDPOINT || "http://192.168.0.73:18546";
+const RPC_ENDPOINT = process.env.REACT_APP_ETH_RPC_ENDPOINT || "http://192.168.0.73:18547";
 
 export async function callRPC(method: string, params: any[], timeout = 8000): Promise<any> {
   const controller = new AbortController();

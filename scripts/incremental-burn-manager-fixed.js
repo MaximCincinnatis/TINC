@@ -201,9 +201,10 @@ class IncrementalBurnManager {
         dailyBurns.forEach(day => existingDayMap.set(day.date, day));
         
         // Fill 30-day window starting from new start date
+        // FIX: Use UTC methods to avoid DST timezone bugs (Mar 8 2026 duplicate issue)
         for (let i = 0; i < 30; i++) {
           const currentDate = new Date(newStartDate);
-          currentDate.setDate(currentDate.getDate() + i);
+          currentDate.setUTCDate(currentDate.getUTCDate() + i);
           const dateStr = currentDate.toISOString().split('T')[0];
           
           if (existingDayMap.has(dateStr)) {
@@ -244,11 +245,12 @@ class IncrementalBurnManager {
     const startDate = new Date();
     startDate.setDate(startDate.getDate() - 29); // 30 days total
     
+    // FIX: Use UTC methods to avoid DST timezone bugs (Mar 8 2026 duplicate issue)
     for (let i = 0; i < 30; i++) {
       const currentDate = new Date(startDate);
-      currentDate.setDate(currentDate.getDate() + i);
+      currentDate.setUTCDate(currentDate.getUTCDate() + i);
       const dateStr = currentDate.toISOString().split('T')[0];
-      
+
       if (existingDayMap.has(dateStr)) {
         result.push(existingDayMap.get(dateStr));
       } else {
@@ -310,27 +312,28 @@ class IncrementalBurnManager {
     if (windowShifted) {
       console.log(`📅 Window shifted: ${originalStartDate}-${originalEndDate} → ${mergedStartDate}-${mergedEndDate}`);
 
-      // FAILFAST: Verify blocks scanned covers the window shift
-      // Prevents silent data loss if lastProcessedBlock is corrupted
-      if (mergedData.lastProcessedBlock && originalData.lastProcessedBlock) {
-        const origEnd = new Date(originalEndDate + 'T00:00:00Z');
-        const newEnd = new Date(mergedEndDate + 'T00:00:00Z');
-        const daysDiff = Math.round((newEnd - origEnd) / (1000 * 60 * 60 * 24));
+      // FAILFAST: Verify blocks scanned matches elapsed time
+      // Uses actual elapsed time (not calendar days) to avoid false failures at day boundaries
+      // FIX 2026-02-21: Changed from date-based to time-based validation
+      if (originalData.lastIncrementalUpdate && mergedData.lastProcessedBlock && originalData.lastProcessedBlock) {
+        const blocksCovered = mergedData.lastProcessedBlock - originalData.lastProcessedBlock;
 
-        if (daysDiff > 0) {
-          const blocksCovered = mergedData.lastProcessedBlock - originalData.lastProcessedBlock;
-          const expectedBlocks = daysDiff * 7200; // ~7200 blocks/day at 12s avg
-          const minRequired = expectedBlocks * 0.7; // 30% tolerance for block time variance
+        // Use ACTUAL elapsed time from last successful update
+        const lastUpdate = new Date(originalData.lastIncrementalUpdate);
+        const now = new Date();
+        const elapsedSeconds = Math.max(0, (now - lastUpdate) / 1000);
+        const expectedBlocks = Math.round(elapsedSeconds / 12); // ~12 sec/block average
+        const minRequired = Math.round(expectedBlocks * 0.5); // 50% tolerance for block time variance
 
-          if (blocksCovered < minRequired) {
-            throw new Error(
-              `FAILFAST: Window shifted ${daysDiff} days but only ${blocksCovered} blocks scanned ` +
-              `(expected ~${expectedBlocks}, minimum ${Math.round(minRequired)}). ` +
-              `Possible lastProcessedBlock corruption - run full refresh.`
-            );
-          }
-          console.log(`✅ Block coverage verified: ${blocksCovered} blocks for ${daysDiff} day shift (need ≥${Math.round(minRequired)})`);
+        // Only validate if enough time for meaningful comparison (> 1 hour elapsed)
+        if (elapsedSeconds > 3600 && blocksCovered < minRequired && minRequired > 0) {
+          throw new Error(
+            `FAILFAST: Only ${blocksCovered} blocks scanned but expected ~${expectedBlocks} ` +
+            `(${Math.round(elapsedSeconds / 60)} min elapsed, minimum ${minRequired}). ` +
+            `Possible lastProcessedBlock corruption - run full refresh.`
+          );
         }
+        console.log(`✅ Block coverage verified: ${blocksCovered} blocks over ${Math.round(elapsedSeconds / 60)} min (expected ~${expectedBlocks})`);
       }
     }
 

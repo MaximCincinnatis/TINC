@@ -9,7 +9,7 @@ const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000';
 const API_KEY = process.env.ETHERSCAN_API_KEY || process.env.ETHERSCAN_API_KEY;
 
 // RPC endpoint from environment variable or default
-const RPC_ENDPOINT = process.env.ETH_RPC_ENDPOINT || "http://192.168.0.73:18546";
+const RPC_ENDPOINT = process.env.ETH_RPC_ENDPOINT || "http://192.168.0.73:18547";
 
 
 async function callRPC(method, params, retryCount = 0) {
