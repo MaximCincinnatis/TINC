@@ -184,6 +184,14 @@ function App() {
         <p style={{ fontSize: '0.75rem', color: 'rgba(250, 248, 240, 0.35)' }}>
           龍炎 RYŪ-EN • Built for TINC Community
         </p>
+
+        {/* Related tools: cross-links to sibling projects (SEO/UX). Same-tab links with rel="noopener". */}
+        <p style={{ marginTop: '1rem', fontSize: '0.8125rem', color: 'rgba(250, 248, 240, 0.5)' }}>
+          Related tools:{' '}
+          <a href="https://www.torusinfo.fyi/" rel="noopener">TORUS Dashboard</a>
+          {' • '}
+          <a href="https://www.pulsechain.fyi/" rel="noopener">PulseChain Privacy Trace</a>
+        </p>
       </footer>
       <Analytics />
     </div>
