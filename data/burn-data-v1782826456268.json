@@ -1,13 +1,132 @@
 {
-  "startDate": "2026-06-12",
-  "endDate": "2026-07-11",
-  "totalBurned": 1084544.782083033,
-  "totalSupply": 26063703.804976538,
-  "burnPercentage": 4.1611307057439495,
+  "startDate": "2026-06-01",
+  "endDate": "2026-06-30",
+  "totalBurned": 1528565.8406089954,
+  "totalSupply": 25552631.410606492,
+  "burnPercentage": 5.98202907577852,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
   "dailyBurns": [
+    {
+      "date": "2026-06-01",
+      "amountTinc": 0,
+      "transactionCount": 0,
+      "transactions": []
+    },
+    {
+      "date": "2026-06-02",
+      "amountTinc": 0,
+      "transactionCount": 0,
+      "transactions": []
+    },
+    {
+      "date": "2026-06-03",
+      "amountTinc": 15275.997496768432,
+      "transactionCount": 2,
+      "transactions": [
+        {
+          "hash": "0x2436d744c6084fbed58d6cc78cf4bb84287fce7e57b38b23b38cfa46e49111d1",
+          "amount": 8858.6696,
+          "from": "0x9fabf48ebe587ee4f8b3172012c3060cc40fea6c"
+        },
+        {
+          "hash": "0x3437634f7492cde3b1d3e12095de286d950bb63ea592782a8a880dcaa9e5423c",
+          "amount": 6417.327896768432,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-04",
+      "amountTinc": 0,
+      "transactionCount": 0,
+      "transactions": []
+    },
+    {
+      "date": "2026-06-05",
+      "amountTinc": 0,
+      "transactionCount": 0,
+      "transactions": []
+    },
+    {
+      "date": "2026-06-06",
+      "amountTinc": 641417.0561884696,
+      "transactionCount": 7,
+      "transactions": [
+        {
+          "hash": "0xa4aa83c0d182292ec61070df79b88dd05ab313370f512e09f01b108f868e6c54",
+          "amount": 185014.9446441326,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0xa4aa83c0d182292ec61070df79b88dd05ab313370f512e09f01b108f868e6c54",
+          "amount": 202057.54620710583,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0xa4aa83c0d182292ec61070df79b88dd05ab313370f512e09f01b108f868e6c54",
+          "amount": 26297.584185900538,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x25aba9c3fe106e2b89a78605fa5794f0b87504c128c3cedfc9fd45876bc32ada",
+          "amount": 27875.93323810654,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x81ba401e6cc0215599c2203183c544befb9e127c3b09cc7bf4da910e45110440",
+          "amount": 3233.865606839695,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0xb464c0d0fa2f491905f03c9a8dd8fa905c52482a7de58590295a759359f8877f",
+          "amount": 183258.4195892791,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0xf0a62d759675007fda3073db67a562bc72bbe1fe696a6858c128ff33c1f924a7",
+          "amount": 13678.762717105348,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-07",
+      "amountTinc": 51021.553219771515,
+      "transactionCount": 1,
+      "transactions": [
+        {
+          "hash": "0xefd96fe59eba475adeb94d14519db5431fd0b1445f515d9de33dc98c086cfa42",
+          "amount": 51021.553219771515,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-08",
+      "amountTinc": 0,
+      "transactionCount": 0,
+      "transactions": []
+    },
+    {
+      "date": "2026-06-09",
+      "amountTinc": 0,
+      "transactionCount": 0,
+      "transactions": []
+    },
+    {
+      "date": "2026-06-10",
+      "amountTinc": 0,
+      "transactionCount": 0,
+      "transactions": []
+    },
+    {
+      "date": "2026-06-11",
+      "amountTinc": 0,
+      "transactionCount": 0,
+      "transactions": []
+    },
     {
       "date": "2026-06-12",
       "amountTinc": 0,
@@ -254,181 +373,25 @@
       "amountTinc": 0,
       "transactionCount": 0,
       "transactions": []
-    },
-    {
-      "date": "2026-07-01",
-      "amountTinc": 0,
-      "transactionCount": 0,
-      "transactions": []
-    },
-    {
-      "date": "2026-07-02",
-      "amountTinc": 56584.97756808619,
-      "transactionCount": 2,
-      "transactions": [
-        {
-          "hash": "0x605d98fa6e74f553be0a00c69c3e471acf90d8655051875631dccccbeb9f82f8",
-          "amount": 32088.05817208226,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0xc17cf4d6eec1c53c69e4cc8c3e3de31efb64b867035ab9262fbf4f5dff28c9ac",
-          "amount": 24496.919396003937,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        }
-      ]
-    },
-    {
-      "date": "2026-07-03",
-      "amountTinc": 79457.99465906492,
-      "transactionCount": 7,
-      "transactions": [
-        {
-          "hash": "0x661e695f32b887de99ea18d1ca6a9e1e8c09e86c307061bf9ba5c4ced1e10ec2",
-          "amount": 6052.8072958071425,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x30c5e6ee541cfd3ba56622a6dbe3432a6006774d9a0ce8b82f58e0ed536ad70e",
-          "amount": 1944.7053586929849,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0xefe658062f495a502b8583f89b1ce8aa078208c07f57fd69a5f23b2152d9097c",
-          "amount": 8858.6696,
-          "from": "0x9fabf48ebe587ee4f8b3172012c3060cc40fea6c"
-        },
-        {
-          "hash": "0x2508984c9240ab79241815743564cd8dd4a6d624e0731a24789e1ff4fb10ac67",
-          "amount": 5231.803417296515,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x5014ab7e98ffa3bd8b4bfbabdedf35dcc1c8c810110da16115f9861c6a8b42a6",
-          "amount": 2852.785355333494,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x6ef6c9b9bb0933d912a7333693842271dd91500505af208e3adbbac82c44337e",
-          "amount": 24141.51498883717,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0xce5ec416d9ca3dda02276a2502d224887f146cf066353d17904dd1c6991ed4e4",
-          "amount": 30375.708643097605,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        }
-      ]
-    },
-    {
-      "date": "2026-07-04",
-      "amountTinc": 0,
-      "transactionCount": 0,
-      "transactions": []
-    },
-    {
-      "date": "2026-07-05",
-      "amountTinc": 56765.10039231205,
-      "transactionCount": 4,
-      "transactions": [
-        {
-          "hash": "0x261f92604c7bcafa43fe034109c247ed83217e8ab505e7a2bfa096851b2f91cf",
-          "amount": 6631.13265061438,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x0cbc85eac223713c056112bbd2890721d1950385c545c722925f985e199d9614",
-          "amount": 34434.637607456716,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x6c18f51fff10b359b0a2dd46da7014eb8c594dedd0ec172086937e7c3f4f642e",
-          "amount": 6598.733453597265,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0xeaeb0e7f94a01c7ce6711b82f4ca229b93b11ecec9ba1c4bd84748802f33252a",
-          "amount": 9100.596680643692,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        }
-      ]
-    },
-    {
-      "date": "2026-07-06",
-      "amountTinc": 0,
-      "transactionCount": 0,
-      "transactions": []
-    },
-    {
-      "date": "2026-07-07",
-      "amountTinc": 0,
-      "transactionCount": 0,
-      "transactions": []
-    },
-    {
-      "date": "2026-07-08",
-      "amountTinc": 12094.231089680856,
-      "transactionCount": 2,
-      "transactions": [
-        {
-          "hash": "0x6dc78414bd70db2d06136126d258605ecb93678daff015e2454e322460c34272",
-          "amount": 5750.120948444372,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0xdc5af2d81669bd5a60f05013d086adffcb220dbc5ed3ad11286146669ba0490f",
-          "amount": 6344.110141236485,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        }
-      ]
-    },
-    {
-      "date": "2026-07-09",
-      "amountTinc": 0,
-      "transactionCount": 0,
-      "transactions": []
-    },
-    {
-      "date": "2026-07-10",
-      "amountTinc": 0,
-      "transactionCount": 0,
-      "transactions": []
-    },
-    {
-      "date": "2026-07-11",
-      "amountTinc": 58791.24466990311,
-      "transactionCount": 2,
-      "transactions": [
-        {
-          "hash": "0x4734fa54b78b4e671e46f47c9f5520565ae8510b07b8e6aa6b06bad410320908",
-          "amount": 50311.77687958207,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x4734fa54b78b4e671e46f47c9f5520565ae8510b07b8e6aa6b06bad410320908",
-          "amount": 8479.467790321047,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        }
-      ]
     }
   ],
-  "fetchedAt": "2026-07-11T18:29:39.142Z",
+  "fetchedAt": "2026-06-30T13:34:16.268Z",
   "fromCache": true,
-  "lastProcessedBlock": 25511169,
+  "lastProcessedBlock": 25430819,
   "holderStats": {
-    "totalHolders": 998,
+    "totalHolders": 997,
     "poseidon": 0,
     "whale": 11,
-    "shark": 36,
-    "dolphin": 101,
-    "squid": 174,
-    "shrimp": 676,
-    "top10Percentage": 18.66258595423771,
+    "shark": 37,
+    "dolphin": 104,
+    "squid": 172,
+    "shrimp": 673,
+    "top10Percentage": 18.275734527101612,
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
     "dataSource": "moralis"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2026-07-11T18:29:39.142Z"
+  "lastIncrementalUpdate": "2026-06-30T13:34:16.268Z"
 }
