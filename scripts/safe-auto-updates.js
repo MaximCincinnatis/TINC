@@ -391,17 +391,32 @@ function performGitAndVercelUpdate() {
       stdio: 'pipe'
     });
     
-    // Push to origin
-    execSync('git push origin master', {
-      cwd: path.join(__dirname, '..'),
+    // Push to origin — inject GITHUB_TOKEN (from .env via dotenv) into the push URL
+    // so we don't depend on the shared ~/.git-credentials store, which was emptied
+    // 2026-06-19 and broke bare `git push`. Mirrors TORUS auto-update-fixed.js.
+    const repoRoot = path.join(__dirname, '..');
+    const token = process.env.GITHUB_TOKEN;
+    let pushCommand = 'git push origin master';
+    if (token) {
+      const remoteUrl = execSync('git config --get remote.origin.url', {
+        cwd: repoRoot, encoding: 'utf8'
+      }).trim();
+      const repoPath = remoteUrl.replace(/https:\/\/.*@/, '').replace('https://', '');
+      pushCommand = `git push https://${token}@${repoPath} master`;
+    }
+    execSync(pushCommand, {
+      cwd: repoRoot,
       stdio: 'pipe'
     });
-    
+
     log('✅ Git commit and push completed');
     log('🚀 Vercel will auto-deploy from git push');
-    
+
   } catch (error) {
-    log(`⚠️  Git/Vercel update failed: ${error.message}`);
+    // Redact token so a push failure never leaks the credential into logs.
+    const token = process.env.GITHUB_TOKEN;
+    const safeMsg = token ? String(error.message).split(token).join('***') : error.message;
+    log(`⚠️  Git/Vercel update failed: ${safeMsg}`);
     log('🔄 Data update completed, but manual git push may be needed');
   }
 }
