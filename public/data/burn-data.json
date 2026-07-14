@@ -1,35 +1,13 @@
 {
-  "startDate": "2026-06-14",
-  "endDate": "2026-07-13",
-  "totalBurned": 1108743.0905517444,
+  "startDate": "2026-06-15",
+  "endDate": "2026-07-14",
+  "totalBurned": 1012200.339538132,
   "totalSupply": 26525232.2650923,
-  "burnPercentage": 4.179956199708272,
+  "burnPercentage": 3.8159904856712847,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
   "dailyBurns": [
-    {
-      "date": "2026-06-14",
-      "amountTinc": 96542.75101361261,
-      "transactionCount": 3,
-      "transactions": [
-        {
-          "hash": "0x902d9d8e399b9b607099af06b24c2a6c66e40e58dd6bf5b5fcd210e279d0e6aa",
-          "amount": 54489.10633648932,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x216073d17eb7cf44cb6b0efd7f5a384e5d412d8cfd9a3569371e65d3c72ea619",
-          "amount": 27684.26004242186,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x98ba27d2a568a6661e40fa7c44f8a2e2417dcc7630bf1e3884ee4e584bc8066e",
-          "amount": 14369.384634701417,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        }
-      ]
-    },
     {
       "date": "2026-06-15",
       "amountTinc": 279840.6862817452,
@@ -420,11 +398,17 @@
       "amountTinc": 0,
       "transactionCount": 0,
       "transactions": []
+    },
+    {
+      "date": "2026-07-14",
+      "amountTinc": 0,
+      "transactionCount": 0,
+      "transactions": []
     }
   ],
-  "fetchedAt": "2026-07-13T23:34:47.973Z",
+  "fetchedAt": "2026-07-14T01:48:09.048Z",
   "fromCache": true,
-  "lastProcessedBlock": 25527027,
+  "lastProcessedBlock": 25527693,
   "holderStats": {
     "totalHolders": 999,
     "poseidon": 0,
@@ -440,5 +424,5 @@
     "dataSource": "moralis"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2026-07-13T23:34:47.973Z"
+  "lastIncrementalUpdate": "2026-07-14T01:48:09.048Z"
 }
