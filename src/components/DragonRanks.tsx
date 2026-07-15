@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from 'react';
+'use client';
+
+import React from 'react';
 import { BurnData } from '../types/BurnData';
 
 // 龍階 Dragon Ranks - Japanese/Samurai inspired holder tiers
@@ -20,50 +22,29 @@ interface HolderStats {
 
 const DragonRanks: React.FC<Props> = ({ burnData }) => {
   const totalSupply = burnData.totalSupply;
-  const [holderStats, setHolderStats] = useState<HolderStats>({
-    ryujin: 0,
-    shogun: 0,
-    daimyo: 0,
-    samurai: 0,
-    ronin: 0,
-    ashigaru: 0,
-    totalHolders: 0
-  });
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const loadHolderStats = () => {
-      try {
-        if (burnData.holderStats) {
-          setHolderStats({
-            ryujin: burnData.holderStats.poseidon,
-            shogun: burnData.holderStats.whale,
-            daimyo: burnData.holderStats.shark,
-            samurai: burnData.holderStats.dolphin,
-            ronin: burnData.holderStats.squid,
-            ashigaru: burnData.holderStats.shrimp,
-            totalHolders: burnData.holderStats.totalHolders,
-            top10Percentage: burnData.holderStats.top10Percentage
-          });
-        } else {
-          setHolderStats({
-            ryujin: 2,
-            shogun: 8,
-            daimyo: 45,
-            samurai: 287,
-            ronin: 1842,
-            ashigaru: 3516,
-            totalHolders: 984
-          });
-        }
-        setLoading(false);
-      } catch (error) {
-        console.error('Error loading holder stats:', error);
-        setLoading(false);
+  // Derive holder tiers directly from the server-seeded props (no effect/state) so the REAL
+  // holder numbers are server-rendered into the HTML. Falls back to representative defaults
+  // only when holderStats is absent from the data.
+  const holderStats: HolderStats = burnData.holderStats
+    ? {
+        ryujin: burnData.holderStats.poseidon,
+        shogun: burnData.holderStats.whale,
+        daimyo: burnData.holderStats.shark,
+        samurai: burnData.holderStats.dolphin,
+        ronin: burnData.holderStats.squid,
+        ashigaru: burnData.holderStats.shrimp,
+        totalHolders: burnData.holderStats.totalHolders,
+        top10Percentage: burnData.holderStats.top10Percentage,
       }
-    };
-    loadHolderStats();
-  }, [burnData]);
+    : {
+        ryujin: 2,
+        shogun: 8,
+        daimyo: 45,
+        samurai: 287,
+        ronin: 1842,
+        ashigaru: 3516,
+        totalHolders: 984,
+      };
 
   // Realistic SVG icons from game-icons.net (CC BY 3.0 - Lorc, Delapouite)
   const classifications = [
@@ -168,7 +149,7 @@ const DragonRanks: React.FC<Props> = ({ burnData }) => {
   const formatNumber = (num: number) => {
     if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M';
     if (num >= 1000) return (num / 1000).toFixed(0) + 'K';
-    return num.toLocaleString();
+    return num.toLocaleString('en-US');
   };
 
   return (
@@ -185,19 +166,13 @@ const DragonRanks: React.FC<Props> = ({ burnData }) => {
           <div className="header-stats">
             <div className="stat-item">
               <span className="stat-label">Total Warriors</span>
-              <span className="stat-value">{holderStats.totalHolders.toLocaleString()}</span>
+              <span className="stat-value">{holderStats.totalHolders.toLocaleString('en-US')}</span>
             </div>
           </div>
         </div>
       </div>
 
-      {loading ? (
-        <div className="loading-container">
-          <div className="loading-spinner"></div>
-          <span>Summoning ranks...</span>
-        </div>
-      ) : (
-        <div className="ranks-grid">
+      <div className="ranks-grid">
           {classifications.map((rank, index) => (
             <div
               key={index}
@@ -233,7 +208,7 @@ const DragonRanks: React.FC<Props> = ({ burnData }) => {
 
               <div className="rank-metrics">
                 <div className="metric">
-                  <span className="metric-value">{rank.holders.toLocaleString()}</span>
+                  <span className="metric-value">{rank.holders.toLocaleString('en-US')}</span>
                   <span className="metric-label">Holders</span>
                 </div>
                 <div className="metric">
@@ -258,14 +233,19 @@ const DragonRanks: React.FC<Props> = ({ burnData }) => {
             </div>
           ))}
         </div>
-      )}
 
       {/* Summary */}
       <div className="ranks-summary">
         <div className="summary-header">
           <h3><span className="kanji-small">概要</span> Overview</h3>
           <span className="last-updated">
-            {burnData.fetchedAt ? new Date(burnData.fetchedAt).toLocaleString() : ''}
+            {burnData.fetchedAt
+              ? `${new Date(burnData.fetchedAt).toLocaleString('en-US', {
+                  timeZone: 'UTC',
+                  dateStyle: 'medium',
+                  timeStyle: 'short',
+                })} UTC`
+              : ''}
           </span>
         </div>
         <div className="summary-metrics">

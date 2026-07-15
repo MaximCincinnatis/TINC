@@ -1,21 +1,43 @@
-import React, { useState, useEffect } from 'react';
-import './App.css';
-import BurnChart from './components/BurnChart';
-import StatsCards from './components/StatsCards';
-import LoadingProgress from './components/LoadingProgress';
-import AdminPanel from './components/AdminPanel';
-import DragonRanks from './components/DragonRanks';
-import { fetchBurnData, setProgressCallback } from './services/fileCachedBurnService';
-import { BurnData } from './types/BurnData';
-import { Analytics } from '@vercel/analytics/react';
+'use client';
 
-function App() {
-  const [burnData, setBurnData] = useState<BurnData | null>(null);
-  const [loading, setLoading] = useState(true);
+import { useState, useEffect } from 'react';
+import dynamic from 'next/dynamic';
+import StatsCards from '@/components/StatsCards';
+import LoadingProgress from '@/components/LoadingProgress';
+import AdminPanel from '@/components/AdminPanel';
+import DragonRanks from '@/components/DragonRanks';
+import { fetchBurnData, setProgressCallback } from '@/services/fileCachedBurnService';
+import { BurnData } from '@/types/BurnData';
+
+// chart.js / react-chartjs-2 render to a <canvas> and touch window -> load client-only.
+// The chart's DATA still comes from SSR'd props; only the canvas render is deferred to the client.
+const BurnChart = dynamic(() => import('@/components/BurnChart'), {
+  ssr: false,
+  loading: () => (
+    <div className="chart-wrapper">
+      <div className="chart-container" style={{ minHeight: '400px' }}>
+        <div className="loading">
+          <div className="loading-spinner" />
+          <div className="loading-text">Loading chart…</div>
+        </div>
+      </div>
+    </div>
+  ),
+});
+
+interface Props {
+  // Seeded server-side in app/page.tsx (null when the server read failed -> shell).
+  initialData: BurnData | null;
+}
+
+export default function DashboardClient({ initialData }: Props) {
+  // Seed from server-fetched props so the real numbers render on the server (SSR win).
+  const [burnData, setBurnData] = useState<BurnData | null>(initialData);
+  // Only "loading" up front if we have no server data (then the client fetches below).
+  const [loading, setLoading] = useState(!initialData);
   const [error, setError] = useState<string | null>(null);
   const [loadingMessage, setLoadingMessage] = useState('Initializing...');
   const [loadingProgress, setLoadingProgress] = useState(0);
-  // v2.1 - Fixed emission rate display
 
   const loadData = async (forceRefresh = false) => {
     try {
@@ -23,14 +45,14 @@ function App() {
       setError(null);
       setLoadingMessage('Loading data...');
       setLoadingProgress(0);
-      
+
       setProgressCallback((message, progress) => {
         setLoadingMessage(message);
         if (progress !== undefined) {
           setLoadingProgress(progress);
         }
       });
-      
+
       const data = await fetchBurnData(forceRefresh);
       setBurnData(data);
     } catch (err) {
@@ -41,7 +63,12 @@ function App() {
   };
 
   useEffect(() => {
-    loadData();
+    // Data already server-rendered from initialData -> don't refetch on mount (avoids a flash).
+    // Only fetch client-side if the server read failed (initialData was null).
+    if (!initialData) {
+      loadData();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -96,8 +123,8 @@ function App() {
 
       <main className="container">
         {loading && (
-          <LoadingProgress 
-            message={loadingMessage} 
+          <LoadingProgress
+            message={loadingMessage}
             progress={loadingProgress}
             subMessage={loadingProgress > 0 ? `${Math.round(loadingProgress)}% complete` : undefined}
           />
@@ -109,7 +136,7 @@ function App() {
             <div className="error-message">{error}</div>
           </div>
         )}
-        
+
         {loading && !burnData && (
           <>
             <div className="stats-grid">
@@ -132,7 +159,7 @@ function App() {
             </div>
           </>
         )}
-        
+
         {burnData && !loading && (
           <>
             <StatsCards burnData={burnData} />
@@ -143,33 +170,47 @@ function App() {
               </div>
               <BurnChart burnData={burnData} />
             </div>
-            
+
             <DragonRanks burnData={burnData} />
           </>
         )}
       </main>
 
       <footer>
-        <div className="footer-links" style={{
-          display: 'flex',
-          justifyContent: 'center',
-          gap: '1rem',
-          marginBottom: '1.5rem',
-          flexWrap: 'wrap'
-        }}>
+        <div
+          className="footer-links"
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            gap: '1rem',
+            marginBottom: '1.5rem',
+            flexWrap: 'wrap',
+          }}
+        >
           <a href="https://titanfarms.win/burn" target="_blank" rel="noopener noreferrer" className="nav-link">
             Titan Farms
           </a>
-          <a href="https://etherscan.io/token/tokenholderchart/0x6532B3F1e4DBff542fbD6befE5Ed7041c10B385a" target="_blank" rel="noopener noreferrer" className="nav-link">
+          <a
+            href="https://etherscan.io/token/tokenholderchart/0x6532B3F1e4DBff542fbD6befE5Ed7041c10B385a"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nav-link"
+          >
             TINC Holders
           </a>
-          <a href="https://dexscreener.com/ethereum/0x72e0de1cc2c952326738dac05bacb9e9c25422e3" target="_blank" rel="noopener noreferrer" className="nav-link">
+          <a
+            href="https://dexscreener.com/ethereum/0x72e0de1cc2c952326738dac05bacb9e9c25422e3"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nav-link"
+          >
             TINC/TitanX
           </a>
         </div>
 
         <p style={{ marginBottom: '0.5rem', fontSize: '0.8125rem', color: 'rgba(250, 248, 240, 0.5)' }}>
-          Contract: <a
+          Contract:{' '}
+          <a
             href="https://etherscan.io/address/0x6532B3F1e4DBff542fbD6befE5Ed7041c10B385a"
             target="_blank"
             rel="noopener noreferrer"
@@ -177,7 +218,16 @@ function App() {
             0x6532...B385a
           </a>
           {burnData && (
-            <span> • Updated: {new Date(burnData.fetchedAt).toLocaleString()}</span>
+            <span>
+              {' '}
+              • Updated:{' '}
+              {new Date(burnData.fetchedAt).toLocaleString('en-US', {
+                timeZone: 'UTC',
+                dateStyle: 'medium',
+                timeStyle: 'short',
+              })}{' '}
+              UTC
+            </span>
           )}
           {burnData?.fromCache && <span> • Cached</span>}
         </p>
@@ -188,14 +238,15 @@ function App() {
         {/* Related tools: cross-links to sibling projects (SEO/UX). Same-tab links with rel="noopener". */}
         <p style={{ marginTop: '1rem', fontSize: '0.8125rem', color: 'rgba(250, 248, 240, 0.5)' }}>
           Related tools:{' '}
-          <a href="https://www.torusinfo.fyi/" rel="noopener">TORUS Dashboard</a>
+          <a href="https://www.torusinfo.fyi/" rel="noopener">
+            TORUS Dashboard
+          </a>
           {' • '}
-          <a href="https://www.pulsechain.fyi/" rel="noopener">PulseChain Privacy Trace</a>
+          <a href="https://www.pulsechain.fyi/" rel="noopener">
+            PulseChain Privacy Trace
+          </a>
         </p>
       </footer>
-      <Analytics />
     </div>
   );
 }
-
-export default App;
