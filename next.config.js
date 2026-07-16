@@ -14,6 +14,14 @@ const nextConfig = {
     outputFileTracingIncludes: {
       '/': ['./public/data/burn-data.json', './public/data/data-manifest.json'],
     },
+    // The auto-updater accumulates thousands of versioned burn-data-v<ts>.json snapshots
+    // (~270MB in public/data, ~290MB in data/). loadBurnData's dynamic fs path makes Next
+    // trace those whole directories into the serverless functions, blowing Vercel's 250MB
+    // function limit. Exclude them everywhere — loadBurnData already falls back to the
+    // force-traced stable burn-data.json (always a copy of the latest snapshot).
+    outputFileTracingExcludes: {
+      '*': ['./public/data/burn-data-v*.json', './data/**'],
+    },
   },
   async headers() {
     return [
