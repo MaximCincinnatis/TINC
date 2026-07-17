@@ -1,9 +1,9 @@
 {
   "startDate": "2026-06-18",
   "endDate": "2026-07-17",
-  "totalBurned": 775895.4012003018,
-  "totalSupply": 26518775.322491046,
-  "burnPercentage": 2.9258342127973425,
+  "totalBurned": 787219.9431350908,
+  "totalSupply": 26507450.780556258,
+  "burnPercentage": 2.9698062995651484,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
@@ -389,28 +389,49 @@
     },
     {
       "date": "2026-07-17",
-      "amountTinc": 0,
-      "transactionCount": 0,
-      "transactions": []
+      "amountTinc": 11324.54193478892,
+      "transactionCount": 4,
+      "transactions": [
+        {
+          "hash": "0x01d4a3c4082af30dacb9292916ef9c7bd377cc1989d6e1967b2d5b58df6d13ff",
+          "amount": 1522.386249223156,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x637947656972dad681b69c580d71001f8a37428c27e4bf62f8ae1327bfefc51d",
+          "amount": 8858.6696,
+          "from": "0x9fabf48ebe587ee4f8b3172012c3060cc40fea6c"
+        },
+        {
+          "hash": "0x886f52ffde880f9ab69e108d1abf011495ad4c5403492301d949af1c770a0aee",
+          "amount": 3.996728234494969,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0xd5a93b2461464330fd43bd7705662d4eecfac41129ec45b53c954099f30c0136",
+          "amount": 939.48935733127,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
     }
   ],
-  "fetchedAt": "2026-07-17T08:51:42.257Z",
+  "fetchedAt": "2026-07-17T11:03:36.113Z",
   "fromCache": true,
-  "lastProcessedBlock": 25551328,
+  "lastProcessedBlock": 25551983,
   "holderStats": {
-    "totalHolders": 997,
+    "totalHolders": 998,
     "poseidon": 0,
     "whale": 9,
-    "shark": 36,
-    "dolphin": 102,
+    "shark": 35,
+    "dolphin": 103,
     "squid": 176,
-    "shrimp": 674,
-    "top10Percentage": 17.921880097864577,
+    "shrimp": 675,
+    "top10Percentage": 17.929536702960203,
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
     "dataSource": "moralis"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2026-07-17T08:51:42.257Z"
+  "lastIncrementalUpdate": "2026-07-17T11:03:36.113Z"
 }
