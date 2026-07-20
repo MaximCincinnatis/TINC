@@ -1,35 +1,13 @@
 {
-  "startDate": "2026-06-20",
-  "endDate": "2026-07-19",
-  "totalBurned": 767392.6335777774,
+  "startDate": "2026-06-21",
+  "endDate": "2026-07-20",
+  "totalBurned": 693134.3841287793,
   "totalSupply": 26601773.008234937,
-  "burnPercentage": 2.884742431792876,
+  "burnPercentage": 2.6055946869188387,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
   "dailyBurns": [
-    {
-      "date": "2026-06-20",
-      "amountTinc": 74258.24944899806,
-      "transactionCount": 3,
-      "transactions": [
-        {
-          "hash": "0x10b5d4c739dbe3408ddf7b44ff5d2818c84df17b675659d8f750c588c01d7b0f",
-          "amount": 47270.243343291775,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x10b5d4c739dbe3408ddf7b44ff5d2818c84df17b675659d8f750c588c01d7b0f",
-          "amount": 16067.915009367014,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x3b5b5381a8245ee7c8e24cd64aadb4e4f71353c659939de9446423854dffa71b",
-          "amount": 10920.091096339263,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        }
-      ]
-    },
     {
       "date": "2026-06-21",
       "amountTinc": 12742.660212694995,
@@ -413,11 +391,17 @@
       "amountTinc": 0,
       "transactionCount": 0,
       "transactions": []
+    },
+    {
+      "date": "2026-07-20",
+      "amountTinc": 0,
+      "transactionCount": 0,
+      "transactions": []
     }
   ],
-  "fetchedAt": "2026-07-19T22:35:23.830Z",
+  "fetchedAt": "2026-07-20T00:48:43.908Z",
   "fromCache": true,
-  "lastProcessedBlock": 25569778,
+  "lastProcessedBlock": 25570443,
   "holderStats": {
     "totalHolders": 997,
     "poseidon": 0,
@@ -433,5 +417,5 @@
     "dataSource": "moralis"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2026-07-19T22:35:23.830Z"
+  "lastIncrementalUpdate": "2026-07-20T00:48:43.908Z"
 }
