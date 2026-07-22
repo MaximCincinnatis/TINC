@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     canonical: 'https://www.tincburn.fyi/',
   },
   manifest: '/manifest.json',
+  verification: { google: 'TaTNZK7qF2F5CwLQ-VgaZ7qRNmVXwmTzHKLeE7t140o' },
   icons: {
     icon: '/Logo.png',
     shortcut: '/Logo.png',
