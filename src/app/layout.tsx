@@ -7,9 +7,9 @@ import '../App.css';
 // SEO re-expressed from the old public/index.html via the Next Metadata API.
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.tincburn.fyi/'),
-  title: 'TINCBurn.fyi - Real-time TINC Burn Analytics',
+  title: 'TINCBurn.fyi — TINC Burn Tracker (TitanX & DragonX)',
   description:
-    'Track real-time TINC token burns on Ethereum: daily burn totals, burn rate, holder distribution, and deflationary supply metrics — live on TINCBurn.fyi.',
+    'Track real-time TINC (Titan Farms Incentive Token) burns on Ethereum — a TitanX & DragonX ecosystem token. Daily burn totals, rate, holders & supply metrics.',
   alternates: {
     canonical: 'https://www.tincburn.fyi/',
   },
@@ -22,16 +22,16 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: 'https://www.tincburn.fyi/',
-    title: 'TINCBurn.fyi - Real-time TINC Burn Analytics',
+    title: 'TINCBurn.fyi — TINC Burn Tracker (TitanX & DragonX)',
     description:
-      'Track real-time TINC token burns on Ethereum: daily burn totals, burn rate, holder distribution, and deflationary supply metrics.',
+      'Real-time TINC (Titan Farms) burn analytics on Ethereum — a TitanX & DragonX ecosystem token. Burn totals, rate, holders & supply.',
     images: ['https://www.tincburn.fyi/Logo.png'],
   },
   twitter: {
     card: 'summary',
-    title: 'TINCBurn.fyi - Real-time TINC Burn Analytics',
+    title: 'TINCBurn.fyi — TINC Burn Tracker (TitanX & DragonX)',
     description:
-      'Track real-time TINC token burns on Ethereum: daily burn totals, burn rate, and holder distribution.',
+      'Real-time TINC (Titan Farms) burns on Ethereum — a TitanX & DragonX ecosystem token. Burn totals, rate & holders.',
     images: ['https://www.tincburn.fyi/Logo.png'],
   },
 };
@@ -52,7 +52,7 @@ const jsonLd = {
       '@id': 'https://www.tincburn.fyi/#website',
       url: 'https://www.tincburn.fyi/',
       name: 'TINCBurn.fyi',
-      description: 'Real-time TINC token burn analytics on Ethereum',
+      description: 'Real-time TINC (Titan Farms) burn analytics on Ethereum — TitanX & DragonX ecosystem',
     },
     {
       '@type': 'Organization',
@@ -68,7 +68,7 @@ const jsonLd = {
       applicationCategory: 'FinanceApplication',
       operatingSystem: 'Web',
       description:
-        'Track real-time TINC token burns on Ethereum: daily burn totals, burn rate, holder distribution, and deflationary supply metrics.',
+        'Real-time TINC (Titan Farms) burn analytics on Ethereum — a TitanX & DragonX ecosystem token. Burn totals, rate, holders & supply.',
     },
   ],
 };
