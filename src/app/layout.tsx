@@ -26,14 +26,14 @@ export const metadata: Metadata = {
     title: 'TINCBurn.fyi — TINC Burn Tracker (TitanX & DragonX)',
     description:
       'Real-time TINC (Titan Farms) burn analytics on Ethereum — a TitanX & DragonX ecosystem token. Burn totals, rate, holders & supply.',
-    images: ['https://www.tincburn.fyi/Logo.png'],
+    images: [{ url: 'https://www.tincburn.fyi/og-image.jpg', width: 1200, height: 630, alt: 'TINCBurn.fyi — TINC Burn Tracker' }],
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     title: 'TINCBurn.fyi — TINC Burn Tracker (TitanX & DragonX)',
     description:
       'Real-time TINC (Titan Farms) burns on Ethereum — a TitanX & DragonX ecosystem token. Burn totals, rate & holders.',
-    images: ['https://www.tincburn.fyi/Logo.png'],
+    images: ['https://www.tincburn.fyi/og-image.jpg'],
   },
 };
 
