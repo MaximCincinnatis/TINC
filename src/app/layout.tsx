@@ -5,11 +5,19 @@ import '../index.css';
 import '../App.css';
 
 // SEO re-expressed from the old public/index.html via the Next Metadata API.
+//
+// 2026-07-24 SEO RETARGET (Ahrefs-verified): title now LEADS with "Titan Farms" —
+//   350 US searches/mo at KD 0 and CPC $8. That is the single most winnable term across all
+//   three sites: essentially zero competition, and an exact intent match since TINC *is* the
+//   Titan Farms Incentive Token. It was previously buried in the description while the title
+//   led with the brand string "TINCBurn.fyi", which has no search volume of its own.
+//   For reference, "tinc token" has 0 US volume — there is nothing to rank for on the token name.
+//   Secondary: "titanx" (1.2k, KD 45) and "dragonx crypto" (20, KD 30) via the ecosystem suffix.
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.tincburn.fyi/'),
-  title: 'TINCBurn.fyi — TINC Burn Tracker (TitanX & DragonX)',
+  title: 'Titan Farms TINC Burn Tracker — TitanX & DragonX Ecosystem',
   description:
-    'Track real-time TINC (Titan Farms Incentive Token) burns on Ethereum — a TitanX & DragonX ecosystem token. Daily burn totals, rate, holders & supply metrics.',
+    'Live Titan Farms (TINC) burn tracker — real-time TINC burns on Ethereum: daily totals, burn rate, holders and supply across the TitanX & DragonX ecosystem.',
   alternates: {
     canonical: 'https://www.tincburn.fyi/',
   },
@@ -23,14 +31,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: 'https://www.tincburn.fyi/',
-    title: 'TINCBurn.fyi — TINC Burn Tracker (TitanX & DragonX)',
+    title: 'Titan Farms TINC Burn Tracker — TitanX & DragonX Ecosystem',
     description:
       'Real-time TINC (Titan Farms) burn analytics on Ethereum — a TitanX & DragonX ecosystem token. Burn totals, rate, holders & supply.',
     images: [{ url: 'https://www.tincburn.fyi/og-image.jpg', width: 1200, height: 630, alt: 'TINCBurn.fyi — TINC Burn Tracker' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'TINCBurn.fyi — TINC Burn Tracker (TitanX & DragonX)',
+    title: 'Titan Farms TINC Burn Tracker — TitanX & DragonX Ecosystem',
     description:
       'Real-time TINC (Titan Farms) burns on Ethereum — a TitanX & DragonX ecosystem token. Burn totals, rate & holders.',
     images: ['https://www.tincburn.fyi/og-image.jpg'],
@@ -45,13 +53,16 @@ export const viewport: Viewport = {
 };
 
 // JSON-LD @graph structured data (WebSite + Organization + WebApplication), preserved verbatim.
+// 2026-07-24 SEO: `url` values dropped their trailing slash to match the canonical Next actually
+// emits for this site (source says '…fyi/', rendered output is '…fyi') and the sitemap <loc>.
+// @id values are opaque identifiers and are deliberately left unchanged.
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
     {
       '@type': 'WebSite',
       '@id': 'https://www.tincburn.fyi/#website',
-      url: 'https://www.tincburn.fyi/',
+      url: 'https://www.tincburn.fyi',
       name: 'TINCBurn.fyi',
       description: 'Real-time TINC (Titan Farms) burn analytics on Ethereum — TitanX & DragonX ecosystem',
     },
@@ -59,13 +70,13 @@ const jsonLd = {
       '@type': 'Organization',
       '@id': 'https://www.tincburn.fyi/#org',
       name: 'TINCBurn.fyi',
-      url: 'https://www.tincburn.fyi/',
+      url: 'https://www.tincburn.fyi',
       logo: 'https://www.tincburn.fyi/Logo.png',
     },
     {
       '@type': 'WebApplication',
       name: 'TINCBurn.fyi',
-      url: 'https://www.tincburn.fyi/',
+      url: 'https://www.tincburn.fyi',
       applicationCategory: 'FinanceApplication',
       operatingSystem: 'Web',
       description:
