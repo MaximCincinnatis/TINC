@@ -376,9 +376,25 @@ function performGitAndVercelUpdate() {
   try {
     // Git add, commit, and push
     const { execSync } = require('child_process');
-    
+
+    // 2026-07-25: prune old versioned snapshots BEFORE staging, so the deletions are part of
+    // the same commit. Without this every update permanently added 2 more snapshots to the
+    // repo — ~20,000 files / ~576MB had accumulated, growing every clone and Vercel build.
+    // Safe by construction: data-manifest.json names exactly ONE file and both readers fall
+    // back to the stable burn-data.json. See scripts/prune-burn-snapshots.js for the details.
+    // Fail-soft on purpose — housekeeping must never block a data update.
+    try {
+      const pruneOut = execSync('node scripts/prune-burn-snapshots.js', {
+        cwd: path.join(__dirname, '..'),
+        stdio: 'pipe'
+      }).toString().trim();
+      if (pruneOut) log(`🧹 ${pruneOut.split('\n').pop()}`);
+    } catch (pruneError) {
+      log(`⚠️ Snapshot prune failed (continuing with update): ${pruneError.message}`);
+    }
+
     // Add data files
-    execSync('git add data/ public/data/', { 
+    execSync('git add data/ public/data/', {
       cwd: path.join(__dirname, '..'),
       stdio: 'pipe'
     });
