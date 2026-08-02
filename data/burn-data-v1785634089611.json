@@ -1,72 +1,13 @@
 {
-  "startDate": "2026-07-02",
-  "endDate": "2026-07-31",
-  "totalBurned": 805363.6566765844,
-  "totalSupply": 27245513.509024873,
-  "burnPercentage": 2.955949633358218,
+  "startDate": "2026-07-04",
+  "endDate": "2026-08-02",
+  "totalBurned": 670306.5298859318,
+  "totalSupply": 27244527.66358837,
+  "burnPercentage": 2.460334560256589,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
   "dailyBurns": [
-    {
-      "date": "2026-07-02",
-      "amountTinc": 56584.97756808619,
-      "transactionCount": 2,
-      "transactions": [
-        {
-          "hash": "0x605d98fa6e74f553be0a00c69c3e471acf90d8655051875631dccccbeb9f82f8",
-          "amount": 32088.05817208226,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0xc17cf4d6eec1c53c69e4cc8c3e3de31efb64b867035ab9262fbf4f5dff28c9ac",
-          "amount": 24496.919396003937,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        }
-      ]
-    },
-    {
-      "date": "2026-07-03",
-      "amountTinc": 79457.99465906492,
-      "transactionCount": 7,
-      "transactions": [
-        {
-          "hash": "0x661e695f32b887de99ea18d1ca6a9e1e8c09e86c307061bf9ba5c4ced1e10ec2",
-          "amount": 6052.8072958071425,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x30c5e6ee541cfd3ba56622a6dbe3432a6006774d9a0ce8b82f58e0ed536ad70e",
-          "amount": 1944.7053586929849,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0xefe658062f495a502b8583f89b1ce8aa078208c07f57fd69a5f23b2152d9097c",
-          "amount": 8858.6696,
-          "from": "0x9fabf48ebe587ee4f8b3172012c3060cc40fea6c"
-        },
-        {
-          "hash": "0x2508984c9240ab79241815743564cd8dd4a6d624e0731a24789e1ff4fb10ac67",
-          "amount": 5231.803417296515,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x5014ab7e98ffa3bd8b4bfbabdedf35dcc1c8c810110da16115f9861c6a8b42a6",
-          "amount": 2852.785355333494,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x6ef6c9b9bb0933d912a7333693842271dd91500505af208e3adbbac82c44337e",
-          "amount": 24141.51498883717,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0xce5ec416d9ca3dda02276a2502d224887f146cf066353d17904dd1c6991ed4e4",
-          "amount": 30375.708643097605,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        }
-      ]
-    },
     {
       "date": "2026-07-04",
       "amountTinc": 0,
@@ -454,11 +395,29 @@
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
+    },
+    {
+      "date": "2026-08-01",
+      "amountTinc": 985.845436498491,
+      "transactionCount": 1,
+      "transactions": [
+        {
+          "hash": "0x0565930cd7765c28d4c134947adc8082c2f979419b8c69ad35cb4a83990923fa",
+          "amount": 985.845436498491,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-02",
+      "amountTinc": 0,
+      "transactionCount": 0,
+      "transactions": []
     }
   ],
-  "fetchedAt": "2026-07-31T22:34:44.484Z",
+  "fetchedAt": "2026-08-02T01:28:09.610Z",
   "fromCache": true,
-  "lastProcessedBlock": 25655865,
+  "lastProcessedBlock": 25663907,
   "holderStats": {
     "totalHolders": 999,
     "poseidon": 0,
@@ -467,12 +426,12 @@
     "dolphin": 101,
     "squid": 172,
     "shrimp": 679,
-    "top10Percentage": 19.581831804276117,
+    "top10Percentage": 19.582540374443344,
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
     "dataSource": "moralis"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2026-07-31T22:34:44.484Z"
+  "lastIncrementalUpdate": "2026-08-02T01:28:09.610Z"
 }
