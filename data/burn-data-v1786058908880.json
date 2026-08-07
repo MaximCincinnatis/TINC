@@ -1,19 +1,13 @@
 {
-  "startDate": "2026-07-07",
-  "endDate": "2026-08-05",
-  "totalBurned": 697049.1666094739,
-  "totalSupply": 27218317.39389466,
-  "burnPercentage": 2.5609561256928726,
+  "startDate": "2026-07-08",
+  "endDate": "2026-08-06",
+  "totalBurned": 730786.9941595321,
+  "totalSupply": 27265712.823986985,
+  "burnPercentage": 2.680241660568738,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
   "dailyBurns": [
-    {
-      "date": "2026-07-07",
-      "amountTinc": 0,
-      "transactionCount": 0,
-      "transactions": []
-    },
     {
       "date": "2026-07-08",
       "amountTinc": 12094.231089680856,
@@ -409,25 +403,42 @@
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
+    },
+    {
+      "date": "2026-08-06",
+      "amountTinc": 33737.82755005825,
+      "transactionCount": 2,
+      "transactions": [
+        {
+          "hash": "0x4aa56e0662819a5fecd073c2dc42d11c0130d28df026818f0bee933d13e1ecb0",
+          "amount": 15874.581305743093,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x13a6de374c8ce64977ccc6aefb4f10c274629ea33065b071a7c039daa5a8ce35",
+          "amount": 17863.24624431516,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
     }
   ],
-  "fetchedAt": "2026-08-05T23:58:24.655Z",
+  "fetchedAt": "2026-08-06T23:28:28.880Z",
   "fromCache": true,
-  "lastProcessedBlock": 25692163,
+  "lastProcessedBlock": 25699202,
   "holderStats": {
     "totalHolders": 999,
     "poseidon": 0,
     "whale": 10,
     "shark": 37,
     "dolphin": 101,
-    "squid": 172,
-    "shrimp": 679,
-    "top10Percentage": 19.601397662977178,
+    "squid": 171,
+    "shrimp": 680,
+    "top10Percentage": 19.567324954933756,
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
     "dataSource": "moralis"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2026-08-05T23:58:24.655Z"
+  "lastIncrementalUpdate": "2026-08-06T23:28:28.880Z"
 }
