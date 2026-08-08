@@ -1,6 +1,6 @@
 {
-  "startDate": "2026-07-09",
-  "endDate": "2026-08-07",
+  "startDate": "2026-07-10",
+  "endDate": "2026-08-08",
   "totalBurned": 718692.7630698513,
   "totalSupply": 27308344.8672259,
   "burnPercentage": 2.6317697632872292,
@@ -8,12 +8,6 @@
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
   "dailyBurns": [
-    {
-      "date": "2026-07-09",
-      "amountTinc": 0,
-      "transactionCount": 0,
-      "transactions": []
-    },
     {
       "date": "2026-07-10",
       "amountTinc": 0,
@@ -409,11 +403,17 @@
       "amountTinc": 0,
       "transactionCount": 0,
       "transactions": []
+    },
+    {
+      "date": "2026-08-08",
+      "amountTinc": 0,
+      "transactionCount": 0,
+      "transactions": []
     }
   ],
-  "fetchedAt": "2026-08-07T22:28:31.943Z",
+  "fetchedAt": "2026-08-08T00:28:32.037Z",
   "fromCache": true,
-  "lastProcessedBlock": 25706074,
+  "lastProcessedBlock": 25706671,
   "holderStats": {
     "totalHolders": 1000,
     "poseidon": 0,
@@ -429,5 +429,5 @@
     "dataSource": "moralis"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2026-08-07T22:28:31.943Z"
+  "lastIncrementalUpdate": "2026-08-08T00:28:32.037Z"
 }
