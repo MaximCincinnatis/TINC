@@ -1,19 +1,13 @@
 {
-  "startDate": "2026-07-15",
-  "endDate": "2026-08-13",
-  "totalBurned": 683498.6753470593,
-  "totalSupply": 27530352.376552805,
-  "burnPercentage": 2.48270950548815,
+  "startDate": "2026-07-16",
+  "endDate": "2026-08-14",
+  "totalBurned": 728950.7211509623,
+  "totalSupply": 27911402.224756785,
+  "burnPercentage": 2.6116592612620493,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
   "dailyBurns": [
-    {
-      "date": "2026-07-15",
-      "amountTinc": 0,
-      "transactionCount": 0,
-      "transactions": []
-    },
     {
       "date": "2026-07-16",
       "amountTinc": 57884.090799668076,
@@ -399,25 +393,42 @@
       "amountTinc": 0,
       "transactionCount": 0,
       "transactions": []
+    },
+    {
+      "date": "2026-08-14",
+      "amountTinc": 45452.04580390306,
+      "transactionCount": 2,
+      "transactions": [
+        {
+          "hash": "0x95227cd6c31a05270285d847d1f1dde32198d602309e4e5a62d41936d36b5224",
+          "amount": 21320.595674244592,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x2f2de05c32077a00e2b1042bb4de2507b59eb3965da48f4d4605a50b1a3c091c",
+          "amount": 24131.450129658464,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
     }
   ],
-  "fetchedAt": "2026-08-13T23:58:53.189Z",
+  "fetchedAt": "2026-08-14T23:28:56.233Z",
   "fromCache": true,
-  "lastProcessedBlock": 25749543,
+  "lastProcessedBlock": 25756565,
   "holderStats": {
-    "totalHolders": 1000,
+    "totalHolders": 999,
     "poseidon": 0,
     "whale": 9,
-    "shark": 37,
-    "dolphin": 101,
+    "shark": 35,
+    "dolphin": 102,
     "squid": 171,
     "shrimp": 682,
-    "top10Percentage": 19.37923117210975,
+    "top10Percentage": 19.114663557878874,
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
     "dataSource": "moralis"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2026-08-13T23:58:53.189Z"
+  "lastIncrementalUpdate": "2026-08-14T23:28:56.233Z"
 }
