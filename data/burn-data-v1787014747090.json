@@ -1,36 +1,13 @@
 {
-  "startDate": "2026-07-18",
-  "endDate": "2026-08-16",
-  "totalBurned": 674739.15798487,
+  "startDate": "2026-07-20",
+  "endDate": "2026-08-18",
+  "totalBurned": 567040.4452620967,
   "totalSupply": 27905927.46788275,
-  "burnPercentage": 2.417906243812046,
+  "burnPercentage": 2.0319713290830776,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
   "dailyBurns": [
-    {
-      "date": "2026-07-18",
-      "amountTinc": 107698.71272277329,
-      "transactionCount": 2,
-      "transactions": [
-        {
-          "hash": "0xf9e708c74ee56f4a91d7e955d4c3109eb8201229ed4ed7515d415abbe944eb02",
-          "amount": 76174.44644903312,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0xe10de7220967c6b65949515ce02be5b1de654c9220285c7789949fda3fedefb1",
-          "amount": 31524.266273740166,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        }
-      ]
-    },
-    {
-      "date": "2026-07-19",
-      "amountTinc": 0,
-      "transactionCount": 0,
-      "transactions": []
-    },
     {
       "date": "2026-07-20",
       "amountTinc": 69212.0974427839,
@@ -390,11 +367,23 @@
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
+    },
+    {
+      "date": "2026-08-17",
+      "amountTinc": 0,
+      "transactionCount": 0,
+      "transactions": []
+    },
+    {
+      "date": "2026-08-18",
+      "amountTinc": 0,
+      "transactionCount": 0,
+      "transactions": []
     }
   ],
-  "fetchedAt": "2026-08-16T22:29:02.636Z",
+  "fetchedAt": "2026-08-18T00:59:07.088Z",
   "fromCache": true,
-  "lastProcessedBlock": 25770620,
+  "lastProcessedBlock": 25778545,
   "holderStats": {
     "totalHolders": 998,
     "poseidon": 0,
@@ -410,5 +399,5 @@
     "dataSource": "moralis"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2026-08-16T22:29:02.636Z"
+  "lastIncrementalUpdate": "2026-08-18T00:59:07.088Z"
 }
