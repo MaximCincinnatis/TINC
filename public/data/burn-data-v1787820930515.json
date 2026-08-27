@@ -1,45 +1,13 @@
 {
-  "startDate": "2026-07-28",
-  "endDate": "2026-08-26",
-  "totalBurned": 875579.8227134829,
-  "totalSupply": 27940710.78502707,
-  "burnPercentage": 3.133706330701832,
+  "startDate": "2026-07-29",
+  "endDate": "2026-08-27",
+  "totalBurned": 764397.0811370369,
+  "totalSupply": 27992512.264893346,
+  "burnPercentage": 2.730719822156517,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
   "dailyBurns": [
-    {
-      "date": "2026-07-28",
-      "amountTinc": 120934.81614689967,
-      "transactionCount": 5,
-      "transactions": [
-        {
-          "hash": "0x2ec46370e408c6ff93801a6c9723d0c9b70ad0785132853650c73d8e3861b9bd",
-          "amount": 51616.788968566485,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0xb7063baf1b02877276cac7b3d83b056592620ac6e27f4c91bc7eb051c14477e5",
-          "amount": 60300.762155175966,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x7d62c47936a083c565db6939de66793f3c18c666cd1e0fed2f8afc8f43f5b9a7",
-          "amount": 8858.6696,
-          "from": "0x9fabf48ebe587ee4f8b3172012c3060cc40fea6c"
-        },
-        {
-          "hash": "0x2d1bec991a70bb95b709c3e10d2eae23b690fb78ce340d7a36599e74e0455176",
-          "amount": 157.87686682260914,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0xe81845966861b04524e29e29aa7570c2f24cbfaea901345a2d93d88331c07906",
-          "amount": 0.718556334615114,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        }
-      ]
-    },
     {
       "date": "2026-07-29",
       "amountTinc": 17857.883224235185,
@@ -433,8 +401,8 @@
     },
     {
       "date": "2026-08-26",
-      "amountTinc": 93465.92399843747,
-      "transactionCount": 2,
+      "amountTinc": 97405.02113697917,
+      "transactionCount": 3,
       "transactions": [
         {
           "hash": "0x495142e3ce36a7f82350e64f4bec453e74cc69a010150c064739829404e4487a",
@@ -445,27 +413,54 @@
           "hash": "0x0ee5db5a8dd00e142e444cf8dea5f0829bf6c4f42df35ec685714fc3798ff7cd",
           "amount": 60406.973116013636,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x50e69a1819155400e68e4c8504165fdf480285faa0df612b1f9abaee951ff16d",
+          "amount": 3939.097138541688,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-27",
+      "amountTinc": 5812.977431911931,
+      "transactionCount": 3,
+      "transactions": [
+        {
+          "hash": "0x225ee739151987a0c022c923d49ae273b1507d79bb7a0bb0c44a0ce66e9f17dd",
+          "amount": 2443.2972625668476,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0xf65f286c51b503fd68dc51b8caffcfef2b495e301aaf1cbd136c4effd23833ad",
+          "amount": 2294.70342875307,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x71c9a3989d0f4f744aed44520a33ad2cb871aec2de9ad9290d5e7e7e03961773",
+          "amount": 1074.9767405920127,
+          "from": "0x9fabf48ebe587ee4f8b3172012c3060cc40fea6c"
         }
       ]
     }
   ],
-  "fetchedAt": "2026-08-26T04:53:06.492Z",
+  "fetchedAt": "2026-08-27T08:55:30.514Z",
   "fromCache": true,
-  "lastProcessedBlock": 25837119,
+  "lastProcessedBlock": 25845496,
   "holderStats": {
-    "totalHolders": 1003,
+    "totalHolders": 1002,
     "poseidon": 0,
     "whale": 9,
     "shark": 36,
-    "dolphin": 102,
-    "squid": 172,
-    "shrimp": 684,
-    "top10Percentage": 20.952988639562506,
+    "dolphin": 101,
+    "squid": 174,
+    "shrimp": 682,
+    "top10Percentage": 20.9142141341205,
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
     "dataSource": "moralis"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2026-08-26T04:53:06.492Z"
+  "lastIncrementalUpdate": "2026-08-27T08:55:30.514Z"
 }
