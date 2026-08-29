@@ -1,19 +1,13 @@
 {
-  "startDate": "2026-07-30",
-  "endDate": "2026-08-28",
-  "totalBurned": 868073.4240791788,
-  "totalSupply": 27944790.65603018,
-  "burnPercentage": 3.1063872861465076,
+  "startDate": "2026-07-31",
+  "endDate": "2026-08-29",
+  "totalBurned": 957122.5329440781,
+  "totalSupply": 27860380.979713928,
+  "burnPercentage": 3.4250481412625704,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
   "dailyBurns": [
-    {
-      "date": "2026-07-30",
-      "amountTinc": 0,
-      "transactionCount": 0,
-      "transactions": []
-    },
     {
       "date": "2026-07-31",
       "amountTinc": 28761.688267871155,
@@ -451,11 +445,28 @@
       "amountTinc": 0,
       "transactionCount": 0,
       "transactions": []
+    },
+    {
+      "date": "2026-08-29",
+      "amountTinc": 89049.10886489923,
+      "transactionCount": 2,
+      "transactions": [
+        {
+          "hash": "0x185fa2aa9e6d5e7db6531ef7931c34a362be0c4708595a4f987ad23cd40917a0",
+          "amount": 72186.52412808008,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x4725b8c8063a7ab3beb915c38b98d35ca0926307641b29ba7517c36326671a96",
+          "amount": 16862.584736819143,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
     }
   ],
-  "fetchedAt": "2026-08-28T23:13:40.790Z",
+  "fetchedAt": "2026-08-29T01:27:00.080Z",
   "fromCache": true,
-  "lastProcessedBlock": 25856952,
+  "lastProcessedBlock": 25857611,
   "holderStats": {
     "totalHolders": 1005,
     "poseidon": 0,
@@ -464,12 +475,12 @@
     "dolphin": 101,
     "squid": 174,
     "shrimp": 681,
-    "top10Percentage": 20.94992955453191,
+    "top10Percentage": 21.01340236826816,
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
     "dataSource": "moralis"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2026-08-28T23:13:40.790Z"
+  "lastIncrementalUpdate": "2026-08-29T01:27:00.080Z"
 }
