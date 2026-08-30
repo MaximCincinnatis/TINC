@@ -1,9 +1,9 @@
 {
   "startDate": "2026-08-01",
   "endDate": "2026-08-30",
-  "totalBurned": 973610.461996394,
-  "totalSupply": 27950021.0036714,
-  "burnPercentage": 3.483397961913891,
+  "totalBurned": 981593.963383106,
+  "totalSupply": 27955787.7841223,
+  "burnPercentage": 3.5112369966573067,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": true,
@@ -458,34 +458,44 @@
     },
     {
       "date": "2026-08-30",
-      "amountTinc": 10298.826544988464,
-      "transactionCount": 1,
+      "amountTinc": 18282.327931700514,
+      "transactionCount": 3,
       "transactions": [
         {
           "hash": "0xa577f78f405d168d41ff744b34adacf10534e06db588664c91e609ede1f8ec49",
           "amount": 10298.826544988464,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x8fbcea852936494af18320337c0aa0562ca6718fef9ef2446a754dde73ec522f",
+          "amount": 3589.6624419819846,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x2b15f58b073f206ee3d2a91b57505fc2d6ed06e1114f156d1dab3c534bb25cae",
+          "amount": 4393.838944730066,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
     }
   ],
-  "fetchedAt": "2026-08-30T14:12:51.059Z",
+  "fetchedAt": "2026-08-30T16:23:45.114Z",
   "fromCache": true,
-  "lastProcessedBlock": 25868607,
+  "lastProcessedBlock": 25869259,
   "holderStats": {
     "totalHolders": 1004,
     "poseidon": 0,
     "whale": 9,
     "shark": 40,
     "dolphin": 99,
-    "squid": 175,
-    "shrimp": 681,
-    "top10Percentage": 20.946009149083384,
+    "squid": 174,
+    "shrimp": 682,
+    "top10Percentage": 20.941688360951133,
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
     "dataSource": "moralis"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2026-08-30T14:12:51.059Z"
+  "lastIncrementalUpdate": "2026-08-30T16:23:45.114Z"
 }
