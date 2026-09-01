@@ -229,7 +229,14 @@ async function fetchBurnData() {
   const totalBurned = allDays.reduce((sum, day) => sum + day.amountTinc, 0);
   const totalTransactions = allDays.reduce((sum, day) => sum + day.transactionCount, 0);
   const burnPercentage = totalSupply > 0 ? (totalBurned / totalSupply) * 100 : 0;
-  const isDeflationary = totalBurned > dailyEmission;
+  // 2026-09-01: compare like with like. The old test compared the whole window's burns
+  // against ONE day of emission, so it read "deflationary" while 30-day burns (~981K)
+  // sat far below 30-day emission (~2.59M).
+  const periodDays = allDays.length;
+  const periodEmission = dailyEmission * periodDays;
+  const isDeflationary = totalBurned > periodEmission;
+  const deflationaryDays = allDays.filter(day => day.amountTinc > dailyEmission).length;
+  const netSupplyChange = periodEmission - totalBurned; // positive = supply grew over the window
 
   // Data integrity validation
   console.log(`🔍 Data validation:`);
@@ -254,6 +261,10 @@ async function fetchBurnData() {
     emissionPerSecond: emissionData.emissionPerSecond,
     emissionSamplePeriod: emissionData.samplePeriod,
     isDeflationary,
+    periodDays,
+    periodEmission,
+    deflationaryDays,
+    netSupplyChange,
     dailyBurns: allDays,
     fetchedAt: new Date().toISOString(),
     fromCache: true,

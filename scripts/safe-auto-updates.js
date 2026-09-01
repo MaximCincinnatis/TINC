@@ -384,6 +384,24 @@ function copyToPublicFolder() {
       fs.copyFileSync(legacySource, legacyDest);
       log('✅ Legacy data copied to public folder');
     }
+
+    // 2026-09-01 UX walk: publish the holder list (address, balance) for the on-page rank
+    // lookup. Public on-chain data, ~100KB; balances rounded so git deltas stay small.
+    const holdersSource = path.join(__dirname, '../data/cache/holder-data.json');
+    if (fs.existsSync(holdersSource)) {
+      const cache = JSON.parse(fs.readFileSync(holdersSource, 'utf8'));
+      const holders = (cache.holders || [])
+        .map(h => ({ a: String(h.address).toLowerCase(), b: Math.round(Number(h.balance) * 1000) / 1000 }))
+        .filter(h => h.b > 0)
+        .sort((x, y) => y.b - x.b);
+      fs.writeFileSync(path.join(__dirname, '../public/data/holders.json'), JSON.stringify({
+        updatedAt: cache.cachedAt || new Date().toISOString(),
+        totalSupply: cache.totalSupply,
+        count: holders.length,
+        holders
+      }));
+      log(`✅ Holder list published (${holders.length} addresses)`);
+    }
     
   } catch (error) {
     log(`❌ Error copying to public folder: ${error.message}`);

@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic';
 import StatsCards from '@/components/StatsCards';
 import LoadingProgress from '@/components/LoadingProgress';
 import AdminPanel from '@/components/AdminPanel';
+import HolderLookup from '@/components/HolderLookup';
 import DragonRanks from '@/components/DragonRanks';
 import { fetchBurnData, setProgressCallback } from '@/services/fileCachedBurnService';
 import { BurnData } from '@/types/BurnData';
@@ -28,6 +29,33 @@ const BurnChart = dynamic(() => import('@/components/BurnChart'), {
 interface Props {
   // Seeded server-side in app/page.tsx (null when the server read failed -> shell).
   initialData: BurnData | null;
+}
+
+/**
+ * 2026-09-01 UX walk: replaces the "Beta: verify results" tag, which undermined numbers that
+ * are read straight from the chain and validated before every publish. The server renders the
+ * absolute UTC time (deterministic); after mount it ticks as a relative age.
+ */
+function DataFreshness({ fetchedAt }: { fetchedAt?: string }) {
+  const [now, setNow] = useState<number | null>(null);
+  useEffect(() => {
+    setNow(Date.now());
+    const t = setInterval(() => setNow(Date.now()), 60_000);
+    return () => clearInterval(t);
+  }, []);
+  if (!fetchedAt) return <p className="beta-warning">On-chain data</p>;
+  const ts = new Date(fetchedAt).getTime();
+  if (isNaN(ts)) return <p className="beta-warning">On-chain data</p>;
+  let when = `${new Date(ts).toISOString().slice(11, 16)} UTC`;
+  if (now !== null) {
+    const mins = Math.max(0, Math.round((now - ts) / 60_000));
+    when = mins < 60 ? `${mins} min ago` : `${Math.round(mins / 60)} h ago`;
+  }
+  return (
+    <p className="beta-warning" title={fetchedAt}>
+      On-chain data · updated {when}
+    </p>
+  );
 }
 
 export default function DashboardClient({ initialData }: Props) {
@@ -113,7 +141,7 @@ export default function DashboardClient({ initialData }: Props) {
                   />
                   Titan Farms
                 </a>
-                <p className="beta-warning">試 Beta: Verify results</p>
+                <DataFreshness fetchedAt={burnData?.fetchedAt} />
               </div>
               <AdminPanel onDataUpdate={() => loadData(false)} />
             </div>
@@ -122,6 +150,25 @@ export default function DashboardClient({ initialData }: Props) {
       </header>
 
       <main className="container">
+        {/* 2026-09-01 UX walk: a first-time visitor gets the one-line "what is this", and every
+            visitor gets "is TINC deflationary right now" from like-for-like numbers. */}
+        <section className="intro-strip">
+          <p className="intro-text">
+            TINC is Titan Farms&apos; incentive token. Every burn removes TINC from circulation for good;
+            supply only shrinks on days when burns beat the{' '}
+            {burnData ? Math.round(burnData.emissionPerSecond * 86400).toLocaleString('en-US') : '86,400'} TINC/day emission.
+          </p>
+          {burnData && typeof burnData.periodEmission === 'number' && typeof burnData.netSupplyChange === 'number' && (
+            <p className={`supply-verdict ${burnData.isDeflationary ? 'deflationary' : 'inflationary'}`}>
+              Last {burnData.periodDays ?? burnData.dailyBurns.length} days: {burnData.isDeflationary ? 'deflationary' : 'inflationary'} ·{' '}
+              {Math.round(burnData.totalBurned).toLocaleString('en-US')} burned vs{' '}
+              {Math.round(burnData.periodEmission).toLocaleString('en-US')} emitted · net{' '}
+              {burnData.netSupplyChange >= 0 ? '+' : '−'}
+              {Math.round(Math.abs(burnData.netSupplyChange)).toLocaleString('en-US')} TINC ·{' '}
+              {burnData.deflationaryDays ?? 0} of {burnData.periodDays ?? burnData.dailyBurns.length} days beat the threshold
+            </p>
+          )}
+        </section>
         {loading && (
           <LoadingProgress
             message={loadingMessage}
@@ -172,6 +219,8 @@ export default function DashboardClient({ initialData }: Props) {
             </div>
 
             <DragonRanks burnData={burnData} />
+
+            <HolderLookup />
           </>
         )}
       </main>

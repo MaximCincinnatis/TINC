@@ -2013,3 +2013,83 @@ footer a:hover {
     gap: 1rem;
   }
 }
+
+/* ---------------------------------------------------------------------------
+   2026-09-01 UX walk additions: intro strip + supply verdict, holder lookup,
+   and a 3+3 rank grid at desktop (was 4+2 with a two-card hole).
+   --------------------------------------------------------------------------- */
+.intro-strip {
+  margin: 0 0 1.25rem;
+  padding: 0.9rem 1.1rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+}
+.intro-text {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: rgba(250, 248, 240, 0.72);
+}
+.supply-verdict {
+  margin: 0.6rem 0 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: rgba(250, 248, 240, 0.85);
+}
+.supply-verdict.deflationary { color: #34d399; }
+.supply-verdict.inflationary { color: #fbbf24; }
+
+.holder-lookup {
+  margin: 1.25rem 0 0;
+  padding: 1rem 1.1rem 1.1rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+}
+.holder-lookup h3 {
+  margin: 0 0 0.6rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgba(250, 248, 240, 0.9);
+}
+.holder-lookup form {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.holder-lookup input {
+  flex: 1 1 260px;
+  min-height: 44px;
+  padding: 0 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.35);
+  color: rgba(250, 248, 240, 0.95);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.875rem;
+}
+.holder-lookup input:focus { outline: 2px solid rgba(52, 211, 153, 0.6); outline-offset: 1px; }
+.holder-lookup button {
+  min-height: 44px;
+  padding: 0 1.1rem;
+  border: 1px solid rgba(52, 211, 153, 0.5);
+  border-radius: 8px;
+  background: rgba(52, 211, 153, 0.12);
+  color: #34d399;
+  font-weight: 600;
+  cursor: pointer;
+}
+.holder-lookup button[disabled] { opacity: 0.6; cursor: default; }
+.lookup-note { margin: 0.7rem 0 0; font-size: 0.8125rem; color: rgba(250, 248, 240, 0.6); }
+.lookup-error { color: #fbbf24; }
+.lookup-result { margin-top: 0.9rem; }
+.lookup-tier { font-size: 1.25rem; font-weight: 700; color: rgba(250, 248, 240, 0.95); }
+.lookup-facts { display: flex; gap: 1rem 1.5rem; flex-wrap: wrap; margin-top: 0.35rem; font-size: 0.9rem; color: rgba(250, 248, 240, 0.8); }
+.lookup-facts strong { color: #34d399; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+
+.ranks-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+@media (min-width: 1024px) {
+  .ranks-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}

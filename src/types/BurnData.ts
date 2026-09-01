@@ -30,6 +30,11 @@ export interface BurnData {
   emissionPerSecond: number;
   emissionSamplePeriod: number;
   isDeflationary: boolean;
+  // 2026-09-01: like-for-like window figures behind isDeflationary (optional: older snapshots lack them)
+  periodDays?: number;
+  periodEmission?: number;
+  deflationaryDays?: number;
+  netSupplyChange?: number;
   dailyBurns: DailyBurn[];
   fetchedAt: string;
   fromCache?: boolean;
