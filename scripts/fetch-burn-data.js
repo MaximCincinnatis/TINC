@@ -271,22 +271,24 @@ async function getTotalSupply() {
   return parseInt(totalSupplyHex, 16) / Math.pow(10, 18);
 }
 
-// Fetch a single Moralis API page with infinite retry (mirrors fetchBurnsWithRetry pattern)
+// Fetch a single Moralis API page — BOUNDED retry (Moralis is only a fallback now).
+// 2026-09-01: the previous infinite-retry loop held the update lock for 14+ hours when
+// the API key expired (401 on every attempt), freezing burn updates entirely. Auth
+// errors (401/403) can never heal by retrying, so they fail immediately; transient
+// errors get a few exponential-backoff attempts, then the error propagates so the
+// caller can fall back to previous holder stats instead of hanging.
 async function fetchMoralisPageWithRetry(url, page) {
-  const maxBackoff = 600000; // 10 minutes max backoff
-  let attempt = 1;
+  const maxAttempts = 5;
   const requestTimeout = 30000; // 30 seconds timeout per request
 
-  while (true) { // INFINITE RETRY - never give up
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
     try {
-      console.log(`📊 Fetching holders page ${page} from Moralis (attempt ${attempt})...`);
+      console.log(`📊 Fetching holders page ${page} from Moralis (attempt ${attempt}/${maxAttempts})...`);
 
-      // Create timeout promise
       const timeoutPromise = new Promise((_, reject) => {
         setTimeout(() => reject(new Error(`Timeout after ${requestTimeout/1000}s`)), requestTimeout);
       });
 
-      // Race between fetch and timeout
       const fetchPromise = fetch(url, {
         headers: {
           'X-API-Key': MORALIS_API_KEY,
@@ -294,7 +296,9 @@ async function fetchMoralisPageWithRetry(url, page) {
         }
       }).then(async (response) => {
         if (!response.ok) {
-          throw new Error(`Moralis API error: ${response.status} ${response.statusText}`);
+          const err = new Error(`Moralis API error: ${response.status} ${response.statusText}`);
+          err.status = response.status;
+          throw err;
         }
         return await response.json();
       });
@@ -304,24 +308,18 @@ async function fetchMoralisPageWithRetry(url, page) {
       if (attempt > 1) {
         console.log(`✅ Moralis page ${page} succeeded on attempt ${attempt}`);
       }
-      return data; // Only exit on success
+      return data;
 
     } catch (error) {
-      console.warn(`❌ Moralis page ${page} attempt ${attempt} failed: ${error.message}`);
-
-      // Exponential backoff up to 10 minutes, then retry every 10 minutes
-      const exponentialBackoff = 1000 * Math.pow(2, attempt - 1);
-      const backoffMs = Math.min(exponentialBackoff, maxBackoff);
-
-      if (backoffMs >= maxBackoff) {
-        console.log(`⏳ Retrying Moralis page ${page} in ${maxBackoff/60000} minutes (max backoff reached, will retry every 10 min until success)...`);
-      } else {
-        console.log(`⏳ Waiting ${(backoffMs/1000).toFixed(1)}s before retry (attempt ${attempt + 1})...`);
+      // Auth failures never heal by retrying — bail out at once.
+      if (error.status === 401 || error.status === 403) {
+        console.warn(`❌ Moralis auth rejected (${error.status}) - not retrying`);
+        throw error;
       }
-
+      console.warn(`❌ Moralis page ${page} attempt ${attempt}/${maxAttempts} failed: ${error.message}`);
+      if (attempt === maxAttempts) throw error;
+      const backoffMs = Math.min(1000 * Math.pow(2, attempt - 1), 15000);
       await new Promise(resolve => setTimeout(resolve, backoffMs));
-      attempt++;
-      // Loop continues forever - NEVER GIVES UP
     }
   }
 }
@@ -498,9 +496,30 @@ async function fetchHolderDataWithCache() {
   }
 }
 
-// Fetch holder data directly from Moralis API - simple and accurate
-async function fetchHolderData() {
-  return await fetchRealHolderData();
+// Fetch holder data from our own RPC node (cache + incremental + snapshot pipeline).
+// 2026-09-01: rewired off Moralis — the burn tracker has no reason to depend on a paid
+// third-party API when every input lives on our own node. Moralis remains only as a
+// bounded last-resort fallback inside fetchHolderDataWithCache. If the whole pipeline
+// fails, keep the previous cycle's stats (marked stale) rather than blocking the burn
+// update or writing zeros — holder counts are display data, burns are the product.
+async function fetchHolderData(previousStats = null) {
+  try {
+    const stats = await fetchHolderDataWithCache();
+    if (stats && stats.totalHolders > 0 && stats.dataSource !== 'error') {
+      return stats;
+    }
+    throw new Error(`holder pipeline returned ${stats ? `empty stats (dataSource: ${stats.dataSource})` : 'nothing'}`);
+  } catch (error) {
+    if (previousStats && previousStats.totalHolders > 0) {
+      console.warn(`⚠️ Holder update failed (${error.message}) - keeping previous holder stats`);
+      return {
+        ...previousStats,
+        holderDataStale: true,
+        holderDataStaleSince: previousStats.holderDataStaleSince || new Date().toISOString()
+      };
+    }
+    throw error;
+  }
 }
 
 /**
@@ -588,7 +607,7 @@ async function runIncrementalUpdate() {
       ...existingData,
       totalSupply: await getTotalSupply(), // Refresh circulating supply
       dailyBurns: recentDailyBurns,
-      holderStats: await fetchHolderData(), // Update holder data
+      holderStats: await fetchHolderData(existingData.holderStats), // RPC pipeline; falls back to previous stats
       // CRITICAL: Update last processed block for next resume
       lastProcessedBlock: currentBlock
     };
@@ -730,7 +749,11 @@ async function main() {
     } else {
       console.log('🚀 Starting FULL data refresh...');
       const burnData = await fetchBurnData();
-      const holderData = await fetchHolderData();
+      let previousHolderStats = null;
+      try {
+        previousHolderStats = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/burn-data.json'), 'utf8')).holderStats || null;
+      } catch (e) { /* no existing data yet */ }
+      const holderData = await fetchHolderData(previousHolderStats);
       
       // Combine burn data with holder data
       const combinedData = {

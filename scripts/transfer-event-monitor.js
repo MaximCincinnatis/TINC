@@ -178,7 +178,18 @@ class TransferEventMonitor {
     
     console.log(`📊 Filtered out ${allHolders.length - updatedHolders.length} excluded addresses (LP/contracts)`);
     
-    const totalSupply = cache.totalSupply; // Keep existing total supply
+    // Refresh total supply each update — TINC is deflationary, so the snapshot-time
+    // supply goes stale and skews the percentage-based category buckets.
+    let totalSupply = cache.totalSupply;
+    try {
+      const totalSupplyHex = await rpcCall('eth_call', [
+        { to: TINC_ADDRESS, data: '0x18160ddd' },
+        'latest'
+      ]);
+      totalSupply = parseInt(totalSupplyHex, 16) / Math.pow(10, 18);
+    } catch (e) {
+      console.warn('⚠️ Could not refresh total supply, using cached value:', e.message);
+    }
     
     const categories = this.cacheManager.updateHolderCategories(updatedHolders, totalSupply);
 
@@ -199,6 +210,9 @@ class TransferEventMonitor {
         totalHolders: updatedHolders.length,
         ...categories,
         top10Percentage,
+        estimatedData: false,
+        excludesLPPositions: true,
+        realTimeData: true,
         dataSource: 'blockchain-incremental',
         lastUpdate: new Date().toISOString()
       }
