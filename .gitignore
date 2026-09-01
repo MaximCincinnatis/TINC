@@ -42,3 +42,8 @@ server.log
 .idea/
 .vercel
 .env*.local
+
+# 2026-09-01: runtime logs, the persisted publish counter and build info are not source
+logs/
+.push-counter
+tsconfig.tsbuildinfo

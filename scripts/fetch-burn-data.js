@@ -439,7 +439,35 @@ async function fetchHolderDataWithCache() {
     const cache = cacheManager.loadCache();
     const cacheAge = cacheManager.getCacheAge();
     
-    if (cache && cacheAge !== null) {
+    // 2026-09-01: weekly full re-snapshot. Incremental updates refresh cachedAt every
+    // cycle, so the cache never expires and float drift in the running balances can
+    // accumulate forever. A dated marker records the last full scan; after
+    // HOLDER_RESNAPSHOT_DAYS (default 7) the next cycle rebuilds from chain (~4 min).
+    const snapshotMetaFile = path.join(__dirname, '..', 'data', 'cache', 'holder-snapshot-meta.json');
+    const resnapshotDays = parseFloat(process.env.HOLDER_RESNAPSHOT_DAYS || '7');
+    let snapshotAgeDays = null;
+    try {
+      const at = new Date(JSON.parse(fs.readFileSync(snapshotMetaFile, 'utf8')).snapshotAt).getTime();
+      if (!isNaN(at)) snapshotAgeDays = (Date.now() - at) / 86400000;
+    } catch {}
+    const needsFullSnapshot = snapshotAgeDays === null || snapshotAgeDays >= resnapshotDays;
+    const recordSnapshot = (stats) => {
+      try {
+        fs.writeFileSync(snapshotMetaFile, JSON.stringify({
+          snapshotAt: new Date().toISOString(),
+          totalHolders: stats ? stats.totalHolders : null
+        }, null, 2));
+      } catch (e) {
+        console.warn('⚠️ Could not record snapshot marker:', e.message);
+      }
+      return stats;
+    };
+    if (cache && needsFullSnapshot) {
+      const age = snapshotAgeDays === null ? 'unknown' : `${snapshotAgeDays.toFixed(1)} days ago`;
+      console.log(`🗓️ Scheduled full holder re-snapshot (last full scan: ${age}, limit ${resnapshotDays} days)`);
+    }
+
+    if (cache && cacheAge !== null && !needsFullSnapshot) {
       console.log(`📊 Found holder cache (${cacheAge} hours old)`);
       
       // If cache is less than 0.5 hours old, use it directly
@@ -465,7 +493,7 @@ async function fetchHolderDataWithCache() {
     // No cache or update failed - create initial snapshot
     console.log('🚀 Creating initial holder snapshot from blockchain...');
     console.log('⏰ This will take 5-10 minutes for the initial scan...');
-    return await snapshotCreator.createInitialSnapshot();
+    return recordSnapshot(await snapshotCreator.createInitialSnapshot());
     
   } catch (error) {
     console.error('❌ Error in cached holder data fetch:', error.message);

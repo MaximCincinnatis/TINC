@@ -34,7 +34,25 @@ const LOG_FILE = path.join(__dirname, '../logs/safe-auto-update.log');
 
 // Git push frequency (reduce commits while keeping data fresh)
 const GIT_PUSH_EVERY_N_UPDATES = 4; // Push every 4 updates (2 hours at 30 min intervals)
-let gitPushCounter = 0;
+// 2026-09-01: persisted across restarts. It used to live only in memory, so every
+// service restart or reboot silently postponed the next publish by up to ~2h.
+const PUSH_COUNTER_FILE = path.join(__dirname, '..', '.push-counter');
+function readPushCounter() {
+  try {
+    const n = parseInt(fs.readFileSync(PUSH_COUNTER_FILE, 'utf8').trim(), 10);
+    return Number.isFinite(n) && n >= 0 ? n : 0;
+  } catch {
+    return 0;
+  }
+}
+function savePushCounter(n) {
+  try {
+    fs.writeFileSync(PUSH_COUNTER_FILE, String(n));
+  } catch (e) {
+    log(`⚠️  Could not persist push counter: ${e.message}`);
+  }
+}
+let gitPushCounter = readPushCounter();
 
 // Ensure log directory exists
 const logDir = path.dirname(LOG_FILE);
@@ -294,9 +312,11 @@ function runSafeIncrementalUpdate() {
 
         // Git and Vercel auto-deployment (every N updates to reduce commit frequency)
         gitPushCounter++;
+        savePushCounter(gitPushCounter);
         if (gitPushCounter >= GIT_PUSH_EVERY_N_UPDATES) {
           performGitAndVercelUpdate();
           gitPushCounter = 0;
+          savePushCounter(gitPushCounter);
         } else {
           log(`📊 Data updated locally (git push in ${GIT_PUSH_EVERY_N_UPDATES - gitPushCounter} updates)`);
         }
@@ -424,6 +444,11 @@ function performGitAndVercelUpdate() {
       cwd: repoRoot,
       stdio: 'pipe'
     });
+
+    // 2026-09-01: a push to an explicit URL does not move refs/remotes/origin/master, so
+    // `git status` drifted to a phantom "ahead 400+". The push just succeeded, so origin
+    // IS at HEAD - record that locally (no network) and keep status truthful.
+    execSync('git update-ref refs/remotes/origin/master HEAD', { cwd: repoRoot, stdio: 'pipe' });
 
     log('✅ Git commit and push completed');
     log('🚀 Vercel will auto-deploy from git push');
