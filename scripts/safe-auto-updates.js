@@ -391,8 +391,9 @@ function copyToPublicFolder() {
     if (fs.existsSync(holdersSource)) {
       const cache = JSON.parse(fs.readFileSync(holdersSource, 'utf8'));
       const holders = (cache.holders || [])
-        .map(h => ({ a: String(h.address).toLowerCase(), b: Math.round(Number(h.balance) * 1000) / 1000 }))
-        .filter(h => h.b > 0)
+        // six decimals: the pipeline's dust cutoff is 0.000001 TINC, so every counted holder survives
+        .map(h => ({ a: String(h.address).toLowerCase(), b: Math.round(Number(h.balance) * 1e6) / 1e6 }))
+        .filter(h => Number.isFinite(h.b) && h.b > 0)
         .sort((x, y) => y.b - x.b);
       fs.writeFileSync(path.join(__dirname, '../public/data/holders.json'), JSON.stringify({
         updatedAt: cache.cachedAt || new Date().toISOString(),

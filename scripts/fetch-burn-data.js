@@ -656,6 +656,21 @@ async function runIncrementalUpdate() {
     
     // Ensure lastProcessedBlock is preserved in merged data
     mergedData.lastProcessedBlock = currentBlock;
+
+    // 2026-09-01: like-for-like deflation figures for the merged window. The full-fetch path
+    // computes the same set, but the merge above rebuilds the object without them, so the
+    // published JSON never carried them (and isDeflationary stayed whatever the last full
+    // fetch said).
+    {
+      const days = mergedData.dailyBurns || [];
+      const perDay = (mergedData.emissionPerSecond || 1) * 86400;
+      const burned = days.reduce((sum, d) => sum + (d.amountTinc || 0), 0);
+      mergedData.periodDays = days.length;
+      mergedData.periodEmission = perDay * days.length;
+      mergedData.deflationaryDays = days.filter(d => (d.amountTinc || 0) > perDay).length;
+      mergedData.netSupplyChange = mergedData.periodEmission - burned;
+      mergedData.isDeflationary = burned > mergedData.periodEmission;
+    }
     
     // Validate integrity
     manager.validateMergedData(existingData, mergedData);
