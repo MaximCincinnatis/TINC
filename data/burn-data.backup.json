@@ -468,15 +468,15 @@
       "transactions": []
     }
   ],
-  "fetchedAt": "2026-09-02T08:35:04.513Z",
+  "fetchedAt": "2026-09-02T10:48:23.585Z",
   "fromCache": true,
-  "lastProcessedBlock": 25888447,
+  "lastProcessedBlock": 25889108,
   "holderStats": {
-    "totalHolders": 958,
+    "totalHolders": 957,
     "poseidon": 0,
     "whale": 9,
     "shark": 40,
-    "dolphin": 100,
+    "dolphin": 99,
     "squid": 173,
     "shrimp": 636,
     "top10Percentage": 20.9092331733922,
@@ -484,10 +484,10 @@
     "excludesLPPositions": true,
     "realTimeData": true,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2026-09-01T21:33:08.188Z"
+    "lastUpdate": "2026-09-02T09:08:21.781Z"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2026-09-02T08:35:04.513Z",
+  "lastIncrementalUpdate": "2026-09-02T10:48:23.585Z",
   "periodDays": 30,
   "periodEmission": 2592000,
   "deflationaryDays": 4,
