@@ -1,0 +1,30 @@
+# TINCBurn.fyi
+
+> Live burn tracker for TINC, the Titan Farms Incentive Token (Ethereum, TitanX ecosystem): daily burns against the 86,400 TINC/day emission, the count of deflationary days, and holder ranks. Read from an Ethereum node, refreshed about every 30 minutes.
+
+## Facts
+
+- TINC contract on Ethereum: 0x6532B3F1e4DBff542fbD6befE5Ed7041c10B385a
+- Titan Farms is a yield-farming protocol on Uniswap V3 in the TitanX ecosystem; liquidity providers earn TINC on top of trading fees (titanfarms.win, docs.titanfarms.win)
+- Emission: a fixed 1 TINC per second (86,400 per day) to liquidity providers; no admin keys can change it
+- Input tokens the farm takes in (ETH, TITANX, DRAGONX, HYDRA, HYPER) feed a buy-and-burn that buys TINC on the market and destroys it
+- A burn is an ERC-20 Transfer of TINC to the zero address; the tracker counts every one
+- A deflationary day is a day with more than 86,400 TINC burned
+- Dragon Ranks by share of circulating supply: Ryūjin 10%+, Shōgun 1%+, Daimyō 0.1%+, Samurai 0.01%+, Rōnin 0.001%+, Ashigaru any balance; liquidity-pool positions and burn addresses excluded
+
+## Data
+
+- Current 30-day burn data (JSON): https://www.tincburn.fyi/data/burn-data.json (fields: dailyBurns[] with date, amountTinc, transactionCount; totalBurned; periodEmission; deflationaryDays; netSupplyChange; totalSupply; holderStats; fetchedAt)
+- Holder list (JSON): https://www.tincburn.fyi/data/holders.json
+
+## Pages
+
+- Home, live dashboard: https://www.tincburn.fyi/
+- Rank permalink for any wallet: https://www.tincburn.fyi/rank/<address>
+
+## Related
+
+- Titan Farms: https://titanfarms.win/
+- Titan Farms documentation: https://docs.titanfarms.win/
+- TINC/TITANX pair on DexScreener: https://dexscreener.com/ethereum/0x72e0de1cc2c952326738dac05bacb9e9c25422e3
+- TINC contract on Etherscan: https://etherscan.io/address/0x6532B3F1e4DBff542fbD6befE5Ed7041c10B385a

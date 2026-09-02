@@ -6,6 +6,7 @@ import StatsCards from '@/components/StatsCards';
 import LoadingProgress from '@/components/LoadingProgress';
 import AdminPanel from '@/components/AdminPanel';
 import DragonRanks from '@/components/DragonRanks';
+import AboutSection from '@/components/AboutSection';
 import type { RankResult } from '@/lib/ranks';
 import { fetchBurnData, setProgressCallback } from '@/services/fileCachedBurnService';
 import { BurnData } from '@/types/BurnData';
@@ -166,7 +167,8 @@ export default function DashboardClient({ initialData, example = null }: Props) 
                   <span>Burn</span>
                   <span>.fyi</span>
                 </h1>
-                <p>龍炎 Dragon Flame Analytics</p>
+                {/* 2026-09-02 SEO: the eyebrow says what the site is; "Dragon Flame" lives on in the footer's 龍炎 RYŪ-EN */}
+                <p>龍炎 Titan Farms TINC burn tracker</p>
               </div>
             </div>
 
@@ -246,6 +248,8 @@ export default function DashboardClient({ initialData, example = null }: Props) 
             </div>
 
             <DragonRanks burnData={burnData} example={example} />
+            {/* 解説 + 問答: the prose that names TINC, Titan Farms, TitanX and DragonX (2026-09-02 SEO pass) */}
+            <AboutSection burnData={burnData} />
           </>
         )}
       </main>

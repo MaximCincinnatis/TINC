@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Analytics } from '@vercel/analytics/next';
+import { FAQ } from '@/lib/faq';
 // Global CSS ported verbatim from the CRA app (must be imported in the root layout).
 import '../index.css';
 import '../App.css';
@@ -26,7 +27,8 @@ export const metadata: Metadata = {
   icons: {
     icon: '/Logo.png',
     shortcut: '/Logo.png',
-    apple: 'https://titanfarms.win/Logo.png',
+    // 2026-09-02: served from this host; the touch icon used to point at titanfarms.win
+    apple: '/Logo.png',
   },
   // 2026-09-02: og:image and twitter:image come from app/opengraph-image.tsx (file-based metadata,
   // rendered per deploy with the current 30-day verdict) instead of the static stock-photo og-image.jpg.
@@ -64,6 +66,9 @@ const jsonLd = {
       '@id': 'https://www.tincburn.fyi/#website',
       url: 'https://www.tincburn.fyi',
       name: 'TINCBurn.fyi',
+      // 2026-09-02 SEO: the names people search for; Google picks the site name from these
+      alternateName: ['Titan Farms TINC Burn Tracker', 'TINC Burn Tracker'],
+      publisher: { '@id': 'https://www.tincburn.fyi/#org' },
       description: 'Real-time TINC (Titan Farms) burn analytics on Ethereum — TitanX & DragonX ecosystem',
     },
     {
@@ -72,6 +77,7 @@ const jsonLd = {
       name: 'TINCBurn.fyi',
       url: 'https://www.tincburn.fyi',
       logo: 'https://www.tincburn.fyi/Logo.png',
+      sameAs: ['https://github.com/MaximCincinnatis/TINC'],
     },
     {
       '@type': 'WebApplication',
@@ -81,6 +87,36 @@ const jsonLd = {
       operatingSystem: 'Web',
       description:
         'Real-time TINC (Titan Farms) burn analytics on Ethereum — a TitanX & DragonX ecosystem token. Burn totals, rate, holders & supply.',
+    },
+    // 2026-09-02 SEO: the burn series as a Dataset (Google Dataset Search lists these) …
+    {
+      '@type': 'Dataset',
+      '@id': 'https://www.tincburn.fyi/#dataset',
+      name: 'TINC daily burns (Titan Farms Incentive Token, Ethereum)',
+      description:
+        'Daily TINC burned, burn transaction counts, circulating supply and holder tiers for the last 30 days, read from an Ethereum node and refreshed about every 30 minutes. TINC is the Titan Farms Incentive Token in the TitanX ecosystem.',
+      url: 'https://www.tincburn.fyi',
+      creator: { '@id': 'https://www.tincburn.fyi/#org' },
+      isAccessibleForFree: true,
+      keywords: ['TINC', 'Titan Farms', 'TitanX', 'DragonX', 'token burn', 'Ethereum', 'deflationary'],
+      variableMeasured: ['TINC burned per day', 'burn transactions per day', 'circulating supply', 'holders per rank tier'],
+      distribution: [
+        {
+          '@type': 'DataDownload',
+          encodingFormat: 'application/json',
+          contentUrl: 'https://www.tincburn.fyi/data/burn-data.json',
+        },
+      ],
+    },
+    // … and the 問答 answers as a FAQPage, from the same list the page renders (src/lib/faq.ts)
+    {
+      '@type': 'FAQPage',
+      '@id': 'https://www.tincburn.fyi/#faq',
+      mainEntity: FAQ.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
     },
   ],
 };
