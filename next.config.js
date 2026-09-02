@@ -12,7 +12,8 @@ const nextConfig = {
   // function so the read never fails at runtime on Vercel (avoids regenerating an empty shell).
   experimental: {
     outputFileTracingIncludes: {
-      '/': ['./public/data/burn-data.json', './public/data/data-manifest.json'],
+      // holders.json: the home page derives the lookup example (a real rank-50 wallet) from it.
+      '/': ['./public/data/burn-data.json', './public/data/data-manifest.json', './public/data/holders.json'],
       // 2026-09-02: rank permalinks and the Open Graph images read these at request time.
       '/rank/[address]': ['./public/data/holders.json'],
       '/rank/[address]/opengraph-image': ['./public/data/holders.json', './public/og/**'],

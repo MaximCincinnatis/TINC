@@ -6,6 +6,7 @@ import StatsCards from '@/components/StatsCards';
 import LoadingProgress from '@/components/LoadingProgress';
 import AdminPanel from '@/components/AdminPanel';
 import DragonRanks from '@/components/DragonRanks';
+import type { RankResult } from '@/lib/ranks';
 import { fetchBurnData, setProgressCallback } from '@/services/fileCachedBurnService';
 import { BurnData } from '@/types/BurnData';
 import { fmtCompact, fmtInt } from '@/lib/format';
@@ -29,6 +30,8 @@ const BurnChart = dynamic(() => import('@/components/BurnChart'), {
 interface Props {
   // Seeded server-side in app/page.tsx (null when the server read failed -> shell).
   initialData: BurnData | null;
+  /** A real wallet at rank 50 in the current snapshot, shown faded as the lookup example */
+  example?: RankResult | null;
 }
 
 /**
@@ -79,11 +82,9 @@ function ChartHeader({ burnData }: { burnData: BurnData }) {
           : 'Last 30 days burn activity'}
       </p>
       {hasVerdict && (
+        // The net figure carries the verdict (gold up = inflationary, jade down = deflationary);
+        // the pill that used to say the same word was redundant (Ben, 2026-09-02).
         <div className="chart-verdict">
-          <span className={`status-indicator ${burnData.isDeflationary ? 'deflationary' : 'inflationary'}`}>
-            <span className="status-dot"></span>
-            {burnData.isDeflationary ? 'Deflationary' : 'Inflationary'} · {days} days
-          </span>
           <span className="verdict-fig">
             <b>{fmtCompact(burnData.totalBurned)}</b>burned
           </span>
@@ -95,7 +96,7 @@ function ChartHeader({ burnData }: { burnData: BurnData }) {
               {net >= 0 ? '+' : '−'}
               {fmtCompact(Math.abs(net))}
             </b>
-            net supply
+            {`${days}-day net supply`}
           </span>
         </div>
       )}
@@ -103,7 +104,7 @@ function ChartHeader({ burnData }: { burnData: BurnData }) {
   );
 }
 
-export default function DashboardClient({ initialData }: Props) {
+export default function DashboardClient({ initialData, example = null }: Props) {
   // Seed from server-fetched props so the real numbers render on the server (SSR win).
   const [burnData, setBurnData] = useState<BurnData | null>(initialData);
   // Only "loading" up front if we have no server data (then the client fetches below).
@@ -244,7 +245,7 @@ export default function DashboardClient({ initialData }: Props) {
               <BurnChart burnData={burnData} />
             </div>
 
-            <DragonRanks burnData={burnData} />
+            <DragonRanks burnData={burnData} example={example} />
           </>
         )}
       </main>

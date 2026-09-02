@@ -4,11 +4,13 @@ import React from 'react';
 import { BurnData } from '../types/BurnData';
 import { RANK_TIERS } from '@/lib/ranks';
 import HolderLookup from './HolderLookup';
+import type { RankResult } from '@/lib/ranks';
 
 // 龍階 Dragon Ranks - Japanese/Samurai inspired holder tiers
 
 interface Props {
   burnData: BurnData;
+  example?: RankResult | null;
 }
 
 interface HolderStats {
@@ -22,7 +24,7 @@ interface HolderStats {
   top10Percentage?: number;
 }
 
-const DragonRanks: React.FC<Props> = ({ burnData }) => {
+const DragonRanks: React.FC<Props> = ({ burnData, example = null }) => {
   const totalSupply = burnData.totalSupply;
   // Derive holder tiers directly from the server-seeded props (no effect/state) so the REAL
   // holder numbers are server-rendered into the HTML. Falls back to representative defaults
@@ -145,7 +147,7 @@ const DragonRanks: React.FC<Props> = ({ burnData }) => {
         </div>
 
       {/* 位 Find your rank (2026-09-02): answers with a rank card in the wallet's tier colour */}
-      <HolderLookup />
+      <HolderLookup example={example} />
 
       {/* Summary */}
       <div className="ranks-summary">

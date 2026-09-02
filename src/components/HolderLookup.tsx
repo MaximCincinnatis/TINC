@@ -8,7 +8,8 @@ import { normalizeAddress, rankLookup, RANK_TIERS, type HoldersFile, type RankRe
 import { fmtUtcClock } from '@/lib/format';
 import { rankUrl } from '@/lib/share';
 
-/** What an answer looks like, shown faded beside the empty form and labelled 例 Example. */
+/** Static fallback for the faded example beside the empty form, used only when the page could
+ *  not derive a real rank-50 wallet from the current snapshot. */
 const EXAMPLE: RankResult = {
   address: '0x0000000000000000000000000000000000000000',
   balance: 27803,
@@ -35,7 +36,8 @@ type LookupState =
  * the Overview row, and answers with a rank card in the wallet's tier colour plus a share link.
  * Reads public/data/holders.json (public on-chain balances the updater publishes every cycle).
  */
-export default function HolderLookup() {
+export default function HolderLookup({ example = null }: { example?: RankResult | null }) {
+  const sample = example ?? EXAMPLE;
   const [input, setInput] = useState('');
   const [state, setState] = useState<LookupState>({ kind: 'idle' });
 
@@ -107,9 +109,10 @@ export default function HolderLookup() {
       ) : (
         <div className="lookup-result lookup-example" aria-hidden="true">
           <div className="lookup-sub">
-            <span className="kanji-small">例</span> Example answer
+            <span className="kanji-small">例</span>{' '}
+            {example ? `Example · rank ${example.rank.toLocaleString('en-US')} today` : 'Example answer'}
           </div>
-          <RankCard r={EXAMPLE} />
+          <RankCard r={sample} />
           <div className="lookup-share">
             <span className="btn btn-ghost">Copy share link</span>
             <span className="btn btn-ghost">Share to Telegram</span>
