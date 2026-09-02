@@ -2015,81 +2015,218 @@ footer a:hover {
 }
 
 /* ---------------------------------------------------------------------------
-   2026-09-01 UX walk additions: intro strip + supply verdict, holder lookup,
-   and a 3+3 rank grid at desktop (was 4+2 with a two-card hole).
+   2026-09-02 design pass (redlines TB-1..3, D-7..10, N-1..2): the supply verdict moved into
+   the chart header, a freshness chip in the nav column, ghosted tier art in the rank cards,
+   and the rank lookup inside the Dragon Ranks container with a share link. Everything below
+   extends existing families (.status-indicator, .rank-card, .btn, .nav-link) with the tokens
+   from index.css; no new colours.
    --------------------------------------------------------------------------- */
-.intro-strip {
-  margin: 0 0 1.25rem;
-  padding: 0.9rem 1.1rem;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.03);
-}
-.intro-text {
-  margin: 0;
-  font-size: 0.9375rem;
-  line-height: 1.5;
-  color: rgba(250, 248, 240, 0.72);
-}
-.supply-verdict {
-  margin: 0.6rem 0 0;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 0.8125rem;
-  line-height: 1.5;
-  color: rgba(250, 248, 240, 0.85);
-}
-.supply-verdict.deflationary { color: #34d399; }
-.supply-verdict.inflationary { color: #fbbf24; }
 
-.holder-lookup {
-  margin: 1.25rem 0 0;
-  padding: 1rem 1.1rem 1.1rem;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.03);
-}
-.holder-lookup h3 {
-  margin: 0 0 0.6rem;
-  font-size: 1rem;
-  font-weight: 600;
-  color: rgba(250, 248, 240, 0.9);
-}
-.holder-lookup form {
-  display: flex;
+/* Header freshness chip (replaces the whisper-quiet .beta-warning line) */
+.fresh-chip {
+  display: inline-flex;
+  align-items: center;
   gap: 0.5rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-subtle);
+  background: rgba(250, 248, 240, 0.03);
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: rgba(250, 248, 240, 0.7);
+  animation: title-reveal 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s both;
+}
+.fresh-chip .status-dot {
+  width: 6px;
+  height: 6px;
+  color: var(--dragon-jade);
+}
+.fresh-chip b {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--washi-cream);
+}
+
+/* Chart header verdict: the tooltip's status pill plus three mono figures */
+.chart-verdict {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.75rem;
+  margin: 1.1rem 0 0;
+}
+.chart-verdict .status-indicator {
+  margin: 0;
+}
+.verdict-fig {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  color: rgba(250, 248, 240, 0.6);
+}
+.verdict-fig b {
+  font-family: var(--font-mono);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--washi-cream);
+  margin-right: 0.35rem;
+}
+.verdict-fig.net b {
+  color: var(--ember-gold);
+}
+.verdict-fig.net.down b {
+  color: var(--dragon-jade);
+}
+
+/* Tier art, ghosted behind the numbers and faded toward the text */
+/* Screen blend: the ink of the sumi-e disappears into the card and only the brush highlights
+   (crest, scales, gold specks) glow through, the way the kanji watermark does. */
+.rank-art {
+  position: absolute;
+  right: -3%;
+  top: -4%;
+  height: 112%;
+  width: auto;
+  opacity: 0.55;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to left, #000 45%, transparent 96%);
+  mask-image: linear-gradient(to left, #000 45%, transparent 96%);
+  z-index: 0;
+}
+.lookup-card .rank-art {
+  opacity: 0.65;
+}
+.rank-card > *:not(.rank-art):not(.rank-corner) {
+  position: relative;
+  z-index: 1;
+}
+.rank-corner {
+  z-index: 1;
+}
+
+/* 位 Find your rank, inside the Dragon Ranks container */
+.lookup-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  padding: 0 2rem 2rem;
+}
+.lookup-row.has-result {
+  grid-template-columns: 1.2fr 1fr;
+}
+.lookup-panel {
+  align-self: start;
+}
+.lookup-title {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  color: var(--washi-cream);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.125rem;
+}
+.lookup-sub {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: rgba(250, 248, 240, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+}
+.lookup-form {
+  display: flex;
+  gap: 0.625rem;
   flex-wrap: wrap;
 }
-.holder-lookup input {
-  flex: 1 1 260px;
-  min-height: 44px;
-  padding: 0 0.8rem;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 8px;
-  background: rgba(0, 0, 0, 0.35);
-  color: rgba(250, 248, 240, 0.95);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+.lookup-input {
+  flex: 1 1 240px;
+  min-height: 46px;
+  padding: 0 0.9rem;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border-subtle);
+  color: var(--washi-cream);
+  font-family: var(--font-mono);
   font-size: 0.875rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
-.holder-lookup input:focus { outline: 2px solid rgba(52, 211, 153, 0.6); outline-offset: 1px; }
-.holder-lookup button {
-  min-height: 44px;
-  padding: 0 1.1rem;
-  border: 1px solid rgba(52, 211, 153, 0.5);
-  border-radius: 8px;
-  background: rgba(52, 211, 153, 0.12);
-  color: #34d399;
-  font-weight: 600;
-  cursor: pointer;
+.lookup-input::placeholder {
+  color: rgba(250, 248, 240, 0.35);
 }
-.holder-lookup button[disabled] { opacity: 0.6; cursor: default; }
-.lookup-note { margin: 0.7rem 0 0; font-size: 0.8125rem; color: rgba(250, 248, 240, 0.6); }
-.lookup-error { color: #fbbf24; }
-.lookup-result { margin-top: 0.9rem; }
-.lookup-tier { font-size: 1.25rem; font-weight: 700; color: rgba(250, 248, 240, 0.95); }
-.lookup-facts { display: flex; gap: 1rem 1.5rem; flex-wrap: wrap; margin-top: 0.35rem; font-size: 0.9rem; color: rgba(250, 248, 240, 0.8); }
-.lookup-facts strong { color: #34d399; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+.lookup-input:focus {
+  outline: none;
+  border-color: var(--border-glow);
+  box-shadow: 0 0 0 3px rgba(0, 212, 170, 0.12);
+}
+.lookup-note {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: rgba(250, 248, 240, 0.45);
+  margin-top: 0.85rem;
+  line-height: 1.5;
+}
+.lookup-note.is-error {
+  color: var(--ember-crimson);
+}
+.lookup-result {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.lookup-share {
+  display: flex;
+  gap: 0.625rem;
+  flex-wrap: wrap;
+}
+.btn-ghost {
+  background: rgba(250, 248, 240, 0.03);
+  border: 1px solid var(--border-subtle);
+  color: rgba(250, 248, 240, 0.8);
+  padding: 0.6rem 1.1rem;
+  font-size: 0.8125rem;
+  text-decoration: none;
+}
+.btn-ghost:hover {
+  border-color: var(--border-glow);
+  color: var(--dragon-jade-bright);
+  transform: translateY(-1px);
+}
+.rank-icon-kanji {
+  font-family: serif;
+  font-size: 2rem;
+  line-height: 1;
+}
 
-.ranks-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+/* /rank/<address> permalink page */
+.rank-page {
+  max-width: 760px;
+}
+.rank-page .rank-card {
+  margin-bottom: 1rem;
+}
+.rank-page .lookup-note {
+  margin-top: 1rem;
+  word-break: break-all;
+}
+
+/* Rank grid: 3 + 3 at desktop instead of 4 + 2 with a hole */
+.ranks-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
 @media (min-width: 1024px) {
-  .ranks-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .ranks-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 768px) {
+  .lookup-row,
+  .lookup-row.has-result {
+    grid-template-columns: 1fr;
+    padding: 0 1.25rem 1.25rem;
+  }
+  .chart-verdict {
+    gap: 0.6rem 1.1rem;
+  }
 }

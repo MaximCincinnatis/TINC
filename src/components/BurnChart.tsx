@@ -174,8 +174,20 @@ const BurnChart: React.FC<Props> = ({ burnData }) => {
             borderColor: '#00D4AA',
             borderWidth: 2,
             borderDash: [0],
+            // 2026-09-02 (D-9): name the line on the plot, not only in the legend
             label: {
-              display: false
+              display: true,
+              content: `${(deflationaryThreshold / 1000).toFixed(1)}K / day`,
+              position: 'end',
+              xAdjust: -4,
+              yAdjust: -14,
+              backgroundColor: 'rgba(15, 15, 24, 0.85)',
+              borderColor: 'rgba(0, 212, 170, 0.3)',
+              borderWidth: 1,
+              borderRadius: 6,
+              color: '#00D4AA',
+              font: { family: 'IBM Plex Mono, monospace', size: 11, weight: 600 },
+              padding: { x: 7, y: 4 }
             }
           }
         }

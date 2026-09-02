@@ -46,7 +46,7 @@ const StatsCards: React.FC<Props> = ({ burnData }) => {
 
       <div className="stat-card transactions">
         <div className="stat-header">
-          <span className="stat-label">Total Transactions</span>
+          <span className="stat-label">Burn Transactions</span>
           <div className="stat-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" opacity="0.3">
               <rect x="3" y="3" width="7" height="7" rx="1" opacity="0.5"/>
@@ -59,7 +59,7 @@ const StatsCards: React.FC<Props> = ({ burnData }) => {
         <div className="stat-value">
           {formatNumber(totalTransactions)}<span className="stat-suffix">{formatSuffix(totalTransactions)}</span>
         </div>
-        <div className="stat-description">Burn transactions over 30 days</div>
+        <div className="stat-description">Burn transactions in the last 30 days</div>
       </div>
       
       <div className="stat-card thirty-day">
@@ -81,7 +81,7 @@ const StatsCards: React.FC<Props> = ({ burnData }) => {
       
       <div className="stat-card emission">
         <div className="stat-header">
-          <span className="stat-label">Emission Rate</span>
+          <span className="stat-label">Daily Emission</span>
           <div className="stat-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" opacity="0.3">
               <path d="M12 2L13.09 8.26L19 7L15.45 11.82L21 16L14.5 16L12 22L9.5 16L3 16L8.55 11.82L5 7L10.91 8.26L12 2Z" stroke="currentColor" strokeWidth="1.5" fill="none" opacity="0.5"/>
@@ -89,16 +89,13 @@ const StatsCards: React.FC<Props> = ({ burnData }) => {
             </svg>
           </div>
         </div>
+        {/* 2026-09-02 (D-8): the daily figure is the threshold the chart draws; the per-second rate is the footnote */}
         <div className="stat-value">
-          {burnData.emissionPerSecond.toFixed(1)}
-          <span className="stat-suffix">TINC/SEC</span>
+          {((burnData.emissionPerSecond * 86400) / 1000).toFixed(1)}
+          <span className="stat-suffix">K/DAY</span>
         </div>
         <div className="stat-description">
-          {burnData.isDeflationary ? (
-            'Tokens being created per second'
-          ) : (
-            'Tokens being created per second'
-          )}
+          {burnData.emissionPerSecond.toFixed(1)} TINC per second · burns above this make a deflationary day
         </div>
       </div>
     </div>

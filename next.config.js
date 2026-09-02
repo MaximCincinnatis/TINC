@@ -13,6 +13,10 @@ const nextConfig = {
   experimental: {
     outputFileTracingIncludes: {
       '/': ['./public/data/burn-data.json', './public/data/data-manifest.json'],
+      // 2026-09-02: rank permalinks and the Open Graph images read these at request time.
+      '/rank/[address]': ['./public/data/holders.json'],
+      '/rank/[address]/opengraph-image': ['./public/data/holders.json', './public/og/**'],
+      '/opengraph-image': ['./public/data/burn-data.json', './public/data/data-manifest.json', './public/og/**'],
     },
     // The auto-updater accumulates thousands of versioned burn-data-v<ts>.json snapshots
     // (~270MB in public/data, ~290MB in data/). loadBurnData's dynamic fs path makes Next

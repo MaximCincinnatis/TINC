@@ -28,20 +28,20 @@ export const metadata: Metadata = {
     shortcut: '/Logo.png',
     apple: 'https://titanfarms.win/Logo.png',
   },
+  // 2026-09-02: og:image and twitter:image come from app/opengraph-image.tsx (file-based metadata,
+  // rendered per deploy with the current 30-day verdict) instead of the static stock-photo og-image.jpg.
   openGraph: {
     type: 'website',
     url: 'https://www.tincburn.fyi/',
     title: 'Titan Farms TINC Burn Tracker — TitanX & DragonX Ecosystem',
     description:
       'Real-time TINC (Titan Farms) burn analytics on Ethereum — a TitanX & DragonX ecosystem token. Burn totals, rate, holders & supply.',
-    images: [{ url: 'https://www.tincburn.fyi/og-image.jpg', width: 1200, height: 630, alt: 'TINCBurn.fyi — TINC Burn Tracker' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Titan Farms TINC Burn Tracker — TitanX & DragonX Ecosystem',
     description:
       'Real-time TINC (Titan Farms) burns on Ethereum — a TitanX & DragonX ecosystem token. Burn totals, rate & holders.',
-    images: ['https://www.tincburn.fyi/og-image.jpg'],
   },
 };
 

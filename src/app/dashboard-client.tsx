@@ -5,10 +5,10 @@ import dynamic from 'next/dynamic';
 import StatsCards from '@/components/StatsCards';
 import LoadingProgress from '@/components/LoadingProgress';
 import AdminPanel from '@/components/AdminPanel';
-import HolderLookup from '@/components/HolderLookup';
 import DragonRanks from '@/components/DragonRanks';
 import { fetchBurnData, setProgressCallback } from '@/services/fileCachedBurnService';
 import { BurnData } from '@/types/BurnData';
+import { fmtCompact, fmtInt } from '@/lib/format';
 
 // chart.js / react-chartjs-2 render to a <canvas> and touch window -> load client-only.
 // The chart's DATA still comes from SSR'd props; only the canvas render is deferred to the client.
@@ -35,6 +35,7 @@ interface Props {
  * 2026-09-01 UX walk: replaces the "Beta: verify results" tag, which undermined numbers that
  * are read straight from the chain and validated before every publish. The server renders the
  * absolute UTC time (deterministic); after mount it ticks as a relative age.
+ * 2026-09-02: rendered as a nav chip (.fresh-chip) instead of the whisper-quiet .beta-warning.
  */
 function DataFreshness({ fetchedAt }: { fetchedAt?: string }) {
   const [now, setNow] = useState<number | null>(null);
@@ -43,18 +44,62 @@ function DataFreshness({ fetchedAt }: { fetchedAt?: string }) {
     const t = setInterval(() => setNow(Date.now()), 60_000);
     return () => clearInterval(t);
   }, []);
-  if (!fetchedAt) return <p className="beta-warning">On-chain data</p>;
+  if (!fetchedAt) return <span className="fresh-chip"><span className="status-dot"></span>On-chain data</span>;
   const ts = new Date(fetchedAt).getTime();
-  if (isNaN(ts)) return <p className="beta-warning">On-chain data</p>;
+  if (isNaN(ts)) return <span className="fresh-chip"><span className="status-dot"></span>On-chain data</span>;
   let when = `${new Date(ts).toISOString().slice(11, 16)} UTC`;
   if (now !== null) {
     const mins = Math.max(0, Math.round((now - ts) / 60_000));
     when = mins < 60 ? `${mins} min ago` : `${Math.round(mins / 60)} h ago`;
   }
   return (
-    <p className="beta-warning" title={fetchedAt}>
-      On-chain data · updated {when}
-    </p>
+    <span className="fresh-chip" title={fetchedAt}>
+      <span className="status-dot"></span>
+      Updated <b>{when}</b>
+    </span>
+  );
+}
+
+/**
+ * 2026-09-02: the supply verdict lives where the threshold line already does, in the chart
+ * header: the tooltip's status pill plus like-for-like figures for the window. Falls back to the
+ * old subtitle when a snapshot predates the periodEmission fields.
+ */
+function ChartHeader({ burnData }: { burnData: BurnData }) {
+  const days = burnData.periodDays ?? burnData.dailyBurns.length;
+  const dailyEmission = burnData.emissionPerSecond * 86400;
+  const hasVerdict = typeof burnData.periodEmission === 'number' && typeof burnData.netSupplyChange === 'number';
+  const net = burnData.netSupplyChange ?? 0;
+  return (
+    <div className="chart-header">
+      <h2 className="chart-title">Daily TINC Burns</h2>
+      <p className="chart-subtitle">
+        {hasVerdict
+          ? `Last ${days} days · ${burnData.deflationaryDays ?? 0} of ${days} days above the ${fmtInt(dailyEmission)} TINC/day emission`
+          : 'Last 30 days burn activity'}
+      </p>
+      {hasVerdict && (
+        <div className="chart-verdict">
+          <span className={`status-indicator ${burnData.isDeflationary ? 'deflationary' : 'inflationary'}`}>
+            <span className="status-dot"></span>
+            {burnData.isDeflationary ? 'Deflationary' : 'Inflationary'} · {days} days
+          </span>
+          <span className="verdict-fig">
+            <b>{fmtCompact(burnData.totalBurned)}</b>burned
+          </span>
+          <span className="verdict-fig">
+            <b>{fmtCompact(burnData.periodEmission as number)}</b>emitted
+          </span>
+          <span className={`verdict-fig net ${net <= 0 ? 'down' : 'up'}`}>
+            <b>
+              {net >= 0 ? '+' : '−'}
+              {fmtCompact(Math.abs(net))}
+            </b>
+            net supply
+          </span>
+        </div>
+      )}
+    </div>
   );
 }
 
@@ -150,25 +195,6 @@ export default function DashboardClient({ initialData }: Props) {
       </header>
 
       <main className="container">
-        {/* 2026-09-01 UX walk: a first-time visitor gets the one-line "what is this", and every
-            visitor gets "is TINC deflationary right now" from like-for-like numbers. */}
-        <section className="intro-strip">
-          <p className="intro-text">
-            TINC is Titan Farms&apos; incentive token. Every burn removes TINC from circulation for good;
-            supply only shrinks on days when burns beat the{' '}
-            {burnData ? Math.round(burnData.emissionPerSecond * 86400).toLocaleString('en-US') : '86,400'} TINC/day emission.
-          </p>
-          {burnData && typeof burnData.periodEmission === 'number' && typeof burnData.netSupplyChange === 'number' && (
-            <p className={`supply-verdict ${burnData.isDeflationary ? 'deflationary' : 'inflationary'}`}>
-              Last {burnData.periodDays ?? burnData.dailyBurns.length} days: {burnData.isDeflationary ? 'deflationary' : 'inflationary'} ·{' '}
-              {Math.round(burnData.totalBurned).toLocaleString('en-US')} burned vs{' '}
-              {Math.round(burnData.periodEmission).toLocaleString('en-US')} emitted · net{' '}
-              {burnData.netSupplyChange >= 0 ? '+' : '−'}
-              {Math.round(Math.abs(burnData.netSupplyChange)).toLocaleString('en-US')} TINC ·{' '}
-              {burnData.deflationaryDays ?? 0} of {burnData.periodDays ?? burnData.dailyBurns.length} days beat the threshold
-            </p>
-          )}
-        </section>
         {loading && (
           <LoadingProgress
             message={loadingMessage}
@@ -211,16 +237,11 @@ export default function DashboardClient({ initialData }: Props) {
           <>
             <StatsCards burnData={burnData} />
             <div className="chart-section">
-              <div className="chart-header">
-                <h2 className="chart-title">Daily TINC Burns</h2>
-                <p className="chart-subtitle">Last 30 days burn activity</p>
-              </div>
+              <ChartHeader burnData={burnData} />
               <BurnChart burnData={burnData} />
             </div>
 
             <DragonRanks burnData={burnData} />
-
-            <HolderLookup />
           </>
         )}
       </main>
@@ -279,6 +300,11 @@ export default function DashboardClient({ initialData }: Props) {
             </span>
           )}
           {burnData?.fromCache && <span> • Cached</span>}
+        </p>
+        {/* 2026-09-02 (D-10): the one-line explainer, out of the way of the numbers */}
+        <p style={{ marginBottom: '0.75rem', fontSize: '0.8125rem', color: 'rgba(250, 248, 240, 0.5)', maxWidth: '62ch', marginLeft: 'auto', marginRight: 'auto' }}>
+          Every burn removes TINC from circulation for good. Supply shrinks only on days when burns beat the{' '}
+          {burnData ? Math.round(burnData.emissionPerSecond * 86400).toLocaleString('en-US') : '86,400'} TINC daily emission.
         </p>
         <p style={{ fontSize: '0.75rem', color: 'rgba(250, 248, 240, 0.35)' }}>
           龍炎 RYŪ-EN • Built for TINC Community
