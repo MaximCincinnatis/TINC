@@ -16,11 +16,14 @@
 
 - Current 30-day burn data (JSON): https://www.tincburn.fyi/data/burn-data.json (fields: dailyBurns[] with date, amountTinc, transactionCount; totalBurned; periodEmission; deflationaryDays; netSupplyChange; totalSupply; holderStats; fetchedAt)
 - Holder list (JSON): https://www.tincburn.fyi/data/holders.json
+- Daily archive (JSON, since 2026-08-04): https://www.tincburn.fyi/data/daily-history.json (days[] with date, amountTinc, transactionCount, final)
 
 ## Pages
 
 - Home, live dashboard: https://www.tincburn.fyi/
 - Rank permalink for any wallet: https://www.tincburn.fyi/rank/<address>
+- Methodology (what counts as a burn, emission, verdict rule, holder ranks, freshness, limits): https://www.tincburn.fyi/methodology
+- Burn archive by month (daily burned, emitted, deflationary days since 2026-08-04): https://www.tincburn.fyi/burns and https://www.tincburn.fyi/burns/YYYY-MM
 
 ## Related
 

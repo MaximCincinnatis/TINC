@@ -16,6 +16,10 @@ const nextConfig = {
       '/': ['./public/data/burn-data.json', './public/data/data-manifest.json', './public/data/holders.json'],
       // 2026-09-02: rank permalinks and the Open Graph images read these at request time.
       '/rank/[address]': ['./public/data/holders.json'],
+      // 2026-09-02: the burn archive and the generated sitemap read the daily archive at request time.
+      '/burns': ['./public/data/daily-history.json'],
+      '/burns/[month]': ['./public/data/daily-history.json'],
+      '/sitemap.xml': ['./public/data/daily-history.json'],
       '/rank/[address]/opengraph-image': ['./public/data/holders.json', './public/og/**'],
       '/opengraph-image': ['./public/data/burn-data.json', './public/data/data-manifest.json', './public/og/**'],
     },
@@ -35,6 +39,15 @@ const nextConfig = {
         source: '/data/burn-data.json',
         headers: [
           { key: 'cache-control', value: 'public, max-age=300, s-maxage=60, stale-while-revalidate=30' },
+        ],
+      },
+      {
+        // 2026-09-02: self-hosted font subsets (public/fonts). A day of caching with a week of
+        // stale-while-revalidate: repeat visits skip the download, a rebuilt subset still lands
+        // within a day (the file names are stable, so no year-long immutable here).
+        source: '/fonts/:path*',
+        headers: [
+          { key: 'cache-control', value: 'public, max-age=86400, stale-while-revalidate=604800' },
         ],
       },
       {

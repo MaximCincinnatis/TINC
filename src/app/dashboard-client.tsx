@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 import StatsCards from '@/components/StatsCards';
 import LoadingProgress from '@/components/LoadingProgress';
 import AdminPanel from '@/components/AdminPanel';
@@ -284,6 +285,13 @@ export default function DashboardClient({ initialData, example = null }: Props) 
           >
             TINC/TitanX
           </a>
+          {/* 2026-09-02: the site's own pages (SEO pass C) */}
+          <Link href="/burns" className="nav-link">
+            Burn archive
+          </Link>
+          <Link href="/methodology" className="nav-link">
+            Methodology
+          </Link>
         </div>
 
         <p style={{ marginBottom: '0.5rem', fontSize: '0.8125rem', color: 'rgba(250, 248, 240, 0.5)' }}>
