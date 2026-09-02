@@ -285,10 +285,7 @@ export default function DashboardClient({ initialData, example = null }: Props) 
           >
             TINC/TitanX
           </a>
-          {/* 2026-09-02: the site's own pages (SEO pass C) */}
-          <Link href="/burns" className="nav-link">
-            Burn archive
-          </Link>
+          {/* 2026-09-02: the site's own methodology page (SEO pass C) */}
           <Link href="/methodology" className="nav-link">
             Methodology
           </Link>

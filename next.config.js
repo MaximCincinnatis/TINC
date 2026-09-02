@@ -16,10 +16,6 @@ const nextConfig = {
       '/': ['./public/data/burn-data.json', './public/data/data-manifest.json', './public/data/holders.json'],
       // 2026-09-02: rank permalinks and the Open Graph images read these at request time.
       '/rank/[address]': ['./public/data/holders.json'],
-      // 2026-09-02: the burn archive and the generated sitemap read the daily archive at request time.
-      '/burns': ['./public/data/daily-history.json'],
-      '/burns/[month]': ['./public/data/daily-history.json'],
-      '/sitemap.xml': ['./public/data/daily-history.json'],
       '/rank/[address]/opengraph-image': ['./public/data/holders.json', './public/og/**'],
       '/opengraph-image': ['./public/data/burn-data.json', './public/data/data-manifest.json', './public/og/**'],
     },

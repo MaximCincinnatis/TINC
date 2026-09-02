@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { SiteHeader, SiteFooter } from '@/components/PageChrome';
 import { SITE } from '@/lib/share';
 
@@ -102,19 +101,13 @@ export default function MethodologyPage() {
             </p>
 
             <h3>
-              <span className="kanji-small">記録</span> The archive
-            </h3>
-            <p>
-              The home page keeps a rolling 30-day window. The <Link href="/burns">burn archive</Link> folds every
-              window into a daily record that started on 4 August 2026, the first day inside the window when the
-              archive began; earlier months are not available. A day can be revised for up to 30 days after it, as the
-              scanner recovers any block range the node failed to answer the first time.
-            </p>
-
-            <h3>
               <span className="kanji-small">限界</span> Known limits
             </h3>
             <ul>
+              <li>
+                The tracker keeps a rolling 30-day window and no archive of earlier days; a day can be revised while it
+                is inside the window, as the scanner recovers any block range the node failed to answer the first time.
+              </li>
               <li>Node outages leave gaps that are retried and backfilled; until then a day can read low.</li>
               <li>Holder counts exclude TINC held only through liquidity positions.</li>
               <li>Amounts are shown rounded; the JSON below carries full precision.</li>
@@ -126,8 +119,7 @@ export default function MethodologyPage() {
             </h3>
             <ul>
               <li>
-                Current window: <a href="/data/burn-data.json">/data/burn-data.json</a> · daily archive:{' '}
-                <a href="/data/daily-history.json">/data/daily-history.json</a> · holders:{' '}
+                Current window: <a href="/data/burn-data.json">/data/burn-data.json</a> · holders:{' '}
                 <a href="/data/holders.json">/data/holders.json</a> · summary for answer engines:{' '}
                 <a href="/llms.txt">/llms.txt</a>
               </li>

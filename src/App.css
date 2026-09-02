@@ -2565,15 +2565,11 @@ footer a:hover {
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   Methodology + burn archive pages (2026-09-02 SEO pass)
-   The about card holding a document; the chart card holding a month table. Tokens only.
+   Methodology page (2026-09-02 SEO pass)
+   The about card holding a document. Tokens only.
    ═══════════════════════════════════════════════════════════════ */
 .about-section.doc {
   margin-top: 0;
-  animation-delay: 0.2s;
-}
-
-.chart-section.doc {
   animation-delay: 0.2s;
 }
 
@@ -2633,146 +2629,8 @@ footer a:hover {
   max-width: 68ch;
 }
 
-/* month table: mono, tabular figures, the verdict as a dot + word like the chart legend */
-.month-table {
-  width: 100%;
-  max-width: 760px;
-  border-collapse: collapse;
-  margin: 1.25rem auto 1rem;
-  font-family: var(--font-body);
-  font-size: 0.875rem;
-}
-
-.month-table th {
-  text-align: left;
-  font-weight: 500;
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(250, 248, 240, 0.45);
-  padding: 0.5rem;
-  border-bottom: 1px solid var(--border-subtle);
-}
-
-.month-table td {
-  padding: 0.5rem;
-  border-bottom: 1px solid rgba(0, 212, 170, 0.06);
-  color: rgba(250, 248, 240, 0.78);
-}
-
-.month-table th.num,
-.month-table td.num {
-  text-align: right;
-  font-family: var(--font-mono);
-  font-variant-numeric: tabular-nums;
-}
-
-.month-table tr.is-defl td {
-  color: var(--washi-cream);
-}
-
-.month-table .verdict {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.8125rem;
-  color: rgba(250, 248, 240, 0.45);
-}
-
-.month-table tr.is-defl .verdict {
-  color: var(--dragon-jade);
-}
-
-.month-table .verdict::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: currentColor;
-  opacity: 0.85;
-}
-
-.month-open {
-  font-size: 0.75rem;
-  color: var(--ember-gold);
-}
-
-.month-section .lookup-note {
-  max-width: 68ch;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-
-.month-section .lookup-note a {
-  color: var(--dragon-jade);
-  text-decoration: none;
-}
-
-.month-section .lookup-note a:hover {
-  color: var(--dragon-jade-bright);
-}
-
-.month-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-  margin-top: 1.25rem;
-}
-
-.month-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.month-list li {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 1rem;
-  padding: 0.75rem 0;
-  border-bottom: 1px solid var(--border-subtle);
-  font-family: var(--font-body);
-  font-size: 0.9375rem;
-}
-
-.month-list a {
-  font-weight: 700;
-  color: var(--washi-cream);
-  text-decoration: none;
-  transition: color var(--hover-ms) ease;
-}
-
-.month-list a:hover {
-  color: var(--dragon-jade-bright);
-}
-
-.month-list .figs {
-  font-family: var(--font-mono);
-  font-size: 0.8125rem;
-  color: rgba(250, 248, 240, 0.6);
-  text-align: right;
-  white-space: nowrap;
-}
-
 @media (max-width: 480px) {
   .doc-body {
     padding: 1.25rem 1.25rem 1.5rem;
-  }
-  .month-table th:nth-child(3),
-  .month-table td:nth-child(3) {
-    display: none;
-  }
-  .month-list li {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.25rem;
-  }
-  .month-list .figs {
-    text-align: left;
-    white-space: normal;
   }
 }

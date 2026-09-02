@@ -43,9 +43,6 @@ export function SiteFooter() {
         <Link href="/" className="nav-link">
           Burn tracker
         </Link>
-        <Link href="/burns" className="nav-link">
-          Burn archive
-        </Link>
         <Link href="/methodology" className="nav-link">
           Methodology
         </Link>
