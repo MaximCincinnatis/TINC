@@ -2243,6 +2243,19 @@ footer a:hover {
     white-space: nowrap;
   }
 }
+@media (max-width: 400px) {
+  /* 360px phones: the three figures stay on one line by getting a touch smaller */
+  .chart-verdict {
+    column-gap: 0.6rem;
+  }
+  .verdict-fig {
+    font-size: 0.75rem;
+  }
+  .verdict-fig b {
+    font-size: 0.875rem;
+    margin-right: 0.25rem;
+  }
+}
 
 /* Motion preference: nothing moves on hover, entrances settle at once */
 @media (prefers-reduced-motion: reduce) {
