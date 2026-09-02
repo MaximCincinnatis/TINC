@@ -23,7 +23,12 @@ export const metadata: Metadata = {
     canonical: 'https://www.tincburn.fyi/',
   },
   manifest: '/manifest.json',
-  verification: { google: 'TaTNZK7qF2F5CwLQ-VgaZ7qRNmVXwmTzHKLeE7t140o' },
+  verification: {
+    google: 'TaTNZK7qF2F5CwLQ-VgaZ7qRNmVXwmTzHKLeE7t140o',
+    // 2026-09-02: Bing Webmaster Tools ownership as a permanent tag (the July verification was a
+    // Search Console import, which Bing re-checks and dropped on 2026-08-23). Renders msvalidate.01.
+    other: { 'msvalidate.01': 'AD5E6C25C51D5057D54A9EA86D477912' },
+  },
   icons: {
     icon: '/Logo.png',
     shortcut: '/Logo.png',
