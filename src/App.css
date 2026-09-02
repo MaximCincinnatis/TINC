@@ -173,7 +173,7 @@
   justify-content: center;
   position: relative;
   overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: transform var(--hover-ms) var(--ease-out), border-color var(--hover-ms) ease, box-shadow var(--hover-ms) ease;
 }
 
 .logo::before {
@@ -195,17 +195,12 @@
 }
 
 .logo:hover {
-  transform: scale(1.08) rotate(2deg);
+  transform: scale(1.03);
   border-color: transparent;
 }
 
 .logo:hover::before {
   opacity: 1;
-  animation: rotate-border 3s linear infinite;
-}
-
-@keyframes rotate-border {
-  to { transform: rotate(360deg); }
 }
 
 .logo img {
@@ -382,7 +377,7 @@
   border-radius: 16px;
   padding: 1.5rem;
   overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: transform var(--hover-ms) var(--ease-out), border-color var(--hover-ms) ease, box-shadow var(--hover-ms) ease;
   cursor: default;
 }
 
@@ -420,17 +415,16 @@
 }
 
 .stat-card:hover {
-  transform: translateY(-6px) scale(1.01);
-  border-color: currentColor;
+  transform: translateY(var(--lift));
+  border-color: color-mix(in srgb, currentColor 55%, transparent);
   box-shadow:
-    0 20px 40px -15px rgba(0, 0, 0, 0.5),
-    0 0 30px -10px currentColor;
+    0 12px 24px -16px rgba(0, 0, 0, 0.5),
+    var(--hover-glow) currentColor;
 }
 
+/* The corner bracket brightens on hover; it no longer grows */
 .stat-card:hover::after {
   opacity: 0.5;
-  width: 32px;
-  height: 32px;
 }
 
 /* Card color variants */
@@ -452,7 +446,7 @@
 
 /* Staggered entrance animation */
 .stat-card {
-  animation: card-rise 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  animation: card-rise 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
 }
 
 .stat-card:nth-child(1) { animation-delay: 0.1s; }
@@ -545,15 +539,12 @@
   padding: 2rem;
   overflow: hidden;
   animation: card-rise 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.5s both;
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: border-color var(--hover-ms) ease;
 }
 
+/* A chart is not a button: the border wakes up, the block stays put */
 .chart-section:hover {
-  transform: translateY(-4px);
-  border-color: var(--dragon-jade);
-  box-shadow:
-    0 20px 40px -15px rgba(0, 0, 0, 0.5),
-    0 0 30px -10px var(--dragon-jade);
+  border-color: var(--border-glow);
 }
 
 /* Torii gate gradient top border - like dragon ranks container */
@@ -1004,7 +995,7 @@
   border: 1px solid var(--border-subtle);
   border-radius: 14px;
   padding: 1.375rem;
-  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: transform var(--hover-ms) var(--ease-out), border-color var(--hover-ms) ease, box-shadow var(--hover-ms) ease;
   overflow: hidden;
 }
 
@@ -1128,7 +1119,7 @@
 .holder-fill {
   height: 100%;
   border-radius: 2px;
-  transition: width 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: width 0.8s var(--ease-out);
 }
 
 .card-footer {
@@ -1431,7 +1422,7 @@
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: transform var(--hover-ms) var(--ease-out), box-shadow var(--hover-ms) ease, background-color var(--hover-ms) ease, border-color var(--hover-ms) ease, color var(--hover-ms) ease;
 }
 
 .btn-primary {
@@ -1440,8 +1431,8 @@
 }
 
 .btn-primary:hover:not(:disabled) {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0, 212, 170, 0.3);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 212, 170, 0.18);
 }
 
 .btn:disabled {
@@ -1761,7 +1752,7 @@ footer a:hover {
   border: 1px solid var(--border-subtle);
   border-radius: 16px;
   padding: 1.5rem;
-  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: transform var(--hover-ms) var(--ease-out), border-color var(--hover-ms) ease, box-shadow var(--hover-ms) ease;
   overflow: hidden;
 }
 
@@ -1795,17 +1786,16 @@ footer a:hover {
 }
 
 .rank-card:hover {
-  transform: translateY(-6px) scale(1.02);
-  border-color: var(--rank-color);
+  transform: translateY(var(--lift));
+  border-color: color-mix(in srgb, var(--rank-color) 60%, transparent);
   box-shadow:
-    0 20px 40px -10px rgba(0, 0, 0, 0.5),
-    0 0 30px -5px var(--rank-color);
+    0 12px 24px -16px rgba(0, 0, 0, 0.5),
+    var(--hover-glow) var(--rank-color);
 }
 
+/* The corner bracket brightens on hover; it keeps its size */
 .rank-card:hover .rank-corner {
-  opacity: 0.7;
-  width: 28px;
-  height: 28px;
+  opacity: 0.6;
 }
 
 /* Rank Header */
@@ -1915,7 +1905,7 @@ footer a:hover {
 .rank-fill {
   height: 100%;
   border-radius: 3px;
-  transition: width 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: width 0.8s var(--ease-out);
   box-shadow: 0 0 10px currentColor;
 }
 
@@ -2118,6 +2108,12 @@ footer a:hover {
 .lookup-panel {
   align-self: start;
 }
+/* The form and its answer are not buttons: border only, no lift */
+.lookup-panel:hover,
+.lookup-card:hover {
+  transform: none;
+  box-shadow: none;
+}
 .lookup-title {
   font-family: var(--font-display);
   font-size: 1.125rem;
@@ -2228,5 +2224,41 @@ footer a:hover {
   }
   .chart-verdict {
     gap: 0.6rem 1.1rem;
+  }
+}
+@media (max-width: 480px) {
+  /* Verdict row: the pill on its own line, the three figures in one row beneath it */
+  .chart-verdict {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: center;
+    column-gap: 1rem;
+    row-gap: 0.7rem;
+  }
+  .chart-verdict .status-indicator {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+  .verdict-fig {
+    white-space: nowrap;
+  }
+}
+
+/* Motion preference: nothing moves on hover, entrances settle at once */
+@media (prefers-reduced-motion: reduce) {
+  .logo:hover,
+  .nav-link:hover,
+  .stat-card:hover,
+  .rank-card:hover,
+  .btn-primary:hover:not(:disabled),
+  .btn-ghost:hover {
+    transform: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

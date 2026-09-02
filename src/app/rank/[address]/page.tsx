@@ -4,7 +4,9 @@ import { loadHolders } from '@/lib/holders';
 import { normalizeAddress, rankLookup, type RankResult } from '@/lib/ranks';
 import RankCard from '@/components/RankCard';
 import CopyLinkButton from '@/components/CopyLinkButton';
+import ShareIntents from '@/components/ShareIntents';
 import { fmtInt, fmtPct, fmtTinc, fmtUtcClock } from '@/lib/format';
+import { SITE } from '@/lib/share';
 
 /**
  * /rank/<address>: a permalink for one wallet's Dragon Rank. The page is the card plus a way
@@ -12,8 +14,6 @@ import { fmtInt, fmtPct, fmtTinc, fmtUtcClock } from '@/lib/format';
  * gets pasted into Telegram and X. Re-rendered at most every 5 minutes, like the home page.
  */
 export const revalidate = 300;
-
-const SITE = 'https://www.tincburn.fyi';
 
 async function resolve(param: string): Promise<{ addr: string | null; r: RankResult | null }> {
   const addr = normalizeAddress(param);
@@ -81,6 +81,7 @@ export default async function RankPage({ params }: { params: { address: string }
             <RankCard r={r} />
             <div className="lookup-share">
               <CopyLinkButton url={url} />
+              <ShareIntents r={r} />
               <Link href="/#find-your-rank" className="btn btn-ghost">
                 Look up another wallet
               </Link>

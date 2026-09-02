@@ -32,6 +32,12 @@
   --border-subtle: rgba(0, 212, 170, 0.12);
   --border-glow: rgba(0, 212, 170, 0.3);
 
+  /* Motion: hover states ease out and lift 2px; the spring is reserved for entrances */
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --hover-ms: 250ms;
+  --lift: -2px;
+  --hover-glow: 0 0 18px -8px;
+
   /* Typography */
   --font-display: 'Dela Gothic One', sans-serif;
   --font-body: 'Zen Maru Gothic', sans-serif;

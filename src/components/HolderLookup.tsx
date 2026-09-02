@@ -3,8 +3,10 @@
 import React, { useState } from 'react';
 import RankCard from './RankCard';
 import CopyLinkButton from './CopyLinkButton';
+import ShareIntents from './ShareIntents';
 import { normalizeAddress, rankLookup, type HoldersFile, type RankResult } from '@/lib/ranks';
 import { fmtUtcClock } from '@/lib/format';
+import { rankUrl } from '@/lib/share';
 
 type LookupState =
   | { kind: 'idle' }
@@ -12,8 +14,6 @@ type LookupState =
   | { kind: 'error'; msg: string }
   | { kind: 'missing'; file: HoldersFile }
   | { kind: 'found'; result: RankResult };
-
-const SITE = 'https://www.tincburn.fyi';
 
 /**
  * 位 Find your rank. Lives inside the Dragon Ranks container, between the six tier cards and
@@ -82,7 +82,8 @@ export default function HolderLookup() {
         <div className="lookup-result">
           <RankCard r={found} />
           <div className="lookup-share">
-            <CopyLinkButton url={`${SITE}/rank/${found.address}`} />
+            <CopyLinkButton url={rankUrl(found.address)} />
+            <ShareIntents r={found} />
             <a className="btn btn-ghost" href={`/rank/${found.address}`}>
               Open card
             </a>
