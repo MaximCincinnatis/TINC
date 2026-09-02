@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 /**
- * Header and footer for the secondary pages (/methodology, /burns): the rank page's chrome, with
+ * Header and footer for the secondary pages (/methodology): the rank page's chrome, with
  * the eyebrow naming the page and one way back. Server components; no state.
  */
 export function SiteHeader({ eyebrow }: { eyebrow: string }) {
