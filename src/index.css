@@ -2,8 +2,85 @@
    TINC Burn Tracker - Where Fire Meets Fortune
    ============================================= */
 
-/* Typography: Distinctive Japanese-Western fusion */
-@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Zen+Maru+Gothic:wght@400;500;700;900&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap');
+/* Typography: Distinctive Japanese-Western fusion.
+   2026-09-02: the three faces are self-hosted subsets in public/fonts (built by
+   scripts/subset-fonts.sh from the google/fonts sources) instead of the Google Fonts @import.
+   That import was a 143 KB render-blocking stylesheet (Zen Maru Gothic ships ~120
+   unicode-range slices per weight) at the end of a CSS -> @import -> font chain, and it cost
+   phones about four seconds before first paint. The subsets carry Latin, punctuation and
+   every kanji the site renders; glyphs the faces never had (ū ō in Zen Maru Gothic) fall
+   back exactly as before. Re-run the script when a new kanji is added. */
+@font-face {
+  font-family: 'Dela Gothic One';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/dela-gothic-one.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Zen Maru Gothic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/zen-maru-gothic-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Zen Maru Gothic';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/zen-maru-gothic-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Zen Maru Gothic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/zen-maru-gothic-700.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Zen Maru Gothic';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('/fonts/zen-maru-gothic-900.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/ibm-plex-mono-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/ibm-plex-mono-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/ibm-plex-mono-600.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/ibm-plex-mono-700.woff2') format('woff2');
+}
 
 :root {
   /* 龍 Dragon Jade Spectrum */

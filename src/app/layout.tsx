@@ -127,6 +127,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* 2026-09-02: the faces the first paint needs (display + body 400/500); the rest load on demand */}
+        <link rel="preload" href="/fonts/dela-gothic-one.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="/fonts/zen-maru-gothic-400.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="/fonts/zen-maru-gothic-500.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
