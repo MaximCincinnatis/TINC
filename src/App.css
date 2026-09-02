@@ -2275,3 +2275,93 @@ footer a:hover {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   2026-09-02 pass three (Ben's vetoes on the ember-verdict mocks): the verdict pill in ember
+   gold, dragon breath behind the whole chart block, bars that warm toward the line, the lookup
+   at rest with an example answer, and a 2 × 2 stat grid on phones. Tokens only, no new colours.
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* Inflationary is the ordinary state, not an alarm: the pill speaks ember gold like the bars */
+.status-indicator.inflationary {
+  background: rgba(245, 166, 35, 0.08);
+  border-color: rgba(245, 166, 35, 0.28);
+  color: var(--ember-gold);
+}
+
+/* 龍炎 Dragon breath behind the chart block (Ben chose the full-block version). The plot's own
+   dark ground dims it under the bars; the header carries it at ghost strength. */
+.chart-art {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right top;
+  opacity: 0.16;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 0;
+}
+.chart-section > *:not(.chart-art) {
+  position: relative;
+  z-index: 1;
+}
+
+/* Legend swatch for the bar ramp: ember → gold below the line, jade above */
+.legend-ramp {
+  width: 44px;
+  height: 8px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--ember-orange) 0%, var(--ember-gold) 55%, var(--dragon-jade) 100%);
+}
+.chart-legend {
+  flex-wrap: wrap;
+  row-gap: 0.5rem;
+}
+
+/* Lookup at rest: the panel keeps its width, a faded example shows what an answer looks like */
+.lookup-row.at-rest {
+  grid-template-columns: 1.2fr 1fr;
+}
+.lookup-example {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.lookup-example .lookup-sub {
+  margin-bottom: 0.5rem;
+}
+@media (max-width: 768px) {
+  .lookup-row.at-rest {
+    grid-template-columns: 1fr;
+  }
+  .lookup-example {
+    display: none;
+  }
+}
+
+/* Phones: the four stat cards as a 2 × 2 grid, so the verdict sits within the first screens */
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+  .stat-card {
+    padding: 1rem;
+  }
+  .stat-header {
+    margin-bottom: 0.6rem;
+  }
+  .stat-icon {
+    display: none;
+  }
+  .stat-value {
+    font-size: 1.5rem;
+  }
+  .stat-description {
+    display: none;
+  }
+  .chart-art {
+    opacity: 0.12;
+  }
+}

@@ -32,7 +32,22 @@ interface Props {
   burnData: BurnData;
 }
 
+const THRESHOLD = 86400; // 1 TINC/second = 86,400 TINC/day
+const lerp = (a: number, b: number, t: number) => Math.round(a + (b - a) * t);
 
+/**
+ * Bars warm toward the line: a small burn is a dim ember (--ember-orange), a day just short of
+ * the emission is full ember gold, a day above it is dragon jade, brightening toward
+ * --dragon-jade-bright as it doubles the emission. Hover shows the same hue at full strength.
+ */
+function barColor(value: number, hover = false): string {
+  if (value >= THRESHOLD) {
+    const e = Math.min((value - THRESHOLD) / THRESHOLD, 1);
+    return `rgba(0, ${lerp(212, 255, e)}, ${lerp(170, 204, e)}, ${hover ? 1 : 0.85 + e * 0.1})`;
+  }
+  const t = Math.max(0, Math.min(value / THRESHOLD, 1));
+  return `rgba(${lerp(255, 245, t)}, ${lerp(109, 166, t)}, ${lerp(58, 35, t)}, ${hover ? 1 : 0.5 + t * 0.45})`;
+}
 
 const BurnChart: React.FC<Props> = ({ burnData }) => {
   const labels = burnData.dailyBurns.map(d => {
@@ -42,7 +57,7 @@ const BurnChart: React.FC<Props> = ({ burnData }) => {
     return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
   });
 
-  const deflationaryThreshold = 86400; // Fixed 1 TINC/second = 86,400 TINC/day
+  const deflationaryThreshold = THRESHOLD;
 
   const data = {
     labels,
@@ -50,28 +65,12 @@ const BurnChart: React.FC<Props> = ({ burnData }) => {
       {
         label: 'TINC Burned',
         data: burnData.dailyBurns.map(d => d.amountTinc),
-        backgroundColor: (context: any) => {
-          const value = context.parsed?.y || 0;
-          const isDeflationary = value >= deflationaryThreshold;
-          if (isDeflationary) {
-            // Dragon jade for deflationary
-            return 'rgba(0, 212, 170, 0.85)';
-          }
-          // Ember orange gradient for below threshold
-          const maxValue = Math.max(...burnData.dailyBurns.map(d => d.amountTinc));
-          const intensity = value / maxValue;
-          return `rgba(245, 166, 35, ${0.4 + intensity * 0.45})`;
-        },
+        backgroundColor: (context: any) => barColor(context.parsed?.y || 0),
         borderColor: 'transparent',
         borderWidth: 0,
         borderRadius: 6,
         borderSkipped: false,
-        hoverBackgroundColor: (context: any) => {
-          const value = context.parsed?.y || 0;
-          const isDeflationary = value >= deflationaryThreshold;
-          // Brighter on hover
-          return isDeflationary ? 'rgba(0, 255, 204, 0.95)' : 'rgba(255, 109, 58, 0.9)';
-        },
+        hoverBackgroundColor: (context: any) => barColor(context.parsed?.y || 0, true),
         type: 'bar' as const,
       },
     ],
@@ -155,6 +154,7 @@ const BurnChart: React.FC<Props> = ({ burnData }) => {
             } else {
               lines.push(`Shortfall: ${formatAmount(Math.abs(difference))}`);
             }
+            lines.push(`${Math.round((amount / deflationaryThreshold) * 100)}% of the day's emission`);
             
             return lines;
           },
@@ -247,6 +247,10 @@ const BurnChart: React.FC<Props> = ({ burnData }) => {
         <div className="legend-item">
           <div className="legend-line deflationary"></div>
           <span>Deflationary Threshold: 86,400 TINC/Day</span>
+        </div>
+        <div className="legend-item">
+          <div className="legend-ramp"></div>
+          <span>Bars warm from ember to gold as a day nears the line, jade above it</span>
         </div>
       </div>
     </div>

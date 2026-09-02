@@ -4,9 +4,24 @@ import React, { useState } from 'react';
 import RankCard from './RankCard';
 import CopyLinkButton from './CopyLinkButton';
 import ShareIntents from './ShareIntents';
-import { normalizeAddress, rankLookup, type HoldersFile, type RankResult } from '@/lib/ranks';
+import { normalizeAddress, rankLookup, RANK_TIERS, type HoldersFile, type RankResult } from '@/lib/ranks';
 import { fmtUtcClock } from '@/lib/format';
 import { rankUrl } from '@/lib/share';
+
+/** What an answer looks like, shown faded beside the empty form and labelled 例 Example. */
+const EXAMPLE: RankResult = {
+  address: '0x0000000000000000000000000000000000000000',
+  balance: 27803,
+  pct: 0.0993,
+  rank: 50,
+  count: 957,
+  totalSupply: 28000000,
+  updatedAt: '',
+  tier: RANK_TIERS.find((t) => t.key === 'samurai') ?? null,
+  next: RANK_TIERS.find((t) => t.key === 'daimyo') ?? null,
+  shortfall: 153,
+  progress: 0.98,
+};
 
 type LookupState =
   | { kind: 'idle' }
@@ -52,7 +67,7 @@ export default function HolderLookup() {
   if (found && snapshot) note = `Snapshot ${fmtUtcClock(snapshot)} · excludes LP positions · public on-chain balances`;
 
   return (
-    <div className={`lookup-row${found ? ' has-result' : ''}`} id="find-your-rank">
+    <div className={`lookup-row${found ? ' has-result' : ' at-rest'}`} id="find-your-rank">
       <div className="rank-card lookup-panel" style={{ '--rank-color': '#00D4AA' } as React.CSSProperties}>
         <div className="rank-corner"></div>
         <div className="lookup-title">
@@ -78,7 +93,7 @@ export default function HolderLookup() {
         <p className={`lookup-note${state.kind === 'error' ? ' is-error' : ''}`}>{note}</p>
       </div>
 
-      {found && (
+      {found ? (
         <div className="lookup-result">
           <RankCard r={found} />
           <div className="lookup-share">
@@ -87,6 +102,18 @@ export default function HolderLookup() {
             <a className="btn btn-ghost" href={`/rank/${found.address}`}>
               Open card
             </a>
+          </div>
+        </div>
+      ) : (
+        <div className="lookup-result lookup-example" aria-hidden="true">
+          <div className="lookup-sub">
+            <span className="kanji-small">例</span> Example answer
+          </div>
+          <RankCard r={EXAMPLE} />
+          <div className="lookup-share">
+            <span className="btn btn-ghost">Copy share link</span>
+            <span className="btn btn-ghost">Share to Telegram</span>
+            <span className="btn btn-ghost">Post to X</span>
           </div>
         </div>
       )}

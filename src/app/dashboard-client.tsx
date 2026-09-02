@@ -237,6 +237,9 @@ export default function DashboardClient({ initialData }: Props) {
           <>
             <StatsCards burnData={burnData} />
             <div className="chart-section">
+              {/* 龍炎 dragon breath behind the block; the plot's dark ground dims it under the bars */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img className="chart-art" src="/chart/dragon-breath.webp" alt="" decoding="sync" />
               <ChartHeader burnData={burnData} />
               <BurnChart burnData={burnData} />
             </div>
