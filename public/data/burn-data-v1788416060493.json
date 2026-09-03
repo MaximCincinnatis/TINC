@@ -1,19 +1,13 @@
 {
-  "startDate": "2026-08-04",
-  "endDate": "2026-09-02",
-  "totalBurned": 907169.8534959763,
-  "totalSupply": 27999180.591900922,
-  "burnPercentage": 3.2399871507610665,
+  "startDate": "2026-08-05",
+  "endDate": "2026-09-03",
+  "totalBurned": 959122.2197992651,
+  "totalSupply": 27955996.799149245,
+  "burnPercentage": 3.4308281929280127,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": false,
   "dailyBurns": [
-    {
-      "date": "2026-08-04",
-      "amountTinc": 0,
-      "transactionCount": 0,
-      "transactions": []
-    },
     {
       "date": "2026-08-05",
       "amountTinc": 9558.87881742888,
@@ -463,33 +457,50 @@
     },
     {
       "date": "2026-09-02",
+      "amountTinc": 51952.36630328884,
+      "transactionCount": 2,
+      "transactions": [
+        {
+          "hash": "0xe6a16820d1e6f348f69dbb6c0912ca8a2d558dc2f9140e00f97499d9e734fe42",
+          "amount": 32003.56073133341,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0xe6a16820d1e6f348f69dbb6c0912ca8a2d558dc2f9140e00f97499d9e734fe42",
+          "amount": 19948.80557195543,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-03",
       "amountTinc": 0,
       "transactionCount": 0,
       "transactions": []
     }
   ],
-  "fetchedAt": "2026-09-02T02:29:00.969Z",
+  "fetchedAt": "2026-09-03T06:14:20.491Z",
   "fromCache": true,
-  "lastProcessedBlock": 25886620,
+  "lastProcessedBlock": 25894917,
   "holderStats": {
-    "totalHolders": 958,
+    "totalHolders": 957,
     "poseidon": 0,
     "whale": 9,
     "shark": 40,
-    "dolphin": 100,
-    "squid": 173,
-    "shrimp": 636,
-    "top10Percentage": 20.9092331733922,
+    "dolphin": 99,
+    "squid": 174,
+    "shrimp": 635,
+    "top10Percentage": 20.941531788907273,
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2026-09-01T21:33:08.188Z"
+    "lastUpdate": "2026-09-03T05:08:26.848Z"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2026-09-02T02:29:00.969Z",
+  "lastIncrementalUpdate": "2026-09-03T06:14:20.491Z",
   "periodDays": 30,
   "periodEmission": 2592000,
   "deflationaryDays": 4,
-  "netSupplyChange": 1684830.1465040236
+  "netSupplyChange": 1632877.7802007347
 }
