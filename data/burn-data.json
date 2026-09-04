@@ -505,9 +505,9 @@
       ]
     }
   ],
-  "fetchedAt": "2026-09-04T16:33:01.206Z",
+  "fetchedAt": "2026-09-04T18:46:20.491Z",
   "fromCache": true,
-  "lastProcessedBlock": 25905173,
+  "lastProcessedBlock": 25905834,
   "holderStats": {
     "totalHolders": 958,
     "poseidon": 0,
@@ -516,15 +516,15 @@
     "dolphin": 100,
     "squid": 173,
     "shrimp": 636,
-    "top10Percentage": 20.951703809201465,
+    "top10Percentage": 21.1425576242689,
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2026-09-04T12:06:20.663Z"
+    "lastUpdate": "2026-09-04T17:39:39.196Z"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2026-09-04T16:33:01.206Z",
+  "lastIncrementalUpdate": "2026-09-04T18:46:20.491Z",
   "periodDays": 30,
   "periodEmission": 2592000,
   "deflationaryDays": 4,
