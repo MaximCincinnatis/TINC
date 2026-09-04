@@ -505,9 +505,9 @@
       ]
     }
   ],
-  "fetchedAt": "2026-09-04T14:19:38.077Z",
+  "fetchedAt": "2026-09-04T16:33:01.206Z",
   "fromCache": true,
-  "lastProcessedBlock": 25904509,
+  "lastProcessedBlock": 25905173,
   "holderStats": {
     "totalHolders": 958,
     "poseidon": 0,
@@ -524,7 +524,7 @@
     "lastUpdate": "2026-09-04T12:06:20.663Z"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2026-09-04T14:19:38.077Z",
+  "lastIncrementalUpdate": "2026-09-04T16:33:01.206Z",
   "periodDays": 30,
   "periodEmission": 2592000,
   "deflationaryDays": 4,
