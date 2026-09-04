@@ -1,25 +1,13 @@
 {
-  "startDate": "2026-08-05",
-  "endDate": "2026-09-03",
-  "totalBurned": 1002881.3008380212,
+  "startDate": "2026-08-06",
+  "endDate": "2026-09-04",
+  "totalBurned": 993322.4220205924,
   "totalSupply": 27992185.41418118,
-  "burnPercentage": 3.582235382776508,
+  "burnPercentage": 3.5485704575154866,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": false,
   "dailyBurns": [
-    {
-      "date": "2026-08-05",
-      "amountTinc": 9558.87881742888,
-      "transactionCount": 1,
-      "transactions": [
-        {
-          "hash": "0x75475d51103cf8319a069b15c798c11279783a89fb0028602ff7234f7dfecf84",
-          "amount": 9558.87881742888,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        }
-      ]
-    },
     {
       "date": "2026-08-06",
       "amountTinc": 33737.82755005825,
@@ -493,11 +481,17 @@
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
+    },
+    {
+      "date": "2026-09-04",
+      "amountTinc": 0,
+      "transactionCount": 0,
+      "transactions": []
     }
   ],
-  "fetchedAt": "2026-09-03T22:48:31.439Z",
+  "fetchedAt": "2026-09-04T00:59:38.815Z",
   "fromCache": true,
-  "lastProcessedBlock": 25899870,
+  "lastProcessedBlock": 25900523,
   "holderStats": {
     "totalHolders": 958,
     "poseidon": 0,
@@ -514,9 +508,9 @@
     "lastUpdate": "2026-09-03T22:48:31.416Z"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2026-09-03T22:48:31.439Z",
+  "lastIncrementalUpdate": "2026-09-04T00:59:38.815Z",
   "periodDays": 30,
   "periodEmission": 2592000,
   "deflationaryDays": 4,
-  "netSupplyChange": 1589118.699161979
+  "netSupplyChange": 1598677.5779794077
 }
