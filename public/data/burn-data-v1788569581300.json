@@ -1,42 +1,13 @@
 {
-  "startDate": "2026-08-05",
-  "endDate": "2026-09-03",
-  "totalBurned": 999103.477653398,
-  "totalSupply": 27995963.2373658,
-  "burnPercentage": 3.5687412116612203,
+  "startDate": "2026-08-07",
+  "endDate": "2026-09-05",
+  "totalBurned": 1009345.8033771659,
+  "totalSupply": 27971854.33411821,
+  "burnPercentage": 3.608433646624682,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": false,
   "dailyBurns": [
-    {
-      "date": "2026-08-05",
-      "amountTinc": 9558.87881742888,
-      "transactionCount": 1,
-      "transactions": [
-        {
-          "hash": "0x75475d51103cf8319a069b15c798c11279783a89fb0028602ff7234f7dfecf84",
-          "amount": 9558.87881742888,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        }
-      ]
-    },
-    {
-      "date": "2026-08-06",
-      "amountTinc": 33737.82755005825,
-      "transactionCount": 2,
-      "transactions": [
-        {
-          "hash": "0x4aa56e0662819a5fecd073c2dc42d11c0130d28df026818f0bee933d13e1ecb0",
-          "amount": 15874.581305743093,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x13a6de374c8ce64977ccc6aefb4f10c274629ea33065b071a7c039daa5a8ce35",
-          "amount": 17863.24624431516,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        }
-      ]
-    },
     {
       "date": "2026-08-07",
       "amountTinc": 0,
@@ -474,8 +445,8 @@
     },
     {
       "date": "2026-09-03",
-      "amountTinc": 39981.25785413275,
-      "transactionCount": 2,
+      "amountTinc": 43759.08103875602,
+      "transactionCount": 3,
       "transactions": [
         {
           "hash": "0x67d0895b0c38fef90018711a11da185bbf348622ea2bbe64493774b16784b675",
@@ -486,32 +457,65 @@
           "hash": "0xdbf098a88b19051f4bf4acd05db299d2f3baf41ad841deb2d9a89fa8cf4a02a2",
           "amount": 20692.103240439057,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0xb82616f9dc2d3c8e7f6aca479544fd2428731c2aebb5d23828f0efcdfdcd3e6f",
+          "amount": 3777.823184623266,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
+    },
+    {
+      "date": "2026-09-04",
+      "amountTinc": 49761.20890663182,
+      "transactionCount": 3,
+      "transactions": [
+        {
+          "hash": "0x0fa459ad60d3c79cad18c235a87133cc8764a1cfe2122f2d35cfabea578a32d8",
+          "amount": 8978.590745410094,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0xf5b8d7ae0a72cfbd787d6a02a96736734eda534f45ce315f9815ea961e339523",
+          "amount": 20755.554552273887,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x99d17aaae9ad0c8f15ce0136217df969626b5a7690c78a84b7caac4349265f33",
+          "amount": 20027.063608947843,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-05",
+      "amountTinc": 0,
+      "transactionCount": 0,
+      "transactions": []
     }
   ],
-  "fetchedAt": "2026-09-03T20:37:28.443Z",
+  "fetchedAt": "2026-09-05T00:53:01.299Z",
   "fromCache": true,
-  "lastProcessedBlock": 25899217,
+  "lastProcessedBlock": 25907664,
   "holderStats": {
-    "totalHolders": 958,
+    "totalHolders": 957,
     "poseidon": 0,
     "whale": 9,
-    "shark": 40,
+    "shark": 39,
     "dolphin": 99,
     "squid": 174,
     "shrimp": 636,
-    "top10Percentage": 20.91163610611525,
+    "top10Percentage": 21.12031282821303,
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2026-09-03T20:37:28.419Z"
+    "lastUpdate": "2026-09-04T21:33:00.507Z"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2026-09-03T20:37:28.443Z",
+  "lastIncrementalUpdate": "2026-09-05T00:53:01.299Z",
   "periodDays": 30,
   "periodEmission": 2592000,
   "deflationaryDays": 4,
-  "netSupplyChange": 1592896.522346602
+  "netSupplyChange": 1582654.196622834
 }
