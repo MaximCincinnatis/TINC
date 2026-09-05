@@ -494,9 +494,9 @@
       "transactions": []
     }
   ],
-  "fetchedAt": "2026-09-05T14:06:20.983Z",
+  "fetchedAt": "2026-09-05T16:19:38.403Z",
   "fromCache": true,
-  "lastProcessedBlock": 25911616,
+  "lastProcessedBlock": 25912283,
   "holderStats": {
     "totalHolders": 957,
     "poseidon": 0,
@@ -510,10 +510,10 @@
     "excludesLPPositions": true,
     "realTimeData": true,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2026-09-05T12:59:48.615Z"
+    "lastUpdate": "2026-09-05T15:46:21.755Z"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2026-09-05T14:06:20.983Z",
+  "lastIncrementalUpdate": "2026-09-05T16:19:38.403Z",
   "periodDays": 30,
   "periodEmission": 2592000,
   "deflationaryDays": 4,
