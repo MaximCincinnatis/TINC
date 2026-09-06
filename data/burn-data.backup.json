@@ -1,9 +1,9 @@
 {
   "startDate": "2026-08-08",
   "endDate": "2026-09-06",
-  "totalBurned": 1034366.5147580551,
-  "totalSupply": 27983845.168374658,
-  "burnPercentage": 3.6968728792519503,
+  "totalBurned": 1038165.1536539831,
+  "totalSupply": 27980046.529478725,
+  "burnPercentage": 3.710376794978562,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": false,
@@ -489,8 +489,8 @@
     },
     {
       "date": "2026-09-06",
-      "amountTinc": 25020.711380889217,
-      "transactionCount": 2,
+      "amountTinc": 28819.35027681723,
+      "transactionCount": 3,
       "transactions": [
         {
           "hash": "0xb9ae0abd99628c3551fe4c7e0365b3bf866f00b77d140551e025f98beab82cba",
@@ -501,13 +501,18 @@
           "hash": "0xb9ae0abd99628c3551fe4c7e0365b3bf866f00b77d140551e025f98beab82cba",
           "amount": 14923.834241983212,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0xa28a5753fbe29a316e063251fc4e60fcf04940885dfee952fd89bc7f6611f1e6",
+          "amount": 3798.638895928013,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ]
     }
   ],
-  "fetchedAt": "2026-09-06T16:41:41.695Z",
+  "fetchedAt": "2026-09-06T18:52:36.991Z",
   "fromCache": true,
-  "lastProcessedBlock": 25919569,
+  "lastProcessedBlock": 25920222,
   "holderStats": {
     "totalHolders": 957,
     "poseidon": 0,
@@ -516,17 +521,17 @@
     "dolphin": 99,
     "squid": 174,
     "shrimp": 636,
-    "top10Percentage": 21.111262957866636,
+    "top10Percentage": 21.114129074065886,
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2026-09-06T16:41:41.680Z"
+    "lastUpdate": "2026-09-06T17:47:11.563Z"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2026-09-06T16:41:41.695Z",
+  "lastIncrementalUpdate": "2026-09-06T18:52:36.991Z",
   "periodDays": 30,
   "periodEmission": 2592000,
   "deflationaryDays": 4,
-  "netSupplyChange": 1557633.485241945
+  "netSupplyChange": 1553834.846346017
 }
