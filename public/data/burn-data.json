@@ -1,9 +1,9 @@
 {
   "startDate": "2026-08-08",
   "endDate": "2026-09-06",
-  "totalBurned": 1009345.8033771659,
-  "totalSupply": 27971854.33411821,
-  "burnPercentage": 3.608433646624682,
+  "totalBurned": 1034366.5147580551,
+  "totalSupply": 27979499.121088408,
+  "burnPercentage": 3.6978832450746872,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": false,
@@ -489,14 +489,25 @@
     },
     {
       "date": "2026-09-06",
-      "amountTinc": 0,
-      "transactionCount": 0,
-      "transactions": []
+      "amountTinc": 25020.711380889217,
+      "transactionCount": 2,
+      "transactions": [
+        {
+          "hash": "0xb9ae0abd99628c3551fe4c7e0365b3bf866f00b77d140551e025f98beab82cba",
+          "amount": 10096.877138906004,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0xb9ae0abd99628c3551fe4c7e0365b3bf866f00b77d140551e025f98beab82cba",
+          "amount": 14923.834241983212,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ]
     }
   ],
-  "fetchedAt": "2026-09-06T10:35:08.647Z",
+  "fetchedAt": "2026-09-06T12:48:30.199Z",
   "fromCache": true,
-  "lastProcessedBlock": 25917740,
+  "lastProcessedBlock": 25918404,
   "holderStats": {
     "totalHolders": 957,
     "poseidon": 0,
@@ -505,17 +516,17 @@
     "dolphin": 99,
     "squid": 174,
     "shrimp": 636,
-    "top10Percentage": 21.12031282821303,
+    "top10Percentage": 21.114542164070084,
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2026-09-05T17:58:11.024Z"
+    "lastUpdate": "2026-09-06T12:48:30.185Z"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2026-09-06T10:35:08.647Z",
+  "lastIncrementalUpdate": "2026-09-06T12:48:30.199Z",
   "periodDays": 30,
   "periodEmission": 2592000,
   "deflationaryDays": 4,
-  "netSupplyChange": 1582654.196622834
+  "netSupplyChange": 1557633.485241945
 }
