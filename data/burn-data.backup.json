@@ -3,7 +3,7 @@
   "endDate": "2026-09-07",
   "totalBurned": 985878.1579715906,
   "totalSupply": 27994125.429906577,
-  "burnPercentage": 3.5235043549084395,
+  "burnPercentage": 3.5217323021577984,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": false,
@@ -499,9 +499,9 @@
       "transactions": []
     }
   ],
-  "fetchedAt": "2026-09-07T16:59:22.957Z",
+  "fetchedAt": "2026-09-07T19:12:41.921Z",
   "fromCache": true,
-  "lastProcessedBlock": 25926824,
+  "lastProcessedBlock": 25927489,
   "holderStats": {
     "totalHolders": 957,
     "poseidon": 0,
@@ -518,7 +518,7 @@
     "lastUpdate": "2026-09-07T16:59:22.925Z"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2026-09-07T16:59:22.957Z",
+  "lastIncrementalUpdate": "2026-09-07T19:12:41.921Z",
   "periodDays": 30,
   "periodEmission": 2592000,
   "deflationaryDays": 4,
