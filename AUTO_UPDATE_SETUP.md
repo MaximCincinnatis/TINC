@@ -128,3 +128,21 @@ tail -f /home/wsl/projects/TINC/logs/auto-update.log
 2. **Git push fails**: Ensure you have push access and credentials configured
 3. **Data fetch fails**: Check API keys are valid and have remaining quota
 4. **Cron not running**: Check cron service is active: `service cron status`
+## Truth check, reorg depth, prune and log rotation (2026-09-09)
+
+The publish-health cron (`~/.local/bin/publish-health-check.sh`, every 30 min) proves the tracker is
+publishing. `scripts/truth-check.js` proves the numbers: once a day (cron 05:20 local, log in
+`~/.local/state/tinc-truth.log`, status in `tinc-truth.status`) it recounts the live snapshot's whole
+window from the node (burns and mints per UTC day, hash by hash), checks the arithmetic the page relies
+on (`totalBurned`, `burnPercentage`, `mintedInWindow`, `supplyChange`, `totalSupply` against the chain),
+the head lag of the live snapshot, the presence of the protocol facts the page reads, and the
+AccessManager's role holders (RoleGranted / RoleRevoked, code size, execution delay,
+`FarmKeeper.authority()`). Any problem goes through `~/.local/bin/dashboard-alert.sh` (Telegram ops
+chat + desktop popup), the same path the publish-health cron uses. Run it by hand with
+`node scripts/truth-check.js` (add `--json <file>` for a local snapshot, `--no-alert` to stay quiet).
+
+The incremental fetch stops two blocks short of the head and re-scans the last five processed blocks
+each cycle (`REORG_DEPTH`, `RESCAN_BLOCKS` in `fetch-burn-data.js`); merges are keyed by hash, so the
+re-scan adds nothing twice. `prune-burn-snapshots.js` keeps five versioned snapshots by default
+(`BURN_SNAPSHOT_KEEP` overrides). `/etc/logrotate.d/tinc-tracker` rotates the two service logs weekly
+or at 20 MB with copytruncate, eight rotations kept.

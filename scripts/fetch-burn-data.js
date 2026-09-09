@@ -626,7 +626,14 @@ async function runIncrementalUpdate() {
     
     // NEW: Get last processed block (reliable resume point)
     const lastProcessedBlock = manager.getLastProcessedBlock();
-    const currentBlock = await getBlockNumber();
+    // 2026-09-09: stop REORG_DEPTH blocks short of the head and re-scan the last RESCAN_BLOCKS processed
+    // blocks each cycle. Burns merge by hash and mints by hash:index, so a re-scan adds nothing twice; a
+    // block re-organised away before it is REORG_DEPTH deep is never recorded, and the daily truth check
+    // (scripts/truth-check.js) recounts the whole window from the node.
+    const REORG_DEPTH = 2;
+    const RESCAN_BLOCKS = 5;
+    const headBlock = await getBlockNumber();
+    const currentBlock = headBlock - REORG_DEPTH;
     
     // Safety check: don't process if no new blocks
     if (lastProcessedBlock >= currentBlock) {
@@ -634,13 +641,13 @@ async function runIncrementalUpdate() {
       return existingData;
     }
     
-    // CRITICAL: Re-scan last processed block to catch late transactions/reorgs
-    const startBlock = lastProcessedBlock > 0 ? lastProcessedBlock : currentBlock - 7200 * 30; // 30 days if no last block
+    // Re-scan the last few processed blocks to catch late transactions and shallow reorgs
+    const startBlock = lastProcessedBlock > 0 ? Math.max(1, lastProcessedBlock - (RESCAN_BLOCKS - 1)) : currentBlock - 7200 * 30; // 30 days if no last block
 
-    console.log(`📦 Block-based incremental update (RE-SCAN LAST BLOCK):`);
+    console.log(`📦 Block-based incremental update (head ${headBlock}, scanning to head - ${REORG_DEPTH}):`);
     console.log(`   Last processed: ${lastProcessedBlock}`);
     console.log(`   Current block: ${currentBlock}`);
-    console.log(`   Fetching: ${startBlock} to ${currentBlock} (re-scanning ${startBlock} for late txs)`);
+    console.log(`   Fetching: ${startBlock} to ${currentBlock} (re-scanning the last ${RESCAN_BLOCKS} processed blocks)`);
     
     console.log(`🔄 Fetching recent burns from block ${startBlock} to ${currentBlock}...`);
     

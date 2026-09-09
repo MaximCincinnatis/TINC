@@ -23,7 +23,7 @@
  *      stale manifest (manifest is fetched with cache:'default', so it can lag).
  *
  * Usage:  node scripts/prune-burn-snapshots.js [--dry-run] [--keep N]
- *         BURN_SNAPSHOT_KEEP=50 node scripts/prune-burn-snapshots.js
+ *         BURN_SNAPSHOT_KEEP=5 node scripts/prune-burn-snapshots.js   (5 is the default since 2026-09-09)
  */
 const fs = require('fs');
 const path = require('path');
@@ -35,7 +35,9 @@ const SNAPSHOT_RE = /^burn-data-v(\d+)\.json$/;
 function keepCount() {
   const i = process.argv.indexOf('--keep');
   if (i !== -1 && process.argv[i + 1]) return parseInt(process.argv[i + 1], 10);
-  return parseInt(process.env.BURN_SNAPSHOT_KEEP || '50', 10);
+  // 2026-09-09: 5 by default (about eleven hours of pushes). Both readers fall back to burn-data.json
+  // when a versioned file is gone, and 50 unread snapshots (8 files per push) were the bulk of every commit.
+  return parseInt(process.env.BURN_SNAPSHOT_KEEP || '5', 10);
 }
 
 function prune(dirRel, keep, dryRun) {
