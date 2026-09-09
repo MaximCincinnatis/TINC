@@ -1,25 +1,13 @@
 {
-  "startDate": "2026-08-10",
-  "endDate": "2026-09-08",
-  "totalBurned": 985878.1579715906,
-  "totalSupply": 27994125.429906577,
-  "burnPercentage": 3.5217323021577984,
+  "startDate": "2026-08-11",
+  "endDate": "2026-09-09",
+  "totalBurned": 984372.2784824496,
+  "totalSupply": 28052781.446401857,
+  "burnPercentage": 3.5090006328363863,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": false,
   "dailyBurns": [
-    {
-      "date": "2026-08-10",
-      "amountTinc": 1505.8794891411287,
-      "transactionCount": 1,
-      "transactions": [
-        {
-          "hash": "0xcc970eff9ff69374650fb0deca9919db21444b1b365859439c7805b29534fe7d",
-          "amount": 1505.8794891411287,
-          "from": "0x9fabf48ebe587ee4f8b3172012c3060cc40fea6c"
-        }
-      ]
-    },
     {
       "date": "2026-08-11",
       "amountTinc": 0,
@@ -497,30 +485,36 @@
       "amountTinc": 0,
       "transactionCount": 0,
       "transactions": []
+    },
+    {
+      "date": "2026-09-09",
+      "amountTinc": 0,
+      "transactionCount": 0,
+      "transactions": []
     }
   ],
-  "fetchedAt": "2026-09-08T23:59:42.468Z",
+  "fetchedAt": "2026-09-09T02:12:30.130Z",
   "fromCache": true,
-  "lastProcessedBlock": 25936087,
+  "lastProcessedBlock": 25936747,
   "holderStats": {
-    "totalHolders": 957,
+    "totalHolders": 956,
     "poseidon": 0,
     "whale": 9,
     "shark": 39,
     "dolphin": 99,
-    "squid": 174,
+    "squid": 173,
     "shrimp": 636,
-    "top10Percentage": 21.103510284720283,
-    "dataSource": "blockchain-full-scan",
+    "top10Percentage": 21.05938461220065,
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
-    "lastUpdate": "2026-09-08T20:17:56.473Z"
+    "dataSource": "blockchain-incremental",
+    "lastUpdate": "2026-09-09T00:32:30.555Z"
   },
   "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2026-09-08T23:59:42.468Z",
+  "lastIncrementalUpdate": "2026-09-09T02:12:30.130Z",
   "periodDays": 30,
   "periodEmission": 2592000,
   "deflationaryDays": 4,
-  "netSupplyChange": 1606121.8420284092
+  "netSupplyChange": 1607627.7215175503
 }
