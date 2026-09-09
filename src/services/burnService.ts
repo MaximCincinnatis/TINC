@@ -160,7 +160,8 @@ export async function fetchBurnData(forceRefresh = false): Promise<BurnData> {
   // Get current emission rate
   const emissionData = await getEmissionRate(TINC_ADDRESS);
   const dailyEmission = emissionData.emissionPerSecond * 86400; // 86400 seconds in a day
-  const isDeflationary = totalBurned > dailyEmission;
+  // like-for-like over the window, the same rule the updater applies (2026-09-01)
+  const isDeflationary = totalBurned > dailyEmission * dailyData.length;
 
   progressCallback?.('Finalizing data...', 98);
 

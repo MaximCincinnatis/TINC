@@ -17,15 +17,15 @@ export const FAQ: FaqEntry[] = [
   },
   {
     q: 'What is TINC?',
-    a: 'The Titan Farms Incentive Token, an ERC-20 on Ethereum (contract 0x6532…B385a). It is issued to liquidity providers at a fixed 1 TINC per second, 86,400 a day, with no admin keys to change the rate, and trades against TITANX on Uniswap.',
+    a: 'The Titan Farms Incentive Token, an ERC-20 on Ethereum (contract 0x6532…B385a). It accrues to liquidity providers at a fixed 1 TINC per second, 86,400 a day, a rate no key can change; TINC is minted when farmers harvest, and one admin key decides how the rate is split between farms. It trades against TITANX on Uniswap.',
   },
   {
     q: 'How does the TINC buy and burn work?',
-    a: 'Input tokens the farm receives (ETH, TITANX, DRAGONX, HYDRA, HYPER) are swapped for TINC and burned, or burned directly, in capped swaps at set intervals. Every burn is an on-chain transfer of TINC to the zero address, and this tracker counts each one.',
+    a: 'Trading fees from the farms’ input tokens go, after a protocol fee, to a buy-and-burn contract in capped swaps at set intervals: TINC fees are burned directly, some tokens are partly burned as themselves, the rest is swapped for TINC and burned. The list of active input tokens and the fee are on the methodology page, read from the contracts at every update. Every burn is an on-chain transfer of TINC to the zero address, and this tracker counts each one.',
   },
   {
     q: 'What is a deflationary day?',
-    a: 'A day in which more TINC was burned than the 86,400 TINC minted. The chart header counts how many of the last 30 days qualified, and the net figure shows whether supply grew or shrank over the window.',
+    a: 'A day in which more TINC was burned than the 86,400 TINC that accrued to farmers. The chart header counts how many of the last 30 days qualified and shows burned, accrued, minted and the change in supply over the window.',
   },
   {
     q: 'How are Dragon Ranks calculated?',
@@ -37,6 +37,6 @@ export const FAQ: FaqEntry[] = [
   },
   {
     q: 'Where does the data come from?',
-    a: 'Burn transfers read from an Ethereum node by the tracker’s own scanner, refreshed about every 30 minutes; the page regenerates within five minutes of a new snapshot. Holder balances come from the same node. Every figure links back to Etherscan.',
+    a: 'Burn and mint transfers read from an Ethereum node by the tracker’s own scanner, refreshed about every 30 minutes and published about every two hours; the page regenerates within five minutes of a publish. Holder balances come from the same node. Every figure links back to Etherscan.',
   },
 ];

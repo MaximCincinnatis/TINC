@@ -12,19 +12,57 @@
       "date": "2026-08-11",
       "amountTinc": 0,
       "transactionCount": 0,
-      "transactions": []
+      "transactions": [],
+      "mintEvents": [],
+      "mintedTinc": 0
     },
     {
       "date": "2026-08-12",
       "amountTinc": 0,
       "transactionCount": 0,
-      "transactions": []
+      "transactions": [],
+      "mintEvents": [
+        {
+          "hash": "0xce5bfc62077d546b8121a1d5d17095491b17f72f9f2b64e3048dc4cc993d959b",
+          "index": 774,
+          "amount": 99084.22199823306
+        }
+      ],
+      "mintedTinc": 99084.22199823306
     },
     {
       "date": "2026-08-13",
       "amountTinc": 0,
       "transactionCount": 0,
-      "transactions": []
+      "transactions": [],
+      "mintEvents": [
+        {
+          "hash": "0xbbd5a99195c2560e031a732f223b822de5158ee7cfad4d10be768fc55dc24a01",
+          "index": 930,
+          "amount": 4.665862210487551
+        },
+        {
+          "hash": "0xa32529d53c1a8c12fa66959d273c1a3cfcb416c5fa52cd52d68ddcd22b0abd49",
+          "index": 956,
+          "amount": 12.064327751627964
+        },
+        {
+          "hash": "0x467dad931c96615a730b698cee5db0a746fd25e2f688f603c2723279e6da9fda",
+          "index": 227,
+          "amount": 88259.29409812977
+        },
+        {
+          "hash": "0x9488a90926b61f335289fceca0a7eeb5c44edd003298b02922f0c52a488bd3c4",
+          "index": 67,
+          "amount": 2391.918996167475
+        },
+        {
+          "hash": "0x5a42b322f02489e3c4895c484e4d2e059ac46583c780aebd687d54413a5039fd",
+          "index": 577,
+          "amount": 45.31075473427548
+        }
+      ],
+      "mintedTinc": 90713.25403899363
     },
     {
       "date": "2026-08-14",
@@ -41,7 +79,20 @@
           "amount": 24131.450129658464,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
-      ]
+      ],
+      "mintEvents": [
+        {
+          "hash": "0x194acff7e7af84b62631aff76d90220c0d946bdf61aa37cdd9f0aae981c4d18e",
+          "index": 17,
+          "amount": 319489.8764029692
+        },
+        {
+          "hash": "0x194acff7e7af84b62631aff76d90220c0d946bdf61aa37cdd9f0aae981c4d18e",
+          "index": 23,
+          "amount": 107012.01760491087
+        }
+      ],
+      "mintedTinc": 426501.89400788007
     },
     {
       "date": "2026-08-15",
@@ -53,7 +104,20 @@
           "amount": 3409.0594165017887,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
-      ]
+      ],
+      "mintEvents": [
+        {
+          "hash": "0xe2aa796c6b6b902d4ac2bbe5dbc8c15a0bc2bf1473839bf100fb20fa4449d192",
+          "index": 139,
+          "amount": 1101.029025026889
+        },
+        {
+          "hash": "0xe2aa796c6b6b902d4ac2bbe5dbc8c15a0bc2bf1473839bf100fb20fa4449d192",
+          "index": 149,
+          "amount": 3018.846958742337
+        }
+      ],
+      "mintedTinc": 4119.875983769226
     },
     {
       "date": "2026-08-16",
@@ -70,13 +134,48 @@
           "amount": 3988.087614554173,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
-      ]
+      ],
+      "mintEvents": [
+        {
+          "hash": "0x8acc694154a2372532437d7894ec56145b51efd24adac0e781b10c7a8f11986f",
+          "index": 330,
+          "amount": 2591.6700554784115
+        },
+        {
+          "hash": "0x5b7e2083a5cfa05ad3c749c60e82accce102096dba74ee80c0c4d94a0d57b4e8",
+          "index": 420,
+          "amount": 5470.030085383511
+        },
+        {
+          "hash": "0x5b7e2083a5cfa05ad3c749c60e82accce102096dba74ee80c0c4d94a0d57b4e8",
+          "index": 430,
+          "amount": 214.98973166009156
+        },
+        {
+          "hash": "0x5b7e2083a5cfa05ad3c749c60e82accce102096dba74ee80c0c4d94a0d57b4e8",
+          "index": 440,
+          "amount": 7626.853057451498
+        },
+        {
+          "hash": "0x5b7e2083a5cfa05ad3c749c60e82accce102096dba74ee80c0c4d94a0d57b4e8",
+          "index": 450,
+          "amount": 987.3118124716649
+        },
+        {
+          "hash": "0xa772dbc459433f1cf5e28f4a9422e699a998df696f8fb9d055d6b64514bd176c",
+          "index": 632,
+          "amount": 0.19251068018460657
+        }
+      ],
+      "mintedTinc": 16891.04725312536
     },
     {
       "date": "2026-08-17",
       "amountTinc": 0,
       "transactionCount": 0,
-      "transactions": []
+      "transactions": [],
+      "mintEvents": [],
+      "mintedTinc": 0
     },
     {
       "date": "2026-08-18",
@@ -93,13 +192,28 @@
           "amount": 32352.660536926025,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
-      ]
+      ],
+      "mintEvents": [
+        {
+          "hash": "0x2d9cb4e1fb2ee3d526a8d19c7dbaa03768790176a73fa1719977a2c2414d39c5",
+          "index": 383,
+          "amount": 16617.955204323727
+        },
+        {
+          "hash": "0x2d9cb4e1fb2ee3d526a8d19c7dbaa03768790176a73fa1719977a2c2414d39c5",
+          "index": 393,
+          "amount": 12933.227972971119
+        }
+      ],
+      "mintedTinc": 29551.183177294846
     },
     {
       "date": "2026-08-19",
       "amountTinc": 0,
       "transactionCount": 0,
-      "transactions": []
+      "transactions": [],
+      "mintEvents": [],
+      "mintedTinc": 0
     },
     {
       "date": "2026-08-20",
@@ -111,7 +225,15 @@
           "amount": 6180.783784456878,
           "from": "0x9fabf48ebe587ee4f8b3172012c3060cc40fea6c"
         }
-      ]
+      ],
+      "mintEvents": [
+        {
+          "hash": "0x187f1d81b5023a1865fc083d661a7c203e69eed57d6ae16581a84022ce3e2135",
+          "index": 24,
+          "amount": 77004.70679233555
+        }
+      ],
+      "mintedTinc": 77004.70679233555
     },
     {
       "date": "2026-08-21",
@@ -143,7 +265,60 @@
           "amount": 19368.91024639415,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
-      ]
+      ],
+      "mintEvents": [
+        {
+          "hash": "0x74bafe9ce2e03448ad6d5b310cdc10d41f3ddf1a20949fbc5cbb9a5282ec9736",
+          "index": 378,
+          "amount": 6679.335020865548
+        },
+        {
+          "hash": "0xda8af27bff3f62dd7341b8f0be8a674b997424a7c8ba8999f0b48bc6dd193914",
+          "index": 61,
+          "amount": 756.0588916862081
+        },
+        {
+          "hash": "0x30fcbe026e361df338c88950adf94ef185876a479fe14c62a48706c473e25636",
+          "index": 357,
+          "amount": 285.699019688743
+        },
+        {
+          "hash": "0x6cae135a7c83cb77dd37eef4f7ccae93d3f6a38e15883dab68d5a5ed071e372f",
+          "index": 263,
+          "amount": 2704.788282529418
+        },
+        {
+          "hash": "0xea5c0809d57ac5eef386fe5e812d337d8a123625abad5e8b82285eea3d256114",
+          "index": 457,
+          "amount": 18431.919238679573
+        },
+        {
+          "hash": "0xf5a8e7393cc6b403757227983faba2314bf151d6832fb4c7bbd5e4a3ef4d56b5",
+          "index": 135,
+          "amount": 21646.45026125323
+        },
+        {
+          "hash": "0xf5a8e7393cc6b403757227983faba2314bf151d6832fb4c7bbd5e4a3ef4d56b5",
+          "index": 145,
+          "amount": 746.4229695397667
+        },
+        {
+          "hash": "0xed95cc0cd0a3af9f7ac7f88a71834b7a4d59d71d50a250b13cd8eab5e92fe901",
+          "index": 420,
+          "amount": 3062.4298513657454
+        },
+        {
+          "hash": "0x39c985ef2514712603552a582d0882b6eda018602900367f4c27567d54503dd1",
+          "index": 180,
+          "amount": 8445.61318398786
+        },
+        {
+          "hash": "0x967b8448b9d1dea02756b3a02672c55d2376986ba49b6f22ed4457ae178dc5d6",
+          "index": 143,
+          "amount": 14.050955136476466
+        }
+      ],
+      "mintedTinc": 62772.76767473257
     },
     {
       "date": "2026-08-22",
@@ -185,7 +360,80 @@
           "amount": 8807.70671921016,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
-      ]
+      ],
+      "mintEvents": [
+        {
+          "hash": "0xf1e3ec22bcf2dffa5cef046d52f0e357cd6aae0b8eeeec4ff52cb424f8ef88b3",
+          "index": 190,
+          "amount": 581.139659744033
+        },
+        {
+          "hash": "0xf18f3b4d60de128aa14704112e6de22604939832ea387996d65c1b8e608f1a06",
+          "index": 536,
+          "amount": 4.812389218374903
+        },
+        {
+          "hash": "0xd5e452047691d0a099bf1ce73943d35aea1e16ad52c71b0ffd43df18017cca98",
+          "index": 184,
+          "amount": 79442.3763554688
+        },
+        {
+          "hash": "0x7201da3df445ca36814943952dd64b001f93b330df29a663ed36f2c20cfac6b6",
+          "index": 442,
+          "amount": 98866.21951862432
+        },
+        {
+          "hash": "0x7201da3df445ca36814943952dd64b001f93b330df29a663ed36f2c20cfac6b6",
+          "index": 452,
+          "amount": 29624.13254474095
+        },
+        {
+          "hash": "0x2bcce7e79c2ebfe0c42cc378111d7c5f79a8df1f48b96f106f733de32c8f8ea9",
+          "index": 412,
+          "amount": 85.92367889493653
+        },
+        {
+          "hash": "0x4c26cbf0e94930b8cfcd22120a0b5211672e7eb1a381a1759e4d249bf5ccb044",
+          "index": 405,
+          "amount": 718.4604711733579
+        },
+        {
+          "hash": "0x4c26cbf0e94930b8cfcd22120a0b5211672e7eb1a381a1759e4d249bf5ccb044",
+          "index": 415,
+          "amount": 4269.1261574158925
+        },
+        {
+          "hash": "0x4c26cbf0e94930b8cfcd22120a0b5211672e7eb1a381a1759e4d249bf5ccb044",
+          "index": 425,
+          "amount": 2833.6933805996628
+        },
+        {
+          "hash": "0x9a280a910e14d061a79c57709587966e0bf93e535ddc62c0a9ba1a59387bebaf",
+          "index": 382,
+          "amount": 0.1053804763620387
+        },
+        {
+          "hash": "0xbfae67c7b7208cdea55fec5831b601374d1510d86192da2cb6c78a9514270830",
+          "index": 423,
+          "amount": 27354.58406048215
+        },
+        {
+          "hash": "0xbd78805994e4ff341fc0ca026f5ce208a9dc04373823ada4605cbe24880529e2",
+          "index": 48,
+          "amount": 0.39779034912591227
+        },
+        {
+          "hash": "0x6a91958e2f36a564dceaa25890dafeb1fe95112880df72e47863947d2508fa7d",
+          "index": 584,
+          "amount": 963.8440648907546
+        },
+        {
+          "hash": "0x6a91958e2f36a564dceaa25890dafeb1fe95112880df72e47863947d2508fa7d",
+          "index": 594,
+          "amount": 3774.310343830964
+        }
+      ],
+      "mintedTinc": 248519.1257959097
     },
     {
       "date": "2026-08-23",
@@ -202,7 +450,9 @@
           "amount": 2118.3357504250425,
           "from": "0x9fabf48ebe587ee4f8b3172012c3060cc40fea6c"
         }
-      ]
+      ],
+      "mintEvents": [],
+      "mintedTinc": 0
     },
     {
       "date": "2026-08-24",
@@ -229,7 +479,25 @@
           "amount": 10820.442825239636,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
-      ]
+      ],
+      "mintEvents": [
+        {
+          "hash": "0xde51cc31f6ee8dae640ca2b0c2136baef0932240ceadbc75c7d8470b5e73e871",
+          "index": 992,
+          "amount": 5502.839496200407
+        },
+        {
+          "hash": "0x1577800ffa863d14c51082542d1d0da5f5d626afffcff18cec6599a9c4d35335",
+          "index": 81,
+          "amount": 6749.843771969027
+        },
+        {
+          "hash": "0xa4b75346f0fa083ee077dde51aa07890c574669d4b8f7ec6d5645dc1e9d52d79",
+          "index": 1246,
+          "amount": 1589.4312064693447
+        }
+      ],
+      "mintedTinc": 13842.114474638778
     },
     {
       "date": "2026-08-25",
@@ -246,7 +514,40 @@
           "amount": 19640.54775365009,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
-      ]
+      ],
+      "mintEvents": [
+        {
+          "hash": "0xa8e5346e698cdaf49ab0e94913c7baac0b7ca87a747aab4f2f19e65458dea95d",
+          "index": 640,
+          "amount": 1106.7054624293937
+        },
+        {
+          "hash": "0xa8e5346e698cdaf49ab0e94913c7baac0b7ca87a747aab4f2f19e65458dea95d",
+          "index": 650,
+          "amount": 7254.245707747141
+        },
+        {
+          "hash": "0xa8e5346e698cdaf49ab0e94913c7baac0b7ca87a747aab4f2f19e65458dea95d",
+          "index": 658,
+          "amount": 2933.0849021042955
+        },
+        {
+          "hash": "0xa813210e44d7c57db5fb75c1c0cbf5b7446077bac97c484f594f0490a0b9db96",
+          "index": 518,
+          "amount": 714.2905941522334
+        },
+        {
+          "hash": "0xa813210e44d7c57db5fb75c1c0cbf5b7446077bac97c484f594f0490a0b9db96",
+          "index": 528,
+          "amount": 208.85978735578774
+        },
+        {
+          "hash": "0x5378abfb3edad70b58e167f67d7f08a2ce906e434628cfb86d7ac23dd3c149e1",
+          "index": 362,
+          "amount": 272.46011114763513
+        }
+      ],
+      "mintedTinc": 12489.646564936487
     },
     {
       "date": "2026-08-26",
@@ -268,7 +569,70 @@
           "amount": 3939.097138541688,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
-      ]
+      ],
+      "mintEvents": [
+        {
+          "hash": "0x63b76f119b863bd31cba2550691892b537ec6def2bae10edd689254b5788f1db",
+          "index": 370,
+          "amount": 49763.861590818015
+        },
+        {
+          "hash": "0x63b76f119b863bd31cba2550691892b537ec6def2bae10edd689254b5788f1db",
+          "index": 380,
+          "amount": 4285.6627283391845
+        },
+        {
+          "hash": "0x63b76f119b863bd31cba2550691892b537ec6def2bae10edd689254b5788f1db",
+          "index": 390,
+          "amount": 289.64233125237
+        },
+        {
+          "hash": "0x63b76f119b863bd31cba2550691892b537ec6def2bae10edd689254b5788f1db",
+          "index": 400,
+          "amount": 328.02989976347243
+        },
+        {
+          "hash": "0xff93324ec5d2ca792770f2df13558d8ce9f55194c1eef08da819fe3a5441b154",
+          "index": 262,
+          "amount": 1341.4531270903317
+        },
+        {
+          "hash": "0xc79c43a11d357e71fe7dd899c5fd2c25022e98afd696e35d52cb403878638872",
+          "index": 189,
+          "amount": 16437.002306583316
+        },
+        {
+          "hash": "0xc79c43a11d357e71fe7dd899c5fd2c25022e98afd696e35d52cb403878638872",
+          "index": 199,
+          "amount": 34092.21109349876
+        },
+        {
+          "hash": "0xb2c46b74b1b47d4eeb726c3a9127c741b089833fb9814e11dd0937de93ae2c03",
+          "index": 270,
+          "amount": 1.767370544496179
+        },
+        {
+          "hash": "0x03b35a0a1fbcb1914032eb0cab357e4bdd1e94ed11af18c7bb4b35c513bea1c2",
+          "index": 383,
+          "amount": 527.5018762975895
+        },
+        {
+          "hash": "0x03b35a0a1fbcb1914032eb0cab357e4bdd1e94ed11af18c7bb4b35c513bea1c2",
+          "index": 393,
+          "amount": 2019.4062924971286
+        },
+        {
+          "hash": "0x9c3d6ff106f04c3c766684ae6c0aa06084c27b030f16f443b9a672b1e43a459d",
+          "index": 1439,
+          "amount": 7133.967581585135
+        },
+        {
+          "hash": "0xb7a27d2a9b384b345fed022ea7ffbe899101deef0b7c1c0745aed3c4f5b4ffb1",
+          "index": 674,
+          "amount": 0.24478863504978082
+        }
+      ],
+      "mintedTinc": 116220.75098690485
     },
     {
       "date": "2026-08-27",
@@ -310,13 +674,54 @@
           "amount": 17673.088711727527,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
-      ]
+      ],
+      "mintEvents": [
+        {
+          "hash": "0x34a74fe547966eb353c9d1c48c851037e191618dce7405a4db38211c6b28d299",
+          "index": 1011,
+          "amount": 46539.57852397934
+        },
+        {
+          "hash": "0xf2305e29df372d548543be40ed18c190be0f1d256af24d3edd17469bea519bd7",
+          "index": 310,
+          "amount": 968.0924453121038
+        },
+        {
+          "hash": "0x7d589a86d0b60ec460317afdfa7e6a15ff233b0ad39c92c3cb2b6ae2df2966bc",
+          "index": 190,
+          "amount": 2208.1535841690693
+        },
+        {
+          "hash": "0x7d589a86d0b60ec460317afdfa7e6a15ff233b0ad39c92c3cb2b6ae2df2966bc",
+          "index": 200,
+          "amount": 22429.42113488265
+        },
+        {
+          "hash": "0x44e622ce0904d6d8ef329c64d02b945a82cdb9751ef2aa579f3deb0ffbbfcc06",
+          "index": 35,
+          "amount": 0.13817582763300917
+        },
+        {
+          "hash": "0x893efd307e400cace3bdd657c3bab40cb38a5520565cac3b87827232e978c9d9",
+          "index": 43,
+          "amount": 0.01655003759939539
+        }
+      ],
+      "mintedTinc": 72145.4004142084
     },
     {
       "date": "2026-08-28",
       "amountTinc": 0,
       "transactionCount": 0,
-      "transactions": []
+      "transactions": [],
+      "mintEvents": [
+        {
+          "hash": "0x256732cdd9ece463b843c92904c978119693dd4fc295ebb729605f4651f9e944",
+          "index": 318,
+          "amount": 1667.2168890042344
+        }
+      ],
+      "mintedTinc": 1667.2168890042344
     },
     {
       "date": "2026-08-29",
@@ -343,7 +748,50 @@
           "amount": 20336.998196432432,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
-      ]
+      ],
+      "mintEvents": [
+        {
+          "hash": "0x0d3f2c49e9cb250436ebe532a8b0a60968597bb67d73d043b8ab0c7781c3d0ec",
+          "index": 150,
+          "amount": 354.1716397810766
+        },
+        {
+          "hash": "0x0d3f2c49e9cb250436ebe532a8b0a60968597bb67d73d043b8ab0c7781c3d0ec",
+          "index": 160,
+          "amount": 1918.8428848194192
+        },
+        {
+          "hash": "0x0d3f2c49e9cb250436ebe532a8b0a60968597bb67d73d043b8ab0c7781c3d0ec",
+          "index": 170,
+          "amount": 1273.5765494179584
+        },
+        {
+          "hash": "0x0d3f2c49e9cb250436ebe532a8b0a60968597bb67d73d043b8ab0c7781c3d0ec",
+          "index": 180,
+          "amount": 1092.7414000319768
+        },
+        {
+          "hash": "0x5c51f2a859def104e5a862cc4c54f1ad64d7f0d25752452255cab8075471d48c",
+          "index": 250,
+          "amount": 0.10007459227253365
+        },
+        {
+          "hash": "0xaaf229e8932ec966f989edd9abb350fac6258c579ba5e20e20ded822fbd3c60f",
+          "index": 227,
+          "amount": 4078.635148766105
+        },
+        {
+          "hash": "0x45c9a890ce749edf20329bead15b78de40d874dedb4883f692d4a268c68157fd",
+          "index": 63,
+          "amount": 93270.48371951676
+        },
+        {
+          "hash": "0x45c9a890ce749edf20329bead15b78de40d874dedb4883f692d4a268c68157fd",
+          "index": 71,
+          "amount": 27517.694994163016
+        }
+      ],
+      "mintedTinc": 129506.24641108859
     },
     {
       "date": "2026-08-30",
@@ -365,13 +813,68 @@
           "amount": 4393.838944730066,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
-      ]
+      ],
+      "mintEvents": [
+        {
+          "hash": "0xb2ac29de8c141304e99121871d9764f55136657a548b1ba83260fd6ab129dfc7",
+          "index": 459,
+          "amount": 86.21578953856991
+        },
+        {
+          "hash": "0xb2ac29de8c141304e99121871d9764f55136657a548b1ba83260fd6ab129dfc7",
+          "index": 469,
+          "amount": 8357.605952871658
+        },
+        {
+          "hash": "0xb2ac29de8c141304e99121871d9764f55136657a548b1ba83260fd6ab129dfc7",
+          "index": 479,
+          "amount": 1579.0056728020534
+        },
+        {
+          "hash": "0x1150d8cc978d8cca4cffc22111feb117eb130e47a7407df4f6eea1670c0d6c11",
+          "index": 508,
+          "amount": 1106.1007565547773
+        },
+        {
+          "hash": "0x1150d8cc978d8cca4cffc22111feb117eb130e47a7407df4f6eea1670c0d6c11",
+          "index": 518,
+          "amount": 6255.800736503937
+        },
+        {
+          "hash": "0x1150d8cc978d8cca4cffc22111feb117eb130e47a7407df4f6eea1670c0d6c11",
+          "index": 528,
+          "amount": 6388.215509749159
+        },
+        {
+          "hash": "0x3256b4cdd1e3a0afbd0d45cc4cec233e3b3f2433ea56693119d5188a1098ebdd",
+          "index": 646,
+          "amount": 0.16483480465408853
+        },
+        {
+          "hash": "0x241a22412341e7f20783e957a7f0c842e09abb9af5be3ce105b395a44121dcae",
+          "index": 358,
+          "amount": 17344.53998648589
+        },
+        {
+          "hash": "0xd8d52119a72698d28c4011b351fd20d4dd74bf1cb529825beb2e8025d7d850c7",
+          "index": 527,
+          "amount": 559.0375154911014
+        },
+        {
+          "hash": "0xd8d52119a72698d28c4011b351fd20d4dd74bf1cb529825beb2e8025d7d850c7",
+          "index": 537,
+          "amount": 2036.8055275999088
+        }
+      ],
+      "mintedTinc": 43713.492282401705
     },
     {
       "date": "2026-08-31",
       "amountTinc": 0,
       "transactionCount": 0,
-      "transactions": []
+      "transactions": [],
+      "mintEvents": [],
+      "mintedTinc": 0
     },
     {
       "date": "2026-09-01",
@@ -383,7 +886,20 @@
           "amount": 510.59384779409413,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
-      ]
+      ],
+      "mintEvents": [
+        {
+          "hash": "0xab7995c99732fd026521789263c00814e27da4fb12dbd48b0e2165b6683cdfcf",
+          "index": 72,
+          "amount": 10558.82760705344
+        },
+        {
+          "hash": "0xab7995c99732fd026521789263c00814e27da4fb12dbd48b0e2165b6683cdfcf",
+          "index": 82,
+          "amount": 13404.190989788056
+        }
+      ],
+      "mintedTinc": 23963.018596841495
     },
     {
       "date": "2026-09-02",
@@ -400,7 +916,30 @@
           "amount": 19948.80557195543,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
-      ]
+      ],
+      "mintEvents": [
+        {
+          "hash": "0x51eb178c11c20700f33bf4730cb669dff5fab12a07ed2a6114ee605dc49f07f0",
+          "index": 451,
+          "amount": 1825.428353930137
+        },
+        {
+          "hash": "0x51eb178c11c20700f33bf4730cb669dff5fab12a07ed2a6114ee605dc49f07f0",
+          "index": 461,
+          "amount": 3353.6624021898006
+        },
+        {
+          "hash": "0x51eb178c11c20700f33bf4730cb669dff5fab12a07ed2a6114ee605dc49f07f0",
+          "index": 469,
+          "amount": 3589.3972673779067
+        },
+        {
+          "hash": "0x203b32920cb381323e0745390e0be12c10e1f8c698312c020eeb56c306aafd08",
+          "index": 1005,
+          "amount": 0.0855281144807026
+        }
+      ],
+      "mintedTinc": 8768.573551612326
     },
     {
       "date": "2026-09-03",
@@ -422,7 +961,35 @@
           "amount": 3777.823184623266,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
-      ]
+      ],
+      "mintEvents": [
+        {
+          "hash": "0xfeee5760b98ba4eae9c6f235420411ffed88291fec4b98a42c6e7fe49993b114",
+          "index": 423,
+          "amount": 61749.2954213001
+        },
+        {
+          "hash": "0xfeee5760b98ba4eae9c6f235420411ffed88291fec4b98a42c6e7fe49993b114",
+          "index": 431,
+          "amount": 17978.51519660719
+        },
+        {
+          "hash": "0xb5da3f46c7b4df628fba0ee943052f282102d41dfbc590708a70c9a2a3c4b6cf",
+          "index": 163,
+          "amount": 37.17313713396584
+        },
+        {
+          "hash": "0x9bc69f6775da994cce86b1f2f594bb6e78a75f7bbacf2bf33982b785087d1bfd",
+          "index": 201,
+          "amount": 169.72710418240013
+        },
+        {
+          "hash": "0xb7103b1e4f8789a6feede1f7c5d22dda8b689acc4067a8eca4dcf1815f9e32b9",
+          "index": 275,
+          "amount": 12.985211464211188
+        }
+      ],
+      "mintedTinc": 79947.69607068787
     },
     {
       "date": "2026-09-04",
@@ -444,13 +1011,23 @@
           "amount": 20027.063608947843,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
-      ]
+      ],
+      "mintEvents": [
+        {
+          "hash": "0xf33702bf804ce01a47bd68ecc69024fe696e3831b61a49f0d0271ac583174bd0",
+          "index": 602,
+          "amount": 29430.128843665352
+        }
+      ],
+      "mintedTinc": 29430.128843665352
     },
     {
       "date": "2026-09-05",
       "amountTinc": 0,
       "transactionCount": 0,
-      "transactions": []
+      "transactions": [],
+      "mintEvents": [],
+      "mintedTinc": 0
     },
     {
       "date": "2026-09-06",
@@ -472,30 +1049,71 @@
           "amount": 3798.638895928013,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
-      ]
+      ],
+      "mintEvents": [
+        {
+          "hash": "0x75b87f2a2feb340222aa6dcfed5f73344c5d01c4ec67568069a0e37ede6a31c8",
+          "index": 289,
+          "amount": 32665.443391360666
+        },
+        {
+          "hash": "0xfc345e97e2582f9ef87e26a508e08644982433d388def1c0df670c964094f9bc",
+          "index": 309,
+          "amount": 0.05495972542091195
+        },
+        {
+          "hash": "0xf900029413f17c43ef68c808bdc1284c53b0cf2409c57c12837319a5b1aa87dc",
+          "index": 269,
+          "amount": 924.9791008891482
+        },
+        {
+          "hash": "0xf900029413f17c43ef68c808bdc1284c53b0cf2409c57c12837319a5b1aa87dc",
+          "index": 279,
+          "amount": 3421.068185356875
+        }
+      ],
+      "mintedTinc": 37011.545637332114
     },
     {
       "date": "2026-09-07",
       "amountTinc": 0,
       "transactionCount": 0,
-      "transactions": []
+      "transactions": [],
+      "mintEvents": [
+        {
+          "hash": "0xd19f7ac0bfe8d4edbe4905f9c620002d3481bef4d7beea1068aab121f495ab88",
+          "index": 157,
+          "amount": 14078.90042784899
+        }
+      ],
+      "mintedTinc": 14078.90042784899
     },
     {
       "date": "2026-09-08",
       "amountTinc": 0,
       "transactionCount": 0,
-      "transactions": []
+      "transactions": [],
+      "mintEvents": [],
+      "mintedTinc": 0
     },
     {
       "date": "2026-09-09",
       "amountTinc": 0,
       "transactionCount": 0,
-      "transactions": []
+      "transactions": [],
+      "mintEvents": [
+        {
+          "hash": "0x3b84f6f3965b2b57861d15935e0524ad584b17a5d067ce56853954ee80b878bc",
+          "index": 1175,
+          "amount": 58656.016495278425
+        }
+      ],
+      "mintedTinc": 58656.016495278425
     }
   ],
-  "fetchedAt": "2026-09-09T16:05:53.247Z",
+  "fetchedAt": "2026-09-09T17:12:52.436Z",
   "fromCache": true,
-  "lastProcessedBlock": 25940897,
+  "lastProcessedBlock": 25941228,
   "holderStats": {
     "totalHolders": 956,
     "poseidon": 0,
@@ -511,10 +1129,30 @@
     "dataSource": "blockchain-incremental",
     "lastUpdate": "2026-09-09T00:32:30.555Z"
   },
-  "mergeNote": "First 3 days from old data, remaining 26 days verified from local node",
-  "lastIncrementalUpdate": "2026-09-09T16:05:53.247Z",
+  "lastIncrementalUpdate": "2026-09-09T17:12:52.436Z",
   "periodDays": 30,
   "periodEmission": 2592000,
   "deflationaryDays": 4,
-  "netSupplyChange": 1607627.7215175503
+  "netSupplyChange": 1607627.7215175503,
+  "mintedInWindow": 1696598.824368724,
+  "supplyChange": 712226.5458862743,
+  "poolShare": 0.6283581949787889,
+  "activeInputTokens": [
+    "DRAGONX",
+    "TITANX",
+    "ETH",
+    "VOLT",
+    "TINC"
+  ],
+  "pausedInputTokens": [
+    "HYDRA",
+    "HYPER",
+    "X28",
+    "USDC",
+    "USDx",
+    "ORX",
+    "AU"
+  ],
+  "protocolFeeMaxPercent": 25,
+  "protocolFactsAt": "2026-09-09T17:12:52.647Z"
 }

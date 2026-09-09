@@ -10,6 +10,10 @@ interface Props {
 const StatsCards: React.FC<Props> = ({ burnData }) => {
   const totalTransactions = burnData.dailyBurns.reduce((sum, day) => sum + day.transactionCount, 0);
   const thirtyDayBurns = burnData.dailyBurns.reduce((sum, day) => sum + day.amountTinc, 0);
+  // 2026-09-09: the count is burn events (one transfer to the zero address each); a buy-and-burn
+  // call can emit two, so the distinct transaction count stands beside it.
+  const distinctTransactions = new Set(burnData.dailyBurns.flatMap((day) => day.transactions.map((t) => t.hash))).size;
+  const poolShare = typeof burnData.poolShare === 'number' ? Math.round(burnData.poolShare * 100) : null;
 
   const formatNumber = (num: number) => {
     if (num >= 1000000) {
@@ -30,7 +34,7 @@ const StatsCards: React.FC<Props> = ({ burnData }) => {
     <div className="stats-grid">
       <div className="stat-card supply">
         <div className="stat-header">
-          <span className="stat-label">Circulating Supply</span>
+          <span className="stat-label">Total Supply</span>
           <div className="stat-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" opacity="0.3">
               <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none" opacity="0.5"/>
@@ -41,12 +45,14 @@ const StatsCards: React.FC<Props> = ({ burnData }) => {
         <div className="stat-value">
           {formatNumber(burnData.totalSupply)}<span className="stat-suffix">{formatSuffix(burnData.totalSupply)}</span>
         </div>
-        <div className="stat-description">Current TINC tokens in circulation</div>
+        <div className="stat-description">
+          {poolShare !== null ? `Minted minus burned · ${poolShare}% sits in the two farm pools` : 'Minted minus burned'}
+        </div>
       </div>
 
       <div className="stat-card transactions">
         <div className="stat-header">
-          <span className="stat-label">Burn Transactions</span>
+          <span className="stat-label">Burn Events</span>
           <div className="stat-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" opacity="0.3">
               <rect x="3" y="3" width="7" height="7" rx="1" opacity="0.5"/>
@@ -59,7 +65,9 @@ const StatsCards: React.FC<Props> = ({ burnData }) => {
         <div className="stat-value">
           {formatNumber(totalTransactions)}<span className="stat-suffix">{formatSuffix(totalTransactions)}</span>
         </div>
-        <div className="stat-description">Burn transactions in the last 30 days</div>
+        <div className="stat-description">
+          {`Transfers to the zero address in 30 days · ${distinctTransactions} transaction${distinctTransactions === 1 ? '' : 's'}`}
+        </div>
       </div>
       
       <div className="stat-card thirty-day">
@@ -95,7 +103,7 @@ const StatsCards: React.FC<Props> = ({ burnData }) => {
           <span className="stat-suffix">K/DAY</span>
         </div>
         <div className="stat-description">
-          {burnData.emissionPerSecond.toFixed(1)} TINC per second · burns above this make a deflationary day
+          {burnData.emissionPerSecond === 1 ? '1' : burnData.emissionPerSecond.toFixed(1)} TINC per second accrues to farmers · a day is deflationary when burns beat it
         </div>
       </div>
     </div>

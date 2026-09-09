@@ -74,7 +74,10 @@ function ChartHeader({ burnData }: { burnData: BurnData }) {
   const days = burnData.periodDays ?? burnData.dailyBurns.length;
   const dailyEmission = burnData.emissionPerSecond * 86400;
   const hasVerdict = typeof burnData.periodEmission === 'number' && typeof burnData.netSupplyChange === 'number';
-  const net = burnData.netSupplyChange ?? 0;
+  // 2026-09-09: minted and the supply change are chain readings (transfers from and to the zero
+  // address); the accrual stays as the schedule. Snapshots without the fields keep the old row.
+  const hasChain = typeof burnData.mintedInWindow === 'number' && typeof burnData.supplyChange === 'number';
+  const net = hasChain ? (burnData.supplyChange as number) : (burnData.netSupplyChange ?? 0);
   return (
     <div className="chart-header">
       <h2 className="chart-title">Daily TINC Burns</h2>
@@ -84,21 +87,27 @@ function ChartHeader({ burnData }: { burnData: BurnData }) {
           : 'Last 30 days burn activity'}
       </p>
       {hasVerdict && (
-        // The net figure carries the verdict (gold up = inflationary, jade down = deflationary);
+        // The supply figure carries the verdict (gold up = supply grew, jade down = it shrank);
         // the pill that used to say the same word was redundant (Ben, 2026-09-02).
         <div className="chart-verdict">
           <span className="verdict-fig">
             <b>{fmtCompact(burnData.totalBurned)}</b>burned
           </span>
           <span className="verdict-fig">
-            <b>{fmtCompact(burnData.periodEmission as number)}</b>emitted
+            <b>{fmtCompact(burnData.periodEmission as number)}</b>
+            {hasChain ? 'accrued' : 'emitted'}
           </span>
+          {hasChain && (
+            <span className="verdict-fig">
+              <b>{fmtCompact(burnData.mintedInWindow as number)}</b>minted
+            </span>
+          )}
           <span className={`verdict-fig net ${net <= 0 ? 'down' : 'up'}`}>
             <b>
               {net >= 0 ? '+' : '−'}
               {fmtCompact(Math.abs(net))}
             </b>
-            {`${days}-day net supply`}
+            {hasChain ? `${days}-day supply` : `${days}-day net supply`}
           </span>
         </div>
       )}
@@ -316,8 +325,8 @@ export default function DashboardClient({ initialData, example = null }: Props) 
         </p>
         {/* 2026-09-02 (D-10): the one-line explainer, out of the way of the numbers */}
         <p style={{ marginBottom: '0.75rem', fontSize: '0.8125rem', color: 'rgba(250, 248, 240, 0.5)', maxWidth: '62ch', marginLeft: 'auto', marginRight: 'auto' }}>
-          Every burn removes TINC from circulation for good. Supply shrinks only on days when burns beat the{' '}
-          {burnData ? Math.round(burnData.emissionPerSecond * 86400).toLocaleString('en-US') : '86,400'} TINC daily emission.
+          Every burn removes TINC from circulation for good. A day is deflationary when burns beat the{' '}
+          {burnData ? Math.round(burnData.emissionPerSecond * 86400).toLocaleString('en-US') : '86,400'} TINC that accrue to farmers that day.
         </p>
         <p style={{ fontSize: '0.75rem', color: 'rgba(250, 248, 240, 0.35)' }}>
           龍炎 RYŪ-EN • Built for TINC Community

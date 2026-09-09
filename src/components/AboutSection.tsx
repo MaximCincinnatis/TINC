@@ -11,12 +11,23 @@ import type { BurnData } from '@/types/BurnData';
  */
 export default function AboutSection({ burnData }: { burnData: BurnData }) {
   const days = burnData.periodDays ?? burnData.dailyBurns.length;
-  const emitted =
+  const accrued =
     typeof burnData.periodEmission === 'number' ? burnData.periodEmission : burnData.emissionPerSecond * 86400 * days;
   const deflationary = typeof burnData.deflationaryDays === 'number' ? burnData.deflationaryDays : null;
+  // 2026-09-09: chain readings beside the schedule (older snapshots lack them and fall back)
+  const minted = typeof burnData.mintedInWindow === 'number' ? burnData.mintedInWindow : null;
+  const supplyChange = typeof burnData.supplyChange === 'number' ? burnData.supplyChange : null;
   const clock = fmtUtcClock(burnData.fetchedAt);
   const date = fmtUtcDate(burnData.fetchedAt);
   const perDay = fmtInt(burnData.emissionPerSecond * 86400);
+  // the active input-token list and the protocol fee are read from the contracts at every update
+  const inputs = burnData.activeInputTokens && burnData.activeInputTokens.length > 0 ? burnData.activeInputTokens : null;
+  const inputList = inputs
+    ? inputs.length > 1
+      ? `${inputs.slice(0, -1).join(', ')} and ${inputs[inputs.length - 1]}`
+      : inputs[0]
+    : null;
+  const fee = typeof burnData.protocolFeeMaxPercent === 'number' ? burnData.protocolFeeMaxPercent : null;
 
   return (
     <section className="about-section" id="about" aria-labelledby="about-title">
@@ -31,20 +42,34 @@ export default function AboutSection({ burnData }: { burnData: BurnData }) {
         <div className="about-text">
           <p>
             TINC is the Titan Farms Incentive Token, an ERC-20 on Ethereum. Titan Farms is a yield-farming
-            protocol in the TitanX ecosystem: wallets that provide full-range liquidity on its Uniswap V3 pools
-            earn TINC at a fixed 1 TINC per second, {perDay} a day, with no admin keys to change the rate. Input
-            tokens the farm takes in (ETH, TITANX, DRAGONX, HYDRA and HYPER) feed a buy-and-burn that buys TINC
-            on the market and destroys it.
+            protocol in the TitanX ecosystem: wallets that deposit into its Uniswap V3 farms accrue TINC from a
+            fixed 1 TINC per second, {perDay} a day. No key can raise that rate or mint outside it; one admin key
+            decides how each second is split between the farms, and TINC is minted only when farmers harvest.
+            Trading fees from the farms&rsquo; input tokens{inputList ? ` (today ${inputList})` : ''} go, after{' '}
+            {fee !== null ? `a ${fee}% protocol fee` : 'the protocol fee'}, to a buy-and-burn that burns TINC directly
+            or buys it on the market and burns it.
           </p>
           <p>
-            This tracker reads every burn from the chain (each one is a transfer to the zero address), compares
-            each day&rsquo;s burns with the day&rsquo;s emission, and calls a day deflationary only when burns win.
+            This tracker reads every burn from the chain (each one is a transfer to the zero address) and every
+            mint the same way (a transfer from it), compares each day&rsquo;s burns with the day&rsquo;s emission,
+            and calls a day deflationary only when burns win.
           </p>
           {clock && date && (
             <p className="about-live">
               <span className="kanji-small">今</span>
               As of {clock} on {date}: <b>{fmtInt(burnData.totalBurned)} TINC</b> burned in the last {days} days
-              against <b>{fmtInt(emitted)} TINC</b> emitted
+              against <b>{fmtInt(accrued)} TINC</b> accrued
+              {minted !== null && supplyChange !== null ? (
+                <>
+                  {' '}
+                  and <b>{fmtInt(minted)} TINC</b> minted; supply{' '}
+                  <b>
+                    {supplyChange >= 0 ? '+' : '−'}
+                    {fmtInt(Math.abs(supplyChange))}
+                  </b>{' '}
+                  to {fmtInt(burnData.totalSupply)}
+                </>
+              ) : null}
               {deflationary !== null ? (
                 <>
                   ; <b>{deflationary} of {days} days</b> deflationary

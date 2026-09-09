@@ -7,6 +7,9 @@ export interface DailyBurn {
     amount: number;
     from: string;
   }[];
+  // 2026-09-09: mints (transfers from the zero address); zero on days without a harvest
+  mintedTinc?: number;
+  mintEvents?: { hash: string; index: number; amount: number }[];
 }
 
 export interface HolderStats {
@@ -35,6 +38,14 @@ export interface BurnData {
   periodEmission?: number;
   deflationaryDays?: number;
   netSupplyChange?: number;
+  // 2026-09-09: chain readings beside the schedule; minted - burned = the change in totalSupply
+  mintedInWindow?: number;
+  supplyChange?: number;
+  poolShare?: number | null;
+  activeInputTokens?: string[];
+  pausedInputTokens?: string[];
+  protocolFeeMaxPercent?: number | null;
+  protocolFactsAt?: string | null;
   dailyBurns: DailyBurn[];
   fetchedAt: string;
   fromCache?: boolean;

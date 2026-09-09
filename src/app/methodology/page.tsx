@@ -1,12 +1,14 @@
 import type { Metadata } from 'next';
 import { SiteHeader, SiteFooter } from '@/components/PageChrome';
 import { SITE } from '@/lib/share';
+import { loadBurnData } from '@/lib/loadBurnData';
 
 /**
  * /methodology: how the numbers on the home page are made, in the tracker's own words. The
  * honest home for every caveat (UTC days, the rolling window, LP exclusions, gap recovery).
  * Facts follow scripts/fetch-burn-data.js, src/services/burnService.ts and scripts/excluded-addresses.js.
- * Static: nothing here changes with the data. 2026-09-02 SEO pass.
+ * Mostly static; the input-token list, the protocol fee and the pool share are read from the latest
+ * snapshot at render time so they cannot go stale again (2026-09-09). 2026-09-02 SEO pass.
  */
 export const metadata: Metadata = {
   title: 'How TINCBurn.fyi measures TINC burns · Methodology',
@@ -25,7 +27,15 @@ const TINC = '0x6532B3F1e4DBff542fbD6befE5Ed7041c10B385a';
 const LP1 = '0x72e0de1cc2c952326738dac05bacb9e9c25422e3';
 const LP2 = '0xf89980f60e55633d05e72881ceb866dbb7f50580';
 
-export default function MethodologyPage() {
+// Regenerate with the data, like the home page
+export const revalidate = 300;
+
+export default async function MethodologyPage() {
+  const data = await loadBurnData();
+  const active = data?.activeInputTokens?.length ? data.activeInputTokens.join(', ') : null;
+  const paused = data?.pausedInputTokens?.length ? data.pausedInputTokens.join(', ') : null;
+  const poolShare = typeof data?.poolShare === 'number' ? Math.round(data.poolShare * 100) : null;
+  const fee = typeof data?.protocolFeeMaxPercent === 'number' ? data.protocolFeeMaxPercent : null;
   return (
     <div className="App">
       <SiteHeader eyebrow="龍炎 Methodology" />
@@ -54,20 +64,41 @@ export default function MethodologyPage() {
               <span className="kanji-small">供給</span> Emission and supply
             </h3>
             <p>
-              TINC is issued to Titan Farms liquidity providers at a fixed 1 TINC per second, 86,400 a day, and the
-              protocol has no admin keys to change that, so the tracker uses the constant rather than re-reading it.
-              Circulating supply is <code>totalSupply()</code> read from the contract at every update; burned TINC has
-              already left it.
+              TINC accrues to Titan Farms liquidity providers at 1 TINC per second, 86,400 a day. The rate is a constant
+              in the FarmKeeper contract with no setter, the contracts are not upgradeable, and the token&rsquo;s only
+              minter is the FarmKeeper, so nothing can raise it; the tracker uses the constant rather than re-reading it.
+              One admin key, an externally owned account with no timelock, decides how each second is split between the
+              farms and can add farms; it cannot change the rate. TINC is minted only when a farmer deposits, withdraws
+              or harvests, so minted TINC lags accrued TINC: on 9 September 2026, 11.7 million accrued TINC was still
+              unharvested. The tracker therefore reads mints the way it reads burns (transfers from the zero address)
+              and shows accrued, minted and the supply change side by side; the 30-day supply change is minted minus
+              burned, which equals the change in <code>totalSupply()</code> over the window.
+            </p>
+            <p>
+              Total supply is <code>totalSupply()</code> read from the contract at every update; burned TINC has already
+              left it{poolShare !== null ? `, and ${poolShare}% of it sits in the two farm pools` : ''}.
+            </p>
+
+            <h3>
+              <span className="kanji-small">投入</span> Input tokens and the buy-and-burn
+            </h3>
+            <p>
+              Trading fees the farms earn in their input tokens are not paid to farmers; after{' '}
+              {fee !== null ? `a ${fee}% protocol fee` : 'the protocol fee'} they go to the buy-and-burn contract, which
+              burns TINC directly or buys it on the market and burns it, in capped swaps at set intervals. The list is
+              read from the contract at every update: active today {active ?? 'unavailable'}
+              {paused ? `; collected but paused ${paused}` : ''}. Which tokens are input tokens, the caps, the intervals
+              and the protocol fee are all set by the same admin key.
             </p>
 
             <h3>
               <span className="kanji-small">判定</span> The deflationary verdict
             </h3>
             <p>
-              A day is deflationary when more than 86,400 TINC was burned in it. The 30-day figures compare the burns
-              inside the window with 30 × 86,400 TINC emitted over the same days, and the net figure is the difference:
-              supply grew when it is positive, shrank when it is negative. Days are UTC days, and the current day stays
-              partial until it ends, so its bar can only grow.
+              A day is deflationary when more than 86,400 TINC was burned in it. The 30-day row compares the burns
+              inside the window with 30 × 86,400 TINC accrued over the same days, shows the TINC actually minted, and
+              its supply figure is minted minus burned: supply grew when it is positive, shrank when it is negative.
+              Days are UTC days, and the current day stays partial until it ends, so its bar can only grow.
             </p>
 
             <h3>
@@ -110,6 +141,10 @@ export default function MethodologyPage() {
               </li>
               <li>Node outages leave gaps that are retried and backfilled; until then a day can read low.</li>
               <li>Holder counts exclude TINC held only through liquidity positions.</li>
+              <li>
+                Accrued but unharvested TINC is not in the supply until it is minted: the accrued figure is the
+                schedule, the minted figure is the chain.
+              </li>
               <li>Amounts are shown rounded; the JSON below carries full precision.</li>
               <li>The tracker is independent of Titan Farms and reads public chain data only.</li>
             </ul>

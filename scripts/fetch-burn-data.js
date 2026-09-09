@@ -118,6 +118,56 @@ async function fetchBurnsInRange(fromBlock, toBlock) {
 }
 
 /**
+ * 2026-09-09: mints are read the same way as burns (Transfer FROM the zero address), so the page
+ * can show accrued, minted and the supply change as chain readings instead of the schedule alone.
+ * TINC is minted only when a farmer harvests, so minted lags the 1 TINC/s accrual.
+ */
+async function fetchMints(fromBlock, toBlock) {
+  const logs = await callRPC('eth_getLogs', [{
+    fromBlock: `0x${fromBlock.toString(16)}`,
+    toBlock: `0x${toBlock.toString(16)}`,
+    address: TINC_ADDRESS,
+    topics: [
+      TRANSFER_TOPIC,
+      ZERO_ADDRESS_TOPIC // from address (0x0) = mint
+    ]
+  }]);
+
+  const mints = [];
+  for (const log of logs) {
+    const blockNumber = parseInt(log.blockNumber, 16);
+    mints.push({
+      hash: log.transactionHash,
+      index: parseInt(log.logIndex, 16), // one harvest transaction can mint more than once
+      amount: parseInt(log.data, 16) / Math.pow(10, 18),
+      to: '0x' + log.topics[2].substring(26),
+      timestamp: await getBlockTimestamp(blockNumber),
+      blockNumber
+    });
+  }
+  return mints;
+}
+
+async function fetchMintsInRange(fromBlock, toBlock) {
+  return rpcFetcher.fetchWithInfiniteRetry(
+    async () => fetchMints(fromBlock, toBlock),
+    `Mints ${fromBlock}-${toBlock}`
+  );
+}
+
+// First block whose timestamp is at or after `timestamp` (binary search on block headers).
+// Used once, to backfill mints for the window the first time the field is missing.
+async function findFirstBlockAtOrAfter(timestamp, headBlock) {
+  let lo = Math.max(1, headBlock - 400000);
+  let hi = headBlock;
+  while (lo < hi) {
+    const mid = Math.floor((lo + hi) / 2);
+    if ((await getBlockTimestamp(mid)) < timestamp) lo = mid + 1; else hi = mid;
+  }
+  return lo;
+}
+
+/**
  * BLOCK-BASED BURN DATA FETCHING
  * Core principle: Blocks are truth, dates are display
  * We track lastProcessedBlock to know exact resume point
@@ -614,31 +664,57 @@ async function runIncrementalUpdate() {
     }
 
     console.log(`✅ Found ${allBurns.length} total burn transactions`);
-    
-    // Process recent burns into daily format (reuse existing logic)
+
+    // 2026-09-09: mints over the same range. The first run after this change backfills the whole
+    // window (the stored days carry no mint fields yet); after that the burn range is enough.
+    const needsMintBackfill = !existingData.dailyBurns.some(d => Array.isArray(d.mintEvents));
+    let mintStart = startBlock;
+    let mintChunk = CHUNK_SIZE;
+    if (needsMintBackfill) {
+      const windowStartTs = Math.floor(Date.parse(existingData.dailyBurns[0].date + 'T00:00:00Z') / 1000);
+      mintStart = await findFirstBlockAtOrAfter(windowStartTs, currentBlock);
+      mintChunk = 5000; // few events, larger chunks are fine on our own node
+      console.log(`🪙 Mint backfill: window starts ${existingData.dailyBurns[0].date} at block ${mintStart}`);
+    }
+    const allMints = [];
+    for (let fromBlock = mintStart; fromBlock <= currentBlock; fromBlock += mintChunk) {
+      const toBlock = Math.min(fromBlock + mintChunk - 1, currentBlock);
+      allMints.push(...await fetchMintsInRange(fromBlock, toBlock));
+    }
+    console.log(`🪙 Found ${allMints.length} mint events (${allMints.reduce((s, m) => s + m.amount, 0).toFixed(3)} TINC)`);
+
+    // Process recent burns and mints into daily format (reuse existing logic)
     const burnsByDay = {};
-    allBurns.forEach(burn => {
-      const date = new Date(burn.timestamp * 1000);
-      const dateStr = date.toISOString().split('T')[0];
-      
+    const dayEntry = (timestamp) => {
+      const dateStr = new Date(timestamp * 1000).toISOString().split('T')[0];
       if (!burnsByDay[dateStr]) {
         burnsByDay[dateStr] = {
           date: dateStr,
           amountTinc: 0,
           transactionCount: 0,
-          transactions: []
+          transactions: [],
+          mintedTinc: 0,
+          mintEvents: []
         };
       }
-      
-      burnsByDay[dateStr].amountTinc += burn.amount;
-      burnsByDay[dateStr].transactionCount++;
-      burnsByDay[dateStr].transactions.push({
+      return burnsByDay[dateStr];
+    };
+    allBurns.forEach(burn => {
+      const day = dayEntry(burn.timestamp);
+      day.amountTinc += burn.amount;
+      day.transactionCount++;
+      day.transactions.push({
         hash: burn.hash,
         amount: burn.amount,
         from: burn.from
       });
     });
-    
+    allMints.forEach(mint => {
+      const day = dayEntry(mint.timestamp);
+      day.mintedTinc += mint.amount;
+      day.mintEvents.push({ hash: mint.hash, index: mint.index, amount: mint.amount });
+    });
+
     const recentDailyBurns = Object.values(burnsByDay).sort((a, b) => a.date.localeCompare(b.date));
     
     // Create recent burn data structure
@@ -670,49 +746,27 @@ async function runIncrementalUpdate() {
       mergedData.deflationaryDays = days.filter(d => (d.amountTinc || 0) > perDay).length;
       mergedData.netSupplyChange = mergedData.periodEmission - burned;
       mergedData.isDeflationary = burned > mergedData.periodEmission;
+      // 2026-09-09: what actually reached the supply. minted - burned equals the change in
+      // totalSupply over the window (both are the only ways supply moves), so it is checkable
+      // from Etherscan without an archive node.
+      mergedData.mintedInWindow = days.reduce((sum, d) => sum + (d.mintedTinc || 0), 0);
+      mergedData.supplyChange = mergedData.mintedInWindow - burned;
     }
-    
+    // A note from the November 2025 recovery ("first 3 days from old data") kept riding along
+    // in the public JSON long after every day was node-verified; it has no reader.
+    delete mergedData.mergeNote;
+
+    // Pool share, active input tokens, protocol fee: read from the contracts, kept on failure
+    const { fetchProtocolFacts } = require('./protocol-facts');
+    Object.assign(mergedData, await fetchProtocolFacts(callRPC, existingData, mergedData.totalSupply));
+
     // Validate integrity
     manager.validateMergedData(existingData, mergedData);
-    
+
     // Save merged data
     await saveIncrementalData(mergedData);
-    
-    // Validate the updated data
-    console.log('🔍 Validating updated burn data...');
-    const validationResult = await validateBurnData(mergedData);
-    
-    if (!validationResult.valid) {
-      console.error('⚠️ Validation detected discrepancies:');
-      console.error(`  Date: ${validationResult.date}`);
-      console.error(`  Expected: ${validationResult.expected?.toFixed(2)} TINC`);
-      console.error(`  Actual: ${validationResult.actual?.toFixed(2)} TINC`);
-      console.error(`  Difference: ${validationResult.difference?.toFixed(2)} TINC`);
-      
-      // Save validation failure for investigation
-      const validationLogPath = path.join(__dirname, '../data/validation-failures.json');
-      const failureLog = {
-        timestamp: new Date().toISOString(),
-        ...validationResult,
-        lastProcessedBlock: mergedData.lastProcessedBlock
-      };
-      
-      let failures = [];
-      if (fs.existsSync(validationLogPath)) {
-        try {
-          failures = JSON.parse(fs.readFileSync(validationLogPath, 'utf8'));
-        } catch (e) {
-          console.warn('Could not read validation failures log, starting fresh');
-        }
-      }
-      failures.push(failureLog);
-      fs.writeFileSync(validationLogPath, JSON.stringify(failures, null, 2));
-      
-      console.warn('⚠️ Data saved but validation failed - manual review recommended');
-    } else {
-      console.log('✅ Data validation passed!');
-    }
-    
+    // (The old "validate last day" step only ever looked at today and skipped it; removed 2026-09-09.)
+
     console.log('✅ Incremental update completed successfully!');
     console.log(`📊 Total TINC burned: ${mergedData.totalBurned.toLocaleString()}`);
     console.log(`👥 Total holders: ${mergedData.holderStats.totalHolders.toLocaleString()}`);
@@ -720,50 +774,6 @@ async function runIncrementalUpdate() {
   } catch (error) {
     console.error('❌ Incremental update failed:', error);
     throw error;
-  }
-}
-
-async function validateBurnData(data) {
-  // Sample validation: Check last day's burns against fresh fetch
-  const lastDay = data.dailyBurns[data.dailyBurns.length - 1];
-  if (!lastDay) return { valid: true }; // No data to validate
-  
-  try {
-    // Skip validation if the last day is today (might still be in progress)
-    const today = new Date().toISOString().split('T')[0];
-    if (lastDay.date === today) {
-      console.log('  Skipping validation for today (still in progress)');
-      return { valid: true };
-    }
-    
-    // For now, do a simple sanity check
-    // In production, this could fetch fresh data from blockchain
-    const validationChecks = {
-      hasTransactions: lastDay.transactionCount > 0,
-      hasAmount: lastDay.amountTinc > 0,
-      reasonableAmount: lastDay.amountTinc < 1000000, // Less than 1M TINC per day
-      hasHashes: lastDay.transactions && lastDay.transactions.length === lastDay.transactionCount
-    };
-    
-    const allChecks = Object.values(validationChecks).every(check => check);
-    
-    if (!allChecks) {
-      return {
-        valid: false,
-        date: lastDay.date,
-        actual: lastDay.amountTinc,
-        expected: null,
-        difference: null,
-        failedChecks: Object.entries(validationChecks)
-          .filter(([_, passed]) => !passed)
-          .map(([check, _]) => check)
-      };
-    }
-    
-    return { valid: true };
-  } catch (error) {
-    console.warn('⚠️ Validation skipped due to error:', error.message);
-    return { valid: true }; // Don't fail update due to validation error
   }
 }
 

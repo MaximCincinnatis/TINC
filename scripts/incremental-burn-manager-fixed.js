@@ -131,8 +131,26 @@ class IncrementalBurnManager {
           }
         });
 
-        if (addedCount > 0) {
-          console.log(`📝 Merged ${newDay.date}: Added ${addedCount} new txs (+${addedAmount.toFixed(3)} TINC)`);
+        // 2026-09-09: mints merged the same way, keyed by hash + log index because one harvest
+        // transaction can mint more than once. Days stored before the field existed start empty.
+        if (!Array.isArray(existingDay.mintEvents)) {
+          existingDay.mintEvents = [];
+          existingDay.mintedTinc = 0;
+        }
+        const existingMintKeys = new Set(existingDay.mintEvents.map(m => `${m.hash}:${m.index}`));
+        let addedMints = 0;
+        (newDay.mintEvents || []).forEach(mint => {
+          const key = `${mint.hash}:${mint.index}`;
+          if (!existingMintKeys.has(key)) {
+            existingDay.mintEvents.push(mint);
+            existingDay.mintedTinc += mint.amount;
+            existingMintKeys.add(key);
+            addedMints++;
+          }
+        });
+
+        if (addedCount > 0 || addedMints > 0) {
+          console.log(`📝 Merged ${newDay.date}: Added ${addedCount} new txs (+${addedAmount.toFixed(3)} TINC), ${addedMints} mint events`);
         } else {
           console.log(`✅ ${newDay.date}: No new transactions (re-scan found same data)`);
         }
@@ -145,6 +163,13 @@ class IncrementalBurnManager {
     
     // Sort by date
     const sortedDays = combinedDays.sort((a, b) => a.date.localeCompare(b.date));
+    // Every day carries the mint fields once a scan has run (zero for days without a harvest)
+    sortedDays.forEach(day => {
+      if (!Array.isArray(day.mintEvents)) {
+        day.mintEvents = [];
+        day.mintedTinc = 0;
+      }
+    });
 
     // Ensure all 30 days exist (fills zeros for missing dates like Jan 30)
     const { dailyBurns: completeDays, totalBurned, burnPercentage } =
@@ -160,7 +185,8 @@ class IncrementalBurnManager {
       ...existingData, // Preserve original metadata
       dailyBurns: completeDays,
       totalBurned,
-      burnPercentage,
+      // the percentage against the supply read in this same cycle, not the previous one
+      burnPercentage: recentBurnData.totalSupply > 0 ? (totalBurned / recentBurnData.totalSupply) * 100 : burnPercentage,
       totalSupply: recentBurnData.totalSupply, // FIX: Update totalSupply from fresh RPC call
       startDate: completeDays[0]?.date || existingData.startDate, // FIX: Update to match window
       endDate: completeDays[completeDays.length - 1]?.date || existingData.endDate, // FIX: Update to match window
@@ -215,14 +241,18 @@ class IncrementalBurnManager {
               date: dateStr,
               amountTinc: 0,
               transactionCount: 0,
-              transactions: []
+              transactions: [],
+              mintedTinc: 0,
+              mintEvents: []
             });
           }
         }
-        
-        // CRITICAL FIX: Preserve historical total, never let it decrease
-        const windowTotal = result.reduce((sum, day) => sum + day.amountTinc, 0);
-        const totalBurned = Math.max(existingData.totalBurned || 0, windowTotal);
+
+        // 2026-09-09: the total is the window's sum, full stop. The old "never let it decrease"
+        // Math.max kept the dropped day's burns in the total for one cycle after every UTC
+        // midnight (the validator corrected the total but not the percentage), so one published
+        // snapshot a day carried a stale burnPercentage.
+        const totalBurned = result.reduce((sum, day) => sum + day.amountTinc, 0);
         const burnPercentage = existingData.totalSupply > 0 ? (totalBurned / existingData.totalSupply) * 100 : 0;
         
         return {
@@ -259,11 +289,13 @@ class IncrementalBurnManager {
           date: dateStr,
           amountTinc: 0,
           transactionCount: 0,
-          transactions: []
+          transactions: [],
+          mintedTinc: 0,
+          mintEvents: []
         });
       }
     }
-    
+
     const totalBurned = result.reduce((sum, day) => sum + day.amountTinc, 0);
     const burnPercentage = existingData.totalSupply > 0 ? (totalBurned / existingData.totalSupply) * 100 : 0;
     

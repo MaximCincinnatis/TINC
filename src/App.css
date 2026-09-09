@@ -2037,7 +2037,7 @@ footer a:hover {
   color: var(--washi-cream);
 }
 
-/* Chart header verdict: the tooltip's status pill plus three mono figures */
+/* Chart header verdict: four mono figures (burned, accrued, minted, supply); the supply figure carries the colour */
 .chart-verdict {
   display: flex;
   justify-content: center;
@@ -2224,7 +2224,7 @@ footer a:hover {
   }
 }
 @media (max-width: 480px) {
-  /* Verdict row on phones: burned and emitted side by side, the net supply line beneath */
+  /* Verdict row on phones: a two-by-two grid, burned and accrued above minted and supply (2026-09-09) */
   .chart-verdict {
     display: grid;
     grid-template-columns: repeat(2, auto);
@@ -2232,16 +2232,12 @@ footer a:hover {
     column-gap: 1.25rem;
     row-gap: 0.5rem;
   }
-  .chart-verdict .verdict-fig.net {
-    grid-column: 1 / -1;
-    justify-self: center;
-  }
   .verdict-fig {
     white-space: nowrap;
   }
 }
 @media (max-width: 400px) {
-  /* 360px phones: the three figures stay on one line by getting a touch smaller */
+  /* 360px phones: the figures stay in their rows by getting a touch smaller */
   .chart-verdict {
     column-gap: 0.6rem;
   }
