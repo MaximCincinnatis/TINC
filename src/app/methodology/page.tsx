@@ -76,7 +76,10 @@ export default async function MethodologyPage() {
               in the FarmKeeper contract with no setter, the contracts are not upgradeable, and the token&rsquo;s only
               minter is the FarmKeeper, so nothing can raise it; the tracker uses the constant rather than re-reading it.
               One admin key (an externally owned account with no timelock, as of September 2026) decides how each second is
-              split between the farms and can add farms; it cannot change the rate. TINC is minted only when a farmer deposits, withdraws
+              split between the farms and can add farms; it cannot change the rate.
+            </p>
+            <p>
+              TINC is minted only when a farmer deposits, withdraws
               or harvests, so minted TINC lags accrued TINC: on 9 September 2026, 11.7 million accrued TINC was still
               unharvested. The tracker therefore reads mints the way it reads burns (transfers from the zero address)
               and shows accrued, minted and the supply change side by side; the 30-day supply change is minted minus

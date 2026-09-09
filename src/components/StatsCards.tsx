@@ -66,7 +66,9 @@ const StatsCards: React.FC<Props> = ({ burnData }) => {
           {formatNumber(totalTransactions)}<span className="stat-suffix">{formatSuffix(totalTransactions)}</span>
         </div>
         <div className="stat-description">
-          {`Transfers to the zero address in 30 days · ${distinctTransactions} transaction${distinctTransactions === 1 ? '' : 's'}`}
+          {/* 2026-09-09: one line at every desktop width (measured: 210 px against 239 px available at 1280);
+              the window is stated by the 30-Day Burns card beside it, the figure titles and the dated line. */}
+          {`To the zero address · ${distinctTransactions} transaction${distinctTransactions === 1 ? '' : 's'}`}
         </div>
       </div>
       

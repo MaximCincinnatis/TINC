@@ -90,19 +90,35 @@ function ChartHeader({ burnData }: { burnData: BurnData }) {
         // The supply figure carries the verdict (gold up = supply grew, jade down = it shrank);
         // the pill that used to say the same word was redundant (Ben, 2026-09-02).
         <div className="chart-verdict">
-          <span className="verdict-fig">
+          {/* 2026-09-09: a title on each figure says what it counts for the hover-and-hold reader;
+              "accrued" and "minted" are met here three screens before the explainer defines them. */}
+          <span className="verdict-fig" title={`TINC sent to the zero address in the last ${days} days`}>
             <b>{fmtCompact(burnData.totalBurned)}</b>burned
           </span>
-          <span className="verdict-fig">
+          <span
+            className="verdict-fig"
+            title={
+              hasChain
+                ? `What the ${burnData.emissionPerSecond} TINC per second schedule added to farmers' claims in ${days} days; it reaches the supply when they harvest`
+                : `${burnData.emissionPerSecond} TINC per second over ${days} days`
+            }
+          >
             <b>{fmtCompact(burnData.periodEmission as number)}</b>
             {hasChain ? 'accrued' : 'emitted'}
           </span>
           {hasChain && (
-            <span className="verdict-fig">
+            <span className="verdict-fig" title={`TINC farmers harvested into the supply in ${days} days (transfers from the zero address)`}>
               <b>{fmtCompact(burnData.mintedInWindow as number)}</b>minted
             </span>
           )}
-          <span className={`verdict-fig net ${net <= 0 ? 'down' : 'up'}`}>
+          <span
+            className={`verdict-fig net ${net <= 0 ? 'down' : 'up'}`}
+            title={
+              hasChain
+                ? `Minted minus burned over ${days} days, which equals the change in total supply`
+                : `Scheduled emission minus burned over ${days} days`
+            }
+          >
             <b>
               {net >= 0 ? '+' : '−'}
               {fmtCompact(Math.abs(net))}

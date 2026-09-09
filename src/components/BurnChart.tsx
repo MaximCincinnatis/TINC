@@ -155,6 +155,11 @@ const BurnChart: React.FC<Props> = ({ burnData }) => {
               lines.push(`Shortfall: ${formatAmount(Math.abs(difference))}`);
             }
             lines.push(`${Math.round((amount / deflationaryThreshold) * 100)}% of the day's emission`);
+            // 2026-09-09: what farmers harvested into the supply that day (the JSON carries it per day
+            // since the mint scan); older snapshots lack it, so the line is optional.
+            if (typeof dayData.mintedTinc === 'number') {
+              lines.push(`Minted that day: ${formatAmount(dayData.mintedTinc)}`);
+            }
             
             return lines;
           },

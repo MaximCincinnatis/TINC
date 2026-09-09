@@ -12,7 +12,9 @@ export const fmtPct = (p: number): string => `${p.toFixed(p >= 0.01 ? 3 : 5)}%`;
 /** 907,170 -> 907K · 2,592,000 -> 2.59M · 1,684,830 -> 1.68M */
 export const fmtCompact = (n: number): string => {
   const a = Math.abs(n);
-  if (a >= 1e6) return `${(n / 1e6).toFixed(2).replace(/\.?0+$/, '')}M`;
+  // 2026-09-09: millions keep two decimals ("1.70M" beside "2.59M"); the figures sit in one row
+  // and mixed precision read as different rounding. Used by the verdict row and the share image.
+  if (a >= 1e6) return `${(n / 1e6).toFixed(2)}M`;
   if (a >= 1e3) return `${Math.round(n / 1e3)}K`;
   return Math.round(n).toString();
 };
