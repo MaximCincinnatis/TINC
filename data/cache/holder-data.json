@@ -1,7 +1,7 @@
 {
-  "lastBlock": 25934940,
-  "totalSupply": 27994125.429906577,
-  "totalHolders": 957,
+  "lastBlock": 25936250,
+  "totalSupply": 28052781.446401857,
+  "totalHolders": 956,
   "holders": [
     {
       "address": "0x2b53893a4ec7191f6e2a6efb3a284451e3bc0cd3",
@@ -177,7 +177,7 @@
     },
     {
       "address": "0x9008d19f58aabd9ed0d60971565aa8510560ab41",
-      "balance": 36609.96323239755
+      "balance": 37111.7006430057
     },
     {
       "address": "0xfd3917bf77987f25fd76b16e283e16df4722e3ee",
@@ -340,12 +340,12 @@
       "balance": 11257.671956328348
     },
     {
-      "address": "0x359b3eca07e9fe19dcda24d21d4aefbfc67648d3",
-      "balance": 10361.84982466551
+      "address": "0x52c1cc79fbbef91d3952ae75b1961d08f0172223",
+      "balance": 10808.034546464249
     },
     {
-      "address": "0x52c1cc79fbbef91d3952ae75b1961d08f0172223",
-      "balance": 10158.695184751554
+      "address": "0x359b3eca07e9fe19dcda24d21d4aefbfc67648d3",
+      "balance": 10361.84982466551
     },
     {
       "address": "0xf5a038778b3d788ea10fa0710d1f5ea21bcd2499",
@@ -432,6 +432,10 @@
       "balance": 6007.920999226798
     },
     {
+      "address": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+      "balance": 5722.967985150074
+    },
+    {
       "address": "0x636c533a8fe91ebc25592d96700a3c7b27f6728b",
       "balance": 5648.886066329759
     },
@@ -502,10 +506,6 @@
     {
       "address": "0x3a335d6b4cec368058a5b023a42fb585d328bbd1",
       "balance": 3871.8690439444995
-    },
-    {
-      "address": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
-      "balance": 3774.949900011989
     },
     {
       "address": "0xbcf95425d0443def77f2dbc6783536a6055bab27",
@@ -1234,10 +1234,6 @@
     {
       "address": "0x6dc503b5797f93c4a6779ed2a9385ff15e49de51",
       "balance": 341.83854338093295
-    },
-    {
-      "address": "0x86b63808e1361e1f3e526838b2340501e6fd990a",
-      "balance": 341.6758082747123
     },
     {
       "address": "0xf85196aecd082b93125ab05c89261a1b4bed5237",
@@ -3833,19 +3829,19 @@
     }
   ],
   "holderStats": {
-    "totalHolders": 957,
+    "totalHolders": 956,
     "poseidon": 0,
     "whale": 9,
     "shark": 39,
     "dolphin": 99,
-    "squid": 174,
+    "squid": 173,
     "shrimp": 636,
-    "top10Percentage": 21.103510284720283,
-    "dataSource": "blockchain-full-scan",
+    "top10Percentage": 21.05938461220065,
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
-    "lastUpdate": "2026-09-08T20:17:56.473Z"
+    "dataSource": "blockchain-incremental",
+    "lastUpdate": "2026-09-09T00:32:30.555Z"
   },
-  "cachedAt": "2026-09-08T20:17:56.473Z"
+  "cachedAt": "2026-09-09T00:32:30.555Z"
 }
