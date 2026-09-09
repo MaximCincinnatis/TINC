@@ -6,13 +6,9 @@ const TRANSFER_TOPIC = '0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a
 const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000';
 const DEPLOYMENT_BLOCK = 20900000; // Verified 2026-09-01: first TINC Transfer events are in blocks 2092xxxx (eth_getCode at 19M returned 0x); margin kept below that
 
-// LP and contract addresses to exclude
-const EXCLUDED_ADDRESSES = new Set([
-  '0x72e0de1cc2c952326738dac05bacb9e9c25422e3', // TINC/TitanX LP Pool
-  '0xf89980f60e55633d05e72881ceb866dbb7f50580', // TINC LP Pool (Second LP)
-  '0x0000000000000000000000000000000000000000', // Burn address
-  '0x000000000000000000000000000000000000dead', // Dead address
-].map(addr => addr.toLowerCase()));
+// LP and contract addresses to exclude: the burn addresses plus every TINC pool the last update
+// found in the farm list (scripts/excluded-addresses.js reads data/cache/tinc-pools.json)
+const { excludedAddresses } = require('./excluded-addresses');
 
 class InitialHolderSnapshot {
   constructor(rpcCall) {
@@ -23,6 +19,7 @@ class InitialHolderSnapshot {
   async getAllHoldersFromEvents(fromBlock, toBlock) {
     console.log('🔍 Building holder list from Transfer events...');
     console.log(`  Scanning blocks ${fromBlock} to ${toBlock}`);
+    const excluded = excludedAddresses();
     
     const holders = new Map(); // address -> {received, sent}
     const CHUNK_SIZE = 10000;
@@ -79,7 +76,7 @@ class InitialHolderSnapshot {
       // Dust threshold unified with transfer-event-monitor's 0.000001 (2026-09-01):
       // the snapshot previously cut at 0.01 while incrementals cut at 1e-6, so dust
       // wallets re-entered on activity and totalHolders drifted between the two.
-      if (estimatedBalance > 0.000001 && !EXCLUDED_ADDRESSES.has(address)) {
+      if (estimatedBalance > 0.000001 && !excluded.has(address)) {
         potentialHolders.push(address);
       }
     }

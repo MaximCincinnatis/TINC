@@ -1,6 +1,6 @@
 require('dotenv').config();
 const HolderCacheManager = require('./holder-cache-manager');
-const { EXCLUDED_ADDRESSES } = require('./excluded-addresses');
+const { excludedAddresses } = require('./excluded-addresses');
 
 const TINC_ADDRESS = '0x6532B3F1e4DBff542fbD6befE5Ed7041c10B385a';
 const TRANSFER_TOPIC = '0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef';
@@ -172,8 +172,9 @@ class TransferEventMonitor {
 
     // Convert back to array and filter out excluded addresses
     const allHolders = Array.from(currentHolders.values());
-    const updatedHolders = allHolders.filter(holder => 
-      !EXCLUDED_ADDRESSES.has(holder.address.toLowerCase())
+    const excluded = excludedAddresses(); // burn addresses + every TINC pool the last update found
+    const updatedHolders = allHolders.filter(holder =>
+      !excluded.has(holder.address.toLowerCase())
     );
     
     console.log(`📊 Filtered out ${allHolders.length - updatedHolders.length} excluded addresses (LP/contracts)`);

@@ -46,7 +46,7 @@ const StatsCards: React.FC<Props> = ({ burnData }) => {
           {formatNumber(burnData.totalSupply)}<span className="stat-suffix">{formatSuffix(burnData.totalSupply)}</span>
         </div>
         <div className="stat-description">
-          {poolShare !== null ? `Minted minus burned · ${poolShare}% sits in the two farm pools` : 'Minted minus burned'}
+          {poolShare !== null ? `Minted minus burned · ${poolShare}% in the farm pools` : 'Minted minus burned'}
         </div>
       </div>
 

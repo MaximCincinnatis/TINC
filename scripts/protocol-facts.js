@@ -1,25 +1,27 @@
 require('dotenv').config();
+const fs = require('fs');
+const path = require('path');
 /**
  * Protocol facts read from the Titan Farms contracts at every update (2026-09-09).
  *
- *   poolShare            TINC held by the two farm pools as a share of totalSupply
+ *   tincPools            every farm pool that holds TINC, found from the FarmKeeper's farm list
+ *                        (so a farm added later is picked up without anyone editing a list)
+ *   poolShare            TINC held by those pools as a share of totalSupply
  *   activeInputTokens    input tokens the buy-and-burn processes today (not paused, not disabled)
  *   pausedInputTokens    input tokens whose fees are collected but paused
  *   protocolFeeMaxPercent the protocol fee on the farms that receive emission, in percent
  *
- * Display data, like the holder stats: on any failure the previous values are kept and marked
- * stale, so a decode problem can never block a burn update. RPC calls go through the caller's
- * failfast wrapper, the same one the burn scan uses.
+ * The pools are also written to data/cache/tinc-pools.json for the holder pipeline, which
+ * excludes them from the ranks. Display data, like the holder stats: on any failure the
+ * previous values are kept and marked stale, so a decode problem can never block a burn
+ * update. RPC calls go through the caller's failfast wrapper, the same one the burn scan uses.
  */
 const { Interface } = require('ethers');
 
 const TINC = '0x6532B3F1e4DBff542fbD6befE5Ed7041c10B385a';
 const FARM_KEEPER = '0x52C1cC79fbBeF91D3952Ae75b1961D08F0172223';
 const BUY_AND_BURN = '0x060E990A7E760f211447E76a53fF6E1Be2f3Bdd3';
-const POOLS = [
-  '0x72e0de1cc2c952326738dac05bacb9e9c25422e3', // TINC/TITANX
-  '0xf89980f60e55633d05e72881ceb866dbb7f50580', // X28/TINC
-];
+const POOLS_FILE = path.join(__dirname, '..', 'data', 'cache', 'tinc-pools.json');
 
 // Fragments copied from the verified sources (UniversalBuyAndBurn.inputTokens, FarmKeeper.farmViews)
 const buyAndBurnAbi = new Interface([
@@ -58,7 +60,7 @@ const erc20Abi = new Interface([
 ]);
 
 // WETH is shown as ETH, the way the farm's own UI and the docs name it
-const SYMBOLS = { '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2': 'ETH' };
+const SYMBOLS = { '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2': 'ETH', [TINC.toLowerCase()]: 'TINC' };
 
 async function fetchProtocolFacts(callRPC, previous, totalSupply) {
   const call = async (to, iface, fn, args = []) => {
@@ -78,10 +80,23 @@ async function fetchProtocolFacts(callRPC, previous, totalSupply) {
   };
 
   try {
-    // Pools: how much of the supply sits in the two farm positions
+    // Farms: which pools hold TINC (either side of the pair), and the protocol fee where emission goes
+    const farms = (await call(FARM_KEEPER, farmKeeperAbi, 'farmViews'))[0];
+    const tincPools = [];
+    let feeBasisPoints = 0;
+    for (const farm of farms) {
+      const token0 = farm.poolKey.token0;
+      const token1 = farm.poolKey.token1;
+      if (token0.toLowerCase() === TINC.toLowerCase() || token1.toLowerCase() === TINC.toLowerCase()) {
+        tincPools.push({ address: farm.id.toLowerCase(), pair: `${await symbolOf(token0)}/${await symbolOf(token1)}` });
+      }
+      if (Number(farm.allocPoints) > 0) feeBasisPoints = Math.max(feeBasisPoints, Number(farm.protocolFee));
+    }
+
+    // Pools: how much of the supply sits in those positions
     let poolTinc = 0;
-    for (const pool of POOLS) {
-      poolTinc += Number((await call(TINC, erc20Abi, 'balanceOf', [pool]))[0]) / 1e18;
+    for (const pool of tincPools) {
+      poolTinc += Number((await call(TINC, erc20Abi, 'balanceOf', [pool.address]))[0]) / 1e18;
     }
     const poolShare = totalSupply > 0 ? poolTinc / totalSupply : null;
 
@@ -96,15 +111,17 @@ async function fetchProtocolFacts(callRPC, previous, totalSupply) {
     // TINC last: it is the token itself, not an input in the reader's sense
     const activeOrdered = [...active.filter((s) => s !== 'TINC'), ...active.filter((s) => s === 'TINC')];
 
-    // Protocol fee on the farms that actually receive emission (allocation above zero)
-    const farms = (await call(FARM_KEEPER, farmKeeperAbi, 'farmViews'))[0];
-    let feeBasisPoints = 0;
-    for (const farm of farms) {
-      if (Number(farm.allocPoints) > 0) feeBasisPoints = Math.max(feeBasisPoints, Number(farm.protocolFee));
+    // Hand the pools to the holder pipeline (it excludes them from the ranks on its next run)
+    try {
+      fs.mkdirSync(path.dirname(POOLS_FILE), { recursive: true });
+      fs.writeFileSync(POOLS_FILE, JSON.stringify({ updatedAt: new Date().toISOString(), pools: tincPools }, null, 2));
+    } catch (error) {
+      console.warn(`⚠️ Could not write ${POOLS_FILE}: ${error.message}`);
     }
 
-    console.log(`🏛️ Protocol facts: pools hold ${(poolShare * 100).toFixed(1)}% of supply · active inputs ${activeOrdered.join(', ')} · paused ${paused.join(', ') || 'none'} · protocol fee ${feeBasisPoints / 100}%`);
+    console.log(`🏛️ Protocol facts: ${tincPools.length} TINC pools (${tincPools.map((p) => p.pair).join(', ')}) hold ${(poolShare * 100).toFixed(1)}% of supply · active inputs ${activeOrdered.join(', ')} · paused ${paused.join(', ') || 'none'} · protocol fee ${feeBasisPoints / 100}%`);
     return {
+      tincPools,
       poolShare,
       activeInputTokens: activeOrdered,
       pausedInputTokens: paused,
@@ -115,6 +132,7 @@ async function fetchProtocolFacts(callRPC, previous, totalSupply) {
     console.warn(`⚠️ Protocol facts unavailable (${error.message}) - keeping previous values`);
     const p = previous || {};
     return {
+      tincPools: p.tincPools ?? [],
       poolShare: p.poolShare ?? null,
       activeInputTokens: p.activeInputTokens ?? [],
       pausedInputTokens: p.pausedInputTokens ?? [],
@@ -125,4 +143,4 @@ async function fetchProtocolFacts(callRPC, previous, totalSupply) {
   }
 }
 
-module.exports = { fetchProtocolFacts };
+module.exports = { fetchProtocolFacts, POOLS_FILE };

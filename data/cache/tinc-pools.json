@@ -1,0 +1,13 @@
+{
+  "updatedAt": "2026-09-09T17:23:41.549Z",
+  "pools": [
+    {
+      "address": "0x72e0de1cc2c952326738dac05bacb9e9c25422e3",
+      "pair": "TINC/TITANX"
+    },
+    {
+      "address": "0xf89980f60e55633d05e72881ceb866dbb7f50580",
+      "pair": "X28/TINC"
+    }
+  ]
+}

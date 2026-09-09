@@ -42,6 +42,7 @@ export interface BurnData {
   mintedInWindow?: number;
   supplyChange?: number;
   poolShare?: number | null;
+  tincPools?: { address: string; pair: string }[];
   activeInputTokens?: string[];
   pausedInputTokens?: string[];
   protocolFeeMaxPercent?: number | null;

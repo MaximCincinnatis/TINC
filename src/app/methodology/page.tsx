@@ -36,6 +36,14 @@ export default async function MethodologyPage() {
   const paused = data?.pausedInputTokens?.length ? data.pausedInputTokens.join(', ') : null;
   const poolShare = typeof data?.poolShare === 'number' ? Math.round(data.poolShare * 100) : null;
   const fee = typeof data?.protocolFeeMaxPercent === 'number' ? data.protocolFeeMaxPercent : null;
+  // the pools the updater found in the farm list; the two known at launch when a snapshot predates the field
+  const pools =
+    data?.tincPools && data.tincPools.length > 0
+      ? data.tincPools
+      : [
+          { address: LP1, pair: 'TINC/TITANX' },
+          { address: LP2, pair: 'X28/TINC' },
+        ];
   return (
     <div className="App">
       <SiteHeader eyebrow="龍炎 Methodology" />
@@ -67,8 +75,8 @@ export default async function MethodologyPage() {
               TINC accrues to Titan Farms liquidity providers at 1 TINC per second, 86,400 a day. The rate is a constant
               in the FarmKeeper contract with no setter, the contracts are not upgradeable, and the token&rsquo;s only
               minter is the FarmKeeper, so nothing can raise it; the tracker uses the constant rather than re-reading it.
-              One admin key, an externally owned account with no timelock, decides how each second is split between the
-              farms and can add farms; it cannot change the rate. TINC is minted only when a farmer deposits, withdraws
+              One admin key (an externally owned account with no timelock, as of September 2026) decides how each second is
+              split between the farms and can add farms; it cannot change the rate. TINC is minted only when a farmer deposits, withdraws
               or harvests, so minted TINC lags accrued TINC: on 9 September 2026, 11.7 million accrued TINC was still
               unharvested. The tracker therefore reads mints the way it reads burns (transfers from the zero address)
               and shows accrued, minted and the supply change side by side; the 30-day supply change is minted minus
@@ -76,7 +84,7 @@ export default async function MethodologyPage() {
             </p>
             <p>
               Total supply is <code>totalSupply()</code> read from the contract at every update; burned TINC has already
-              left it{poolShare !== null ? `, and ${poolShare}% of it sits in the two farm pools` : ''}.
+              left it{poolShare !== null ? `, and ${poolShare}% of it sits in the farm pools` : ''}.
             </p>
 
             <h3>
@@ -106,14 +114,17 @@ export default async function MethodologyPage() {
             </h3>
             <p>
               Wallet balances come from the same node: a snapshot of all holders, kept current by replaying{' '}
-              <code>Transfer</code> events at each update. The two liquidity pools (TINC/TITANX{' '}
-              <a href={`https://etherscan.io/address/${LP1}`} target="_blank" rel="noopener noreferrer">
-                {LP1.slice(0, 6)}…{LP1.slice(-4)}
-              </a>{' '}
-              and{' '}
-              <a href={`https://etherscan.io/address/${LP2}`} target="_blank" rel="noopener noreferrer">
-                {LP2.slice(0, 6)}…{LP2.slice(-4)}
-              </a>
+              <code>Transfer</code> events at each update. The farm pools that hold TINC, found in the FarmKeeper&rsquo;s
+              farm list at every update (today{' '}
+              {pools.map((pool, i) => (
+                <span key={pool.address}>
+                  {i > 0 ? (i === pools.length - 1 ? ' and ' : ', ') : ''}
+                  {pool.pair}{' '}
+                  <a href={`https://etherscan.io/address/${pool.address}`} target="_blank" rel="noopener noreferrer">
+                    {pool.address.slice(0, 6)}…{pool.address.slice(-4)}
+                  </a>
+                </span>
+              ))}
               ) and the burn addresses are excluded, so a wallet that only holds TINC inside a pool position is not
               counted. Ranks are shares of circulating supply: Ryūjin 10% or more, Shōgun 1%, Daimyō 0.1%, Samurai
               0.01%, Rōnin 0.001%, Ashigaru any balance above zero. &ldquo;Total Warriors&rdquo; is the number of
