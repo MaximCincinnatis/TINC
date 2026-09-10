@@ -1,6 +1,6 @@
 {
-  "lastBlock": 25948866,
-  "totalSupply": 28050998.45591406,
+  "lastBlock": 25949198,
+  "totalSupply": 28001869.315687615,
   "totalHolders": 956,
   "holders": [
     {
@@ -66,10 +66,6 @@
     {
       "address": "0xfbdfdcc164ad6567cbc832b3fbef71d37c030507",
       "balance": 159590.36013649937
-    },
-    {
-      "address": "0x15065100b0ff6bd2d157dfd0f2d133867fb173d2",
-      "balance": 158972.84676764836
     },
     {
       "address": "0xf350653134e3f1c3fed1e6cb0b6f6bafda66d094",
@@ -345,7 +341,7 @@
     },
     {
       "address": "0x52c1cc79fbbef91d3952ae75b1961d08f0172223",
-      "balance": 10808.034546464249
+      "balance": 11090.641128782223
     },
     {
       "address": "0x359b3eca07e9fe19dcda24d21d4aefbfc67648d3",
@@ -416,6 +412,10 @@
       "balance": 6633.565463796808
     },
     {
+      "address": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+      "balance": 6570.787732104002
+    },
+    {
       "address": "0x0e149c7fe7369e61babdec5664a3f6955e586a20",
       "balance": 6530.453711753359
     },
@@ -434,10 +434,6 @@
     {
       "address": "0x6b0739759fe5619827c464acb3c2937621ae66e3",
       "balance": 6007.920999226798
-    },
-    {
-      "address": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
-      "balance": 5722.967985150074
     },
     {
       "address": "0x636c533a8fe91ebc25592d96700a3c7b27f6728b",
@@ -898,6 +894,10 @@
     {
       "address": "0xc7c17323d5306a1709637ed419b2cb5543e52aac",
       "balance": 923.1503815080212
+    },
+    {
+      "address": "0x15065100b0ff6bd2d157dfd0f2d133867fb173d2",
+      "balance": 919.7628638006158
     },
     {
       "address": "0x0b73c8ed83f333963e5c6604226fd38ee97a90da",
@@ -3832,16 +3832,16 @@
     "totalHolders": 956,
     "poseidon": 0,
     "whale": 9,
-    "shark": 40,
+    "shark": 39,
     "dolphin": 99,
-    "squid": 172,
+    "squid": 173,
     "shrimp": 636,
-    "top10Percentage": 21.496189992031884,
+    "top10Percentage": 21.533904950292232,
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2026-09-10T18:45:13.576Z"
+    "lastUpdate": "2026-09-10T19:51:55.408Z"
   },
-  "cachedAt": "2026-09-10T18:45:13.576Z"
+  "cachedAt": "2026-09-10T19:51:55.408Z"
 }
