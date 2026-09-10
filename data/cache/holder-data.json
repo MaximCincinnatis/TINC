@@ -1,5 +1,5 @@
 {
-  "lastBlock": 25943556,
+  "lastBlock": 25948201,
   "totalSupply": 28050998.45591406,
   "totalHolders": 956,
   "holders": [
@@ -3841,7 +3841,7 @@
     "excludesLPPositions": true,
     "realTimeData": true,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2026-09-10T00:59:13.931Z"
+    "lastUpdate": "2026-09-10T16:31:55.084Z"
   },
-  "cachedAt": "2026-09-10T00:59:13.931Z"
+  "cachedAt": "2026-09-10T16:31:55.084Z"
 }
