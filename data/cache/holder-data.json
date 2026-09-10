@@ -1,5 +1,5 @@
 {
-  "lastBlock": 25942058,
+  "lastBlock": 25943556,
   "totalSupply": 28050998.45591406,
   "totalHolders": 956,
   "holders": [
@@ -1108,7 +1108,7 @@
       "balance": 483.00789853115225
     },
     {
-      "address": "0x1eeaa39f12694e118d3d7682c86a19240eaa9d34",
+      "address": "0x401dacb7697a9c8dfbefc5fcc0102ca29aa007fd",
       "balance": 477.39595964612226
     },
     {
@@ -3841,7 +3841,7 @@
     "excludesLPPositions": true,
     "realTimeData": true,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2026-09-09T19:59:12.059Z"
+    "lastUpdate": "2026-09-10T00:59:13.931Z"
   },
-  "cachedAt": "2026-09-09T19:59:12.059Z"
+  "cachedAt": "2026-09-10T00:59:13.931Z"
 }
