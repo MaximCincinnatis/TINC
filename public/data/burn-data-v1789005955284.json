@@ -1,6 +1,6 @@
 {
-  "startDate": "2026-08-11",
-  "endDate": "2026-09-09",
+  "startDate": "2026-08-12",
+  "endDate": "2026-09-10",
   "totalBurned": 988183.3046906205,
   "totalSupply": 28050998.45591406,
   "burnPercentage": 3.5228097361442736,
@@ -8,14 +8,6 @@
   "emissionSamplePeriod": 86400,
   "isDeflationary": false,
   "dailyBurns": [
-    {
-      "date": "2026-08-11",
-      "amountTinc": 0,
-      "transactionCount": 0,
-      "transactions": [],
-      "mintEvents": [],
-      "mintedTinc": 0
-    },
     {
       "date": "2026-08-12",
       "amountTinc": 0,
@@ -1125,11 +1117,19 @@
         }
       ],
       "mintedTinc": 60684.052215656826
+    },
+    {
+      "date": "2026-09-10",
+      "amountTinc": 0,
+      "transactionCount": 0,
+      "transactions": [],
+      "mintedTinc": 0,
+      "mintEvents": []
     }
   ],
-  "fetchedAt": "2026-09-09T23:52:35.349Z",
+  "fetchedAt": "2026-09-10T02:05:55.034Z",
   "fromCache": true,
-  "lastProcessedBlock": 25943220,
+  "lastProcessedBlock": 25943886,
   "holderStats": {
     "totalHolders": 956,
     "poseidon": 0,
@@ -1143,9 +1143,9 @@
     "excludesLPPositions": true,
     "realTimeData": true,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2026-09-09T19:59:12.059Z"
+    "lastUpdate": "2026-09-10T00:59:13.931Z"
   },
-  "lastIncrementalUpdate": "2026-09-09T23:52:35.349Z",
+  "lastIncrementalUpdate": "2026-09-10T02:05:55.034Z",
   "periodDays": 30,
   "periodEmission": 2592000,
   "deflationaryDays": 4,
@@ -1170,7 +1170,7 @@
     "AU"
   ],
   "protocolFeeMaxPercent": 25,
-  "protocolFactsAt": "2026-09-09T23:52:35.540Z",
+  "protocolFactsAt": "2026-09-10T02:05:55.283Z",
   "tincPools": [
     {
       "address": "0x72e0de1cc2c952326738dac05bacb9e9c25422e3",
