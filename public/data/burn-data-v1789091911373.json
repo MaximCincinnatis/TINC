@@ -1,27 +1,13 @@
 {
-  "startDate": "2026-08-12",
-  "endDate": "2026-09-10",
-  "totalBurned": 1062175.741013219,
-  "totalSupply": 28001869.315687615,
-  "burnPercentage": 3.7932315483600645,
+  "startDate": "2026-08-13",
+  "endDate": "2026-09-11",
+  "totalBurned": 1077012.6956096957,
+  "totalSupply": 28018232.80258266,
+  "burnPercentage": 3.84397082856139,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": false,
   "dailyBurns": [
-    {
-      "date": "2026-08-12",
-      "amountTinc": 0,
-      "transactionCount": 0,
-      "transactions": [],
-      "mintEvents": [
-        {
-          "hash": "0xce5bfc62077d546b8121a1d5d17095491b17f72f9f2b64e3048dc4cc993d959b",
-          "index": 774,
-          "amount": 99084.22199823306
-        }
-      ],
-      "mintedTinc": 99084.22199823306
-    },
     {
       "date": "2026-08-13",
       "amountTinc": 0,
@@ -1157,34 +1143,74 @@
           "amount": 0.5889475027115745
         }
       ]
+    },
+    {
+      "date": "2026-09-11",
+      "amountTinc": 14836.954596476658,
+      "transactionCount": 1,
+      "transactions": [
+        {
+          "hash": "0xd6833da4b616cf6150ef1482ab8722027c62fd741c8356993d680a68f7f4d0ca",
+          "amount": 14836.954596476658,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ],
+      "mintedTinc": 31200.44149151857,
+      "mintEvents": [
+        {
+          "hash": "0x1f8724c66b456585d95580df10fc85edd4e4da38eb3bc14205311f1baa7f5a61",
+          "index": 218,
+          "amount": 8060.800384787386
+        },
+        {
+          "hash": "0x1f8724c66b456585d95580df10fc85edd4e4da38eb3bc14205311f1baa7f5a61",
+          "index": 228,
+          "amount": 22460.506487025512
+        },
+        {
+          "hash": "0x795dfa88fd10b9c5c92d00b12581a36bea17c3ae2963f28c68d128773aca0cfa",
+          "index": 448,
+          "amount": 665.3169368113208
+        },
+        {
+          "hash": "0x5b33982f8d1bebae25573db217bbd2f72e5feab609179bf9a113e9fd2e1370c4",
+          "index": 408,
+          "amount": 6.836971119738724
+        },
+        {
+          "hash": "0xf851e230abbd22486c2ca1add82fdc23ea072d7934684f1a68a76aedd09e094d",
+          "index": 454,
+          "amount": 6.980711774612188
+        }
+      ]
     }
   ],
-  "fetchedAt": "2026-09-10T23:12:53.809Z",
+  "fetchedAt": "2026-09-11T01:58:31.215Z",
   "fromCache": true,
-  "lastProcessedBlock": 25950194,
+  "lastProcessedBlock": 25951018,
   "holderStats": {
-    "totalHolders": 956,
+    "totalHolders": 955,
     "poseidon": 0,
     "whale": 9,
     "shark": 39,
     "dolphin": 99,
     "squid": 173,
-    "shrimp": 636,
-    "top10Percentage": 21.533904950292232,
+    "shrimp": 635,
+    "top10Percentage": 21.51045911115615,
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2026-09-10T22:05:15.092Z"
+    "lastUpdate": "2026-09-11T01:25:12.453Z"
   },
-  "lastIncrementalUpdate": "2026-09-10T23:12:53.809Z",
+  "lastIncrementalUpdate": "2026-09-11T01:58:31.215Z",
   "periodDays": 30,
   "periodEmission": 2592000,
   "deflationaryDays": 4,
-  "netSupplyChange": 1529824.258986781,
-  "mintedInWindow": 1723490.1561852545,
-  "supplyChange": 661314.4151720353,
-  "poolShare": 0.623267279941017,
+  "netSupplyChange": 1514987.3043903043,
+  "mintedInWindow": 1655606.37567854,
+  "supplyChange": 578593.6800688442,
+  "poolShare": 0.6234631271850999,
   "activeInputTokens": [
     "DRAGONX",
     "TITANX",
@@ -1202,7 +1228,7 @@
     "AU"
   ],
   "protocolFeeMaxPercent": 25,
-  "protocolFactsAt": "2026-09-10T23:12:55.409Z",
+  "protocolFactsAt": "2026-09-11T01:58:31.372Z",
   "tincPools": [
     {
       "address": "0x72e0de1cc2c952326738dac05bacb9e9c25422e3",
