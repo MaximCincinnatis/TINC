@@ -1195,15 +1195,15 @@
       ]
     }
   ],
-  "fetchedAt": "2026-09-11T11:58:31.558Z",
+  "fetchedAt": "2026-09-11T14:11:54.815Z",
   "fromCache": true,
-  "lastProcessedBlock": 25954011,
+  "lastProcessedBlock": 25954676,
   "holderStats": {
-    "totalHolders": 956,
+    "totalHolders": 957,
     "poseidon": 0,
     "whale": 9,
     "shark": 39,
-    "dolphin": 99,
+    "dolphin": 100,
     "squid": 174,
     "shrimp": 635,
     "top10Percentage": 21.555089416076754,
@@ -1211,16 +1211,16 @@
     "excludesLPPositions": true,
     "realTimeData": true,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2026-09-11T08:05:12.208Z"
+    "lastUpdate": "2026-09-11T14:11:54.802Z"
   },
-  "lastIncrementalUpdate": "2026-09-11T11:58:31.558Z",
+  "lastIncrementalUpdate": "2026-09-11T14:11:54.815Z",
   "periodDays": 30,
   "periodEmission": 2592000,
   "deflationaryDays": 4,
   "netSupplyChange": 1471103.419366988,
   "mintedInWindow": 1655606.37567854,
   "supplyChange": 534709.7950455279,
-  "poolShare": 0.6228724467412995,
+  "poolShare": 0.6222004816019497,
   "activeInputTokens": [
     "DRAGONX",
     "TITANX",
@@ -1238,7 +1238,7 @@
     "AU"
   ],
   "protocolFeeMaxPercent": 25,
-  "protocolFactsAt": "2026-09-11T11:58:31.710Z",
+  "protocolFactsAt": "2026-09-11T14:11:54.998Z",
   "tincPools": [
     {
       "address": "0x72e0de1cc2c952326738dac05bacb9e9c25422e3",
