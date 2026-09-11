@@ -1,9 +1,9 @@
 {
   "startDate": "2026-08-13",
   "endDate": "2026-09-11",
-  "totalBurned": 1077012.6956096957,
-  "totalSupply": 28018232.80258266,
-  "burnPercentage": 3.84397082856139,
+  "totalBurned": 1098479.0604921759,
+  "totalSupply": 27996766.43770018,
+  "burnPercentage": 3.923592615370661,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": false,
@@ -1146,12 +1146,17 @@
     },
     {
       "date": "2026-09-11",
-      "amountTinc": 14836.954596476658,
-      "transactionCount": 1,
+      "amountTinc": 36303.31947895678,
+      "transactionCount": 2,
       "transactions": [
         {
           "hash": "0xd6833da4b616cf6150ef1482ab8722027c62fd741c8356993d680a68f7f4d0ca",
           "amount": 14836.954596476658,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x60451e58ff549fa01d608a4654b1dc4dce6964e6b022ad1990d27d5b51712f59",
+          "amount": 21466.364882480117,
           "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
         }
       ],
@@ -1185,32 +1190,32 @@
       ]
     }
   ],
-  "fetchedAt": "2026-09-11T01:58:31.215Z",
+  "fetchedAt": "2026-09-11T05:51:52.591Z",
   "fromCache": true,
-  "lastProcessedBlock": 25951018,
+  "lastProcessedBlock": 25952180,
   "holderStats": {
-    "totalHolders": 955,
+    "totalHolders": 956,
     "poseidon": 0,
     "whale": 9,
     "shark": 39,
     "dolphin": 99,
-    "squid": 173,
+    "squid": 174,
     "shrimp": 635,
-    "top10Percentage": 21.51045911115615,
+    "top10Percentage": 21.537829863899628,
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2026-09-11T01:25:12.453Z"
+    "lastUpdate": "2026-09-11T02:31:52.091Z"
   },
-  "lastIncrementalUpdate": "2026-09-11T01:58:31.215Z",
+  "lastIncrementalUpdate": "2026-09-11T05:51:52.591Z",
   "periodDays": 30,
   "periodEmission": 2592000,
   "deflationaryDays": 4,
-  "netSupplyChange": 1514987.3043903043,
+  "netSupplyChange": 1493520.9395078241,
   "mintedInWindow": 1655606.37567854,
-  "supplyChange": 578593.6800688442,
-  "poolShare": 0.6234631271850999,
+  "supplyChange": 557127.3151863641,
+  "poolShare": 0.6231744196330494,
   "activeInputTokens": [
     "DRAGONX",
     "TITANX",
@@ -1228,7 +1233,7 @@
     "AU"
   ],
   "protocolFeeMaxPercent": 25,
-  "protocolFactsAt": "2026-09-11T01:58:31.372Z",
+  "protocolFactsAt": "2026-09-11T05:51:52.812Z",
   "tincPools": [
     {
       "address": "0x72e0de1cc2c952326738dac05bacb9e9c25422e3",
