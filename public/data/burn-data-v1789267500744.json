@@ -1184,9 +1184,9 @@
       "mintEvents": []
     }
   ],
-  "fetchedAt": "2026-09-13T01:38:20.959Z",
+  "fetchedAt": "2026-09-13T02:45:00.584Z",
   "fromCache": true,
-  "lastProcessedBlock": 25965267,
+  "lastProcessedBlock": 25965601,
   "holderStats": {
     "totalHolders": 958,
     "poseidon": 0,
@@ -1202,7 +1202,7 @@
     "dataSource": "blockchain-incremental",
     "lastUpdate": "2026-09-13T00:31:41.567Z"
   },
-  "lastIncrementalUpdate": "2026-09-13T01:38:20.959Z",
+  "lastIncrementalUpdate": "2026-09-13T02:45:00.584Z",
   "periodDays": 30,
   "periodEmission": 2592000,
   "deflationaryDays": 4,
@@ -1227,7 +1227,7 @@
     "AU"
   ],
   "protocolFeeMaxPercent": 25,
-  "protocolFactsAt": "2026-09-13T01:38:21.108Z",
+  "protocolFactsAt": "2026-09-13T02:45:00.743Z",
   "tincPools": [
     {
       "address": "0x72e0de1cc2c952326738dac05bacb9e9c25422e3",
