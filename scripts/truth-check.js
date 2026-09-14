@@ -47,6 +47,9 @@ if (!EP) { console.error('ETH_RPC_ENDPOINT not set'); process.exit(2); }
 const SITE = 'https://www.tincburn.fyi';
 const TINC = '0x6532B3F1e4DBff542fbD6befE5Ed7041c10B385a';
 const FARM_KEEPER = '0x52C1cC79fbBeF91D3952Ae75b1961D08F0172223';
+const PEGGED_FARM_KEEPER = '0x619095A53ED0D1058DB530CCc04ab5A1C2EF0cD5';
+const FEE_LAUNCH_BLOCK = 20922000; // scripts/protocol-fee.js scans the collection events from here
+const PROTOCOL_FEES_COLLECTED = keccakId('ProtocolFeesCollected(address,uint256)');
 const ACCESS_MANAGER = '0x598d291D3E8f483790EBAc729db148A88E8C3780';
 const ROLE_SCAN_FLOOR = 20900000; // before the AccessManager existed (TINC's FarmKeeper era starts at 20,922,015)
 const HEAD_LAG_BLOCKS = 2000; // ~6.7 h; pushes land every ~2.2 h
@@ -143,6 +146,12 @@ async function main() {
   if (!Array.isArray(json.activeInputTokens) || json.activeInputTokens.length === 0) problems.push('activeInputTokens is empty');
   if (!(json.holderStats && json.holderStats.totalHolders > 0)) problems.push('holderStats.totalHolders is missing or zero');
   if ('mergeNote' in json) problems.push('mergeNote is back in the snapshot');
+  // 2026-09-14: the buy-and-burn settings and the protocol fee's collections
+  for (const f of ['protocolFeeMinPercent', 'buyAndBurnSettings', 'protocolFeeCollected']) {
+    if (!(f in json)) problems.push(`field ${f} missing from the snapshot`);
+  }
+  if (json.protocolFeeCollectedStale) problems.push('protocol-fee collections are stale (the event scan failed in the last cycle)');
+  if (!Array.isArray(json.buyAndBurnSettings) || !json.buyAndBurnSettings.some((s) => s.state === 'active')) problems.push('buyAndBurnSettings has no active token');
   if (!json.dailyBurns.every((d) => typeof d.mintedTinc === 'number' && Array.isArray(d.mintEvents))) problems.push('a day lacks its mint fields');
 
   // 3a. arithmetic inside the snapshot
@@ -211,6 +220,26 @@ async function main() {
     const supplyOk = candidates.some((c) => Math.abs(tinc(c) - json.totalSupply) < 1e-6);
     if (!supplyOk) problems.push(`totalSupply ${json.totalSupply} matches no block between ${endBlock} and ${head} (chain ${tinc(candidates[0]).toFixed(6)} at ${endBlock}, ${tinc(supplyHead).toFixed(6)} at the head)`);
     notes.push(`totalSupply ${json.totalSupply.toFixed(3)} ${supplyOk ? 'matches the chain' : 'DOES NOT match'}; head ${head}, snapshot ${head - endBlock} blocks behind`);
+  }
+
+  // 5b. the protocol fee collected: recount of the two keepers' collection events up to the block the
+  //     snapshot's scan reached (2026-09-14); transactions, events and every per-token total must match
+  const pf = json.protocolFeeCollected;
+  if (pf && Number.isInteger(pf.scannedToBlock)) {
+    if (typeof endBlock === 'number' && pf.scannedToBlock > endBlock) problems.push(`protocolFeeCollected.scannedToBlock ${pf.scannedToBlock} is beyond lastProcessedBlock ${endBlock}`);
+    const feeLogs = await getLogs([FARM_KEEPER, PEGGED_FARM_KEEPER], [PROTOCOL_FEES_COLLECTED], FEE_LAUNCH_BLOCK, pf.scannedToBlock, 50000);
+    const feeTxs = new Set(feeLogs.map((l) => l.transactionHash)).size;
+    const feeSums = {};
+    for (const l of feeLogs) { const token = ('0x' + l.topics[1].slice(26)).toLowerCase(); feeSums[token] = (feeSums[token] || 0n) + BigInt(l.data); }
+    if (feeTxs !== pf.transactions) problems.push(`protocol fee: ${feeTxs} collection transactions on chain vs ${pf.transactions} in the snapshot`);
+    if (feeLogs.length !== pf.events) problems.push(`protocol fee: ${feeLogs.length} collection events on chain vs ${pf.events} in the snapshot`);
+    for (const t of pf.totals || []) {
+      const chainWei = feeSums[t.token.toLowerCase()] ?? 0n;
+      const chain = Number(chainWei / 10n ** BigInt(Math.max(0, (t.decimals ?? 18) - 6))) / 1e6;
+      if (Math.abs(chain - t.amount) > 1e-6 * Math.max(1, Math.abs(chain))) problems.push(`protocol fee: ${t.symbol} ${chain} collected on chain vs ${t.amount} in the snapshot`);
+    }
+    if (Object.keys(feeSums).length !== (pf.totals || []).length) problems.push(`protocol fee: ${Object.keys(feeSums).length} tokens on chain vs ${(pf.totals || []).length} in the snapshot`);
+    notes.push(`protocol fee: ${feeTxs} collection transactions / ${feeLogs.length} events / ${Object.keys(feeSums).length} tokens to block ${pf.scannedToBlock} ${feeTxs === pf.transactions ? 'match' : 'DO NOT match'} the snapshot`);
   }
 
   // 6. admin keys

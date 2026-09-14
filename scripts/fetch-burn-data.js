@@ -765,7 +765,7 @@ async function runIncrementalUpdate() {
 
     // Pool share, active input tokens, protocol fee: read from the contracts, kept on failure
     const { fetchProtocolFacts } = require('./protocol-facts');
-    Object.assign(mergedData, await fetchProtocolFacts(callRPC, existingData, mergedData.totalSupply));
+    Object.assign(mergedData, await fetchProtocolFacts(callRPC, existingData, mergedData.totalSupply, mergedData.lastProcessedBlock));
 
     // Validate integrity
     manager.validateMergedData(existingData, mergedData);

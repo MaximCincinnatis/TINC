@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Analytics } from '@vercel/analytics/next';
-import { FAQ } from '@/lib/faq';
+import { faqWith, type FaqItem } from '@/lib/faq';
+import { loadBurnData } from '@/lib/loadBurnData';
 // Global CSS ported verbatim from the CRA app (must be imported in the root layout).
 import '../index.css';
 import '../App.css';
@@ -63,7 +64,8 @@ export const viewport: Viewport = {
 // 2026-07-24 SEO: `url` values dropped their trailing slash to match the canonical Next actually
 // emits for this site (source says '…fyi/', rendered output is '…fyi') and the sitemap <loc>.
 // @id values are opaque identifiers and are deliberately left unchanged.
-const jsonLd = {
+// 2026-09-14: built per render because two FAQ answers read the latest snapshot (src/lib/faq.ts)
+const jsonLdFor = (faq: FaqItem[]) => ({
   '@context': 'https://schema.org',
   '@graph': [
     {
@@ -117,18 +119,19 @@ const jsonLd = {
     {
       '@type': 'FAQPage',
       '@id': 'https://www.tincburn.fyi/#faq',
-      mainEntity: FAQ.map((f) => ({
+      mainEntity: faq.map((f) => ({
         '@type': 'Question',
         name: f.q,
         acceptedAnswer: { '@type': 'Answer', text: f.a },
       })),
     },
   ],
-};
+});
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  const jsonLd = jsonLdFor(faqWith(await loadBurnData()));
   return (
     <html lang="en">
       <head>

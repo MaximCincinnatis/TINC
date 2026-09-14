@@ -9,7 +9,12 @@ const path = require('path');
  *   poolShare            TINC held by those pools as a share of totalSupply
  *   activeInputTokens    input tokens the buy-and-burn processes today (not paused, not disabled)
  *   pausedInputTokens    input tokens whose fees are collected but paused
- *   protocolFeeMaxPercent the protocol fee on the farms that receive emission, in percent
+ *   protocolFeeMaxPercent the highest protocol fee on the farms that receive emission, in percent
+ *   protocolFeeMinPercent the lowest (2026-09-14; equal to the highest when every farm agrees)
+ *   buyAndBurnSettings   per input token: the caller's cut, the share burned as itself, the share
+ *                        swapped for TINC, and the balance waiting in the contract (2026-09-14)
+ *   protocolFeeCollected what the fee has collected since launch, from the keepers' collection
+ *                        events (scripts/protocol-fee.js, 2026-09-14)
  *
  * The pools are also written to data/cache/tinc-pools.json for the holder pipeline, which
  * excludes them from the ranks. Display data, like the holder stats: on any failure the
@@ -17,6 +22,7 @@ const path = require('path');
  * update. RPC calls go through the caller's failfast wrapper, the same one the burn scan uses.
  */
 const { Interface } = require('ethers');
+const { updateProtocolFee } = require('./protocol-fee');
 
 const TINC = '0x6532B3F1e4DBff542fbD6befE5Ed7041c10B385a';
 const FARM_KEEPER = '0x52C1cC79fbBeF91D3952Ae75b1961D08F0172223';
@@ -56,13 +62,18 @@ const farmKeeperAbi = new Interface([
 ]);
 const erc20Abi = new Interface([
   'function symbol() view returns (string)',
+  'function decimals() view returns (uint8)',
   'function balanceOf(address owner) view returns (uint256)',
 ]);
 
 // WETH is shown as ETH, the way the farm's own UI and the docs name it
 const SYMBOLS = { '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2': 'ETH', [TINC.toLowerCase()]: 'TINC' };
+const DECIMALS = {};
 
-async function fetchProtocolFacts(callRPC, previous, totalSupply) {
+// token units from wei, exact to six decimals
+const units = (wei, decimals) => Number(wei / 10n ** BigInt(Math.max(0, decimals - 6))) / 1e6;
+
+async function fetchProtocolFacts(callRPC, previous, totalSupply, lastProcessedBlock) {
   const call = async (to, iface, fn, args = []) => {
     const data = iface.encodeFunctionData(fn, args);
     const raw = await callRPC('eth_call', [{ to, data }, 'latest']);
@@ -78,19 +89,61 @@ async function fetchProtocolFacts(callRPC, previous, totalSupply) {
     }
     return SYMBOLS[key];
   };
+  const decimalsOf = async (address) => {
+    const key = address.toLowerCase();
+    if (DECIMALS[key] !== undefined) return DECIMALS[key];
+    try {
+      DECIMALS[key] = Number((await call(address, erc20Abi, 'decimals'))[0]);
+    } catch (error) {
+      DECIMALS[key] = 18;
+    }
+    return DECIMALS[key];
+  };
+  const p = previous || {};
 
+  let facts;
   try {
-    // Farms: which pools hold TINC (either side of the pair), and the protocol fee where emission goes
+    // Input tokens: what the buy-and-burn processes today, and how it is set for each
+    const tokens = (await call(BUY_AND_BURN, buyAndBurnAbi, 'inputTokens'))[0];
+    const active = [];
+    const paused = [];
+    const settings = [];
+    const inputTokens = new Set();
+    for (const token of tokens) {
+      if (token.disabled) continue;
+      inputTokens.add(token.id.toLowerCase());
+      const symbol = await symbolOf(token.id);
+      (token.paused ? paused : active).push(symbol);
+      const burned = Number(token.burnPercentage) / 100;
+      settings.push({
+        token: symbol,
+        address: token.id.toLowerCase(),
+        state: token.paused ? 'paused' : 'active',
+        callerCutPercent: Number(token.incentiveFee) / 100,
+        burnedAsItselfPercent: burned,
+        swappedPercent: 100 - burned,
+        waiting: units(BigInt(token.balance), await decimalsOf(token.id)),
+      });
+    }
+
+    // Farms: which pools hold TINC (either side of the pair), and the protocol fee on the farms whose
+    // fees can reach the buy-and-burn (emission and at least one input token; the pegged keeper's
+    // synthetic root farm has neither trading nor an input token, so its 0% is not a fee)
     const farms = (await call(FARM_KEEPER, farmKeeperAbi, 'farmViews'))[0];
     const tincPools = [];
-    let feeBasisPoints = 0;
+    let feeMaxBasisPoints = 0;
+    let feeMinBasisPoints = null;
     for (const farm of farms) {
       const token0 = farm.poolKey.token0;
       const token1 = farm.poolKey.token1;
       if (token0.toLowerCase() === TINC.toLowerCase() || token1.toLowerCase() === TINC.toLowerCase()) {
         tincPools.push({ address: farm.id.toLowerCase(), pair: `${await symbolOf(token0)}/${await symbolOf(token1)}` });
       }
-      if (Number(farm.allocPoints) > 0) feeBasisPoints = Math.max(feeBasisPoints, Number(farm.protocolFee));
+      if (Number(farm.allocPoints) > 0 && (inputTokens.has(token0.toLowerCase()) || inputTokens.has(token1.toLowerCase()))) {
+        const fee = Number(farm.protocolFee);
+        feeMaxBasisPoints = Math.max(feeMaxBasisPoints, fee);
+        feeMinBasisPoints = feeMinBasisPoints === null ? fee : Math.min(feeMinBasisPoints, fee);
+      }
     }
 
     // Pools: how much of the supply sits in those positions
@@ -99,17 +152,10 @@ async function fetchProtocolFacts(callRPC, previous, totalSupply) {
       poolTinc += Number((await call(TINC, erc20Abi, 'balanceOf', [pool.address]))[0]) / 1e18;
     }
     const poolShare = totalSupply > 0 ? poolTinc / totalSupply : null;
-
-    // Input tokens: what the buy-and-burn processes today
-    const tokens = (await call(BUY_AND_BURN, buyAndBurnAbi, 'inputTokens'))[0];
-    const active = [];
-    const paused = [];
-    for (const token of tokens) {
-      if (token.disabled) continue;
-      (token.paused ? paused : active).push(await symbolOf(token.id));
-    }
     // TINC last: it is the token itself, not an input in the reader's sense
     const activeOrdered = [...active.filter((s) => s !== 'TINC'), ...active.filter((s) => s === 'TINC')];
+    const order = [...activeOrdered, ...paused];
+    settings.sort((a, b) => order.indexOf(a.token) - order.indexOf(b.token));
 
     // Hand the pools to the holder pipeline (it excludes them from the ranks on its next run)
     try {
@@ -119,28 +165,43 @@ async function fetchProtocolFacts(callRPC, previous, totalSupply) {
       console.warn(`⚠️ Could not write ${POOLS_FILE}: ${error.message}`);
     }
 
-    console.log(`🏛️ Protocol facts: ${tincPools.length} TINC pools (${tincPools.map((p) => p.pair).join(', ')}) hold ${(poolShare * 100).toFixed(1)}% of supply · active inputs ${activeOrdered.join(', ')} · paused ${paused.join(', ') || 'none'} · protocol fee ${feeBasisPoints / 100}%`);
-    return {
+    console.log(`🏛️ Protocol facts: ${tincPools.length} TINC pools (${tincPools.map((p) => p.pair).join(', ')}) hold ${(poolShare * 100).toFixed(1)}% of supply · active inputs ${activeOrdered.join(', ')} · paused ${paused.join(', ')} · protocol fee ${feeMinBasisPoints === feeMaxBasisPoints ? feeMaxBasisPoints / 100 : `${feeMinBasisPoints / 100}-${feeMaxBasisPoints / 100}`}%`);
+    facts = {
       tincPools,
       poolShare,
       activeInputTokens: activeOrdered,
       pausedInputTokens: paused,
-      protocolFeeMaxPercent: feeBasisPoints / 100,
+      protocolFeeMaxPercent: feeMaxBasisPoints / 100,
+      protocolFeeMinPercent: (feeMinBasisPoints === null ? feeMaxBasisPoints : feeMinBasisPoints) / 100,
+      buyAndBurnSettings: settings,
       protocolFactsAt: new Date().toISOString(),
     };
   } catch (error) {
     console.warn(`⚠️ Protocol facts unavailable (${error.message}) - keeping previous values`);
-    const p = previous || {};
-    return {
+    facts = {
       tincPools: p.tincPools ?? [],
       poolShare: p.poolShare ?? null,
       activeInputTokens: p.activeInputTokens ?? [],
       pausedInputTokens: p.pausedInputTokens ?? [],
       protocolFeeMaxPercent: p.protocolFeeMaxPercent ?? null,
+      protocolFeeMinPercent: p.protocolFeeMinPercent ?? null,
+      buyAndBurnSettings: p.buyAndBurnSettings ?? [],
       protocolFactsAt: p.protocolFactsAt ?? null,
       protocolFactsStale: true,
     };
   }
+
+  // The fee collected since launch, from the keepers' events (its own cache; kept on failure)
+  try {
+    facts.protocolFeeCollected = await updateProtocolFee(callRPC, lastProcessedBlock, symbolOf, decimalsOf);
+    const c = facts.protocolFeeCollected;
+    console.log(`🏛️ Protocol fee collected: ${c.transactions} transactions, ${c.totals.length} tokens, last ${c.lastCollectedAt} by ${c.lastCollectedBy}, scanned to ${c.scannedToBlock}`);
+  } catch (error) {
+    console.warn(`⚠️ Protocol-fee collections unavailable (${error.message}) - keeping previous values`);
+    facts.protocolFeeCollected = p.protocolFeeCollected ?? null;
+    facts.protocolFeeCollectedStale = true;
+  }
+  return facts;
 }
 
 module.exports = { fetchProtocolFacts, POOLS_FILE };

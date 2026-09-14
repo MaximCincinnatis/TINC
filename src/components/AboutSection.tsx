@@ -1,5 +1,6 @@
-import { FAQ } from '@/lib/faq';
+import { faqWith } from '@/lib/faq';
 import { fmtInt, fmtUtcClock, fmtUtcDate } from '@/lib/format';
+import { feePhrase } from '@/lib/protocolFee';
 import type { BurnData } from '@/types/BurnData';
 
 /**
@@ -8,6 +9,8 @@ import type { BurnData } from '@/types/BurnData';
  * search engine or an answer engine can quote. Rendered on the server from the seeded snapshot
  * (deterministic strings only, so it hydrates cleanly); the 問答 list is a <details> accordion so
  * the block stays calm. Same ink card and torii line as Dragon Ranks (App.css .about-section).
+ * 2026-09-14: the fee sentence says the split (protocol wallet / buy-and-burn) as the contracts
+ * have it, with the fee read from them; the FAQ list takes the snapshot for its two dated answers.
  */
 export default function AboutSection({ burnData }: { burnData: BurnData }) {
   const days = burnData.periodDays ?? burnData.dailyBurns.length;
@@ -27,7 +30,8 @@ export default function AboutSection({ burnData }: { burnData: BurnData }) {
       ? `${inputs.slice(0, -1).join(', ')} and ${inputs[inputs.length - 1]}`
       : inputs[0]
     : null;
-  const fee = typeof burnData.protocolFeeMaxPercent === 'number' ? burnData.protocolFeeMaxPercent : null;
+  const fee = feePhrase(burnData);
+  const faq = faqWith(burnData);
 
   return (
     <section className="about-section" id="about" aria-labelledby="about-title">
@@ -45,9 +49,10 @@ export default function AboutSection({ burnData }: { burnData: BurnData }) {
             protocol in the TitanX ecosystem: wallets that deposit into its Uniswap V3 farms accrue TINC from a
             fixed 1 TINC per second, {perDay} a day. No key can raise that rate or mint outside it; one admin key
             decides how each second is split between the farms, and TINC is minted only when farmers harvest.
-            Trading fees from the farms&rsquo; input tokens{inputList ? ` (today ${inputList})` : ''} go, after{' '}
-            {fee !== null ? `a ${fee}% protocol fee` : 'the protocol fee'}, to a buy-and-burn that burns TINC directly
-            or buys it on the market and burns it.
+            Trading fees the farms earn in their input tokens{inputList ? ` (today ${inputList})` : ''} are split
+            when collected: a protocol fee{fee ? `, ${fee},` : ''} goes to a protocol wallet; the rest goes to a
+            buy-and-burn contract that burns TINC directly or buys it on the market and burns it, under settings
+            the same admin key controls.
           </p>
           <p>
             This tracker reads every burn from the chain (each one is a transfer to the zero address) and every
@@ -84,7 +89,7 @@ export default function AboutSection({ burnData }: { burnData: BurnData }) {
           <h3 className="faq-title">
             <span className="kanji-small">問答</span> Questions
           </h3>
-          {FAQ.map((f) => (
+          {faq.map((f) => (
             <details key={f.q} className="faq-item">
               <summary>{f.q}</summary>
               <p>{f.a}</p>

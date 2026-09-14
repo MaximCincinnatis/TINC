@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { SiteHeader, SiteFooter } from '@/components/PageChrome';
 import { SITE } from '@/lib/share';
 import { loadBurnData } from '@/lib/loadBurnData';
+import { compactAmount, describeSetting, feePhrase, fmtDay, listWithAnd, shortAddress } from '@/lib/protocolFee';
 
 /**
  * /methodology: how the numbers on the home page are made, in the tracker's own words. The
@@ -9,6 +10,7 @@ import { loadBurnData } from '@/lib/loadBurnData';
  * Facts follow scripts/fetch-burn-data.js, src/services/burnService.ts and scripts/excluded-addresses.js.
  * Mostly static; the input-token list, the protocol fee and the pool share are read from the latest
  * snapshot at render time so they cannot go stale again (2026-09-09). 2026-09-02 SEO pass.
+ * 2026-09-14: the buy-and-burn's settings and the protocol fee's collections come from the snapshot too.
  */
 export const metadata: Metadata = {
   title: 'How TINCBurn.fyi measures TINC burns · Methodology',
@@ -35,7 +37,13 @@ export default async function MethodologyPage() {
   const active = data?.activeInputTokens?.length ? data.activeInputTokens.join(', ') : null;
   const paused = data?.pausedInputTokens?.length ? data.pausedInputTokens.join(', ') : null;
   const poolShare = typeof data?.poolShare === 'number' ? Math.round(data.poolShare * 100) : null;
-  const fee = typeof data?.protocolFeeMaxPercent === 'number' ? data.protocolFeeMaxPercent : null;
+  const fee = feePhrase(data);
+  const settings = data?.buyAndBurnSettings ?? [];
+  const settingsLine = settings.filter((s) => s.state === 'active').map((s) => `${s.token}, ${describeSetting(s)}`).join('; ') || null;
+  const pausedLine = settings.filter((s) => s.state === 'paused').map((s) => `${s.token} ${compactAmount(s.waiting)}`).join(', ') || null;
+  const c = data?.protocolFeeCollected;
+  const collected = c && c.transactions > 0 && c.lastCollectedAt && c.lastCollectedBy ? c : null;
+  const totalsLine = collected ? listWithAnd(collected.totals.map((t) => `${compactAmount(t.amount)} ${t.symbol}`)) : '';
   // the pools the updater found in the farm list; the two known at launch when a snapshot predates the field
   const pools =
     data?.tincPools && data.tincPools.length > 0
@@ -94,13 +102,36 @@ export default async function MethodologyPage() {
               <span className="kanji-small">投入</span> Input tokens and the buy-and-burn
             </h3>
             <p>
-              Trading fees the farms earn in their input tokens are not paid to farmers; after{' '}
-              {fee !== null ? `a ${fee}% protocol fee` : 'the protocol fee'} they go to the buy-and-burn contract, which
-              burns TINC directly or buys it on the market and burns it, in capped swaps at set intervals. The list is
-              read from the contract at every update: active today {active ?? 'unavailable'}
-              {paused ? `; collected but paused ${paused}` : ''}. Which tokens are input tokens, the caps, the intervals
-              and the protocol fee are all set by the same admin key.
+              Trading fees the farms earn in their input tokens are not paid to farmers. When a farm&rsquo;s fees are
+              collected they are split: a protocol fee
+              {fee ? `, ${fee} (set per farm by the admin key),` : ' (set per farm by the admin key, up to 25%)'} is
+              booked to the protocol and paid out to whichever wallet holds the collect role; the rest goes to the
+              buy-and-burn contract in the same transaction. That contract processes each token in capped swaps at set
+              intervals{settingsLine ? `. As set today: ${settingsLine}` : ` for the input tokens read from it at every update: active today ${active ?? 'unavailable'}`}.
+              {pausedLine ? ` Collected but paused, with fees waiting: ${pausedLine}.` : paused ? ` Collected but paused: ${paused}.` : ''}{' '}
+              Which tokens are input tokens, the caps, the intervals, the burn shares, the caller&rsquo;s cut and the
+              protocol fee are all set by the same admin key; the contract cannot withdraw.
             </p>
+            {collected && (
+              <>
+                <h3>
+                  <span className="kanji-small">徴収</span> The protocol fee so far
+                </h3>
+                <p>
+                  Collected since launch, read from the collection events on both farm contracts: {totalsLine}, in{' '}
+                  {collected.transactions} transactions; the last on {fmtDay(collected.lastCollectedAt as string)} by{' '}
+                  <a href={`https://etherscan.io/address/${collected.lastCollectedBy}`} target="_blank" rel="noopener noreferrer">
+                    {shortAddress(collected.lastCollectedBy as string)}
+                  </a>
+                  .{' '}
+                  {collected.soleCollectorSince
+                    ? `Since ${fmtDay(collected.soleCollectorSince)} every collection has gone to that wallet, and`
+                    : `That wallet has made ${collected.collectionsByLast} of them, and`}{' '}
+                  the chain shows it has sold what it collected, on Uniswap and CoW Swap, mostly for USDC. What the money
+                  paid for is not on the chain.
+                </p>
+              </>
+            )}
 
             <h3>
               <span className="kanji-small">判定</span> The deflationary verdict

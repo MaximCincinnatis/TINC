@@ -122,3 +122,18 @@ Crash → Wait 60 seconds → Restart automatically
 ✅ Self-healing if crashes occur
 
 **Your TINC tracker is 100% reboot-proof.**
+## 2026-09-14 · The fee split, as the contracts have it
+
+Plan (approved before the work started):
+- [x] Updater: read the buy-and-burn's per-token settings and balances (already fetched, now published as `buyAndBurnSettings`), the fee as min and max over the emitting farms that hold an input token (`protocolFeeMinPercent`), and every `ProtocolFeesCollected` event on both keepers since launch, kept in `data/cache/protocol-fee.json` and extended incrementally (`scripts/protocol-fee.js` → `protocolFeeCollected`).
+- [x] Truth check: recount the collection events against the snapshot (transactions, events, per-token totals); the new fields must be present and not stale.
+- [x] Copy: the explainer says the split (protocol wallet / buy-and-burn) with the fee from the contracts; the FAQ's buy-and-burn answer says the split and "cannot withdraw", plus a new question "Where does the protocol fee go?"; the methodology's input-tokens section carries the generated settings line and the paused balances, plus a new block "徴収 The protocol fee so far"; llms.txt follows. The JSON-LD FAQPage is built per render from the same list.
+- [x] Lab: fork replay reproduced 94 collection transactions / 657 events / every per-token total (identical to an independent scan), incremental second run in 1 s, `next build` clean, e2e 156 passed (the 3 failures are the lab-only Vercel insights 404s), truth check OK against the lab snapshot.
+- [x] Push, live e2e, critique page.
+
+Review:
+- Every figure in the new copy is read from the contracts at each update; nothing is typed in. A snapshot that predates the fields renders a figure-free sentence.
+- The fee range excludes the pegged keeper's synthetic PT/PT root farm (0%, no input token): its fee can never apply.
+- The FAQ shows the collector's address as plain text (the FAQ has no link style and feeds the JSON-LD); the methodology page links it.
+- Not on the site: dollar figures, the wallet's payees, any "dumping" wording.
+- Next: the settings line could become a small table if the section grows; the paused balances could be dropped if they read as noise.

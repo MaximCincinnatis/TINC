@@ -24,6 +24,29 @@ export interface HolderStats {
   estimatedData?: boolean;
 }
 
+// 2026-09-14: the buy-and-burn's per-token settings and the protocol fee's collections, read at every update
+export interface BuyAndBurnSetting {
+  token: string;
+  address: string;
+  state: 'active' | 'paused';
+  callerCutPercent: number;
+  burnedAsItselfPercent: number;
+  swappedPercent: number;
+  waiting: number;
+}
+
+export interface ProtocolFeeCollected {
+  totals: { token: string; symbol: string; decimals: number; amount: number }[];
+  transactions: number;
+  events: number;
+  firstCollectedAt: string | null;
+  lastCollectedAt: string | null;
+  lastCollectedBy: string | null;
+  collectionsByLast: number;
+  soleCollectorSince: string | null;
+  scannedToBlock: number | null;
+}
+
 export interface BurnData {
   startDate: string;
   endDate: string;
@@ -47,6 +70,10 @@ export interface BurnData {
   pausedInputTokens?: string[];
   protocolFeeMaxPercent?: number | null;
   protocolFactsAt?: string | null;
+  protocolFeeMinPercent?: number | null;
+  buyAndBurnSettings?: BuyAndBurnSetting[];
+  protocolFeeCollected?: ProtocolFeeCollected | null;
+  protocolFeeCollectedStale?: boolean;
   dailyBurns: DailyBurn[];
   fetchedAt: string;
   fromCache?: boolean;
