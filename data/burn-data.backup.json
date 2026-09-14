@@ -1215,9 +1215,9 @@
       ]
     }
   ],
-  "fetchedAt": "2026-09-14T19:40:02.659Z",
+  "fetchedAt": "2026-09-14T21:53:25.285Z",
   "fromCache": true,
-  "lastProcessedBlock": 25977841,
+  "lastProcessedBlock": 25978504,
   "holderStats": {
     "totalHolders": 957,
     "poseidon": 0,
@@ -1233,7 +1233,7 @@
     "dataSource": "blockchain-incremental",
     "lastUpdate": "2026-09-14T13:36:50.207Z"
   },
-  "lastIncrementalUpdate": "2026-09-14T19:40:02.659Z",
+  "lastIncrementalUpdate": "2026-09-14T21:53:25.285Z",
   "periodDays": 30,
   "periodEmission": 2592000,
   "deflationaryDays": 5,
@@ -1258,7 +1258,7 @@
     "AU"
   ],
   "protocolFeeMaxPercent": 25,
-  "protocolFactsAt": "2026-09-14T19:40:03.130Z",
+  "protocolFactsAt": "2026-09-14T21:53:25.549Z",
   "tincPools": [
     {
       "address": "0x72e0de1cc2c952326738dac05bacb9e9c25422e3",
@@ -1268,5 +1268,200 @@
       "address": "0xf89980f60e55633d05e72881ceb866dbb7f50580",
       "pair": "X28/TINC"
     }
-  ]
+  ],
+  "protocolFeeMinPercent": 25,
+  "buyAndBurnSettings": [
+    {
+      "token": "DRAGONX",
+      "address": "0x96a5399d07896f757bd4c6ef56461f58db951862",
+      "state": "active",
+      "callerCutPercent": 2.5,
+      "burnedAsItselfPercent": 20,
+      "swappedPercent": 80,
+      "waiting": 3106764.901865
+    },
+    {
+      "token": "TITANX",
+      "address": "0xf19308f923582a6f7c465e5ce7a9dc1bec6665b1",
+      "state": "active",
+      "callerCutPercent": 1.5,
+      "burnedAsItselfPercent": 0,
+      "swappedPercent": 100,
+      "waiting": 0
+    },
+    {
+      "token": "ETH",
+      "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "state": "active",
+      "callerCutPercent": 3,
+      "burnedAsItselfPercent": 0,
+      "swappedPercent": 100,
+      "waiting": 0
+    },
+    {
+      "token": "VOLT",
+      "address": "0x66b5228cfd34d9f4d9f03188d67816286c7c0b74",
+      "state": "active",
+      "callerCutPercent": 8,
+      "burnedAsItselfPercent": 20,
+      "swappedPercent": 80,
+      "waiting": 7109.370256
+    },
+    {
+      "token": "TINC",
+      "address": "0x6532b3f1e4dbff542fbd6befe5ed7041c10b385a",
+      "state": "active",
+      "callerCutPercent": 0.33,
+      "burnedAsItselfPercent": 100,
+      "swappedPercent": 0,
+      "waiting": 12683.308523
+    },
+    {
+      "token": "HYDRA",
+      "address": "0xcc7ed2ab6c3396ddbc4316d2d7c1b59ff9d2091f",
+      "state": "paused",
+      "callerCutPercent": 0.33,
+      "burnedAsItselfPercent": 100,
+      "swappedPercent": 0,
+      "waiting": 92069224925.92625
+    },
+    {
+      "token": "HYPER",
+      "address": "0xe2cfd7a01ec63875cd9da6c7c1b7025166c2fa2f",
+      "state": "paused",
+      "callerCutPercent": 0.33,
+      "burnedAsItselfPercent": 100,
+      "swappedPercent": 0,
+      "waiting": 85242830079.1829
+    },
+    {
+      "token": "X28",
+      "address": "0x5c47902c8c80779cb99235e42c354e53f38c3b0d",
+      "state": "paused",
+      "callerCutPercent": 0.33,
+      "burnedAsItselfPercent": 0,
+      "swappedPercent": 100,
+      "waiting": 28517293343.08211
+    },
+    {
+      "token": "USDC",
+      "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "state": "paused",
+      "callerCutPercent": 0.33,
+      "burnedAsItselfPercent": 0,
+      "swappedPercent": 100,
+      "waiting": 312.29876
+    },
+    {
+      "token": "USDx",
+      "address": "0xddf73eacb2218377fc38679ad14dfce51b651dd1",
+      "state": "paused",
+      "callerCutPercent": 0.33,
+      "burnedAsItselfPercent": 0,
+      "swappedPercent": 100,
+      "waiting": 355.429244
+    },
+    {
+      "token": "ORX",
+      "address": "0xd536e7a9543cf9867a580b45cec7f748a1fe11ec",
+      "state": "paused",
+      "callerCutPercent": 0.33,
+      "burnedAsItselfPercent": 0,
+      "swappedPercent": 100,
+      "waiting": 2209346.430573
+    },
+    {
+      "token": "AU",
+      "address": "0x58d7fa7356d68c494c2de09f95d55c2ff2d38bd3",
+      "state": "paused",
+      "callerCutPercent": 0.33,
+      "burnedAsItselfPercent": 0,
+      "swappedPercent": 100,
+      "waiting": 57467.400348
+    }
+  ],
+  "protocolFeeCollected": {
+    "totals": [
+      {
+        "token": "0xf19308f923582a6f7c465e5ce7a9dc1bec6665b1",
+        "symbol": "TITANX",
+        "decimals": 18,
+        "amount": 526086852677.5949
+      },
+      {
+        "token": "0xcc7ed2ab6c3396ddbc4316d2d7c1b59ff9d2091f",
+        "symbol": "HYDRA",
+        "decimals": 18,
+        "amount": 30156826206.232212
+      },
+      {
+        "token": "0xe2cfd7a01ec63875cd9da6c7c1b7025166c2fa2f",
+        "symbol": "HYPER",
+        "decimals": 18,
+        "amount": 27471218869.938553
+      },
+      {
+        "token": "0x96a5399d07896f757bd4c6ef56461f58db951862",
+        "symbol": "DRAGONX",
+        "decimals": 18,
+        "amount": 19412529920.65604
+      },
+      {
+        "token": "0x5c47902c8c80779cb99235e42c354e53f38c3b0d",
+        "symbol": "X28",
+        "decimals": 18,
+        "amount": 9254540038.65411
+      },
+      {
+        "token": "0x66b5228cfd34d9f4d9f03188d67816286c7c0b74",
+        "symbol": "VOLT",
+        "decimals": 18,
+        "amount": 4586102.397793
+      },
+      {
+        "token": "0xd536e7a9543cf9867a580b45cec7f748a1fe11ec",
+        "symbol": "ORX",
+        "decimals": 18,
+        "amount": 526183.002144
+      },
+      {
+        "token": "0x6532b3f1e4dbff542fbd6befe5ed7041c10b385a",
+        "symbol": "TINC",
+        "decimals": 18,
+        "amount": 140484.70245
+      },
+      {
+        "token": "0x58d7fa7356d68c494c2de09f95d55c2ff2d38bd3",
+        "symbol": "AU",
+        "decimals": 18,
+        "amount": 16529.208776
+      },
+      {
+        "token": "0xddf73eacb2218377fc38679ad14dfce51b651dd1",
+        "symbol": "USDx",
+        "decimals": 18,
+        "amount": 118.476414
+      },
+      {
+        "token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "symbol": "USDC",
+        "decimals": 6,
+        "amount": 104.099578
+      },
+      {
+        "token": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "symbol": "ETH",
+        "decimals": 18,
+        "amount": 23.763006
+      }
+    ],
+    "transactions": 94,
+    "events": 657,
+    "firstCollectedAt": "2024-10-09T10:06:59.000Z",
+    "lastCollectedAt": "2026-06-29T14:27:23.000Z",
+    "lastCollectedBy": "0xc791d4c6dbb902de2bb7263b65a1c6936c4d9ba2",
+    "collectionsByLast": 90,
+    "soleCollectorSince": "2024-10-11T19:32:35.000Z",
+    "scannedToBlock": 25978504
+  }
 }
