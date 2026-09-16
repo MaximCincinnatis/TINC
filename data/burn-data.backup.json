@@ -1173,9 +1173,9 @@
       "mintEvents": []
     }
   ],
-  "fetchedAt": "2026-09-16T02:42:53.761Z",
+  "fetchedAt": "2026-09-16T04:56:16.688Z",
   "fromCache": true,
-  "lastProcessedBlock": 25987117,
+  "lastProcessedBlock": 25987783,
   "holderStats": {
     "totalHolders": 957,
     "poseidon": 0,
@@ -1191,7 +1191,7 @@
     "realTimeData": true,
     "lastUpdate": "2026-09-15T20:46:59.815Z"
   },
-  "lastIncrementalUpdate": "2026-09-16T02:42:53.761Z",
+  "lastIncrementalUpdate": "2026-09-16T04:56:16.688Z",
   "periodDays": 30,
   "periodEmission": 2592000,
   "deflationaryDays": 5,
@@ -1216,7 +1216,7 @@
     "AU"
   ],
   "protocolFeeMaxPercent": 25,
-  "protocolFactsAt": "2026-09-16T02:42:53.966Z",
+  "protocolFactsAt": "2026-09-16T04:56:16.856Z",
   "tincPools": [
     {
       "address": "0x72e0de1cc2c952326738dac05bacb9e9c25422e3",
@@ -1420,6 +1420,6 @@
     "lastCollectedBy": "0xc791d4c6dbb902de2bb7263b65a1c6936c4d9ba2",
     "collectionsByLast": 90,
     "soleCollectorSince": "2024-10-11T19:32:35.000Z",
-    "scannedToBlock": 25987117
+    "scannedToBlock": 25987783
   }
 }
