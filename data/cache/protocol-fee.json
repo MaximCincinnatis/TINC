@@ -49,7 +49,7 @@
       "decimals": 18
     }
   },
-  "scannedToBlock": 25987949,
+  "scannedToBlock": 25990550,
   "events": [
     {
       "block": 20927332,
@@ -6622,5 +6622,5 @@
       "time": "2026-06-29T14:27:23.000Z"
     }
   ],
-  "updatedAt": "2026-09-16T05:29:35.776Z"
+  "updatedAt": "2026-09-16T14:11:51.957Z"
 }
