@@ -2,8 +2,8 @@
   "startDate": "2026-08-19",
   "endDate": "2026-09-17",
   "totalBurned": 1135276.0143154333,
-  "totalSupply": 29095543.181241237,
-  "burnPercentage": 3.9018897404444393,
+  "totalSupply": 29099944.928682007,
+  "burnPercentage": 3.901299528565301,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": false,
@@ -1147,19 +1147,29 @@
       "amountTinc": 0,
       "transactionCount": 0,
       "transactions": [],
-      "mintedTinc": 17661.333652293775,
+      "mintedTinc": 22063.081093063523,
       "mintEvents": [
         {
           "hash": "0x54634b442674bb3862fbb9133e49b6d7713ae0e50fdd6c01471793ca2e19ee99",
           "index": 683,
           "amount": 17661.333652293775
+        },
+        {
+          "hash": "0x5e71c26977a79493e03c9075bda6c9eec7f9c0f4a2e37a172cd15bf9a2db89bc",
+          "index": 241,
+          "amount": 4401.721217029405
+        },
+        {
+          "hash": "0x46c3a66d548206a5ac1c07cde8092c433f1c0745ce9a810710fe2f39c4a62009",
+          "index": 684,
+          "amount": 0.026223740344936873
         }
       ]
     }
   ],
-  "fetchedAt": "2026-09-17T14:41:55.618Z",
+  "fetchedAt": "2026-09-17T18:11:55.767Z",
   "fromCache": true,
-  "lastProcessedBlock": 25997871,
+  "lastProcessedBlock": 25998919,
   "holderStats": {
     "totalHolders": 957,
     "poseidon": 0,
@@ -1168,21 +1178,21 @@
     "dolphin": 102,
     "squid": 172,
     "shrimp": 636,
-    "top10Percentage": 19.604047656720688,
+    "top10Percentage": 19.60108228799531,
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2026-09-17T02:11:53.284Z"
+    "lastUpdate": "2026-09-17T17:11:56.323Z"
   },
-  "lastIncrementalUpdate": "2026-09-17T14:41:55.618Z",
+  "lastIncrementalUpdate": "2026-09-17T18:11:55.767Z",
   "periodDays": 30,
   "periodEmission": 2592000,
   "deflationaryDays": 5,
   "netSupplyChange": 1456723.9856845667,
-  "mintedInWindow": 2361987.8976952615,
-  "supplyChange": 1226711.8833798282,
-  "poolShare": 0.6466660750369619,
+  "mintedInWindow": 2366389.6451360313,
+  "supplyChange": 1231113.630820598,
+  "poolShare": 0.6467155205928725,
   "activeInputTokens": [
     "DRAGONX",
     "TITANX",
@@ -1200,7 +1210,7 @@
     "AU"
   ],
   "protocolFeeMaxPercent": 25,
-  "protocolFactsAt": "2026-09-17T14:41:55.851Z",
+  "protocolFactsAt": "2026-09-17T18:11:56.085Z",
   "tincPools": [
     {
       "address": "0x72e0de1cc2c952326738dac05bacb9e9c25422e3",
@@ -1256,7 +1266,7 @@
       "callerCutPercent": 0.33,
       "burnedAsItselfPercent": 100,
       "swappedPercent": 0,
-      "waiting": 12683.308523
+      "waiting": 12764.815752
     },
     {
       "token": "HYDRA",
@@ -1404,6 +1414,6 @@
     "lastCollectedBy": "0xc791d4c6dbb902de2bb7263b65a1c6936c4d9ba2",
     "collectionsByLast": 90,
     "soleCollectorSince": "2024-10-11T19:32:35.000Z",
-    "scannedToBlock": 25997871
+    "scannedToBlock": 25998919
   }
 }
