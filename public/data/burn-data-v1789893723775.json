@@ -1150,9 +1150,9 @@
       "mintEvents": []
     }
   ],
-  "fetchedAt": "2026-09-20T07:42:03.545Z",
+  "fetchedAt": "2026-09-20T08:42:03.549Z",
   "fromCache": true,
-  "lastProcessedBlock": 26017295,
+  "lastProcessedBlock": 26017593,
   "holderStats": {
     "totalHolders": 959,
     "poseidon": 0,
@@ -1168,7 +1168,7 @@
     "dataSource": "blockchain-incremental",
     "lastUpdate": "2026-09-19T20:42:02.690Z"
   },
-  "lastIncrementalUpdate": "2026-09-20T07:42:03.545Z",
+  "lastIncrementalUpdate": "2026-09-20T08:42:03.549Z",
   "periodDays": 30,
   "periodEmission": 2592000,
   "deflationaryDays": 5,
@@ -1193,7 +1193,7 @@
     "AU"
   ],
   "protocolFeeMaxPercent": 25,
-  "protocolFactsAt": "2026-09-20T07:42:03.799Z",
+  "protocolFactsAt": "2026-09-20T08:42:03.764Z",
   "tincPools": [
     {
       "address": "0x72e0de1cc2c952326738dac05bacb9e9c25422e3",
@@ -1397,6 +1397,6 @@
     "lastCollectedBy": "0xc791d4c6dbb902de2bb7263b65a1c6936c4d9ba2",
     "collectionsByLast": 90,
     "soleCollectorSince": "2024-10-11T19:32:35.000Z",
-    "scannedToBlock": 26017295
+    "scannedToBlock": 26017593
   }
 }
