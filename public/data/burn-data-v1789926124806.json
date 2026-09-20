@@ -2,8 +2,8 @@
   "startDate": "2026-08-22",
   "endDate": "2026-09-20",
   "totalBurned": 1189825.6032196633,
-  "totalSupply": 28951598.093652464,
-  "burnPercentage": 4.109706135636528,
+  "totalSupply": 28980417.83207459,
+  "burnPercentage": 4.105619215409664,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": false,
@@ -1146,36 +1146,57 @@
       "amountTinc": 0,
       "transactionCount": 0,
       "transactions": [],
-      "mintedTinc": 0,
-      "mintEvents": []
+      "mintedTinc": 28819.73842212442,
+      "mintEvents": [
+        {
+          "hash": "0xad1df5ea5c6694bbed27aee844ce977a5672976294e5a67fa388a49939d1851a",
+          "index": 721,
+          "amount": 9535.161480830906
+        },
+        {
+          "hash": "0xad1df5ea5c6694bbed27aee844ce977a5672976294e5a67fa388a49939d1851a",
+          "index": 731,
+          "amount": 10871.879721103784
+        },
+        {
+          "hash": "0xad1df5ea5c6694bbed27aee844ce977a5672976294e5a67fa388a49939d1851a",
+          "index": 739,
+          "amount": 8412.40699041745
+        },
+        {
+          "hash": "0xad1df5ea5c6694bbed27aee844ce977a5672976294e5a67fa388a49939d1851a",
+          "index": 745,
+          "amount": 0.29022977227993335
+        }
+      ]
     }
   ],
-  "fetchedAt": "2026-09-20T15:12:04.660Z",
+  "fetchedAt": "2026-09-20T17:42:04.600Z",
   "fromCache": true,
-  "lastProcessedBlock": 26019540,
+  "lastProcessedBlock": 26020286,
   "holderStats": {
     "totalHolders": 959,
     "poseidon": 0,
     "whale": 10,
-    "shark": 39,
+    "shark": 40,
     "dolphin": 102,
-    "squid": 171,
+    "squid": 170,
     "shrimp": 637,
-    "top10Percentage": 19.701517452616336,
+    "top10Percentage": 19.681925168516315,
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2026-09-19T20:42:02.690Z"
+    "lastUpdate": "2026-09-20T15:42:05.176Z"
   },
-  "lastIncrementalUpdate": "2026-09-20T15:12:04.660Z",
+  "lastIncrementalUpdate": "2026-09-20T17:42:04.600Z",
   "periodDays": 30,
   "periodEmission": 2592000,
   "deflationaryDays": 5,
   "netSupplyChange": 1402174.3967803367,
-  "mintedInWindow": 2286784.4406422665,
-  "supplyChange": 1096958.8374226033,
-  "poolShare": 0.6428019916452706,
+  "mintedInWindow": 2315604.179064391,
+  "supplyChange": 1125778.575844728,
+  "poolShare": 0.6421524207812355,
   "activeInputTokens": [
     "DRAGONX",
     "TITANX",
@@ -1193,7 +1214,7 @@
     "AU"
   ],
   "protocolFeeMaxPercent": 25,
-  "protocolFactsAt": "2026-09-20T15:12:04.854Z",
+  "protocolFactsAt": "2026-09-20T17:42:04.797Z",
   "tincPools": [
     {
       "address": "0x72e0de1cc2c952326738dac05bacb9e9c25422e3",
@@ -1222,7 +1243,7 @@
       "callerCutPercent": 1.5,
       "burnedAsItselfPercent": 0,
       "swappedPercent": 100,
-      "waiting": 0
+      "waiting": 37243780.243268
     },
     {
       "token": "ETH",
@@ -1231,7 +1252,7 @@
       "callerCutPercent": 3,
       "burnedAsItselfPercent": 0,
       "swappedPercent": 100,
-      "waiting": 0
+      "waiting": 0.000295
     },
     {
       "token": "VOLT",
@@ -1249,7 +1270,7 @@
       "callerCutPercent": 0.33,
       "burnedAsItselfPercent": 100,
       "swappedPercent": 0,
-      "waiting": 13036.115718
+      "waiting": 13260.703064
     },
     {
       "token": "HYDRA",
@@ -1276,7 +1297,7 @@
       "callerCutPercent": 0.33,
       "burnedAsItselfPercent": 0,
       "swappedPercent": 100,
-      "waiting": 28517293343.08211
+      "waiting": 28520054699.543926
     },
     {
       "token": "USDC",
@@ -1303,7 +1324,7 @@
       "callerCutPercent": 0.33,
       "burnedAsItselfPercent": 0,
       "swappedPercent": 100,
-      "waiting": 2279682.318465
+      "waiting": 2280248.093695
     },
     {
       "token": "AU",
@@ -1312,7 +1333,7 @@
       "callerCutPercent": 0.33,
       "burnedAsItselfPercent": 0,
       "swappedPercent": 100,
-      "waiting": 58358.797304
+      "waiting": 58419.636411
     }
   ],
   "protocolFeeCollected": {
@@ -1397,6 +1418,6 @@
     "lastCollectedBy": "0xc791d4c6dbb902de2bb7263b65a1c6936c4d9ba2",
     "collectionsByLast": 90,
     "soleCollectorSince": "2024-10-11T19:32:35.000Z",
-    "scannedToBlock": 26019540
+    "scannedToBlock": 26020286
   }
 }
