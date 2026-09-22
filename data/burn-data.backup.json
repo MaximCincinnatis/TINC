@@ -1,32 +1,13 @@
 {
-  "startDate": "2026-08-23",
-  "endDate": "2026-09-21",
-  "totalBurned": 1123391.1282707413,
+  "startDate": "2026-08-24",
+  "endDate": "2026-09-22",
+  "totalBurned": 1121164.270300088,
   "totalSupply": 29121558.01796587,
-  "burnPercentage": 3.8575928100333474,
+  "burnPercentage": 3.8499460420641354,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": false,
   "dailyBurns": [
-    {
-      "date": "2026-08-23",
-      "amountTinc": 2226.8579706531273,
-      "transactionCount": 2,
-      "transactions": [
-        {
-          "hash": "0x262ec84d010ae727666f4f9c3f17370853486afa67bcc4859992827bc814aba6",
-          "amount": 108.52222022808452,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0xff97e09dfe801e7c7f3c59b457016ebeb9081f4166d13414bb519bb47ff14af2",
-          "amount": 2118.3357504250425,
-          "from": "0x9fabf48ebe587ee4f8b3172012c3060cc40fea6c"
-        }
-      ],
-      "mintEvents": [],
-      "mintedTinc": 0
-    },
     {
       "date": "2026-08-24",
       "amountTinc": 25590.73960987849,
@@ -1074,11 +1055,19 @@
           "amount": 148318.8367099789
         }
       ]
+    },
+    {
+      "date": "2026-09-22",
+      "amountTinc": 0,
+      "transactionCount": 0,
+      "transactions": [],
+      "mintedTinc": 0,
+      "mintEvents": []
     }
   ],
-  "fetchedAt": "2026-09-21T23:42:09.429Z",
+  "fetchedAt": "2026-09-22T01:42:08.927Z",
   "fromCache": true,
-  "lastProcessedBlock": 26029224,
+  "lastProcessedBlock": 26029820,
   "holderStats": {
     "totalHolders": 959,
     "poseidon": 0,
@@ -1094,13 +1083,13 @@
     "dataSource": "blockchain-incremental",
     "lastUpdate": "2026-09-21T23:42:09.410Z"
   },
-  "lastIncrementalUpdate": "2026-09-21T23:42:09.429Z",
+  "lastIncrementalUpdate": "2026-09-22T01:42:08.927Z",
   "periodDays": 30,
   "periodEmission": 2592000,
   "deflationaryDays": 5,
-  "netSupplyChange": 1468608.8717292587,
+  "netSupplyChange": 1470835.729699912,
   "mintedInWindow": 2215403.88997846,
-  "supplyChange": 1092012.7617077187,
+  "supplyChange": 1094239.619678372,
   "poolShare": 0.643886760469398,
   "activeInputTokens": [
     "DRAGONX",
@@ -1119,7 +1108,7 @@
     "AU"
   ],
   "protocolFeeMaxPercent": 25,
-  "protocolFactsAt": "2026-09-21T23:42:09.703Z",
+  "protocolFactsAt": "2026-09-22T01:42:09.183Z",
   "tincPools": [
     {
       "address": "0x72e0de1cc2c952326738dac05bacb9e9c25422e3",
@@ -1323,6 +1312,6 @@
     "lastCollectedBy": "0xc791d4c6dbb902de2bb7263b65a1c6936c4d9ba2",
     "collectionsByLast": 90,
     "soleCollectorSince": "2024-10-11T19:32:35.000Z",
-    "scannedToBlock": 26029224
+    "scannedToBlock": 26029820
   }
 }
