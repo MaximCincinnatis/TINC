@@ -1,9 +1,9 @@
 {
   "startDate": "2026-08-24",
   "endDate": "2026-09-22",
-  "totalBurned": 1121164.270300088,
-  "totalSupply": 29121558.01796587,
-  "burnPercentage": 3.8499460420641354,
+  "totalBurned": 1134149.345442294,
+  "totalSupply": 29124407.497475453,
+  "burnPercentage": 3.8941542262811826,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": false,
@@ -1058,39 +1058,61 @@
     },
     {
       "date": "2026-09-22",
-      "amountTinc": 0,
-      "transactionCount": 0,
-      "transactions": [],
-      "mintedTinc": 0,
-      "mintEvents": []
+      "amountTinc": 12985.075142205947,
+      "transactionCount": 2,
+      "transactions": [
+        {
+          "hash": "0xd23732ae3162140a623a828022db1780d3a34eeb6cc20b9aaf75e5f39501b8cc",
+          "amount": 7268.1083996814,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        },
+        {
+          "hash": "0x3b0bdbc87a3a362ba279bd26ade73afb5c5733e1de39b42f8269bc202d22003f",
+          "amount": 5716.966742524546,
+          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
+        }
+      ],
+      "mintedTinc": 15834.554651785704,
+      "mintEvents": [
+        {
+          "hash": "0x711162633a6707307a84a80d1f0814d43ec1091ebd6f5b35d99c385e7516377a",
+          "index": 547,
+          "amount": 12784.44034047319
+        },
+        {
+          "hash": "0xcc4b243840d07953fa4ce74a924384115e3f1a81630fa776dd91fe34a7afd747",
+          "index": 112,
+          "amount": 3050.114311312514
+        }
+      ]
     }
   ],
-  "fetchedAt": "2026-09-22T02:42:08.944Z",
+  "fetchedAt": "2026-09-22T05:12:09.611Z",
   "fromCache": true,
-  "lastProcessedBlock": 26030117,
+  "lastProcessedBlock": 26030861,
   "holderStats": {
-    "totalHolders": 959,
+    "totalHolders": 960,
     "poseidon": 0,
     "whale": 10,
     "shark": 40,
-    "dolphin": 101,
+    "dolphin": 102,
     "squid": 170,
     "shrimp": 638,
-    "top10Percentage": 19.586534991408726,
+    "top10Percentage": 19.584618680145518,
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2026-09-21T23:42:09.410Z"
+    "lastUpdate": "2026-09-22T05:12:09.598Z"
   },
-  "lastIncrementalUpdate": "2026-09-22T02:42:08.944Z",
+  "lastIncrementalUpdate": "2026-09-22T05:12:09.611Z",
   "periodDays": 30,
   "periodEmission": 2592000,
   "deflationaryDays": 5,
-  "netSupplyChange": 1470835.729699912,
-  "mintedInWindow": 2215403.88997846,
-  "supplyChange": 1094239.619678372,
-  "poolShare": 0.643886760469398,
+  "netSupplyChange": 1457850.654557706,
+  "mintedInWindow": 2231238.4446302457,
+  "supplyChange": 1097089.0991879518,
+  "poolShare": 0.643377915189921,
   "activeInputTokens": [
     "DRAGONX",
     "TITANX",
@@ -1108,7 +1130,7 @@
     "AU"
   ],
   "protocolFeeMaxPercent": 25,
-  "protocolFactsAt": "2026-09-22T02:42:09.168Z",
+  "protocolFactsAt": "2026-09-22T05:12:09.818Z",
   "tincPools": [
     {
       "address": "0x72e0de1cc2c952326738dac05bacb9e9c25422e3",
@@ -1128,7 +1150,7 @@
       "callerCutPercent": 2.5,
       "burnedAsItselfPercent": 20,
       "swappedPercent": 80,
-      "waiting": 2058261.221063
+      "waiting": 0
     },
     {
       "token": "TITANX",
@@ -1137,7 +1159,7 @@
       "callerCutPercent": 1.5,
       "burnedAsItselfPercent": 0,
       "swappedPercent": 100,
-      "waiting": 0
+      "waiting": 35766860.678612
     },
     {
       "token": "ETH",
@@ -1146,7 +1168,7 @@
       "callerCutPercent": 3,
       "burnedAsItselfPercent": 0,
       "swappedPercent": 100,
-      "waiting": 0.000872
+      "waiting": 0
     },
     {
       "token": "VOLT",
@@ -1173,7 +1195,7 @@
       "callerCutPercent": 0.33,
       "burnedAsItselfPercent": 100,
       "swappedPercent": 0,
-      "waiting": 92210456345.86237
+      "waiting": 92232229798.82582
     },
     {
       "token": "HYPER",
@@ -1312,6 +1334,6 @@
     "lastCollectedBy": "0xc791d4c6dbb902de2bb7263b65a1c6936c4d9ba2",
     "collectionsByLast": 90,
     "soleCollectorSince": "2024-10-11T19:32:35.000Z",
-    "scannedToBlock": 26030117
+    "scannedToBlock": 26030861
   }
 }
