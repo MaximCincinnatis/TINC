@@ -1,58 +1,13 @@
 {
-  "startDate": "2026-08-24",
-  "endDate": "2026-09-22",
-  "totalBurned": 1134149.345442294,
+  "startDate": "2026-08-25",
+  "endDate": "2026-09-23",
+  "totalBurned": 1108558.6058324156,
   "totalSupply": 29136353.965584647,
-  "burnPercentage": 3.8925575478041328,
+  "burnPercentage": 3.804726587073406,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": false,
   "dailyBurns": [
-    {
-      "date": "2026-08-24",
-      "amountTinc": 25590.73960987849,
-      "transactionCount": 4,
-      "transactions": [
-        {
-          "hash": "0x64ce0ec35a2863e8fd9c641333c14fa7b527e5795eb2fefdf81408333c3b2883",
-          "amount": 55.1318659280426,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x73718b403c8dc43838becb9cb3be1e0e582725da3564d4bb2c322b68a0477a38",
-          "amount": 222.88469489738534,
-          "from": "0x9fabf48ebe587ee4f8b3172012c3060cc40fea6c"
-        },
-        {
-          "hash": "0x94ba8b053b7d1fcfb39386618a2822587fc10e49c6e88f863d2e65607901ac11",
-          "amount": 14492.280223813425,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0xdaa014896a3f6b87c89d3784561a54690aad7968002dfefb690c9fc121ddf274",
-          "amount": 10820.442825239636,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        }
-      ],
-      "mintEvents": [
-        {
-          "hash": "0xde51cc31f6ee8dae640ca2b0c2136baef0932240ceadbc75c7d8470b5e73e871",
-          "index": 992,
-          "amount": 5502.839496200407
-        },
-        {
-          "hash": "0x1577800ffa863d14c51082542d1d0da5f5d626afffcff18cec6599a9c4d35335",
-          "index": 81,
-          "amount": 6749.843771969027
-        },
-        {
-          "hash": "0xa4b75346f0fa083ee077dde51aa07890c574669d4b8f7ec6d5645dc1e9d52d79",
-          "index": 1246,
-          "amount": 1589.4312064693447
-        }
-      ],
-      "mintedTinc": 13842.114474638778
-    },
     {
       "date": "2026-08-25",
       "amountTinc": 48549.9072418648,
@@ -1095,17 +1050,25 @@
           "amount": 0.24321289509538768
         }
       ]
+    },
+    {
+      "date": "2026-09-23",
+      "amountTinc": 0,
+      "transactionCount": 0,
+      "transactions": [],
+      "mintedTinc": 0,
+      "mintEvents": []
     }
   ],
-  "fetchedAt": "2026-09-22T22:42:12.270Z",
+  "fetchedAt": "2026-09-23T01:42:12.298Z",
   "fromCache": true,
-  "lastProcessedBlock": 26036074,
+  "lastProcessedBlock": 26036969,
   "holderStats": {
-    "totalHolders": 961,
+    "totalHolders": 960,
     "poseidon": 0,
     "whale": 10,
     "shark": 40,
-    "dolphin": 103,
+    "dolphin": 102,
     "squid": 170,
     "shrimp": 638,
     "top10Percentage": 19.57658860806548,
@@ -1113,16 +1076,16 @@
     "excludesLPPositions": true,
     "realTimeData": true,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2026-09-22T22:42:12.254Z"
+    "lastUpdate": "2026-09-23T00:12:12.101Z"
   },
-  "lastIncrementalUpdate": "2026-09-22T22:42:12.270Z",
+  "lastIncrementalUpdate": "2026-09-23T01:42:12.298Z",
   "periodDays": 30,
   "periodEmission": 2592000,
   "deflationaryDays": 5,
-  "netSupplyChange": 1457850.654557706,
-  "mintedInWindow": 2243184.9127394385,
-  "supplyChange": 1109035.5672971446,
-  "poolShare": 0.643121049782214,
+  "netSupplyChange": 1483441.3941675844,
+  "mintedInWindow": 2229342.7982647996,
+  "supplyChange": 1120784.192432384,
+  "poolShare": 0.6434783279473568,
   "activeInputTokens": [
     "DRAGONX",
     "TITANX",
@@ -1140,7 +1103,7 @@
     "AU"
   ],
   "protocolFeeMaxPercent": 25,
-  "protocolFactsAt": "2026-09-22T22:42:12.576Z",
+  "protocolFactsAt": "2026-09-23T01:42:12.530Z",
   "tincPools": [
     {
       "address": "0x72e0de1cc2c952326738dac05bacb9e9c25422e3",
@@ -1344,6 +1307,6 @@
     "lastCollectedBy": "0xc791d4c6dbb902de2bb7263b65a1c6936c4d9ba2",
     "collectionsByLast": 90,
     "soleCollectorSince": "2024-10-11T19:32:35.000Z",
-    "scannedToBlock": 26036074
+    "scannedToBlock": 26036969
   }
 }
