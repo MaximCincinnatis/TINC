@@ -2,8 +2,8 @@
   "startDate": "2026-08-26",
   "endDate": "2026-09-24",
   "totalBurned": 1060008.698590551,
-  "totalSupply": 29136353.965584647,
-  "burnPercentage": 3.6380965849145532,
+  "totalSupply": 29137213.413680274,
+  "burnPercentage": 3.637989273513932,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": false,
@@ -1018,9 +1018,9 @@
       "mintEvents": []
     }
   ],
-  "fetchedAt": "2026-09-24T19:12:19.310Z",
+  "fetchedAt": "2026-09-24T20:42:19.163Z",
   "fromCache": true,
-  "lastProcessedBlock": 26049318,
+  "lastProcessedBlock": 26049766,
   "holderStats": {
     "totalHolders": 960,
     "poseidon": 0,
@@ -1029,21 +1029,21 @@
     "dolphin": 102,
     "squid": 170,
     "shrimp": 638,
-    "top10Percentage": 19.57658860806548,
+    "top10Percentage": 19.57601116568761,
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2026-09-23T00:12:12.101Z"
+    "lastUpdate": "2026-09-24T20:42:19.150Z"
   },
-  "lastIncrementalUpdate": "2026-09-24T19:12:19.310Z",
+  "lastIncrementalUpdate": "2026-09-24T20:42:19.163Z",
   "periodDays": 30,
   "periodEmission": 2592000,
   "deflationaryDays": 5,
   "netSupplyChange": 1531991.301409449,
   "mintedInWindow": 2216853.1516998634,
   "supplyChange": 1156844.4531093123,
-  "poolShare": 0.6434783279473568,
+  "poolShare": 0.6434014702694001,
   "activeInputTokens": [
     "DRAGONX",
     "TITANX",
@@ -1061,7 +1061,7 @@
     "AU"
   ],
   "protocolFeeMaxPercent": 25,
-  "protocolFactsAt": "2026-09-24T19:12:19.566Z",
+  "protocolFactsAt": "2026-09-24T20:42:19.361Z",
   "tincPools": [
     {
       "address": "0x72e0de1cc2c952326738dac05bacb9e9c25422e3",
@@ -1144,7 +1144,7 @@
       "callerCutPercent": 0.33,
       "burnedAsItselfPercent": 0,
       "swappedPercent": 100,
-      "waiting": 28520054699.543926
+      "waiting": 28520949078.630573
     },
     {
       "token": "USDC",
@@ -1265,6 +1265,6 @@
     "lastCollectedBy": "0xc791d4c6dbb902de2bb7263b65a1c6936c4d9ba2",
     "collectionsByLast": 90,
     "soleCollectorSince": "2024-10-11T19:32:35.000Z",
-    "scannedToBlock": 26049318
+    "scannedToBlock": 26049766
   }
 }
