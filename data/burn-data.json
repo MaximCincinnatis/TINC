@@ -1,98 +1,13 @@
 {
-  "startDate": "2026-08-26",
-  "endDate": "2026-09-24",
-  "totalBurned": 1060008.698590551,
-  "totalSupply": 29137992.275860824,
-  "burnPercentage": 3.6378920296053074,
+  "startDate": "2026-08-27",
+  "endDate": "2026-09-25",
+  "totalBurned": 962603.6774535716,
+  "totalSupply": 29153533.184693236,
+  "burnPercentage": 3.3018422547802087,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": false,
   "dailyBurns": [
-    {
-      "date": "2026-08-26",
-      "amountTinc": 97405.02113697917,
-      "transactionCount": 3,
-      "transactions": [
-        {
-          "hash": "0x495142e3ce36a7f82350e64f4bec453e74cc69a010150c064739829404e4487a",
-          "amount": 33058.950882423844,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x0ee5db5a8dd00e142e444cf8dea5f0829bf6c4f42df35ec685714fc3798ff7cd",
-          "amount": 60406.973116013636,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        },
-        {
-          "hash": "0x50e69a1819155400e68e4c8504165fdf480285faa0df612b1f9abaee951ff16d",
-          "amount": 3939.097138541688,
-          "from": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3"
-        }
-      ],
-      "mintEvents": [
-        {
-          "hash": "0x63b76f119b863bd31cba2550691892b537ec6def2bae10edd689254b5788f1db",
-          "index": 370,
-          "amount": 49763.861590818015
-        },
-        {
-          "hash": "0x63b76f119b863bd31cba2550691892b537ec6def2bae10edd689254b5788f1db",
-          "index": 380,
-          "amount": 4285.6627283391845
-        },
-        {
-          "hash": "0x63b76f119b863bd31cba2550691892b537ec6def2bae10edd689254b5788f1db",
-          "index": 390,
-          "amount": 289.64233125237
-        },
-        {
-          "hash": "0x63b76f119b863bd31cba2550691892b537ec6def2bae10edd689254b5788f1db",
-          "index": 400,
-          "amount": 328.02989976347243
-        },
-        {
-          "hash": "0xff93324ec5d2ca792770f2df13558d8ce9f55194c1eef08da819fe3a5441b154",
-          "index": 262,
-          "amount": 1341.4531270903317
-        },
-        {
-          "hash": "0xc79c43a11d357e71fe7dd899c5fd2c25022e98afd696e35d52cb403878638872",
-          "index": 189,
-          "amount": 16437.002306583316
-        },
-        {
-          "hash": "0xc79c43a11d357e71fe7dd899c5fd2c25022e98afd696e35d52cb403878638872",
-          "index": 199,
-          "amount": 34092.21109349876
-        },
-        {
-          "hash": "0xb2c46b74b1b47d4eeb726c3a9127c741b089833fb9814e11dd0937de93ae2c03",
-          "index": 270,
-          "amount": 1.767370544496179
-        },
-        {
-          "hash": "0x03b35a0a1fbcb1914032eb0cab357e4bdd1e94ed11af18c7bb4b35c513bea1c2",
-          "index": 383,
-          "amount": 527.5018762975895
-        },
-        {
-          "hash": "0x03b35a0a1fbcb1914032eb0cab357e4bdd1e94ed11af18c7bb4b35c513bea1c2",
-          "index": 393,
-          "amount": 2019.4062924971286
-        },
-        {
-          "hash": "0x9c3d6ff106f04c3c766684ae6c0aa06084c27b030f16f443b9a672b1e43a459d",
-          "index": 1439,
-          "amount": 7133.967581585135
-        },
-        {
-          "hash": "0xb7a27d2a9b384b345fed022ea7ffbe899101deef0b7c1c0745aed3c4f5b4ffb1",
-          "index": 674,
-          "amount": 0.24478863504978082
-        }
-      ],
-      "mintedTinc": 116220.75098690485
-    },
     {
       "date": "2026-08-27",
       "amountTinc": 127347.20359828908,
@@ -1014,7 +929,7 @@
       "amountTinc": 0,
       "transactionCount": 0,
       "transactions": [],
-      "mintedTinc": 1638.310276174523,
+      "mintedTinc": 17179.21910858762,
       "mintEvents": [
         {
           "hash": "0x349d51349bf57b0f1cbf54436ed1f4d055dbda7ecc9cc5e0a3ba411633c77d8e",
@@ -1025,13 +940,26 @@
           "hash": "0x71c9f94e964782d349646c79a3a1f60d826d6ce8371d512fe4c13e116aa82a36",
           "index": 346,
           "amount": 778.8621805479347
+        },
+        {
+          "hash": "0x5e28d88fc22cda551d9974f105492b15059022a59b51d59d1f47dd1d60538c9e",
+          "index": 411,
+          "amount": 15540.908832413093
         }
       ]
+    },
+    {
+      "date": "2026-09-25",
+      "amountTinc": 0,
+      "transactionCount": 0,
+      "transactions": [],
+      "mintedTinc": 0,
+      "mintEvents": []
     }
   ],
-  "fetchedAt": "2026-09-24T22:12:18.973Z",
+  "fetchedAt": "2026-09-25T00:12:19.139Z",
   "fromCache": true,
-  "lastProcessedBlock": 26050210,
+  "lastProcessedBlock": 26050805,
   "holderStats": {
     "totalHolders": 960,
     "poseidon": 0,
@@ -1040,21 +968,21 @@
     "dolphin": 102,
     "squid": 170,
     "shrimp": 638,
-    "top10Percentage": 19.57548789645895,
+    "top10Percentage": 19.56505276769354,
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2026-09-24T22:12:18.957Z"
+    "lastUpdate": "2026-09-24T23:12:19.248Z"
   },
-  "lastIncrementalUpdate": "2026-09-24T22:12:18.973Z",
+  "lastIncrementalUpdate": "2026-09-25T00:12:19.139Z",
   "periodDays": 30,
   "periodEmission": 2592000,
-  "deflationaryDays": 5,
-  "netSupplyChange": 1531991.301409449,
-  "mintedInWindow": 2218491.461976038,
-  "supplyChange": 1158482.7633854868,
-  "poolShare": 0.6433842720675693,
+  "deflationaryDays": 4,
+  "netSupplyChange": 1629396.3225464285,
+  "mintedInWindow": 2117811.619821546,
+  "supplyChange": 1155207.9423679747,
+  "poolShare": 0.6435743736405376,
   "activeInputTokens": [
     "DRAGONX",
     "TITANX",
@@ -1072,7 +1000,7 @@
     "AU"
   ],
   "protocolFeeMaxPercent": 25,
-  "protocolFactsAt": "2026-09-24T22:12:19.213Z",
+  "protocolFactsAt": "2026-09-25T00:12:19.390Z",
   "tincPools": [
     {
       "address": "0x72e0de1cc2c952326738dac05bacb9e9c25422e3",
@@ -1182,7 +1110,7 @@
       "callerCutPercent": 0.33,
       "burnedAsItselfPercent": 0,
       "swappedPercent": 100,
-      "waiting": 2280248.093695
+      "waiting": 2288255.298667
     },
     {
       "token": "AU",
@@ -1191,7 +1119,7 @@
       "callerCutPercent": 0.33,
       "burnedAsItselfPercent": 0,
       "swappedPercent": 100,
-      "waiting": 58419.636411
+      "waiting": 58716.172433
     }
   ],
   "protocolFeeCollected": {
@@ -1276,6 +1204,6 @@
     "lastCollectedBy": "0xc791d4c6dbb902de2bb7263b65a1c6936c4d9ba2",
     "collectionsByLast": 90,
     "soleCollectorSince": "2024-10-11T19:32:35.000Z",
-    "scannedToBlock": 26050210
+    "scannedToBlock": 26050805
   }
 }
