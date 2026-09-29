@@ -793,32 +793,32 @@
       ]
     }
   ],
-  "fetchedAt": "2026-09-29T18:51:59.905Z",
+  "fetchedAt": "2026-09-29T21:29:46.563Z",
   "fromCache": true,
-  "lastProcessedBlock": 26085030,
+  "lastProcessedBlock": 26085778,
   "holderStats": {
-    "totalHolders": 960,
+    "totalHolders": 959,
     "poseidon": 0,
     "whale": 10,
-    "shark": 41,
+    "shark": 40,
     "dolphin": 100,
     "squid": 170,
     "shrimp": 639,
     "top10Percentage": 19.373992236815187,
+    "dataSource": "blockchain-full-scan",
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
-    "dataSource": "blockchain-incremental",
-    "lastUpdate": "2026-09-29T18:21:59.905Z"
+    "lastUpdate": "2026-09-29T21:29:46.557Z"
   },
-  "lastIncrementalUpdate": "2026-09-29T18:51:59.905Z",
+  "lastIncrementalUpdate": "2026-09-29T21:29:46.563Z",
   "periodDays": 30,
   "periodEmission": 2592000,
   "deflationaryDays": 2,
   "netSupplyChange": 1879017.6700984063,
   "mintedInWindow": 2178290.79325639,
   "supplyChange": 1465308.4633547962,
-  "poolShare": 0.6475817744172505,
+  "poolShare": 0.6465568762349997,
   "activeInputTokens": [
     "DRAGONX",
     "TITANX",
@@ -836,7 +836,7 @@
     "AU"
   ],
   "protocolFeeMaxPercent": 25,
-  "protocolFactsAt": "2026-09-29T18:52:00.140Z",
+  "protocolFactsAt": "2026-09-29T21:29:46.783Z",
   "tincPools": [
     {
       "address": "0x72e0de1cc2c952326738dac05bacb9e9c25422e3",
@@ -865,7 +865,7 @@
       "callerCutPercent": 1.5,
       "burnedAsItselfPercent": 0,
       "swappedPercent": 100,
-      "waiting": 443311736.606962
+      "waiting": 0
     },
     {
       "token": "ETH",
@@ -1040,6 +1040,6 @@
     "lastCollectedBy": "0xc791d4c6dbb902de2bb7263b65a1c6936c4d9ba2",
     "collectionsByLast": 90,
     "soleCollectorSince": "2024-10-11T19:32:35.000Z",
-    "scannedToBlock": 26085030
+    "scannedToBlock": 26085778
   }
 }
