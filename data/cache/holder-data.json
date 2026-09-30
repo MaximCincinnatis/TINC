@@ -1,6 +1,6 @@
 {
-  "lastBlock": 26091907,
-  "totalSupply": 29340668.03821705,
+  "lastBlock": 26093250,
+  "totalSupply": 29334685.144323938,
   "totalHolders": 959,
   "holders": [
     {
@@ -3848,12 +3848,12 @@
     "dolphin": 100,
     "squid": 171,
     "shrimp": 639,
-    "top10Percentage": 19.331273209304946,
+    "top10Percentage": 19.335215878396536,
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2026-09-30T17:52:03.752Z"
+    "lastUpdate": "2026-09-30T22:22:04.140Z"
   },
-  "cachedAt": "2026-09-30T17:52:03.752Z"
+  "cachedAt": "2026-09-30T22:22:04.140Z"
 }
