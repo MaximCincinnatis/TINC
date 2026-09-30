@@ -2,8 +2,8 @@
   "startDate": "2026-09-01",
   "endDate": "2026-09-30",
   "totalBurned": 743156.3948277775,
-  "totalSupply": 29410862.56558049,
-  "burnPercentage": 2.5268092466539653,
+  "totalSupply": 29390055.674893055,
+  "burnPercentage": 2.5285981185215354,
   "emissionPerSecond": 1,
   "emissionSamplePeriod": 86400,
   "isDeflationary": false,
@@ -799,32 +799,32 @@
       "mintEvents": []
     }
   ],
-  "fetchedAt": "2026-09-30T04:52:01.377Z",
+  "fetchedAt": "2026-09-30T07:22:02.033Z",
   "fromCache": true,
-  "lastProcessedBlock": 26088020,
+  "lastProcessedBlock": 26088767,
   "holderStats": {
     "totalHolders": 959,
     "poseidon": 0,
     "whale": 10,
     "shark": 40,
-    "dolphin": 100,
+    "dolphin": 101,
     "squid": 170,
-    "shrimp": 639,
-    "top10Percentage": 19.393868977877425,
+    "shrimp": 638,
+    "top10Percentage": 19.40759899990572,
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2026-09-29T22:52:00.576Z"
+    "lastUpdate": "2026-09-30T07:22:02.010Z"
   },
-  "lastIncrementalUpdate": "2026-09-30T04:52:01.377Z",
+  "lastIncrementalUpdate": "2026-09-30T07:22:02.033Z",
   "periodDays": 30,
   "periodEmission": 2592000,
   "deflationaryDays": 2,
   "netSupplyChange": 1848843.6051722225,
   "mintedInWindow": 2178290.79325639,
   "supplyChange": 1435134.3984286124,
-  "poolShare": 0.6472202110528237,
+  "poolShare": 0.6468007132112102,
   "activeInputTokens": [
     "DRAGONX",
     "TITANX",
@@ -842,7 +842,7 @@
     "AU"
   ],
   "protocolFeeMaxPercent": 25,
-  "protocolFactsAt": "2026-09-30T04:52:01.636Z",
+  "protocolFactsAt": "2026-09-30T07:22:02.277Z",
   "tincPools": [
     {
       "address": "0x72e0de1cc2c952326738dac05bacb9e9c25422e3",
@@ -862,7 +862,7 @@
       "callerCutPercent": 2.5,
       "burnedAsItselfPercent": 20,
       "swappedPercent": 80,
-      "waiting": 5967157.209817
+      "waiting": 0
     },
     {
       "token": "TITANX",
@@ -1046,6 +1046,6 @@
     "lastCollectedBy": "0xc791d4c6dbb902de2bb7263b65a1c6936c4d9ba2",
     "collectionsByLast": 90,
     "soleCollectorSince": "2024-10-11T19:32:35.000Z",
-    "scannedToBlock": 26088020
+    "scannedToBlock": 26088767
   }
 }
