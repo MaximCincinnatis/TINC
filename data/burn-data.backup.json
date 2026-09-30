@@ -816,32 +816,32 @@
       ]
     }
   ],
-  "fetchedAt": "2026-09-30T07:52:01.799Z",
+  "fetchedAt": "2026-09-30T09:52:02.071Z",
   "fromCache": true,
-  "lastProcessedBlock": 26088910,
+  "lastProcessedBlock": 26089514,
   "holderStats": {
     "totalHolders": 959,
     "poseidon": 0,
-    "whale": 10,
+    "whale": 9,
     "shark": 40,
-    "dolphin": 101,
-    "squid": 170,
-    "shrimp": 638,
-    "top10Percentage": 19.40759899990572,
+    "dolphin": 100,
+    "squid": 171,
+    "shrimp": 639,
+    "top10Percentage": 19.29878855162662,
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2026-09-30T07:22:02.010Z"
+    "lastUpdate": "2026-09-30T08:52:02.426Z"
   },
-  "lastIncrementalUpdate": "2026-09-30T07:52:01.799Z",
+  "lastIncrementalUpdate": "2026-09-30T09:52:02.071Z",
   "periodDays": 30,
   "periodEmission": 2592000,
   "deflationaryDays": 2,
   "netSupplyChange": 1823047.900069626,
   "mintedInWindow": 2183279.607671553,
   "supplyChange": 1414327.5077411789,
-  "poolShare": 0.6469704985309523,
+  "poolShare": 0.6572023936716426,
   "activeInputTokens": [
     "DRAGONX",
     "TITANX",
@@ -859,7 +859,7 @@
     "AU"
   ],
   "protocolFeeMaxPercent": 25,
-  "protocolFactsAt": "2026-09-30T07:52:02.147Z",
+  "protocolFactsAt": "2026-09-30T09:52:02.280Z",
   "tincPools": [
     {
       "address": "0x72e0de1cc2c952326738dac05bacb9e9c25422e3",
@@ -888,7 +888,7 @@
       "callerCutPercent": 1.5,
       "burnedAsItselfPercent": 0,
       "swappedPercent": 100,
-      "waiting": 0
+      "waiting": 9876236.15293
     },
     {
       "token": "ETH",
@@ -915,7 +915,7 @@
       "callerCutPercent": 0.33,
       "burnedAsItselfPercent": 100,
       "swappedPercent": 0,
-      "waiting": 14244.016522
+      "waiting": 16456.270639
     },
     {
       "token": "HYDRA",
@@ -1063,6 +1063,6 @@
     "lastCollectedBy": "0xc791d4c6dbb902de2bb7263b65a1c6936c4d9ba2",
     "collectionsByLast": 90,
     "soleCollectorSince": "2024-10-11T19:32:35.000Z",
-    "scannedToBlock": 26088910
+    "scannedToBlock": 26089514
   }
 }
