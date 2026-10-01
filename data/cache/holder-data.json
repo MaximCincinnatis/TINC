@@ -1,6 +1,6 @@
 {
-  "lastBlock": 26093250,
-  "totalSupply": 29334685.144323938,
+  "lastBlock": 26094746,
+  "totalSupply": 29367275.149827033,
   "totalHolders": 959,
   "holders": [
     {
@@ -192,10 +192,6 @@
       "balance": 30682.669103602493
     },
     {
-      "address": "0x15065100b0ff6bd2d157dfd0f2d133867fb173d2",
-      "balance": 29739.50128592504
-    },
-    {
       "address": "0xf6edffd55c1a99fe0ab68b29b960faa15ee0e833",
       "balance": 29731.222669440987
     },
@@ -276,12 +272,12 @@
       "balance": 16979.402389098985
     },
     {
-      "address": "0x7bdaedcbb1a52c22358dda03128ddfa475f6aa46",
-      "balance": 16911.704857083714
+      "address": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
+      "balance": 16936.325344400142
     },
     {
-      "address": "0x060e990a7e760f211447e76a53ff6e1be2f3bdd3",
-      "balance": 16456.270639397484
+      "address": "0x7bdaedcbb1a52c22358dda03128ddfa475f6aa46",
+      "balance": 16911.704857083714
     },
     {
       "address": "0x6782b71501d8ff59ac16f874109ba8f9da145bc9",
@@ -320,12 +316,12 @@
       "balance": 14890.475506855048
     },
     {
-      "address": "0x5345e5d2d374c456cdc1ea4c420324827993474a",
-      "balance": 14435.897856489893
+      "address": "0x52c1cc79fbbef91d3952ae75b1961d08f0172223",
+      "balance": 14545.820332880938
     },
     {
-      "address": "0x52c1cc79fbbef91d3952ae75b1961d08f0172223",
-      "balance": 14385.802097880052
+      "address": "0x5345e5d2d374c456cdc1ea4c420324827993474a",
+      "balance": 14435.897856489893
     },
     {
       "address": "0xce26d16f4579c2b2ac44a3538868ea6937146daf",
@@ -2864,6 +2860,10 @@
       "balance": 3.801704610081222
     },
     {
+      "address": "0x15065100b0ff6bd2d157dfd0f2d133867fb173d2",
+      "balance": 3.7773239472749314
+    },
+    {
       "address": "0x9899f62ecf16b70bffc88677023026c47e48c218",
       "balance": 3.774831435310555
     },
@@ -3844,16 +3844,16 @@
     "totalHolders": 959,
     "poseidon": 0,
     "whale": 9,
-    "shark": 40,
+    "shark": 39,
     "dolphin": 100,
     "squid": 171,
-    "shrimp": 639,
-    "top10Percentage": 19.335215878396536,
+    "shrimp": 640,
+    "top10Percentage": 19.31375883859064,
     "estimatedData": false,
     "excludesLPPositions": true,
     "realTimeData": true,
     "dataSource": "blockchain-incremental",
-    "lastUpdate": "2026-09-30T22:22:04.140Z"
+    "lastUpdate": "2026-10-01T03:22:05.112Z"
   },
-  "cachedAt": "2026-09-30T22:22:04.140Z"
+  "cachedAt": "2026-10-01T03:22:05.112Z"
 }
